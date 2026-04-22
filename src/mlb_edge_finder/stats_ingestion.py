@@ -1,22 +1,18 @@
 """Fetch and cache team batting and pitching stats.
 
 Primary source: FanGraphs via pybaseball (team_batting, team_pitching) with up
-to 3 attempts and exponential backoff (2s, 4s, 8s). Falls back to Baseball
-Reference (batting_stats_bref, pitching_stats_bref) if FanGraphs remains
-unavailable. Output always includes a data_source column ("fangraphs" or
-"bbref") and fip / fip_computed columns (one is NaN depending on source).
+to 3 attempts and exponential backoff (2s, 4s, 8s). Falls back to the MLB
+Stats API via the statsapi package if FanGraphs remains unavailable. Output
+always includes a data_source column ("fangraphs" or "mlb_api") and fip /
+fip_computed columns (one is NaN depending on source).
 """
 import logging
 import time
 from datetime import date
 
 import pandas as pd
-from pybaseball import (
-    batting_stats_bref,
-    pitching_stats_bref,
-    team_batting,
-    team_pitching,
-)
+import statsapi
+from pybaseball import team_batting, team_pitching
 
 from mlb_edge_finder import config
 
@@ -83,22 +79,8 @@ _FG_ABBR_NORMALIZE: dict[str, str] = {
     "KCR": "KC",   # Kansas City
     "TBR": "TB",   # Tampa Bay
 }
-_BBREF_ABBR_NORMALIZE: dict[str, str] = {
-    "KCR": "KC",   # Kansas City
-    "TBR": "TB",   # Tampa Bay
-    "SDP": "SD",   # San Diego
-    "SFG": "SF",   # San Francisco
-}
-
 _FIP_CONSTANT: float = 3.15
 _RETRY_DELAYS: list[int] = [2, 4, 8]
-
-
-def _ip_bbref_to_decimal(ip: pd.Series) -> pd.Series:
-    """Convert BBRef IP notation (.1 = ⅓ inning, .2 = ⅔ inning) to decimal."""
-    whole = ip.apply(lambda x: int(x) if pd.notna(x) else 0.0)
-    frac = (ip - whole).round(1)
-    return whole + frac.map({0.0: 0.0, 0.1: 1 / 3, 0.2: 2 / 3}).fillna(0.0)
 
 
 def _build_fangraphs(season: int) -> pd.DataFrame:
@@ -131,80 +113,65 @@ def _build_fangraphs(season: int) -> pd.DataFrame:
     return df
 
 
-def _build_bbref(season: int) -> pd.DataFrame:
-    bat_raw = batting_stats_bref(season)
-    pit_raw = pitching_stats_bref(season)
+def _build_mlb_api(season: int) -> pd.DataFrame:
+    # Fetch team abbreviation map: {team_id: abbreviation}
+    teams_data = statsapi.get("teams", {"sportId": 1, "season": season})
+    abbr_map: dict[int, str] = {t["id"]: t["abbreviation"] for t in teams_data.get("teams", [])}
+    if not abbr_map:
+        raise RuntimeError(f"MLB Stats API returned no teams for season {season}")
 
-    if bat_raw is None or bat_raw.empty:
-        raise RuntimeError(f"batting_stats_bref returned no data for season {season}")
-    if pit_raw is None or pit_raw.empty:
-        raise RuntimeError(f"pitching_stats_bref returned no data for season {season}")
+    # Fetch team hitting stats
+    hit_data = statsapi.get("teams_stats", {"stats": "season", "group": "hitting", "season": season, "sportIds": 1})
+    hit_splits = hit_data.get("stats", [{}])[0].get("splits", [])
+    if not hit_splits:
+        raise RuntimeError(f"MLB Stats API returned no team hitting stats for season {season}")
 
-    # Keep only standard 2-3 letter team codes; exclude multi-team total rows
-    bat = bat_raw[bat_raw["Tm"].str.match(r"^[A-Z]{2,3}$", na=False)].copy()
-    pit = pit_raw[pit_raw["Tm"].str.match(r"^[A-Z]{2,3}$", na=False)].copy()
+    # Fetch team pitching stats
+    pit_data = statsapi.get("teams_stats", {"stats": "season", "group": "pitching", "season": season, "sportIds": 1})
+    pit_splits = pit_data.get("stats", [{}])[0].get("splits", [])
+    if not pit_splits:
+        raise RuntimeError(f"MLB Stats API returned no team pitching stats for season {season}")
 
-    bat["Tm"] = bat["Tm"].replace(_BBREF_ABBR_NORMALIZE)
-    pit["Tm"] = pit["Tm"].replace(_BBREF_ABBR_NORMALIZE)
+    bat_rows = []
+    for s in hit_splits:
+        abbr = abbr_map.get(s["team"]["id"])
+        if abbr is None:
+            continue
+        st = s["stat"]
+        bat_rows.append({
+            "team_abbr": abbr,
+            "bat_avg": st["avg"],
+            "obp": st["obp"],
+            "slg": st["slg"],
+            "ops": st["ops"],
+            "runs_per_game": st["runs"] / st["gamesPlayed"],
+            "w_oba": float("nan"),
+            "bat_wrc_plus": float("nan"),
+        })
 
-    # Aggregate batting counting stats to team level, then derive rates
-    bat_agg = bat.groupby("Tm").agg(
-        AB=("AB", "sum"),
-        H=("H", "sum"),
-        doubles=("2B", "sum"),
-        triples=("3B", "sum"),
-        HR=("HR", "sum"),
-        BB=("BB", "sum"),
-        HBP=("HBP", "sum"),
-        SF=("SF", "sum"),
-        R=("R", "sum"),
-        G=("G", "max"),
-    ).reset_index()
+    pit_rows = []
+    for s in pit_splits:
+        abbr = abbr_map.get(s["team"]["id"])
+        if abbr is None:
+            continue
+        st = s["stat"]
+        ip = float(st["inningsPitched"])
+        pit_rows.append({
+            "team_abbr": abbr,
+            "era": st["era"],
+            "whip": st["whip"],
+            "k_per_9": st["strikeoutsPer9Inn"],
+            "bb_per_9": st["walksPer9Inn"],
+            "fip": float("nan"),
+            "fip_computed": (13 * st["homeRuns"] + 3 * st["baseOnBalls"] - 2 * st["strikeOuts"]) / ip + _FIP_CONSTANT,
+        })
 
-    bat_agg["bat_avg"] = bat_agg["H"] / bat_agg["AB"]
-    bat_agg["obp"] = (
-        (bat_agg["H"] + bat_agg["BB"] + bat_agg["HBP"].fillna(0))
-        / (bat_agg["AB"] + bat_agg["BB"] + bat_agg["HBP"].fillna(0) + bat_agg["SF"].fillna(0))
-    )
-    tb = bat_agg["H"] + bat_agg["doubles"] + 2 * bat_agg["triples"] + 3 * bat_agg["HR"]
-    bat_agg["slg"] = tb / bat_agg["AB"]
-    bat_agg["ops"] = bat_agg["obp"] + bat_agg["slg"]
-    bat_agg["runs_per_game"] = bat_agg["R"] / bat_agg["G"]
-    bat_agg["w_oba"] = float("nan")
-    bat_agg["bat_wrc_plus"] = float("nan")
-
-    bat_df = bat_agg[["Tm", "bat_avg", "obp", "slg", "ops", "runs_per_game", "w_oba", "bat_wrc_plus"]].rename(
-        columns={"Tm": "team_abbr"}
-    )
-
-    # Aggregate pitching counting stats to team level, then derive rates
-    pit_agg = pit.groupby("Tm").agg(
-        IP_raw=("IP", "sum"),
-        H=("H", "sum"),
-        ER=("ER", "sum"),
-        BB=("BB", "sum"),
-        HR=("HR", "sum"),
-        SO=("SO", "sum"),
-    ).reset_index()
-
-    pit_agg["IP"] = _ip_bbref_to_decimal(pit_agg["IP_raw"])
-    pit_agg["era"] = (pit_agg["ER"] / pit_agg["IP"]) * 9
-    pit_agg["whip"] = (pit_agg["H"] + pit_agg["BB"]) / pit_agg["IP"]
-    pit_agg["k_per_9"] = (pit_agg["SO"] / pit_agg["IP"]) * 9
-    pit_agg["bb_per_9"] = (pit_agg["BB"] / pit_agg["IP"]) * 9
-    pit_agg["fip"] = float("nan")
-    pit_agg["fip_computed"] = (
-        (13 * pit_agg["HR"] + 3 * pit_agg["BB"] - 2 * pit_agg["SO"]) / pit_agg["IP"]
-        + _FIP_CONSTANT
-    )
-
-    pit_df = pit_agg[["Tm", "era", "whip", "k_per_9", "bb_per_9", "fip", "fip_computed"]].rename(
-        columns={"Tm": "team_abbr"}
-    )
+    bat_df = pd.DataFrame(bat_rows)
+    pit_df = pd.DataFrame(pit_rows)
 
     df = bat_df.merge(pit_df, on="team_abbr", how="inner")
-    df["data_source"] = "bbref"
-    logger.debug("BBRef: %d teams, %d columns", len(df), len(df.columns))
+    df["data_source"] = "mlb_api"
+    logger.debug("MLB Stats API: %d teams, %d columns", len(df), len(df.columns))
     return df
 
 
@@ -224,17 +191,17 @@ def _build_stats_df(season: int) -> pd.DataFrame:
                 time.sleep(delay)
 
     logger.warning(
-        "FanGraphs failed after %d attempts (%s) — falling back to Baseball Reference",
+        "FanGraphs failed after %d attempts (%s) — falling back to MLB Stats API",
         total, last_exc,
     )
-    return _build_bbref(season)
+    return _build_mlb_api(season)
 
 
 def fetch_stats(game_date: date, force: bool = False) -> pd.DataFrame:
     """Fetch season-to-date team batting and pitching stats for a given date.
 
     Tries FanGraphs first (up to 3 attempts, 2s/4s/8s backoff), then falls
-    back to Baseball Reference. Writes the result to
+    back to the MLB Stats API via statsapi. Writes the result to
     DATA_RAW_DIR/stats_YYYY-MM-DD.csv. Cache-first unless force=True.
 
     Args:
@@ -246,11 +213,11 @@ def fetch_stats(game_date: date, force: bool = False) -> pd.DataFrame:
         DataFrame with columns: team_abbr, bat_avg, obp, slg, ops,
         runs_per_game, w_oba, bat_wrc_plus, era, whip, fip, fip_computed,
         k_per_9, bb_per_9, data_source. One row per team.
-        w_oba/bat_wrc_plus/fip are NaN for bbref rows.
+        w_oba/bat_wrc_plus/fip are NaN for mlb_api rows.
         fip_computed is NaN for fangraphs rows.
 
     Raises:
-        RuntimeError: If both FanGraphs and Baseball Reference fail.
+        RuntimeError: If both FanGraphs and the MLB Stats API fail.
     """
     cache_path = config.DATA_RAW_DIR / f"stats_{game_date}.csv"
     if cache_path.exists() and not force:
