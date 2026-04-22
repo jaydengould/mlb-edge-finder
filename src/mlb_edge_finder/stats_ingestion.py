@@ -91,7 +91,39 @@ def _build_stats_df(season: int) -> pd.DataFrame:
 
 
 def fetch_stats(game_date: date, force: bool = False) -> pd.DataFrame:
-    raise NotImplementedError
+    """Fetch season-to-date team batting and pitching stats for a given date.
+
+    Calls pybaseball.team_batting() and pybaseball.team_pitching() for the
+    season year derived from game_date. Writes the result to
+    DATA_RAW_DIR/stats_YYYY-MM-DD.csv. If a cached file already exists and
+    force=False, returns the cached data without calling pybaseball.
+
+    Args:
+        game_date: The date for which to fetch stats. Season year is
+            game_date.year.
+        force: If True, re-fetch from pybaseball even if a cache file exists.
+
+    Returns:
+        DataFrame with columns: team_abbr, bat_avg, obp, slg, ops, runs,
+        w_oba, bat_wrc_plus, era, whip, fip, k_per_9, bb_per_9.
+        One row per team.
+
+    Raises:
+        RuntimeError: If pybaseball returns no data or expected columns are
+            missing.
+    """
+    cache_path = config.DATA_RAW_DIR / f"stats_{game_date}.csv"
+    if cache_path.exists() and not force:
+        logger.debug("Cache hit for %s, loading from disk", game_date)
+        return load_cached_stats(game_date)
+
+    df = _build_stats_df(game_date.year)
+
+    config.DATA_RAW_DIR.mkdir(parents=True, exist_ok=True)
+    df.to_csv(cache_path, index=False)
+    logger.info("Wrote %d rows to %s", len(df), cache_path)
+
+    return df
 
 
 def load_cached_stats(game_date: date) -> pd.DataFrame:
