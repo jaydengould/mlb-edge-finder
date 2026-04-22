@@ -3,44 +3,53 @@ import logging
 from datetime import date
 
 import pandas as pd
+from pybaseball import team_batting, team_pitching
 
 from mlb_edge_finder import config
 
 logger = logging.getLogger(__name__)
 
+ODDS_NAME_TO_ABBR: dict[str, str] = {
+    "Arizona Diamondbacks": "ARI",
+    "Atlanta Braves": "ATL",
+    "Baltimore Orioles": "BAL",
+    "Boston Red Sox": "BOS",
+    "Chicago Cubs": "CHC",
+    "Chicago White Sox": "CWS",
+    "Cincinnati Reds": "CIN",
+    "Cleveland Guardians": "CLE",
+    "Colorado Rockies": "COL",
+    "Detroit Tigers": "DET",
+    "Houston Astros": "HOU",
+    "Kansas City Royals": "KC",
+    "Los Angeles Angels": "LAA",
+    "Los Angeles Dodgers": "LAD",
+    "Miami Marlins": "MIA",
+    "Milwaukee Brewers": "MIL",
+    "Minnesota Twins": "MIN",
+    "New York Mets": "NYM",
+    "New York Yankees": "NYY",
+    "Athletics": "ATH",
+    "Philadelphia Phillies": "PHI",
+    "Pittsburgh Pirates": "PIT",
+    "San Diego Padres": "SD",
+    "San Francisco Giants": "SF",
+    "Seattle Mariners": "SEA",
+    "St. Louis Cardinals": "STL",
+    "Tampa Bay Rays": "TB",
+    "Texas Rangers": "TEX",
+    "Toronto Blue Jays": "TOR",
+    "Washington Nationals": "WSH",
+}
 
-def fetch_stats(start_date: date, end_date: date) -> pd.DataFrame:
-    """Fetch team batting and starting pitcher stats for a date range.
 
-    Uses pybaseball.team_batting() and pybaseball.pitching_stats() to pull
-    season-to-date aggregates. Writes result to
-    DATA_RAW_DIR/stats_YYYY-MM-DD.csv (keyed by end_date).
+def _build_stats_df(season: int) -> pd.DataFrame:
+    raise NotImplementedError
 
-    Args:
-        start_date: First date of the window (inclusive).
-        end_date: Last date of the window (inclusive).
 
-    Returns:
-        DataFrame with columns: team, era, whip, batting_avg, ops,
-        runs_per_game, home_away (placeholder columns — finalize during
-        feature engineering design).
-
-    Raises:
-        RuntimeError: If pybaseball fails to return data.
-    """
+def fetch_stats(game_date: date, force: bool = False) -> pd.DataFrame:
     raise NotImplementedError
 
 
 def load_cached_stats(game_date: date) -> pd.DataFrame:
-    """Load previously fetched stats from DATA_RAW_DIR/stats_YYYY-MM-DD.csv.
-
-    Args:
-        game_date: The date whose cached CSV to load.
-
-    Returns:
-        DataFrame with the same schema as fetch_stats().
-
-    Raises:
-        FileNotFoundError: If no cached file exists for the given date.
-    """
     raise NotImplementedError
