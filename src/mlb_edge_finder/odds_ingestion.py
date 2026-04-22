@@ -78,4 +78,7 @@ def load_cached_odds(game_date: date) -> pd.DataFrame:
     Raises:
         FileNotFoundError: If no cached file exists for the given date.
     """
-    raise NotImplementedError
+    cache_path = config.DATA_RAW_DIR / f"odds_{game_date}.csv"
+    if not cache_path.exists():
+        raise FileNotFoundError(f"No cached odds for {game_date}: {cache_path}")
+    return pd.read_csv(cache_path)

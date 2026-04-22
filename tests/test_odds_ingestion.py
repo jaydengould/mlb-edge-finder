@@ -103,3 +103,34 @@ def test_parse_response_empty_when_no_matching_date():
     df = _parse_response(SAMPLE_GAMES, datetime.date(2099, 1, 1))
     assert isinstance(df, pd.DataFrame)
     assert len(df) == 0
+
+
+# ---------------------------------------------------------------------------
+# load_cached_odds
+# ---------------------------------------------------------------------------
+
+
+def test_load_cached_odds_returns_dataframe(tmp_path, monkeypatch):
+    monkeypatch.setattr(config, "DATA_RAW_DIR", tmp_path)
+    game_date = datetime.date(2026, 4, 21)
+    csv_path = tmp_path / f"odds_{game_date}.csv"
+    sample = pd.DataFrame([{
+        "game_id": "game-abc",
+        "home_team": "New York Yankees",
+        "away_team": "Boston Red Sox",
+        "home_odds_american": -150,
+        "away_odds_american": 130,
+        "bookmaker": "draftkings",
+        "commence_time": "2026-04-21T18:00:00Z",
+    }])
+    sample.to_csv(csv_path, index=False)
+    df = odds_ingestion.load_cached_odds(game_date)
+    assert isinstance(df, pd.DataFrame)
+    assert len(df) == 1
+    assert df.iloc[0]["game_id"] == "game-abc"
+
+
+def test_load_cached_odds_raises_when_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr(config, "DATA_RAW_DIR", tmp_path)
+    with pytest.raises(FileNotFoundError):
+        odds_ingestion.load_cached_odds(datetime.date(2026, 4, 21))
