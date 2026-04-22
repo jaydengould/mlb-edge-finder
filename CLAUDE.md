@@ -6,7 +6,7 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 
 ## Current Phase
 
-**Phase 2 — Odds ingestion complete.** `odds_ingestion.fetch_odds()` and `load_cached_odds()` are fully implemented with caching (`force=False` skips re-fetch), date filtering, and error handling. `_parse_response()` flattens bookmaker JSON to a long-format DataFrame.
+**Phase 2 — Odds ingestion complete.** `odds_ingestion.fetch_odds()` and `load_cached_odds()` are fully implemented with caching (`force=False` skips re-fetch), date filtering, and error handling. `_parse_response()` collapses multi-bookmaker JSON to one row per game, keeping the best (highest American odds) line across all bookmakers. Live in-game odds are excluded before parsing. `commence_time` UTC timestamps are converted to US/Eastern before date filtering.
 
 **Next:** Implement `stats_ingestion.fetch_stats()` and `load_cached_stats()` — those two complete data ingestion and unlock `features.build_features()`.
 
@@ -70,7 +70,9 @@ MIN_AMERICAN_ODDS   # -300  (skip heavy favorites)
 ## Key Conventions
 
 - **Logging:** Every module uses `logger = logging.getLogger(__name__)`. Never configure handlers inside a module — only `config.setup_logging()` does that. Call it once per entry point (notebook first cell, pipeline entry).
-- **Dates:** All file naming and function arguments use `datetime.date`. Files are named `*_YYYY-MM-DD.*`.
+- **Dates:** All file naming and function arguments use `datetime.date`. Files are named `*_YYYY-MM-DD.*`. API `commence_time` values are UTC ISO-8601 — always convert to US/Eastern (`America/New_York`) before comparing against a calendar date.
+- **Live game exclusion:** `fetch_odds()` drops any game whose `commence_time` is in the past (UTC) before parsing — live in-game odds are not valid for pre-game EV analysis.
+- **Odds deduplication:** `_parse_response()` produces one row per `game_id`, not one per bookmaker. The best line across all bookmakers is kept (highest American odds value = best for the bettor). The `bookmaker` column does not appear in the output CSV.
 - **Model persistence:** Always two files — `.pkl` for the object, `.json` for metrics/hyperparameters. Never combine them.
 - **Error handling:** `odds_ingestion` and `stats_ingestion` raise `RuntimeError` on API failure. `model` raises `FileNotFoundError` if inputs are missing. `edge_finder` logs a warning and returns an empty DataFrame when no edges are found — it never raises on empty results.
 - **No silent fallbacks:** If data isn't available, raise. Don't return empty DataFrames as a substitute for real data in ingestion modules.
