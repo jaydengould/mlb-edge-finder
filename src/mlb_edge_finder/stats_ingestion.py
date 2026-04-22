@@ -1,15 +1,26 @@
-"""Fetch and cache team batting and pitching stats via the MLB Stats API."""
+"""Fetch and cache team batting and pitching stats.
+
+Primary source: FanGraphs via pybaseball (team_batting, team_pitching) with up
+to 3 attempts and exponential backoff (2s, 4s, 8s). Falls back to Baseball
+Reference (batting_stats_bref, pitching_stats_bref) if FanGraphs remains
+unavailable. Output always includes a data_source column ("fangraphs" or
+"bbref") and fip / fip_computed columns (one is NaN depending on source).
+"""
 import logging
+import time
 from datetime import date
 
 import pandas as pd
-import requests
+from pybaseball import (
+    batting_stats_bref,
+    pitching_stats_bref,
+    team_batting,
+    team_pitching,
+)
 
 from mlb_edge_finder import config
 
 logger = logging.getLogger(__name__)
-
-_MLB_STATS_BASE = "https://statsapi.mlb.com/api/v1"
 
 ODDS_NAME_TO_ABBR: dict[str, str] = {
     "Arizona Diamondbacks": "ARI",
@@ -44,108 +55,202 @@ ODDS_NAME_TO_ABBR: dict[str, str] = {
     "Washington Nationals": "WSH",
 }
 
-_BATTING_STAT_KEYS = ["avg", "obp", "slg", "ops", "runs"]
-_PITCHING_STAT_KEYS = ["era", "whip", "strikeoutsPer9Inn", "walksPer9Inn"]
+# FanGraphs column selection and rename
+_FG_BAT_COLS = ["Team", "G", "AVG", "OBP", "SLG", "OPS", "R", "wOBA", "wRC+"]
+_FG_PIT_COLS = ["Team", "ERA", "WHIP", "FIP", "K/9", "BB/9"]
 
-_BATTING_RENAME = {
-    "avg": "bat_avg",
-    "strikeoutsPer9Inn": "k_per_9",
-    "walksPer9Inn": "bb_per_9",
+_FG_BAT_RENAME: dict[str, str] = {
+    "Team": "team_abbr",
+    "AVG": "bat_avg",
+    "OBP": "obp",
+    "SLG": "slg",
+    "OPS": "ops",
+    "wOBA": "w_oba",
+    "wRC+": "bat_wrc_plus",
+}
+_FG_PIT_RENAME: dict[str, str] = {
+    "Team": "team_abbr",
+    "ERA": "era",
+    "WHIP": "whip",
+    "FIP": "fip",
+    "K/9": "k_per_9",
+    "BB/9": "bb_per_9",
 }
 
-_PITCHING_RENAME = {
-    "strikeoutsPer9Inn": "k_per_9",
-    "walksPer9Inn": "bb_per_9",
+# Normalize source-specific abbreviations to the standard set in ODDS_NAME_TO_ABBR
+_FG_ABBR_NORMALIZE: dict[str, str] = {
+    "WSN": "WSH",  # Washington
+    "KCR": "KC",   # Kansas City
+    "TBR": "TB",   # Tampa Bay
+}
+_BBREF_ABBR_NORMALIZE: dict[str, str] = {
+    "KCR": "KC",   # Kansas City
+    "TBR": "TB",   # Tampa Bay
+    "SDP": "SD",   # San Diego
+    "SFG": "SF",   # San Francisco
 }
 
+_FIP_CONSTANT: float = 3.15
+_RETRY_DELAYS: list[int] = [2, 4, 8]
 
-def _fetch_team_abbrs(season: int) -> dict[int, str]:
-    r = requests.get(
-        f"{_MLB_STATS_BASE}/teams",
-        params={"sportId": 1, "season": season},
-        timeout=15,
+
+def _ip_bbref_to_decimal(ip: pd.Series) -> pd.Series:
+    """Convert BBRef IP notation (.1 = ⅓ inning, .2 = ⅔ inning) to decimal."""
+    whole = ip.apply(lambda x: int(x) if pd.notna(x) else 0.0)
+    frac = (ip - whole).round(1)
+    return whole + frac.map({0.0: 0.0, 0.1: 1 / 3, 0.2: 2 / 3}).fillna(0.0)
+
+
+def _build_fangraphs(season: int) -> pd.DataFrame:
+    bat = team_batting(season, season, qual=0)
+    if bat.empty:
+        raise RuntimeError(f"team_batting returned no data for season {season}")
+    missing = [c for c in _FG_BAT_COLS if c not in bat.columns]
+    if missing:
+        raise RuntimeError(f"team_batting missing columns: {missing}")
+
+    pit = team_pitching(season, season, qual=0)
+    if pit.empty:
+        raise RuntimeError(f"team_pitching returned no data for season {season}")
+    missing = [c for c in _FG_PIT_COLS if c not in pit.columns]
+    if missing:
+        raise RuntimeError(f"team_pitching missing columns: {missing}")
+
+    bat_df = bat[_FG_BAT_COLS].copy()
+    bat_df["runs_per_game"] = bat_df["R"] / bat_df["G"]
+    bat_df = bat_df.drop(columns=["R", "G"]).rename(columns=_FG_BAT_RENAME)
+    bat_df["team_abbr"] = bat_df["team_abbr"].replace(_FG_ABBR_NORMALIZE)
+
+    pit_df = pit[_FG_PIT_COLS].rename(columns=_FG_PIT_RENAME)
+    pit_df["team_abbr"] = pit_df["team_abbr"].replace(_FG_ABBR_NORMALIZE)
+
+    df = bat_df.merge(pit_df, on="team_abbr", how="inner")
+    df["fip_computed"] = float("nan")
+    df["data_source"] = "fangraphs"
+    logger.debug("FanGraphs: %d teams, %d columns", len(df), len(df.columns))
+    return df
+
+
+def _build_bbref(season: int) -> pd.DataFrame:
+    bat_raw = batting_stats_bref(season)
+    pit_raw = pitching_stats_bref(season)
+
+    if bat_raw is None or bat_raw.empty:
+        raise RuntimeError(f"batting_stats_bref returned no data for season {season}")
+    if pit_raw is None or pit_raw.empty:
+        raise RuntimeError(f"pitching_stats_bref returned no data for season {season}")
+
+    # Keep only standard 2-3 letter team codes; exclude multi-team total rows
+    bat = bat_raw[bat_raw["Tm"].str.match(r"^[A-Z]{2,3}$", na=False)].copy()
+    pit = pit_raw[pit_raw["Tm"].str.match(r"^[A-Z]{2,3}$", na=False)].copy()
+
+    bat["Tm"] = bat["Tm"].replace(_BBREF_ABBR_NORMALIZE)
+    pit["Tm"] = pit["Tm"].replace(_BBREF_ABBR_NORMALIZE)
+
+    # Aggregate batting counting stats to team level, then derive rates
+    bat_agg = bat.groupby("Tm").agg(
+        AB=("AB", "sum"),
+        H=("H", "sum"),
+        doubles=("2B", "sum"),
+        triples=("3B", "sum"),
+        HR=("HR", "sum"),
+        BB=("BB", "sum"),
+        HBP=("HBP", "sum"),
+        SF=("SF", "sum"),
+        R=("R", "sum"),
+        G=("G", "max"),
+    ).reset_index()
+
+    bat_agg["bat_avg"] = bat_agg["H"] / bat_agg["AB"]
+    bat_agg["obp"] = (
+        (bat_agg["H"] + bat_agg["BB"] + bat_agg["HBP"].fillna(0))
+        / (bat_agg["AB"] + bat_agg["BB"] + bat_agg["HBP"].fillna(0) + bat_agg["SF"].fillna(0))
     )
-    if r.status_code != 200:
-        raise RuntimeError(f"MLB API /teams returned {r.status_code}: {r.text[:200]}")
-    return {t["id"]: t["abbreviation"] for t in r.json().get("teams", [])}
+    tb = bat_agg["H"] + bat_agg["doubles"] + 2 * bat_agg["triples"] + 3 * bat_agg["HR"]
+    bat_agg["slg"] = tb / bat_agg["AB"]
+    bat_agg["ops"] = bat_agg["obp"] + bat_agg["slg"]
+    bat_agg["runs_per_game"] = bat_agg["R"] / bat_agg["G"]
+    bat_agg["w_oba"] = float("nan")
+    bat_agg["bat_wrc_plus"] = float("nan")
+
+    bat_df = bat_agg[["Tm", "bat_avg", "obp", "slg", "ops", "runs_per_game", "w_oba", "bat_wrc_plus"]].rename(
+        columns={"Tm": "team_abbr"}
+    )
+
+    # Aggregate pitching counting stats to team level, then derive rates
+    pit_agg = pit.groupby("Tm").agg(
+        IP_raw=("IP", "sum"),
+        H=("H", "sum"),
+        ER=("ER", "sum"),
+        BB=("BB", "sum"),
+        HR=("HR", "sum"),
+        SO=("SO", "sum"),
+    ).reset_index()
+
+    pit_agg["IP"] = _ip_bbref_to_decimal(pit_agg["IP_raw"])
+    pit_agg["era"] = (pit_agg["ER"] / pit_agg["IP"]) * 9
+    pit_agg["whip"] = (pit_agg["H"] + pit_agg["BB"]) / pit_agg["IP"]
+    pit_agg["k_per_9"] = (pit_agg["SO"] / pit_agg["IP"]) * 9
+    pit_agg["bb_per_9"] = (pit_agg["BB"] / pit_agg["IP"]) * 9
+    pit_agg["fip"] = float("nan")
+    pit_agg["fip_computed"] = (
+        (13 * pit_agg["HR"] + 3 * pit_agg["BB"] - 2 * pit_agg["SO"]) / pit_agg["IP"]
+        + _FIP_CONSTANT
+    )
+
+    pit_df = pit_agg[["Tm", "era", "whip", "k_per_9", "bb_per_9", "fip", "fip_computed"]].rename(
+        columns={"Tm": "team_abbr"}
+    )
+
+    df = bat_df.merge(pit_df, on="team_abbr", how="inner")
+    df["data_source"] = "bbref"
+    logger.debug("BBRef: %d teams, %d columns", len(df), len(df.columns))
+    return df
 
 
 def _build_stats_df(season: int) -> pd.DataFrame:
-    abbr_map = _fetch_team_abbrs(season)
+    last_exc: Exception | None = None
+    total = len(_RETRY_DELAYS)
+    for attempt, delay in enumerate(_RETRY_DELAYS, start=1):
+        try:
+            return _build_fangraphs(season)
+        except Exception as exc:
+            last_exc = exc
+            if attempt < total:
+                logger.warning(
+                    "FanGraphs attempt %d/%d failed: %s — retrying in %ds",
+                    attempt, total, exc, delay,
+                )
+                time.sleep(delay)
 
-    r_bat = requests.get(
-        f"{_MLB_STATS_BASE}/teams/stats",
-        params={"stats": "season", "group": "hitting", "season": season, "sportId": 1},
-        timeout=15,
+    logger.warning(
+        "FanGraphs failed after %d attempts (%s) — falling back to Baseball Reference",
+        total, last_exc,
     )
-    if r_bat.status_code != 200:
-        raise RuntimeError(f"MLB API team hitting stats returned {r_bat.status_code}: {r_bat.text[:200]}")
-    bat_splits = r_bat.json().get("stats", [{}])[0].get("splits", [])
-    if not bat_splits:
-        raise RuntimeError(f"MLB API returned no team batting data for season {season}")
-
-    r_pit = requests.get(
-        f"{_MLB_STATS_BASE}/teams/stats",
-        params={"stats": "season", "group": "pitching", "season": season, "sportId": 1},
-        timeout=15,
-    )
-    if r_pit.status_code != 200:
-        raise RuntimeError(f"MLB API team pitching stats returned {r_pit.status_code}: {r_pit.text[:200]}")
-    pit_splits = r_pit.json().get("stats", [{}])[0].get("splits", [])
-    if not pit_splits:
-        raise RuntimeError(f"MLB API returned no team pitching data for season {season}")
-
-    missing_bat = [k for k in _BATTING_STAT_KEYS if k not in bat_splits[0]["stat"]]
-    if missing_bat:
-        raise RuntimeError(f"MLB API batting response missing keys: {missing_bat}")
-    missing_pit = [k for k in _PITCHING_STAT_KEYS if k not in pit_splits[0]["stat"]]
-    if missing_pit:
-        raise RuntimeError(f"MLB API pitching response missing keys: {missing_pit}")
-
-    bat_rows = []
-    for s in bat_splits:
-        abbr = abbr_map.get(s["team"]["id"])
-        if abbr is None:
-            continue
-        row = {"team_abbr": abbr}
-        row.update({k: s["stat"][k] for k in _BATTING_STAT_KEYS})
-        bat_rows.append(row)
-
-    pit_rows = []
-    for s in pit_splits:
-        abbr = abbr_map.get(s["team"]["id"])
-        if abbr is None:
-            continue
-        row = {"team_abbr": abbr}
-        row.update({k: s["stat"][k] for k in _PITCHING_STAT_KEYS})
-        pit_rows.append(row)
-
-    bat = pd.DataFrame(bat_rows).rename(columns=_BATTING_RENAME)
-    pit = pd.DataFrame(pit_rows).rename(columns=_PITCHING_RENAME)
-
-    df = bat.merge(pit, on="team_abbr", how="inner")
-    logger.debug("Built stats DataFrame: %d teams, %d columns", len(df), len(df.columns))
-    return df
+    return _build_bbref(season)
 
 
 def fetch_stats(game_date: date, force: bool = False) -> pd.DataFrame:
     """Fetch season-to-date team batting and pitching stats for a given date.
 
-    Calls the MLB Stats API for the season year derived from game_date. Writes
-    the result to DATA_RAW_DIR/stats_YYYY-MM-DD.csv. If a cached file already
-    exists and force=False, returns the cached data without an API call.
+    Tries FanGraphs first (up to 3 attempts, 2s/4s/8s backoff), then falls
+    back to Baseball Reference. Writes the result to
+    DATA_RAW_DIR/stats_YYYY-MM-DD.csv. Cache-first unless force=True.
 
     Args:
         game_date: The date for which to fetch stats. Season year is
             game_date.year.
-        force: If True, re-fetch from the MLB API even if a cache file exists.
+        force: If True, re-fetch even if a cache file exists.
 
     Returns:
-        DataFrame with columns: team_abbr, bat_avg, obp, slg, ops, runs,
-        era, whip, k_per_9, bb_per_9. One row per team.
+        DataFrame with columns: team_abbr, bat_avg, obp, slg, ops,
+        runs_per_game, w_oba, bat_wrc_plus, era, whip, fip, fip_computed,
+        k_per_9, bb_per_9, data_source. One row per team.
+        w_oba/bat_wrc_plus/fip are NaN for bbref rows.
+        fip_computed is NaN for fangraphs rows.
 
     Raises:
-        RuntimeError: If the MLB API returns an error or unexpected response.
+        RuntimeError: If both FanGraphs and Baseball Reference fail.
     """
     cache_path = config.DATA_RAW_DIR / f"stats_{game_date}.csv"
     if cache_path.exists() and not force:
@@ -156,7 +261,7 @@ def fetch_stats(game_date: date, force: bool = False) -> pd.DataFrame:
 
     config.DATA_RAW_DIR.mkdir(parents=True, exist_ok=True)
     df.to_csv(cache_path, index=False)
-    logger.info("Wrote %d rows to %s", len(df), cache_path)
+    logger.info("Wrote %d rows to %s (source: %s)", len(df), cache_path, df["data_source"].iloc[0])
 
     return df
 
