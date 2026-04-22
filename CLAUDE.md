@@ -6,9 +6,9 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 
 ## Current Phase
 
-**Phase 1 — Scaffold complete.** All modules exist with typed signatures and docstrings. `config.py` and `edge_finder.compute_ev()` are fully implemented. Everything else raises `NotImplementedError`.
+**Phase 2 — Odds ingestion complete.** `odds_ingestion.fetch_odds()` and `load_cached_odds()` are fully implemented with caching (`force=False` skips re-fetch), date filtering, and error handling. `_parse_response()` flattens bookmaker JSON to a long-format DataFrame.
 
-**Next:** Implement `odds_ingestion.fetch_odds()` and `stats_ingestion.fetch_stats()` — those two unlock the entire downstream pipeline.
+**Next:** Implement `stats_ingestion.fetch_stats()` and `load_cached_stats()` — those two complete data ingestion and unlock `features.build_features()`.
 
 ## Tech Stack
 
@@ -128,7 +128,7 @@ pytest tests/ -v
 
 ## Roadmap
 
-- [ ] Implement `odds_ingestion.fetch_odds()` and `load_cached_odds()`
+- [x] Implement `odds_ingestion.fetch_odds()` and `load_cached_odds()`
 - [ ] Implement `stats_ingestion.fetch_stats()` and `load_cached_stats()`
 - [ ] Implement `features.build_features()` and `load_features()`
 - [ ] Implement `model.train()`, `evaluate()`, `save_model()`, `load_model()`
