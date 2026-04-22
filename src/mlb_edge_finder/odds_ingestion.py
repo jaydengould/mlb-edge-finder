@@ -1,6 +1,7 @@
 """Fetch and cache MLB moneyline odds from The Odds API."""
 import logging
-from datetime import date
+from datetime import date, datetime, timezone
+from zoneinfo import ZoneInfo
 
 import pandas as pd
 import requests
@@ -10,11 +11,32 @@ from mlb_edge_finder import config
 logger = logging.getLogger(__name__)
 
 
-def _parse_response(games: list[dict], game_date: date) -> pd.DataFrame:
+_EASTERN = ZoneInfo("America/New_York")
+
+
+def _game_local_date(commence_time_iso: str) -> date:
+    """Return the US/Eastern calendar date for a UTC ISO-8601 commence_time."""
+    dt_utc = datetime.fromisoformat(commence_time_iso.replace("Z", "+00:00"))
+    return dt_utc.astimezone(_EASTERN).date()
+
+
+def _parse_response(games: list[dict], game_date: date, debug: bool = False) -> pd.DataFrame:
     rows = []
-    date_str = str(game_date)
+    if debug:
+        logger.info("Raw API response: %d game(s) returned", len(games))
+        for g in games:
+            logger.info(
+                "  game_id=%s  home=%s  away=%s  commence_time=%s  local_date=%s",
+                g.get("id", "?"),
+                g.get("home_team", "?"),
+                g.get("away_team", "?"),
+                g.get("commence_time", "?"),
+                _game_local_date(g["commence_time"]) if g.get("commence_time") else "?",
+            )
+    _EMPTY_COLS = ["game_id", "home_team", "away_team",
+                   "home_odds_american", "away_odds_american", "commence_time"]
     for game in games:
-        if game["commence_time"][:10] != date_str:
+        if _game_local_date(game["commence_time"]) != game_date:
             continue
         for bookmaker in game.get("bookmakers", []):
             h2h = next(
@@ -41,10 +63,26 @@ def _parse_response(games: list[dict], game_date: date) -> pd.DataFrame:
             })
     if not rows:
         logger.warning("No games found for %s after filtering by date", game_date)
-    return pd.DataFrame(rows)
+        return pd.DataFrame(columns=_EMPTY_COLS)
+
+    df_raw = pd.DataFrame(rows)
+    # One row per game: highest American odds value is always best for the bettor
+    # (less negative for favorites, more positive for underdogs).
+    df = (
+        df_raw.groupby("game_id", as_index=False)
+        .agg(
+            home_team=("home_team", "first"),
+            away_team=("away_team", "first"),
+            home_odds_american=("home_odds_american", "max"),
+            away_odds_american=("away_odds_american", "max"),
+            commence_time=("commence_time", "first"),
+        )
+    )
+    logger.debug("Collapsed %d bookmaker row(s) to %d game(s)", len(df_raw), len(df))
+    return df
 
 
-def fetch_odds(game_date: date, force: bool = False) -> pd.DataFrame:
+def fetch_odds(game_date: date, force: bool = False, debug: bool = False) -> pd.DataFrame:
     """Fetch MLB moneyline odds from The Odds API for a given date.
 
     Calls GET /v4/sports/{sport}/odds with market=h2h for the configured
@@ -55,10 +93,16 @@ def fetch_odds(game_date: date, force: bool = False) -> pd.DataFrame:
     Args:
         game_date: The date for which to fetch odds.
         force: If True, re-fetch from the API even if a cache file exists.
+        debug: If True, log every game's commence_time from the raw API
+            response before date filtering — useful when 0 rows are returned.
 
     Returns:
         DataFrame with columns: game_id, home_team, away_team,
-        home_odds_american, away_odds_american, bookmaker, commence_time.
+        home_odds_american, away_odds_american, commence_time.
+        One row per game; odds reflect the best available line across
+        all bookmakers (highest American odds value = best for the bettor).
+        Games that have already started are excluded (live in-game odds
+        are not suitable for pre-game EV analysis).
 
     Raises:
         RuntimeError: If ODDS_API_KEY is not set or the API returns non-200.
@@ -88,7 +132,19 @@ def fetch_odds(game_date: date, force: bool = False) -> pd.DataFrame:
         logger.error(msg)
         raise RuntimeError(msg)
 
-    df = _parse_response(response.json(), game_date)
+    all_games = response.json()
+    now_utc = datetime.now(timezone.utc)
+    pregame = [
+        g for g in all_games
+        if datetime.fromisoformat(g["commence_time"].replace("Z", "+00:00")) > now_utc
+    ]
+    if len(pregame) < len(all_games):
+        logger.info(
+            "Excluded %d already-started game(s) — live in-game odds are not used",
+            len(all_games) - len(pregame),
+        )
+
+    df = _parse_response(pregame, game_date, debug=debug)
 
     config.DATA_RAW_DIR.mkdir(parents=True, exist_ok=True)
     df.to_csv(cache_path, index=False)

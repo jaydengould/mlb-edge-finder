@@ -77,14 +77,14 @@ def test_parse_response_columns():
     assert set(df.columns) == {
         "game_id", "home_team", "away_team",
         "home_odds_american", "away_odds_american",
-        "bookmaker", "commence_time",
+        "commence_time",
     }
 
 
 def test_parse_response_row_count():
-    # 1 game on the right date × 2 bookmakers = 2 rows
+    # 2 bookmakers for 1 matching game collapse to 1 deduplicated row
     df = _parse_response(SAMPLE_GAMES, GAME_DATE)
-    assert len(df) == 2
+    assert len(df) == 1
 
 
 def test_parse_response_filters_by_date():
@@ -93,10 +93,12 @@ def test_parse_response_filters_by_date():
 
 
 def test_parse_response_odds_values():
+    # Best available = max American odds across bookmakers:
+    # home: max(-150, -145) = -145; away: max(130, 125) = 130
     df = _parse_response(SAMPLE_GAMES, GAME_DATE)
-    dk_row = df[df["bookmaker"] == "draftkings"].iloc[0]
-    assert dk_row["home_odds_american"] == -150
-    assert dk_row["away_odds_american"] == 130
+    row = df.iloc[0]
+    assert row["home_odds_american"] == -145
+    assert row["away_odds_american"] == 130
 
 
 def test_parse_response_empty_when_no_matching_date():
@@ -185,13 +187,13 @@ def test_fetch_odds_force_bypasses_cache(tmp_path, monkeypatch):
 def test_fetch_odds_writes_csv_on_api_call(tmp_path, monkeypatch):
     monkeypatch.setattr(config, "DATA_RAW_DIR", tmp_path)
     monkeypatch.setattr(config, "ODDS_API_KEY", "test-key")
-    game_date = datetime.date(2026, 4, 21)
+    game_date = datetime.date(2099, 1, 1)  # matches far-future commence_time in mock
     mock_response = MagicMock()
     mock_response.status_code = 200
     mock_response.json.return_value = [
         {
             "id": "game-new",
-            "commence_time": "2026-04-21T18:00:00Z",
+            "commence_time": "2099-01-01T18:00:00Z",  # far future — passes pre-game filter
             "home_team": "Houston Astros",
             "away_team": "Texas Rangers",
             "bookmakers": [
