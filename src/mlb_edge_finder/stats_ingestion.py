@@ -145,8 +145,6 @@ def _build_mlb_api(season: int) -> pd.DataFrame:
             "slg": st["slg"],
             "ops": st["ops"],
             "runs_per_game": st["runs"] / st["gamesPlayed"],
-            "w_oba": float("nan"),
-            "bat_wrc_plus": float("nan"),
         })
 
     pit_rows = []
@@ -162,7 +160,6 @@ def _build_mlb_api(season: int) -> pd.DataFrame:
             "whip": st["whip"],
             "k_per_9": st["strikeoutsPer9Inn"],
             "bb_per_9": st["walksPer9Inn"],
-            "fip": float("nan"),
             "fip_computed": (13 * st["homeRuns"] + 3 * st["baseOnBalls"] - 2 * st["strikeOuts"]) / ip + _FIP_CONSTANT,
         })
 
@@ -211,10 +208,11 @@ def fetch_stats(game_date: date, force: bool = False) -> pd.DataFrame:
 
     Returns:
         DataFrame with columns: team_abbr, bat_avg, obp, slg, ops,
-        runs_per_game, w_oba, bat_wrc_plus, era, whip, fip, fip_computed,
-        k_per_9, bb_per_9, data_source. One row per team.
-        w_oba/bat_wrc_plus/fip are NaN for mlb_api rows.
-        fip_computed is NaN for fangraphs rows.
+        runs_per_game, era, whip, k_per_9, bb_per_9, data_source.
+        One row per team. FanGraphs rows also include w_oba, bat_wrc_plus,
+        fip. MLB Stats API rows also include fip_computed. Columns absent
+        for a given source are not present (not NaN) — features.py must
+        check for them with `col in df.columns` before use.
 
     Raises:
         RuntimeError: If both FanGraphs and the MLB Stats API fail.
