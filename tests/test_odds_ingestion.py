@@ -134,3 +134,107 @@ def test_load_cached_odds_raises_when_missing(tmp_path, monkeypatch):
     monkeypatch.setattr(config, "DATA_RAW_DIR", tmp_path)
     with pytest.raises(FileNotFoundError):
         odds_ingestion.load_cached_odds(datetime.date(2026, 4, 21))
+
+
+# ---------------------------------------------------------------------------
+# fetch_odds — caching behaviour
+# ---------------------------------------------------------------------------
+
+from pathlib import Path
+from unittest.mock import MagicMock, patch
+
+
+def _write_cache(tmp_path: Path, game_date: datetime.date) -> Path:
+    csv_path = tmp_path / f"odds_{game_date}.csv"
+    pd.DataFrame([{
+        "game_id": "cached-game",
+        "home_team": "A",
+        "away_team": "B",
+        "home_odds_american": -110,
+        "away_odds_american": -110,
+        "bookmaker": "draftkings",
+        "commence_time": f"{game_date}T18:00:00Z",
+    }]).to_csv(csv_path, index=False)
+    return csv_path
+
+
+def test_fetch_odds_returns_cache_when_exists(tmp_path, monkeypatch):
+    monkeypatch.setattr(config, "DATA_RAW_DIR", tmp_path)
+    monkeypatch.setattr(config, "ODDS_API_KEY", "test-key")
+    game_date = datetime.date(2026, 4, 21)
+    _write_cache(tmp_path, game_date)
+    with patch("mlb_edge_finder.odds_ingestion.requests.get") as mock_get:
+        df = odds_ingestion.fetch_odds(game_date)
+        mock_get.assert_not_called()
+    assert df.iloc[0]["game_id"] == "cached-game"
+
+
+def test_fetch_odds_force_bypasses_cache(tmp_path, monkeypatch):
+    monkeypatch.setattr(config, "DATA_RAW_DIR", tmp_path)
+    monkeypatch.setattr(config, "ODDS_API_KEY", "test-key")
+    game_date = datetime.date(2026, 4, 21)
+    _write_cache(tmp_path, game_date)
+    mock_response = MagicMock()
+    mock_response.status_code = 200
+    mock_response.json.return_value = []
+    with patch("mlb_edge_finder.odds_ingestion.requests.get", return_value=mock_response):
+        df = odds_ingestion.fetch_odds(game_date, force=True)
+    assert len(df) == 0  # empty because API returned []
+
+
+def test_fetch_odds_writes_csv_on_api_call(tmp_path, monkeypatch):
+    monkeypatch.setattr(config, "DATA_RAW_DIR", tmp_path)
+    monkeypatch.setattr(config, "ODDS_API_KEY", "test-key")
+    game_date = datetime.date(2026, 4, 21)
+    mock_response = MagicMock()
+    mock_response.status_code = 200
+    mock_response.json.return_value = [
+        {
+            "id": "game-new",
+            "commence_time": "2026-04-21T18:00:00Z",
+            "home_team": "Houston Astros",
+            "away_team": "Texas Rangers",
+            "bookmakers": [
+                {
+                    "key": "draftkings",
+                    "markets": [
+                        {
+                            "key": "h2h",
+                            "outcomes": [
+                                {"name": "Houston Astros", "price": -120},
+                                {"name": "Texas Rangers", "price": 100},
+                            ],
+                        }
+                    ],
+                }
+            ],
+        }
+    ]
+    with patch("mlb_edge_finder.odds_ingestion.requests.get", return_value=mock_response):
+        df = odds_ingestion.fetch_odds(game_date)
+    cache_path = tmp_path / f"odds_{game_date}.csv"
+    assert cache_path.exists()
+    assert df.iloc[0]["game_id"] == "game-new"
+
+
+# ---------------------------------------------------------------------------
+# fetch_odds — error paths
+# ---------------------------------------------------------------------------
+
+
+def test_fetch_odds_raises_when_no_api_key(tmp_path, monkeypatch):
+    monkeypatch.setattr(config, "DATA_RAW_DIR", tmp_path)
+    monkeypatch.setattr(config, "ODDS_API_KEY", "")
+    with pytest.raises(RuntimeError, match="ODDS_API_KEY is not set"):
+        odds_ingestion.fetch_odds(datetime.date(2026, 4, 21))
+
+
+def test_fetch_odds_raises_on_non_200(tmp_path, monkeypatch):
+    monkeypatch.setattr(config, "DATA_RAW_DIR", tmp_path)
+    monkeypatch.setattr(config, "ODDS_API_KEY", "test-key")
+    mock_response = MagicMock()
+    mock_response.status_code = 401
+    mock_response.text = "Unauthorized"
+    with patch("mlb_edge_finder.odds_ingestion.requests.get", return_value=mock_response):
+        with pytest.raises(RuntimeError, match="Odds API returned 401"):
+            odds_ingestion.fetch_odds(datetime.date(2026, 4, 21))

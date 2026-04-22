@@ -63,7 +63,38 @@ def fetch_odds(game_date: date, force: bool = False) -> pd.DataFrame:
     Raises:
         RuntimeError: If ODDS_API_KEY is not set or the API returns non-200.
     """
-    raise NotImplementedError
+    cache_path = config.DATA_RAW_DIR / f"odds_{game_date}.csv"
+    if cache_path.exists() and not force:
+        logger.debug("Cache hit for %s, loading from disk", game_date)
+        return load_cached_odds(game_date)
+
+    if not config.ODDS_API_KEY:
+        msg = "ODDS_API_KEY is not set"
+        logger.error(msg)
+        raise RuntimeError(msg)
+
+    url = f"https://api.the-odds-api.com/v4/sports/{config.SPORT}/odds"
+    params = {
+        "apiKey": config.ODDS_API_KEY,
+        "regions": config.REGION,
+        "markets": config.MARKET,
+        "dateFormat": "iso",
+        "oddsFormat": "american",
+    }
+
+    response = requests.get(url, params=params, timeout=30)
+    if response.status_code != 200:
+        msg = f"Odds API returned {response.status_code}: {response.text}"
+        logger.error(msg)
+        raise RuntimeError(msg)
+
+    df = _parse_response(response.json(), game_date)
+
+    config.DATA_RAW_DIR.mkdir(parents=True, exist_ok=True)
+    df.to_csv(cache_path, index=False)
+    logger.info("Wrote %d rows to %s", len(df), cache_path)
+
+    return df
 
 
 def load_cached_odds(game_date: date) -> pd.DataFrame:
