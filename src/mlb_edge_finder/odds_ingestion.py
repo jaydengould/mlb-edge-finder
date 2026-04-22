@@ -10,22 +10,58 @@ from mlb_edge_finder import config
 logger = logging.getLogger(__name__)
 
 
-def fetch_odds(game_date: date) -> pd.DataFrame:
+def _parse_response(games: list[dict], game_date: date) -> pd.DataFrame:
+    rows = []
+    date_str = str(game_date)
+    for game in games:
+        if game["commence_time"][:10] != date_str:
+            continue
+        for bookmaker in game.get("bookmakers", []):
+            h2h = next(
+                (m for m in bookmaker.get("markets", []) if m["key"] == "h2h"),
+                None,
+            )
+            if h2h is None:
+                logger.debug("No h2h market for game %s / bookmaker %s", game["id"], bookmaker["key"])
+                continue
+            outcomes = {o["name"]: o["price"] for o in h2h["outcomes"]}
+            home_odds = outcomes.get(game["home_team"])
+            away_odds = outcomes.get(game["away_team"])
+            if home_odds is None or away_odds is None:
+                logger.debug("Missing outcome for game %s bookmaker %s", game["id"], bookmaker["key"])
+                continue
+            rows.append({
+                "game_id": game["id"],
+                "home_team": game["home_team"],
+                "away_team": game["away_team"],
+                "home_odds_american": int(home_odds),
+                "away_odds_american": int(away_odds),
+                "bookmaker": bookmaker["key"],
+                "commence_time": game["commence_time"],
+            })
+    if not rows:
+        logger.warning("No games found for %s after filtering by date", game_date)
+    return pd.DataFrame(rows)
+
+
+def fetch_odds(game_date: date, force: bool = False) -> pd.DataFrame:
     """Fetch MLB moneyline odds from The Odds API for a given date.
 
     Calls GET /v4/sports/{sport}/odds with market=h2h for the configured
     region. Writes the raw response to DATA_RAW_DIR/odds_YYYY-MM-DD.csv
-    before returning.
+    before returning. If a cached file already exists and force=False,
+    returns the cached data without making an API call.
 
     Args:
         game_date: The date for which to fetch odds.
+        force: If True, re-fetch from the API even if a cache file exists.
 
     Returns:
         DataFrame with columns: game_id, home_team, away_team,
         home_odds_american, away_odds_american, bookmaker, commence_time.
 
     Raises:
-        RuntimeError: If the API request returns a non-200 status.
+        RuntimeError: If ODDS_API_KEY is not set or the API returns non-200.
     """
     raise NotImplementedError
 
