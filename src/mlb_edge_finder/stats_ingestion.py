@@ -52,4 +52,18 @@ def fetch_stats(game_date: date, force: bool = False) -> pd.DataFrame:
 
 
 def load_cached_stats(game_date: date) -> pd.DataFrame:
-    raise NotImplementedError
+    """Load previously fetched stats from DATA_RAW_DIR/stats_YYYY-MM-DD.csv.
+
+    Args:
+        game_date: The date whose cached CSV to load.
+
+    Returns:
+        DataFrame with the same schema as fetch_stats().
+
+    Raises:
+        FileNotFoundError: If no cached file exists for the given date.
+    """
+    cache_path = config.DATA_RAW_DIR / f"stats_{game_date}.csv"
+    if not cache_path.exists():
+        raise FileNotFoundError(f"No cached stats for {game_date}: {cache_path}")
+    return pd.read_csv(cache_path)
