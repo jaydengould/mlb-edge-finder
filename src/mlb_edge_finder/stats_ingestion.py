@@ -43,8 +43,51 @@ ODDS_NAME_TO_ABBR: dict[str, str] = {
 }
 
 
+_BATTING_COLS = ["Team", "AVG", "OBP", "SLG", "OPS", "R", "wOBA", "wRC+"]
+_PITCHING_COLS = ["Team", "ERA", "WHIP", "FIP", "K/9", "BB/9"]
+
+_BATTING_RENAME = {
+    "Team": "team_abbr",
+    "AVG": "bat_avg",
+    "OBP": "obp",
+    "SLG": "slg",
+    "OPS": "ops",
+    "R": "runs",
+    "wOBA": "w_oba",
+    "wRC+": "bat_wrc_plus",
+}
+
+_PITCHING_RENAME = {
+    "Team": "team_abbr",
+    "ERA": "era",
+    "WHIP": "whip",
+    "FIP": "fip",
+    "K/9": "k_per_9",
+    "BB/9": "bb_per_9",
+}
+
+
 def _build_stats_df(season: int) -> pd.DataFrame:
-    raise NotImplementedError
+    bat = team_batting(season, season, qual=0)
+    if bat.empty:
+        raise RuntimeError(f"team_batting returned no data for season {season}")
+    missing_bat = [c for c in _BATTING_COLS if c not in bat.columns]
+    if missing_bat:
+        raise RuntimeError(f"team_batting missing columns: {missing_bat}")
+
+    pit = team_pitching(season, season, qual=0)
+    if pit.empty:
+        raise RuntimeError(f"team_pitching returned no data for season {season}")
+    missing_pit = [c for c in _PITCHING_COLS if c not in pit.columns]
+    if missing_pit:
+        raise RuntimeError(f"team_pitching missing columns: {missing_pit}")
+
+    bat = bat[_BATTING_COLS].rename(columns=_BATTING_RENAME)
+    pit = pit[_PITCHING_COLS].rename(columns=_PITCHING_RENAME)
+
+    df = bat.merge(pit, on="team_abbr", how="inner")
+    logger.debug("Built stats DataFrame: %d teams, %d columns", len(df), len(df.columns))
+    return df
 
 
 def fetch_stats(game_date: date, force: bool = False) -> pd.DataFrame:
