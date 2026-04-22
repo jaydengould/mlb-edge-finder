@@ -1,13 +1,15 @@
-"""Fetch and cache team and pitcher stats via pybaseball."""
+"""Fetch and cache team batting and pitching stats via the MLB Stats API."""
 import logging
 from datetime import date
 
 import pandas as pd
-from pybaseball import team_batting, team_pitching
+import requests
 
 from mlb_edge_finder import config
 
 logger = logging.getLogger(__name__)
+
+_MLB_STATS_BASE = "https://statsapi.mlb.com/api/v1"
 
 ODDS_NAME_TO_ABBR: dict[str, str] = {
     "Arizona Diamondbacks": "ARI",
@@ -42,48 +44,84 @@ ODDS_NAME_TO_ABBR: dict[str, str] = {
     "Washington Nationals": "WSH",
 }
 
-
-_BATTING_COLS = ["Team", "AVG", "OBP", "SLG", "OPS", "R", "wOBA", "wRC+"]
-_PITCHING_COLS = ["Team", "ERA", "WHIP", "FIP", "K/9", "BB/9"]
+_BATTING_STAT_KEYS = ["avg", "obp", "slg", "ops", "runs"]
+_PITCHING_STAT_KEYS = ["era", "whip", "strikeoutsPer9Inn", "walksPer9Inn"]
 
 _BATTING_RENAME = {
-    "Team": "team_abbr",
-    "AVG": "bat_avg",
-    "OBP": "obp",
-    "SLG": "slg",
-    "OPS": "ops",
-    "R": "runs",
-    "wOBA": "w_oba",
-    "wRC+": "bat_wrc_plus",
+    "avg": "bat_avg",
+    "strikeoutsPer9Inn": "k_per_9",
+    "walksPer9Inn": "bb_per_9",
 }
 
 _PITCHING_RENAME = {
-    "Team": "team_abbr",
-    "ERA": "era",
-    "WHIP": "whip",
-    "FIP": "fip",
-    "K/9": "k_per_9",
-    "BB/9": "bb_per_9",
+    "strikeoutsPer9Inn": "k_per_9",
+    "walksPer9Inn": "bb_per_9",
 }
 
 
+def _fetch_team_abbrs(season: int) -> dict[int, str]:
+    r = requests.get(
+        f"{_MLB_STATS_BASE}/teams",
+        params={"sportId": 1, "season": season},
+        timeout=15,
+    )
+    if r.status_code != 200:
+        raise RuntimeError(f"MLB API /teams returned {r.status_code}: {r.text[:200]}")
+    return {t["id"]: t["abbreviation"] for t in r.json().get("teams", [])}
+
+
 def _build_stats_df(season: int) -> pd.DataFrame:
-    bat = team_batting(season, season, qual=0)
-    if bat.empty:
-        raise RuntimeError(f"team_batting returned no data for season {season}")
-    missing_bat = [c for c in _BATTING_COLS if c not in bat.columns]
+    abbr_map = _fetch_team_abbrs(season)
+
+    r_bat = requests.get(
+        f"{_MLB_STATS_BASE}/teams/stats",
+        params={"stats": "season", "group": "hitting", "season": season, "sportId": 1},
+        timeout=15,
+    )
+    if r_bat.status_code != 200:
+        raise RuntimeError(f"MLB API team hitting stats returned {r_bat.status_code}: {r_bat.text[:200]}")
+    bat_splits = r_bat.json().get("stats", [{}])[0].get("splits", [])
+    if not bat_splits:
+        raise RuntimeError(f"MLB API returned no team batting data for season {season}")
+
+    r_pit = requests.get(
+        f"{_MLB_STATS_BASE}/teams/stats",
+        params={"stats": "season", "group": "pitching", "season": season, "sportId": 1},
+        timeout=15,
+    )
+    if r_pit.status_code != 200:
+        raise RuntimeError(f"MLB API team pitching stats returned {r_pit.status_code}: {r_pit.text[:200]}")
+    pit_splits = r_pit.json().get("stats", [{}])[0].get("splits", [])
+    if not pit_splits:
+        raise RuntimeError(f"MLB API returned no team pitching data for season {season}")
+
+    missing_bat = [k for k in _BATTING_STAT_KEYS if k not in bat_splits[0]["stat"]]
     if missing_bat:
-        raise RuntimeError(f"team_batting missing columns: {missing_bat}")
-
-    pit = team_pitching(season, season, qual=0)
-    if pit.empty:
-        raise RuntimeError(f"team_pitching returned no data for season {season}")
-    missing_pit = [c for c in _PITCHING_COLS if c not in pit.columns]
+        raise RuntimeError(f"MLB API batting response missing keys: {missing_bat}")
+    missing_pit = [k for k in _PITCHING_STAT_KEYS if k not in pit_splits[0]["stat"]]
     if missing_pit:
-        raise RuntimeError(f"team_pitching missing columns: {missing_pit}")
+        raise RuntimeError(f"MLB API pitching response missing keys: {missing_pit}")
 
-    bat = bat[_BATTING_COLS].rename(columns=_BATTING_RENAME)
-    pit = pit[_PITCHING_COLS].rename(columns=_PITCHING_RENAME)
+    bat_rows = []
+    for s in bat_splits:
+        abbr = abbr_map.get(s["team"]["id"])
+        if abbr is None:
+            continue
+        row = {"team_abbr": abbr}
+        row.update({k: s["stat"][k] for k in _BATTING_STAT_KEYS})
+        bat_rows.append(row)
+
+    pit_rows = []
+    for s in pit_splits:
+        abbr = abbr_map.get(s["team"]["id"])
+        if abbr is None:
+            continue
+        row = {"team_abbr": abbr}
+        row.update({k: s["stat"][k] for k in _PITCHING_STAT_KEYS})
+        pit_rows.append(row)
+
+    bat = pd.DataFrame(bat_rows).rename(columns=_BATTING_RENAME)
+    pit = pd.DataFrame(pit_rows).rename(columns=_PITCHING_RENAME)
 
     df = bat.merge(pit, on="team_abbr", how="inner")
     logger.debug("Built stats DataFrame: %d teams, %d columns", len(df), len(df.columns))
@@ -93,24 +131,21 @@ def _build_stats_df(season: int) -> pd.DataFrame:
 def fetch_stats(game_date: date, force: bool = False) -> pd.DataFrame:
     """Fetch season-to-date team batting and pitching stats for a given date.
 
-    Calls pybaseball.team_batting() and pybaseball.team_pitching() for the
-    season year derived from game_date. Writes the result to
-    DATA_RAW_DIR/stats_YYYY-MM-DD.csv. If a cached file already exists and
-    force=False, returns the cached data without calling pybaseball.
+    Calls the MLB Stats API for the season year derived from game_date. Writes
+    the result to DATA_RAW_DIR/stats_YYYY-MM-DD.csv. If a cached file already
+    exists and force=False, returns the cached data without an API call.
 
     Args:
         game_date: The date for which to fetch stats. Season year is
             game_date.year.
-        force: If True, re-fetch from pybaseball even if a cache file exists.
+        force: If True, re-fetch from the MLB API even if a cache file exists.
 
     Returns:
         DataFrame with columns: team_abbr, bat_avg, obp, slg, ops, runs,
-        w_oba, bat_wrc_plus, era, whip, fip, k_per_9, bb_per_9.
-        One row per team.
+        era, whip, k_per_9, bb_per_9. One row per team.
 
     Raises:
-        RuntimeError: If pybaseball returns no data or expected columns are
-            missing.
+        RuntimeError: If the MLB API returns an error or unexpected response.
     """
     cache_path = config.DATA_RAW_DIR / f"stats_{game_date}.csv"
     if cache_path.exists() and not force:
