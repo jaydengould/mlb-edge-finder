@@ -12,7 +12,12 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 - `stats_ingestion.fetch_stats()` and `load_cached_stats()` — FanGraphs primary (pybaseball, 3-attempt retry with 2s/4s/8s backoff), MLB Stats API fallback (statsapi package). Output schema varies by source — see stats schema section below.
 - `features.build_features(game_date)` and `load_features(game_date)` — loads cached odds and stats, maps Odds API team names to abbreviations via `ODDS_NAME_TO_ABBR`, double-joins stats with `home_`/`away_` prefixes, writes to `data/processed/features_YYYY-MM-DD.csv`.
 
-**Next:** Implement `model.train()`, `evaluate()`, `save_model()`, `load_model()`.
+**Next:** Phase 4 — model training, split into three sub-phases:
+- **4a:** Historical game results ingestion (`results_ingestion.py`) — `statsapi.schedule` for full seasons, filter to `game_type="R"` and `status="Final"`, derive `home_win`.
+- **4b:** Training feature construction — join end-of-season team stats (one snapshot per season year) to each game row. No date-accurate rolling stats; this is a known simplification.
+- **4c:** Model training — `model.train()`, `evaluate()`, `save_model()`, `load_model()`.
+
+No starting pitcher features in this phase — deferred to future roadmap.
 
 ## Tech Stack
 
@@ -48,6 +53,8 @@ Each stage persists its output as a dated CSV or artifact so stages can be run i
 | `config.py` | Env loading, path constants, `setup_logging()` | — |
 | `odds_ingestion.py` | Fetch/cache moneyline odds (The Odds API) | `data/raw/odds_YYYY-MM-DD.csv` |
 | `stats_ingestion.py` | Fetch/cache team batting + pitching stats | `data/raw/stats_YYYY-MM-DD.csv` |
+| `results_ingestion.py` | Fetch/cache historical game results per season | `data/raw/results_YYYY.csv` |
+| `training_data.py` | Join end-of-season stats to game results for model training | `data/processed/training_YYYY-YYYY.csv` |
 | `features.py` | Merge odds + stats, engineer features | `data/processed/features_YYYY-MM-DD.csv` |
 | `model.py` | Train, evaluate, persist XGBoost model | `models/xgb_YYYY-MM-DD.pkl` + `models/metrics_YYYY-MM-DD.json` |
 | `edge_finder.py` | Compute EV, filter odds, flag edges | `data/processed/edges_YYYY-MM-DD.csv` |
@@ -194,7 +201,9 @@ pytest tests/ -v
 - [x] Implement `odds_ingestion.fetch_odds()` and `load_cached_odds()`
 - [x] Implement `stats_ingestion.fetch_stats()` and `load_cached_stats()`
 - [x] Implement `features.build_features()` and `load_features()`
-- [ ] Implement `model.train()`, `evaluate()`, `save_model()`, `load_model()`
+- [ ] **4a** — `results_ingestion.fetch_results(season)` and `load_cached_results(season)` via `statsapi`
+- [ ] **4b** — `training_data.build_training_set(seasons)` joining end-of-season stats to game results
+- [ ] **4c** — `model.train()`, `evaluate()`, `save_model()`, `load_model()`
 - [ ] Implement `edge_finder.find_edges()`
 - [ ] Implement `pipeline.run()`
 - [ ] Add `compute_kelly()` to `edge_finder`
