@@ -6,16 +6,16 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 
 ## Current Phase
 
-**Phase 3 — Feature engineering complete.** All ingestion and feature modules are fully implemented.
+**Phase 4 — Model training in progress.** Phases 1–3 and 4a are complete.
 
 - `odds_ingestion.fetch_odds()` and `load_cached_odds()` — cache-first, date filtering, live game exclusion, best line across bookmakers.
 - `stats_ingestion.fetch_stats()` and `load_cached_stats()` — FanGraphs primary (pybaseball, 3-attempt retry with 2s/4s/8s backoff), MLB Stats API fallback (statsapi package). Output schema varies by source — see stats schema section below.
 - `features.build_features(game_date)` and `load_features(game_date)` — loads cached odds and stats, maps Odds API team names to abbreviations via `ODDS_NAME_TO_ABBR`, double-joins stats with `home_`/`away_` prefixes, writes to `data/processed/features_YYYY-MM-DD.csv`.
+- **4a complete:** `historical_ingestion.fetch_historical(season)`, `load_cached_historical(season)`, `fetch_all_historical()` — `statsapi.schedule` for full seasons, filter to `game_type="R"` and `status="Final"`, derive `home_win`.
 
-**Next:** Phase 4 — model training, split into three sub-phases:
-- **4a:** Historical game results ingestion (`results_ingestion.py`) — `statsapi.schedule` for full seasons, filter to `game_type="R"` and `status="Final"`, derive `home_win`.
-- **4b:** Training feature construction — join end-of-season team stats (one snapshot per season year) to each game row. No date-accurate rolling stats; this is a known simplification.
-- **4c:** Model training — `model.train()`, `evaluate()`, `save_model()`, `load_model()`.
+**Next:** Phase 4b and 4c:
+- **4b:** `training_data.build_training_set(seasons)` — join end-of-season team stats (one snapshot per season year) to each game row. No date-accurate rolling stats; this is a known simplification.
+- **4c:** `model.train()`, `evaluate()`, `save_model()`, `load_model()`.
 
 No starting pitcher features in this phase — deferred to future roadmap.
 
@@ -160,7 +160,7 @@ pybaseball   ──► fetch_stats() ──► stats_YYYY-MM-DD.csv ──┘   
 
 ## Execution Model
 
-1. **Jupyter-first (current):** `notebooks/01_exploration.ipynb` — run stages interactively, inspect DataFrames at each step.
+1. **Jupyter-first (current):** `notebooks/01_exploration.ipynb` — run stages interactively, inspect DataFrames at each step. Phase 4 is split into sections 4a/4b/4c so each subphase can be tested independently.
 2. **CLI (next):** `pipeline.run()` wired to `__main__.py`.
 3. **Scheduled (future):** Wrap `pipeline.run()` with APScheduler or cron.
 
