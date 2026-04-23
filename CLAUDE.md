@@ -53,7 +53,7 @@ Each stage persists its output as a dated CSV or artifact so stages can be run i
 | `config.py` | Env loading, path constants, `setup_logging()` | — |
 | `odds_ingestion.py` | Fetch/cache moneyline odds (The Odds API) | `data/raw/odds_YYYY-MM-DD.csv` |
 | `stats_ingestion.py` | Fetch/cache team batting + pitching stats | `data/raw/stats_YYYY-MM-DD.csv` |
-| `results_ingestion.py` | Fetch/cache historical game results per season | `data/raw/results_YYYY.csv` |
+| `historical_ingestion.py` | Fetch/cache historical game results per season | `data/raw/historical_YYYY.csv` |
 | `training_data.py` | Join end-of-season stats to game results for model training | `data/processed/training_YYYY-YYYY.csv` |
 | `features.py` | Merge odds + stats, engineer features | `data/processed/features_YYYY-MM-DD.csv` |
 | `model.py` | Train, evaluate, persist XGBoost model | `models/xgb_YYYY-MM-DD.pkl` + `models/metrics_YYYY-MM-DD.json` |
@@ -194,14 +194,14 @@ FanGraphs-specific stat columns (`w_oba`, `bat_wrc_plus`, `fip`) appear in the f
 pytest tests/ -v
 ```
 
-33 smoke + integration tests. All pass.
+41 smoke + integration tests. All pass.
 
 ## Roadmap
 
 - [x] Implement `odds_ingestion.fetch_odds()` and `load_cached_odds()`
 - [x] Implement `stats_ingestion.fetch_stats()` and `load_cached_stats()`
 - [x] Implement `features.build_features()` and `load_features()`
-- [ ] **4a** — `results_ingestion.fetch_results(season)` and `load_cached_results(season)` via `statsapi`
+- [x] **4a** — `historical_ingestion.fetch_historical(season)`, `load_cached_historical(season)`, `fetch_all_historical()` via `statsapi`
 - [ ] **4b** — `training_data.build_training_set(seasons)` joining end-of-season stats to game results
 - [ ] **4c** — `model.train()`, `evaluate()`, `save_model()`, `load_model()`
 - [ ] Implement `edge_finder.find_edges()`
