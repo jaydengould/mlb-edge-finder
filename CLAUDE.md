@@ -6,12 +6,13 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 
 ## Current Phase
 
-**Phase 2 — Stats ingestion complete.** Both ingestion modules are fully implemented.
+**Phase 3 — Feature engineering complete.** All ingestion and feature modules are fully implemented.
 
 - `odds_ingestion.fetch_odds()` and `load_cached_odds()` — cache-first, date filtering, live game exclusion, best line across bookmakers.
 - `stats_ingestion.fetch_stats()` and `load_cached_stats()` — FanGraphs primary (pybaseball, 3-attempt retry with 2s/4s/8s backoff), MLB Stats API fallback (statsapi package). Output schema varies by source — see stats schema section below.
+- `features.build_features(game_date)` and `load_features(game_date)` — loads cached odds and stats, maps Odds API team names to abbreviations via `ODDS_NAME_TO_ABBR`, double-joins stats with `home_`/`away_` prefixes, writes to `data/processed/features_YYYY-MM-DD.csv`.
 
-**Next:** Implement `features.build_features()` and `load_features()`.
+**Next:** Implement `model.train()`, `evaluate()`, `save_model()`, `load_model()`.
 
 ## Tech Stack
 
@@ -167,19 +168,32 @@ logs/             # run.log
 
 `models/` is NOT gitignored — commit model artifacts for portfolio visibility.
 
+## Features Module
+
+`build_features(game_date)` owns its own data loading — it calls `load_cached_odds` and `load_cached_stats` internally and raises `RuntimeError` (not `FileNotFoundError`) if either cache is absent, with a "run fetch_X() first" message.
+
+The join flow:
+1. Map `home_team`/`away_team` full names → abbreviations via `ODDS_NAME_TO_ABBR`
+2. Log a warning and drop any games with unmapped team names
+3. Drop `data_source` from stats — it's not a model feature
+4. Join stats twice: once for home (prefix `home_`), once for away (prefix `away_`)
+5. `home_abbr` and `away_abbr` are kept in the output for debugging
+
+FanGraphs-specific stat columns (`w_oba`, `bat_wrc_plus`, `fip`) appear in the features CSV only when the underlying stats CSV contains them. `features.py` does not check for them explicitly — the prefix-rename loop carries whatever is present. Downstream code must guard with `col in df.columns`.
+
 ## Running Tests
 
 ```bash
 pytest tests/ -v
 ```
 
-30 smoke tests. All pass. Tests verify module imports and public function signatures only — no external API calls.
+33 smoke + integration tests. All pass.
 
 ## Roadmap
 
 - [x] Implement `odds_ingestion.fetch_odds()` and `load_cached_odds()`
 - [x] Implement `stats_ingestion.fetch_stats()` and `load_cached_stats()`
-- [ ] Implement `features.build_features()` and `load_features()`
+- [x] Implement `features.build_features()` and `load_features()`
 - [ ] Implement `model.train()`, `evaluate()`, `save_model()`, `load_model()`
 - [ ] Implement `edge_finder.find_edges()`
 - [ ] Implement `pipeline.run()`
