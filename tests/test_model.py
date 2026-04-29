@@ -108,6 +108,33 @@ def test_train_raises_on_empty_df():
         train(df)
 
 
+def test_train_baseline_returns_logistic_regression_and_test_split():
+    from mlb_edge_finder.model import train_baseline
+    from sklearn.linear_model import LogisticRegression
+    df = _make_df(20)
+    clf, X_test, y_test = train_baseline(df)
+    assert isinstance(clf, LogisticRegression)
+    assert len(X_test) == 4
+    assert len(y_test) == 4
+
+
+def test_train_baseline_same_test_split_as_train():
+    from mlb_edge_finder.model import train, train_baseline
+    df = _make_df(20)
+    _, X_test_xgb, y_test_xgb = train(df)
+    _, X_test_lr, y_test_lr = train_baseline(df)
+    pd.testing.assert_frame_equal(X_test_xgb.reset_index(drop=True), X_test_lr.reset_index(drop=True))
+    pd.testing.assert_series_equal(y_test_xgb.reset_index(drop=True), y_test_lr.reset_index(drop=True))
+
+
+def test_train_baseline_can_predict_proba():
+    from mlb_edge_finder.model import train_baseline
+    df = _make_df(20)
+    clf, X_test, y_test = train_baseline(df)
+    proba = clf.predict_proba(X_test)
+    assert proba.shape == (4, 2)
+
+
 def test_train_signature():
     from mlb_edge_finder import model
     assert callable(model.train)

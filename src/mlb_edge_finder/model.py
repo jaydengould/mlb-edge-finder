@@ -72,6 +72,33 @@ def train(
     return clf, X_test, y_test
 
 
+def train_baseline(
+    features_df: pd.DataFrame,
+) -> tuple[Any, pd.DataFrame, pd.Series]:
+    """Train a logistic regression baseline for comparison with XGBoost.
+
+    Uses the same 80/20 stratified split as train() for a fair comparison.
+    Not persisted to disk — use evaluate() to compare metrics.
+
+    Args:
+        features_df: Same format as accepted by train().
+
+    Returns:
+        Tuple of (fitted LogisticRegression, X_test DataFrame, y_test Series).
+
+    Raises:
+        ValueError: If TARGET_COL is missing from features_df.
+        FileNotFoundError: If features_df is empty.
+    """
+    from sklearn.linear_model import LogisticRegression
+
+    X_train, X_test, y_train, y_test = _split(features_df)
+    clf = LogisticRegression(max_iter=1000, random_state=42)
+    clf.fit(X_train, y_train)
+    logger.info("Trained LogisticRegression baseline: %d samples", len(X_train))
+    return clf, X_test, y_test
+
+
 def evaluate(clf: XGBClassifier, X_test: pd.DataFrame, y_test: pd.Series) -> dict[str, Any]:
     """Compute evaluation metrics for a trained classifier.
 
