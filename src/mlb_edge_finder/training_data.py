@@ -62,4 +62,18 @@ def build_training_set(seasons: list[int], force: bool = False) -> pd.DataFrame:
 
 
 def load_training_set(seasons: list[int]) -> pd.DataFrame:
-    raise NotImplementedError
+    """Load a previously built training set from DATA_PROCESSED_DIR.
+
+    Args:
+        seasons: The seasons list whose training CSV to load (determines filename).
+
+    Returns:
+        DataFrame with the same schema as build_training_set().
+
+    Raises:
+        FileNotFoundError: If no training set file exists for the given seasons.
+    """
+    out_path = config.DATA_PROCESSED_DIR / f"training_{min(seasons)}-{max(seasons)}.csv"
+    if not out_path.exists():
+        raise FileNotFoundError(f"No cached training set for seasons {seasons}: {out_path}")
+    return pd.read_csv(out_path)

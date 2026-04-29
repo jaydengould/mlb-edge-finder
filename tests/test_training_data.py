@@ -43,3 +43,10 @@ def test_historical_name_to_abbr_maps_oakland():
 def test_legacy_abbr_normalize_maps_oak_to_ath():
     from mlb_edge_finder.training_data import _LEGACY_ABBR_NORMALIZE
     assert _LEGACY_ABBR_NORMALIZE["OAK"] == "ATH"
+
+
+def test_load_training_set_raises_when_missing(tmp_path):
+    from mlb_edge_finder import training_data
+    with patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
+        with pytest.raises(FileNotFoundError):
+            training_data.load_training_set([2023, 2024, 2025])
