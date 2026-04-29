@@ -6,19 +6,18 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 
 ## Current Phase
 
-**Phase 4 — Model training in progress.** Phases 1–3 and 4a–4b are complete.
+**Phase 4c complete.** Phases 1–3 and 4a–4c are done. Next: `edge_finder.find_edges()`.
 
 - `odds_ingestion.fetch_odds()` and `load_cached_odds()` — cache-first, date filtering, live game exclusion, best line across bookmakers.
 - `stats_ingestion.fetch_stats()` and `load_cached_stats()` — FanGraphs primary (pybaseball, 3-attempt retry with 2s/4s/8s backoff), MLB Stats API fallback (statsapi package). Output schema varies by source — see stats schema section below.
 - `features.build_features(game_date)` and `load_features(game_date)` — loads cached odds and stats, maps Odds API team names to abbreviations via `ODDS_NAME_TO_ABBR`, double-joins stats with `home_`/`away_` prefixes, writes to `data/processed/features_YYYY-MM-DD.csv`.
 - **4a complete:** `historical_ingestion.fetch_historical(season)`, `load_cached_historical(season)`, `fetch_all_historical()` — `statsapi.schedule` for full seasons, filter to `game_type="R"` and `status="Final"`, derive `home_win`.
-
-**4b complete:** `training_data.build_training_set(seasons)`, `load_training_set(seasons)` — join end-of-season team stats (one snapshot per season year) to each game row. No date-accurate rolling stats; this is a known simplification.
-
-**Next:** Phase 4c:
-- **4c:** `model.train()`, `evaluate()`, `save_model()`, `load_model()`.
+- **4b complete:** `training_data.build_training_set(seasons)`, `load_training_set(seasons)` — join end-of-season team stats (one snapshot per season year) to each game row. No date-accurate rolling stats; this is a known simplification.
+- **4c complete:** `model.train()`, `model.train_baseline()`, `model.evaluate()`, `model.save_model()`, `model.load_model()`.
 
 No starting pitcher features in this phase — deferred to future roadmap.
+
+**Always update this file at the end of each working session** to reflect completed phases, new conventions, and any changes to the roadmap.
 
 ## Tech Stack
 
@@ -194,6 +193,26 @@ The join flow (per season):
 
 `_LEGACY_ABBR_NORMALIZE` maps FanGraphs abbreviations that changed between seasons to current equivalents. Currently: `{"OAK": "ATH"}`.
 
+## Model Module
+
+`model.py` trains an XGBoost classifier and a logistic regression baseline to predict home-team win probability.
+
+**Constants:**
+- `TARGET_COL = "home_win"` — binary label column
+- `NON_FEATURE_COLS` — metadata columns dropped before training (`game_date`, `home_name`, `away_name`, `home_score`, `away_score`, `home_abbr`, `away_abbr`, `season`, `home_win`). Any column not in this list is treated as a feature — FanGraphs-only columns are picked up automatically when present.
+
+**Key design decisions:**
+- `_split(features_df)` — private helper; 80/20 stratified split, `random_state=42`. Both `train()` and `train_baseline()` call it, so their test sets are identical for fair metric comparison.
+- `train(features_df)` → `(XGBClassifier, X_test, y_test)` — uses `config.XGB_N_ESTIMATORS` and `config.XGB_MAX_DEPTH`.
+- `train_baseline(features_df)` → `(LogisticRegression, X_test, y_test)` — diagnostic only, never persisted.
+- `evaluate(clf, X_test, y_test)` → dict — duck-typed, works for both classifiers. Keys: `accuracy`, `roc_auc`, `log_loss`, `brier_score`, `n_test_samples`, `xgb_n_estimators`, `xgb_max_depth`. XGBoost-specific keys are `None` for logistic regression.
+- `save_model(clf, metrics, game_date)` — writes `xgb_YYYY-MM-DD.pkl` and `metrics_YYYY-MM-DD.json` to `MODELS_DIR`.
+- `load_model(game_date)` → `XGBClassifier` — raises `FileNotFoundError` if missing.
+
+Only the XGBoost model is persisted. The logistic regression baseline is used at training time for comparison only.
+
+**Observed baseline performance (2023–2025, end-of-season stats):** Logistic regression slightly outperforms XGBoost on static season-average features — expected, as aggregate stats lack temporal signal. Rolling window features (future roadmap) should reverse this.
+
 ## Features Module
 
 `build_features(game_date)` owns its own data loading — it calls `load_cached_odds` and `load_cached_stats` internally and raises `RuntimeError` (not `FileNotFoundError`) if either cache is absent, with a "run fetch_X() first" message.
@@ -213,7 +232,7 @@ FanGraphs-specific stat columns (`w_oba`, `bat_wrc_plus`, `fip`) appear in the f
 pytest tests/ -v
 ```
 
-56 smoke + integration tests. All pass.
+74 smoke + integration tests. All pass.
 
 ## Roadmap
 
@@ -222,7 +241,7 @@ pytest tests/ -v
 - [x] Implement `features.build_features()` and `load_features()`
 - [x] **4a** — `historical_ingestion.fetch_historical(season)`, `load_cached_historical(season)`, `fetch_all_historical()` via `statsapi`
 - [x] **4b** — `training_data.build_training_set(seasons)` joining end-of-season stats to game results
-- [ ] **4c** — `model.train()`, `evaluate()`, `save_model()`, `load_model()`
+- [x] **4c** — `model.train()`, `train_baseline()`, `evaluate()`, `save_model()`, `load_model()`
 - [ ] Implement `edge_finder.find_edges()`
 - [ ] Implement `pipeline.run()`
 - [ ] Add `compute_kelly()` to `edge_finder`
