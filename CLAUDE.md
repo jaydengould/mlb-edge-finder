@@ -176,6 +176,24 @@ logs/             # run.log
 
 `models/` is NOT gitignored — commit model artifacts for portfolio visibility.
 
+## Training Data Module
+
+`build_training_set(seasons, force=False)` owns its own data loading — it calls `load_cached_historical` and `fetch_stats(date(season, 9, 28))` internally. Raises `RuntimeError` if historical data is missing (with "run fetch_historical(season) first"), and lets `fetch_stats` RuntimeError propagate if both stat sources fail.
+
+The join flow (per season):
+1. Load `historical_YYYY.csv` via `load_cached_historical(season)`
+2. Fetch end-of-season stats via `fetch_stats(date(season, 9, 28))` — cache-first, auto-fetches if needed
+3. Apply `_LEGACY_ABBR_NORMALIZE` to stats `team_abbr` (e.g. `OAK→ATH`)
+4. Map `home_name`/`away_name` → abbreviations via `HISTORICAL_NAME_TO_ABBR`; warn + drop unmatched rows
+5. Drop `data_source` — not a model feature
+6. Join stats twice: once for home (prefix `home_`), once for away (prefix `away_`)
+7. Tag each row with `season` column
+8. Concatenate all seasons, write to `data/processed/training_{min}-{max}.csv`
+
+`HISTORICAL_NAME_TO_ABBR` always uses **current** franchise abbreviations (e.g. "Oakland Athletics" → "ATH", not "OAK") for consistency with inference-time features. Covers current names (2022+) and legacy names (Cleveland Indians, Florida Marlins, Tampa Bay Devil Rays, Montreal Expos).
+
+`_LEGACY_ABBR_NORMALIZE` maps FanGraphs abbreviations that changed between seasons to current equivalents. Currently: `{"OAK": "ATH"}`.
+
 ## Features Module
 
 `build_features(game_date)` owns its own data loading — it calls `load_cached_odds` and `load_cached_stats` internally and raises `RuntimeError` (not `FileNotFoundError`) if either cache is absent, with a "run fetch_X() first" message.
@@ -195,7 +213,7 @@ FanGraphs-specific stat columns (`w_oba`, `bat_wrc_plus`, `fip`) appear in the f
 pytest tests/ -v
 ```
 
-41 smoke + integration tests. All pass.
+56 smoke + integration tests. All pass.
 
 ## Roadmap
 
