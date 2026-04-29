@@ -15,6 +15,26 @@ logger = logging.getLogger(__name__)
 # Column that holds the binary win/loss target in the features DataFrame.
 TARGET_COL = "home_win"
 
+NON_FEATURE_COLS = [
+    "game_date", "home_name", "away_name",
+    "home_score", "away_score", "home_abbr", "away_abbr",
+    "season", TARGET_COL,
+]
+
+
+def _split(
+    features_df: pd.DataFrame,
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]:
+    from sklearn.model_selection import train_test_split
+
+    if TARGET_COL not in features_df.columns:
+        raise ValueError(f"Missing target column '{TARGET_COL}' in features_df")
+    if features_df.empty:
+        raise FileNotFoundError("features_df is empty — run build_training_set() first")
+    X = features_df.drop(columns=[c for c in NON_FEATURE_COLS if c in features_df.columns])
+    y = features_df[TARGET_COL]
+    return train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+
 
 def train(features_df: pd.DataFrame) -> XGBClassifier:
     """Train an XGBoost classifier to predict home-team win probability.

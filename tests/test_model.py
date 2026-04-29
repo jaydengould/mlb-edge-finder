@@ -1,6 +1,79 @@
 """Smoke tests: model exposes expected public API."""
 import inspect
 
+import numpy as np
+import pandas as pd
+import pytest
+
+
+def _make_df(n=20):
+    """Minimal training DataFrame with correct schema for testing."""
+    rng = np.random.default_rng(0)
+    return pd.DataFrame({
+        "game_date": ["2024-04-01"] * n,
+        "home_name": ["Team A"] * n,
+        "away_name": ["Team B"] * n,
+        "home_score": rng.integers(0, 10, n),
+        "away_score": rng.integers(0, 10, n),
+        "home_abbr": ["AAA"] * n,
+        "away_abbr": ["BBB"] * n,
+        "season": [2024] * n,
+        "home_win": [1, 0] * (n // 2),
+        "home_bat_avg": rng.uniform(0.220, 0.280, n),
+        "home_obp": rng.uniform(0.300, 0.380, n),
+        "home_slg": rng.uniform(0.380, 0.500, n),
+        "home_ops": rng.uniform(0.680, 0.880, n),
+        "home_runs_per_game": rng.uniform(3.5, 6.0, n),
+        "home_era": rng.uniform(3.0, 5.5, n),
+        "home_whip": rng.uniform(1.1, 1.5, n),
+        "home_k_per_9": rng.uniform(7.0, 10.5, n),
+        "home_bb_per_9": rng.uniform(2.5, 4.0, n),
+        "home_fip_computed": rng.uniform(3.5, 5.0, n),
+        "away_bat_avg": rng.uniform(0.220, 0.280, n),
+        "away_obp": rng.uniform(0.300, 0.380, n),
+        "away_slg": rng.uniform(0.380, 0.500, n),
+        "away_ops": rng.uniform(0.680, 0.880, n),
+        "away_runs_per_game": rng.uniform(3.5, 6.0, n),
+        "away_era": rng.uniform(3.0, 5.5, n),
+        "away_whip": rng.uniform(1.1, 1.5, n),
+        "away_k_per_9": rng.uniform(7.0, 10.5, n),
+        "away_bb_per_9": rng.uniform(2.5, 4.0, n),
+        "away_fip_computed": rng.uniform(3.5, 5.0, n),
+    })
+
+
+def test_split_shapes():
+    from mlb_edge_finder.model import _split
+    df = _make_df(20)
+    X_train, X_test, y_train, y_test = _split(df)
+    assert len(X_train) == 16
+    assert len(X_test) == 4
+    assert len(y_train) == 16
+    assert len(y_test) == 4
+
+
+def test_split_no_metadata_columns():
+    from mlb_edge_finder.model import _split, NON_FEATURE_COLS
+    df = _make_df(20)
+    X_train, X_test, y_train, y_test = _split(df)
+    for col in NON_FEATURE_COLS:
+        assert col not in X_train.columns
+        assert col not in X_test.columns
+
+
+def test_split_missing_target_raises():
+    from mlb_edge_finder.model import _split
+    df = _make_df(20).drop(columns=["home_win"])
+    with pytest.raises(ValueError, match="home_win"):
+        _split(df)
+
+
+def test_split_empty_df_raises():
+    from mlb_edge_finder.model import _split
+    df = _make_df(20).iloc[0:0]
+    with pytest.raises(FileNotFoundError):
+        _split(df)
+
 
 def test_train_signature():
     from mlb_edge_finder import model
