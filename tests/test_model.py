@@ -135,6 +135,52 @@ def test_train_baseline_can_predict_proba():
     assert proba.shape == (4, 2)
 
 
+EXPECTED_METRIC_KEYS = {
+    "accuracy", "roc_auc", "log_loss", "brier_score",
+    "n_test_samples", "xgb_n_estimators", "xgb_max_depth",
+}
+
+
+def test_evaluate_xgb_returns_all_keys():
+    from mlb_edge_finder.model import train, evaluate
+    df = _make_df(20)
+    clf, X_test, y_test = train(df)
+    metrics = evaluate(clf, X_test, y_test)
+    assert set(metrics.keys()) == EXPECTED_METRIC_KEYS
+
+
+def test_evaluate_xgb_metric_ranges():
+    from mlb_edge_finder.model import train, evaluate
+    df = _make_df(20)
+    clf, X_test, y_test = train(df)
+    metrics = evaluate(clf, X_test, y_test)
+    assert 0.0 <= metrics["accuracy"] <= 1.0
+    assert 0.0 <= metrics["roc_auc"] <= 1.0
+    assert metrics["log_loss"] >= 0.0
+    assert 0.0 <= metrics["brier_score"] <= 1.0
+    assert metrics["n_test_samples"] == 4
+
+
+def test_evaluate_xgb_hyperparams_populated():
+    from mlb_edge_finder.model import train, evaluate
+    from mlb_edge_finder import config
+    df = _make_df(20)
+    clf, X_test, y_test = train(df)
+    metrics = evaluate(clf, X_test, y_test)
+    assert metrics["xgb_n_estimators"] == config.XGB_N_ESTIMATORS
+    assert metrics["xgb_max_depth"] == config.XGB_MAX_DEPTH
+
+
+def test_evaluate_baseline_hyperparam_keys_are_none():
+    from mlb_edge_finder.model import train_baseline, evaluate
+    df = _make_df(20)
+    clf, X_test, y_test = train_baseline(df)
+    metrics = evaluate(clf, X_test, y_test)
+    assert set(metrics.keys()) == EXPECTED_METRIC_KEYS
+    assert metrics["xgb_n_estimators"] is None
+    assert metrics["xgb_max_depth"] is None
+
+
 def test_train_signature():
     from mlb_edge_finder import model
     assert callable(model.train)

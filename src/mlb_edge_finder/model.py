@@ -99,19 +99,39 @@ def train_baseline(
     return clf, X_test, y_test
 
 
-def evaluate(clf: XGBClassifier, X_test: pd.DataFrame, y_test: pd.Series) -> dict[str, Any]:
+def evaluate(clf: Any, X_test: pd.DataFrame, y_test: pd.Series) -> dict[str, Any]:
     """Compute evaluation metrics for a trained classifier.
 
+    Works with any sklearn-compatible classifier (XGBClassifier or
+    LogisticRegression). XGBoost-specific keys are None for other classifiers.
+
     Args:
-        clf: Fitted XGBClassifier from train().
+        clf: Fitted classifier with predict() and predict_proba() methods.
         X_test: Feature matrix (rows = games, columns = feature columns).
         y_test: True binary labels (1 = home win, 0 = away win).
 
     Returns:
-        Dict with keys: accuracy, roc_auc, log_loss, n_test_samples,
-        xgb_n_estimators, xgb_max_depth.
+        Dict with keys: accuracy, roc_auc, log_loss, brier_score,
+        n_test_samples, xgb_n_estimators, xgb_max_depth.
     """
-    raise NotImplementedError
+    from sklearn.metrics import (
+        accuracy_score,
+        brier_score_loss,
+        log_loss,
+        roc_auc_score,
+    )
+
+    proba = clf.predict_proba(X_test)[:, 1]
+    preds = clf.predict(X_test)
+    return {
+        "accuracy": accuracy_score(y_test, preds),
+        "roc_auc": roc_auc_score(y_test, proba),
+        "log_loss": log_loss(y_test, proba),
+        "brier_score": brier_score_loss(y_test, proba),
+        "n_test_samples": len(y_test),
+        "xgb_n_estimators": getattr(clf, "n_estimators", None),
+        "xgb_max_depth": getattr(clf, "max_depth", None),
+    }
 
 
 def save_model(clf: XGBClassifier, metrics: dict[str, Any], game_date: date) -> None:
