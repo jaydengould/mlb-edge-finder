@@ -6,15 +6,16 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 
 ## Current Phase
 
-**Phase 4 — Model training in progress.** Phases 1–3 and 4a are complete.
+**Phase 4 — Model training in progress.** Phases 1–3 and 4a–4b are complete.
 
 - `odds_ingestion.fetch_odds()` and `load_cached_odds()` — cache-first, date filtering, live game exclusion, best line across bookmakers.
 - `stats_ingestion.fetch_stats()` and `load_cached_stats()` — FanGraphs primary (pybaseball, 3-attempt retry with 2s/4s/8s backoff), MLB Stats API fallback (statsapi package). Output schema varies by source — see stats schema section below.
 - `features.build_features(game_date)` and `load_features(game_date)` — loads cached odds and stats, maps Odds API team names to abbreviations via `ODDS_NAME_TO_ABBR`, double-joins stats with `home_`/`away_` prefixes, writes to `data/processed/features_YYYY-MM-DD.csv`.
 - **4a complete:** `historical_ingestion.fetch_historical(season)`, `load_cached_historical(season)`, `fetch_all_historical()` — `statsapi.schedule` for full seasons, filter to `game_type="R"` and `status="Final"`, derive `home_win`.
 
-**Next:** Phase 4b and 4c:
-- **4b:** `training_data.build_training_set(seasons)` — join end-of-season team stats (one snapshot per season year) to each game row. No date-accurate rolling stats; this is a known simplification.
+**4b complete:** `training_data.build_training_set(seasons)`, `load_training_set(seasons)` — join end-of-season team stats (one snapshot per season year) to each game row. No date-accurate rolling stats; this is a known simplification.
+
+**Next:** Phase 4c:
 - **4c:** `model.train()`, `evaluate()`, `save_model()`, `load_model()`.
 
 No starting pitcher features in this phase — deferred to future roadmap.
@@ -202,7 +203,7 @@ pytest tests/ -v
 - [x] Implement `stats_ingestion.fetch_stats()` and `load_cached_stats()`
 - [x] Implement `features.build_features()` and `load_features()`
 - [x] **4a** — `historical_ingestion.fetch_historical(season)`, `load_cached_historical(season)`, `fetch_all_historical()` via `statsapi`
-- [ ] **4b** — `training_data.build_training_set(seasons)` joining end-of-season stats to game results
+- [x] **4b** — `training_data.build_training_set(seasons)` joining end-of-season stats to game results
 - [ ] **4c** — `model.train()`, `evaluate()`, `save_model()`, `load_model()`
 - [ ] Implement `edge_finder.find_edges()`
 - [ ] Implement `pipeline.run()`
