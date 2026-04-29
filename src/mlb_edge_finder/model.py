@@ -36,25 +36,40 @@ def _split(
     return train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
 
-def train(features_df: pd.DataFrame) -> XGBClassifier:
+def train(
+    features_df: pd.DataFrame,
+) -> tuple[XGBClassifier, pd.DataFrame, pd.Series]:
     """Train an XGBoost classifier to predict home-team win probability.
 
-    Splits features_df into train/test sets (80/20), fits an XGBClassifier
-    using config.XGB_N_ESTIMATORS and config.XGB_MAX_DEPTH, and returns
-    the trained model. Does not persist — call save_model() separately.
+    Splits features_df 80/20 (stratified, random_state=42), fits an
+    XGBClassifier using config.XGB_N_ESTIMATORS and config.XGB_MAX_DEPTH,
+    and returns the model plus the held-out test split.
 
     Args:
-        features_df: Output of features.build_features() or load_features().
+        features_df: Output of build_training_set() or load_training_set().
             Must contain TARGET_COL as the label column.
 
     Returns:
-        Fitted XGBClassifier instance.
+        Tuple of (fitted XGBClassifier, X_test DataFrame, y_test Series).
 
     Raises:
-        FileNotFoundError: If features_df is empty.
         ValueError: If TARGET_COL is missing from features_df.
+        FileNotFoundError: If features_df is empty.
     """
-    raise NotImplementedError
+    X_train, X_test, y_train, y_test = _split(features_df)
+    clf = XGBClassifier(
+        n_estimators=config.XGB_N_ESTIMATORS,
+        max_depth=config.XGB_MAX_DEPTH,
+        eval_metric="logloss",
+        random_state=42,
+    )
+    clf.fit(X_train, y_train)
+    logger.info(
+        "Trained XGBClassifier: %d samples, %d features",
+        len(X_train),
+        X_train.shape[1],
+    )
+    return clf, X_test, y_test
 
 
 def evaluate(clf: XGBClassifier, X_test: pd.DataFrame, y_test: pd.Series) -> dict[str, Any]:

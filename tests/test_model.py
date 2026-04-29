@@ -75,6 +75,39 @@ def test_split_empty_df_raises():
         _split(df)
 
 
+def test_train_returns_classifier_and_test_split():
+    from mlb_edge_finder.model import train
+    from xgboost import XGBClassifier
+    df = _make_df(20)
+    clf, X_test, y_test = train(df)
+    assert isinstance(clf, XGBClassifier)
+    assert len(X_test) == 4
+    assert len(y_test) == 4
+
+
+def test_train_clf_can_predict_proba():
+    from mlb_edge_finder.model import train
+    df = _make_df(20)
+    clf, X_test, y_test = train(df)
+    proba = clf.predict_proba(X_test)
+    assert proba.shape == (4, 2)
+    assert (proba >= 0).all() and (proba <= 1).all()
+
+
+def test_train_raises_on_missing_target():
+    from mlb_edge_finder.model import train
+    df = _make_df(20).drop(columns=["home_win"])
+    with pytest.raises(ValueError):
+        train(df)
+
+
+def test_train_raises_on_empty_df():
+    from mlb_edge_finder.model import train
+    df = _make_df(20).iloc[0:0]
+    with pytest.raises(FileNotFoundError):
+        train(df)
+
+
 def test_train_signature():
     from mlb_edge_finder import model
     assert callable(model.train)
