@@ -146,7 +146,15 @@ def save_model(clf: XGBClassifier, metrics: dict[str, Any], game_date: date) -> 
         metrics: Output of evaluate().
         game_date: Used to name the output files.
     """
-    raise NotImplementedError
+    config.MODELS_DIR.mkdir(parents=True, exist_ok=True)
+    pkl_path = config.MODELS_DIR / f"xgb_{game_date}.pkl"
+    json_path = config.MODELS_DIR / f"metrics_{game_date}.json"
+    with open(pkl_path, "wb") as f:
+        pickle.dump(clf, f)
+    with open(json_path, "w") as f:
+        json.dump(metrics, f, indent=2)
+    logger.info("Saved model → %s", pkl_path)
+    logger.info("Saved metrics → %s", json_path)
 
 
 def load_model(game_date: date) -> XGBClassifier:
@@ -161,4 +169,10 @@ def load_model(game_date: date) -> XGBClassifier:
     Raises:
         FileNotFoundError: If no model file exists for the given date.
     """
-    raise NotImplementedError
+    pkl_path = config.MODELS_DIR / f"xgb_{game_date}.pkl"
+    if not pkl_path.exists():
+        raise FileNotFoundError(
+            f"No model found for {game_date} at {pkl_path} — run save_model() first"
+        )
+    with open(pkl_path, "rb") as f:
+        return pickle.load(f)

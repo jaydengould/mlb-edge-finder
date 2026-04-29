@@ -1,5 +1,6 @@
 """Smoke tests: model exposes expected public API."""
 import inspect
+from datetime import date
 
 import numpy as np
 import pandas as pd
@@ -179,6 +180,43 @@ def test_evaluate_baseline_hyperparam_keys_are_none():
     assert set(metrics.keys()) == EXPECTED_METRIC_KEYS
     assert metrics["xgb_n_estimators"] is None
     assert metrics["xgb_max_depth"] is None
+
+
+def test_save_and_load_model_roundtrip(tmp_path, monkeypatch):
+    from mlb_edge_finder import config
+    from mlb_edge_finder.model import evaluate, load_model, save_model, train
+    monkeypatch.setattr(config, "MODELS_DIR", tmp_path)
+    df = _make_df(20)
+    clf, X_test, y_test = train(df)
+    metrics = evaluate(clf, X_test, y_test)
+    game_date = date(2024, 4, 1)
+    save_model(clf, metrics, game_date)
+    loaded = load_model(game_date)
+    import numpy as np
+    np.testing.assert_array_equal(
+        clf.predict(X_test), loaded.predict(X_test)
+    )
+
+
+def test_save_model_writes_both_files(tmp_path, monkeypatch):
+    from mlb_edge_finder import config
+    from mlb_edge_finder.model import evaluate, save_model, train
+    monkeypatch.setattr(config, "MODELS_DIR", tmp_path)
+    df = _make_df(20)
+    clf, X_test, y_test = train(df)
+    metrics = evaluate(clf, X_test, y_test)
+    game_date = date(2024, 4, 1)
+    save_model(clf, metrics, game_date)
+    assert (tmp_path / "xgb_2024-04-01.pkl").exists()
+    assert (tmp_path / "metrics_2024-04-01.json").exists()
+
+
+def test_load_model_raises_when_missing(tmp_path, monkeypatch):
+    from mlb_edge_finder import config
+    from mlb_edge_finder.model import load_model
+    monkeypatch.setattr(config, "MODELS_DIR", tmp_path)
+    with pytest.raises(FileNotFoundError, match="2024-04-01"):
+        load_model(date(2024, 4, 1))
 
 
 def test_train_signature():
