@@ -58,6 +58,7 @@ _SNAPSHOT_DAY = 28
 
 
 def _build_season(season: int) -> pd.DataFrame:
+    """Load historical games and end-of-season stats for one season and join them."""
     try:
         hist = load_cached_historical(season)
     except FileNotFoundError as exc:
@@ -117,7 +118,8 @@ def build_training_set(seasons: list[int], force: bool = False) -> pd.DataFrame:
         FanGraphs-specific columns (home_w_oba, home_bat_wrc_plus, home_fip) appear when present.
 
     Raises:
-        RuntimeError: If historical data is missing for any season (stats are auto-fetched).
+        RuntimeError: If historical data is missing for any season — run fetch_historical(season) first.
+            Also propagates RuntimeError from fetch_stats if both FanGraphs and MLB Stats API fail.
     """
     out_path = config.DATA_PROCESSED_DIR / f"training_{min(seasons)}-{max(seasons)}.csv"
     if out_path.exists() and not force:
