@@ -57,8 +57,80 @@ _SNAPSHOT_MONTH = 9
 _SNAPSHOT_DAY = 28
 
 
+def _build_season(season: int) -> pd.DataFrame:
+    try:
+        hist = load_cached_historical(season)
+    except FileNotFoundError as exc:
+        raise RuntimeError(
+            f"No cached historical data for {season} — run fetch_historical({season}) first"
+        ) from exc
+
+    stats = fetch_stats(date(season, _SNAPSHOT_MONTH, _SNAPSHOT_DAY))
+
+    # Normalize FanGraphs abbreviations that changed between seasons
+    stats = stats.copy()
+    stats["team_abbr"] = stats["team_abbr"].replace(_LEGACY_ABBR_NORMALIZE)
+
+    # Map full team names → current abbreviations
+    hist = hist.copy()
+    hist["home_abbr"] = hist["home_name"].map(HISTORICAL_NAME_TO_ABBR)
+    hist["away_abbr"] = hist["away_name"].map(HISTORICAL_NAME_TO_ABBR)
+
+    unmapped = pd.concat([
+        hist.loc[hist["home_abbr"].isna(), "home_name"],
+        hist.loc[hist["away_abbr"].isna(), "away_name"],
+    ]).unique()
+    if len(unmapped):
+        logger.warning("Season %d: unmapped team names dropped: %s", season, list(unmapped))
+    hist = hist.dropna(subset=["home_abbr", "away_abbr"])
+
+    # Drop data_source — not a model feature
+    stats = stats.drop(columns=["data_source"], errors="ignore")
+
+    # Double-join with home_/away_ prefixes (same pattern as features.py)
+    stat_cols = [c for c in stats.columns if c != "team_abbr"]
+    home_stats = stats.rename(columns={"team_abbr": "home_abbr"} | {c: f"home_{c}" for c in stat_cols})
+    away_stats = stats.rename(columns={"team_abbr": "away_abbr"} | {c: f"away_{c}" for c in stat_cols})
+
+    df = hist.merge(home_stats, on="home_abbr", how="inner")
+    df = df.merge(away_stats, on="away_abbr", how="inner")
+    df["season"] = season
+
+    logger.debug("Season %d: %d games, %d columns", season, len(df), len(df.columns))
+    return df
+
+
 def build_training_set(seasons: list[int], force: bool = False) -> pd.DataFrame:
-    raise NotImplementedError
+    """Build and cache a labeled training set by joining historical games with end-of-season stats.
+
+    For each season, loads historical game results and fetches end-of-season stats
+    (September 28 snapshot), normalizes abbreviations, joins stats twice with home_/away_
+    prefixes, and tags rows with a season column. Concatenates all seasons.
+
+    Args:
+        seasons: List of season years to include (e.g. [2023, 2024, 2025]).
+        force: If True, rebuild even if a cache file exists.
+
+    Returns:
+        DataFrame with one row per game. Columns: game_date, season, home_name, away_name,
+        home_abbr, away_abbr, home_win, plus home_<stat> and away_<stat> for every stat column.
+        FanGraphs-specific columns (home_w_oba, home_bat_wrc_plus, home_fip) appear when present.
+
+    Raises:
+        RuntimeError: If historical data is missing for any season (stats are auto-fetched).
+    """
+    out_path = config.DATA_PROCESSED_DIR / f"training_{min(seasons)}-{max(seasons)}.csv"
+    if out_path.exists() and not force:
+        logger.debug("Cache hit, loading from %s", out_path)
+        return load_training_set(seasons)
+
+    frames = [_build_season(s) for s in seasons]
+    df = pd.concat(frames, ignore_index=True)
+
+    config.DATA_PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+    df.to_csv(out_path, index=False)
+    logger.info("Wrote %d rows (%d seasons) to %s", len(df), len(seasons), out_path)
+    return df
 
 
 def load_training_set(seasons: list[int]) -> pd.DataFrame:
