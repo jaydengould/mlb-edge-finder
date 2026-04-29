@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 # statsapi full team names → current franchise abbreviations.
 # Always use the current abbreviation regardless of historical team name,
 # so training features are consistent with inference-time features.
+# Covers current names (2022+) plus legacy names for pre-rename seasons.
 HISTORICAL_NAME_TO_ABBR: dict[str, str] = {
     "Arizona Diamondbacks": "ARI",
     "Atlanta Braves": "ATL",
@@ -45,6 +46,11 @@ HISTORICAL_NAME_TO_ABBR: dict[str, str] = {
     "Texas Rangers": "TEX",
     "Toronto Blue Jays": "TOR",
     "Washington Nationals": "WSH",
+    # Legacy names for pre-rename seasons
+    "Cleveland Indians": "CLE",       # renamed to Guardians after 2021
+    "Florida Marlins": "MIA",         # renamed to Miami Marlins after 2011
+    "Tampa Bay Devil Rays": "TB",     # renamed to Rays after 2007
+    "Montreal Expos": "WSH",          # relocated to become Nationals in 2005
 }
 
 # FanGraphs abbreviations that changed between seasons → current abbreviation.
