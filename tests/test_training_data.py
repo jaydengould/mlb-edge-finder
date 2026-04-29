@@ -120,3 +120,84 @@ def test_build_training_set_keeps_name_and_abbr_columns(tmp_path):
         df = training_data.build_training_set([2024])
     for col in ("home_name", "away_name", "home_abbr", "away_abbr"):
         assert col in df.columns
+
+
+def test_build_training_set_raises_runtime_error_when_historical_missing(tmp_path):
+    from mlb_edge_finder import training_data
+    with patch("mlb_edge_finder.training_data.load_cached_historical",
+               side_effect=FileNotFoundError("no file")), \
+         patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
+        with pytest.raises(RuntimeError, match="fetch_historical"):
+            training_data.build_training_set([2024])
+
+
+def test_build_training_set_drops_unmapped_teams(tmp_path):
+    from mlb_edge_finder import training_data
+    hist = pd.DataFrame([
+        {"game_date": "2024-04-01", "home_name": "New York Yankees",
+         "away_name": "Boston Red Sox", "home_score": 5, "away_score": 3, "home_win": 1},
+        {"game_date": "2024-04-01", "home_name": "Unknown Team",
+         "away_name": "Boston Red Sox", "home_score": 2, "away_score": 1, "home_win": 1},
+    ])
+    with patch("mlb_edge_finder.training_data.load_cached_historical", return_value=hist), \
+         patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
+        df = training_data.build_training_set([2024])
+    assert len(df) == 1
+    assert df["home_name"].iloc[0] == "New York Yankees"
+
+
+def test_build_training_set_applies_legacy_abbr_normalization(tmp_path):
+    from mlb_edge_finder import training_data
+    hist = _make_hist(home="Oakland Athletics", away="New York Yankees")
+    stats = pd.DataFrame([
+        {"team_abbr": "OAK", "bat_avg": 0.240, "obp": 0.310, "slg": 0.390,
+         "ops": 0.700, "runs_per_game": 4.0, "era": 4.50, "whip": 1.35,
+         "k_per_9": 8.0, "bb_per_9": 3.5, "data_source": "fangraphs"},
+        {"team_abbr": "NYY", "bat_avg": 0.260, "obp": 0.330, "slg": 0.420,
+         "ops": 0.750, "runs_per_game": 4.8, "era": 3.80, "whip": 1.20,
+         "k_per_9": 9.0, "bb_per_9": 3.0, "data_source": "fangraphs"},
+    ])
+    with patch("mlb_edge_finder.training_data.load_cached_historical", return_value=hist), \
+         patch("mlb_edge_finder.training_data.fetch_stats", return_value=stats), \
+         patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
+        df = training_data.build_training_set([2024])
+    # Oakland → ATH via _LEGACY_ABBR_NORMALIZE; should match and produce 1 row
+    assert len(df) == 1
+    assert df["home_abbr"].iloc[0] == "ATH"
+
+
+def test_build_training_set_cache_first(tmp_path):
+    from mlb_edge_finder import training_data
+    # Pre-write a fake cache file
+    out_path = tmp_path / "training_2024-2024.csv"
+    cached_df = pd.DataFrame([{"game_date": "2024-04-01", "season": 2024, "home_win": 1}])
+    cached_df.to_csv(out_path, index=False)
+    with patch("mlb_edge_finder.training_data.load_cached_historical") as mock_hist, \
+         patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
+        df = training_data.build_training_set([2024])
+    # Should NOT call load_cached_historical at all (served from cache)
+    mock_hist.assert_not_called()
+    assert len(df) == 1
+
+
+def test_build_training_set_multi_season_concatenates(tmp_path):
+    from mlb_edge_finder import training_data
+
+    def mock_hist(season):
+        return pd.DataFrame([{
+            "game_date": f"{season}-04-01",
+            "home_name": "New York Yankees",
+            "away_name": "Boston Red Sox",
+            "home_score": 5, "away_score": 3, "home_win": 1,
+        }])
+
+    with patch("mlb_edge_finder.training_data.load_cached_historical", side_effect=mock_hist), \
+         patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
+        df = training_data.build_training_set([2023, 2024])
+
+    assert len(df) == 2
+    assert set(df["season"]) == {2023, 2024}
+    # Output file uses min-max range
+    assert (tmp_path / "training_2023-2024.csv").exists()
