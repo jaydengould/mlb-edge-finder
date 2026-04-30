@@ -38,7 +38,6 @@
       "Write(.github/workflows/*)",
       "Bash(rm -rf *)",
       "Bash(sudo *)",
-      "Bash(git push *)",
       "Bash(git merge *)",
       "Bash(git rebase *)",
       "Bash(chmod *)",
