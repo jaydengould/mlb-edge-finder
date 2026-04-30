@@ -32,18 +32,10 @@
       "Read(.env*)",
       "Read(**/secrets/**)",
       "Write(.env*)",
-      "Write(data/**)",
-      "Write(models/**)",
-      "Write(production.*)",
-      "Write(.github/workflows/*)",
       "Bash(rm -rf *)",
       "Bash(sudo *)",
-      "Bash(git merge *)",
-      "Bash(git rebase *)",
-      "Bash(chmod *)",
-      "Bash(chown *)",
       "Bash(curl * | sh)",
-      "Bash(wget *)"
+      "Bash(chown *)"
     ],
     "defaultMode": "acceptEdits"
   }
