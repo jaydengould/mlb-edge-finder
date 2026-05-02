@@ -245,6 +245,9 @@ pytest tests/ -v
 - [x] **4c** — `model.train()`, `train_baseline()`, `evaluate()`, `save_model()`, `load_model()`
 - [x] Implement `edge_finder.find_edges()`
 - [x] Implement `pipeline.run()`
+- [ ] **6 — Rolling window team stats** — replace end-of-season stat snapshots with per-game rolling N-game averages (e.g. last 15 games of batting/pitching). Affects `training_data.py` and `features.py`. Highest-impact model improvement.
+- [ ] **7 — Starting pitcher features** — add per-start pitcher stats (FIP, ERA, xFIP, K/9, BB/9) via pybaseball/statsapi. New ingestion module + join in `features.py`. Single strongest predictor of game outcome.
+- [ ] **8 — Expand training seasons** — add 2019–2022 (skip 2020, 60-game anomaly) once rolling stats are in place. One-liner change to `fetch_all_historical()` call sites.
 - [ ] Add `compute_kelly()` to `edge_finder`
 - [ ] Add `__main__.py` CLI entry point
 - [ ] Add APScheduler for daily runs
