@@ -21,6 +21,8 @@ No starting pitcher features in this phase — deferred to future roadmap.
 
 **Always update this file at the end of each working session** to reflect completed phases, new conventions, and any changes to the roadmap.
 
+**Always check `notebooks/01_exploration.ipynb` after any implementation** — update section headers, function calls, and comments to match new signatures or behaviour. Specifically: if a function gains a new required argument, add `force=True` where caches need rebuilding, or add mocks where the notebook calls newly added dependencies.
+
 ## Tech Stack
 
 | Layer | Library |
@@ -135,6 +137,7 @@ MIN_AMERICAN_ODDS   # -300  (skip heavy favorites)
 - **Error handling:** `odds_ingestion` and `stats_ingestion` raise `RuntimeError` on API failure. `model` raises `FileNotFoundError` if inputs are missing. `edge_finder` logs a warning and returns an empty DataFrame when no edges are found — it never raises on empty results.
 - **No silent fallbacks:** If data isn't available, raise. Don't return empty DataFrames as a substitute for real data in ingestion modules.
 - **Kelly seam:** `edge_finder.compute_ev(prob, american_odds)` is the EV primitive. When adding Kelly sizing, add `compute_kelly(ev, bankroll)` alongside it — don't modify `compute_ev`.
+- **Notebook hygiene:** After every implementation phase, review `notebooks/01_exploration.ipynb` — update function calls to match new signatures, add `force=True` where caches need rebuilding, and note any new NaN behaviour or expected output changes in cell comments.
 
 ## EV Formula
 
