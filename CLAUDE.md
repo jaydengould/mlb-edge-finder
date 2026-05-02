@@ -6,7 +6,7 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 
 ## Current Phase
 
-**Phase 4c complete.** Phases 1–3 and 4a–4c are done. Next: `edge_finder.find_edges()`.
+**Phase 5 complete.** Phases 1–3, 4a–4c, and 5 are done. Next: `compute_kelly()`, `__main__.py` CLI entry point.
 
 - `odds_ingestion.fetch_odds()` and `load_cached_odds()` — cache-first, date filtering, live game exclusion, best line across bookmakers.
 - `stats_ingestion.fetch_stats()` and `load_cached_stats()` — FanGraphs primary (pybaseball, 3-attempt retry with 2s/4s/8s backoff), MLB Stats API fallback (statsapi package). Output schema varies by source — see stats schema section below.
@@ -14,6 +14,7 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 - **4a complete:** `historical_ingestion.fetch_historical(season)`, `load_cached_historical(season)`, `fetch_all_historical()` — `statsapi.schedule` for full seasons, filter to `game_type="R"` and `status="Final"`, derive `home_win`.
 - **4b complete:** `training_data.build_training_set(seasons)`, `load_training_set(seasons)` — join end-of-season team stats (one snapshot per season year) to each game row. No date-accurate rolling stats; this is a known simplification.
 - **4c complete:** `model.train()`, `model.train_baseline()`, `model.evaluate()`, `model.save_model()`, `model.load_model()`.
+- **5 complete:** `edge_finder.find_edges(features_df, clf, game_date)` — uses `clf.feature_names_in_` to select inference features, runs sequential home/away EV passes, filters by `EV_THRESHOLD` and `MIN_AMERICAN_ODDS`, writes `data/processed/edges_YYYY-MM-DD.csv`. `pipeline.run(game_date)` — orchestrates all five stages end-to-end; auto-discovers latest model by globbing `MODELS_DIR` for `xgb_*.pkl` sorted by filename date.
 
 No starting pitcher features in this phase — deferred to future roadmap.
 
@@ -242,8 +243,8 @@ pytest tests/ -v
 - [x] **4a** — `historical_ingestion.fetch_historical(season)`, `load_cached_historical(season)`, `fetch_all_historical()` via `statsapi`
 - [x] **4b** — `training_data.build_training_set(seasons)` joining end-of-season stats to game results
 - [x] **4c** — `model.train()`, `train_baseline()`, `evaluate()`, `save_model()`, `load_model()`
-- [ ] Implement `edge_finder.find_edges()`
-- [ ] Implement `pipeline.run()`
+- [x] Implement `edge_finder.find_edges()`
+- [x] Implement `pipeline.run()`
 - [ ] Add `compute_kelly()` to `edge_finder`
 - [ ] Add `__main__.py` CLI entry point
 - [ ] Add APScheduler for daily runs
