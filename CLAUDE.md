@@ -6,15 +6,16 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 
 ## Current Phase
 
-**Phase 5 complete.** Phases 1–3, 4a–4c, and 5 are done. Next: `compute_kelly()`, `__main__.py` CLI entry point.
+**Phase 6 complete.** Phases 1–3, 4a–4c, 5, and 6 are done. Next: starting pitcher features, then `compute_kelly()` + `__main__.py` CLI.
 
 - `odds_ingestion.fetch_odds()` and `load_cached_odds()` — cache-first, date filtering, live game exclusion, best line across bookmakers.
 - `stats_ingestion.fetch_stats()` and `load_cached_stats()` — FanGraphs primary (pybaseball, 3-attempt retry with 2s/4s/8s backoff), MLB Stats API fallback (statsapi package). Output schema varies by source — see stats schema section below.
-- `features.build_features(game_date)` and `load_features(game_date)` — loads cached odds and stats, maps Odds API team names to abbreviations via `ODDS_NAME_TO_ABBR`, double-joins stats with `home_`/`away_` prefixes, writes to `data/processed/features_YYYY-MM-DD.csv`.
+- `features.build_features(game_date)` and `load_features(game_date)` — loads cached odds and stats, calls `fetch_historical(game_date.year)` for rolling stats, maps Odds API team names to abbreviations via `ODDS_NAME_TO_ABBR`, double-joins stats + rolling stats with `home_`/`away_` prefixes, writes to `data/processed/features_YYYY-MM-DD.csv`.
 - **4a complete:** `historical_ingestion.fetch_historical(season)`, `load_cached_historical(season)`, `fetch_all_historical()` — `statsapi.schedule` for full seasons, filter to `game_type="R"` and `status="Final"`, derive `home_win`.
-- **4b complete:** `training_data.build_training_set(seasons)`, `load_training_set(seasons)` — join end-of-season team stats (one snapshot per season year) to each game row. No date-accurate rolling stats; this is a known simplification.
+- **4b complete:** `training_data.build_training_set(seasons)`, `load_training_set(seasons)` — join end-of-season team stats + rolling stats to each game row.
 - **4c complete:** `model.train()`, `model.train_baseline()`, `model.evaluate()`, `model.save_model()`, `model.load_model()`.
 - **5 complete:** `edge_finder.find_edges(features_df, clf, game_date)` — uses `clf.feature_names_in_` to select inference features, runs sequential home/away EV passes, filters by `EV_THRESHOLD` and `MIN_AMERICAN_ODDS`, writes `data/processed/edges_YYYY-MM-DD.csv`. `pipeline.run(game_date)` — orchestrates all five stages end-to-end; auto-discovers latest model by globbing `MODELS_DIR` for `xgb_*.pkl` sorted by filename date.
+- **6 complete:** `rolling_stats.py` — `compute_rolling_stats(historical_df, window=15)` (shift-1, for training) and `latest_rolling_stats(historical_df, window=15)` (no shift, for inference). `HISTORICAL_NAME_TO_ABBR` moved here from `training_data.py` (re-exported for backwards compatibility). Adds 8 rolling columns to both training set and daily features: `home_/away_rolling_runs_scored`, `rolling_runs_allowed`, `rolling_win_pct`, `rolling_run_diff`.
 
 No starting pitcher features in this phase — deferred to future roadmap.
 
@@ -55,8 +56,9 @@ Each stage persists its output as a dated CSV or artifact so stages can be run i
 | `odds_ingestion.py` | Fetch/cache moneyline odds (The Odds API) | `data/raw/odds_YYYY-MM-DD.csv` |
 | `stats_ingestion.py` | Fetch/cache team batting + pitching stats | `data/raw/stats_YYYY-MM-DD.csv` |
 | `historical_ingestion.py` | Fetch/cache historical game results per season | `data/raw/historical_YYYY.csv` |
-| `training_data.py` | Join end-of-season stats to game results for model training | `data/processed/training_YYYY-YYYY.csv` |
-| `features.py` | Merge odds + stats, engineer features | `data/processed/features_YYYY-MM-DD.csv` |
+| `rolling_stats.py` | Compute rolling per-team stats from historical game results; owns `HISTORICAL_NAME_TO_ABBR` | — |
+| `training_data.py` | Join end-of-season stats + rolling stats to game results for model training | `data/processed/training_YYYY-YYYY.csv` |
+| `features.py` | Merge odds + stats + rolling stats, engineer features | `data/processed/features_YYYY-MM-DD.csv` |
 | `model.py` | Train, evaluate, persist XGBoost model | `models/xgb_YYYY-MM-DD.pkl` + `models/metrics_YYYY-MM-DD.json` |
 | `edge_finder.py` | Compute EV, filter odds, flag edges | `data/processed/edges_YYYY-MM-DD.csv` |
 | `pipeline.py` | Orchestrate all stages end-to-end | — |
@@ -245,7 +247,7 @@ pytest tests/ -v
 - [x] **4c** — `model.train()`, `train_baseline()`, `evaluate()`, `save_model()`, `load_model()`
 - [x] Implement `edge_finder.find_edges()`
 - [x] Implement `pipeline.run()`
-- [ ] **6 — Rolling window team stats** — replace end-of-season stat snapshots with per-game rolling N-game averages (e.g. last 15 games of batting/pitching). Affects `training_data.py` and `features.py`. Highest-impact model improvement.
+- [x] **6 — Rolling window team stats** — `rolling_stats.py` computes 4 rolling features (runs_scored, runs_allowed, win_pct, run_diff) from cached historical game results. Joined into both training set and daily features. Window=15, season-only lookback, XGBoost handles NaN for early-season games.
 - [ ] **7 — Starting pitcher features** — add per-start pitcher stats (FIP, ERA, xFIP, K/9, BB/9) via pybaseball/statsapi. New ingestion module + join in `features.py`. Single strongest predictor of game outcome.
 - [ ] **8 — Expand training seasons** — add 2019–2022 (skip 2020, 60-game anomaly) once rolling stats are in place. One-liner change to `fetch_all_historical()` call sites.
 - [ ] Add `compute_kelly()` to `edge_finder`
