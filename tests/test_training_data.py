@@ -181,6 +181,18 @@ def test_build_training_set_cache_first(tmp_path):
     assert len(df) == 1
 
 
+def test_build_training_set_includes_rolling_cols(tmp_path):
+    """build_training_set output includes home_ and away_ rolling stat columns."""
+    from mlb_edge_finder import training_data
+    with patch("mlb_edge_finder.training_data.load_cached_historical", return_value=_make_hist()), \
+         patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
+        df = training_data.build_training_set([2024], force=True)
+    for col in ("home_rolling_runs_scored", "away_rolling_runs_scored",
+                "home_rolling_run_diff", "away_rolling_run_diff"):
+        assert col in df.columns, f"Missing column: {col}"
+
+
 def test_build_training_set_multi_season_concatenates(tmp_path):
     from mlb_edge_finder import training_data
 
