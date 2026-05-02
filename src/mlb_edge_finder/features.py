@@ -5,31 +5,33 @@ from datetime import date
 import pandas as pd
 
 from mlb_edge_finder import config
+from mlb_edge_finder.historical_ingestion import fetch_historical
 from mlb_edge_finder.odds_ingestion import load_cached_odds
+from mlb_edge_finder.rolling_stats import latest_rolling_stats
 from mlb_edge_finder.stats_ingestion import ODDS_NAME_TO_ABBR, load_cached_stats
 
 logger = logging.getLogger(__name__)
 
 
 def build_features(game_date: date) -> pd.DataFrame:
-    """Join odds and stats into one row per game with home_ and away_ stat columns.
+    """Join odds, stats, and rolling stats into one row per game.
 
-    Loads cached odds and stats for game_date, maps Odds API full team names
-    to abbreviations via ODDS_NAME_TO_ABBR, then joins stats twice — once for
-    the home team and once for the away team — prefixing all stat columns
-    accordingly. FanGraphs-specific columns (w_oba, bat_wrc_plus, fip) are
-    included when present; their absence is handled gracefully.
+    Loads cached odds and stats for game_date, fetches the current season's
+    completed games (cache-first) to compute rolling team form stats, maps
+    Odds API full team names to abbreviations, then joins all three data sources
+    with home_/away_ prefixes.
 
     Args:
         game_date: Date whose cached odds and stats CSVs to load.
 
     Returns:
         DataFrame with one row per game. Columns include all odds fields plus
-        home_<stat> and away_<stat> for every stat column in the stats CSV.
-        data_source is dropped before output.
+        home_<stat>/away_<stat> for every stat column and
+        home_rolling_*/away_rolling_* for rolling stats.
 
     Raises:
-        RuntimeError: If the cached odds or stats file for game_date is absent.
+        RuntimeError: If the cached odds or stats file for game_date is absent,
+            or if the historical data fetch fails.
     """
     try:
         odds_df = load_cached_odds(game_date)
@@ -43,6 +45,14 @@ def build_features(game_date: date) -> pd.DataFrame:
     except FileNotFoundError as exc:
         raise RuntimeError(
             f"No cached stats for {game_date} — run fetch_stats() first"
+        ) from exc
+
+    # Fetch current-season completed games for rolling stats (cache-first)
+    try:
+        hist_df = fetch_historical(game_date.year)
+    except RuntimeError as exc:
+        raise RuntimeError(
+            f"Could not fetch historical data for {game_date.year} — {exc}"
         ) from exc
 
     # Map full team names → abbreviations
@@ -61,7 +71,7 @@ def build_features(game_date: date) -> pd.DataFrame:
     # Drop data_source; it varies by run and is not a model feature
     stats = stats_df.drop(columns=["data_source"], errors="ignore")
 
-    # Build home stats: rename team_abbr → home_abbr, prefix stat cols with home_
+    # Build home/away stat frames with prefixes
     stat_cols = [c for c in stats.columns if c != "team_abbr"]
     home_stats = stats.rename(columns={"team_abbr": "home_abbr"} | {c: f"home_{c}" for c in stat_cols})
     away_stats = stats.rename(columns={"team_abbr": "away_abbr"} | {c: f"away_{c}" for c in stat_cols})
@@ -69,8 +79,20 @@ def build_features(game_date: date) -> pd.DataFrame:
     df = odds_df.merge(home_stats, on="home_abbr", how="inner")
     df = df.merge(away_stats, on="away_abbr", how="inner")
 
+    # Join rolling stats by team_abbr only (today's games haven't been played yet)
+    rolling_df = latest_rolling_stats(hist_df)
+    rolling_cols = [c for c in rolling_df.columns if c != "team_abbr"]
+    home_rolling = rolling_df.rename(
+        columns={"team_abbr": "home_abbr"} | {c: f"home_{c}" for c in rolling_cols}
+    )
+    away_rolling = rolling_df.rename(
+        columns={"team_abbr": "away_abbr"} | {c: f"away_{c}" for c in rolling_cols}
+    )
+    df = df.merge(home_rolling[["home_abbr"] + [f"home_{c}" for c in rolling_cols]], on="home_abbr", how="left")
+    df = df.merge(away_rolling[["away_abbr"] + [f"away_{c}" for c in rolling_cols]], on="away_abbr", how="left")
+
     logger.debug(
-        "Built features: %d game(s), %d columns (home cols: %d)",
+        "Built features: %d game(s), %d columns (home stat cols: %d)",
         len(df), len(df.columns), len(stat_cols),
     )
 
