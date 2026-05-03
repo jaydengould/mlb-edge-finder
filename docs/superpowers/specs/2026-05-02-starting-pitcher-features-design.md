@@ -47,20 +47,21 @@ This is a breaking change to the historical CSV schema. Existing cached historic
 In `_build_season()`, after the existing team stats and rolling stats joins:
 
 1. Call `fetch_pitcher_stats(date(season, 9, 28))` — same end-of-season snapshot pattern as `fetch_stats()`, fully cached.
-2. Double-join on `pitcher_id`:
-   - `home_starter_id` → `home_era`, `home_whip`, `home_k_per_9`, `home_bb_per_9`, `home_ip`, `home_fip_computed`
-   - `away_starter_id` → same columns with `away_` prefix
+2. Double-join on pitcher name (`home_starter_name` / `away_starter_name` → `pitcher_name`):
+   - Uses `home_sp_` / `away_sp_` prefix to avoid colliding with existing team-level `home_era`, `home_whip`, etc.
+   - Resulting columns: `home_sp_era`, `home_sp_whip`, `home_sp_k_per_9`, `home_sp_bb_per_9`, `home_sp_ip`, `home_sp_fip_computed`
+   - Same for `away_sp_*`
 
-Rows where starter ID is NaN → NaN pitcher columns → XGBoost handles natively. No rows dropped.
+Rows where starter name is NaN (or pitcher not found in stats CSV) → NaN `home_sp_*` columns → XGBoost handles natively. No rows dropped.
 
-`model.py` — add `home_starter_id`, `away_starter_id`, `home_pitcher_name`, and `away_pitcher_name` to `NON_FEATURE_COLS` (metadata, not features). The pitcher name columns land in the DataFrame after the double-join and must be explicitly excluded.
+`model.py` — add `home_starter_name`, `away_starter_name`, `home_pitcher_id`, `away_pitcher_id` to `NON_FEATURE_COLS` (metadata, not features).
 
 ## Inference Join Flow (`features.py`)
 
 `build_features(game_date)` gains two steps after the existing rolling stats join:
 
-1. Call `fetch_probable_starters(game_date)` — merge onto main DataFrame on `home_abbr` / `away_abbr` to add `home_starter_id`, `away_starter_id`.
-2. Load `load_cached_pitcher_stats(game_date)` — raises `RuntimeError` with "run fetch_pitcher_stats() first" if absent. Double-join on `pitcher_id` with `home_`/`away_` prefixes.
+1. Call `fetch_probable_starters(game_date)` — merge onto main DataFrame on `["home_abbr", "away_abbr"]` to add `home_starter_name`, `away_starter_name`.
+2. Load `load_cached_pitcher_stats(game_date)` — raises `RuntimeError` with "run fetch_pitcher_stats() first" if absent. Double-join on pitcher name with `home_sp_`/`away_sp_` prefixes (same as training path).
 
 ## `pipeline.run()` Changes
 
