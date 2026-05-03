@@ -4,7 +4,10 @@ from datetime import date
 
 import pandas as pd
 
-from mlb_edge_finder import config, edge_finder, features, model, odds_ingestion, stats_ingestion
+from mlb_edge_finder import (
+    config, edge_finder, features, model,
+    odds_ingestion, pitcher_ingestion, stats_ingestion,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -36,6 +39,7 @@ def run(game_date: date | None = None) -> pd.DataFrame:
 
     odds_ingestion.fetch_odds(game_date)
     stats_ingestion.fetch_stats(game_date)
+    pitcher_ingestion.fetch_pitcher_stats(game_date)
     features_df = features.build_features(game_date)
 
     pkls = sorted(config.MODELS_DIR.glob("xgb_*.pkl"))

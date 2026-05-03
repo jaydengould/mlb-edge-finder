@@ -87,7 +87,32 @@ def test_run_raises_when_no_models(tmp_path):
 
     with patch("mlb_edge_finder.pipeline.odds_ingestion.fetch_odds", return_value=pd.DataFrame()), \
          patch("mlb_edge_finder.pipeline.stats_ingestion.fetch_stats", return_value=pd.DataFrame()), \
+         patch("mlb_edge_finder.pipeline.pitcher_ingestion.fetch_pitcher_stats",
+               return_value=pd.DataFrame()), \
          patch("mlb_edge_finder.pipeline.features.build_features", return_value=pd.DataFrame()), \
          patch("mlb_edge_finder.pipeline.config.MODELS_DIR", tmp_path):
         with pytest.raises(FileNotFoundError, match="No trained models"):
             pipeline.run(date(2025, 7, 1))
+
+
+def test_pipeline_calls_fetch_pitcher_stats_before_build_features():
+    from mlb_edge_finder import pipeline
+    from unittest.mock import call
+
+    mock_clf = MagicMock()
+    mock_clf.feature_names_in_ = []
+    mock_edges = pd.DataFrame()
+
+    with patch("mlb_edge_finder.pipeline.odds_ingestion.fetch_odds"), \
+         patch("mlb_edge_finder.pipeline.stats_ingestion.fetch_stats"), \
+         patch("mlb_edge_finder.pipeline.pitcher_ingestion.fetch_pitcher_stats") as mock_pitcher, \
+         patch("mlb_edge_finder.pipeline.features.build_features", return_value=pd.DataFrame()), \
+         patch("mlb_edge_finder.pipeline.model.load_model", return_value=mock_clf), \
+         patch("mlb_edge_finder.pipeline.edge_finder.find_edges", return_value=mock_edges), \
+         patch("mlb_edge_finder.pipeline.config.MODELS_DIR") as mock_models_dir:
+        mock_models_dir.glob.return_value = [
+            Path("models/xgb_2025-01-01.pkl")
+        ]
+        pipeline.run(date(2025, 4, 22))
+
+    mock_pitcher.assert_called_once_with(date(2025, 4, 22))
