@@ -11,7 +11,10 @@ logger = logging.getLogger(__name__)
 
 _SEASON_START = "03-20"
 _SEASON_END = "09-30"
-_KEEP_COLS = ["game_date", "home_name", "away_name", "home_score", "away_score", "home_win"]
+_KEEP_COLS = [
+    "game_date", "home_name", "away_name", "home_score", "away_score", "home_win",
+    "home_probable_pitcher", "away_probable_pitcher",
+]
 _HISTORICAL_SEASONS = [2023, 2024, 2025]
 
 
@@ -56,7 +59,14 @@ def fetch_historical(season: int, force: bool = False) -> pd.DataFrame:
         raise RuntimeError(f"No completed regular season games found for season {season}")
 
     df["home_win"] = (df["home_score"] > df["away_score"]).astype(int)
-    df = df[_KEEP_COLS].reset_index(drop=True)
+    df = df.reindex(columns=_KEEP_COLS)
+    df = df.rename(columns={
+        "home_probable_pitcher": "home_starter_name",
+        "away_probable_pitcher": "away_starter_name",
+    })
+    for col in ("home_starter_name", "away_starter_name"):
+        df[col] = df[col].replace("", None)
+    df = df.reset_index(drop=True)
 
     config.DATA_RAW_DIR.mkdir(parents=True, exist_ok=True)
     df.to_csv(cache_path, index=False)

@@ -76,9 +76,23 @@ def test_fetch_historical_filters_and_derives_home_win(tmp_path):
         df = historical_ingestion_module().fetch_historical(2024, force=True)
 
     assert len(df) == 2
-    assert list(df.columns) == ["game_date", "home_name", "away_name", "home_score", "away_score", "home_win"]
+    expected_cols = {
+        "game_date", "home_name", "away_name", "home_score", "away_score",
+        "home_win", "home_starter_name", "away_starter_name",
+    }
+    assert expected_cols == set(df.columns)
     assert df.loc[0, "home_win"] == 1
     assert df.loc[1, "home_win"] == 0
+
+
+def test_fetch_historical_starter_names_are_none_when_empty(tmp_path):
+    games = [_make_game("Yankees", "Red Sox", 5, 3)]
+    with patch("mlb_edge_finder.historical_ingestion.statsapi.schedule", return_value=games), \
+         patch("mlb_edge_finder.historical_ingestion.config.DATA_RAW_DIR", tmp_path):
+        df = historical_ingestion_module().fetch_historical(2024, force=True)
+    # _make_game sets home_probable_pitcher="" — should become NaN
+    assert pd.isna(df.iloc[0]["home_starter_name"])
+    assert pd.isna(df.iloc[0]["away_starter_name"])
 
 
 def test_fetch_historical_uses_cache(tmp_path):
@@ -115,7 +129,8 @@ def test_fetch_all_historical_concatenates(tmp_path):
         df = historical_ingestion.fetch_all_historical(force=True)
     # 3 seasons × 1 game each
     assert len(df) == 3
-    assert list(df.columns) == ["game_date", "home_name", "away_name", "home_score", "away_score", "home_win"]
+    assert "home_starter_name" in df.columns
+    assert "away_starter_name" in df.columns
 
 
 # helper used in test_fetch_historical_filters_and_derives_home_win
