@@ -6,18 +6,17 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 
 ## Current Phase
 
-**Phase 6 complete.** Phases 1–3, 4a–4c, 5, and 6 are done. Next: starting pitcher features, then `compute_kelly()` + `__main__.py` CLI.
+**Phase 7 complete.** Phases 1–3, 4a–4c, 5, 6, and 7 are done. Next: `compute_kelly()` + `__main__.py` CLI.
 
 - `odds_ingestion.fetch_odds()` and `load_cached_odds()` — cache-first, date filtering, live game exclusion, best line across bookmakers.
 - `stats_ingestion.fetch_stats()` and `load_cached_stats()` — FanGraphs primary (pybaseball, 3-attempt retry with 2s/4s/8s backoff), MLB Stats API fallback (statsapi package). Output schema varies by source — see stats schema section below.
-- `features.build_features(game_date)` and `load_features(game_date)` — loads cached odds and stats, calls `fetch_historical(game_date.year)` for rolling stats, maps Odds API team names to abbreviations via `ODDS_NAME_TO_ABBR`, double-joins stats + rolling stats with `home_`/`away_` prefixes, writes to `data/processed/features_YYYY-MM-DD.csv`.
-- **4a complete:** `historical_ingestion.fetch_historical(season)`, `load_cached_historical(season)`, `fetch_all_historical()` — `statsapi.schedule` for full seasons, filter to `game_type="R"` and `status="Final"`, derive `home_win`.
-- **4b complete:** `training_data.build_training_set(seasons)`, `load_training_set(seasons)` — join end-of-season team stats + rolling stats to each game row.
+- `features.build_features(game_date)` and `load_features(game_date)` — loads cached odds and stats, calls `fetch_historical(game_date.year)` for rolling stats, fetches probable starters, maps Odds API team names to abbreviations via `ODDS_NAME_TO_ABBR`, double-joins stats + rolling stats + pitcher stats with `home_`/`away_`/`home_sp_`/`away_sp_` prefixes, writes to `data/processed/features_YYYY-MM-DD.csv`.
+- **4a complete:** `historical_ingestion.fetch_historical(season)`, `load_cached_historical(season)`, `fetch_all_historical()` — `statsapi.schedule` for full seasons, filter to `game_type="R"` and `status="Final"`, derive `home_win`. Now also captures `home_starter_name`/`away_starter_name` from the schedule response.
+- **4b complete:** `training_data.build_training_set(seasons)`, `load_training_set(seasons)` — join end-of-season team stats + rolling stats + pitcher stats to each game row.
 - **4c complete:** `model.train()`, `model.train_baseline()`, `model.evaluate()`, `model.save_model()`, `model.load_model()`.
 - **5 complete:** `edge_finder.find_edges(features_df, clf, game_date)` — uses `clf.feature_names_in_` to select inference features, runs sequential home/away EV passes, filters by `EV_THRESHOLD` and `MIN_AMERICAN_ODDS`, writes `data/processed/edges_YYYY-MM-DD.csv`. `pipeline.run(game_date)` — orchestrates all five stages end-to-end; auto-discovers latest model by globbing `MODELS_DIR` for `xgb_*.pkl` sorted by filename date.
 - **6 complete:** `rolling_stats.py` — `compute_rolling_stats(historical_df, window=15)` (shift-1, for training) and `latest_rolling_stats(historical_df, window=15)` (no shift, for inference). `HISTORICAL_NAME_TO_ABBR` moved here from `training_data.py` (re-exported for backwards compatibility). Adds 8 rolling columns to both training set and daily features: `home_/away_rolling_runs_scored`, `rolling_runs_allowed`, `rolling_win_pct`, `rolling_run_diff`.
-
-No starting pitcher features in this phase — deferred to future roadmap.
+- **7 complete:** `pitcher_ingestion.py` — `fetch_pitcher_stats(game_date)` (statsapi-only, playerPool=All, cache at `data/raw/pitcher_stats_YYYY-MM-DD.csv`), `load_cached_pitcher_stats(game_date)`, `fetch_probable_starters(game_date)` (live call, not cached). `historical_ingestion.fetch_historical()` enriched with `home_starter_name`/`away_starter_name`. `training_data._build_season()` and `features.build_features()` both join pitcher stats with `home_sp_*`/`away_sp_*` prefix to avoid collision with team-level stats. `model.NON_FEATURE_COLS` updated with `home_starter_name`, `away_starter_name`, `home_pitcher_id`, `away_pitcher_id`. `pipeline.run()` calls `fetch_pitcher_stats` before `build_features`. Existing cached historical CSVs must be re-fetched with `force=True` to pick up starter name columns.
 
 **Always update this file at the end of each working session** to reflect completed phases, new conventions, and any changes to the roadmap.
 
@@ -57,7 +56,8 @@ Each stage persists its output as a dated CSV or artifact so stages can be run i
 | `config.py` | Env loading, path constants, `setup_logging()` | — |
 | `odds_ingestion.py` | Fetch/cache moneyline odds (The Odds API) | `data/raw/odds_YYYY-MM-DD.csv` |
 | `stats_ingestion.py` | Fetch/cache team batting + pitching stats | `data/raw/stats_YYYY-MM-DD.csv` |
-| `historical_ingestion.py` | Fetch/cache historical game results per season | `data/raw/historical_YYYY.csv` |
+| `historical_ingestion.py` | Fetch/cache historical game results per season (incl. probable starters) | `data/raw/historical_YYYY.csv` |
+| `pitcher_ingestion.py` | Fetch/cache individual pitcher season stats; fetch probable starters for a date | `data/raw/pitcher_stats_YYYY-MM-DD.csv` |
 | `rolling_stats.py` | Compute rolling per-team stats from historical game results; owns `HISTORICAL_NAME_TO_ABBR` | — |
 | `training_data.py` | Join end-of-season stats + rolling stats to game results for model training | `data/processed/training_YYYY-YYYY.csv` |
 | `features.py` | Merge odds + stats + rolling stats, engineer features | `data/processed/features_YYYY-MM-DD.csv` |
@@ -183,17 +183,21 @@ logs/             # run.log
 
 ## Training Data Module
 
-`build_training_set(seasons, force=False)` owns its own data loading — it calls `load_cached_historical` and `fetch_stats(date(season, 9, 28))` internally. Raises `RuntimeError` if historical data is missing (with "run fetch_historical(season) first"), and lets `fetch_stats` RuntimeError propagate if both stat sources fail.
+`build_training_set(seasons, force=False)` owns its own data loading — it calls `load_cached_historical`, `fetch_stats(date(season, 9, 28))`, and `fetch_pitcher_stats(date(season, 9, 28))` internally. Raises `RuntimeError` if historical data is missing (with "run fetch_historical(season) first"), and lets `fetch_stats` / `fetch_pitcher_stats` RuntimeErrors propagate if the API fails.
 
 The join flow (per season):
 1. Load `historical_YYYY.csv` via `load_cached_historical(season)`
-2. Fetch end-of-season stats via `fetch_stats(date(season, 9, 28))` — cache-first, auto-fetches if needed
+2. Fetch end-of-season stats via `fetch_stats(date(season, 9, 28))` — cache-first
 3. Apply `_LEGACY_ABBR_NORMALIZE` to stats `team_abbr` (e.g. `OAK→ATH`)
 4. Map `home_name`/`away_name` → abbreviations via `HISTORICAL_NAME_TO_ABBR`; warn + drop unmatched rows
 5. Drop `data_source` — not a model feature
 6. Join stats twice: once for home (prefix `home_`), once for away (prefix `away_`)
 7. Tag each row with `season` column
-8. Concatenate all seasons, write to `data/processed/training_{min}-{max}.csv`
+8. Join rolling stats (shift-1) with `home_`/`away_` prefix
+9. Ensure `home_starter_name`/`away_starter_name` columns exist (NaN if absent from historical CSV)
+10. Fetch pitcher stats via `fetch_pitcher_stats(date(season, 9, 28))` — cache-first
+11. Join pitcher stats twice with `home_sp_*`/`away_sp_*` prefix (left join, NaN if no starter)
+12. Concatenate all seasons, write to `data/processed/training_{min}-{max}.csv`
 
 `HISTORICAL_NAME_TO_ABBR` always uses **current** franchise abbreviations (e.g. "Oakland Athletics" → "ATH", not "OAK") for consistency with inference-time features. Covers current names (2022+) and legacy names (Cleveland Indians, Florida Marlins, Tampa Bay Devil Rays, Montreal Expos).
 
@@ -205,7 +209,7 @@ The join flow (per season):
 
 **Constants:**
 - `TARGET_COL = "home_win"` — binary label column
-- `NON_FEATURE_COLS` — metadata columns dropped before training (`game_date`, `home_name`, `away_name`, `home_score`, `away_score`, `home_abbr`, `away_abbr`, `season`, `home_win`). Any column not in this list is treated as a feature — FanGraphs-only columns are picked up automatically when present.
+- `NON_FEATURE_COLS` — metadata columns dropped before training (`game_date`, `home_name`, `away_name`, `home_score`, `away_score`, `home_abbr`, `away_abbr`, `season`, `home_win`, `home_starter_name`, `away_starter_name`, `home_pitcher_id`, `away_pitcher_id`). Any column not in this list is treated as a feature.
 
 **Key design decisions:**
 - `_split(features_df)` — private helper; 80/20 stratified split, `random_state=42`. Both `train()` and `train_baseline()` call it, so their test sets are identical for fair metric comparison.
@@ -228,7 +232,10 @@ The join flow:
 2. Log a warning and drop any games with unmapped team names
 3. Drop `data_source` from stats — it's not a model feature
 4. Join stats twice: once for home (prefix `home_`), once for away (prefix `away_`)
-5. `home_abbr` and `away_abbr` are kept in the output for debugging
+5. Join rolling stats by `team_abbr` (left join, NaN for teams with no history)
+6. Call `fetch_probable_starters(game_date)` — merge on `[home_abbr, away_abbr]` to add `home_starter_name`/`away_starter_name`
+7. Join pitcher stats twice with `home_sp_*`/`away_sp_*` prefix (left join on pitcher name, NaN if no probable starter)
+8. `home_abbr`, `away_abbr`, `home_starter_name`, `away_starter_name` are kept for debugging
 
 FanGraphs-specific stat columns (`w_oba`, `bat_wrc_plus`, `fip`) appear in the features CSV only when the underlying stats CSV contains them. `features.py` does not check for them explicitly — the prefix-rename loop carries whatever is present. Downstream code must guard with `col in df.columns`.
 
@@ -238,7 +245,7 @@ FanGraphs-specific stat columns (`w_oba`, `bat_wrc_plus`, `fip`) appear in the f
 pytest tests/ -v
 ```
 
-74 smoke + integration tests. All pass.
+116 smoke + integration tests. All pass.
 
 ## Roadmap
 
@@ -251,7 +258,7 @@ pytest tests/ -v
 - [x] Implement `edge_finder.find_edges()`
 - [x] Implement `pipeline.run()`
 - [x] **6 — Rolling window team stats** — `rolling_stats.py` computes 4 rolling features (runs_scored, runs_allowed, win_pct, run_diff) from cached historical game results. Joined into both training set and daily features. Window=15, season-only lookback, XGBoost handles NaN for early-season games.
-- [ ] **7 — Starting pitcher features** — add per-start pitcher stats (FIP, ERA, xFIP, K/9, BB/9) via pybaseball/statsapi. New ingestion module + join in `features.py`. Single strongest predictor of game outcome.
+- [x] **7 — Starting pitcher features** — `pitcher_ingestion.py` with statsapi-only fetch. Individual pitcher `era`, `whip`, `k_per_9`, `bb_per_9`, `ip`, `fip_computed`. `home_sp_*`/`away_sp_*` prefix in both training and inference. Probable starters from `statsapi.schedule`. Historical CSVs enriched with `home_starter_name`/`away_starter_name`.
 - [ ] **8 — Expand training seasons** — add 2019–2022 (skip 2020, 60-game anomaly) once rolling stats are in place. One-liner change to `fetch_all_historical()` call sites.
 - [ ] Add `compute_kelly()` to `edge_finder`
 - [ ] Add `__main__.py` CLI entry point
