@@ -24,7 +24,6 @@ def test_load_training_set_signature():
 
 def test_historical_name_to_abbr_covers_all_30_teams():
     from mlb_edge_finder.training_data import HISTORICAL_NAME_TO_ABBR
-    # All 30 current franchise abbreviations must be reachable
     expected_abbrs = {
         "ARI", "ATL", "BAL", "BOS", "CHC", "CWS", "CIN", "CLE", "COL", "DET",
         "HOU", "KC", "LAA", "LAD", "MIA", "MIL", "MIN", "NYM", "NYY", "ATH",
@@ -35,7 +34,6 @@ def test_historical_name_to_abbr_covers_all_30_teams():
 
 def test_historical_name_to_abbr_maps_oakland():
     from mlb_edge_finder.training_data import HISTORICAL_NAME_TO_ABBR
-    # Both statsapi names for the Athletics franchise map to ATH
     assert HISTORICAL_NAME_TO_ABBR["Oakland Athletics"] == "ATH"
     assert HISTORICAL_NAME_TO_ABBR["Athletics"] == "ATH"
 
@@ -78,10 +76,41 @@ def _make_stats():
     ])
 
 
+def _make_pitcher_stats():
+    return pd.DataFrame([
+        {
+            "pitcher_id": 1, "pitcher_name": "Cole Pitcher",
+            "era": 3.50, "whip": 1.10, "k_per_9": 10.0, "bb_per_9": 2.5,
+            "ip": 150.0, "fip_computed": 3.20,
+        },
+        {
+            "pitcher_id": 2, "pitcher_name": "Bello Pitcher",
+            "era": 4.00, "whip": 1.25, "k_per_9": 8.5, "bb_per_9": 3.0,
+            "ip": 120.0, "fip_computed": 3.80,
+        },
+    ])
+
+
+def _make_hist_with_starters(home="New York Yankees", away="Boston Red Sox",
+                              home_starter="Cole Pitcher", away_starter="Bello Pitcher"):
+    return pd.DataFrame([{
+        "game_date": "2024-04-01",
+        "home_name": home,
+        "away_name": away,
+        "home_score": 5,
+        "away_score": 3,
+        "home_win": 1,
+        "home_starter_name": home_starter,
+        "away_starter_name": away_starter,
+    }])
+
+
 def test_build_training_set_joins_home_and_away_stats(tmp_path):
     from mlb_edge_finder import training_data
     with patch("mlb_edge_finder.training_data.load_cached_historical", return_value=_make_hist()), \
          patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.training_data.fetch_pitcher_stats",
+               return_value=_make_pitcher_stats()), \
          patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
         df = training_data.build_training_set([2024])
     assert len(df) == 1
@@ -96,6 +125,8 @@ def test_build_training_set_includes_season_column(tmp_path):
     from mlb_edge_finder import training_data
     with patch("mlb_edge_finder.training_data.load_cached_historical", return_value=_make_hist()), \
          patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.training_data.fetch_pitcher_stats",
+               return_value=_make_pitcher_stats()), \
          patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
         df = training_data.build_training_set([2024])
     assert "season" in df.columns
@@ -106,6 +137,8 @@ def test_build_training_set_preserves_home_win(tmp_path):
     from mlb_edge_finder import training_data
     with patch("mlb_edge_finder.training_data.load_cached_historical", return_value=_make_hist()), \
          patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.training_data.fetch_pitcher_stats",
+               return_value=_make_pitcher_stats()), \
          patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
         df = training_data.build_training_set([2024])
     assert "home_win" in df.columns
@@ -116,6 +149,8 @@ def test_build_training_set_keeps_name_and_abbr_columns(tmp_path):
     from mlb_edge_finder import training_data
     with patch("mlb_edge_finder.training_data.load_cached_historical", return_value=_make_hist()), \
          patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.training_data.fetch_pitcher_stats",
+               return_value=_make_pitcher_stats()), \
          patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
         df = training_data.build_training_set([2024])
     for col in ("home_name", "away_name", "home_abbr", "away_abbr"):
@@ -141,6 +176,8 @@ def test_build_training_set_drops_unmapped_teams(tmp_path):
     ])
     with patch("mlb_edge_finder.training_data.load_cached_historical", return_value=hist), \
          patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.training_data.fetch_pitcher_stats",
+               return_value=_make_pitcher_stats()), \
          patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
         df = training_data.build_training_set([2024])
     assert len(df) == 1
@@ -160,23 +197,22 @@ def test_build_training_set_applies_legacy_abbr_normalization(tmp_path):
     ])
     with patch("mlb_edge_finder.training_data.load_cached_historical", return_value=hist), \
          patch("mlb_edge_finder.training_data.fetch_stats", return_value=stats), \
+         patch("mlb_edge_finder.training_data.fetch_pitcher_stats",
+               return_value=_make_pitcher_stats()), \
          patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
         df = training_data.build_training_set([2024])
-    # Oakland → ATH via _LEGACY_ABBR_NORMALIZE; should match and produce 1 row
     assert len(df) == 1
     assert df["home_abbr"].iloc[0] == "ATH"
 
 
 def test_build_training_set_cache_first(tmp_path):
     from mlb_edge_finder import training_data
-    # Pre-write a fake cache file
     out_path = tmp_path / "training_2024-2024.csv"
     cached_df = pd.DataFrame([{"game_date": "2024-04-01", "season": 2024, "home_win": 1}])
     cached_df.to_csv(out_path, index=False)
     with patch("mlb_edge_finder.training_data.load_cached_historical") as mock_hist, \
          patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
         df = training_data.build_training_set([2024])
-    # Should NOT call load_cached_historical at all (served from cache)
     mock_hist.assert_not_called()
     assert len(df) == 1
 
@@ -186,6 +222,8 @@ def test_build_training_set_includes_rolling_cols(tmp_path):
     from mlb_edge_finder import training_data
     with patch("mlb_edge_finder.training_data.load_cached_historical", return_value=_make_hist()), \
          patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.training_data.fetch_pitcher_stats",
+               return_value=_make_pitcher_stats()), \
          patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
         df = training_data.build_training_set([2024], force=True)
     for col in ("home_rolling_runs_scored", "away_rolling_runs_scored",
@@ -206,10 +244,66 @@ def test_build_training_set_multi_season_concatenates(tmp_path):
 
     with patch("mlb_edge_finder.training_data.load_cached_historical", side_effect=mock_hist), \
          patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.training_data.fetch_pitcher_stats",
+               return_value=_make_pitcher_stats()), \
          patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
         df = training_data.build_training_set([2023, 2024])
 
     assert len(df) == 2
     assert set(df["season"]) == {2023, 2024}
-    # Output file uses min-max range
     assert (tmp_path / "training_2023-2024.csv").exists()
+
+
+# --- Pitcher join tests ---
+
+def test_build_training_set_includes_pitcher_sp_cols(tmp_path):
+    from mlb_edge_finder import training_data
+    with patch("mlb_edge_finder.training_data.load_cached_historical",
+               return_value=_make_hist_with_starters()), \
+         patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.training_data.fetch_pitcher_stats",
+               return_value=_make_pitcher_stats()), \
+         patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
+        df = training_data.build_training_set([2024], force=True)
+    for col in ("home_sp_era", "away_sp_era", "home_sp_fip_computed", "away_sp_fip_computed",
+                "home_sp_k_per_9", "away_sp_k_per_9"):
+        assert col in df.columns, f"Missing column: {col}"
+
+
+def test_build_training_set_pitcher_join_values_correct(tmp_path):
+    from mlb_edge_finder import training_data
+    with patch("mlb_edge_finder.training_data.load_cached_historical",
+               return_value=_make_hist_with_starters()), \
+         patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.training_data.fetch_pitcher_stats",
+               return_value=_make_pitcher_stats()), \
+         patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
+        df = training_data.build_training_set([2024], force=True)
+    assert abs(df.iloc[0]["home_sp_era"] - 3.50) < 0.01
+    assert abs(df.iloc[0]["away_sp_era"] - 4.00) < 0.01
+
+
+def test_build_training_set_pitcher_nan_when_starter_absent(tmp_path):
+    from mlb_edge_finder import training_data
+    hist = _make_hist_with_starters(home_starter=None, away_starter=None)
+    with patch("mlb_edge_finder.training_data.load_cached_historical", return_value=hist), \
+         patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.training_data.fetch_pitcher_stats",
+               return_value=_make_pitcher_stats()), \
+         patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
+        df = training_data.build_training_set([2024], force=True)
+    assert pd.isna(df.iloc[0]["home_sp_era"])
+    assert pd.isna(df.iloc[0]["away_sp_era"])
+
+
+def test_build_training_set_keeps_starter_name_columns(tmp_path):
+    from mlb_edge_finder import training_data
+    with patch("mlb_edge_finder.training_data.load_cached_historical",
+               return_value=_make_hist_with_starters()), \
+         patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.training_data.fetch_pitcher_stats",
+               return_value=_make_pitcher_stats()), \
+         patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
+        df = training_data.build_training_set([2024], force=True)
+    assert "home_starter_name" in df.columns
+    assert "away_starter_name" in df.columns

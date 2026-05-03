@@ -7,6 +7,7 @@ import pandas as pd
 from mlb_edge_finder import config
 from mlb_edge_finder.historical_ingestion import load_cached_historical
 from mlb_edge_finder.rolling_stats import HISTORICAL_NAME_TO_ABBR, compute_rolling_stats
+from mlb_edge_finder.pitcher_ingestion import fetch_pitcher_stats
 from mlb_edge_finder.stats_ingestion import fetch_stats
 
 logger = logging.getLogger(__name__)
@@ -79,6 +80,35 @@ def _build_season(season: int) -> pd.DataFrame:
     df = df.merge(
         away_rolling[["away_abbr", "game_date"] + [f"away_{c}" for c in rolling_cols]],
         on=["away_abbr", "game_date"], how="left",
+    )
+
+    # Ensure starter name columns exist (may be absent in historical data without probable pitchers)
+    for col in ("home_starter_name", "away_starter_name"):
+        if col not in df.columns:
+            df[col] = None
+
+    # Join starting pitcher season stats with home_sp_*/away_sp_* prefix
+    pitcher_stats = fetch_pitcher_stats(date(season, _SNAPSHOT_MONTH, _SNAPSHOT_DAY))
+    sp_cols = [c for c in pitcher_stats.columns if c not in ("pitcher_name", "pitcher_id")]
+    home_pitcher = pitcher_stats.rename(columns={
+        "pitcher_name": "home_starter_name",
+        "pitcher_id": "home_pitcher_id",
+        **{c: f"home_sp_{c}" for c in sp_cols},
+    })
+    away_pitcher = pitcher_stats.rename(columns={
+        "pitcher_name": "away_starter_name",
+        "pitcher_id": "away_pitcher_id",
+        **{c: f"away_sp_{c}" for c in sp_cols},
+    })
+    home_pitcher_cols = ["home_starter_name", "home_pitcher_id"] + [f"home_sp_{c}" for c in sp_cols]
+    away_pitcher_cols = ["away_starter_name", "away_pitcher_id"] + [f"away_sp_{c}" for c in sp_cols]
+    df = df.merge(home_pitcher[home_pitcher_cols], on="home_starter_name", how="left")
+    df = df.merge(away_pitcher[away_pitcher_cols], on="away_starter_name", how="left")
+    logger.debug(
+        "Season %d: pitcher join — %d/%d home starters matched, %d/%d away starters matched",
+        season,
+        df["home_pitcher_id"].notna().sum(), len(df),
+        df["away_pitcher_id"].notna().sum(), len(df),
     )
 
     logger.debug("Season %d: %d games, %d columns", season, len(df), len(df.columns))
