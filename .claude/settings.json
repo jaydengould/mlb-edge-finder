@@ -12,7 +12,7 @@
       "Write(notebooks/**)",
       "Bash(pip install *)",
       "Bash(pip list)",
-      "Bash(python *)",
+      "Bash(python3 *)",
       "Bash(pytest *)",
       "Bash(jupyter *)",
       "Bash(git status)",
