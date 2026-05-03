@@ -40,6 +40,30 @@ def _make_hist():
     }])
 
 
+def _make_probable_starters():
+    return pd.DataFrame([{
+        "home_abbr": "NYY",
+        "away_abbr": "BOS",
+        "home_starter_name": "Gerrit Cole",
+        "away_starter_name": "Brayan Bello",
+    }])
+
+
+def _make_pitcher_stats():
+    return pd.DataFrame([
+        {
+            "pitcher_id": 1, "pitcher_name": "Gerrit Cole",
+            "era": 3.20, "whip": 1.05, "k_per_9": 10.5, "bb_per_9": 2.2,
+            "ip": 180.0, "fip_computed": 3.00,
+        },
+        {
+            "pitcher_id": 2, "pitcher_name": "Brayan Bello",
+            "era": 4.10, "whip": 1.30, "k_per_9": 8.0, "bb_per_9": 3.1,
+            "ip": 140.0, "fip_computed": 3.90,
+        },
+    ])
+
+
 def test_build_features_signature():
     """build_features should accept game_date."""
     from mlb_edge_finder import features
@@ -63,6 +87,10 @@ def test_build_features_joins_home_and_away():
     with patch("mlb_edge_finder.features.load_cached_odds", return_value=_make_odds()), \
          patch("mlb_edge_finder.features.load_cached_stats", return_value=_make_stats()), \
          patch("mlb_edge_finder.features.fetch_historical", return_value=_make_hist()), \
+         patch("mlb_edge_finder.features.fetch_probable_starters",
+               return_value=_make_probable_starters()), \
+         patch("mlb_edge_finder.features.load_cached_pitcher_stats",
+               return_value=_make_pitcher_stats()), \
          patch("mlb_edge_finder.features.config.DATA_PROCESSED_DIR") as mock_dir:
         mock_dir.__truediv__ = lambda self, other: __import__("pathlib").Path("/tmp") / other
         df = features.build_features(date(2025, 4, 22))
@@ -82,6 +110,10 @@ def test_build_features_includes_rolling_cols():
     with patch("mlb_edge_finder.features.load_cached_odds", return_value=_make_odds()), \
          patch("mlb_edge_finder.features.load_cached_stats", return_value=_make_stats()), \
          patch("mlb_edge_finder.features.fetch_historical", return_value=_make_hist()), \
+         patch("mlb_edge_finder.features.fetch_probable_starters",
+               return_value=_make_probable_starters()), \
+         patch("mlb_edge_finder.features.load_cached_pitcher_stats",
+               return_value=_make_pitcher_stats()), \
          patch("mlb_edge_finder.features.config.DATA_PROCESSED_DIR") as mock_dir:
         mock_dir.__truediv__ = lambda self, other: __import__("pathlib").Path("/tmp") / other
         df = features.build_features(date(2025, 4, 22))
@@ -90,7 +122,6 @@ def test_build_features_includes_rolling_cols():
                 "home_rolling_run_diff", "away_rolling_run_diff"):
         assert col in df.columns, f"Missing column: {col}"
 
-    # latest_rolling_stats has no shift, so values should be non-NaN
     assert not df["home_rolling_runs_scored"].isna().any()
 
 
@@ -109,3 +140,71 @@ def test_load_features_raises_when_missing(tmp_path):
     with patch("mlb_edge_finder.features.config.DATA_PROCESSED_DIR", tmp_path):
         with pytest.raises(FileNotFoundError):
             features.load_features(date(2025, 4, 22))
+
+
+# --- Pitcher join tests ---
+
+def test_build_features_includes_pitcher_sp_cols():
+    from mlb_edge_finder import features
+    with patch("mlb_edge_finder.features.load_cached_odds", return_value=_make_odds()), \
+         patch("mlb_edge_finder.features.load_cached_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.features.fetch_historical", return_value=_make_hist()), \
+         patch("mlb_edge_finder.features.fetch_probable_starters",
+               return_value=_make_probable_starters()), \
+         patch("mlb_edge_finder.features.load_cached_pitcher_stats",
+               return_value=_make_pitcher_stats()), \
+         patch("mlb_edge_finder.features.config.DATA_PROCESSED_DIR") as mock_dir:
+        mock_dir.__truediv__ = lambda self, other: __import__("pathlib").Path("/tmp") / other
+        df = features.build_features(date(2025, 4, 22))
+    for col in ("home_sp_era", "away_sp_era", "home_sp_fip_computed", "away_sp_fip_computed"):
+        assert col in df.columns, f"Missing column: {col}"
+
+
+def test_build_features_pitcher_join_values_correct():
+    from mlb_edge_finder import features
+    with patch("mlb_edge_finder.features.load_cached_odds", return_value=_make_odds()), \
+         patch("mlb_edge_finder.features.load_cached_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.features.fetch_historical", return_value=_make_hist()), \
+         patch("mlb_edge_finder.features.fetch_probable_starters",
+               return_value=_make_probable_starters()), \
+         patch("mlb_edge_finder.features.load_cached_pitcher_stats",
+               return_value=_make_pitcher_stats()), \
+         patch("mlb_edge_finder.features.config.DATA_PROCESSED_DIR") as mock_dir:
+        mock_dir.__truediv__ = lambda self, other: __import__("pathlib").Path("/tmp") / other
+        df = features.build_features(date(2025, 4, 22))
+    assert abs(df.iloc[0]["home_sp_era"] - 3.20) < 0.01
+    assert abs(df.iloc[0]["away_sp_era"] - 4.10) < 0.01
+
+
+def test_build_features_pitcher_nan_when_no_probable_starter():
+    from mlb_edge_finder import features
+    no_starters = pd.DataFrame([{
+        "home_abbr": "NYY", "away_abbr": "BOS",
+        "home_starter_name": None, "away_starter_name": None,
+    }])
+    with patch("mlb_edge_finder.features.load_cached_odds", return_value=_make_odds()), \
+         patch("mlb_edge_finder.features.load_cached_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.features.fetch_historical", return_value=_make_hist()), \
+         patch("mlb_edge_finder.features.fetch_probable_starters", return_value=no_starters), \
+         patch("mlb_edge_finder.features.load_cached_pitcher_stats",
+               return_value=_make_pitcher_stats()), \
+         patch("mlb_edge_finder.features.config.DATA_PROCESSED_DIR") as mock_dir:
+        mock_dir.__truediv__ = lambda self, other: __import__("pathlib").Path("/tmp") / other
+        df = features.build_features(date(2025, 4, 22))
+    assert pd.isna(df.iloc[0]["home_sp_era"])
+    assert pd.isna(df.iloc[0]["away_sp_era"])
+
+
+def test_build_features_raises_on_missing_pitcher_stats():
+    from mlb_edge_finder import features
+    with patch("mlb_edge_finder.features.load_cached_odds", return_value=_make_odds()), \
+         patch("mlb_edge_finder.features.load_cached_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.features.fetch_historical", return_value=_make_hist()), \
+         patch("mlb_edge_finder.features.fetch_probable_starters",
+               return_value=_make_probable_starters()), \
+         patch("mlb_edge_finder.features.load_cached_pitcher_stats",
+               side_effect=FileNotFoundError("no file")), \
+         patch("mlb_edge_finder.features.config.DATA_PROCESSED_DIR") as mock_dir:
+        mock_dir.__truediv__ = lambda self, other: __import__("pathlib").Path("/tmp") / other
+        with pytest.raises(RuntimeError, match="fetch_pitcher_stats"):
+            features.build_features(date(2025, 4, 22))

@@ -7,6 +7,7 @@ import pandas as pd
 from mlb_edge_finder import config
 from mlb_edge_finder.historical_ingestion import fetch_historical
 from mlb_edge_finder.odds_ingestion import load_cached_odds
+from mlb_edge_finder.pitcher_ingestion import fetch_probable_starters, load_cached_pitcher_stats
 from mlb_edge_finder.rolling_stats import latest_rolling_stats
 from mlb_edge_finder.stats_ingestion import ODDS_NAME_TO_ABBR, load_cached_stats
 
@@ -91,9 +92,37 @@ def build_features(game_date: date) -> pd.DataFrame:
     df = df.merge(home_rolling[["home_abbr"] + [f"home_{c}" for c in rolling_cols]], on="home_abbr", how="left")
     df = df.merge(away_rolling[["away_abbr"] + [f"away_{c}" for c in rolling_cols]], on="away_abbr", how="left")
 
+    # Join probable starting pitcher names onto the game rows
+    probable_df = fetch_probable_starters(game_date)
+    df = df.merge(probable_df, on=["home_abbr", "away_abbr"], how="left")
+
+    # Load pitcher stats and double-join with home_sp_*/away_sp_* prefix
+    try:
+        pitcher_stats = load_cached_pitcher_stats(game_date)
+    except FileNotFoundError as exc:
+        raise RuntimeError(
+            f"No cached pitcher stats for {game_date} — run fetch_pitcher_stats() first"
+        ) from exc
+
+    sp_cols = [c for c in pitcher_stats.columns if c not in ("pitcher_name", "pitcher_id")]
+    home_pitcher = pitcher_stats.rename(columns={
+        "pitcher_name": "home_starter_name",
+        "pitcher_id": "home_pitcher_id",
+        **{c: f"home_sp_{c}" for c in sp_cols},
+    })
+    away_pitcher = pitcher_stats.rename(columns={
+        "pitcher_name": "away_starter_name",
+        "pitcher_id": "away_pitcher_id",
+        **{c: f"away_sp_{c}" for c in sp_cols},
+    })
+    home_pitcher_cols = ["home_starter_name", "home_pitcher_id"] + [f"home_sp_{c}" for c in sp_cols]
+    away_pitcher_cols = ["away_starter_name", "away_pitcher_id"] + [f"away_sp_{c}" for c in sp_cols]
+    df = df.merge(home_pitcher[home_pitcher_cols], on="home_starter_name", how="left")
+    df = df.merge(away_pitcher[away_pitcher_cols], on="away_starter_name", how="left")
+
     logger.debug(
-        "Built features: %d game(s), %d columns (home stat cols: %d)",
-        len(df), len(df.columns), len(stat_cols),
+        "Built features: %d game(s), %d columns (home stat cols: %d), pitcher join %d/%d matched",
+        len(df), len(df.columns), len(stat_cols), df["home_pitcher_id"].notna().sum(), len(df),
     )
 
     config.DATA_PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
