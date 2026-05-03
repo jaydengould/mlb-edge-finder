@@ -249,3 +249,10 @@ def test_load_model_signature():
     assert callable(model.load_model)
     sig = inspect.signature(model.load_model)
     assert "game_date" in sig.parameters
+
+
+def test_non_feature_cols_excludes_pitcher_metadata():
+    from mlb_edge_finder.model import NON_FEATURE_COLS
+    for col in ("home_starter_name", "away_starter_name",
+                "home_pitcher_id", "away_pitcher_id"):
+        assert col in NON_FEATURE_COLS, f"{col} missing from NON_FEATURE_COLS"

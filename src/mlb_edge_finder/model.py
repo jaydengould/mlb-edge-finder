@@ -19,6 +19,8 @@ NON_FEATURE_COLS = [
     "game_date", "home_name", "away_name",
     "home_score", "away_score", "home_abbr", "away_abbr",
     "season", TARGET_COL,
+    "home_starter_name", "away_starter_name",
+    "home_pitcher_id", "away_pitcher_id",
 ]
 
 
