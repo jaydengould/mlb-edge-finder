@@ -1,0 +1,9 @@
+{
+  "accuracy": 0.5883720930232558,
+  "roc_auc": 0.633444060589955,
+  "log_loss": 0.6687867453438073,
+  "brier_score": 0.2376197102184019,
+  "n_test_samples": 3010,
+  "xgb_n_estimators": 100,
+  "xgb_max_depth": 4
+}
