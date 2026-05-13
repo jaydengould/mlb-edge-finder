@@ -145,6 +145,55 @@ def test_find_edges_both_sides(tmp_path):
     assert set(result["bet_side"]) == {"home", "away"}
 
 
+# ---- compute_kelly tests ----
+
+def test_compute_kelly_signature():
+    from mlb_edge_finder import edge_finder
+    assert callable(edge_finder.compute_kelly)
+    sig = inspect.signature(edge_finder.compute_kelly)
+    assert "prob" in sig.parameters
+    assert "american_odds" in sig.parameters
+
+
+def test_compute_kelly_zero_ev_returns_zero():
+    """Zero EV → Kelly fraction is 0.0.
+
+    prob=0.60, -150: b=100/150=0.6667, ev=0.60*0.6667-0.40=0.0 → kelly=0.0
+    """
+    from mlb_edge_finder.edge_finder import compute_kelly
+    result = compute_kelly(prob=0.60, american_odds=-150)
+    assert abs(result) < 1e-9
+
+
+def test_compute_kelly_positive_ev_underdog():
+    """Positive EV underdog returns correct half-Kelly fraction.
+
+    prob=0.55, +110: b=1.10, ev=0.55*1.10-0.45=0.155
+    full_kelly=0.155/1.10=0.14091, half_kelly=0.07045
+    """
+    from mlb_edge_finder.edge_finder import compute_kelly
+    result = compute_kelly(prob=0.55, american_odds=110)
+    assert abs(result - 0.0705) < 1e-3
+
+
+def test_compute_kelly_negative_ev_returns_zero():
+    """Negative EV → Kelly fraction is 0.0 (clamp, don't bet).
+
+    prob=0.40, -150: b=0.6667, ev=0.40*0.6667-0.60=-0.333 → kelly=0.0
+    """
+    from mlb_edge_finder.edge_finder import compute_kelly
+    result = compute_kelly(prob=0.40, american_odds=-150)
+    assert result == 0.0
+
+
+def test_compute_kelly_result_in_valid_range():
+    """Result is always in [0.0, 1.0] for valid inputs."""
+    from mlb_edge_finder.edge_finder import compute_kelly
+    for prob, odds in [(0.99, 100), (0.55, 200), (0.60, -120), (0.45, -110)]:
+        result = compute_kelly(prob=prob, american_odds=odds)
+        assert 0.0 <= result <= 1.0, f"Out of range for prob={prob}, odds={odds}: {result}"
+
+
 def test_find_edges_missing_feature_column(tmp_path):
     """Raises ValueError when features_df is missing a column the model needs."""
     from mlb_edge_finder.edge_finder import find_edges

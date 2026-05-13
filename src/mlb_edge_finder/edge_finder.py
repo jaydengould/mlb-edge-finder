@@ -31,6 +31,33 @@ def compute_ev(prob: float, american_odds: int) -> float:
     return prob * payout - (1 - prob)
 
 
+def compute_kelly(prob: float, american_odds: int) -> float:
+    """Compute half-Kelly bet size as a fraction of bankroll.
+
+    Uses the same payout derivation as compute_ev, then applies:
+        full_kelly = EV / payout
+        half_kelly = full_kelly / 2
+
+    Returns 0.0 for zero or negative EV (no edge, don't bet).
+    Result is clamped to [0.0, 1.0].
+
+    Args:
+        prob: Model-predicted win probability for the team (0.0 – 1.0).
+        american_odds: Bookmaker's American moneyline for the same team.
+
+    Returns:
+        Fraction of bankroll to wager (0.0 = no bet, 1.0 = full bankroll).
+    """
+    if american_odds < 0:
+        b = 100 / abs(american_odds)
+    else:
+        b = american_odds / 100
+    ev = prob * b - (1 - prob)
+    if ev <= 0:
+        return 0.0
+    return min(ev / b / 2, 1.0)
+
+
 def find_edges(features_df: pd.DataFrame, clf: XGBClassifier, game_date: date) -> pd.DataFrame:
     """Run inference and return games with positive expected value.
 
