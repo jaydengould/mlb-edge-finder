@@ -52,7 +52,8 @@ def test_main_force_flag():
 def test_main_invalid_date():
     """Invalid --date value → exits with code 1."""
     from mlb_edge_finder.__main__ import main
-    with patch("sys.argv", ["mlb_edge_finder", "--date", "not-a-date"]):
+    with patch("sys.argv", ["mlb_edge_finder", "--date", "not-a-date"]), \
+         patch("mlb_edge_finder.__main__.config.setup_logging"):
         with pytest.raises(SystemExit) as exc_info:
             main()
     assert exc_info.value.code == 1

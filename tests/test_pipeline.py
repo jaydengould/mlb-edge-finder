@@ -72,6 +72,7 @@ def test_run_defaults_to_today():
 
     with patch("mlb_edge_finder.pipeline.odds_ingestion.fetch_odds", side_effect=fake_fetch_odds), \
          patch("mlb_edge_finder.pipeline.stats_ingestion.fetch_stats", return_value=pd.DataFrame()), \
+         patch("mlb_edge_finder.pipeline.pitcher_ingestion.fetch_pitcher_stats", return_value=pd.DataFrame()), \
          patch("mlb_edge_finder.pipeline.features.build_features", return_value=pd.DataFrame()), \
          patch("mlb_edge_finder.pipeline.config.MODELS_DIR") as mock_dir, \
          patch("mlb_edge_finder.pipeline.edge_finder.find_edges", return_value=pd.DataFrame()):
