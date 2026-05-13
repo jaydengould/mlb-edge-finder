@@ -48,6 +48,7 @@ def test_run_returns_edges(tmp_path):
 
     with patch("mlb_edge_finder.pipeline.odds_ingestion.fetch_odds", return_value=pd.DataFrame()), \
          patch("mlb_edge_finder.pipeline.stats_ingestion.fetch_stats", return_value=pd.DataFrame()), \
+         patch("mlb_edge_finder.pipeline.pitcher_ingestion.fetch_pitcher_stats", return_value=pd.DataFrame()), \
          patch("mlb_edge_finder.pipeline.features.build_features", return_value=features_df), \
          patch("mlb_edge_finder.pipeline.config.MODELS_DIR", tmp_path), \
          patch("mlb_edge_finder.pipeline.model.load_model", return_value=clf), \
