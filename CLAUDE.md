@@ -6,7 +6,7 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 
 ## Current Phase
 
-**compute_kelly() complete.** Phases 1–3, 4a–4c, 5, 6, 7, and 8 done. `compute_kelly()` done. Next: `__main__.py` CLI.
+**CLI complete.** Phases 1–3, 4a–4c, 5, 6, 7, and 8 done. `compute_kelly()` and `__main__.py` CLI done. Next: APScheduler for daily runs.
 
 - `odds_ingestion.fetch_odds()` and `load_cached_odds()` — cache-first, date filtering, live game exclusion, best line across bookmakers.
 - `stats_ingestion.fetch_stats()` and `load_cached_stats()` — FanGraphs primary (pybaseball, 3-attempt retry with 2s/4s/8s backoff), MLB Stats API fallback (statsapi package). Output schema varies by source — see stats schema section below.
@@ -19,6 +19,7 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 - **7 complete:** `pitcher_ingestion.py` — `fetch_pitcher_stats(game_date)` (statsapi-only, playerPool=All, cache at `data/raw/pitcher_stats_YYYY-MM-DD.csv`), `load_cached_pitcher_stats(game_date)`, `fetch_probable_starters(game_date)` (live call, not cached). `historical_ingestion.fetch_historical()` enriched with `home_starter_name`/`away_starter_name`. `training_data._build_season()` and `features.build_features()` both join pitcher stats with `home_sp_*`/`away_sp_*` prefix to avoid collision with team-level stats. `model.NON_FEATURE_COLS` updated with `home_starter_name`, `away_starter_name`, `home_pitcher_id`, `away_pitcher_id`. `pipeline.run()` calls `fetch_pitcher_stats` before `build_features`. Existing cached historical CSVs must be re-fetched with `force=True` to pick up starter name columns.
 - **8 complete:** `_HISTORICAL_SEASONS` in `historical_ingestion.py` expanded to `[2019, 2021, 2022, 2023, 2024, 2025]` (2020 excluded — 60-game anomaly). Training set grew from ~2,500 to 15,050 rows. `HISTORICAL_NAME_TO_ABBR` already covered all legacy names (Cleveland Indians, Florida Marlins). `_LEGACY_ABBR_NORMALIZE` (`OAK→ATH`) already handled pre-2025 FanGraphs stats. Notebook `seasons` list updated to match. Model retrained: accuracy 58.8%, ROC-AUC 0.633 on 3,010 test samples.
 - **compute_kelly() complete:** `compute_kelly(prob, american_odds) -> float` added to `edge_finder.py`. Half-Kelly formula: `f* = (EV / payout) / 2`, clamped to `[0.0, 1.0]`, returns 0.0 for zero/negative EV. `find_edges()` output gains `kelly_fraction` column in both the DataFrame and the edges CSV. `find_edges()` also guards against empty `features_df` (0 rows when no games today) — returns empty DataFrame instead of raising. `train_baseline()` wrapped in a `sklearn.pipeline.Pipeline` with `SimpleImputer(strategy="median")` to handle NaN values from rolling/pitcher stats (LogisticRegression doesn't support NaN natively).
+- **CLI complete:** `src/mlb_edge_finder/__main__.py` — `python -m mlb_edge_finder [--date YYYY-MM-DD] [--force]`. `--date` validated with `date.fromisoformat()`, defaults to today. `--force` bypasses all caches (passed through to `fetch_odds`, `fetch_stats`, `fetch_pitcher_stats`). Prints a formatted table of edges or "No edges found". Exits 0 on success (including no edges), exits 1 on bad date or pipeline exception. `pipeline.run()` gained `force: bool = False` parameter.
 
 **Always update this file at the end of each working session** to reflect completed phases, new conventions, and any changes to the roadmap.
 
@@ -247,7 +248,7 @@ FanGraphs-specific stat columns (`w_oba`, `bat_wrc_plus`, `fip`) appear in the f
 pytest tests/ -v
 ```
 
-123 smoke + integration tests. All pass.
+132 smoke + integration tests. All pass.
 
 ## Roadmap
 
@@ -263,5 +264,5 @@ pytest tests/ -v
 - [x] **7 — Starting pitcher features** — `pitcher_ingestion.py` with statsapi-only fetch. Individual pitcher `era`, `whip`, `k_per_9`, `bb_per_9`, `ip`, `fip_computed`. `home_sp_*`/`away_sp_*` prefix in both training and inference. Probable starters from `statsapi.schedule`. Historical CSVs enriched with `home_starter_name`/`away_starter_name`.
 - [x] **8 — Expand training seasons** — `_HISTORICAL_SEASONS = [2019, 2021, 2022, 2023, 2024, 2025]`. Training set: 15,050 rows. Model retrained (accuracy 58.8%, ROC-AUC 0.633).
 - [x] Add `compute_kelly()` to `edge_finder` — half-Kelly sizing, `kelly_fraction` column in `find_edges()` output.
-- [ ] Add `__main__.py` CLI entry point
+- [x] Add `__main__.py` CLI entry point — `python -m mlb_edge_finder [--date YYYY-MM-DD] [--force]`.
 - [ ] Add APScheduler for daily runs
