@@ -219,6 +219,21 @@ def test_find_edges_includes_kelly_fraction(tmp_path):
     assert result.iloc[0]["kelly_fraction"] > 0.0
 
 
+def test_find_edges_empty_features_df_returns_empty(tmp_path):
+    """Empty features_df (e.g. no games today) returns empty DataFrame without raising."""
+    from mlb_edge_finder.edge_finder import find_edges
+    empty_df = _make_features(home_odds=110, away_odds=-130).iloc[0:0]  # 0 rows, correct schema
+    clf = _make_clf(home_proba=0.60)
+
+    with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
+         patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
+         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300):
+        result = find_edges(empty_df, clf, GAME_DATE)
+
+    assert result.empty
+    assert "kelly_fraction" in result.columns
+
+
 def test_find_edges_missing_feature_column(tmp_path):
     """Raises ValueError when features_df is missing a column the model needs."""
     from mlb_edge_finder.edge_finder import find_edges

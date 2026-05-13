@@ -89,6 +89,10 @@ def find_edges(features_df: pd.DataFrame, clf: XGBClassifier, game_date: date) -
         "american_odds", "model_prob", "ev", "kelly_fraction",
     ]
 
+    if features_df.empty:
+        logger.warning("No features available for %s — returning empty edges", game_date)
+        return pd.DataFrame(columns=output_cols)
+
     feature_cols = list(clf.feature_names_in_)
     missing = [c for c in feature_cols if c not in features_df.columns]
     if missing:
