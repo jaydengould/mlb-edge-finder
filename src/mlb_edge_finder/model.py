@@ -92,10 +92,15 @@ def train_baseline(
         ValueError: If TARGET_COL is missing from features_df.
         FileNotFoundError: If features_df is empty.
     """
+    from sklearn.impute import SimpleImputer
     from sklearn.linear_model import LogisticRegression
+    from sklearn.pipeline import Pipeline
 
     X_train, X_test, y_train, y_test = _split(features_df)
-    clf = LogisticRegression(max_iter=1000, random_state=42)
+    clf = Pipeline([
+        ("imputer", SimpleImputer(strategy="median")),
+        ("clf", LogisticRegression(max_iter=1000, random_state=42)),
+    ])
     clf.fit(X_train, y_train)
     logger.info("Trained LogisticRegression baseline: %d samples", len(X_train))
     return clf, X_test, y_test

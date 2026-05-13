@@ -111,10 +111,10 @@ def test_train_raises_on_empty_df():
 
 def test_train_baseline_returns_logistic_regression_and_test_split():
     from mlb_edge_finder.model import train_baseline
-    from sklearn.linear_model import LogisticRegression
+    from sklearn.pipeline import Pipeline
     df = _make_df(20)
     clf, X_test, y_test = train_baseline(df)
-    assert isinstance(clf, LogisticRegression)
+    assert isinstance(clf, Pipeline)
     assert len(X_test) == 4
     assert len(y_test) == 4
 
