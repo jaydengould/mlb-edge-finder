@@ -127,8 +127,8 @@ def test_fetch_all_historical_concatenates(tmp_path):
     with patch("mlb_edge_finder.historical_ingestion.statsapi.schedule", return_value=one_game), \
          patch("mlb_edge_finder.historical_ingestion.config.DATA_RAW_DIR", tmp_path):
         df = historical_ingestion.fetch_all_historical(force=True)
-    # 3 seasons × 1 game each
-    assert len(df) == 3
+    # 6 seasons × 1 game each
+    assert len(df) == 6
     assert "home_starter_name" in df.columns
     assert "away_starter_name" in df.columns
 

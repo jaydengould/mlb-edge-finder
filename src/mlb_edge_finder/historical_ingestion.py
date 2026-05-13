@@ -15,7 +15,7 @@ _KEEP_COLS = [
     "game_date", "home_name", "away_name", "home_score", "away_score", "home_win",
     "home_probable_pitcher", "away_probable_pitcher",
 ]
-_HISTORICAL_SEASONS = [2023, 2024, 2025]
+_HISTORICAL_SEASONS = [2019, 2021, 2022, 2023, 2024, 2025]
 
 
 def fetch_historical(season: int, force: bool = False) -> pd.DataFrame:
