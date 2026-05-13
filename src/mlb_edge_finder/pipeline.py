@@ -12,7 +12,7 @@ from mlb_edge_finder import (
 logger = logging.getLogger(__name__)
 
 
-def run(game_date: date | None = None) -> pd.DataFrame:
+def run(game_date: date | None = None, force: bool = False) -> pd.DataFrame:
     """Run the full MLB edge-finding pipeline for a single game date.
 
     Stages (in order):
@@ -24,6 +24,7 @@ def run(game_date: date | None = None) -> pd.DataFrame:
 
     Args:
         game_date: Date to run the pipeline for. Defaults to today.
+        force: If True, re-fetch all data bypassing caches.
 
     Returns:
         DataFrame of flagged edges (may be empty if none found).
@@ -37,9 +38,9 @@ def run(game_date: date | None = None) -> pd.DataFrame:
 
     logger.info("Running pipeline for %s", game_date)
 
-    odds_ingestion.fetch_odds(game_date)
-    stats_ingestion.fetch_stats(game_date)
-    pitcher_ingestion.fetch_pitcher_stats(game_date)
+    odds_ingestion.fetch_odds(game_date, force=force)
+    stats_ingestion.fetch_stats(game_date, force=force)
+    pitcher_ingestion.fetch_pitcher_stats(game_date, force=force)
     features_df = features.build_features(game_date)
 
     pkls = sorted(config.MODELS_DIR.glob("xgb_*.pkl"))

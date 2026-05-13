@@ -65,7 +65,7 @@ def test_run_defaults_to_today():
 
     captured = {}
 
-    def fake_fetch_odds(game_date):
+    def fake_fetch_odds(game_date, force=False):
         captured["game_date"] = game_date
         return pd.DataFrame()
 
@@ -115,4 +115,34 @@ def test_pipeline_calls_fetch_pitcher_stats_before_build_features():
         ]
         pipeline.run(date(2025, 4, 22))
 
-    mock_pitcher.assert_called_once_with(date(2025, 4, 22))
+    mock_pitcher.assert_called_once_with(date(2025, 4, 22), force=False)
+
+
+def test_pipeline_run_accepts_force_param():
+    """pipeline.run() signature has a force parameter defaulting to False."""
+    import inspect
+    from mlb_edge_finder import pipeline
+    sig = inspect.signature(pipeline.run)
+    assert "force" in sig.parameters
+    assert sig.parameters["force"].default is False
+
+
+def test_pipeline_run_passes_force_to_stages(tmp_path):
+    """force=True is forwarded to fetch_odds, fetch_stats, fetch_pitcher_stats."""
+    from mlb_edge_finder import pipeline
+    (tmp_path / "xgb_2025-09-28.pkl").touch()
+    clf = MagicMock()
+    clf.feature_names_in_ = np.array([])
+
+    with patch("mlb_edge_finder.pipeline.odds_ingestion.fetch_odds") as mock_odds, \
+         patch("mlb_edge_finder.pipeline.stats_ingestion.fetch_stats") as mock_stats, \
+         patch("mlb_edge_finder.pipeline.pitcher_ingestion.fetch_pitcher_stats") as mock_pitcher, \
+         patch("mlb_edge_finder.pipeline.features.build_features", return_value=pd.DataFrame()), \
+         patch("mlb_edge_finder.pipeline.model.load_model", return_value=clf), \
+         patch("mlb_edge_finder.pipeline.edge_finder.find_edges", return_value=pd.DataFrame()), \
+         patch("mlb_edge_finder.pipeline.config.MODELS_DIR", tmp_path):
+        pipeline.run(date(2025, 7, 1), force=True)
+
+    mock_odds.assert_called_once_with(date(2025, 7, 1), force=True)
+    mock_stats.assert_called_once_with(date(2025, 7, 1), force=True)
+    mock_pitcher.assert_called_once_with(date(2025, 7, 1), force=True)
