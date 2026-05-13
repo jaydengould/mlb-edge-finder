@@ -92,7 +92,10 @@ def test_find_edges_returns_home_edge(tmp_path):
     assert result.iloc[0]["american_odds"] == 110
     assert abs(result.iloc[0]["model_prob"] - 0.75) < 1e-6
     assert result.iloc[0]["ev"] > 0.05
-    assert set(result.columns) == {"game_id", "home_team", "away_team", "bet_side", "american_odds", "model_prob", "ev"}
+    assert set(result.columns) == {
+        "game_id", "home_team", "away_team", "bet_side",
+        "american_odds", "model_prob", "ev", "kelly_fraction",
+    }
 
 
 def test_find_edges_filters_min_odds(tmp_path):
@@ -109,7 +112,10 @@ def test_find_edges_filters_min_odds(tmp_path):
         result = find_edges(features_df, clf, GAME_DATE)
 
     assert result.empty
-    assert set(result.columns) == {"game_id", "home_team", "away_team", "bet_side", "american_odds", "model_prob", "ev"}
+    assert set(result.columns) == {
+        "game_id", "home_team", "away_team", "bet_side",
+        "american_odds", "model_prob", "ev", "kelly_fraction",
+    }
 
 
 def test_find_edges_empty_when_no_edges(tmp_path):
@@ -125,7 +131,10 @@ def test_find_edges_empty_when_no_edges(tmp_path):
         result = find_edges(features_df, clf, GAME_DATE)
 
     assert result.empty
-    assert set(result.columns) == {"game_id", "home_team", "away_team", "bet_side", "american_odds", "model_prob", "ev"}
+    assert set(result.columns) == {
+        "game_id", "home_team", "away_team", "bet_side",
+        "american_odds", "model_prob", "ev", "kelly_fraction",
+    }
 
 
 def test_find_edges_both_sides(tmp_path):
@@ -192,6 +201,22 @@ def test_compute_kelly_result_in_valid_range():
     for prob, odds in [(0.99, 100), (0.55, 200), (0.60, -120), (0.45, -110)]:
         result = compute_kelly(prob=prob, american_odds=odds)
         assert 0.0 <= result <= 1.0, f"Out of range for prob={prob}, odds={odds}: {result}"
+
+
+def test_find_edges_includes_kelly_fraction(tmp_path):
+    """find_edges output contains kelly_fraction column with a positive value."""
+    from mlb_edge_finder.edge_finder import find_edges
+    # home_prob=0.75, home_odds=+110 → positive EV → positive Kelly fraction
+    features_df = _make_features(home_odds=110, away_odds=-140)
+    clf = _make_clf(home_proba=0.75)
+
+    with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
+         patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
+         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300):
+        result = find_edges(features_df, clf, GAME_DATE)
+
+    assert "kelly_fraction" in result.columns
+    assert result.iloc[0]["kelly_fraction"] > 0.0
 
 
 def test_find_edges_missing_feature_column(tmp_path):
