@@ -6,7 +6,7 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 
 ## Current Phase
 
-**Phase 7 complete.** Phases 1–3, 4a–4c, 5, 6, and 7 are done. Next: `compute_kelly()` + `__main__.py` CLI.
+**Phase 8 complete.** Phases 1–3, 4a–4c, 5, 6, 7, and 8 are done. Next: `compute_kelly()` + `__main__.py` CLI.
 
 - `odds_ingestion.fetch_odds()` and `load_cached_odds()` — cache-first, date filtering, live game exclusion, best line across bookmakers.
 - `stats_ingestion.fetch_stats()` and `load_cached_stats()` — FanGraphs primary (pybaseball, 3-attempt retry with 2s/4s/8s backoff), MLB Stats API fallback (statsapi package). Output schema varies by source — see stats schema section below.
@@ -17,6 +17,7 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 - **5 complete:** `edge_finder.find_edges(features_df, clf, game_date)` — uses `clf.feature_names_in_` to select inference features, runs sequential home/away EV passes, filters by `EV_THRESHOLD` and `MIN_AMERICAN_ODDS`, writes `data/processed/edges_YYYY-MM-DD.csv`. `pipeline.run(game_date)` — orchestrates all five stages end-to-end; auto-discovers latest model by globbing `MODELS_DIR` for `xgb_*.pkl` sorted by filename date.
 - **6 complete:** `rolling_stats.py` — `compute_rolling_stats(historical_df, window=15)` (shift-1, for training) and `latest_rolling_stats(historical_df, window=15)` (no shift, for inference). `HISTORICAL_NAME_TO_ABBR` moved here from `training_data.py` (re-exported for backwards compatibility). Adds 8 rolling columns to both training set and daily features: `home_/away_rolling_runs_scored`, `rolling_runs_allowed`, `rolling_win_pct`, `rolling_run_diff`.
 - **7 complete:** `pitcher_ingestion.py` — `fetch_pitcher_stats(game_date)` (statsapi-only, playerPool=All, cache at `data/raw/pitcher_stats_YYYY-MM-DD.csv`), `load_cached_pitcher_stats(game_date)`, `fetch_probable_starters(game_date)` (live call, not cached). `historical_ingestion.fetch_historical()` enriched with `home_starter_name`/`away_starter_name`. `training_data._build_season()` and `features.build_features()` both join pitcher stats with `home_sp_*`/`away_sp_*` prefix to avoid collision with team-level stats. `model.NON_FEATURE_COLS` updated with `home_starter_name`, `away_starter_name`, `home_pitcher_id`, `away_pitcher_id`. `pipeline.run()` calls `fetch_pitcher_stats` before `build_features`. Existing cached historical CSVs must be re-fetched with `force=True` to pick up starter name columns.
+- **8 complete:** `_HISTORICAL_SEASONS` in `historical_ingestion.py` expanded to `[2019, 2021, 2022, 2023, 2024, 2025]` (2020 excluded — 60-game anomaly). Training set grew from ~2,500 to 15,050 rows. `HISTORICAL_NAME_TO_ABBR` already covered all legacy names (Cleveland Indians, Florida Marlins). `_LEGACY_ABBR_NORMALIZE` (`OAK→ATH`) already handled pre-2025 FanGraphs stats. Notebook `seasons` list updated to match. Model retrained: accuracy 58.8%, ROC-AUC 0.633 on 3,010 test samples.
 
 **Always update this file at the end of each working session** to reflect completed phases, new conventions, and any changes to the roadmap.
 
@@ -259,7 +260,7 @@ pytest tests/ -v
 - [x] Implement `pipeline.run()`
 - [x] **6 — Rolling window team stats** — `rolling_stats.py` computes 4 rolling features (runs_scored, runs_allowed, win_pct, run_diff) from cached historical game results. Joined into both training set and daily features. Window=15, season-only lookback, XGBoost handles NaN for early-season games.
 - [x] **7 — Starting pitcher features** — `pitcher_ingestion.py` with statsapi-only fetch. Individual pitcher `era`, `whip`, `k_per_9`, `bb_per_9`, `ip`, `fip_computed`. `home_sp_*`/`away_sp_*` prefix in both training and inference. Probable starters from `statsapi.schedule`. Historical CSVs enriched with `home_starter_name`/`away_starter_name`.
-- [ ] **8 — Expand training seasons** — add 2019–2022 (skip 2020, 60-game anomaly) once rolling stats are in place. One-liner change to `fetch_all_historical()` call sites.
+- [x] **8 — Expand training seasons** — `_HISTORICAL_SEASONS = [2019, 2021, 2022, 2023, 2024, 2025]`. Training set: 15,050 rows. Model retrained (accuracy 58.8%, ROC-AUC 0.633).
 - [ ] Add `compute_kelly()` to `edge_finder`
 - [ ] Add `__main__.py` CLI entry point
 - [ ] Add APScheduler for daily runs
