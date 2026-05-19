@@ -1,0 +1,61 @@
+name: Daily MLB Edge Finder
+
+on:
+  schedule:
+    - cron: '30 13 * * *'   # 9:30 AM EDT (UTC-4, regular season)
+  workflow_dispatch:          # allows manual trigger from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  find-edges:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install -e .
+
+      - name: Run pipeline
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python -m mlb_edge_finder
+
+      - name: Promote edges file to outputs/
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          EDGES_SRC="data/processed/edges_${DATE}.csv"
+          EDGES_DST="outputs/edges_${DATE}.csv"
+          if [ -f "$EDGES_SRC" ]; then
+            cp "$EDGES_SRC" "$EDGES_DST"
+          else
+            # Pipeline ran successfully but found no edges — write header-only file
+            # so there is still a commit recording that the workflow ran.
+            echo "game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,prob_flag" > "$EDGES_DST"
+          fi
+
+      - name: Commit and push edges file
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "outputs/edges_${DATE}.csv"
+          if git diff --staged --quiet; then
+            echo "Edges file unchanged — nothing to commit."
+          else
+            git commit -m "chore: edges ${DATE}"
+            git push
+          fi
