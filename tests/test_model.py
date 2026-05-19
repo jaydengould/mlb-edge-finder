@@ -76,20 +76,29 @@ def test_split_empty_df_raises():
         _split(df)
 
 
-def test_train_returns_classifier_and_test_split():
+def test_train_returns_classifier_and_val_and_test_splits():
     from mlb_edge_finder.model import train
     from xgboost import XGBClassifier
     df = _make_df(20)
-    clf, X_test, y_test = train(df)
+    clf, X_val, X_test, y_val, y_test = train(df)
     assert isinstance(clf, XGBClassifier)
+    assert len(X_val) == 4
+    assert len(y_val) == 4
     assert len(X_test) == 4
     assert len(y_test) == 4
+
+
+def test_train_val_and_test_splits_have_no_overlapping_indices():
+    from mlb_edge_finder.model import train
+    df = _make_df(20)
+    _, X_val, X_test, _, _ = train(df)
+    assert len(set(X_val.index) & set(X_test.index)) == 0
 
 
 def test_train_clf_can_predict_proba():
     from mlb_edge_finder.model import train
     df = _make_df(20)
-    clf, X_test, y_test = train(df)
+    clf, X_val, X_test, y_val, y_test = train(df)
     proba = clf.predict_proba(X_test)
     assert proba.shape == (4, 2)
     assert (proba >= 0).all() and (proba <= 1).all()
@@ -119,15 +128,6 @@ def test_train_baseline_returns_logistic_regression_and_test_split():
     assert len(y_test) == 4
 
 
-def test_train_baseline_same_test_split_as_train():
-    from mlb_edge_finder.model import train, train_baseline
-    df = _make_df(20)
-    _, X_test_xgb, y_test_xgb = train(df)
-    _, X_test_lr, y_test_lr = train_baseline(df)
-    pd.testing.assert_frame_equal(X_test_xgb.reset_index(drop=True), X_test_lr.reset_index(drop=True))
-    pd.testing.assert_series_equal(y_test_xgb.reset_index(drop=True), y_test_lr.reset_index(drop=True))
-
-
 def test_train_baseline_can_predict_proba():
     from mlb_edge_finder.model import train_baseline
     df = _make_df(20)
@@ -145,7 +145,7 @@ EXPECTED_METRIC_KEYS = {
 def test_evaluate_xgb_returns_all_keys():
     from mlb_edge_finder.model import train, evaluate
     df = _make_df(20)
-    clf, X_test, y_test = train(df)
+    clf, X_val, X_test, y_val, y_test = train(df)
     metrics = evaluate(clf, X_test, y_test)
     assert set(metrics.keys()) == EXPECTED_METRIC_KEYS
 
@@ -153,7 +153,7 @@ def test_evaluate_xgb_returns_all_keys():
 def test_evaluate_xgb_metric_ranges():
     from mlb_edge_finder.model import train, evaluate
     df = _make_df(20)
-    clf, X_test, y_test = train(df)
+    clf, X_val, X_test, y_val, y_test = train(df)
     metrics = evaluate(clf, X_test, y_test)
     assert 0.0 <= metrics["accuracy"] <= 1.0
     assert 0.0 <= metrics["roc_auc"] <= 1.0
@@ -166,7 +166,7 @@ def test_evaluate_xgb_hyperparams_populated():
     from mlb_edge_finder.model import train, evaluate
     from mlb_edge_finder import config
     df = _make_df(20)
-    clf, X_test, y_test = train(df)
+    clf, X_val, X_test, y_val, y_test = train(df)
     metrics = evaluate(clf, X_test, y_test)
     assert metrics["xgb_n_estimators"] == config.XGB_N_ESTIMATORS
     assert metrics["xgb_max_depth"] == config.XGB_MAX_DEPTH
@@ -187,7 +187,7 @@ def test_save_and_load_model_roundtrip(tmp_path, monkeypatch):
     from mlb_edge_finder.model import evaluate, load_model, save_model, train
     monkeypatch.setattr(config, "MODELS_DIR", tmp_path)
     df = _make_df(20)
-    clf, X_test, y_test = train(df)
+    clf, X_val, X_test, y_val, y_test = train(df)
     metrics = evaluate(clf, X_test, y_test)
     game_date = date(2024, 4, 1)
     save_model(clf, metrics, game_date)
@@ -203,7 +203,7 @@ def test_save_model_writes_both_files(tmp_path, monkeypatch):
     from mlb_edge_finder.model import evaluate, save_model, train
     monkeypatch.setattr(config, "MODELS_DIR", tmp_path)
     df = _make_df(20)
-    clf, X_test, y_test = train(df)
+    clf, X_val, X_test, y_val, y_test = train(df)
     metrics = evaluate(clf, X_test, y_test)
     game_date = date(2024, 4, 1)
     save_model(clf, metrics, game_date)
@@ -249,6 +249,52 @@ def test_load_model_signature():
     assert callable(model.load_model)
     sig = inspect.signature(model.load_model)
     assert "game_date" in sig.parameters
+
+
+def test_calibrate_signature():
+    from mlb_edge_finder import model
+    import inspect
+    assert callable(model.calibrate)
+    sig = inspect.signature(model.calibrate)
+    assert "clf" in sig.parameters
+    assert "X_val" in sig.parameters
+    assert "y_val" in sig.parameters
+
+
+def test_calibrate_returns_calibrated_classifier_cv():
+    from mlb_edge_finder.model import train, calibrate
+    from sklearn.calibration import CalibratedClassifierCV
+    df = _make_df(100)
+    clf, X_val, X_test, y_val, y_test = train(df)
+    cal_clf = calibrate(clf, X_val, y_val)
+    assert isinstance(cal_clf, CalibratedClassifierCV)
+
+
+def test_calibrate_predict_proba_in_valid_range():
+    from mlb_edge_finder.model import train, calibrate
+    df = _make_df(100)
+    clf, X_val, X_test, y_val, y_test = train(df)
+    cal_clf = calibrate(clf, X_val, y_val)
+    proba = cal_clf.predict_proba(X_test)
+    assert proba.shape == (len(X_test), 2)
+    assert (proba >= 0).all() and (proba <= 1).all()
+
+
+def test_calibrate_uses_isotonic_method():
+    from mlb_edge_finder.model import train, calibrate
+    df = _make_df(100)
+    clf, X_val, X_test, y_val, y_test = train(df)
+    cal_clf = calibrate(clf, X_val, y_val)
+    assert cal_clf.method == "isotonic"
+
+
+def test_calibrate_fitted_estimator_is_frozen():
+    from mlb_edge_finder.model import train, calibrate
+    from sklearn.frozen import FrozenEstimator
+    df = _make_df(100)
+    clf, X_val, X_test, y_val, y_test = train(df)
+    cal_clf = calibrate(clf, X_val, y_val)
+    assert isinstance(cal_clf.estimator, FrozenEstimator)
 
 
 def test_non_feature_cols_excludes_pitcher_metadata():

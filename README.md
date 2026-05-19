@@ -8,8 +8,8 @@ A portfolio project that identifies positive expected-value (EV) opportunities i
 2. **Stats ingestion** — pulls current-season team batting and pitching stats from FanGraphs (via pybaseball), falling back to the MLB Stats API if FanGraphs is unavailable.
 3. **Pitcher ingestion** — fetches individual pitcher season stats and today's probable starters via the MLB Stats API.
 4. **Feature engineering** — joins odds, team stats, rolling form stats (15-game window), and starting pitcher stats into one row per game.
-5. **Inference** — an XGBoost classifier predicts home-team win probability. EV is computed per side; bets exceeding the threshold are flagged with a half-Kelly bet size.
-6. **Output** — flagged edges are written to `data/processed/edges_YYYY-MM-DD.csv` and printed to the terminal.
+5. **Inference** — an XGBoost classifier predicts home-team win probability. Probabilities are post-hoc calibrated with isotonic regression on a held-out validation set. EV is computed per side; bets exceeding the threshold are flagged with a half-Kelly bet size.
+6. **Output** — flagged edges are written to `data/processed/edges_YYYY-MM-DD.csv` and printed to the terminal. Any edge where `model_prob > 0.80` is marked with `prob_flag=True` for manual review.
 
 ## Tech Stack
 
@@ -66,10 +66,12 @@ python -m mlb_edge_finder --date 2026-05-12 --force
 ```
 Found 2 edge(s) for 2026-05-12:
 
-  home_team         away_team        bet_side  american_odds  model_prob    ev  kelly_fraction
-  New York Yankees  Boston Red Sox   home            +130       0.682   0.107           0.041
-  Houston Astros    Texas Rangers    away            +115       0.621   0.064           0.028
+  home_team         away_team        bet_side  american_odds  model_prob    ev  kelly_fraction  prob_flag
+  New York Yankees  Boston Red Sox   home            +130       0.682   0.107           0.041      False
+  Houston Astros    Texas Rangers    away            +115       0.621   0.064           0.028      False
 ```
+
+`prob_flag=True` marks rows where `model_prob > 0.80` — review these manually before acting, as extreme probabilities can indicate a feature outlier rather than a genuine edge.
 
 ## Project Structure
 
@@ -93,11 +95,15 @@ src/mlb_edge_finder/
 
 Trained on 15,050 regular-season games (2019, 2021–2025; 2020 excluded — 60-game anomaly).
 
+**Training split:** 60% fit / 20% calibration validation / 20% test (all stratified).
+
 **Features (40 total):**
 - Team batting: `bat_avg`, `obp`, `slg`, `ops`, `runs_per_game`
 - Team pitching: `era`, `whip`, `k_per_9`, `bb_per_9`
 - Rolling form (15-game window, shift-1 for training): `rolling_runs_scored`, `rolling_runs_allowed`, `rolling_win_pct`, `rolling_run_diff`
 - Starting pitcher: `era`, `whip`, `k_per_9`, `bb_per_9`, `ip`, `fip_computed` (home/away prefixed)
+
+**Probability calibration:** After training, the raw XGBoost model is wrapped with `CalibratedClassifierCV` (isotonic regression, `FrozenEstimator`) fit on the held-out 20% calibration set. This corrects the model's tendency to produce overconfident probabilities (e.g. 90%+ for games that are realistically 60/40), which is critical for EV estimates to be meaningful.
 
 **Performance (2019–2025 test set, n=3,010):**
 | Metric | XGBoost | Logistic Regression baseline |
@@ -137,7 +143,7 @@ kelly_fraction = (EV / payout) / 2   # half of full Kelly, clamped to [0.0, 1.0]
 pytest tests/ -v
 ```
 
-132 smoke + integration tests. All pass.
+140 smoke + integration tests. All pass.
 
 ## Roadmap
 
@@ -154,4 +160,6 @@ pytest tests/ -v
 - [x] Expand training seasons — 2019, 2021–2025 (15,050 games)
 - [x] Kelly criterion bet sizing — half-Kelly `kelly_fraction` column in edge output
 - [x] CLI — `python -m mlb_edge_finder [--date YYYY-MM-DD] [--force]`
+- [x] Probability calibration — isotonic regression via `CalibratedClassifierCV` fit on held-out val set; `model.calibrate(clf, X_val, y_val)`
+- [x] High-probability flag — `prob_flag=True` in edge output when `model_prob > 0.80`
 - [ ] APScheduler for daily automated runs

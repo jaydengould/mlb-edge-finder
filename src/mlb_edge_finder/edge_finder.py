@@ -78,15 +78,15 @@ def find_edges(features_df: pd.DataFrame, clf: XGBClassifier, game_date: date) -
 
     Returns:
         DataFrame with columns: game_id, home_team, away_team,
-        bet_side, american_odds, model_prob, ev, kelly_fraction —
-        one row per flagged edge.
+        bet_side, american_odds, model_prob, ev, kelly_fraction, prob_flag —
+        one row per flagged edge. prob_flag=True when model_prob > 0.80.
 
     Raises:
         ValueError: If features_df is missing any column in clf.feature_names_in_.
     """
     output_cols = [
         "game_id", "home_team", "away_team", "bet_side",
-        "american_odds", "model_prob", "ev", "kelly_fraction",
+        "american_odds", "model_prob", "ev", "kelly_fraction", "prob_flag",
     ]
 
     if features_df.empty:
@@ -117,6 +117,7 @@ def find_edges(features_df: pd.DataFrame, clf: XGBClassifier, game_date: date) -
         compute_kelly(float(p), int(o))
         for p, o in zip(home_prob[home_mask.values], df.loc[home_mask, "home_odds_american"].values)
     ]
+    home_edges["prob_flag"] = home_prob[home_mask.values] > 0.80
 
     # Away pass
     away_ev = pd.Series(
@@ -132,6 +133,7 @@ def find_edges(features_df: pd.DataFrame, clf: XGBClassifier, game_date: date) -
         compute_kelly(float(p), int(o))
         for p, o in zip(away_prob[away_mask.values], df.loc[away_mask, "away_odds_american"].values)
     ]
+    away_edges["prob_flag"] = away_prob[away_mask.values] > 0.80
 
     edges = pd.concat([home_edges[output_cols], away_edges[output_cols]], ignore_index=True)
 

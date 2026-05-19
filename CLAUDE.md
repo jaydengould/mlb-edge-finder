@@ -18,8 +18,10 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 - **6 complete:** `rolling_stats.py` — `compute_rolling_stats(historical_df, window=15)` (shift-1, for training) and `latest_rolling_stats(historical_df, window=15)` (no shift, for inference). `HISTORICAL_NAME_TO_ABBR` moved here from `training_data.py` (re-exported for backwards compatibility). Adds 8 rolling columns to both training set and daily features: `home_/away_rolling_runs_scored`, `rolling_runs_allowed`, `rolling_win_pct`, `rolling_run_diff`.
 - **7 complete:** `pitcher_ingestion.py` — `fetch_pitcher_stats(game_date)` (statsapi-only, playerPool=All, cache at `data/raw/pitcher_stats_YYYY-MM-DD.csv`), `load_cached_pitcher_stats(game_date)`, `fetch_probable_starters(game_date)` (live call, not cached). `historical_ingestion.fetch_historical()` enriched with `home_starter_name`/`away_starter_name`. `training_data._build_season()` and `features.build_features()` both join pitcher stats with `home_sp_*`/`away_sp_*` prefix to avoid collision with team-level stats. `model.NON_FEATURE_COLS` updated with `home_starter_name`, `away_starter_name`, `home_pitcher_id`, `away_pitcher_id`. `pipeline.run()` calls `fetch_pitcher_stats` before `build_features`. Existing cached historical CSVs must be re-fetched with `force=True` to pick up starter name columns.
 - **8 complete:** `_HISTORICAL_SEASONS` in `historical_ingestion.py` expanded to `[2019, 2021, 2022, 2023, 2024, 2025]` (2020 excluded — 60-game anomaly). Training set grew from ~2,500 to 15,050 rows. `HISTORICAL_NAME_TO_ABBR` already covered all legacy names (Cleveland Indians, Florida Marlins). `_LEGACY_ABBR_NORMALIZE` (`OAK→ATH`) already handled pre-2025 FanGraphs stats. Notebook `seasons` list updated to match. Model retrained: accuracy 58.8%, ROC-AUC 0.633 on 3,010 test samples.
-- **compute_kelly() complete:** `compute_kelly(prob, american_odds) -> float` added to `edge_finder.py`. Half-Kelly formula: `f* = (EV / payout) / 2`, clamped to `[0.0, 1.0]`, returns 0.0 for zero/negative EV. `find_edges()` output gains `kelly_fraction` column in both the DataFrame and the edges CSV. `find_edges()` also guards against empty `features_df` (0 rows when no games today) — returns empty DataFrame instead of raising. `train_baseline()` wrapped in a `sklearn.pipeline.Pipeline` with `SimpleImputer(strategy="median")` to handle NaN values from rolling/pitcher stats (LogisticRegression doesn't support NaN natively).
+- **compute_kelly() complete:** `compute_kelly(prob, american_odds) -> float` added to `edge_finder.py`. Half-Kelly formula: `f* = (EV / payout) / 2`, clamped to `[0.0, 1.0]`, returns 0.0 for zero/negative EV. `find_edges()` output gains `kelly_fraction` and `prob_flag` columns (`prob_flag=True` when `model_prob > 0.80`). `find_edges()` also guards against empty `features_df` (0 rows when no games today) — returns empty DataFrame instead of raising. `train_baseline()` wrapped in a `sklearn.pipeline.Pipeline` with `SimpleImputer(strategy="median")` to handle NaN values from rolling/pitcher stats (LogisticRegression doesn't support NaN natively).
 - **CLI complete:** `src/mlb_edge_finder/__main__.py` — `python -m mlb_edge_finder [--date YYYY-MM-DD] [--force]`. `--date` validated with `date.fromisoformat()`, defaults to today. `--force` bypasses all caches (passed through to `fetch_odds`, `fetch_stats`, `fetch_pitcher_stats`). Prints a formatted table of edges or "No edges found". Exits 0 on success (including no edges), exits 1 on bad date or pipeline exception. `pipeline.run()` gained `force: bool = False` parameter.
+- **Probability calibration complete:** `model.calibrate(clf, X_val, y_val)` — wraps a fitted `XGBClassifier` in `CalibratedClassifierCV(FrozenEstimator(clf), method="isotonic")` fit on the held-out validation set. `train()` now does a 60/20/20 split (was 80/20) and returns `(clf, X_val, X_test, y_val, y_test)` — the 20% val split is the calibration input. The saved model (`.pkl`) is the calibrated wrapper, not the raw XGBoost. Uses `FrozenEstimator` (sklearn 1.6+ API) to avoid deprecated `cv="prefit"`.
+- **High-probability flag complete:** `find_edges()` output gains a `prob_flag` column (bool). `True` when `model_prob > 0.80` — signals rows to review manually before acting, as extreme probabilities often reflect feature outliers rather than genuine edge.
 
 **Always update this file at the end of each working session** to reflect completed phases, new conventions, and any changes to the roadmap.
 
@@ -215,14 +217,16 @@ The join flow (per season):
 - `NON_FEATURE_COLS` — metadata columns dropped before training (`game_date`, `home_name`, `away_name`, `home_score`, `away_score`, `home_abbr`, `away_abbr`, `season`, `home_win`, `home_starter_name`, `away_starter_name`, `home_pitcher_id`, `away_pitcher_id`). Any column not in this list is treated as a feature.
 
 **Key design decisions:**
-- `_split(features_df)` — private helper; 80/20 stratified split, `random_state=42`. Both `train()` and `train_baseline()` call it, so their test sets are identical for fair metric comparison.
-- `train(features_df)` → `(XGBClassifier, X_test, y_test)` — uses `config.XGB_N_ESTIMATORS` and `config.XGB_MAX_DEPTH`.
-- `train_baseline(features_df)` → `(LogisticRegression, X_test, y_test)` — diagnostic only, never persisted.
-- `evaluate(clf, X_test, y_test)` → dict — duck-typed, works for both classifiers. Keys: `accuracy`, `roc_auc`, `log_loss`, `brier_score`, `n_test_samples`, `xgb_n_estimators`, `xgb_max_depth`. XGBoost-specific keys are `None` for logistic regression.
-- `save_model(clf, metrics, game_date)` — writes `xgb_YYYY-MM-DD.pkl` and `metrics_YYYY-MM-DD.json` to `MODELS_DIR`.
-- `load_model(game_date)` → `XGBClassifier` — raises `FileNotFoundError` if missing.
+- `_split(features_df)` — private helper; 80/20 stratified split, `random_state=42`. Used by `train_baseline()` only.
+- `_three_way_split(features_df)` — private helper; 60/20/20 stratified split. Used by `train()`.
+- `train(features_df)` → `(XGBClassifier, X_val, X_test, y_val, y_test)` — 60% fits XGBoost, 20% returned as calibration val set, 20% held for evaluation. Uses `config.XGB_N_ESTIMATORS` and `config.XGB_MAX_DEPTH`.
+- `calibrate(clf, X_val, y_val)` → `CalibratedClassifierCV` — wraps a fitted clf with isotonic regression via `FrozenEstimator` (sklearn 1.6+, replaces deprecated `cv="prefit"`). Fit on the held-out val set only; the underlying model is not retrained.
+- `train_baseline(features_df)` → `(Pipeline, X_test, y_test)` — uses `_split()` (80/20); diagnostic only, never persisted.
+- `evaluate(clf, X_test, y_test)` → dict — duck-typed, works for XGBClassifier and CalibratedClassifierCV. Keys: `accuracy`, `roc_auc`, `log_loss`, `brier_score`, `n_test_samples`, `xgb_n_estimators`, `xgb_max_depth`. XGBoost-specific keys are `None` for other classifiers.
+- `save_model(clf, metrics, game_date)` — writes `xgb_YYYY-MM-DD.pkl` and `metrics_YYYY-MM-DD.json` to `MODELS_DIR`. The persisted model is typically the calibrated wrapper.
+- `load_model(game_date)` → classifier — raises `FileNotFoundError` if missing.
 
-Only the XGBoost model is persisted. The logistic regression baseline is used at training time for comparison only.
+Only the calibrated XGBoost model is persisted. The logistic regression baseline is used at training time for comparison only.
 
 **Observed baseline performance (2023–2025, end-of-season stats):** Logistic regression slightly outperforms XGBoost on static season-average features — expected, as aggregate stats lack temporal signal. Rolling window features (future roadmap) should reverse this.
 
@@ -248,7 +252,7 @@ FanGraphs-specific stat columns (`w_oba`, `bat_wrc_plus`, `fip`) appear in the f
 pytest tests/ -v
 ```
 
-132 smoke + integration tests. All pass.
+140 smoke + integration tests. All pass.
 
 ## Roadmap
 
@@ -265,4 +269,6 @@ pytest tests/ -v
 - [x] **8 — Expand training seasons** — `_HISTORICAL_SEASONS = [2019, 2021, 2022, 2023, 2024, 2025]`. Training set: 15,050 rows. Model retrained (accuracy 58.8%, ROC-AUC 0.633).
 - [x] Add `compute_kelly()` to `edge_finder` — half-Kelly sizing, `kelly_fraction` column in `find_edges()` output.
 - [x] Add `__main__.py` CLI entry point — `python -m mlb_edge_finder [--date YYYY-MM-DD] [--force]`.
+- [x] Add probability calibration — `model.calibrate(clf, X_val, y_val)` wraps XGBoost with isotonic `CalibratedClassifierCV` (FrozenEstimator, sklearn 1.6+). `train()` returns 5-tuple with dedicated val split.
+- [x] Add `prob_flag` column to `find_edges()` output — `True` when `model_prob > 0.80`.
 - [ ] Add APScheduler for daily runs

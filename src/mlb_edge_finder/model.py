@@ -27,6 +27,7 @@ NON_FEATURE_COLS = [
 def _split(
     features_df: pd.DataFrame,
 ) -> tuple[pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]:
+    """80/20 stratified split — used by train_baseline() only."""
     from sklearn.model_selection import train_test_split
 
     if TARGET_COL not in features_df.columns:
@@ -38,27 +39,54 @@ def _split(
     return train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
 
+def _three_way_split(
+    features_df: pd.DataFrame,
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.Series, pd.Series, pd.Series]:
+    """60/20/20 stratified split: fit / validation / test.
+
+    The validation set is held out from XGBoost training so it can be used to
+    fit a post-hoc probability calibrator without data leakage.
+    """
+    from sklearn.model_selection import train_test_split
+
+    if TARGET_COL not in features_df.columns:
+        raise ValueError(f"Missing target column '{TARGET_COL}' in features_df")
+    if features_df.empty:
+        raise FileNotFoundError("features_df is empty — run build_training_set() first")
+    X = features_df.drop(columns=[c for c in NON_FEATURE_COLS if c in features_df.columns])
+    y = features_df[TARGET_COL]
+    X_trainval, X_test, y_trainval, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42, stratify=y
+    )
+    X_train, X_val, y_train, y_val = train_test_split(
+        X_trainval, y_trainval, test_size=0.25, random_state=42, stratify=y_trainval
+    )
+    return X_train, X_val, X_test, y_train, y_val, y_test
+
+
 def train(
     features_df: pd.DataFrame,
-) -> tuple[XGBClassifier, pd.DataFrame, pd.Series]:
+) -> tuple[XGBClassifier, pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]:
     """Train an XGBoost classifier to predict home-team win probability.
 
-    Splits features_df 80/20 (stratified, random_state=42), fits an
-    XGBClassifier using config.XGB_N_ESTIMATORS and config.XGB_MAX_DEPTH,
-    and returns the model plus the held-out test split.
+    Splits features_df 60/20/20 (stratified, random_state=42): 60% used to fit
+    XGBoost, 20% returned as a calibration validation set (X_val/y_val), and
+    20% held out for final evaluation (X_test/y_test).
+
+    Pass X_val/y_val to calibrate() to produce a probability-calibrated model.
 
     Args:
         features_df: Output of build_training_set() or load_training_set().
             Must contain TARGET_COL as the label column.
 
     Returns:
-        Tuple of (fitted XGBClassifier, X_test DataFrame, y_test Series).
+        Tuple of (fitted XGBClassifier, X_val, X_test, y_val, y_test).
 
     Raises:
         ValueError: If TARGET_COL is missing from features_df.
         FileNotFoundError: If features_df is empty.
     """
-    X_train, X_test, y_train, y_test = _split(features_df)
+    X_train, X_val, X_test, y_train, y_val, y_test = _three_way_split(features_df)
     clf = XGBClassifier(
         n_estimators=config.XGB_N_ESTIMATORS,
         max_depth=config.XGB_MAX_DEPTH,
@@ -71,7 +99,31 @@ def train(
         len(X_train),
         X_train.shape[1],
     )
-    return clf, X_test, y_test
+    return clf, X_val, X_test, y_val, y_test
+
+
+def calibrate(clf: Any, X_val: pd.DataFrame, y_val: pd.Series) -> Any:
+    """Wrap a fitted classifier with isotonic probability calibration.
+
+    Uses sklearn's CalibratedClassifierCV with cv='prefit' so the underlying
+    model is not retrained — only the calibration layer is fit on X_val/y_val.
+    X_val must be held out from the data used to train clf.
+
+    Args:
+        clf: A fitted classifier with predict_proba() (e.g. from train()).
+        X_val: Feature matrix for the held-out validation set.
+        y_val: True binary labels for the validation set.
+
+    Returns:
+        CalibratedClassifierCV fitted on X_val/y_val, ready for inference.
+    """
+    from sklearn.calibration import CalibratedClassifierCV
+    from sklearn.frozen import FrozenEstimator
+
+    cal_clf = CalibratedClassifierCV(estimator=FrozenEstimator(clf), method="isotonic")
+    cal_clf.fit(X_val, y_val)
+    logger.info("Calibrated classifier with isotonic regression on %d samples", len(y_val))
+    return cal_clf
 
 
 def train_baseline(
