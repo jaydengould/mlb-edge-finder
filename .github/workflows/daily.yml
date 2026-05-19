@@ -11,6 +11,7 @@ permissions:
 jobs:
   find-edges:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout repo
@@ -57,5 +58,5 @@ jobs:
             echo "Edges file unchanged — nothing to commit."
           else
             git commit -m "chore: edges ${DATE}"
-            git push
+            git push origin HEAD:${{ github.ref_name }}
           fi
