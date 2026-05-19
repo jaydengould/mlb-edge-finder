@@ -1,0 +1,5 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,prob_flag
+17b57496d4b06d4d4ecabf5046cb5e37,Seattle Mariners,Chicago White Sox,home,-138,0.74168545,0.2791386747705764,0.19260568559169772,False
+0df79000a907b712204a8a3cf32bd442,Colorado Rockies,Texas Rangers,away,-101,0.5873904,0.16896509888148548,0.08532737493515016,False
+36672faae36a4b8104686a4a2068f311,Los Angeles Angels,Athletics,away,122,0.61033976,0.3549542689323425,0.1454730610378453,False
+d66cf630e36e9449d187a5ac8311303c,San Diego Padres,Los Angeles Dodgers,away,-156,0.7074821,0.16099626590044075,0.12557708740234377,False
