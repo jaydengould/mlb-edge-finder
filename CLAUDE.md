@@ -6,7 +6,7 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 
 ## Current Phase
 
-**CLI complete.** Phases 1–3, 4a–4c, 5, 6, 7, and 8 done. `compute_kelly()` and `__main__.py` CLI done. Next: APScheduler for daily runs.
+**GitHub Actions automation complete.** Phases 1–3, 4a–4c, 5, 6, 7, and 8 done. `compute_kelly()`, `__main__.py` CLI, probability calibration, `prob_flag`, and GitHub Actions daily workflow done. No further planned phases.
 
 - `odds_ingestion.fetch_odds()` and `load_cached_odds()` — cache-first, date filtering, live game exclusion, best line across bookmakers.
 - `stats_ingestion.fetch_stats()` and `load_cached_stats()` — FanGraphs primary (pybaseball, 3-attempt retry with 2s/4s/8s backoff), MLB Stats API fallback (statsapi package). Output schema varies by source — see stats schema section below.
@@ -22,6 +22,7 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 - **CLI complete:** `src/mlb_edge_finder/__main__.py` — `python -m mlb_edge_finder [--date YYYY-MM-DD] [--force]`. `--date` validated with `date.fromisoformat()`, defaults to today. `--force` bypasses all caches (passed through to `fetch_odds`, `fetch_stats`, `fetch_pitcher_stats`). Prints a formatted table of edges or "No edges found". Exits 0 on success (including no edges), exits 1 on bad date or pipeline exception. `pipeline.run()` gained `force: bool = False` parameter.
 - **Probability calibration complete:** `model.calibrate(clf, X_val, y_val)` — wraps a fitted `XGBClassifier` in `CalibratedClassifierCV(FrozenEstimator(clf), method="isotonic")` fit on the held-out validation set. `train()` now does a 60/20/20 split (was 80/20) and returns `(clf, X_val, X_test, y_val, y_test)` — the 20% val split is the calibration input. The saved model (`.pkl`) is the calibrated wrapper, not the raw XGBoost. Uses `FrozenEstimator` (sklearn 1.6+ API) to avoid deprecated `cv="prefit"`.
 - **High-probability flag complete:** `find_edges()` output gains a `prob_flag` column (bool). `True` when `model_prob > 0.80` — signals rows to review manually before acting, as extreme probabilities often reflect feature outliers rather than genuine edge.
+- **GitHub Actions daily workflow complete:** `.github/workflows/daily.yml` — cron `30 13 * * *` UTC (9:30 AM EDT). Checks out repo, installs `requirements.txt` + editable package, runs `python -m mlb_edge_finder` with `ODDS_API_KEY` from repo secrets, promotes `data/processed/edges_YYYY-MM-DD.csv` → `outputs/edges_YYYY-MM-DD.csv` (header-only file written when no edges found), commits and pushes as `github-actions[bot]`. Also writes a markdown edges table to the GitHub Actions job summary via `$GITHUB_STEP_SUMMARY`. `MLB-StatsAPI>=1.7` added to `requirements.txt` (was missing, would have broken CI). `outputs/` directory committed to repo (not gitignored); `data/processed/` remains gitignored.
 
 **Always update this file at the end of each working session** to reflect completed phases, new conventions, and any changes to the roadmap.
 
@@ -271,4 +272,4 @@ pytest tests/ -v
 - [x] Add `__main__.py` CLI entry point — `python -m mlb_edge_finder [--date YYYY-MM-DD] [--force]`.
 - [x] Add probability calibration — `model.calibrate(clf, X_val, y_val)` wraps XGBoost with isotonic `CalibratedClassifierCV` (FrozenEstimator, sklearn 1.6+). `train()` returns 5-tuple with dedicated val split.
 - [x] Add `prob_flag` column to `find_edges()` output — `True` when `model_prob > 0.80`.
-- [ ] Add APScheduler for daily runs
+- [x] GitHub Actions daily workflow — `.github/workflows/daily.yml`, cron 9:30 AM EDT, commits edges to `outputs/`, job summary table via `$GITHUB_STEP_SUMMARY`.

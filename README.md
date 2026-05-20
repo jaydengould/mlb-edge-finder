@@ -10,6 +10,7 @@ A portfolio project that identifies positive expected-value (EV) opportunities i
 4. **Feature engineering** — joins odds, team stats, rolling form stats (15-game window), and starting pitcher stats into one row per game.
 5. **Inference** — an XGBoost classifier predicts home-team win probability. Probabilities are post-hoc calibrated with isotonic regression on a held-out validation set. EV is computed per side; bets exceeding the threshold are flagged with a half-Kelly bet size.
 6. **Output** — flagged edges are written to `data/processed/edges_YYYY-MM-DD.csv` and printed to the terminal. Any edge where `model_prob > 0.80` is marked with `prob_flag=True` for manual review.
+7. **Automation** — a GitHub Actions workflow runs the full pipeline every morning at 9:30 AM ET and commits the results to `outputs/edges_YYYY-MM-DD.csv` in the repo, with a formatted table in the Actions job summary.
 
 ## Tech Stack
 
@@ -86,10 +87,27 @@ src/mlb_edge_finder/
 ├── rolling_stats.py      # compute 15-game rolling form stats per team
 ├── features.py           # merge all data sources into per-game feature rows
 ├── training_data.py      # build labeled training set from historical data
-├── model.py              # train, evaluate, persist XGBoost model
+├── model.py              # train, calibrate, evaluate, persist XGBoost model
 ├── edge_finder.py        # compute EV + Kelly fraction, flag positive-EV bets
 └── pipeline.py           # end-to-end orchestration
+
+.github/workflows/
+└── daily.yml             # GitHub Actions cron — runs pipeline at 9:30 AM ET daily
+
+outputs/                  # committed edge CSVs written by the daily workflow
 ```
+
+## Automation
+
+A GitHub Actions workflow runs the full pipeline every morning at **9:30 AM ET** (during the regular season) without the MacBook needing to be on.
+
+- **Schedule:** `30 13 * * *` UTC — fires daily using GitHub's hosted runners
+- **Output:** commits `outputs/edges_YYYY-MM-DD.csv` back to the repo — browse the full history on GitHub, which renders CSV files as formatted tables
+- **Job summary:** each run prints the edges table (or "No edges found today.") directly in the [Actions tab](https://github.com/jaydengould/mlb-edge-finder/actions) — no need to open any file
+- **No edges days:** still produce a header-only CSV so every run leaves a visible commit
+- **Secret required:** `ODDS_API_KEY` set in repo Settings → Secrets → Actions
+
+To trigger a manual run at any time: Actions tab → **Daily MLB Edge Finder** → **Run workflow**.
 
 ## Model
 
@@ -162,4 +180,4 @@ pytest tests/ -v
 - [x] CLI — `python -m mlb_edge_finder [--date YYYY-MM-DD] [--force]`
 - [x] Probability calibration — isotonic regression via `CalibratedClassifierCV` fit on held-out val set; `model.calibrate(clf, X_val, y_val)`
 - [x] High-probability flag — `prob_flag=True` in edge output when `model_prob > 0.80`
-- [ ] APScheduler for daily automated runs
+- [x] GitHub Actions daily automation — cron 9:30 AM ET, commits edges to `outputs/`, job summary table in Actions UI
