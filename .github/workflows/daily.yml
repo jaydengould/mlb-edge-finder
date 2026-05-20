@@ -48,6 +48,23 @@ jobs:
             echo "game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,prob_flag" > "$EDGES_DST"
           fi
 
+      - name: Write job summary
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          FILE="outputs/edges_${DATE}.csv"
+          echo "## MLB Edges — ${DATE}" >> $GITHUB_STEP_SUMMARY
+          if [ $(wc -l < "$FILE") -gt 1 ]; then
+            python3 -c "
+import csv
+rows = list(csv.reader(open('$FILE')))
+print('| ' + ' | '.join(rows[0]) + ' |')
+print('| ' + ' | '.join(['---']*len(rows[0])) + ' |')
+for r in rows[1:]: print('| ' + ' | '.join(r) + ' |')
+" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "No edges found today." >> $GITHUB_STEP_SUMMARY
+          fi
+
       - name: Commit and push edges file
         run: |
           DATE=$(date -u +%Y-%m-%d)
