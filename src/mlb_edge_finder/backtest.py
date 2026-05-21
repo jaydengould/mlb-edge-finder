@@ -1,8 +1,5 @@
 """Backtest the edge-finder against held-out test data using synthetic market odds."""
 import logging
-from typing import Any
-
-import pandas as pd
 
 logger = logging.getLogger(__name__)
 
