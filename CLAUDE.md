@@ -6,7 +6,7 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 
 ## Current Phase
 
-**GitHub Actions automation complete.** Phases 1–3, 4a–4c, 5, 6, 7, and 8 done. `compute_kelly()`, `__main__.py` CLI, probability calibration, `prob_flag`, and GitHub Actions daily workflow done. No further planned phases.
+**Historical backtest complete.** Phases 1–3, 4a–4c, 5, 6, 7, and 8 done. `compute_kelly()`, `__main__.py` CLI, probability calibration, `prob_flag`, GitHub Actions daily workflow, and historical backtest done.
 
 - `odds_ingestion.fetch_odds()` and `load_cached_odds()` — cache-first, date filtering, live game exclusion, best line across bookmakers.
 - `stats_ingestion.fetch_stats()` and `load_cached_stats()` — FanGraphs primary (pybaseball, 3-attempt retry with 2s/4s/8s backoff), MLB Stats API fallback (statsapi package). Output schema varies by source — see stats schema section below.
@@ -23,6 +23,7 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 - **Probability calibration complete:** `model.calibrate(clf, X_val, y_val)` — wraps a fitted `XGBClassifier` in `CalibratedClassifierCV(FrozenEstimator(clf), method="isotonic")` fit on the held-out validation set. `train()` now does a 60/20/20 split (was 80/20) and returns `(clf, X_val, X_test, y_val, y_test)` — the 20% val split is the calibration input. The saved model (`.pkl`) is the calibrated wrapper, not the raw XGBoost. Uses `FrozenEstimator` (sklearn 1.6+ API) to avoid deprecated `cv="prefit"`.
 - **High-probability flag complete:** `find_edges()` output gains a `prob_flag` column (bool). `True` when `model_prob > 0.80` — signals rows to review manually before acting, as extreme probabilities often reflect feature outliers rather than genuine edge.
 - **GitHub Actions daily workflow complete:** `.github/workflows/daily.yml` — cron `30 13 * * *` UTC (9:30 AM EDT). Checks out repo, installs `requirements.txt` + editable package, runs `python -m mlb_edge_finder` with `ODDS_API_KEY` from repo secrets, promotes `data/processed/edges_YYYY-MM-DD.csv` → `outputs/edges_YYYY-MM-DD.csv` (header-only file written when no edges found), commits and pushes as `github-actions[bot]`. Also writes a markdown edges table to the GitHub Actions job summary via `$GITHUB_STEP_SUMMARY`. `MLB-StatsAPI>=1.7` added to `requirements.txt` (was missing, would have broken CI). `outputs/` directory committed to repo (not gitignored); `data/processed/` remains gitignored.
+- **Historical backtest complete:** `backtest.py` — `simulate_market_odds(home_market_prob, vig)` generates synthetic American odds (default -110/-110, 50/50 market, 4.76% vig). `run_backtest(clf, training_df, ...)` replicates the exact 80/20 test split from `model._three_way_split()` (no leakage), runs EV/Kelly filters against synthetic odds, returns per-bet DataFrame with `game_date`, `home_name`, `away_name`, `bet_side`, `american_odds`, `model_prob`, `ev`, `kelly_fraction`, `actual_home_win`, `won`, `pnl`, `cumulative_pnl`. `compute_summary(backtest_df, unit)` returns `n_bets`, `n_wins`, `win_rate`, `total_pnl`, `roi_pct`, `avg_ev`, `max_drawdown`, `sharpe_ratio`. `notebooks/02_backtest.ipynb` is the portfolio artifact — loads saved model + training data, runs backtest, prints summary, plots two-panel cumulative P&L + bet distribution chart. Results on held-out 20% (3,010 games, ~2,370 bets): 60.3% win rate, +15.1% ROI vs synthetic -110/-110 market. High bet rate (~79%) is expected given the naive 50/50 market baseline. 18 new tests (158 total passing).
 
 **Always update this file at the end of each working session** to reflect completed phases, new conventions, and any changes to the roadmap.
 
@@ -70,6 +71,7 @@ Each stage persists its output as a dated CSV or artifact so stages can be run i
 | `model.py` | Train, evaluate, persist XGBoost model | `models/xgb_YYYY-MM-DD.pkl` + `models/metrics_YYYY-MM-DD.json` |
 | `edge_finder.py` | Compute EV, filter odds, flag edges | `data/processed/edges_YYYY-MM-DD.csv` |
 | `pipeline.py` | Orchestrate all stages end-to-end | — |
+| `backtest.py` | Simulate historical performance on held-out test split with synthetic odds | — |
 
 ## Stats Ingestion — Source and Schema
 
@@ -273,3 +275,4 @@ pytest tests/ -v
 - [x] Add probability calibration — `model.calibrate(clf, X_val, y_val)` wraps XGBoost with isotonic `CalibratedClassifierCV` (FrozenEstimator, sklearn 1.6+). `train()` returns 5-tuple with dedicated val split.
 - [x] Add `prob_flag` column to `find_edges()` output — `True` when `model_prob > 0.80`.
 - [x] GitHub Actions daily workflow — `.github/workflows/daily.yml`, cron 9:30 AM EDT, commits edges to `outputs/`, job summary table via `$GITHUB_STEP_SUMMARY`.
+- [x] Historical backtest — `backtest.py` with `simulate_market_odds`, `run_backtest`, `compute_summary`. `notebooks/02_backtest.ipynb` with cumulative P&L curve. Results: 60.3% win rate, +15.1% ROI on held-out 20% test split vs -110/-110 synthetic market.
