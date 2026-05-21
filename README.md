@@ -11,6 +11,7 @@ A portfolio project that identifies positive expected-value (EV) opportunities i
 5. **Inference** — an XGBoost classifier predicts home-team win probability. Probabilities are post-hoc calibrated with isotonic regression on a held-out validation set. EV is computed per side; bets exceeding the threshold are flagged with a half-Kelly bet size.
 6. **Output** — flagged edges are written to `data/processed/edges_YYYY-MM-DD.csv` and printed to the terminal. Any edge where `model_prob > 0.80` is marked with `prob_flag=True` for manual review.
 7. **Automation** — a GitHub Actions workflow runs the full pipeline every morning at 9:30 AM ET and commits the results to `outputs/edges_YYYY-MM-DD.csv` in the repo, with a formatted table in the Actions job summary.
+8. **Backtest** — `notebooks/02_backtest.ipynb` simulates historical performance on the held-out 20% test split using synthetic −110/−110 market odds, producing a cumulative P&L curve and summary statistics.
 
 ## Tech Stack
 
@@ -89,7 +90,12 @@ src/mlb_edge_finder/
 ├── training_data.py      # build labeled training set from historical data
 ├── model.py              # train, calibrate, evaluate, persist XGBoost model
 ├── edge_finder.py        # compute EV + Kelly fraction, flag positive-EV bets
-└── pipeline.py           # end-to-end orchestration
+├── pipeline.py           # end-to-end orchestration
+└── backtest.py           # simulate historical performance on held-out test split
+
+notebooks/
+├── 01_exploration.ipynb  # interactive pipeline exploration and model training
+└── 02_backtest.ipynb     # historical backtest with cumulative P&L curve
 
 .github/workflows/
 └── daily.yml             # GitHub Actions cron — runs pipeline at 9:30 AM ET daily
@@ -155,13 +161,32 @@ EV = prob * (odds / 100) - (1 - prob)
 kelly_fraction = (EV / payout) / 2   # half of full Kelly, clamped to [0.0, 1.0]
 ```
 
+## Backtest
+
+`notebooks/02_backtest.ipynb` validates the model against the held-out 20% test split (3,010 games never seen during training or calibration).
+
+**Method:** synthetic market odds of −110/−110 (50/50 even market, 4.76% vig). Any game where the model predicts a win probability above ~55% clears the 5% EV threshold and is counted as a bet. This tests whether the model outperforms a naive even-money assumption — not real bookmaker lines, which vary by game.
+
+**Results ($100 flat bet per edge):**
+
+| Metric | Value |
+|---|---|
+| Bets placed | 2,370 of 3,010 test games |
+| Win rate | 60.3% |
+| Total P&L | +$35,814 |
+| ROI | +15.1% |
+| Max drawdown | $2,673 |
+| Sharpe ratio | 0.16 (per-bet) |
+
+**Caveats:** The high bet rate (~79%) reflects the easy synthetic benchmark — real bookmakers price each game individually, so actual edge frequency against live odds would be lower. End-of-season team stats are used for all games in each season (look-ahead bias), which likely overstates performance.
+
 ## Running Tests
 
 ```bash
 pytest tests/ -v
 ```
 
-140 smoke + integration tests. All pass.
+158 smoke + integration tests. All pass.
 
 ## Roadmap
 
@@ -181,3 +206,4 @@ pytest tests/ -v
 - [x] Probability calibration — isotonic regression via `CalibratedClassifierCV` fit on held-out val set; `model.calibrate(clf, X_val, y_val)`
 - [x] High-probability flag — `prob_flag=True` in edge output when `model_prob > 0.80`
 - [x] GitHub Actions daily automation — cron 9:30 AM ET, commits edges to `outputs/`, job summary table in Actions UI
+- [x] Historical backtest — `backtest.py` + `notebooks/02_backtest.ipynb`; 60.3% win rate, +15.1% ROI on held-out test split vs synthetic −110/−110 market
