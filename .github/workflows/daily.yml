@@ -54,13 +54,7 @@ jobs:
           FILE="outputs/edges_${DATE}.csv"
           echo "## MLB Edges — ${DATE}" >> $GITHUB_STEP_SUMMARY
           if [ $(wc -l < "$FILE") -gt 1 ]; then
-            python3 -c "
-import csv
-rows = list(csv.reader(open('$FILE')))
-print('| ' + ' | '.join(rows[0]) + ' |')
-print('| ' + ' | '.join(['---']*len(rows[0])) + ' |')
-for r in rows[1:]: print('| ' + ' | '.join(r) + ' |')
-" >> $GITHUB_STEP_SUMMARY
+            python3 -c "import csv; rows=list(csv.reader(open('$FILE'))); print('| '+' | '.join(rows[0])+' |'); print('| '+' | '.join(['---']*len(rows[0]))+' |'); [print('| '+' | '.join(r)+' |') for r in rows[1:]]" >> $GITHUB_STEP_SUMMARY
           else
             echo "No edges found today." >> $GITHUB_STEP_SUMMARY
           fi
