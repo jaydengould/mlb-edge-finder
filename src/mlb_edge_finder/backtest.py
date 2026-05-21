@@ -148,3 +148,57 @@ def run_backtest(
     result["cumulative_pnl"] = result["pnl"].cumsum()
     logger.info("Backtest complete: %d bets placed across %d test games", len(result), len(X_test))
     return result
+
+
+def compute_summary(backtest_df: pd.DataFrame, unit: float = 100.0) -> dict:
+    """Compute headline performance metrics for a completed backtest.
+
+    Args:
+        backtest_df: Output of run_backtest(). Must have columns pnl,
+            cumulative_pnl, won, ev. Accepts empty DataFrames (all metrics = 0).
+        unit: Dollar bet size used in run_backtest(). Used to compute ROI.
+
+    Returns:
+        Dict with keys:
+            n_bets       — total number of bets placed
+            n_wins       — number of winning bets
+            win_rate     — n_wins / n_bets (0.0 if no bets)
+            total_pnl    — sum of all bet P&Ls
+            roi_pct      — total_pnl / (n_bets * unit) * 100
+            avg_ev       — mean expected value of flagged bets
+            max_drawdown — largest peak-to-trough drop in cumulative P&L
+            sharpe_ratio — per-bet Sharpe: mean(pnl) / std(pnl), or 0.0 if std=0
+    """
+    if backtest_df.empty:
+        return {
+            "n_bets": 0,
+            "n_wins": 0,
+            "win_rate": 0.0,
+            "total_pnl": 0.0,
+            "roi_pct": 0.0,
+            "avg_ev": 0.0,
+            "max_drawdown": 0.0,
+            "sharpe_ratio": 0.0,
+        }
+
+    n_bets = len(backtest_df)
+    n_wins = int(backtest_df["won"].sum())
+    total_pnl = float(backtest_df["pnl"].sum())
+
+    cumulative = backtest_df["cumulative_pnl"]
+    running_max = cumulative.cummax()
+    max_drawdown = float((running_max - cumulative).max())
+
+    pnl_std = backtest_df["pnl"].std()
+    sharpe = float(backtest_df["pnl"].mean() / pnl_std) if pnl_std > 0 else 0.0
+
+    return {
+        "n_bets": n_bets,
+        "n_wins": n_wins,
+        "win_rate": round(n_wins / n_bets, 4),
+        "total_pnl": round(total_pnl, 2),
+        "roi_pct": round(total_pnl / (n_bets * unit) * 100, 2),
+        "avg_ev": round(float(backtest_df["ev"].mean()), 4),
+        "max_drawdown": round(max_drawdown, 2),
+        "sharpe_ratio": round(sharpe, 4),
+    }

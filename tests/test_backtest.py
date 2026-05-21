@@ -3,6 +3,7 @@ import pandas as pd
 import pytest
 from mlb_edge_finder.backtest import simulate_market_odds
 from mlb_edge_finder.backtest import run_backtest
+from mlb_edge_finder.backtest import compute_summary
 
 
 def test_simulate_market_odds_default_is_110_110():
@@ -141,3 +142,83 @@ def test_run_backtest_won_matches_actual_outcome():
         away_bets = result[result["bet_side"] == "away"]
         if not away_bets.empty:
             assert (away_bets["won"] == (away_bets["actual_home_win"] == 0)).all()
+
+
+def _make_backtest_df(pnl_values: list) -> pd.DataFrame:
+    n = len(pnl_values)
+    actual = [1, 0, 1, 0, 1, 1, 0, 1, 1, 0]
+    return pd.DataFrame({
+        "game_date": pd.date_range("2024-04-01", periods=n),
+        "home_name": ["HomeTeam"] * n,
+        "away_name": ["AwayTeam"] * n,
+        "bet_side": ["home"] * n,
+        "american_odds": [-110] * n,
+        "model_prob": [0.60] * n,
+        "ev": [0.08] * n,
+        "kelly_fraction": [0.04] * n,
+        "actual_home_win": actual[:n],
+        "won": [p > 0 for p in pnl_values],
+        "pnl": pnl_values,
+        "cumulative_pnl": pd.Series(pnl_values).cumsum().tolist(),
+    })
+
+
+def test_compute_summary_keys():
+    df = _make_backtest_df([90.9, -100, 90.9, -100, 90.9])
+    result = compute_summary(df, unit=100.0)
+    expected_keys = {
+        "n_bets", "n_wins", "win_rate", "total_pnl",
+        "roi_pct", "avg_ev", "max_drawdown", "sharpe_ratio",
+    }
+    assert expected_keys == set(result.keys())
+
+
+def test_compute_summary_n_bets_and_wins():
+    pnl = [90.9, -100, 90.9, -100, 90.9]  # 3 wins, 2 losses
+    df = _make_backtest_df(pnl)
+    result = compute_summary(df, unit=100.0)
+    assert result["n_bets"] == 5
+    assert result["n_wins"] == 3
+
+
+def test_compute_summary_win_rate():
+    pnl = [90.9, -100, 90.9, -100, 90.9]  # 3/5 = 60%
+    df = _make_backtest_df(pnl)
+    result = compute_summary(df, unit=100.0)
+    assert abs(result["win_rate"] - 0.60) < 0.01
+
+
+def test_compute_summary_total_pnl():
+    pnl = [90.9, -100.0, 90.9]
+    df = _make_backtest_df(pnl)
+    result = compute_summary(df, unit=100.0)
+    assert abs(result["total_pnl"] - sum(pnl)) < 0.01
+
+
+def test_compute_summary_roi_pct():
+    # 2 bets at $100 unit, total pnl = $50 → ROI = 50/200 * 100 = 25%
+    pnl = [150.0, -100.0]
+    df = _make_backtest_df(pnl)
+    result = compute_summary(df, unit=100.0)
+    assert abs(result["roi_pct"] - 25.0) < 0.01
+
+
+def test_compute_summary_max_drawdown():
+    # cumulative: 100, 0, 50 → peak=100 at index 0, trough=0 at index 1 → drawdown=100
+    pnl = [100.0, -100.0, 50.0]
+    df = _make_backtest_df(pnl)
+    df["cumulative_pnl"] = pd.Series(pnl).cumsum()
+    result = compute_summary(df, unit=100.0)
+    assert abs(result["max_drawdown"] - 100.0) < 0.01
+
+
+def test_compute_summary_empty_df_returns_zeros():
+    df = pd.DataFrame(columns=[
+        "game_date", "home_name", "away_name", "bet_side",
+        "american_odds", "model_prob", "ev", "kelly_fraction",
+        "actual_home_win", "won", "pnl", "cumulative_pnl",
+    ])
+    result = compute_summary(df, unit=100.0)
+    assert result["n_bets"] == 0
+    assert result["total_pnl"] == 0.0
+    assert result["roi_pct"] == 0.0
