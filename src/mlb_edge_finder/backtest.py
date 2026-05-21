@@ -95,9 +95,11 @@ def run_backtest(
 
     home_probs = clf.predict_proba(X_test_aligned)[:, 1]
 
-    home_odds, away_odds = simulate_market_odds(home_market_prob, vig)
-    home_payout = home_odds / 100 if home_odds > 0 else 100 / abs(home_odds)
-    away_payout = away_odds / 100 if away_odds > 0 else 100 / abs(away_odds)
+    home_odds_f, away_odds_f = simulate_market_odds(home_market_prob, vig)
+    home_odds_i = round(home_odds_f)
+    away_odds_i = round(away_odds_f)
+    home_payout = home_odds_i / 100 if home_odds_i > 0 else 100 / abs(home_odds_i)
+    away_payout = away_odds_i / 100 if away_odds_i > 0 else 100 / abs(away_odds_i)
 
     meta = training_df.loc[X_test.index, ["game_date", "home_name", "away_name"]]
 
@@ -105,36 +107,36 @@ def run_backtest(
     for (idx, prob), actual in zip(zip(X_test.index, home_probs), y_test.values):
         row_meta = meta.loc[idx]
 
-        home_ev = compute_ev(float(prob), round(home_odds))
-        if home_ev > EV_THRESHOLD and home_odds >= MIN_AMERICAN_ODDS:
+        home_ev = compute_ev(float(prob), home_odds_i)
+        if home_ev > EV_THRESHOLD and home_odds_i >= MIN_AMERICAN_ODDS:
             won = int(actual) == 1
             records.append({
                 "game_date": row_meta["game_date"],
                 "home_name": row_meta["home_name"],
                 "away_name": row_meta["away_name"],
                 "bet_side": "home",
-                "american_odds": round(home_odds),
+                "american_odds": home_odds_i,
                 "model_prob": round(float(prob), 4),
                 "ev": round(home_ev, 4),
-                "kelly_fraction": round(compute_kelly(float(prob), round(home_odds)), 4),
+                "kelly_fraction": round(compute_kelly(float(prob), home_odds_i), 4),
                 "actual_home_win": int(actual),
                 "won": won,
                 "pnl": home_payout * unit if won else -unit,
             })
 
         away_prob = 1.0 - float(prob)
-        away_ev = compute_ev(away_prob, round(away_odds))
-        if away_ev > EV_THRESHOLD and away_odds >= MIN_AMERICAN_ODDS:
+        away_ev = compute_ev(away_prob, away_odds_i)
+        if away_ev > EV_THRESHOLD and away_odds_i >= MIN_AMERICAN_ODDS:
             won = int(actual) == 0
             records.append({
                 "game_date": row_meta["game_date"],
                 "home_name": row_meta["home_name"],
                 "away_name": row_meta["away_name"],
                 "bet_side": "away",
-                "american_odds": round(away_odds),
+                "american_odds": away_odds_i,
                 "model_prob": round(away_prob, 4),
                 "ev": round(away_ev, 4),
-                "kelly_fraction": round(compute_kelly(away_prob, round(away_odds)), 4),
+                "kelly_fraction": round(compute_kelly(away_prob, away_odds_i), 4),
                 "actual_home_win": int(actual),
                 "won": won,
                 "pnl": away_payout * unit if won else -unit,
