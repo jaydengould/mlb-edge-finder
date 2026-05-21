@@ -1,5 +1,8 @@
+import numpy as np
+import pandas as pd
 import pytest
 from mlb_edge_finder.backtest import simulate_market_odds
+from mlb_edge_finder.backtest import run_backtest
 
 
 def test_simulate_market_odds_default_is_110_110():
@@ -36,3 +39,105 @@ def test_simulate_market_odds_zero_vig_gives_fair_odds():
     home_american, away_american = simulate_market_odds(home_market_prob=0.6, vig=0.0)
     assert abs(home_american - (-150.0)) < 1.0
     assert abs(away_american - (150.0)) < 1.0
+
+
+def _make_training_df(n: int = 200, seed: int = 0) -> pd.DataFrame:
+    rng = np.random.default_rng(seed)
+    return pd.DataFrame({
+        "game_date": pd.date_range("2024-04-01", periods=n, freq="D"),
+        "home_name": [f"HomeTeam{i % 15}" for i in range(n)],
+        "away_name": [f"AwayTeam{i % 15}" for i in range(n)],
+        "home_score": rng.integers(0, 10, n),
+        "away_score": rng.integers(0, 10, n),
+        "home_abbr": [f"HM{i % 15}" for i in range(n)],
+        "away_abbr": [f"AW{i % 15}" for i in range(n)],
+        "season": [2024] * n,
+        "home_win": rng.integers(0, 2, n),
+        "home_starter_name": [None] * n,
+        "away_starter_name": [None] * n,
+        "home_pitcher_id": [None] * n,
+        "away_pitcher_id": [None] * n,
+        "feature_a": rng.standard_normal(n),
+        "feature_b": rng.standard_normal(n),
+        "feature_c": rng.standard_normal(n),
+    })
+
+
+def _make_mock_clf(home_win_prob: float = 0.58):
+    from unittest.mock import MagicMock
+    clf = MagicMock()
+    clf.feature_names_in_ = np.array(["feature_a", "feature_b", "feature_c"])
+    clf.predict_proba = MagicMock(
+        side_effect=lambda X: np.column_stack([
+            np.full(len(X), 1.0 - home_win_prob),
+            np.full(len(X), home_win_prob),
+        ])
+    )
+    return clf
+
+
+def test_run_backtest_returns_dataframe():
+    df = _make_training_df(200)
+    clf = _make_mock_clf(home_win_prob=0.58)
+    result = run_backtest(clf, df)
+    assert isinstance(result, pd.DataFrame)
+
+
+def test_run_backtest_output_columns():
+    df = _make_training_df(200)
+    clf = _make_mock_clf(home_win_prob=0.58)
+    result = run_backtest(clf, df)
+    expected_cols = {
+        "game_date", "home_name", "away_name", "bet_side",
+        "american_odds", "model_prob", "ev", "kelly_fraction",
+        "actual_home_win", "won", "pnl", "cumulative_pnl",
+    }
+    assert expected_cols.issubset(set(result.columns))
+
+
+def test_run_backtest_no_edges_returns_empty_with_correct_columns():
+    df = _make_training_df(200)
+    clf = _make_mock_clf(home_win_prob=0.50)
+    result = run_backtest(clf, df)
+    assert result.empty
+    expected_cols = {
+        "game_date", "home_name", "away_name", "bet_side",
+        "american_odds", "model_prob", "ev", "kelly_fraction",
+        "actual_home_win", "won", "pnl", "cumulative_pnl",
+    }
+    assert expected_cols.issubset(set(result.columns))
+
+
+def test_run_backtest_high_prob_finds_home_edges():
+    df = _make_training_df(200)
+    clf = _make_mock_clf(home_win_prob=0.65)
+    result = run_backtest(clf, df)
+    assert not result.empty
+    assert (result["bet_side"] == "home").any()
+
+
+def test_run_backtest_cumulative_pnl_is_running_sum():
+    df = _make_training_df(200)
+    clf = _make_mock_clf(home_win_prob=0.65)
+    result = run_backtest(clf, df)
+    if not result.empty:
+        expected = result["pnl"].cumsum().values
+        pd.testing.assert_series_equal(
+            result["cumulative_pnl"].reset_index(drop=True),
+            pd.Series(expected, name="cumulative_pnl"),
+            check_exact=False,
+            atol=1e-6,
+        )
+
+
+def test_run_backtest_won_matches_actual_outcome():
+    df = _make_training_df(200)
+    clf = _make_mock_clf(home_win_prob=0.65)
+    result = run_backtest(clf, df)
+    if not result.empty:
+        home_bets = result[result["bet_side"] == "home"]
+        if not home_bets.empty:
+            assert (home_bets["won"] == (home_bets["actual_home_win"] == 1)).all()
+        away_bets = result[result["bet_side"] == "away"]
+        if not away_bets.empty:
+            assert (away_bets["won"] == (away_bets["actual_home_win"] == 0)).all()
