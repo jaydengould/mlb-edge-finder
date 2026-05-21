@@ -1,0 +1,6 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,prob_flag
+427339d860a9d7bf7b2075fa02850c56,Detroit Tigers,Cleveland Guardians,home,-107,0.80820477,0.5635363309182854,0.3014919370412827,True
+fa85c6e14d2b480b97a6f0004286ec0b,Miami Marlins,Atlanta Braves,home,122,0.6297629,0.3980736112594604,0.16314492264731983,False
+6297516eb97ef4842f3fc5b36d64adb2,St. Louis Cardinals,Pittsburgh Pirates,away,-120,0.77031106,0.4122369388739269,0.2473421633243561,False
+6a7d1b1febdcfcc35087e32a118d0e3e,Washington Nationals,New York Mets,away,-111,0.6513423,0.23813711308144236,0.13216609776020052,False
+cce976ea22886df248e92176cb5f8f26,New York Yankees,Toronto Blue Jays,away,136,0.5703582,0.3460453915596009,0.12722257042632384,False
