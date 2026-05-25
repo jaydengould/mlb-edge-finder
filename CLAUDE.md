@@ -24,6 +24,7 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 - **High-probability flag complete:** `find_edges()` output gains a `prob_flag` column (bool). `True` when `model_prob > 0.80` — signals rows to review manually before acting, as extreme probabilities often reflect feature outliers rather than genuine edge.
 - **GitHub Actions daily workflow complete:** `.github/workflows/daily.yml` — cron `30 13 * * *` UTC (9:30 AM EDT). Checks out repo, installs `requirements.txt` + editable package, runs `python -m mlb_edge_finder` with `ODDS_API_KEY` from repo secrets, promotes `data/processed/edges_YYYY-MM-DD.csv` → `outputs/edges_YYYY-MM-DD.csv` (header-only file written when no edges found), commits and pushes as `github-actions[bot]`. Also writes a markdown edges table to the GitHub Actions job summary via `$GITHUB_STEP_SUMMARY`. `MLB-StatsAPI>=1.7` added to `requirements.txt` (was missing, would have broken CI). `outputs/` directory committed to repo (not gitignored); `data/processed/` remains gitignored.
 - **Historical backtest complete:** `backtest.py` — `simulate_market_odds(home_market_prob, vig)` generates synthetic American odds (default -110/-110, 50/50 market, 4.76% vig). `run_backtest(clf, training_df, ...)` replicates the exact 80/20 test split from `model._three_way_split()` (no leakage), runs EV/Kelly filters against synthetic odds, returns per-bet DataFrame with `game_date`, `home_name`, `away_name`, `bet_side`, `american_odds`, `model_prob`, `ev`, `kelly_fraction`, `actual_home_win`, `won`, `pnl`, `cumulative_pnl`. `compute_summary(backtest_df, unit)` returns `n_bets`, `n_wins`, `win_rate`, `total_pnl`, `roi_pct`, `avg_ev`, `max_drawdown`, `sharpe_ratio`. `notebooks/02_backtest.ipynb` is the portfolio artifact — loads saved model + training data, runs backtest, prints summary, plots two-panel cumulative P&L + bet distribution chart. Results on held-out 20% (3,010 games, ~2,370 bets): 60.3% win rate, +15.1% ROI vs synthetic -110/-110 market. High bet rate (~79%) is expected given the naive 50/50 market baseline. 18 new tests (158 total passing).
+- **Threshold sweep & market-edge filter complete:** `market_implied_prob(american_odds)` added to `edge_finder.py` — converts bookmaker odds to raw implied probability (vig-included). `find_edges()` gains `min_prob_edge: float | None = None` parameter; filters bets where `model_prob − market_implied_prob ≤ min_prob_edge` (defaults to `config.MIN_PROB_EDGE`). `run_backtest()` gains `ev_threshold` and `min_prob_edge` parameters (both default to config values). `sweep_thresholds(clf, training_df, ...)` in `backtest.py` — 70-combination `(ev_threshold, min_prob_edge)` grid search over synthetic backtest, returns Sharpe-sorted DataFrame. Optimal: `EV_THRESHOLD=0.50`, `MIN_PROB_EDGE=0.30` (Sharpe=0.735, ~1.3 bets/day, 81.2% win rate on held-out 20%). Notebook `02_backtest.ipynb` updated with Sharpe heatmap and optimal-threshold P&L chart. 15 new tests (173 total passing).
 
 **Always update this file at the end of each working session** to reflect completed phases, new conventions, and any changes to the roadmap.
 
@@ -255,7 +256,7 @@ FanGraphs-specific stat columns (`w_oba`, `bat_wrc_plus`, `fip`) appear in the f
 pytest tests/ -v
 ```
 
-140 smoke + integration tests. All pass.
+173 smoke + integration tests. All pass.
 
 ## Roadmap
 
@@ -276,6 +277,7 @@ pytest tests/ -v
 - [x] Add `prob_flag` column to `find_edges()` output — `True` when `model_prob > 0.80`.
 - [x] GitHub Actions daily workflow — `.github/workflows/daily.yml`, cron 9:30 AM EDT, commits edges to `outputs/`, job summary table via `$GITHUB_STEP_SUMMARY`.
 - [x] Historical backtest — `backtest.py` with `simulate_market_odds`, `run_backtest`, `compute_summary`. `notebooks/02_backtest.ipynb` with cumulative P&L curve. Results: 60.3% win rate, +15.1% ROI on held-out 20% test split vs -110/-110 synthetic market.
+- [x] Threshold sweep & market-edge filter — `market_implied_prob()`, `MIN_PROB_EDGE`, `sweep_thresholds()`. Sharpe-optimal `(EV_THRESHOLD=0.50, MIN_PROB_EDGE=0.30)` from 70-combination grid search. ~1.3 bets/day, 81.2% win rate on synthetic backtest.
 
 ## Future Work (priority order)
 
