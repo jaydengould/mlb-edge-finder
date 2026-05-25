@@ -144,6 +144,32 @@ def test_run_backtest_won_matches_actual_outcome():
             assert (away_bets["won"] == (away_bets["actual_home_win"] == 0)).all()
 
 
+def test_run_backtest_explicit_ev_threshold_filters_bets():
+    """A very high explicit ev_threshold produces fewer bets than a low one."""
+    df = _make_training_df(200)
+    clf = _make_mock_clf(home_win_prob=0.65)
+    result_low = run_backtest(clf, df, ev_threshold=0.05, min_prob_edge=0.0)
+    result_high = run_backtest(clf, df, ev_threshold=0.50, min_prob_edge=0.0)
+    assert len(result_high) <= len(result_low)
+
+
+def test_run_backtest_explicit_min_prob_edge_filters_bets():
+    """A high min_prob_edge filters out bets where model barely disagrees with market."""
+    df = _make_training_df(200)
+    clf = _make_mock_clf(home_win_prob=0.65)
+    result_no_filter = run_backtest(clf, df, ev_threshold=0.05, min_prob_edge=0.0)
+    result_filtered = run_backtest(clf, df, ev_threshold=0.05, min_prob_edge=0.30)
+    assert len(result_filtered) <= len(result_no_filter)
+
+
+def test_run_backtest_defaults_unchanged():
+    """run_backtest() with no threshold args still runs (default config values)."""
+    df = _make_training_df(200)
+    clf = _make_mock_clf(home_win_prob=0.65)
+    result = run_backtest(clf, df)
+    assert isinstance(result, pd.DataFrame)
+
+
 def _make_backtest_df(pnl_values: list) -> pd.DataFrame:
     n = len(pnl_values)
     actual = [1, 0, 1, 0, 1, 1, 0, 1, 1, 0]
