@@ -112,7 +112,8 @@ def test_find_edges_returns_home_edge(tmp_path):
 
     with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
          patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300):
+         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300), \
+         patch("mlb_edge_finder.edge_finder.config.MIN_PROB_EDGE", 0.0):
         result = find_edges(features_df, clf, GAME_DATE)
 
     assert len(result) == 1
@@ -175,7 +176,8 @@ def test_find_edges_both_sides(tmp_path):
 
     with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
          patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300):
+         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300), \
+         patch("mlb_edge_finder.edge_finder.config.MIN_PROB_EDGE", 0.0):
         result = find_edges(features_df, clf, GAME_DATE)
 
     assert len(result) == 2
@@ -240,7 +242,8 @@ def test_find_edges_includes_kelly_fraction(tmp_path):
 
     with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
          patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300):
+         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300), \
+         patch("mlb_edge_finder.edge_finder.config.MIN_PROB_EDGE", 0.0):
         result = find_edges(features_df, clf, GAME_DATE)
 
     assert "kelly_fraction" in result.columns
@@ -287,7 +290,8 @@ def test_find_edges_prob_flag_false_when_model_prob_at_or_below_0_80(tmp_path):
 
     with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
          patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300):
+         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300), \
+         patch("mlb_edge_finder.edge_finder.config.MIN_PROB_EDGE", 0.0):
         result = find_edges(features_df, clf, GAME_DATE)
 
     assert len(result) == 1

@@ -26,9 +26,9 @@ XGB_N_ESTIMATORS: int = 100
 XGB_MAX_DEPTH: int = 4
 
 # --- Edge-finding thresholds ---
-EV_THRESHOLD: float = 0.05
+EV_THRESHOLD: float = 0.50  # Sharpe-optimal from threshold sweep 2026-05-24
 MIN_AMERICAN_ODDS: int = -300
-MIN_PROB_EDGE: float = 0.0  # Updated after threshold sweep
+MIN_PROB_EDGE: float = 0.30  # Sharpe-optimal from threshold sweep 2026-05-24
 
 
 def setup_logging(level: int = logging.INFO) -> None:

@@ -112,7 +112,7 @@ def test_run_backtest_no_edges_returns_empty_with_correct_columns():
 def test_run_backtest_high_prob_finds_home_edges():
     df = _make_training_df(200)
     clf = _make_mock_clf(home_win_prob=0.65)
-    result = run_backtest(clf, df)
+    result = run_backtest(clf, df, ev_threshold=0.05, min_prob_edge=0.0)
     assert not result.empty
     assert (result["bet_side"] == "home").any()
 
