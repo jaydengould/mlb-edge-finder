@@ -31,6 +31,23 @@ def compute_ev(prob: float, american_odds: int) -> float:
     return prob * payout - (1 - prob)
 
 
+def market_implied_prob(american_odds: int) -> float:
+    """Convert American odds to raw bookmaker-implied probability (vig included).
+
+    Args:
+        american_odds: Bookmaker's American moneyline. 0 is treated as even money.
+
+    Returns:
+        Implied probability in [0.0, 1.0].
+    """
+    if american_odds == 0:
+        logger.warning("market_implied_prob received odds=0, returning 0.5")
+        return 0.5
+    if american_odds < 0:
+        return abs(american_odds) / (abs(american_odds) + 100)
+    return 100 / (american_odds + 100)
+
+
 def compute_kelly(prob: float, american_odds: int) -> float:
     """Compute half-Kelly bet size as a fraction of bankroll.
 

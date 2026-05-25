@@ -32,6 +32,34 @@ def test_compute_ev_underdog():
     assert abs(ev) < 1e-9
 
 
+def test_market_implied_prob_favourite():
+    """Negative odds -110: implied = 110/210 ≈ 0.5238."""
+    from mlb_edge_finder.edge_finder import market_implied_prob
+    result = market_implied_prob(-110)
+    assert abs(result - 110 / 210) < 1e-6
+
+
+def test_market_implied_prob_underdog():
+    """Positive odds +130: implied = 100/230 ≈ 0.4348."""
+    from mlb_edge_finder.edge_finder import market_implied_prob
+    result = market_implied_prob(130)
+    assert abs(result - 100 / 230) < 1e-6
+
+
+def test_market_implied_prob_even_money():
+    """+100 odds: implied = 100/200 = 0.50."""
+    from mlb_edge_finder.edge_finder import market_implied_prob
+    result = market_implied_prob(100)
+    assert abs(result - 0.50) < 1e-6
+
+
+def test_market_implied_prob_zero_odds_returns_half():
+    """Degenerate input odds=0 → 0.5 with a warning (don't crash)."""
+    from mlb_edge_finder.edge_finder import market_implied_prob
+    result = market_implied_prob(0)
+    assert result == 0.5
+
+
 def test_find_edges_signature():
     from mlb_edge_finder import edge_finder
     assert callable(edge_finder.find_edges)
