@@ -2,6 +2,7 @@
 import logging
 from datetime import date
 
+import numpy as np
 import pandas as pd
 from xgboost import XGBClassifier
 
@@ -75,13 +76,19 @@ def compute_kelly(prob: float, american_odds: int) -> float:
     return min(ev / b / 2, 1.0)
 
 
-def find_edges(features_df: pd.DataFrame, clf: XGBClassifier, game_date: date) -> pd.DataFrame:
+def find_edges(
+    features_df: pd.DataFrame,
+    clf: XGBClassifier,
+    game_date: date,
+    min_prob_edge: float | None = None,
+) -> pd.DataFrame:
     """Run inference and return games with positive expected value.
 
     Uses clf.feature_names_in_ to select exactly the columns the model was
     trained on, then runs two passes (home, away) to find bets where:
       - EV > config.EV_THRESHOLD
       - The relevant team's American odds >= config.MIN_AMERICAN_ODDS
+      - model_prob - market_implied_prob(odds) > min_prob_edge
 
     Logs a warning and returns an empty DataFrame (with correct columns) if no
     edges are found. Writes results to DATA_PROCESSED_DIR/edges_YYYY-MM-DD.csv.
@@ -92,6 +99,8 @@ def find_edges(features_df: pd.DataFrame, clf: XGBClassifier, game_date: date) -
             game_id, home_team, away_team, home_odds_american, away_odds_american.
         clf: Fitted XGBClassifier from model.load_model() or train().
         game_date: Used to name the output CSV.
+        min_prob_edge: Minimum required gap between model_prob and
+            market_implied_prob. Defaults to config.MIN_PROB_EDGE.
 
     Returns:
         DataFrame with columns: game_id, home_team, away_team,
@@ -101,6 +110,9 @@ def find_edges(features_df: pd.DataFrame, clf: XGBClassifier, game_date: date) -
     Raises:
         ValueError: If features_df is missing any column in clf.feature_names_in_.
     """
+    if min_prob_edge is None:
+        min_prob_edge = config.MIN_PROB_EDGE
+
     output_cols = [
         "game_id", "home_team", "away_team", "bet_side",
         "american_odds", "model_prob", "ev", "kelly_fraction", "prob_flag",
@@ -124,7 +136,14 @@ def find_edges(features_df: pd.DataFrame, clf: XGBClassifier, game_date: date) -
     home_ev = pd.Series(
         [compute_ev(float(p), int(o)) for p, o in zip(home_prob, df["home_odds_american"])]
     )
-    home_mask = (home_ev > config.EV_THRESHOLD) & (df["home_odds_american"] >= config.MIN_AMERICAN_ODDS)
+    home_implied = np.array(
+        [market_implied_prob(int(o)) for o in df["home_odds_american"]]
+    )
+    home_mask = (
+        (home_ev > config.EV_THRESHOLD)
+        & (df["home_odds_american"] >= config.MIN_AMERICAN_ODDS)
+        & ((home_prob - home_implied) > min_prob_edge)
+    )
     home_edges = df.loc[home_mask, ["game_id", "home_team", "away_team"]].copy()
     home_edges["bet_side"] = "home"
     home_edges["american_odds"] = df.loc[home_mask, "home_odds_american"].values
@@ -140,7 +159,14 @@ def find_edges(features_df: pd.DataFrame, clf: XGBClassifier, game_date: date) -
     away_ev = pd.Series(
         [compute_ev(float(p), int(o)) for p, o in zip(away_prob, df["away_odds_american"])]
     )
-    away_mask = (away_ev > config.EV_THRESHOLD) & (df["away_odds_american"] >= config.MIN_AMERICAN_ODDS)
+    away_implied = np.array(
+        [market_implied_prob(int(o)) for o in df["away_odds_american"]]
+    )
+    away_mask = (
+        (away_ev > config.EV_THRESHOLD)
+        & (df["away_odds_american"] >= config.MIN_AMERICAN_ODDS)
+        & ((away_prob - away_implied) > min_prob_edge)
+    )
     away_edges = df.loc[away_mask, ["game_id", "home_team", "away_team"]].copy()
     away_edges["bet_side"] = "away"
     away_edges["american_odds"] = df.loc[away_mask, "away_odds_american"].values
@@ -153,6 +179,13 @@ def find_edges(features_df: pd.DataFrame, clf: XGBClassifier, game_date: date) -
     away_edges["prob_flag"] = away_prob[away_mask.values] > 0.80
 
     edges = pd.concat([home_edges[output_cols], away_edges[output_cols]], ignore_index=True)
+
+    logger.info(
+        "prob-edge filter (%.0f%%): %d edges kept after all filters for %s",
+        min_prob_edge * 100,
+        len(edges),
+        game_date,
+    )
 
     if edges.empty:
         logger.warning("No edges found for %s", game_date)

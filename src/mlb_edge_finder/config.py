@@ -28,6 +28,7 @@ XGB_MAX_DEPTH: int = 4
 # --- Edge-finding thresholds ---
 EV_THRESHOLD: float = 0.05
 MIN_AMERICAN_ODDS: int = -300
+MIN_PROB_EDGE: float = 0.0  # Updated after threshold sweep
 
 
 def setup_logging(level: int = logging.INFO) -> None:
