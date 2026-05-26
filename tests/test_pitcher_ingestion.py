@@ -227,3 +227,88 @@ def test_fetch_probable_starters_raises_on_api_failure():
                side_effect=Exception("timeout")):
         with pytest.raises(RuntimeError, match="statsapi.schedule failed"):
             pitcher_ingestion.fetch_probable_starters(date(2025, 4, 22))
+
+
+# --- fetch_pitcher_snapshot tests ---
+
+def test_fetch_pitcher_snapshot_signature():
+    from mlb_edge_finder import pitcher_ingestion
+    import inspect
+    assert callable(pitcher_ingestion.fetch_pitcher_snapshot)
+    sig = inspect.signature(pitcher_ingestion.fetch_pitcher_snapshot)
+    assert "snapshot_date" in sig.parameters
+    assert "force" in sig.parameters
+
+
+def test_fetch_pitcher_snapshot_writes_to_snapshot_path(tmp_path):
+    """fetch_pitcher_snapshot writes to pitcher_snapshot_*.csv, not pitcher_stats_*.csv."""
+    from mlb_edge_finder import pitcher_ingestion
+    with patch("mlb_edge_finder.pitcher_ingestion.statsapi.get",
+               return_value=_make_stats_response(ip="150.0")), \
+         patch("mlb_edge_finder.pitcher_ingestion.config.DATA_RAW_DIR", tmp_path):
+        pitcher_ingestion.fetch_pitcher_snapshot(date(2026, 4, 30), force=True)
+    assert (tmp_path / "pitcher_snapshot_2026-04-30.csv").exists()
+    assert not (tmp_path / "pitcher_stats_2026-04-30.csv").exists()
+
+
+def test_fetch_pitcher_snapshot_excludes_low_ip(tmp_path):
+    """fetch_pitcher_snapshot excludes pitchers below MIN_PITCHER_IP."""
+    from mlb_edge_finder import pitcher_ingestion, config
+    response = {
+        "stats": [{
+            "splits": [
+                {
+                    "player": {"id": 1, "fullName": "Low IP"},
+                    "stat": {
+                        "inningsPitched": str(config.MIN_PITCHER_IP - 1),
+                        "era": "2.00", "whip": "1.00",
+                        "strikeoutsPer9Inn": "10.0", "walksPer9Inn": "2.0",
+                        "homeRuns": 0, "baseOnBalls": 3, "strikeOuts": 20,
+                    },
+                },
+                {
+                    "player": {"id": 2, "fullName": "Qualified"},
+                    "stat": {
+                        "inningsPitched": str(config.MIN_PITCHER_IP + 10),
+                        "era": "3.50", "whip": "1.20",
+                        "strikeoutsPer9Inn": "9.0", "walksPer9Inn": "3.0",
+                        "homeRuns": 3, "baseOnBalls": 12, "strikeOuts": 45,
+                    },
+                },
+            ]
+        }]
+    }
+    with patch("mlb_edge_finder.pitcher_ingestion.statsapi.get", return_value=response), \
+         patch("mlb_edge_finder.pitcher_ingestion.config.DATA_RAW_DIR", tmp_path):
+        df = pitcher_ingestion.fetch_pitcher_snapshot(date(2026, 4, 30), force=True)
+    assert len(df) == 1
+    assert df.iloc[0]["pitcher_name"] == "Qualified"
+
+
+def test_fetch_pitcher_snapshot_cache_first(tmp_path):
+    """fetch_pitcher_snapshot returns cached file without calling statsapi."""
+    from mlb_edge_finder import pitcher_ingestion
+    cached = pd.DataFrame([{
+        "pitcher_id": 99, "pitcher_name": "Cached Ace",
+        "era": 2.5, "whip": 1.0, "k_per_9": 11.0, "bb_per_9": 2.0,
+        "ip": 50.0, "fip_computed": 2.8,
+    }])
+    (tmp_path / "pitcher_snapshot_2026-04-30.csv").write_text(cached.to_csv(index=False))
+    with patch("mlb_edge_finder.pitcher_ingestion.statsapi.get") as mock_get, \
+         patch("mlb_edge_finder.pitcher_ingestion.config.DATA_RAW_DIR", tmp_path):
+        df = pitcher_ingestion.fetch_pitcher_snapshot(date(2026, 4, 30))
+    mock_get.assert_not_called()
+    assert df.iloc[0]["pitcher_name"] == "Cached Ace"
+
+
+def test_fetch_pitcher_snapshot_falls_back_to_season_stats_when_no_splits(tmp_path):
+    """When byDateRange returns empty splits, falls back to full-season stats."""
+    from mlb_edge_finder import pitcher_ingestion
+    empty_response = {"stats": [{"splits": []}]}
+    full_season_response = _make_stats_response(ip="150.0")
+    responses = [empty_response, full_season_response]
+    with patch("mlb_edge_finder.pitcher_ingestion.statsapi.get", side_effect=responses), \
+         patch("mlb_edge_finder.pitcher_ingestion.config.DATA_RAW_DIR", tmp_path):
+        df = pitcher_ingestion.fetch_pitcher_snapshot(date(2024, 4, 30), force=True)
+    assert len(df) == 1
+    assert df.iloc[0]["pitcher_name"] == "Gerrit Cole"

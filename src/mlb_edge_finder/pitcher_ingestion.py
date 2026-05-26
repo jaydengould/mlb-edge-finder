@@ -110,6 +110,98 @@ def load_cached_pitcher_stats(game_date: date) -> pd.DataFrame:
     return pd.read_csv(cache_path)
 
 
+def fetch_pitcher_snapshot(snapshot_date: date, force: bool = False) -> pd.DataFrame:
+    """Fetch season-to-date pitching stats as of snapshot_date, filtered to >= MIN_PITCHER_IP.
+
+    Uses the MLB Stats API byDateRange stat type to get cumulative stats from
+    season start (March 1) through snapshot_date. Falls back to full-season
+    stats if byDateRange returns no splits (e.g. for completed historical seasons
+    where the API no longer supports date-range queries).
+
+    Writes to DATA_RAW_DIR/pitcher_snapshot_YYYY-MM-DD.csv, which is committed
+    to the repo via the snapshot GitHub Actions workflow.
+
+    Args:
+        snapshot_date: Date to snapshot through. Season derived from snapshot_date.year.
+        force: If True, re-fetch even if a cache file exists.
+
+    Returns:
+        DataFrame with columns: pitcher_id, pitcher_name, era, whip,
+        k_per_9, bb_per_9, ip, fip_computed. Only pitchers with ip >= MIN_PITCHER_IP.
+
+    Raises:
+        RuntimeError: If all statsapi calls fail.
+    """
+    cache_path = config.DATA_RAW_DIR / f"pitcher_snapshot_{snapshot_date}.csv"
+    if cache_path.exists() and not force:
+        logger.debug("Cache hit for pitcher_snapshot %s, loading from disk", snapshot_date)
+        return pd.read_csv(cache_path)
+
+    season = snapshot_date.year
+    season_start = f"{season}-03-01"
+    end_date = snapshot_date.strftime("%Y-%m-%d")
+
+    try:
+        data = statsapi.get("stats", {
+            "stats": "byDateRange",
+            "group": "pitching",
+            "sportId": 1,
+            "season": season,
+            "startDate": season_start,
+            "endDate": end_date,
+            "playerPool": "All",
+            "limit": 5000,
+        })
+    except Exception as exc:
+        raise RuntimeError(
+            f"statsapi failed fetching pitcher snapshot for {snapshot_date}: {exc}"
+        ) from exc
+
+    splits = data.get("stats", [{}])[0].get("splits", [])
+    if not splits:
+        logger.warning(
+            "byDateRange returned no data for %s — falling back to full-season stats",
+            snapshot_date,
+        )
+        return _fetch_snapshot_from_full_season(season, snapshot_date)
+
+    df = pd.DataFrame(_parse_pitcher_splits(splits))
+    df = df[df["ip"] >= config.MIN_PITCHER_IP].reset_index(drop=True)
+    config.DATA_RAW_DIR.mkdir(parents=True, exist_ok=True)
+    df.to_csv(cache_path, index=False)
+    logger.info("Wrote %d pitchers to pitcher_snapshot_%s.csv", len(df), snapshot_date)
+    return df
+
+
+def _fetch_snapshot_from_full_season(season: int, snapshot_date: date) -> pd.DataFrame:
+    """Fallback: build a snapshot using full-season stats when byDateRange is unavailable."""
+    try:
+        data = statsapi.get("stats", {
+            "stats": "season",
+            "group": "pitching",
+            "sportId": 1,
+            "season": season,
+            "playerPool": "All",
+            "limit": 5000,
+        })
+    except Exception as exc:
+        raise RuntimeError(
+            f"statsapi fallback failed for pitcher snapshot {snapshot_date}: {exc}"
+        ) from exc
+
+    splits = data.get("stats", [{}])[0].get("splits", [])
+    df = pd.DataFrame(_parse_pitcher_splits(splits))
+    df = df[df["ip"] >= config.MIN_PITCHER_IP].reset_index(drop=True)
+    cache_path = config.DATA_RAW_DIR / f"pitcher_snapshot_{snapshot_date}.csv"
+    config.DATA_RAW_DIR.mkdir(parents=True, exist_ok=True)
+    df.to_csv(cache_path, index=False)
+    logger.info(
+        "Wrote %d pitchers (full-season fallback) to pitcher_snapshot_%s.csv",
+        len(df), snapshot_date,
+    )
+    return df
+
+
 def fetch_probable_starters(game_date: date) -> pd.DataFrame:
     """Fetch today's probable starting pitchers for all regular season games.
 
