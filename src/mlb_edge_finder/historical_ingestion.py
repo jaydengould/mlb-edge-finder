@@ -1,5 +1,6 @@
 """Fetch and cache historical MLB regular season game results."""
 import logging
+import time
 from datetime import date
 
 import pandas as pd
@@ -16,6 +17,7 @@ _KEEP_COLS = [
     "home_probable_pitcher", "away_probable_pitcher",
 ]
 _HISTORICAL_SEASONS = [2019, 2021, 2022, 2023, 2024, 2025]
+_RETRY_DELAYS = [2, 4, 8]
 
 
 def fetch_historical(season: int, force: bool = False) -> pd.DataFrame:
@@ -44,10 +46,31 @@ def fetch_historical(season: int, force: bool = False) -> pd.DataFrame:
     start_date = f"{season}-{_SEASON_START}"
     end_date = f"{season}-{_SEASON_END}"
 
-    try:
-        games = statsapi.schedule(start_date=start_date, end_date=end_date, sportId=1)
-    except Exception as exc:
-        raise RuntimeError(f"statsapi.schedule failed for season {season}: {exc}") from exc
+    last_exc: Exception | None = None
+    games = None
+    total = len(_RETRY_DELAYS)
+    for attempt, delay in enumerate(_RETRY_DELAYS, start=1):
+        try:
+            games = statsapi.schedule(start_date=start_date, end_date=end_date, sportId=1)
+            break
+        except Exception as exc:
+            last_exc = exc
+            if attempt < total:
+                logger.warning(
+                    "statsapi.schedule attempt %d/%d failed for season %d: %s — retrying in %ds",
+                    attempt, total, season, exc, delay,
+                )
+                time.sleep(delay)
+    if games is None:
+        if cache_path.exists():
+            logger.warning(
+                "statsapi.schedule failed for season %d after %d attempts (%s) — using stale cache",
+                season, total, last_exc,
+            )
+            return load_cached_historical(season)
+        raise RuntimeError(
+            f"statsapi.schedule failed for season {season}: {last_exc}"
+        ) from last_exc
 
     if not games:
         raise RuntimeError(f"statsapi.schedule returned no data for season {season}")
