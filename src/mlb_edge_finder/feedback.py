@@ -59,7 +59,10 @@ def run_feedback_loop(season: int) -> dict:
     """
     historical_df = refresh_historical(season)
 
-    pkls = sorted(config.MODELS_DIR.glob("xgb_*.pkl"))
+    pkls = sorted(
+        p for p in config.MODELS_DIR.glob("xgb_*.pkl")
+        if len(p.stem) == 14  # "xgb_YYYY-MM-DD"
+    )
     if pkls:
         last_train_date = date.fromisoformat(pkls[-1].stem[4:])  # strip "xgb_"
         new_games = games_since_last_train(historical_df, last_train_date)
@@ -75,12 +78,15 @@ def run_feedback_loop(season: int) -> dict:
             "Retraining model: %d new games since %s (threshold: %d)",
             new_games, last_train_date, config.RETRAIN_THRESHOLD,
         )
-        training_df = build_training_set(_TRAINING_SEASONS, force=True)
-        clf, X_val, X_test, y_val, y_test = model.train(training_df)
-        clf = model.calibrate(clf, X_val, y_val)
-        metrics = model.evaluate(clf, X_test, y_test)
-        model.save_model(clf, metrics, date.today())
-        retrained = True
+        try:
+            training_df = build_training_set(_TRAINING_SEASONS, force=True)
+            clf, X_val, X_test, y_val, y_test = model.train(training_df)
+            clf = model.calibrate(clf, X_val, y_val)
+            metrics = model.evaluate(clf, X_test, y_test)
+            model.save_model(clf, metrics, date.today())
+            retrained = True
+        except Exception as exc:
+            logger.error("Retrain failed: %s — skipping model update", exc)
     else:
         logger.info(
             "Skipping retrain: %d new games since %s (threshold: %d)",
