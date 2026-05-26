@@ -22,6 +22,14 @@ _SNAPSHOT_MONTH = 9
 _SNAPSHOT_DAY = 28
 
 
+def _select_snapshot_date(
+    game_date: date, available_dates: list[date]
+) -> date | None:
+    """Return the latest snapshot date strictly before game_date, or None."""
+    preceding = [d for d in available_dates if d < game_date]
+    return max(preceding) if preceding else None
+
+
 def _build_season(season: int) -> pd.DataFrame:
     """Load historical games, end-of-season stats, and rolling stats for one season."""
     try:

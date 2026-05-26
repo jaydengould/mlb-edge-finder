@@ -307,3 +307,27 @@ def test_build_training_set_keeps_starter_name_columns(tmp_path):
         df = training_data.build_training_set([2024], force=True)
     assert "home_starter_name" in df.columns
     assert "away_starter_name" in df.columns
+
+
+def test_select_snapshot_date_returns_latest_preceding():
+    from mlb_edge_finder.training_data import _select_snapshot_date
+    from datetime import date
+    available = [date(2024, 4, 30), date(2024, 6, 1), date(2024, 7, 31), date(2024, 9, 28)]
+    assert _select_snapshot_date(date(2024, 5, 10), available) == date(2024, 4, 30)
+    assert _select_snapshot_date(date(2024, 6, 15), available) == date(2024, 6, 1)
+    assert _select_snapshot_date(date(2024, 8, 5), available) == date(2024, 7, 31)
+    assert _select_snapshot_date(date(2024, 9, 29), available) == date(2024, 9, 28)
+
+
+def test_select_snapshot_date_returns_none_when_no_preceding():
+    from mlb_edge_finder.training_data import _select_snapshot_date
+    from datetime import date
+    available = [date(2024, 4, 30), date(2024, 6, 1)]
+    assert _select_snapshot_date(date(2024, 4, 15), available) is None
+    assert _select_snapshot_date(date(2024, 4, 30), available) is None  # strictly before
+
+
+def test_select_snapshot_date_empty_available():
+    from mlb_edge_finder.training_data import _select_snapshot_date
+    from datetime import date
+    assert _select_snapshot_date(date(2024, 9, 1), []) is None
