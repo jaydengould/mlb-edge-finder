@@ -2,6 +2,7 @@
 .env
 data/raw/*
 !data/raw/historical_*.csv
+!data/raw/pitcher_snapshot_*.csv
 data/processed/
 __pycache__/
 *.pyc

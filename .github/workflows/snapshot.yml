@@ -1,0 +1,71 @@
+name: Pitcher Stats Snapshot
+
+on:
+  schedule:
+    - cron: '30 14 30 4 *'   # April 30, 2:30 PM UTC (10:30 AM EDT)
+    - cron: '30 14 1 6 *'    # June 1,  2:30 PM UTC
+    - cron: '30 14 31 7 *'   # July 31, 2:30 PM UTC
+  workflow_dispatch:
+    inputs:
+      snapshot_date:
+        description: 'Snapshot date (YYYY-MM-DD). Leave blank to use today.'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install -e .
+
+      - name: Resolve snapshot date
+        id: resolve_date
+        run: |
+          SNAP_DATE="${{ github.event.inputs.snapshot_date }}"
+          if [ -z "$SNAP_DATE" ]; then
+            SNAP_DATE=$(date -u +%Y-%m-%d)
+          fi
+          echo "SNAP_DATE=$SNAP_DATE" >> $GITHUB_ENV
+          echo "Snapshot date: $SNAP_DATE"
+
+      - name: Fetch pitcher snapshot
+        run: |
+          python3 << 'PYEOF'
+          import os
+          from datetime import date
+          from mlb_edge_finder.pitcher_ingestion import fetch_pitcher_snapshot
+          snap = date.fromisoformat(os.environ["SNAP_DATE"])
+          df = fetch_pitcher_snapshot(snap, force=True)
+          print(f"Snapshot written: {len(df)} qualified pitchers for {snap}")
+          PYEOF
+
+      - name: Commit snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "data/raw/pitcher_snapshot_${SNAP_DATE}.csv"
+          if git diff --staged --quiet; then
+            echo "Nothing to commit (snapshot unchanged)."
+          else
+            git commit -m "chore: pitcher snapshot ${SNAP_DATE}"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
