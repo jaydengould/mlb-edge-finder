@@ -190,6 +190,10 @@ def _fetch_snapshot_from_full_season(season: int, snapshot_date: date) -> pd.Dat
         ) from exc
 
     splits = data.get("stats", [{}])[0].get("splits", [])
+    if not splits:
+        raise RuntimeError(
+            f"statsapi fallback returned no pitcher stats for season {season}"
+        )
     df = pd.DataFrame(_parse_pitcher_splits(splits))
     df = df[df["ip"] >= config.MIN_PITCHER_IP].reset_index(drop=True)
     cache_path = config.DATA_RAW_DIR / f"pitcher_snapshot_{snapshot_date}.csv"

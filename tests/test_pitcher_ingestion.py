@@ -233,7 +233,6 @@ def test_fetch_probable_starters_raises_on_api_failure():
 
 def test_fetch_pitcher_snapshot_signature():
     from mlb_edge_finder import pitcher_ingestion
-    import inspect
     assert callable(pitcher_ingestion.fetch_pitcher_snapshot)
     sig = inspect.signature(pitcher_ingestion.fetch_pitcher_snapshot)
     assert "snapshot_date" in sig.parameters
@@ -312,3 +311,4 @@ def test_fetch_pitcher_snapshot_falls_back_to_season_stats_when_no_splits(tmp_pa
         df = pitcher_ingestion.fetch_pitcher_snapshot(date(2024, 4, 30), force=True)
     assert len(df) == 1
     assert df.iloc[0]["pitcher_name"] == "Gerrit Cole"
+    assert (tmp_path / "pitcher_snapshot_2024-04-30.csv").exists()
