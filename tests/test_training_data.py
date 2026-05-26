@@ -92,9 +92,10 @@ def _make_pitcher_stats():
 
 
 def _make_hist_with_starters(home="New York Yankees", away="Boston Red Sox",
-                              home_starter="Cole Pitcher", away_starter="Bello Pitcher"):
+                              home_starter="Cole Pitcher", away_starter="Bello Pitcher",
+                              game_date="2024-09-30"):
     return pd.DataFrame([{
-        "game_date": "2024-04-01",
+        "game_date": game_date,
         "home_name": home,
         "away_name": away,
         "home_score": 5,
@@ -258,11 +259,12 @@ def test_build_training_set_multi_season_concatenates(tmp_path):
 
 def test_build_training_set_includes_pitcher_sp_cols(tmp_path):
     from mlb_edge_finder import training_data
+    from datetime import date
+    _write_pitcher_snapshot(tmp_path, date(2024, 9, 28), _make_pitcher_stats())
     with patch("mlb_edge_finder.training_data.load_cached_historical",
                return_value=_make_hist_with_starters()), \
          patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
-         patch("mlb_edge_finder.training_data.fetch_pitcher_stats",
-               return_value=_make_pitcher_stats()), \
+         patch("mlb_edge_finder.training_data.config.DATA_RAW_DIR", tmp_path), \
          patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
         df = training_data.build_training_set([2024], force=True)
     for col in ("home_sp_era", "away_sp_era", "home_sp_fip_computed", "away_sp_fip_computed",
@@ -272,11 +274,12 @@ def test_build_training_set_includes_pitcher_sp_cols(tmp_path):
 
 def test_build_training_set_pitcher_join_values_correct(tmp_path):
     from mlb_edge_finder import training_data
+    from datetime import date
+    _write_pitcher_snapshot(tmp_path, date(2024, 9, 28), _make_pitcher_stats())
     with patch("mlb_edge_finder.training_data.load_cached_historical",
                return_value=_make_hist_with_starters()), \
          patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
-         patch("mlb_edge_finder.training_data.fetch_pitcher_stats",
-               return_value=_make_pitcher_stats()), \
+         patch("mlb_edge_finder.training_data.config.DATA_RAW_DIR", tmp_path), \
          patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
         df = training_data.build_training_set([2024], force=True)
     assert abs(df.iloc[0]["home_sp_era"] - 3.50) < 0.01
@@ -285,11 +288,12 @@ def test_build_training_set_pitcher_join_values_correct(tmp_path):
 
 def test_build_training_set_pitcher_nan_when_starter_absent(tmp_path):
     from mlb_edge_finder import training_data
+    from datetime import date
     hist = _make_hist_with_starters(home_starter=None, away_starter=None)
+    _write_pitcher_snapshot(tmp_path, date(2024, 9, 28), _make_pitcher_stats())
     with patch("mlb_edge_finder.training_data.load_cached_historical", return_value=hist), \
          patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
-         patch("mlb_edge_finder.training_data.fetch_pitcher_stats",
-               return_value=_make_pitcher_stats()), \
+         patch("mlb_edge_finder.training_data.config.DATA_RAW_DIR", tmp_path), \
          patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
         df = training_data.build_training_set([2024], force=True)
     assert pd.isna(df.iloc[0]["home_sp_era"])
@@ -298,11 +302,12 @@ def test_build_training_set_pitcher_nan_when_starter_absent(tmp_path):
 
 def test_build_training_set_keeps_starter_name_columns(tmp_path):
     from mlb_edge_finder import training_data
+    from datetime import date
+    _write_pitcher_snapshot(tmp_path, date(2024, 9, 28), _make_pitcher_stats())
     with patch("mlb_edge_finder.training_data.load_cached_historical",
                return_value=_make_hist_with_starters()), \
          patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
-         patch("mlb_edge_finder.training_data.fetch_pitcher_stats",
-               return_value=_make_pitcher_stats()), \
+         patch("mlb_edge_finder.training_data.config.DATA_RAW_DIR", tmp_path), \
          patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
         df = training_data.build_training_set([2024], force=True)
     assert "home_starter_name" in df.columns
@@ -331,3 +336,98 @@ def test_select_snapshot_date_empty_available():
     from mlb_edge_finder.training_data import _select_snapshot_date
     from datetime import date
     assert _select_snapshot_date(date(2024, 9, 1), []) is None
+
+
+def _write_pitcher_snapshot(tmp_path, snap_date, pitcher_df):
+    """Write a pitcher snapshot CSV to tmp_path for use in training_data tests."""
+    path = tmp_path / f"pitcher_snapshot_{snap_date}.csv"
+    pitcher_df.to_csv(path, index=False)
+
+
+def test_build_season_uses_snapshot_for_postgame_date(tmp_path):
+    """Games after a snapshot date receive pitcher stats from that snapshot."""
+    from mlb_edge_finder import training_data
+    from datetime import date
+
+    hist = pd.DataFrame([{
+        "game_date": "2024-09-30",
+        "home_name": "New York Yankees",
+        "away_name": "Boston Red Sox",
+        "home_score": 5, "away_score": 3, "home_win": 1,
+        "home_starter_name": "Cole Pitcher",
+        "away_starter_name": "Bello Pitcher",
+    }])
+    _write_pitcher_snapshot(tmp_path, date(2024, 9, 28), _make_pitcher_stats())
+
+    with patch("mlb_edge_finder.training_data.load_cached_historical", return_value=hist), \
+         patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.training_data.config.DATA_RAW_DIR", tmp_path), \
+         patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
+        df = training_data.build_training_set([2024], force=True)
+
+    assert len(df) == 1
+    assert abs(df.iloc[0]["home_sp_era"] - 3.50) < 0.01
+    assert abs(df.iloc[0]["away_sp_era"] - 4.00) < 0.01
+
+
+def test_build_season_pitcher_nan_for_pre_snapshot_game(tmp_path):
+    """Games before the first snapshot get NaN pitcher stats."""
+    from mlb_edge_finder import training_data
+
+    hist = pd.DataFrame([{
+        "game_date": "2024-04-01",
+        "home_name": "New York Yankees",
+        "away_name": "Boston Red Sox",
+        "home_score": 5, "away_score": 3, "home_win": 1,
+        "home_starter_name": "Cole Pitcher",
+        "away_starter_name": "Bello Pitcher",
+    }])
+    # No snapshot files in tmp_path — April 1 precedes all snapshots.
+    with patch("mlb_edge_finder.training_data.load_cached_historical", return_value=hist), \
+         patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.training_data.config.DATA_RAW_DIR", tmp_path), \
+         patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
+        df = training_data.build_training_set([2024], force=True)
+
+    assert len(df) == 1
+    assert pd.isna(df.iloc[0]["home_sp_era"])
+    assert pd.isna(df.iloc[0]["away_sp_era"])
+
+
+def test_build_season_selects_correct_snapshot_for_each_game(tmp_path):
+    """Each game uses the latest snapshot strictly before its game_date."""
+    from mlb_edge_finder import training_data
+    from datetime import date
+
+    snap_april = _make_pitcher_stats().copy()
+    snap_april["era"] = 2.00
+
+    snap_june = _make_pitcher_stats().copy()
+    snap_june["era"] = 5.00
+
+    hist = pd.DataFrame([
+        {
+            "game_date": "2024-05-10",
+            "home_name": "New York Yankees", "away_name": "Boston Red Sox",
+            "home_score": 5, "away_score": 3, "home_win": 1,
+            "home_starter_name": "Cole Pitcher", "away_starter_name": "Bello Pitcher",
+        },
+        {
+            "game_date": "2024-06-15",
+            "home_name": "New York Yankees", "away_name": "Boston Red Sox",
+            "home_score": 3, "away_score": 2, "home_win": 1,
+            "home_starter_name": "Cole Pitcher", "away_starter_name": "Bello Pitcher",
+        },
+    ])
+    _write_pitcher_snapshot(tmp_path, date(2024, 4, 30), snap_april)
+    _write_pitcher_snapshot(tmp_path, date(2024, 6, 1), snap_june)
+
+    with patch("mlb_edge_finder.training_data.load_cached_historical", return_value=hist), \
+         patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.training_data.config.DATA_RAW_DIR", tmp_path), \
+         patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
+        df = training_data.build_training_set([2024], force=True)
+
+    df = df.sort_values("game_date").reset_index(drop=True)
+    assert abs(df.iloc[0]["home_sp_era"] - 2.00) < 0.01  # May game → April snapshot
+    assert abs(df.iloc[1]["home_sp_era"] - 5.00) < 0.01  # June game → June snapshot

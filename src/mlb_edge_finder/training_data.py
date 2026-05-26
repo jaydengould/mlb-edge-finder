@@ -21,6 +21,10 @@ _LEGACY_ABBR_NORMALIZE: dict[str, str] = {
 _SNAPSHOT_MONTH = 9
 _SNAPSHOT_DAY = 28
 
+_PITCHER_SNAPSHOT_MONTH_DAYS: list[tuple[int, int]] = [
+    (4, 30), (6, 1), (7, 31), (9, 28),
+]
+
 
 def _select_snapshot_date(
     game_date: date, available_dates: list[date]
@@ -95,23 +99,71 @@ def _build_season(season: int) -> pd.DataFrame:
         if col not in df.columns:
             df[col] = None
 
-    # Join starting pitcher season stats with home_sp_*/away_sp_* prefix
-    pitcher_stats = fetch_pitcher_stats(date(season, _SNAPSHOT_MONTH, _SNAPSHOT_DAY))
-    sp_cols = [c for c in pitcher_stats.columns if c not in ("pitcher_name", "pitcher_id")]
-    home_pitcher = pitcher_stats.rename(columns={
-        "pitcher_name": "home_starter_name",
-        "pitcher_id": "home_pitcher_id",
-        **{c: f"home_sp_{c}" for c in sp_cols},
-    })
-    away_pitcher = pitcher_stats.rename(columns={
-        "pitcher_name": "away_starter_name",
-        "pitcher_id": "away_pitcher_id",
-        **{c: f"away_sp_{c}" for c in sp_cols},
-    })
-    home_pitcher_cols = ["home_starter_name", "home_pitcher_id"] + [f"home_sp_{c}" for c in sp_cols]
-    away_pitcher_cols = ["away_starter_name", "away_pitcher_id"] + [f"away_sp_{c}" for c in sp_cols]
-    df = df.merge(home_pitcher[home_pitcher_cols], on="home_starter_name", how="left")
-    df = df.merge(away_pitcher[away_pitcher_cols], on="away_starter_name", how="left")
+    # Load available pitcher snapshots for this season.
+    # Snapshot files (pitcher_snapshot_YYYY-MM-DD.csv) are committed to the repo by
+    # the GitHub Actions snapshot workflow. September 28 falls back to fetch_pitcher_stats
+    # for seasons that predate the snapshot workflow.
+    snapshot_dates = [
+        date(season, m, d) for m, d in _PITCHER_SNAPSHOT_MONTH_DAYS
+    ]
+    pitcher_snapshots: dict[date, pd.DataFrame] = {}
+    for snap_date in snapshot_dates:
+        snap_path = config.DATA_RAW_DIR / f"pitcher_snapshot_{snap_date}.csv"
+        if snap_path.exists():
+            pitcher_snapshots[snap_date] = pd.read_csv(snap_path)
+        elif snap_date == date(season, 9, 28):
+            pitcher_snapshots[snap_date] = fetch_pitcher_stats(
+                date(season, _SNAPSHOT_MONTH, _SNAPSHOT_DAY)
+            )
+
+    available_dates = sorted(pitcher_snapshots.keys())
+
+    # Assign each game to its snapshot (latest snapshot strictly before game_date).
+    game_dates_as_date = pd.to_datetime(df["game_date"]).dt.date
+    df["_snap"] = game_dates_as_date.map(
+        lambda gd: _select_snapshot_date(gd, available_dates)
+    )
+
+    # Determine pitcher stat columns from any available snapshot.
+    any_snap_df = next(iter(pitcher_snapshots.values()), pd.DataFrame())
+    sp_cols = [c for c in any_snap_df.columns if c not in ("pitcher_name", "pitcher_id")]
+    home_sp_cols = [f"home_sp_{c}" for c in sp_cols]
+    away_sp_cols = [f"away_sp_{c}" for c in sp_cols]
+    all_pitcher_cols = ["home_pitcher_id", "away_pitcher_id"] + home_sp_cols + away_sp_cols
+
+    groups: list[pd.DataFrame] = []
+
+    # Games with no preceding snapshot → NaN pitcher stats.
+    no_snap = df[df["_snap"].isna()].copy()
+    if not no_snap.empty:
+        for col in all_pitcher_cols:
+            no_snap[col] = float("nan")
+        groups.append(no_snap)
+
+    # Games with a snapshot → join pitcher stats from the matched snapshot.
+    for snap_date, pitcher_stats in pitcher_snapshots.items():
+        mask = df["_snap"] == snap_date
+        if not mask.any():
+            continue
+        grp = df[mask].copy()
+        home_pitcher = pitcher_stats.rename(columns={
+            "pitcher_name": "home_starter_name",
+            "pitcher_id": "home_pitcher_id",
+            **{c: f"home_sp_{c}" for c in sp_cols},
+        })
+        away_pitcher = pitcher_stats.rename(columns={
+            "pitcher_name": "away_starter_name",
+            "pitcher_id": "away_pitcher_id",
+            **{c: f"away_sp_{c}" for c in sp_cols},
+        })
+        home_cols = ["home_starter_name", "home_pitcher_id"] + home_sp_cols
+        away_cols = ["away_starter_name", "away_pitcher_id"] + away_sp_cols
+        grp = grp.merge(home_pitcher[home_cols], on="home_starter_name", how="left")
+        grp = grp.merge(away_pitcher[away_cols], on="away_starter_name", how="left")
+        groups.append(grp)
+
+    df = pd.concat(groups, ignore_index=True).drop(columns=["_snap"])
+
     logger.debug(
         "Season %d: pitcher join — %d/%d home starters matched, %d/%d away starters matched",
         season,
