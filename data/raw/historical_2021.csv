@@ -1,0 +1,2387 @@
+game_date,home_name,away_name,home_score,away_score,home_win,home_starter_name,away_starter_name
+2021-04-01,New York Yankees,Toronto Blue Jays,2,3,0,Gerrit Cole,Hyun Jin Ryu
+2021-04-01,Detroit Tigers,Cleveland Indians,3,2,1,Matthew Boyd,Shane Bieber
+2021-04-01,Milwaukee Brewers,Minnesota Twins,6,5,1,Brandon Woodruff,Kenta Maeda
+2021-04-01,Chicago Cubs,Pittsburgh Pirates,3,5,0,Kyle Hendricks,Chad Kuhl
+2021-04-01,Philadelphia Phillies,Atlanta Braves,3,2,1,Aaron Nola,Max Fried
+2021-04-01,Colorado Rockies,Los Angeles Dodgers,8,5,1,Germán Márquez,Clayton Kershaw
+2021-04-01,San Diego Padres,Arizona Diamondbacks,8,7,1,Yu Darvish,Madison Bumgarner
+2021-04-01,Cincinnati Reds,St. Louis Cardinals,6,11,0,Luis Castillo,Jack Flaherty
+2021-04-01,Kansas City Royals,Texas Rangers,14,10,1,Brad Keller,Kyle Gibson
+2021-04-01,Miami Marlins,Tampa Bay Rays,0,1,0,Sandy Alcantara,Tyler Glasnow
+2021-04-01,Los Angeles Angels,Chicago White Sox,4,3,1,Dylan Bundy,Lucas Giolito
+2021-04-01,Oakland Athletics,Houston Astros,1,8,0,Chris Bassitt,Zack Greinke
+2021-04-01,Seattle Mariners,San Francisco Giants,8,7,1,Marco Gonzales,Kevin Gausman
+2021-04-02,Boston Red Sox,Baltimore Orioles,0,3,0,Nathan Eovaldi,John Means
+2021-04-02,Miami Marlins,Tampa Bay Rays,4,6,0,Pablo López,Ryan Yarbrough
+2021-04-02,Colorado Rockies,Los Angeles Dodgers,6,11,0,Antonio Senzatela,Trevor Bauer
+2021-04-02,Los Angeles Angels,Chicago White Sox,8,12,0,Andrew Heaney,Dallas Keuchel
+2021-04-02,Oakland Athletics,Houston Astros,5,9,0,Jesús Luzardo,Cristian Javier
+2021-04-02,San Diego Padres,Arizona Diamondbacks,4,2,1,Blake Snell,Merrill Kelly
+2021-04-02,Seattle Mariners,San Francisco Giants,3,6,0,Yusei Kikuchi,Johnny Cueto
+2021-04-03,New York Yankees,Toronto Blue Jays,5,3,1,Corey Kluber,Ross Stripling
+2021-04-03,Boston Red Sox,Baltimore Orioles,2,4,0,Tanner Houck,Matt Harvey
+2021-04-03,Detroit Tigers,Cleveland Indians,5,2,1,Julio Teheran,Zach Plesac
+2021-04-03,Kansas City Royals,Texas Rangers,11,4,1,Mike Minor,Kohei Arihara
+2021-04-03,Chicago Cubs,Pittsburgh Pirates,5,1,1,Jake Arrieta,Tyler Anderson
+2021-04-03,Philadelphia Phillies,Atlanta Braves,4,0,1,Zack Wheeler,Charlie Morton
+2021-04-03,Oakland Athletics,Houston Astros,1,9,0,Cole Irvin,Lance McCullers Jr.
+2021-04-03,Cincinnati Reds,St. Louis Cardinals,9,6,1,Tyler Mahle,Adam Wainwright
+2021-04-03,Miami Marlins,Tampa Bay Rays,12,7,1,Elieser Hernández,Rich Hill
+2021-04-03,Milwaukee Brewers,Minnesota Twins,0,2,0,Corbin Burnes,José Berríos
+2021-04-03,Colorado Rockies,Los Angeles Dodgers,5,6,0,Jon Gray,Walker Buehler
+2021-04-03,San Diego Padres,Arizona Diamondbacks,7,0,1,Joe Musgrove,Caleb Smith
+2021-04-03,Los Angeles Angels,Chicago White Sox,5,3,1,Alex Cobb,Lance Lynn
+2021-04-03,Seattle Mariners,San Francisco Giants,4,0,1,Chris Flexen,Logan Webb
+2021-04-04,Philadelphia Phillies,Atlanta Braves,2,1,1,Zach Eflin,Ian Anderson
+2021-04-04,New York Yankees,Toronto Blue Jays,1,3,0,Domingo Germán,T.J. Zeuch
+2021-04-04,Boston Red Sox,Baltimore Orioles,3,11,0,Garrett Richards,Bruce Zimmermann
+2021-04-04,Detroit Tigers,Cleveland Indians,3,9,0,Tarik Skubal,Aaron Civale
+2021-04-04,Cincinnati Reds,St. Louis Cardinals,12,1,1,Jeff Hoffman,Carlos Martinez
+2021-04-04,Kansas City Royals,Texas Rangers,3,7,0,Brady Singer,Jordan Lyles
+2021-04-04,Milwaukee Brewers,Minnesota Twins,2,8,0,Adrian Houser,Michael Pineda
+2021-04-04,Chicago Cubs,Pittsburgh Pirates,4,3,1,Zach Davies,Mitch Keller
+2021-04-04,Colorado Rockies,Los Angeles Dodgers,2,4,0,Austin Gomber,Julio Urías
+2021-04-04,Oakland Athletics,Houston Astros,2,9,0,Sean Manaea,José Urquidy
+2021-04-04,San Diego Padres,Arizona Diamondbacks,1,3,0,Chris Paddack,Taylor Widener
+2021-04-04,Los Angeles Angels,Chicago White Sox,7,4,1,Shohei Ohtani,Dylan Cease
+2021-04-05,Detroit Tigers,Minnesota Twins,6,15,0,José Ureña,Matt Shoemaker
+2021-04-05,Texas Rangers,Toronto Blue Jays,2,6,0,Mike Foltynewicz,Steven Matz
+2021-04-05,Cleveland Indians,Kansas City Royals,0,3,0,Logan Allen,Danny Duffy
+2021-04-05,New York Yankees,Baltimore Orioles,7,0,1,Jordan Montgomery,Jorge López
+2021-04-05,Cincinnati Reds,Pittsburgh Pirates,5,3,1,José De León,JT Brubaker
+2021-04-05,Miami Marlins,St. Louis Cardinals,1,4,0,Trevor Rogers,Daniel Ponce de Leon
+2021-04-05,Philadelphia Phillies,New York Mets,5,3,1,Matt Moore,Jacob deGrom
+2021-04-05,Boston Red Sox,Tampa Bay Rays,11,2,1,Nick Pivetta,Michael Wacha
+2021-04-05,Chicago Cubs,Milwaukee Brewers,5,3,1,Trevor Williams,Brett Anderson
+2021-04-05,Los Angeles Angels,Houston Astros,7,6,1,Jose Quintana,Luis Garcia
+2021-04-05,Oakland Athletics,Los Angeles Dodgers,3,10,0,Frankie Montas,Dustin May
+2021-04-05,San Diego Padres,San Francisco Giants,2,3,0,Adrian Morejon,Anthony DeSclafani
+2021-04-05,Seattle Mariners,Chicago White Sox,0,6,0,Justus Sheffield,Carlos Rodón
+2021-04-06,Detroit Tigers,Minnesota Twins,4,3,1,Casey Mize,J.A. Happ
+2021-04-06,Washington Nationals,Atlanta Braves,6,5,1,Max Scherzer,Drew Smyly
+2021-04-06,Los Angeles Angels,Houston Astros,2,4,0,Dylan Bundy,Zack Greinke
+2021-04-06,New York Yankees,Baltimore Orioles,7,2,1,Gerrit Cole,Dean Kremer
+2021-04-06,Cincinnati Reds,Pittsburgh Pirates,14,1,1,Wade Miley,Trevor Cahill
+2021-04-06,Miami Marlins,St. Louis Cardinals,2,4,0,Sandy Alcantara,John Gant
+2021-04-06,Philadelphia Phillies,New York Mets,4,8,0,Chase Anderson,Marcus Stroman
+2021-04-06,Boston Red Sox,Tampa Bay Rays,6,5,1,Martín Pérez,Tyler Glasnow
+2021-04-06,Chicago Cubs,Milwaukee Brewers,0,4,0,Adbert Alzolay,Freddy Peralta
+2021-04-06,Texas Rangers,Toronto Blue Jays,7,4,1,Dane Dunning,Tanner Roark
+2021-04-06,Colorado Rockies,Arizona Diamondbacks,8,10,0,Germán Márquez,Luke Weaver
+2021-04-06,Oakland Athletics,Los Angeles Dodgers,1,5,0,Chris Bassitt,Clayton Kershaw
+2021-04-06,San Diego Padres,San Francisco Giants,3,1,1,Yu Darvish,Aaron Sanchez
+2021-04-06,Seattle Mariners,Chicago White Sox,4,10,0,James Paxton,Lucas Giolito
+2021-04-07,Washington Nationals,Atlanta Braves,6,7,0,Erick Fedde,Max Fried
+2021-04-07,Washington Nationals,Atlanta Braves,0,2,0,Stephen Strasburg,Huascar Ynoa
+2021-04-07,Cincinnati Reds,Pittsburgh Pirates,11,4,1,Luis Castillo,Chad Kuhl
+2021-04-07,Cleveland Indians,Kansas City Royals,4,2,1,Shane Bieber,Jakob Junis
+2021-04-07,Boston Red Sox,Tampa Bay Rays,9,2,1,Nathan Eovaldi,Ryan Yarbrough
+2021-04-07,Detroit Tigers,Minnesota Twins,2,3,0,Matthew Boyd,Kenta Maeda
+2021-04-07,Texas Rangers,Toronto Blue Jays,2,1,1,Kyle Gibson,Hyun Jin Ryu
+2021-04-07,Chicago Cubs,Milwaukee Brewers,2,4,0,Kyle Hendricks,Brandon Woodruff
+2021-04-07,Oakland Athletics,Los Angeles Dodgers,4,3,1,Jesús Luzardo,Trevor Bauer
+2021-04-07,Philadelphia Phillies,New York Mets,8,2,1,Aaron Nola,David Peterson
+2021-04-07,San Diego Padres,San Francisco Giants,2,3,0,Blake Snell,Kevin Gausman
+2021-04-07,Seattle Mariners,Chicago White Sox,8,4,1,Justin Dunn,Dallas Keuchel
+2021-04-07,Miami Marlins,St. Louis Cardinals,0,7,0,Pablo López,Jack Flaherty
+2021-04-07,New York Yankees,Baltimore Orioles,3,4,0,Jameson Taillon,John Means
+2021-04-07,Colorado Rockies,Arizona Diamondbacks,8,0,1,Antonio Senzatela,Madison Bumgarner
+2021-04-08,New York Mets,Miami Marlins,3,2,1,Taijuan Walker,Nick Neidert
+2021-04-08,Pittsburgh Pirates,Chicago Cubs,2,4,0,Tyler Anderson,Jake Arrieta
+2021-04-08,Baltimore Orioles,Boston Red Sox,3,7,0,Matt Harvey,Eduardo Rodriguez
+2021-04-08,Colorado Rockies,Arizona Diamondbacks,7,3,1,Jon Gray,Merrill Kelly
+2021-04-08,Minnesota Twins,Seattle Mariners,10,2,1,José Berríos,Marco Gonzales
+2021-04-08,Chicago White Sox,Kansas City Royals,6,0,1,Lance Lynn,Brad Keller
+2021-04-08,St. Louis Cardinals,Milwaukee Brewers,3,1,1,Adam Wainwright,Corbin Burnes
+2021-04-08,Toronto Blue Jays,Los Angeles Angels,5,7,0,Ross Stripling,Griffin Canning
+2021-04-08,Houston Astros,Oakland Athletics,6,2,1,Cristian Javier,Cole Irvin
+2021-04-09,Tampa Bay Rays,New York Yankees,10,5,1,Rich Hill,Corey Kluber
+2021-04-09,Los Angeles Dodgers,Washington Nationals,1,0,1,Walker Buehler,Joe Ross
+2021-04-09,San Francisco Giants,Colorado Rockies,3,1,1,Johnny Cueto,Austin Gomber
+2021-04-09,Toronto Blue Jays,Los Angeles Angels,1,7,0,David Phelps,Andrew Heaney
+2021-04-09,Cleveland Indians,Detroit Tigers,4,1,1,Zach Plesac,Julio Teheran
+2021-04-09,Atlanta Braves,Philadelphia Phillies,8,1,1,Charlie Morton,Zack Wheeler
+2021-04-09,Texas Rangers,San Diego Padres,0,3,0,Kohei Arihara,Joe Musgrove
+2021-04-09,Houston Astros,Oakland Athletics,2,6,0,Lance McCullers Jr.,Sean Manaea
+2021-04-09,Arizona Diamondbacks,Cincinnati Reds,5,6,0,Taylor Widener,Tyler Mahle
+2021-04-10,New York Mets,Miami Marlins,0,3,0,Jacob deGrom,Trevor Rogers
+2021-04-10,Tampa Bay Rays,New York Yankees,4,0,1,Chris Archer,Domingo Germán
+2021-04-10,Minnesota Twins,Seattle Mariners,3,4,0,Michael Pineda,Yusei Kikuchi
+2021-04-10,St. Louis Cardinals,Milwaukee Brewers,5,9,0,Carlos Martinez,Adrian Houser
+2021-04-10,Houston Astros,Oakland Athletics,3,7,0,José Urquidy,Frankie Montas
+2021-04-10,San Francisco Giants,Colorado Rockies,4,3,1,Logan Webb,Chi Chi González
+2021-04-10,Cleveland Indians,Detroit Tigers,11,3,1,Aaron Civale,Tarik Skubal
+2021-04-10,Pittsburgh Pirates,Chicago Cubs,8,2,1,Mitch Keller,Zach Davies
+2021-04-10,Baltimore Orioles,Boston Red Sox,4,6,0,Bruce Zimmermann,Garrett Richards
+2021-04-10,Texas Rangers,San Diego Padres,4,7,0,Jordan Lyles,Chris Paddack
+2021-04-10,Toronto Blue Jays,Los Angeles Angels,15,1,1,Steven Matz,Jose Quintana
+2021-04-10,Atlanta Braves,Philadelphia Phillies,5,4,1,Ian Anderson,Zach Eflin
+2021-04-10,Arizona Diamondbacks,Cincinnati Reds,8,3,1,Riley Smith,Jeff Hoffman
+2021-04-10,Los Angeles Dodgers,Washington Nationals,9,5,1,Julio Urías,Patrick Corbin
+2021-04-11,Baltimore Orioles,Boston Red Sox,9,14,0,Jorge López,Nick Pivetta
+2021-04-11,Pittsburgh Pirates,Chicago Cubs,7,1,1,JT Brubaker,Trevor Williams
+2021-04-11,Cleveland Indians,Detroit Tigers,5,2,1,Logan Allen,José Ureña
+2021-04-11,New York Mets,Miami Marlins,6,5,1,Taijuan Walker,Elieser Hernández
+2021-04-11,Tampa Bay Rays,New York Yankees,4,8,0,Brent Honeywell,Jordan Montgomery
+2021-04-11,Minnesota Twins,Seattle Mariners,6,8,0,Matt Shoemaker,Chris Flexen
+2021-04-11,Chicago White Sox,Kansas City Royals,3,4,0,Dylan Cease,Mike Minor
+2021-04-11,St. Louis Cardinals,Milwaukee Brewers,3,9,0,Daniel Ponce de Leon,Brett Anderson
+2021-04-11,Texas Rangers,San Diego Padres,0,2,0,Mike Foltynewicz,Adrian Morejon
+2021-04-11,San Francisco Giants,Colorado Rockies,4,0,1,Anthony DeSclafani,Germán Márquez
+2021-04-11,Arizona Diamondbacks,Cincinnati Reds,7,0,1,Luke Weaver,José De León
+2021-04-11,Los Angeles Dodgers,Washington Nationals,3,0,1,Clayton Kershaw,Max Scherzer
+2021-04-11,Atlanta Braves,Philadelphia Phillies,6,7,0,Drew Smyly,Matt Moore
+2021-04-12,Pittsburgh Pirates,San Diego Padres,2,6,0,Trevor Cahill,Yu Darvish
+2021-04-12,Toronto Blue Jays,New York Yankees,1,3,0,Robbie Ray,Gerrit Cole
+2021-04-12,Tampa Bay Rays,Texas Rangers,1,0,1,Tyler Glasnow,Dane Dunning
+2021-04-12,Atlanta Braves,Miami Marlins,3,5,0,Huascar Ynoa,Sandy Alcantara
+2021-04-12,Milwaukee Brewers,Chicago Cubs,6,3,1,Freddy Peralta,Adbert Alzolay
+2021-04-12,St. Louis Cardinals,Washington Nationals,2,5,0,John Gant,Erick Fedde
+2021-04-12,Houston Astros,Detroit Tigers,2,6,0,Zack Greinke,Casey Mize
+2021-04-12,Kansas City Royals,Los Angeles Angels,3,10,0,Brady Singer,Alex Cobb
+2021-04-12,Chicago White Sox,Cleveland Indians,4,3,1,Dallas Keuchel,Triston McKenzie
+2021-04-12,Arizona Diamondbacks,Oakland Athletics,5,9,0,Madison Bumgarner,Chris Bassitt
+2021-04-12,San Francisco Giants,Cincinnati Reds,0,3,0,Aaron Sanchez,Wade Miley
+2021-04-13,Minnesota Twins,Boston Red Sox,2,4,0,J.A. Happ,Martín Pérez
+2021-04-13,Arizona Diamondbacks,Oakland Athletics,5,7,0,Zac Gallen,Jesús Luzardo
+2021-04-13,Baltimore Orioles,Seattle Mariners,3,4,0,John Means,Justus Sheffield
+2021-04-13,Baltimore Orioles,Seattle Mariners,7,6,1,Dean Kremer,Nick Margevicius
+2021-04-13,New York Mets,Philadelphia Phillies,4,3,1,Taijuan Walker,Chase Anderson
+2021-04-13,New York Mets,Philadelphia Phillies,4,0,1,Marcus Stroman,Aaron Nola
+2021-04-13,Pittsburgh Pirates,San Diego Padres,8,4,1,Chad Kuhl,Blake Snell
+2021-04-13,Toronto Blue Jays,New York Yankees,7,3,1,Hyun Jin Ryu,Jameson Taillon
+2021-04-13,Tampa Bay Rays,Texas Rangers,3,8,0,Ryan Yarbrough,Kyle Gibson
+2021-04-13,Atlanta Braves,Miami Marlins,8,14,0,Max Fried,Pablo López
+2021-04-13,Milwaukee Brewers,Chicago Cubs,2,3,0,Brandon Woodruff,Alec Mills
+2021-04-13,St. Louis Cardinals,Washington Nationals,14,3,1,Jack Flaherty,Stephen Strasburg
+2021-04-13,Houston Astros,Detroit Tigers,2,8,0,Jake Odorizzi,Matthew Boyd
+2021-04-13,Kansas City Royals,Los Angeles Angels,3,2,1,Danny Duffy,Dylan Bundy
+2021-04-13,Chicago White Sox,Cleveland Indians,0,2,0,Lucas Giolito,Shane Bieber
+2021-04-13,San Francisco Giants,Cincinnati Reds,7,6,1,Kevin Gausman,Luis Castillo
+2021-04-13,Los Angeles Dodgers,Colorado Rockies,7,0,1,Trevor Bauer,Antonio Senzatela
+2021-04-14,Toronto Blue Jays,New York Yankees,5,4,1,T.J. Zeuch,Corey Kluber
+2021-04-14,St. Louis Cardinals,Washington Nationals,0,6,0,Adam Wainwright,Joe Ross
+2021-04-14,Milwaukee Brewers,Chicago Cubs,7,0,1,Corbin Burnes,Jake Arrieta
+2021-04-14,Kansas City Royals,Los Angeles Angels,6,1,1,Brad Keller,Griffin Canning
+2021-04-14,Minnesota Twins,Boston Red Sox,2,3,0,Kenta Maeda,Nathan Eovaldi
+2021-04-14,Minnesota Twins,Boston Red Sox,1,7,0,José Berríos,Eduardo Rodriguez
+2021-04-14,San Francisco Giants,Cincinnati Reds,3,0,1,Johnny Cueto,Tyler Mahle
+2021-04-14,Pittsburgh Pirates,San Diego Padres,5,1,1,Tyler Anderson,Joe Musgrove
+2021-04-14,Houston Astros,Detroit Tigers,4,6,0,Lance McCullers Jr.,Michael Fulmer
+2021-04-14,Tampa Bay Rays,Texas Rangers,1,5,0,Josh Fleming,Kohei Arihara
+2021-04-14,New York Mets,Philadelphia Phillies,5,1,1,David Peterson,Zack Wheeler
+2021-04-14,Atlanta Braves,Miami Marlins,5,6,0,Charlie Morton,Nick Neidert
+2021-04-14,Chicago White Sox,Cleveland Indians,8,0,1,Carlos Rodón,Zach Plesac
+2021-04-14,Los Angeles Dodgers,Colorado Rockies,4,2,1,Dustin May,Jon Gray
+2021-04-15,Atlanta Braves,Miami Marlins,7,6,1,Ian Anderson,Trevor Rogers
+2021-04-15,Pittsburgh Pirates,San Diego Padres,3,8,0,Mitch Keller,Chris Paddack
+2021-04-15,Baltimore Orioles,Seattle Mariners,2,4,0,Matt Harvey,Marco Gonzales
+2021-04-15,Baltimore Orioles,Seattle Mariners,1,2,0,Bruce Zimmermann,Justin Dunn
+2021-04-15,Minnesota Twins,Boston Red Sox,4,3,1,Michael Pineda,Garrett Richards
+2021-04-15,Chicago White Sox,Cleveland Indians,2,4,0,Lance Lynn,Aaron Civale
+2021-04-15,Washington Nationals,Arizona Diamondbacks,6,11,0,Patrick Corbin,Merrill Kelly
+2021-04-15,Tampa Bay Rays,Texas Rangers,4,6,0,Rich Hill,Jordan Lyles
+2021-04-15,Kansas City Royals,Toronto Blue Jays,7,5,1,Jakob Junis,Anthony Kay
+2021-04-15,Oakland Athletics,Detroit Tigers,8,4,1,Sean Manaea,Tarik Skubal
+2021-04-15,Los Angeles Dodgers,Colorado Rockies,7,5,1,Julio Urías,Austin Gomber
+2021-04-16,Chicago Cubs,Atlanta Braves,2,5,0,Zach Davies,Kyle Wright
+2021-04-16,Washington Nationals,Arizona Diamondbacks,1,0,1,Max Scherzer,Taylor Widener
+2021-04-16,Philadelphia Phillies,St. Louis Cardinals,9,2,1,Zach Eflin,Carlos Martinez
+2021-04-16,New York Yankees,Tampa Bay Rays,2,8,0,Nick Nelson,Michael Wacha
+2021-04-16,Cincinnati Reds,Cleveland Indians,10,3,1,Jeff Hoffman,Logan Allen
+2021-04-16,Miami Marlins,San Francisco Giants,4,1,1,Daniel Castano,Anthony DeSclafani
+2021-04-16,Texas Rangers,Baltimore Orioles,2,5,0,Mike Foltynewicz,Jorge López
+2021-04-16,Milwaukee Brewers,Pittsburgh Pirates,1,6,0,Adrian Houser,JT Brubaker
+2021-04-16,Los Angeles Angels,Minnesota Twins,10,3,1,Andrew Heaney,Lewis Thorpe
+2021-04-16,Oakland Athletics,Detroit Tigers,3,0,1,Frankie Montas,José Ureña
+2021-04-16,San Diego Padres,Los Angeles Dodgers,6,11,0,Ryan Weathers,Walker Buehler
+2021-04-16,Seattle Mariners,Houston Astros,6,5,1,Yusei Kikuchi,José Urquidy
+2021-04-17,Washington Nationals,Arizona Diamondbacks,6,2,1,Erick Fedde,Luke Weaver
+2021-04-17,New York Yankees,Tampa Bay Rays,3,6,0,Jordan Montgomery,Tyler Glasnow
+2021-04-17,Kansas City Royals,Toronto Blue Jays,1,5,0,Mike Minor,Steven Matz
+2021-04-17,Kansas City Royals,Toronto Blue Jays,3,2,1,Ervin Santana,Tommy Milone
+2021-04-17,Chicago Cubs,Atlanta Braves,13,4,1,Trevor Williams,Huascar Ynoa
+2021-04-17,Philadelphia Phillies,St. Louis Cardinals,4,9,0,Matt Moore,Kwang Hyun Kim
+2021-04-17,Boston Red Sox,Chicago White Sox,7,4,1,Nick Pivetta,Dylan Cease
+2021-04-17,Oakland Athletics,Detroit Tigers,7,0,1,Cole Irvin,Casey Mize
+2021-04-17,Cincinnati Reds,Cleveland Indians,3,2,1,Sonny Gray,Triston McKenzie
+2021-04-17,Colorado Rockies,New York Mets,3,4,0,Chi Chi González,Jacob deGrom
+2021-04-17,Colorado Rockies,New York Mets,7,2,1,Germán Márquez,Joey Lucchesi
+2021-04-17,Miami Marlins,San Francisco Giants,7,6,1,Sandy Alcantara,Aaron Sanchez
+2021-04-17,Texas Rangers,Baltimore Orioles,1,6,0,Dane Dunning,Dean Kremer
+2021-04-17,Milwaukee Brewers,Pittsburgh Pirates,7,1,1,Brett Anderson,Trevor Cahill
+2021-04-17,San Diego Padres,Los Angeles Dodgers,0,2,0,Yu Darvish,Clayton Kershaw
+2021-04-17,Seattle Mariners,Houston Astros,0,1,0,Chris Flexen,Zack Greinke
+2021-04-18,Washington Nationals,Arizona Diamondbacks,2,5,0,Paolo Espino,Madison Bumgarner
+2021-04-18,Philadelphia Phillies,St. Louis Cardinals,2,0,1,Aaron Nola,John Gant
+2021-04-18,New York Yankees,Tampa Bay Rays,2,4,0,Gerrit Cole,Andrew Kittredge
+2021-04-18,Cincinnati Reds,Cleveland Indians,3,6,0,Wade Miley,Shane Bieber
+2021-04-18,Boston Red Sox,Chicago White Sox,2,3,0,Tanner Houck,Dallas Keuchel
+2021-04-18,Boston Red Sox,Chicago White Sox,1,5,0,Martín Pérez,Michael Kopech
+2021-04-18,Miami Marlins,San Francisco Giants,0,1,0,Pablo López,Alex Wood
+2021-04-18,Kansas City Royals,Toronto Blue Jays,2,0,1,Brady Singer,Robbie Ray
+2021-04-18,Milwaukee Brewers,Pittsburgh Pirates,5,6,0,Freddy Peralta,Chad Kuhl
+2021-04-18,Texas Rangers,Baltimore Orioles,1,0,1,Kyle Gibson,John Means
+2021-04-18,Colorado Rockies,New York Mets,1,2,0,Antonio Senzatela,Marcus Stroman
+2021-04-18,Oakland Athletics,Detroit Tigers,3,2,1,Chris Bassitt,Matthew Boyd
+2021-04-18,San Diego Padres,Los Angeles Dodgers,5,2,1,Blake Snell,Trevor Bauer
+2021-04-18,Seattle Mariners,Houston Astros,7,2,1,Nick Margevicius,Jake Odorizzi
+2021-04-18,Chicago Cubs,Atlanta Braves,4,13,0,Kyle Hendricks,Bryse Wilson
+2021-04-19,Boston Red Sox,Chicago White Sox,11,4,1,Nathan Eovaldi,Lucas Giolito
+2021-04-19,Washington Nationals,St. Louis Cardinals,5,12,0,Joe Ross,Jack Flaherty
+2021-04-19,Philadelphia Phillies,San Francisco Giants,0,2,0,Chase Anderson,Kevin Gausman
+2021-04-19,Kansas City Royals,Tampa Bay Rays,1,4,0,Danny Duffy,Josh Fleming
+2021-04-19,Los Angeles Angels,Texas Rangers,4,6,0,Dylan Bundy,Kohei Arihara
+2021-04-19,Seattle Mariners,Los Angeles Dodgers,4,3,1,Justus Sheffield,Dustin May
+2021-04-19,San Diego Padres,Milwaukee Brewers,1,3,0,Joe Musgrove,Brandon Woodruff
+2021-04-20,Seattle Mariners,Los Angeles Dodgers,0,1,0,Marco Gonzales,Julio Urías
+2021-04-20,Cleveland Indians,Chicago White Sox,5,8,0,Zach Plesac,Carlos Rodón
+2021-04-20,Oakland Athletics,Minnesota Twins,7,0,1,Sean Manaea,Matt Shoemaker
+2021-04-20,Oakland Athletics,Minnesota Twins,1,0,1,Jesús Luzardo,José Berríos
+2021-04-20,New York Yankees,Atlanta Braves,3,1,1,Jameson Taillon,Charlie Morton
+2021-04-20,Cincinnati Reds,Arizona Diamondbacks,4,5,0,Luis Castillo,Zac Gallen
+2021-04-20,Miami Marlins,Baltimore Orioles,5,7,0,Nick Neidert,Matt Harvey
+2021-04-20,Washington Nationals,St. Louis Cardinals,3,2,1,Patrick Corbin,Adam Wainwright
+2021-04-20,Philadelphia Phillies,San Francisco Giants,7,10,0,Zack Wheeler,Logan Webb
+2021-04-20,Boston Red Sox,Toronto Blue Jays,4,2,1,Eduardo Rodriguez,Hyun Jin Ryu
+2021-04-20,Chicago Cubs,New York Mets,3,1,1,Jake Arrieta,Taijuan Walker
+2021-04-20,Kansas City Royals,Tampa Bay Rays,7,14,0,Brad Keller,Rich Hill
+2021-04-20,Colorado Rockies,Houston Astros,6,2,1,Jon Gray,Luis Garcia
+2021-04-20,Los Angeles Angels,Texas Rangers,6,2,1,Shohei Ohtani,Jordan Lyles
+2021-04-20,San Diego Padres,Milwaukee Brewers,0,6,0,Chris Paddack,Corbin Burnes
+2021-04-21,Philadelphia Phillies,San Francisco Giants,6,5,1,Zach Eflin,Anthony DeSclafani
+2021-04-21,Miami Marlins,Baltimore Orioles,3,0,1,Trevor Rogers,Bruce Zimmermann
+2021-04-21,Detroit Tigers,Pittsburgh Pirates,2,3,0,Michael Fulmer,Tyler Anderson
+2021-04-21,Detroit Tigers,Pittsburgh Pirates,5,2,1,Spencer Turnbull,Miguel Yajure
+2021-04-21,Colorado Rockies,Houston Astros,6,3,1,Austin Gomber,José Urquidy
+2021-04-21,Oakland Athletics,Minnesota Twins,13,12,1,Frankie Montas,Kenta Maeda
+2021-04-21,Washington Nationals,St. Louis Cardinals,1,0,1,Max Scherzer,Carlos Martinez
+2021-04-21,Los Angeles Angels,Texas Rangers,4,7,0,Jose Quintana,Mike Foltynewicz
+2021-04-21,San Diego Padres,Milwaukee Brewers,2,4,0,Dinelson Lamet,Adrian Houser
+2021-04-21,Cincinnati Reds,Arizona Diamondbacks,4,5,0,Luis Castillo,Zac Gallen
+2021-04-21,New York Yankees,Atlanta Braves,1,4,0,Corey Kluber,Ian Anderson
+2021-04-21,Cincinnati Reds,Arizona Diamondbacks,5,8,0,Tyler Mahle,Merrill Kelly
+2021-04-21,Boston Red Sox,Toronto Blue Jays,3,6,0,Garrett Richards,Trent Thornton
+2021-04-21,Chicago Cubs,New York Mets,16,4,1,Zach Davies,David Peterson
+2021-04-21,Kansas City Royals,Tampa Bay Rays,9,8,1,Jakob Junis,Michael Wacha
+2021-04-22,Cincinnati Reds,Arizona Diamondbacks,11,14,0,Jeff Hoffman,Taylor Widener
+2021-04-22,Detroit Tigers,Pittsburgh Pirates,2,4,0,José Ureña,Mitch Keller
+2021-04-22,Cleveland Indians,New York Yankees,3,6,0,Aaron Civale,Domingo Germán
+2021-04-22,Boston Red Sox,Seattle Mariners,3,7,0,Nick Pivetta,Justin Dunn
+2021-04-22,Chicago Cubs,New York Mets,4,3,1,Trevor Williams,Joey Lucchesi
+2021-04-22,Houston Astros,Los Angeles Angels,8,2,1,Cristian Javier,Alex Cobb
+2021-04-22,San Francisco Giants,Miami Marlins,3,0,1,Aaron Sanchez,Daniel Castano
+2021-04-22,Los Angeles Dodgers,San Diego Padres,2,3,0,Walker Buehler,Ryan Weathers
+2021-04-23,Chicago Cubs,Milwaukee Brewers,15,2,1,Kyle Hendricks,Brett Anderson
+2021-04-23,Baltimore Orioles,Oakland Athletics,1,3,0,Jorge López,Cole Irvin
+2021-04-23,Detroit Tigers,Kansas City Royals,2,6,0,Casey Mize,Mike Minor
+2021-04-23,New York Mets,Washington Nationals,6,0,1,Jacob deGrom,Erick Fedde
+2021-04-23,Boston Red Sox,Seattle Mariners,6,5,1,Martín Pérez,Yusei Kikuchi
+2021-04-23,Tampa Bay Rays,Toronto Blue Jays,3,5,0,Tyler Glasnow,Steven Matz
+2021-04-23,Cleveland Indians,New York Yankees,3,5,0,Logan Allen,Jordan Montgomery
+2021-04-23,Atlanta Braves,Arizona Diamondbacks,5,4,1,Huascar Ynoa,Luke Weaver
+2021-04-23,Houston Astros,Los Angeles Angels,5,4,1,Zack Greinke,Andrew Heaney
+2021-04-23,Minnesota Twins,Pittsburgh Pirates,2,0,1,J.A. Happ,JT Brubaker
+2021-04-23,Chicago White Sox,Texas Rangers,9,7,1,Dylan Cease,Dane Dunning
+2021-04-23,St. Louis Cardinals,Cincinnati Reds,5,4,1,Kwang Hyun Kim,Sonny Gray
+2021-04-23,Colorado Rockies,Philadelphia Phillies,5,4,1,Germán Márquez,Vince Velasquez
+2021-04-23,San Francisco Giants,Miami Marlins,5,3,1,Alex Wood,Sandy Alcantara
+2021-04-23,Los Angeles Dodgers,San Diego Padres,1,6,0,Clayton Kershaw,Yu Darvish
+2021-04-24,Detroit Tigers,Kansas City Royals,1,2,0,Matthew Boyd,Brady Singer
+2021-04-24,Boston Red Sox,Seattle Mariners,2,8,0,Nathan Eovaldi,Chris Flexen
+2021-04-24,Minnesota Twins,Pittsburgh Pirates,2,6,0,Michael Pineda,Trevor Cahill
+2021-04-24,St. Louis Cardinals,Cincinnati Reds,2,0,1,John Gant,Wade Miley
+2021-04-24,Chicago Cubs,Milwaukee Brewers,3,4,0,Adbert Alzolay,Freddy Peralta
+2021-04-24,New York Mets,Washington Nationals,1,7,0,Marcus Stroman,Joe Ross
+2021-04-24,Houston Astros,Los Angeles Angels,16,2,1,Jake Odorizzi,Griffin Canning
+2021-04-24,Tampa Bay Rays,Toronto Blue Jays,5,3,1,Brent Honeywell,Robbie Ray
+2021-04-24,Cleveland Indians,New York Yankees,1,2,0,Shane Bieber,Gerrit Cole
+2021-04-24,Baltimore Orioles,Oakland Athletics,2,7,0,Wade LeBlanc,Chris Bassitt
+2021-04-24,Chicago White Sox,Texas Rangers,2,1,1,Dallas Keuchel,Kyle Gibson
+2021-04-24,Colorado Rockies,Philadelphia Phillies,5,7,0,Antonio Senzatela,Aaron Nola
+2021-04-24,San Francisco Giants,Miami Marlins,2,5,0,Kevin Gausman,Pablo López
+2021-04-24,Los Angeles Dodgers,San Diego Padres,5,4,1,Trevor Bauer,Blake Snell
+2021-04-25,Baltimore Orioles,Oakland Athletics,8,1,1,John Means,Jesús Luzardo
+2021-04-25,Detroit Tigers,Kansas City Royals,0,4,0,Michael Fulmer,Danny Duffy
+2021-04-25,New York Mets,Washington Nationals,4,0,1,Taijuan Walker,Patrick Corbin
+2021-04-25,Boston Red Sox,Seattle Mariners,5,3,1,Eduardo Rodriguez,Nick Margevicius
+2021-04-25,Tampa Bay Rays,Toronto Blue Jays,0,1,0,Luis Patiño,Hyun Jin Ryu
+2021-04-25,Cleveland Indians,New York Yankees,7,3,1,Triston McKenzie,Jameson Taillon
+2021-04-25,Atlanta Braves,Arizona Diamondbacks,0,5,0,Bryse Wilson,Zac Gallen
+2021-04-25,Atlanta Braves,Arizona Diamondbacks,0,7,0,Drew Smyly,Madison Bumgarner
+2021-04-25,Houston Astros,Los Angeles Angels,2,4,0,Lance McCullers Jr.,Dylan Bundy
+2021-04-25,Minnesota Twins,Pittsburgh Pirates,2,6,0,Matt Shoemaker,Wil Crowe
+2021-04-25,Chicago White Sox,Texas Rangers,8,4,1,Michael Kopech,Kohei Arihara
+2021-04-25,St. Louis Cardinals,Cincinnati Reds,5,2,1,Jack Flaherty,Luis Castillo
+2021-04-25,Chicago Cubs,Milwaukee Brewers,0,6,0,Jake Arrieta,Brandon Woodruff
+2021-04-25,Colorado Rockies,Philadelphia Phillies,12,2,1,Jon Gray,Chase Anderson
+2021-04-25,San Francisco Giants,Miami Marlins,4,3,1,Logan Webb,Ross Detwiler
+2021-04-25,Los Angeles Dodgers,San Diego Padres,7,8,0,Dustin May,Joe Musgrove
+2021-04-26,Detroit Tigers,Kansas City Royals,2,3,0,Spencer Turnbull,Brad Keller
+2021-04-26,Cleveland Indians,Minnesota Twins,5,3,1,Zach Plesac,José Berríos
+2021-04-26,Baltimore Orioles,New York Yankees,4,2,1,Matt Harvey,Deivi García
+2021-04-26,Tampa Bay Rays,Oakland Athletics,1,2,0,Rich Hill,Sean Manaea
+2021-04-26,Atlanta Braves,Chicago Cubs,8,7,1,Charlie Morton,Zach Davies
+2021-04-26,Milwaukee Brewers,Miami Marlins,0,8,0,Corbin Burnes,Trevor Rogers
+2021-04-26,St. Louis Cardinals,Philadelphia Phillies,1,2,0,Adam Wainwright,Zack Wheeler
+2021-04-26,Texas Rangers,Los Angeles Angels,4,9,0,Jordan Lyles,Shohei Ohtani
+2021-04-26,Houston Astros,Seattle Mariners,5,2,1,José Urquidy,Justus Sheffield
+2021-04-26,San Francisco Giants,Colorado Rockies,12,0,1,Anthony DeSclafani,Austin Gomber
+2021-04-26,Los Angeles Dodgers,Cincinnati Reds,3,5,0,Julio Urías,Tyler Mahle
+2021-04-27,Cleveland Indians,Minnesota Twins,7,4,1,Aaron Civale,Kenta Maeda
+2021-04-27,Pittsburgh Pirates,Kansas City Royals,2,1,1,Tyler Anderson,Jakob Junis
+2021-04-27,Baltimore Orioles,New York Yankees,1,5,0,Bruce Zimmermann,Corey Kluber
+2021-04-27,Toronto Blue Jays,Washington Nationals,9,5,1,Trent Thornton,Max Scherzer
+2021-04-27,New York Mets,Boston Red Sox,1,2,0,David Peterson,Garrett Richards
+2021-04-27,Tampa Bay Rays,Oakland Athletics,4,3,1,Michael Wacha,Frankie Montas
+2021-04-27,Atlanta Braves,Chicago Cubs,5,0,1,Ian Anderson,Trevor Williams
+2021-04-27,Milwaukee Brewers,Miami Marlins,5,4,1,Adrian Houser,Daniel Castano
+2021-04-27,St. Louis Cardinals,Philadelphia Phillies,5,2,1,Carlos Martinez,Zach Eflin
+2021-04-27,Texas Rangers,Los Angeles Angels,6,1,1,Mike Foltynewicz,Jose Quintana
+2021-04-27,Houston Astros,Seattle Mariners,2,0,1,Cristian Javier,Marco Gonzales
+2021-04-27,Chicago White Sox,Detroit Tigers,2,5,0,Lucas Giolito,José Ureña
+2021-04-27,Arizona Diamondbacks,San Diego Padres,5,1,1,Merrill Kelly,Chris Paddack
+2021-04-27,San Francisco Giants,Colorado Rockies,5,7,0,Aaron Sanchez,Chi Chi González
+2021-04-27,Los Angeles Dodgers,Cincinnati Reds,5,6,0,Walker Buehler,Jeff Hoffman
+2021-04-28,Cleveland Indians,Minnesota Twins,2,10,0,Logan Allen,J.A. Happ
+2021-04-28,Milwaukee Brewers,Miami Marlins,2,6,0,Zack Godley,Sandy Alcantara
+2021-04-28,Los Angeles Dodgers,Cincinnati Reds,8,0,1,Clayton Kershaw,Sonny Gray
+2021-04-28,Pittsburgh Pirates,Kansas City Royals,6,9,0,Mitch Keller,Mike Minor
+2021-04-28,New York Mets,Boston Red Sox,0,1,0,Jacob deGrom,Nick Pivetta
+2021-04-28,Baltimore Orioles,New York Yankees,0,7,0,Dean Kremer,Domingo Germán
+2021-04-28,Toronto Blue Jays,Washington Nationals,2,8,0,Steven Matz,Erick Fedde
+2021-04-28,Tampa Bay Rays,Oakland Athletics,2,0,1,Tyler Glasnow,Cole Irvin
+2021-04-28,Atlanta Braves,Chicago Cubs,10,0,1,Huascar Ynoa,Kyle Hendricks
+2021-04-28,St. Louis Cardinals,Philadelphia Phillies,3,5,0,Johan Oviedo,Vince Velasquez
+2021-04-28,Texas Rangers,Los Angeles Angels,3,4,0,Dane Dunning,Alex Cobb
+2021-04-28,Houston Astros,Seattle Mariners,7,5,1,Zack Greinke,Justin Dunn
+2021-04-28,Arizona Diamondbacks,San Diego Padres,3,12,0,Riley Smith,Ryan Weathers
+2021-04-28,San Francisco Giants,Colorado Rockies,7,3,1,Alex Wood,Germán Márquez
+2021-04-29,Baltimore Orioles,New York Yankees,4,3,1,Jorge López,Jordan Montgomery
+2021-04-29,Tampa Bay Rays,Oakland Athletics,2,3,0,Shane McClanahan,Chris Bassitt
+2021-04-29,St. Louis Cardinals,Philadelphia Phillies,4,3,1,Kwang Hyun Kim,Aaron Nola
+2021-04-29,Houston Astros,Seattle Mariners,0,1,0,Luis Garcia,Yusei Kikuchi
+2021-04-29,Chicago White Sox,Detroit Tigers,3,1,1,Carlos Rodón,Casey Mize
+2021-04-29,Chicago White Sox,Detroit Tigers,11,0,1,Dylan Cease,Matthew Boyd
+2021-04-29,Atlanta Braves,Chicago Cubs,3,9,0,Bryse Wilson,Adbert Alzolay
+2021-04-29,Milwaukee Brewers,Los Angeles Dodgers,2,1,1,Eric Lauer,Trevor Bauer
+2021-04-29,Texas Rangers,Boston Red Sox,4,1,1,Kyle Gibson,Martín Pérez
+2021-04-29,Arizona Diamondbacks,Colorado Rockies,5,3,1,Luke Weaver,Antonio Senzatela
+2021-04-30,Pittsburgh Pirates,St. Louis Cardinals,3,7,0,JT Brubaker,John Gant
+2021-04-30,Philadelphia Phillies,New York Mets,2,1,1,Chase Anderson,Marcus Stroman
+2021-04-30,Washington Nationals,Miami Marlins,2,1,1,Jon Lester,Pablo López
+2021-04-30,New York Yankees,Detroit Tigers,10,0,1,Gerrit Cole,Tarik Skubal
+2021-04-30,Cincinnati Reds,Chicago Cubs,8,6,1,Wade Miley,Jake Arrieta
+2021-04-30,Tampa Bay Rays,Houston Astros,2,9,0,Ryan Yarbrough,Lance McCullers Jr.
+2021-04-30,Toronto Blue Jays,Atlanta Braves,13,5,1,Robbie Ray,Drew Smyly
+2021-04-30,Texas Rangers,Boston Red Sox,1,6,0,Kohei Arihara,Nathan Eovaldi
+2021-04-30,Minnesota Twins,Kansas City Royals,9,1,1,Michael Pineda,Brady Singer
+2021-04-30,Chicago White Sox,Cleveland Indians,3,5,0,Dallas Keuchel,Shane Bieber
+2021-04-30,Milwaukee Brewers,Los Angeles Dodgers,3,1,1,Freddy Peralta,Edwin Uceta
+2021-04-30,Arizona Diamondbacks,Colorado Rockies,7,2,1,Madison Bumgarner,Jon Gray
+2021-04-30,Oakland Athletics,Baltimore Orioles,2,3,0,Mike Fiers,John Means
+2021-04-30,Seattle Mariners,Los Angeles Angels,7,4,1,Chris Flexen,Andrew Heaney
+2021-04-30,San Diego Padres,San Francisco Giants,3,2,1,Yu Darvish,Logan Webb
+2021-05-01,Washington Nationals,Miami Marlins,7,2,1,Patrick Corbin,Paul Campbell
+2021-05-01,New York Yankees,Detroit Tigers,6,4,1,Jameson Taillon,Spencer Turnbull
+2021-05-01,Minnesota Twins,Kansas City Royals,3,11,0,Matt Shoemaker,Danny Duffy
+2021-05-01,Chicago White Sox,Cleveland Indians,7,3,1,Lance Lynn,Triston McKenzie
+2021-05-01,Oakland Athletics,Baltimore Orioles,4,8,0,Jesús Luzardo,Matt Harvey
+2021-05-01,Cincinnati Reds,Chicago Cubs,2,3,0,Luis Castillo,Zach Davies
+2021-05-01,Tampa Bay Rays,Houston Astros,1,3,0,Josh Fleming,José Urquidy
+2021-05-01,Philadelphia Phillies,New York Mets,4,5,0,Zack Wheeler,Taijuan Walker
+2021-05-01,Pittsburgh Pirates,St. Louis Cardinals,5,12,0,Trevor Cahill,Jack Flaherty
+2021-05-01,Texas Rangers,Boston Red Sox,8,6,1,Jordan Lyles,Eduardo Rodriguez
+2021-05-01,Milwaukee Brewers,Los Angeles Dodgers,6,5,1,Brandon Woodruff,Dustin May
+2021-05-01,Toronto Blue Jays,Atlanta Braves,6,5,1,Travis Bergen,Charlie Morton
+2021-05-01,Arizona Diamondbacks,Colorado Rockies,6,14,0,Zac Gallen,Austin Gomber
+2021-05-01,San Diego Padres,San Francisco Giants,6,2,1,Blake Snell,Anthony DeSclafani
+2021-05-01,Seattle Mariners,Los Angeles Angels,5,10,0,Ljay Newsome,Griffin Canning
+2021-05-02,Pittsburgh Pirates,St. Louis Cardinals,0,3,0,Wil Crowe,Carlos Martinez
+2021-05-02,Washington Nationals,Miami Marlins,3,1,1,Max Scherzer,Trevor Rogers
+2021-05-02,New York Yankees,Detroit Tigers,2,0,1,Corey Kluber,José Ureña
+2021-05-02,Toronto Blue Jays,Atlanta Braves,7,2,1,Ross Stripling,Ian Anderson
+2021-05-02,Cincinnati Reds,Chicago Cubs,13,12,1,Tyler Mahle,Trevor Williams
+2021-05-02,Tampa Bay Rays,Houston Astros,5,4,1,Rich Hill,Cristian Javier
+2021-05-02,Minnesota Twins,Kansas City Royals,13,4,1,José Berríos,Brad Keller
+2021-05-02,Chicago White Sox,Cleveland Indians,0,5,0,Lucas Giolito,Zach Plesac
+2021-05-02,Milwaukee Brewers,Los Angeles Dodgers,4,16,0,Alec Bettinger,Julio Urías
+2021-05-02,Texas Rangers,Boston Red Sox,5,3,1,Mike Foltynewicz,Garrett Richards
+2021-05-02,Oakland Athletics,Baltimore Orioles,7,5,1,Sean Manaea,Bruce Zimmermann
+2021-05-02,Arizona Diamondbacks,Colorado Rockies,8,4,1,Merrill Kelly,Chi Chi González
+2021-05-02,Seattle Mariners,Los Angeles Angels,2,0,1,Justus Sheffield,Dylan Bundy
+2021-05-02,San Diego Padres,San Francisco Giants,1,7,0,Joe Musgrove,Kevin Gausman
+2021-05-02,Philadelphia Phillies,New York Mets,7,8,0,Zach Eflin,David Peterson
+2021-05-03,Philadelphia Phillies,Milwaukee Brewers,4,3,1,Vince Velasquez,Adrian Houser
+2021-05-03,Minnesota Twins,Texas Rangers,6,5,1,Kenta Maeda,Dane Dunning
+2021-05-03,St. Louis Cardinals,New York Mets,6,5,1,Adam Wainwright,Joey Lucchesi
+2021-05-03,Kansas City Royals,Cleveland Indians,6,8,0,Daniel Lynch IV,Aaron Civale
+2021-05-03,Los Angeles Angels,Tampa Bay Rays,3,7,0,Jose Quintana,Tyler Glasnow
+2021-05-03,Oakland Athletics,Toronto Blue Jays,5,4,1,Frankie Montas,Steven Matz
+2021-05-03,San Diego Padres,Pittsburgh Pirates,2,0,1,Miguel Díaz,Tyler Anderson
+2021-05-03,Seattle Mariners,Baltimore Orioles,3,5,0,Erik Swanson,Dean Kremer
+2021-05-04,Chicago Cubs,Los Angeles Dodgers,7,1,1,Kyle Hendricks,Clayton Kershaw
+2021-05-04,Chicago Cubs,Los Angeles Dodgers,4,3,1,Keegan Thompson,Trevor Bauer
+2021-05-04,Colorado Rockies,San Francisco Giants,4,12,0,Germán Márquez,Aaron Sanchez
+2021-05-04,Colorado Rockies,San Francisco Giants,8,6,1,Ryan Castellani,Alex Wood
+2021-05-04,Cincinnati Reds,Chicago White Sox,0,9,0,Jeff Hoffman,Dylan Cease
+2021-05-04,Miami Marlins,Arizona Diamondbacks,9,3,1,Sandy Alcantara,Riley Smith
+2021-05-04,Washington Nationals,Atlanta Braves,1,6,0,Joe Ross,Huascar Ynoa
+2021-05-04,New York Yankees,Houston Astros,7,3,1,Domingo Germán,Zack Greinke
+2021-05-04,Philadelphia Phillies,Milwaukee Brewers,6,5,1,Aaron Nola,Eric Lauer
+2021-05-04,Boston Red Sox,Detroit Tigers,11,7,1,Nick Pivetta,Michael Fulmer
+2021-05-04,Minnesota Twins,Texas Rangers,3,6,0,J.A. Happ,Kyle Gibson
+2021-05-04,Kansas City Royals,Cleveland Indians,3,7,0,Mike Minor,Phil Maton
+2021-05-04,Los Angeles Angels,Tampa Bay Rays,3,8,0,Alex Cobb,Shane McClanahan
+2021-05-04,Oakland Athletics,Toronto Blue Jays,4,1,1,Cole Irvin,Anthony Kay
+2021-05-04,San Diego Padres,Pittsburgh Pirates,1,2,0,Dinelson Lamet,Mitch Keller
+2021-05-04,Seattle Mariners,Baltimore Orioles,5,2,1,Justin Dunn,Jorge López
+2021-05-05,Cincinnati Reds,Chicago White Sox,1,0,1,Sonny Gray,Dallas Keuchel
+2021-05-05,Colorado Rockies,San Francisco Giants,6,5,1,Jon Gray,Logan Webb
+2021-05-05,Seattle Mariners,Baltimore Orioles,0,6,0,Yusei Kikuchi,John Means
+2021-05-05,St. Louis Cardinals,New York Mets,4,1,1,Kwang Hyun Kim,Marcus Stroman
+2021-05-05,St. Louis Cardinals,New York Mets,2,7,0,Johan Oviedo,Miguel Castro
+2021-05-05,Miami Marlins,Arizona Diamondbacks,8,0,1,Ross Detwiler,Luke Weaver
+2021-05-05,Washington Nationals,Atlanta Braves,3,5,0,Erick Fedde,Max Fried
+2021-05-05,New York Yankees,Houston Astros,6,3,1,Jordan Montgomery,Luis Garcia
+2021-05-05,Philadelphia Phillies,Milwaukee Brewers,5,4,1,Chase Anderson,Freddy Peralta
+2021-05-05,Boston Red Sox,Detroit Tigers,5,6,0,Martín Pérez,Casey Mize
+2021-05-05,Chicago Cubs,Los Angeles Dodgers,6,5,1,Adbert Alzolay,Walker Buehler
+2021-05-05,Minnesota Twins,Texas Rangers,1,3,0,Lewis Thorpe,Hyeon-Jong Yang
+2021-05-05,Kansas City Royals,Cleveland Indians,4,5,0,Brady Singer,Shane Bieber
+2021-05-05,San Diego Padres,Pittsburgh Pirates,4,2,1,Yu Darvish,JT Brubaker
+2021-05-05,Los Angeles Angels,Tampa Bay Rays,1,3,0,Shohei Ohtani,Andrew Kittredge
+2021-05-05,Oakland Athletics,Toronto Blue Jays,4,9,0,Chris Bassitt,Robbie Ray
+2021-05-06,New York Yankees,Houston Astros,4,7,0,Gerrit Cole,Lance McCullers Jr.
+2021-05-06,Philadelphia Phillies,Milwaukee Brewers,2,0,1,Zack Wheeler,Brandon Woodruff
+2021-05-06,Boston Red Sox,Detroit Tigers,12,9,1,Nathan Eovaldi,Spencer Turnbull
+2021-05-06,Minnesota Twins,Texas Rangers,3,4,0,Michael Pineda,Jordan Lyles
+2021-05-06,St. Louis Cardinals,New York Mets,1,4,0,John Gant,Taijuan Walker
+2021-05-06,Kansas City Royals,Cleveland Indians,0,4,0,Danny Duffy,Triston McKenzie
+2021-05-06,Oakland Athletics,Toronto Blue Jays,4,10,0,Mike Fiers,Hyun Jin Ryu
+2021-05-06,Washington Nationals,Atlanta Braves,2,3,0,Jon Lester,Drew Smyly
+2021-05-06,Miami Marlins,Arizona Diamondbacks,3,1,1,Pablo López,Madison Bumgarner
+2021-05-06,Los Angeles Angels,Tampa Bay Rays,3,8,0,Andrew Heaney,Collin McHugh
+2021-05-07,Chicago Cubs,Pittsburgh Pirates,3,2,1,Zach Davies,Trevor Cahill
+2021-05-07,Baltimore Orioles,Boston Red Sox,2,6,0,Matt Harvey,Eduardo Rodriguez
+2021-05-07,New York Yankees,Washington Nationals,4,11,0,Jameson Taillon,Patrick Corbin
+2021-05-07,Cleveland Indians,Cincinnati Reds,0,3,0,Zach Plesac,Wade Miley
+2021-05-07,New York Mets,Arizona Diamondbacks,5,4,1,David Peterson,Zac Gallen
+2021-05-07,Detroit Tigers,Minnesota Twins,3,7,0,Tarik Skubal,Matt Shoemaker
+2021-05-07,Miami Marlins,Milwaukee Brewers,6,1,1,Trevor Rogers,Brent Suter
+2021-05-07,Atlanta Braves,Philadelphia Phillies,2,12,0,Charlie Morton,Zach Eflin
+2021-05-07,Texas Rangers,Seattle Mariners,4,5,0,Mike Foltynewicz,Chris Flexen
+2021-05-07,Houston Astros,Toronto Blue Jays,10,4,1,José Urquidy,Ross Stripling
+2021-05-07,Kansas City Royals,Chicago White Sox,0,3,0,Brad Keller,Carlos Rodón
+2021-05-07,St. Louis Cardinals,Colorado Rockies,5,0,1,Jack Flaherty,Austin Gomber
+2021-05-07,Los Angeles Angels,Los Angeles Dodgers,9,2,1,Griffin Canning,Julio Urías
+2021-05-07,Oakland Athletics,Tampa Bay Rays,2,1,1,Sean Manaea,Rich Hill
+2021-05-07,San Francisco Giants,San Diego Padres,5,4,1,Anthony DeSclafani,Blake Snell
+2021-05-08,New York Yankees,Washington Nationals,4,3,1,Corey Kluber,Max Scherzer
+2021-05-08,St. Louis Cardinals,Colorado Rockies,9,8,1,Carlos Martinez,Chi Chi González
+2021-05-08,Chicago Cubs,Pittsburgh Pirates,3,2,1,Trevor Williams,Wil Crowe
+2021-05-08,San Francisco Giants,San Diego Padres,7,1,1,Kevin Gausman,Joe Musgrove
+2021-05-08,Oakland Athletics,Tampa Bay Rays,6,3,1,Frankie Montas,Tyler Glasnow
+2021-05-08,Detroit Tigers,Minnesota Twins,7,3,1,José Ureña,José Berríos
+2021-05-08,Cleveland Indians,Cincinnati Reds,9,2,1,Aaron Civale,Luis Castillo
+2021-05-08,Miami Marlins,Milwaukee Brewers,2,6,0,Daniel Castano,Adrian Houser
+2021-05-08,Baltimore Orioles,Boston Red Sox,6,11,0,Zac Lowther,Garrett Richards
+2021-05-08,Texas Rangers,Seattle Mariners,9,8,1,Kohei Arihara,Erik Swanson
+2021-05-08,New York Mets,Arizona Diamondbacks,4,2,1,Tommy Hunter,Merrill Kelly
+2021-05-08,Houston Astros,Toronto Blue Jays,4,8,0,Cristian Javier,Steven Matz
+2021-05-08,Kansas City Royals,Chicago White Sox,1,9,0,Daniel Lynch IV,Lance Lynn
+2021-05-08,Atlanta Braves,Philadelphia Phillies,8,7,1,Ian Anderson,Vince Velasquez
+2021-05-08,Los Angeles Angels,Los Angeles Dodgers,11,14,0,Dylan Bundy,Clayton Kershaw
+2021-05-09,Baltimore Orioles,Boston Red Sox,3,4,0,Dean Kremer,Nick Pivetta
+2021-05-09,New York Yankees,Washington Nationals,3,2,1,Domingo Germán,Joe Ross
+2021-05-09,New York Mets,Arizona Diamondbacks,4,2,1,Jacob deGrom,Riley Smith
+2021-05-09,Miami Marlins,Milwaukee Brewers,1,2,0,Sandy Alcantara,Brett Anderson
+2021-05-09,Houston Astros,Toronto Blue Jays,7,4,1,Zack Greinke,Nate Pearson
+2021-05-09,Kansas City Royals,Chicago White Sox,3,9,0,Mike Minor,Lucas Giolito
+2021-05-09,St. Louis Cardinals,Colorado Rockies,2,0,1,Adam Wainwright,Germán Márquez
+2021-05-09,Chicago Cubs,Pittsburgh Pirates,5,6,0,Kyle Hendricks,Tyler Anderson
+2021-05-09,Texas Rangers,Seattle Mariners,10,2,1,Dane Dunning,Justus Sheffield
+2021-05-09,San Francisco Giants,San Diego Padres,1,11,0,Johnny Cueto,Chris Paddack
+2021-05-09,Los Angeles Angels,Los Angeles Dodgers,2,1,1,Jose Quintana,Trevor Bauer
+2021-05-09,Oakland Athletics,Tampa Bay Rays,3,4,0,Cole Irvin,Shane McClanahan
+2021-05-09,Atlanta Braves,Philadelphia Phillies,6,1,1,Huascar Ynoa,Aaron Nola
+2021-05-10,Pittsburgh Pirates,Cincinnati Reds,1,14,0,Mitch Keller,Tyler Mahle
+2021-05-10,Baltimore Orioles,Boston Red Sox,4,1,1,Jorge López,Martín Pérez
+2021-05-10,Houston Astros,Los Angeles Angels,4,5,0,Luis Garcia,Junior Guerra
+2021-05-10,Arizona Diamondbacks,Miami Marlins,5,2,1,Luke Weaver,Jordan Holloway
+2021-05-10,San Francisco Giants,Texas Rangers,3,1,1,Alex Wood,Kyle Gibson
+2021-05-11,San Francisco Giants,Texas Rangers,4,2,1,Logan Webb,Jordan Lyles
+2021-05-11,Cleveland Indians,Chicago Cubs,3,2,1,Shane Bieber,Adbert Alzolay
+2021-05-11,Pittsburgh Pirates,Cincinnati Reds,7,2,1,JT Brubaker,Jeff Hoffman
+2021-05-11,Washington Nationals,Philadelphia Phillies,2,6,0,Erick Fedde,Chase Anderson
+2021-05-11,Detroit Tigers,Kansas City Royals,8,7,1,Matthew Boyd,Brady Singer
+2021-05-11,New York Mets,Baltimore Orioles,3,2,1,Marcus Stroman,John Means
+2021-05-11,Boston Red Sox,Oakland Athletics,2,3,0,Nathan Eovaldi,Chris Bassitt
+2021-05-11,Tampa Bay Rays,New York Yankees,1,3,0,Luis Patiño,Jordan Montgomery
+2021-05-11,Atlanta Braves,Toronto Blue Jays,3,5,0,Bryse Wilson,Robbie Ray
+2021-05-11,Milwaukee Brewers,St. Louis Cardinals,1,6,0,Freddy Peralta,Kwang Hyun Kim
+2021-05-11,Houston Astros,Los Angeles Angels,5,1,1,Lance McCullers Jr.,Shohei Ohtani
+2021-05-11,Chicago White Sox,Minnesota Twins,9,3,1,Dylan Cease,Kenta Maeda
+2021-05-11,Colorado Rockies,San Diego Padres,1,8,0,Antonio Senzatela,Dinelson Lamet
+2021-05-11,Arizona Diamondbacks,Miami Marlins,11,3,1,Madison Bumgarner,Pablo López
+2021-05-11,Los Angeles Dodgers,Seattle Mariners,6,4,1,Walker Buehler,Yusei Kikuchi
+2021-05-12,New York Mets,Baltimore Orioles,7,1,1,Taijuan Walker,Matt Harvey
+2021-05-12,Pittsburgh Pirates,Cincinnati Reds,1,5,0,Trevor Cahill,Sonny Gray
+2021-05-12,Cleveland Indians,Chicago Cubs,2,1,1,Sam Hentges,Zach Davies
+2021-05-12,Colorado Rockies,San Diego Padres,3,5,0,Jon Gray,Yu Darvish
+2021-05-12,Colorado Rockies,San Diego Padres,3,2,1,Austin Gomber,Blake Snell
+2021-05-12,Washington Nationals,Philadelphia Phillies,2,5,0,Jon Lester,Zack Wheeler
+2021-05-12,Detroit Tigers,Kansas City Royals,4,2,1,Casey Mize,Danny Duffy
+2021-05-12,Boston Red Sox,Oakland Athletics,1,4,0,Eduardo Rodriguez,James Kaprielian
+2021-05-12,Tampa Bay Rays,New York Yankees,0,1,0,Collin McHugh,Gerrit Cole
+2021-05-12,Atlanta Braves,Toronto Blue Jays,1,4,0,Max Fried,Hyun Jin Ryu
+2021-05-12,Milwaukee Brewers,St. Louis Cardinals,4,1,1,Brandon Woodruff,John Gant
+2021-05-12,Houston Astros,Los Angeles Angels,9,1,1,José Urquidy,Andrew Heaney
+2021-05-12,Chicago White Sox,Minnesota Twins,13,8,1,Dallas Keuchel,J.A. Happ
+2021-05-12,Arizona Diamondbacks,Miami Marlins,2,3,0,Matt Peacock,Cody Poteet
+2021-05-12,Los Angeles Dodgers,Seattle Mariners,7,1,1,Julio Urías,Justin Dunn
+2021-05-13,Atlanta Braves,Toronto Blue Jays,4,8,0,Charlie Morton,Ross Stripling
+2021-05-13,Washington Nationals,Philadelphia Phillies,5,1,1,Patrick Corbin,Zach Eflin
+2021-05-13,Detroit Tigers,Kansas City Royals,4,3,1,Spencer Turnbull,Daniel Lynch IV
+2021-05-13,Milwaukee Brewers,St. Louis Cardinals,0,2,0,Corbin Burnes,Jack Flaherty
+2021-05-13,Chicago White Sox,Minnesota Twins,4,2,1,Lance Lynn,Michael Pineda
+2021-05-13,Pittsburgh Pirates,San Francisco Giants,1,3,0,Wil Crowe,Anthony DeSclafani
+2021-05-13,Boston Red Sox,Oakland Athletics,8,1,1,Garrett Richards,Sean Manaea
+2021-05-13,Tampa Bay Rays,New York Yankees,9,1,1,Rich Hill,Jameson Taillon
+2021-05-13,Houston Astros,Texas Rangers,4,3,1,Cristian Javier,Mike Foltynewicz
+2021-05-13,Colorado Rockies,Cincinnati Reds,13,8,1,Chi Chi González,Luis Castillo
+2021-05-13,Arizona Diamondbacks,Miami Marlins,1,5,0,Merrill Kelly,Trevor Rogers
+2021-05-13,Seattle Mariners,Cleveland Indians,2,4,0,Logan Gilbert,Zach Plesac
+2021-05-14,Chicago White Sox,Kansas City Royals,2,6,0,Lucas Giolito,Brad Keller
+2021-05-14,Chicago White Sox,Kansas City Royals,3,1,1,Michael Kopech,Jakob Junis
+2021-05-14,Pittsburgh Pirates,San Francisco Giants,3,2,1,Miguel Yajure,Kevin Gausman
+2021-05-14,Baltimore Orioles,New York Yankees,4,5,0,Dean Kremer,Corey Kluber
+2021-05-14,Boston Red Sox,Los Angeles Angels,4,3,1,Nick Pivetta,Griffin Canning
+2021-05-14,Detroit Tigers,Chicago Cubs,2,4,0,Tarik Skubal,Jake Arrieta
+2021-05-14,Tampa Bay Rays,New York Mets,3,2,1,Tyler Glasnow,David Peterson
+2021-05-14,Toronto Blue Jays,Philadelphia Phillies,1,5,0,Steven Matz,Vince Velasquez
+2021-05-14,Houston Astros,Texas Rangers,10,4,1,Zack Greinke,Wes Benjamin
+2021-05-14,Minnesota Twins,Oakland Athletics,1,6,0,Matt Shoemaker,Frankie Montas
+2021-05-14,Milwaukee Brewers,Atlanta Braves,3,6,0,Adrian Houser,Drew Smyly
+2021-05-14,Colorado Rockies,Cincinnati Reds,9,6,1,Germán Márquez,Wade Miley
+2021-05-14,Arizona Diamondbacks,Washington Nationals,2,17,0,Riley Smith,Max Scherzer
+2021-05-14,Seattle Mariners,Cleveland Indians,7,3,1,Chris Flexen,Aaron Civale
+2021-05-14,San Diego Padres,St. Louis Cardinals,5,4,1,Joe Musgrove,Johan Oviedo
+2021-05-14,Los Angeles Dodgers,Miami Marlins,9,6,1,Clayton Kershaw,Sandy Alcantara
+2021-05-15,Tampa Bay Rays,New York Mets,12,5,1,Shane McClanahan,Drew Smith
+2021-05-15,Minnesota Twins,Oakland Athletics,5,4,1,José Berríos,Cole Irvin
+2021-05-15,Boston Red Sox,Los Angeles Angels,9,0,1,Martín Pérez,Dylan Bundy
+2021-05-15,Detroit Tigers,Chicago Cubs,9,8,1,José Ureña,Trevor Williams
+2021-05-15,Pittsburgh Pirates,San Francisco Giants,8,6,1,Tyler Anderson,Johnny Cueto
+2021-05-15,Baltimore Orioles,New York Yankees,2,8,0,Jorge López,Domingo Germán
+2021-05-15,Houston Astros,Texas Rangers,6,5,1,Luis Garcia,Dane Dunning
+2021-05-15,Chicago White Sox,Kansas City Royals,1,5,0,Carlos Rodón,Mike Minor
+2021-05-15,Milwaukee Brewers,Atlanta Braves,1,5,0,Brett Anderson,Ian Anderson
+2021-05-15,Toronto Blue Jays,Philadelphia Phillies,4,0,1,Anthony Kay,Aaron Nola
+2021-05-15,Colorado Rockies,Cincinnati Reds,5,6,0,Jhoulys Chacín,Tyler Mahle
+2021-05-15,Arizona Diamondbacks,Washington Nationals,11,4,1,Seth Frankoff,Joe Ross
+2021-05-15,San Diego Padres,St. Louis Cardinals,13,3,1,Chris Paddack,Adam Wainwright
+2021-05-15,Seattle Mariners,Cleveland Indians,7,3,1,Justus Sheffield,Triston McKenzie
+2021-05-15,Los Angeles Dodgers,Miami Marlins,7,0,1,Trevor Bauer,
+2021-05-16,Pittsburgh Pirates,San Francisco Giants,1,4,0,Mitch Keller,Alex Wood
+2021-05-16,Baltimore Orioles,New York Yankees,10,6,1,Adam Plutko,Jordan Montgomery
+2021-05-16,Toronto Blue Jays,Philadelphia Phillies,10,8,1,Robbie Ray,Chase Anderson
+2021-05-16,Boston Red Sox,Los Angeles Angels,5,6,0,Nathan Eovaldi,Jose Quintana
+2021-05-16,Detroit Tigers,Chicago Cubs,1,5,0,Matthew Boyd,Kyle Hendricks
+2021-05-16,Tampa Bay Rays,New York Mets,7,1,1,Josh Fleming,Marcus Stroman
+2021-05-16,Houston Astros,Texas Rangers,6,2,1,Lance McCullers Jr.,Kyle Gibson
+2021-05-16,Minnesota Twins,Oakland Athletics,6,7,0,Kenta Maeda,Chris Bassitt
+2021-05-16,Chicago White Sox,Kansas City Royals,4,3,1,Dylan Cease,Brady Singer
+2021-05-16,Milwaukee Brewers,Atlanta Braves,10,9,1,Freddy Peralta,Huascar Ynoa
+2021-05-16,Colorado Rockies,Cincinnati Reds,6,7,0,Antonio Senzatela,Jeff Hoffman
+2021-05-16,Arizona Diamondbacks,Washington Nationals,0,3,0,Luke Weaver,Erick Fedde
+2021-05-16,Seattle Mariners,Cleveland Indians,3,2,1,Robert Dugger,Shane Bieber
+2021-05-16,Los Angeles Dodgers,Miami Marlins,2,3,0,Jimmy Nelson,Pablo López
+2021-05-16,San Diego Padres,St. Louis Cardinals,5,3,1,Ryan Weathers,Kwang Hyun Kim
+2021-05-17,Cincinnati Reds,San Francisco Giants,3,6,0,Sonny Gray,Logan Webb
+2021-05-17,Atlanta Braves,New York Mets,1,3,0,Max Fried,Taijuan Walker
+2021-05-17,Chicago Cubs,Washington Nationals,7,3,1,Adbert Alzolay,Jon Lester
+2021-05-17,Minnesota Twins,Chicago White Sox,4,16,0,J.A. Happ,Dallas Keuchel
+2021-05-17,Texas Rangers,New York Yankees,5,2,1,Jordan Lyles,Gerrit Cole
+2021-05-17,Los Angeles Angels,Cleveland Indians,7,4,1,Patrick Sandoval,Sam Hentges
+2021-05-17,Los Angeles Dodgers,Arizona Diamondbacks,3,1,1,Walker Buehler,Madison Bumgarner
+2021-05-17,San Diego Padres,Colorado Rockies,7,0,1,Yu Darvish,Jon Gray
+2021-05-17,Seattle Mariners,Detroit Tigers,1,4,0,Yusei Kikuchi,Casey Mize
+2021-05-18,Cincinnati Reds,San Francisco Giants,2,4,0,Luis Castillo,Anthony DeSclafani
+2021-05-18,Baltimore Orioles,Tampa Bay Rays,6,13,0,Matt Harvey,Luis Patiño
+2021-05-18,Philadelphia Phillies,Miami Marlins,8,3,1,Zack Wheeler,Cody Poteet
+2021-05-18,Atlanta Braves,New York Mets,3,4,0,Tucker Davidson,Miguel Castro
+2021-05-18,Toronto Blue Jays,Boston Red Sox,8,0,1,Hyun Jin Ryu,Eduardo Rodriguez
+2021-05-18,Chicago Cubs,Washington Nationals,6,3,1,Zach Davies,Patrick Corbin
+2021-05-18,Minnesota Twins,Chicago White Sox,5,4,1,Bailey Ober,Lance Lynn
+2021-05-18,St. Louis Cardinals,Pittsburgh Pirates,5,2,1,John Gant,JT Brubaker
+2021-05-18,Texas Rangers,New York Yankees,4,7,0,Mike Foltynewicz,Jameson Taillon
+2021-05-18,Kansas City Royals,Milwaukee Brewers,2,0,1,Kris Bubic,Brandon Woodruff
+2021-05-18,Los Angeles Angels,Cleveland Indians,5,6,0,Andrew Heaney,Zach Plesac
+2021-05-18,Oakland Athletics,Houston Astros,6,5,1,Sean Manaea,Cristian Javier
+2021-05-18,Los Angeles Dodgers,Arizona Diamondbacks,9,1,1,Julio Urías,Corbin Martin
+2021-05-18,San Diego Padres,Colorado Rockies,2,1,1,Blake Snell,Austin Gomber
+2021-05-18,Seattle Mariners,Detroit Tigers,0,5,0,Justin Dunn,Spencer Turnbull
+2021-05-19,Minnesota Twins,Chicago White Sox,1,2,0,Matt Shoemaker,Lucas Giolito
+2021-05-19,San Diego Padres,Colorado Rockies,3,0,1,Joe Musgrove,Chi Chi González
+2021-05-19,Cincinnati Reds,San Francisco Giants,0,4,0,Wade Miley,Kevin Gausman
+2021-05-19,Baltimore Orioles,Tampa Bay Rays,7,9,0,John Means,Ryan Yarbrough
+2021-05-19,Philadelphia Phillies,Miami Marlins,1,3,0,Zach Eflin,Trevor Rogers
+2021-05-19,Atlanta Braves,New York Mets,5,4,1,Charlie Morton,David Peterson
+2021-05-19,Toronto Blue Jays,Boston Red Sox,3,7,0,Ross Stripling,Garrett Richards
+2021-05-19,Chicago Cubs,Washington Nationals,3,4,0,Jake Arrieta,Max Scherzer
+2021-05-19,St. Louis Cardinals,Pittsburgh Pirates,8,5,1,Jack Flaherty,Trevor Cahill
+2021-05-19,Texas Rangers,New York Yankees,0,2,0,Hyeon-Jong Yang,Corey Kluber
+2021-05-19,Los Angeles Angels,Cleveland Indians,2,3,0,Shohei Ohtani,Aaron Civale
+2021-05-19,Kansas City Royals,Milwaukee Brewers,6,4,1,Brad Keller,Corbin Burnes
+2021-05-19,Oakland Athletics,Houston Astros,1,8,0,Frankie Montas,Zack Greinke
+2021-05-19,Los Angeles Dodgers,Arizona Diamondbacks,4,2,1,Clayton Kershaw,Matt Peacock
+2021-05-19,Seattle Mariners,Detroit Tigers,2,6,0,Logan Gilbert,Tarik Skubal
+2021-05-20,Cincinnati Reds,San Francisco Giants,4,19,0,Tyler Mahle,Johnny Cueto
+2021-05-20,Baltimore Orioles,Tampa Bay Rays,1,10,0,Dean Kremer,Rich Hill
+2021-05-20,Texas Rangers,New York Yankees,0,2,0,Dane Dunning,Domingo Germán
+2021-05-20,Chicago Cubs,Washington Nationals,5,2,1,Trevor Williams,Joe Ross
+2021-05-20,Oakland Athletics,Houston Astros,4,8,0,Cole Irvin,Luis Garcia
+2021-05-20,Los Angeles Angels,Minnesota Twins,7,1,1,Alex Cobb,Lewis Thorpe
+2021-05-20,Los Angeles Angels,Minnesota Twins,3,6,0,Griffin Canning,José Berríos
+2021-05-20,Philadelphia Phillies,Miami Marlins,0,6,0,Vince Velasquez,Sandy Alcantara
+2021-05-20,Atlanta Braves,Pittsburgh Pirates,4,6,0,Drew Smyly,Wil Crowe
+2021-05-20,Toronto Blue Jays,Boston Red Sox,7,8,0,Steven Matz,Nick Pivetta
+2021-05-20,Los Angeles Dodgers,Arizona Diamondbacks,3,2,1,David Price,Merrill Kelly
+2021-05-21,Washington Nationals,Baltimore Orioles,4,2,1,Stephen Strasburg,Jorge López
+2021-05-21,Philadelphia Phillies,Boston Red Sox,3,11,0,Aaron Nola,Martín Pérez
+2021-05-21,New York Yankees,Chicago White Sox,2,1,1,Jordan Montgomery,Carlos Rodón
+2021-05-21,Cleveland Indians,Minnesota Twins,0,10,0,Triston McKenzie,Randy Dobnak
+2021-05-21,Miami Marlins,New York Mets,5,6,0,John Curtiss,Marcus Stroman
+2021-05-21,Cincinnati Reds,Milwaukee Brewers,9,4,1,Jeff Hoffman,Adrian Houser
+2021-05-21,Atlanta Braves,Pittsburgh Pirates,20,1,1,Ian Anderson,Tyler Anderson
+2021-05-21,Toronto Blue Jays,Tampa Bay Rays,7,9,0,Anthony Kay,Tyler Glasnow
+2021-05-21,Texas Rangers,Houston Astros,7,5,1,Kyle Gibson,Tyler Ivey
+2021-05-21,Kansas City Royals,Detroit Tigers,5,7,0,Mike Minor,José Ureña
+2021-05-21,St. Louis Cardinals,Chicago Cubs,3,12,0,Carlos Martinez,Kyle Hendricks
+2021-05-21,Colorado Rockies,Arizona Diamondbacks,7,1,1,Germán Márquez,Seth Frankoff
+2021-05-21,Los Angeles Angels,Oakland Athletics,4,8,0,Jose Quintana,James Kaprielian
+2021-05-21,San Francisco Giants,Los Angeles Dodgers,1,2,0,Alex Wood,Trevor Bauer
+2021-05-21,San Diego Padres,Seattle Mariners,16,1,1,Chris Paddack,Chris Flexen
+2021-05-22,New York Yankees,Chicago White Sox,7,0,1,Gerrit Cole,Dylan Cease
+2021-05-22,Colorado Rockies,Arizona Diamondbacks,7,6,1,Antonio Senzatela,Madison Bumgarner
+2021-05-22,Washington Nationals,Baltimore Orioles,12,9,1,Jon Lester,Bruce Zimmermann
+2021-05-22,Texas Rangers,Houston Astros,8,4,1,Jordan Lyles,Lance McCullers Jr.
+2021-05-22,Kansas City Royals,Detroit Tigers,7,5,1,Brady Singer,Matthew Boyd
+2021-05-22,Cleveland Indians,Minnesota Twins,5,3,1,Shane Bieber,Kenta Maeda
+2021-05-22,Atlanta Braves,Pittsburgh Pirates,6,1,1,Bryse Wilson,Mitch Keller
+2021-05-22,Miami Marlins,New York Mets,3,1,1,Pablo López,Joey Lucchesi
+2021-05-22,Cincinnati Reds,Milwaukee Brewers,3,4,0,Sonny Gray,Brett Anderson
+2021-05-22,San Francisco Giants,Los Angeles Dodgers,3,6,0,Scott Kazmir,Walker Buehler
+2021-05-22,St. Louis Cardinals,Chicago Cubs,2,1,1,Miles Mikolas,Adbert Alzolay
+2021-05-22,Philadelphia Phillies,Boston Red Sox,3,4,0,Spencer Howard,Nathan Eovaldi
+2021-05-22,Toronto Blue Jays,Tampa Bay Rays,1,3,0,Robbie Ray,Shane McClanahan
+2021-05-22,San Diego Padres,Seattle Mariners,6,4,1,Ryan Weathers,Justus Sheffield
+2021-05-22,Los Angeles Angels,Oakland Athletics,2,6,0,Patrick Sandoval,Chris Bassitt
+2021-05-23,Washington Nationals,Baltimore Orioles,6,5,1,Patrick Corbin,Matt Harvey
+2021-05-23,Philadelphia Phillies,Boston Red Sox,6,2,1,Zack Wheeler,Eduardo Rodriguez
+2021-05-23,New York Yankees,Chicago White Sox,5,4,1,Jameson Taillon,Dallas Keuchel
+2021-05-23,Toronto Blue Jays,Tampa Bay Rays,4,6,0,Hyun Jin Ryu,Michael Wacha
+2021-05-23,Cleveland Indians,Minnesota Twins,5,8,0,Zach Plesac,J.A. Happ
+2021-05-23,Miami Marlins,New York Mets,5,1,1,Cody Poteet,Jordan Yamamoto
+2021-05-23,Cincinnati Reds,Milwaukee Brewers,4,9,0,Luis Castillo,Freddy Peralta
+2021-05-23,Atlanta Braves,Pittsburgh Pirates,7,1,1,Max Fried,JT Brubaker
+2021-05-23,Kansas City Royals,Detroit Tigers,3,2,1,Kris Bubic,Casey Mize
+2021-05-23,Texas Rangers,Houston Astros,3,2,1,Mike Foltynewicz,Cristian Javier
+2021-05-23,Colorado Rockies,Arizona Diamondbacks,4,3,1,Jon Gray,Taylor Widener
+2021-05-23,San Francisco Giants,Los Angeles Dodgers,5,11,0,Anthony DeSclafani,Julio Urías
+2021-05-23,Los Angeles Angels,Oakland Athletics,6,5,1,Dylan Bundy,Sean Manaea
+2021-05-23,San Diego Padres,Seattle Mariners,9,2,1,Yu Darvish,Justin Dunn
+2021-05-23,St. Louis Cardinals,Chicago Cubs,1,2,0,Adam Wainwright,Zach Davies
+2021-05-24,Toronto Blue Jays,Tampa Bay Rays,8,14,0,Trent Thornton,Ryan Yarbrough
+2021-05-24,Miami Marlins,Philadelphia Phillies,9,6,1,Trevor Rogers,Zach Eflin
+2021-05-24,Detroit Tigers,Cleveland Indians,5,6,0,Spencer Turnbull,Sam Hentges
+2021-05-24,New York Mets,Colorado Rockies,2,3,0,David Peterson,Austin Gomber
+2021-05-24,Minnesota Twins,Baltimore Orioles,8,3,1,Matt Shoemaker,John Means
+2021-05-24,Milwaukee Brewers,San Diego Padres,5,3,1,Brandon Woodruff,Blake Snell
+2021-05-24,Chicago White Sox,St. Louis Cardinals,5,1,1,Lance Lynn,Kwang Hyun Kim
+2021-05-24,Oakland Athletics,Seattle Mariners,2,4,0,Frankie Montas,Yusei Kikuchi
+2021-05-25,Pittsburgh Pirates,Chicago Cubs,3,4,0,Cody Ponce,Jake Arrieta
+2021-05-25,Miami Marlins,Philadelphia Phillies,0,2,0,Sandy Alcantara,Vince Velasquez
+2021-05-25,Washington Nationals,Cincinnati Reds,1,2,0,Max Scherzer,Tyler Mahle
+2021-05-25,New York Yankees,Toronto Blue Jays,2,6,0,Corey Kluber,Steven Matz
+2021-05-25,Detroit Tigers,Cleveland Indians,1,4,0,Tarik Skubal,Aaron Civale
+2021-05-25,New York Mets,Colorado Rockies,3,1,1,Jacob deGrom,Kyle Freeland
+2021-05-25,Tampa Bay Rays,Kansas City Royals,1,2,0,Rich Hill,Brad Keller
+2021-05-25,Boston Red Sox,Atlanta Braves,1,3,0,Garrett Richards,Charlie Morton
+2021-05-25,Minnesota Twins,Baltimore Orioles,7,4,1,José Berríos,Dean Kremer
+2021-05-25,Milwaukee Brewers,San Diego Padres,1,7,0,Corbin Burnes,Joe Musgrove
+2021-05-25,Houston Astros,Los Angeles Dodgers,2,9,0,Zack Greinke,Clayton Kershaw
+2021-05-25,Chicago White Sox,St. Louis Cardinals,8,3,1,Lucas Giolito,Jack Flaherty
+2021-05-25,Los Angeles Angels,Texas Rangers,11,5,1,Andrew Heaney,Hyeon-Jong Yang
+2021-05-25,Oakland Athletics,Seattle Mariners,3,4,0,Cole Irvin,Logan Gilbert
+2021-05-25,Arizona Diamondbacks,San Francisco Giants,0,8,0,Corbin Martin,Kevin Gausman
+2021-05-26,Minnesota Twins,Baltimore Orioles,3,2,1,Michael Pineda,Jorge López
+2021-05-26,Chicago White Sox,St. Louis Cardinals,0,4,0,Carlos Rodón,John Gant
+2021-05-26,Oakland Athletics,Seattle Mariners,6,3,1,James Kaprielian,Robert Dugger
+2021-05-26,Los Angeles Angels,Texas Rangers,9,8,1,Griffin Canning,Dane Dunning
+2021-05-26,Pittsburgh Pirates,Chicago Cubs,1,4,0,Wil Crowe,Trevor Williams
+2021-05-26,Miami Marlins,Philadelphia Phillies,4,2,1,Nick Neidert,Aaron Nola
+2021-05-26,Washington Nationals,Cincinnati Reds,5,3,1,Joe Ross,Jeff Hoffman
+2021-05-26,Detroit Tigers,Cleveland Indians,1,0,1,José Ureña,Triston McKenzie
+2021-05-26,Tampa Bay Rays,Kansas City Royals,2,1,1,Tyler Glasnow,Mike Minor
+2021-05-26,Boston Red Sox,Atlanta Braves,9,5,1,Nick Pivetta,Drew Smyly
+2021-05-26,Houston Astros,Los Angeles Dodgers,5,2,1,Luis Garcia,Trevor Bauer
+2021-05-26,Milwaukee Brewers,San Diego Padres,1,2,0,Eric Lauer,Chris Paddack
+2021-05-26,Arizona Diamondbacks,San Francisco Giants,4,5,0,Merrill Kelly,Johnny Cueto
+2021-05-27,New York Mets,Colorado Rockies,1,0,1,Marcus Stroman,Germán Márquez
+2021-05-27,New York Mets,Colorado Rockies,4,2,1,Joey Lucchesi,Antonio Senzatela
+2021-05-27,Miami Marlins,Philadelphia Phillies,2,3,0,Pablo López,Spencer Howard
+2021-05-27,Pittsburgh Pirates,Chicago Cubs,3,5,0,Tyler Anderson,Kyle Hendricks
+2021-05-27,Detroit Tigers,Cleveland Indians,2,5,0,Matthew Boyd,Shane Bieber
+2021-05-27,Milwaukee Brewers,San Diego Padres,6,5,1,Adrian Houser,Ryan Weathers
+2021-05-27,Washington Nationals,Cincinnati Reds,5,3,1,Joe Ross,Jeff Hoffman
+2021-05-27,Tampa Bay Rays,Kansas City Royals,7,2,1,Shane McClanahan,Brady Singer
+2021-05-27,New York Yankees,Toronto Blue Jays,0,2,0,Domingo Germán,Alek Manoah
+2021-05-27,New York Yankees,Toronto Blue Jays,5,3,1,Jordan Montgomery,Robbie Ray
+2021-05-27,Washington Nationals,Cincinnati Reds,0,3,0,Stephen Strasburg,Sonny Gray
+2021-05-27,Chicago White Sox,Baltimore Orioles,5,1,1,Dylan Cease,Bruce Zimmermann
+2021-05-27,Oakland Athletics,Los Angeles Angels,5,0,1,Chris Bassitt,Patrick Sandoval
+2021-05-27,Arizona Diamondbacks,St. Louis Cardinals,4,5,0,Jon Duplantier,Carlos Martinez
+2021-05-27,Los Angeles Dodgers,San Francisco Giants,4,3,1,David Price,Alex Wood
+2021-05-27,Seattle Mariners,Texas Rangers,5,0,1,Chris Flexen,Kolby Allard
+2021-05-28,Chicago Cubs,Cincinnati Reds,1,0,1,Adbert Alzolay,Vladimir Gutierrez
+2021-05-28,Detroit Tigers,New York Yankees,3,2,1,Casey Mize,Gerrit Cole
+2021-05-28,Houston Astros,San Diego Padres,3,10,0,Framber Valdez,Dinelson Lamet
+2021-05-28,Minnesota Twins,Kansas City Royals,3,8,0,Randy Dobnak,Kris Bubic
+2021-05-28,Oakland Athletics,Los Angeles Angels,3,1,1,Sean Manaea,Shohei Ohtani
+2021-05-28,Arizona Diamondbacks,St. Louis Cardinals,6,8,0,Madison Bumgarner,Johan Oviedo
+2021-05-28,Los Angeles Dodgers,San Francisco Giants,5,8,0,Walker Buehler,Anthony DeSclafani
+2021-05-28,Seattle Mariners,Texas Rangers,3,2,1,Justus Sheffield,Jordan Lyles
+2021-05-29,Pittsburgh Pirates,Colorado Rockies,7,0,1,JT Brubaker,Jon Gray
+2021-05-29,Pittsburgh Pirates,Colorado Rockies,4,0,1,Mitch Keller,Austin Gomber
+2021-05-29,Tampa Bay Rays,Philadelphia Phillies,5,3,1,Ryan Yarbrough,Zack Wheeler
+2021-05-29,Washington Nationals,Milwaukee Brewers,1,4,0,Patrick Corbin,Freddy Peralta
+2021-05-29,Washington Nationals,Milwaukee Brewers,2,6,0,Jon Lester,Brett Anderson
+2021-05-29,Minnesota Twins,Kansas City Royals,6,5,1,J.A. Happ,Ervin Santana
+2021-05-29,Chicago White Sox,Baltimore Orioles,7,4,1,Dallas Keuchel,Matt Harvey
+2021-05-29,Chicago White Sox,Baltimore Orioles,3,1,1,Lance Lynn,John Means
+2021-05-29,Chicago Cubs,Cincinnati Reds,10,2,1,Zach Davies,Luis Castillo
+2021-05-29,Oakland Athletics,Los Angeles Angels,0,4,0,Frankie Montas,Alex Cobb
+2021-05-29,Houston Astros,San Diego Padres,8,11,0,Jake Odorizzi,Yu Darvish
+2021-05-29,Boston Red Sox,Miami Marlins,3,1,1,Nathan Eovaldi,Trevor Rogers
+2021-05-29,Detroit Tigers,New York Yankees,6,1,1,Spencer Turnbull,Deivi García
+2021-05-29,Los Angeles Dodgers,San Francisco Giants,6,11,0,Julio Urías,Logan Webb
+2021-05-29,New York Mets,Atlanta Braves,13,2,1,Taijuan Walker,Ian Anderson
+2021-05-29,Arizona Diamondbacks,St. Louis Cardinals,4,7,0,Seth Frankoff,Adam Wainwright
+2021-05-29,Seattle Mariners,Texas Rangers,3,2,1,Justin Dunn,Mike Foltynewicz
+2021-05-30,Pittsburgh Pirates,Colorado Rockies,3,4,0,Chase De Jong,Kyle Freeland
+2021-05-30,Washington Nationals,Milwaukee Brewers,0,3,0,Max Scherzer,Brandon Woodruff
+2021-05-30,Cleveland Indians,Toronto Blue Jays,1,4,0,Aaron Civale,Ross Stripling
+2021-05-30,Cleveland Indians,Toronto Blue Jays,6,5,1,Sam Hentges,Steven Matz
+2021-05-30,Tampa Bay Rays,Philadelphia Phillies,6,2,1,Collin McHugh,Zach Eflin
+2021-05-30,Detroit Tigers,New York Yankees,6,2,1,Tarik Skubal,Michael King
+2021-05-30,Houston Astros,San Diego Padres,7,4,1,Zack Greinke,Blake Snell
+2021-05-30,Minnesota Twins,Kansas City Royals,3,6,0,Matt Shoemaker,Brad Keller
+2021-05-30,Chicago White Sox,Baltimore Orioles,3,1,1,Lucas Giolito,Keegan Akin
+2021-05-30,Chicago Cubs,Cincinnati Reds,1,5,0,Jake Arrieta,Tyler Mahle
+2021-05-30,Oakland Athletics,Los Angeles Angels,2,4,0,Cole Irvin,Jose Quintana
+2021-05-30,Los Angeles Dodgers,San Francisco Giants,4,5,0,Clayton Kershaw,Kevin Gausman
+2021-05-30,Arizona Diamondbacks,St. Louis Cardinals,9,2,1,Matt Peacock,Kwang Hyun Kim
+2021-05-30,Seattle Mariners,Texas Rangers,4,2,1,Yusei Kikuchi,Hyeon-Jong Yang
+2021-05-31,Baltimore Orioles,Minnesota Twins,2,3,0,Jorge López,José Berríos
+2021-05-31,New York Yankees,Tampa Bay Rays,1,3,0,Jameson Taillon,Rich Hill
+2021-05-31,Cincinnati Reds,Philadelphia Phillies,11,1,1,Wade Miley,Vince Velasquez
+2021-05-31,Milwaukee Brewers,Detroit Tigers,3,2,1,Corbin Burnes,Tyler Alexander
+2021-05-31,Chicago Cubs,San Diego Padres,7,2,1,Kohl Stewart,Chris Paddack
+2021-05-31,Cleveland Indians,Chicago White Sox,6,8,0,Triston McKenzie,Carlos Rodón
+2021-05-31,Cleveland Indians,Chicago White Sox,3,1,1,Cal Quantrill,Jimmy Lambert
+2021-05-31,San Francisco Giants,Los Angeles Angels,6,1,1,Johnny Cueto,Dylan Bundy
+2021-05-31,Houston Astros,Boston Red Sox,11,2,1,José Urquidy,Eduardo Rodriguez
+2021-05-31,Seattle Mariners,Oakland Athletics,6,5,1,Logan Gilbert,James Kaprielian
+2021-05-31,Atlanta Braves,Washington Nationals,5,3,1,Charlie Morton,Joe Ross
+2021-05-31,Kansas City Royals,Pittsburgh Pirates,7,3,1,Mike Minor,Chad Kuhl
+2021-05-31,Los Angeles Dodgers,St. Louis Cardinals,9,4,1,Trevor Bauer,Jack Flaherty
+2021-05-31,Arizona Diamondbacks,New York Mets,2,6,0,Merrill Kelly,Jacob deGrom
+2021-06-01,Cleveland Indians,Chicago White Sox,6,5,1,Shane Bieber,Dylan Cease
+2021-06-01,Baltimore Orioles,Minnesota Twins,7,4,1,Bruce Zimmermann,Michael Pineda
+2021-06-01,New York Yankees,Tampa Bay Rays,5,3,1,Domingo Germán,Tyler Glasnow
+2021-06-01,Toronto Blue Jays,Miami Marlins,5,1,1,Robbie Ray,Sandy Alcantara
+2021-06-01,Cincinnati Reds,Philadelphia Phillies,3,17,0,Sonny Gray,Aaron Nola
+2021-06-01,Atlanta Braves,Washington Nationals,6,11,0,Max Fried,Stephen Strasburg
+2021-06-01,Milwaukee Brewers,Detroit Tigers,7,10,0,Eric Lauer,Matthew Boyd
+2021-06-01,Chicago Cubs,San Diego Padres,4,3,1,Kyle Hendricks,Ryan Weathers
+2021-06-01,Houston Astros,Boston Red Sox,5,1,1,Luis Garcia,Garrett Richards
+2021-06-01,Kansas City Royals,Pittsburgh Pirates,10,5,1,Brady Singer,Wil Crowe
+2021-06-01,Colorado Rockies,Texas Rangers,3,2,1,Germán Márquez,Dane Dunning
+2021-06-01,Arizona Diamondbacks,New York Mets,6,5,1,Caleb Smith,Marcus Stroman
+2021-06-01,San Francisco Giants,Los Angeles Angels,1,8,0,Alex Wood,Andrew Heaney
+2021-06-01,Seattle Mariners,Oakland Athletics,6,12,0,Marco Gonzales,Chris Bassitt
+2021-06-01,Los Angeles Dodgers,St. Louis Cardinals,2,3,0,David Price,John Gant
+2021-06-02,Chicago Cubs,San Diego Padres,6,1,1,Adbert Alzolay,Dinelson Lamet
+2021-06-02,Arizona Diamondbacks,New York Mets,6,7,0,Madison Bumgarner,David Peterson
+2021-06-02,Baltimore Orioles,Minnesota Twins,6,3,1,Matt Harvey,Randy Dobnak
+2021-06-02,New York Yankees,Tampa Bay Rays,4,3,1,Jordan Montgomery,Shane McClanahan
+2021-06-02,Toronto Blue Jays,Miami Marlins,6,5,1,Alek Manoah,Pablo López
+2021-06-02,Atlanta Braves,Washington Nationals,3,5,0,Drew Smyly,Jon Lester
+2021-06-02,Houston Astros,Boston Red Sox,2,1,1,Framber Valdez,Nick Pivetta
+2021-06-02,Colorado Rockies,Texas Rangers,6,3,1,Antonio Senzatela,Jordan Lyles
+2021-06-02,Los Angeles Dodgers,St. Louis Cardinals,14,3,1,Walker Buehler,Carlos Martinez
+2021-06-02,Seattle Mariners,Oakland Athletics,0,6,0,Chris Flexen,Sean Manaea
+2021-06-03,Atlanta Braves,Washington Nationals,5,1,1,Tucker Davidson,Patrick Corbin
+2021-06-03,New York Yankees,Tampa Bay Rays,2,9,0,Gerrit Cole,Ryan Yarbrough
+2021-06-03,Houston Astros,Boston Red Sox,1,5,0,Jake Odorizzi,Martín Pérez
+2021-06-03,Colorado Rockies,Texas Rangers,11,6,1,Austin Gomber,Mike Foltynewicz
+2021-06-03,Pittsburgh Pirates,Miami Marlins,5,3,1,Tyler Anderson,Elieser Hernández
+2021-06-03,Milwaukee Brewers,Arizona Diamondbacks,7,4,1,Brett Anderson,Jon Duplantier
+2021-06-03,Kansas City Royals,Minnesota Twins,6,5,1,Kris Bubic,J.A. Happ
+2021-06-03,Chicago White Sox,Detroit Tigers,4,1,1,Lance Lynn,Casey Mize
+2021-06-03,St. Louis Cardinals,Cincinnati Reds,2,4,0,Adam Wainwright,Vladimir Gutierrez
+2021-06-03,Los Angeles Angels,Seattle Mariners,2,6,0,Griffin Canning,Justus Sheffield
+2021-06-03,San Francisco Giants,Chicago Cubs,7,2,1,Anthony DeSclafani,Zach Davies
+2021-06-03,San Diego Padres,New York Mets,4,3,1,Yu Darvish,Taijuan Walker
+2021-06-04,Baltimore Orioles,Cleveland Indians,3,1,1,Keegan Akin,J.C. Mejía
+2021-06-04,Philadelphia Phillies,Washington Nationals,1,2,0,Zack Wheeler,Max Scherzer
+2021-06-04,Pittsburgh Pirates,Miami Marlins,9,2,1,Mitch Keller,Cody Poteet
+2021-06-04,New York Yankees,Boston Red Sox,2,5,0,Michael King,Nathan Eovaldi
+2021-06-04,Toronto Blue Jays,Houston Astros,1,13,0,Hyun Jin Ryu,Zack Greinke
+2021-06-04,Atlanta Braves,Los Angeles Dodgers,5,9,0,Ian Anderson,Julio Urías
+2021-06-04,Texas Rangers,Tampa Bay Rays,5,4,1,Kyle Gibson,Josh Fleming
+2021-06-04,Kansas City Royals,Minnesota Twins,14,5,1,Brad Keller,Matt Shoemaker
+2021-06-04,Chicago White Sox,Detroit Tigers,9,8,1,Dallas Keuchel,Spencer Turnbull
+2021-06-04,Milwaukee Brewers,Arizona Diamondbacks,5,1,1,Freddy Peralta,Matt Peacock
+2021-06-04,St. Louis Cardinals,Cincinnati Reds,4,6,0,Kwang Hyun Kim,Luis Castillo
+2021-06-04,Colorado Rockies,Oakland Athletics,5,9,0,Jon Gray,Frankie Montas
+2021-06-04,Los Angeles Angels,Seattle Mariners,3,2,1,Shohei Ohtani,Robert Dugger
+2021-06-04,San Francisco Giants,Chicago Cubs,8,5,1,Scott Kazmir,Jake Arrieta
+2021-06-04,San Diego Padres,New York Mets,2,0,1,Blake Snell,Joey Lucchesi
+2021-06-05,Chicago White Sox,Detroit Tigers,3,4,0,Lucas Giolito,Tarik Skubal
+2021-06-05,St. Louis Cardinals,Cincinnati Reds,2,5,0,Johan Oviedo,Tyler Mahle
+2021-06-05,Toronto Blue Jays,Houston Astros,6,2,1,Ross Stripling,José Urquidy
+2021-06-05,Baltimore Orioles,Cleveland Indians,4,10,0,John Means,Aaron Civale
+2021-06-05,Texas Rangers,Tampa Bay Rays,0,3,0,Kolby Allard,Rich Hill
+2021-06-05,Philadelphia Phillies,Washington Nationals,5,2,1,Spencer Howard,Joe Ross
+2021-06-05,Pittsburgh Pirates,Miami Marlins,8,7,1,Chase De Jong,Trevor Rogers
+2021-06-05,Kansas City Royals,Minnesota Twins,4,5,0,Mike Minor,José Berríos
+2021-06-05,Milwaukee Brewers,Arizona Diamondbacks,7,5,1,Brandon Woodruff,Merrill Kelly
+2021-06-05,San Francisco Giants,Chicago Cubs,4,3,1,Kevin Gausman,Kohl Stewart
+2021-06-05,Atlanta Braves,Los Angeles Dodgers,6,4,1,Charlie Morton,Clayton Kershaw
+2021-06-05,New York Yankees,Boston Red Sox,3,7,0,Jameson Taillon,Eduardo Rodriguez
+2021-06-05,Colorado Rockies,Oakland Athletics,3,6,0,Kyle Freeland,Cole Irvin
+2021-06-05,Los Angeles Angels,Seattle Mariners,12,5,1,Alex Cobb,Yusei Kikuchi
+2021-06-05,San Diego Padres,New York Mets,0,4,0,Joe Musgrove,Jacob deGrom
+2021-06-06,Baltimore Orioles,Cleveland Indians,18,5,1,Jorge López,Cal Quantrill
+2021-06-06,Philadelphia Phillies,Washington Nationals,12,6,1,Vince Velasquez,Austin Voth
+2021-06-06,Pittsburgh Pirates,Miami Marlins,1,3,0,Chad Kuhl,Sandy Alcantara
+2021-06-06,Toronto Blue Jays,Houston Astros,3,6,0,Steven Matz,Luis Garcia
+2021-06-06,Atlanta Braves,Los Angeles Dodgers,4,2,1,Max Fried,Trevor Bauer
+2021-06-06,Kansas City Royals,Minnesota Twins,1,2,0,Brady Singer,Bailey Ober
+2021-06-06,Chicago White Sox,Detroit Tigers,3,0,1,Dylan Cease,José Ureña
+2021-06-06,Milwaukee Brewers,Arizona Diamondbacks,2,0,1,Corbin Burnes,Caleb Smith
+2021-06-06,St. Louis Cardinals,Cincinnati Reds,7,8,0,John Gant,Wade Miley
+2021-06-06,Texas Rangers,Tampa Bay Rays,1,7,0,Dane Dunning,Michael Wacha
+2021-06-06,Colorado Rockies,Oakland Athletics,3,1,1,Germán Márquez,James Kaprielian
+2021-06-06,San Francisco Giants,Chicago Cubs,3,4,0,Johnny Cueto,Kyle Hendricks
+2021-06-06,Los Angeles Angels,Seattle Mariners,5,9,0,Patrick Sandoval,Logan Gilbert
+2021-06-06,San Diego Padres,New York Mets,2,6,0,Chris Paddack,Marcus Stroman
+2021-06-06,New York Yankees,Boston Red Sox,5,6,0,Domingo Germán,Garrett Richards
+2021-06-07,Boston Red Sox,Miami Marlins,5,3,1,Nick Pivetta,Zach Thompson
+2021-06-07,Los Angeles Angels,Kansas City Royals,8,3,1,Dylan Bundy,Jackson Kowar
+2021-06-07,San Diego Padres,Chicago Cubs,9,4,1,Ryan Weathers,Adbert Alzolay
+2021-06-08,Baltimore Orioles,New York Mets,10,3,1,Bruce Zimmermann,David Peterson
+2021-06-08,Pittsburgh Pirates,Los Angeles Dodgers,3,5,0,JT Brubaker,Walker Buehler
+2021-06-08,Philadelphia Phillies,Atlanta Braves,5,9,0,Aaron Nola,Drew Smyly
+2021-06-08,Boston Red Sox,Houston Astros,1,7,0,Martín Pérez,Framber Valdez
+2021-06-08,Detroit Tigers,Seattle Mariners,5,3,1,Matthew Boyd,Marco Gonzales
+2021-06-08,Tampa Bay Rays,Washington Nationals,3,1,1,Tyler Glasnow,Jon Lester
+2021-06-08,Miami Marlins,Colorado Rockies,6,2,1,Pablo López,Antonio Senzatela
+2021-06-08,Cincinnati Reds,Milwaukee Brewers,1,5,0,Sonny Gray,Adrian Houser
+2021-06-08,Texas Rangers,San Francisco Giants,4,9,0,Jordan Lyles,Alex Wood
+2021-06-08,Chicago White Sox,Toronto Blue Jays,6,1,1,Carlos Rodón,Robbie Ray
+2021-06-08,Minnesota Twins,New York Yankees,4,8,0,Michael Pineda,Jordan Montgomery
+2021-06-08,St. Louis Cardinals,Cleveland Indians,1,10,0,Carlos Martinez,Shane Bieber
+2021-06-08,Los Angeles Angels,Kansas City Royals,8,1,1,Andrew Heaney,Kris Bubic
+2021-06-08,Oakland Athletics,Arizona Diamondbacks,5,2,1,Chris Bassitt,Jon Duplantier
+2021-06-08,San Diego Padres,Chicago Cubs,1,7,0,Dinelson Lamet,Zach Davies
+2021-06-09,Texas Rangers,San Francisco Giants,4,3,1,Kyle Gibson,Zack Littell
+2021-06-09,Oakland Athletics,Arizona Diamondbacks,4,0,1,Sean Manaea,Matt Peacock
+2021-06-09,San Diego Padres,Chicago Cubs,1,3,0,Yu Darvish,Jake Arrieta
+2021-06-09,Baltimore Orioles,New York Mets,1,14,0,Matt Harvey,Taijuan Walker
+2021-06-09,Pittsburgh Pirates,Los Angeles Dodgers,1,2,0,Tyler Anderson,Tony Gonsolin
+2021-06-09,Philadelphia Phillies,Atlanta Braves,2,1,1,Zach Eflin,Tucker Davidson
+2021-06-09,Boston Red Sox,Houston Astros,3,8,0,Nathan Eovaldi,Jake Odorizzi
+2021-06-09,Detroit Tigers,Seattle Mariners,6,9,0,Casey Mize,Chris Flexen
+2021-06-09,Tampa Bay Rays,Washington Nationals,7,9,0,Shane McClanahan,Patrick Corbin
+2021-06-09,Miami Marlins,Colorado Rockies,3,4,0,Braxton Garrett,Austin Gomber
+2021-06-09,Cincinnati Reds,Milwaukee Brewers,7,3,1,Vladimir Gutierrez,Brett Anderson
+2021-06-09,Chicago White Sox,Toronto Blue Jays,2,6,0,Lance Lynn,Alek Manoah
+2021-06-09,Minnesota Twins,New York Yankees,6,9,0,Randy Dobnak,Gerrit Cole
+2021-06-09,St. Louis Cardinals,Cleveland Indians,8,2,1,Adam Wainwright,J.C. Mejía
+2021-06-09,Los Angeles Angels,Kansas City Royals,6,1,1,Griffin Canning,Brad Keller
+2021-06-10,Cincinnati Reds,Milwaukee Brewers,2,7,0,Luis Castillo,Freddy Peralta
+2021-06-10,Philadelphia Phillies,Atlanta Braves,4,3,1,Zack Wheeler,Ian Anderson
+2021-06-10,Detroit Tigers,Seattle Mariners,8,3,1,Tyler Alexander,Justus Sheffield
+2021-06-10,Boston Red Sox,Houston Astros,12,8,1,Eduardo Rodriguez,Zack Greinke
+2021-06-10,Miami Marlins,Colorado Rockies,11,4,1,Trevor Rogers,Chi Chi González
+2021-06-10,Chicago White Sox,Toronto Blue Jays,5,2,1,Dallas Keuchel,Hyun Jin Ryu
+2021-06-10,Minnesota Twins,New York Yankees,7,5,1,J.A. Happ,Michael King
+2021-06-10,Oakland Athletics,Kansas City Royals,1,6,0,Frankie Montas,Mike Minor
+2021-06-11,Chicago Cubs,St. Louis Cardinals,8,5,1,Kohl Stewart,Johan Oviedo
+2021-06-11,Washington Nationals,San Francisco Giants,0,1,0,Max Scherzer,Anthony DeSclafani
+2021-06-11,Cincinnati Reds,Colorado Rockies,11,5,1,Tyler Mahle,Kyle Freeland
+2021-06-11,New York Mets,San Diego Padres,3,2,1,Jacob deGrom,Blake Snell
+2021-06-11,Cleveland Indians,Seattle Mariners,7,0,1,Aaron Civale,Justin Dunn
+2021-06-11,Tampa Bay Rays,Baltimore Orioles,4,2,1,Ryan Yarbrough,Keegan Akin
+2021-06-11,Boston Red Sox,Toronto Blue Jays,6,5,1,Garrett Richards,Ross Stripling
+2021-06-11,Detroit Tigers,Chicago White Sox,4,5,0,Tarik Skubal,Lucas Giolito
+2021-06-11,Miami Marlins,Atlanta Braves,4,3,1,Sandy Alcantara,Charlie Morton
+2021-06-11,Minnesota Twins,Houston Astros,4,6,0,Bailey Ober,José Urquidy
+2021-06-11,Milwaukee Brewers,Pittsburgh Pirates,7,4,1,Brandon Woodruff,Chase De Jong
+2021-06-11,Arizona Diamondbacks,Los Angeles Angels,5,6,0,Merrill Kelly,Shohei Ohtani
+2021-06-11,Oakland Athletics,Kansas City Royals,4,3,1,Cole Irvin,Brady Singer
+2021-06-11,Los Angeles Dodgers,Texas Rangers,12,1,1,Clayton Kershaw,Mike Foltynewicz
+2021-06-12,Washington Nationals,San Francisco Giants,2,0,1,Erick Fedde,Kevin Gausman
+2021-06-12,Washington Nationals,San Francisco Giants,1,2,0,Jefry Rodriguez,Conner Menez
+2021-06-12,Philadelphia Phillies,New York Yankees,8,7,1,Vince Velasquez,Jameson Taillon
+2021-06-12,Oakland Athletics,Kansas City Royals,11,2,1,James Kaprielian,Jackson Kowar
+2021-06-12,Arizona Diamondbacks,Los Angeles Angels,7,8,0,Caleb Smith,Alex Cobb
+2021-06-12,Cincinnati Reds,Colorado Rockies,10,3,1,Wade Miley,Germán Márquez
+2021-06-12,New York Mets,San Diego Padres,4,1,1,Marcus Stroman,Joe Musgrove
+2021-06-12,Cleveland Indians,Seattle Mariners,5,4,1,Triston McKenzie,Yusei Kikuchi
+2021-06-12,Tampa Bay Rays,Baltimore Orioles,5,4,1,Rich Hill,Jorge López
+2021-06-12,Boston Red Sox,Toronto Blue Jays,2,7,0,Nick Pivetta,Steven Matz
+2021-06-12,Detroit Tigers,Chicago White Sox,2,15,0,José Ureña,Dylan Cease
+2021-06-12,Miami Marlins,Atlanta Braves,4,2,1,Zach Thompson,Max Fried
+2021-06-12,Milwaukee Brewers,Pittsburgh Pirates,7,4,1,Corbin Burnes,Chad Kuhl
+2021-06-12,Chicago Cubs,St. Louis Cardinals,7,2,1,Kyle Hendricks,John Gant
+2021-06-12,Minnesota Twins,Houston Astros,5,2,1,José Berríos,Luis Garcia
+2021-06-12,Los Angeles Dodgers,Texas Rangers,1,12,0,Trevor Bauer,Kolby Allard
+2021-06-13,Washington Nationals,San Francisco Giants,5,0,1,Joe Ross,Johnny Cueto
+2021-06-13,Philadelphia Phillies,New York Yankees,7,0,1,Aaron Nola,Domingo Germán
+2021-06-13,Cincinnati Reds,Colorado Rockies,6,2,1,Tony Santillan,Antonio Senzatela
+2021-06-13,New York Mets,San Diego Padres,3,7,0,Joey Lucchesi,Chris Paddack
+2021-06-13,Cleveland Indians,Seattle Mariners,2,6,0,Shane Bieber,Logan Gilbert
+2021-06-13,Tampa Bay Rays,Baltimore Orioles,7,1,1,Michael Wacha,Bruce Zimmermann
+2021-06-13,Boston Red Sox,Toronto Blue Jays,4,18,0,Martín Pérez,Robbie Ray
+2021-06-13,Detroit Tigers,Chicago White Sox,1,4,0,Kyle Funkhouser,Carlos Rodón
+2021-06-13,Miami Marlins,Atlanta Braves,4,6,0,Pablo López,Drew Smyly
+2021-06-13,Minnesota Twins,Houston Astros,3,14,0,Michael Pineda,Framber Valdez
+2021-06-13,Milwaukee Brewers,Pittsburgh Pirates,5,2,1,Adrian Houser,Wil Crowe
+2021-06-13,Oakland Athletics,Kansas City Royals,6,3,1,Chris Bassitt,Kris Bubic
+2021-06-13,Arizona Diamondbacks,Los Angeles Angels,3,10,0,Jon Duplantier,Patrick Sandoval
+2021-06-13,Los Angeles Dodgers,Texas Rangers,5,3,1,Walker Buehler,Dane Dunning
+2021-06-13,Chicago Cubs,St. Louis Cardinals,2,0,1,Zach Davies,Carlos Martinez
+2021-06-14,Washington Nationals,Pittsburgh Pirates,3,2,1,Jon Lester,JT Brubaker
+2021-06-14,Cleveland Indians,Baltimore Orioles,4,3,1,J.C. Mejía,Dean Kremer
+2021-06-14,New York Mets,Chicago Cubs,5,2,1,David Peterson,Jake Arrieta
+2021-06-14,Boston Red Sox,Toronto Blue Jays,2,1,1,Nathan Eovaldi,Alek Manoah
+2021-06-14,Kansas City Royals,Detroit Tigers,3,10,0,Brad Keller,Matthew Boyd
+2021-06-14,Chicago White Sox,Tampa Bay Rays,2,5,0,Lance Lynn,Tyler Glasnow
+2021-06-14,Milwaukee Brewers,Cincinnati Reds,2,10,0,Eric Lauer,Vladimir Gutierrez
+2021-06-14,St. Louis Cardinals,Miami Marlins,4,2,1,Adam Wainwright,Braxton Garrett
+2021-06-14,Colorado Rockies,San Diego Padres,3,2,1,Austin Gomber,Dinelson Lamet
+2021-06-14,Oakland Athletics,Los Angeles Angels,8,5,1,Sean Manaea,Dylan Bundy
+2021-06-14,San Francisco Giants,Arizona Diamondbacks,5,2,1,Alex Wood,Matt Peacock
+2021-06-14,Seattle Mariners,Minnesota Twins,4,3,1,Marco Gonzales,Kenta Maeda
+2021-06-14,Los Angeles Dodgers,Philadelphia Phillies,3,1,1,Tony Gonsolin,Spencer Howard
+2021-06-15,Washington Nationals,Pittsburgh Pirates,8,1,1,Patrick Corbin,Tyler Anderson
+2021-06-15,Toronto Blue Jays,New York Yankees,5,6,0,Hyun Jin Ryu,Jordan Montgomery
+2021-06-15,Cleveland Indians,Baltimore Orioles,7,2,1,Cal Quantrill,Matt Harvey
+2021-06-15,New York Mets,Chicago Cubs,3,2,1,Taijuan Walker,Alec Mills
+2021-06-15,Atlanta Braves,Boston Red Sox,8,10,0,Tucker Davidson,Eduardo Rodriguez
+2021-06-15,Kansas City Royals,Detroit Tigers,3,4,0,Mike Minor,Casey Mize
+2021-06-15,Houston Astros,Texas Rangers,6,3,1,Lance McCullers Jr.,Kyle Gibson
+2021-06-15,Chicago White Sox,Tampa Bay Rays,3,0,1,Dallas Keuchel,Shane McClanahan
+2021-06-15,Milwaukee Brewers,Cincinnati Reds,1,2,0,Brett Anderson,Luis Castillo
+2021-06-15,St. Louis Cardinals,Miami Marlins,2,1,1,Kwang Hyun Kim,Trevor Rogers
+2021-06-15,Colorado Rockies,San Diego Padres,8,4,1,Chi Chi González,Yu Darvish
+2021-06-15,Oakland Athletics,Los Angeles Angels,6,4,1,Frankie Montas,Andrew Heaney
+2021-06-15,San Francisco Giants,Arizona Diamondbacks,9,8,1,Zack Littell,Alex Young
+2021-06-15,Seattle Mariners,Minnesota Twins,10,0,1,Chris Flexen,J.A. Happ
+2021-06-15,Los Angeles Dodgers,Philadelphia Phillies,5,3,1,Julio Urías,Zach Eflin
+2021-06-16,St. Louis Cardinals,Miami Marlins,1,0,1,Johan Oviedo,Sandy Alcantara
+2021-06-16,Kansas City Royals,Detroit Tigers,5,6,0,Brady Singer,Tarik Skubal
+2021-06-16,Chicago White Sox,Tampa Bay Rays,8,7,1,Lucas Giolito,Ryan Yarbrough
+2021-06-16,Milwaukee Brewers,Cincinnati Reds,1,2,0,Freddy Peralta,Tyler Mahle
+2021-06-16,Colorado Rockies,San Diego Padres,8,7,1,Kyle Freeland,Blake Snell
+2021-06-16,Oakland Athletics,Los Angeles Angels,8,4,1,Cole Irvin,Griffin Canning
+2021-06-16,Washington Nationals,Pittsburgh Pirates,3,1,1,Paolo Espino,Chase De Jong
+2021-06-16,Toronto Blue Jays,New York Yankees,2,3,0,Ross Stripling,Gerrit Cole
+2021-06-16,Cleveland Indians,Baltimore Orioles,8,7,1,Aaron Civale,Keegan Akin
+2021-06-16,New York Mets,Chicago Cubs,6,3,1,Jacob deGrom,Robert Stock
+2021-06-16,Atlanta Braves,Boston Red Sox,8,10,0,Ian Anderson,Garrett Richards
+2021-06-16,Houston Astros,Texas Rangers,8,4,1,Zack Greinke,Jordan Lyles
+2021-06-16,San Francisco Giants,Arizona Diamondbacks,13,7,1,Anthony DeSclafani,Merrill Kelly
+2021-06-16,Seattle Mariners,Minnesota Twins,2,7,0,Justus Sheffield,Bailey Ober
+2021-06-16,Los Angeles Dodgers,Philadelphia Phillies,0,2,0,Clayton Kershaw,Zack Wheeler
+2021-06-17,Cleveland Indians,Baltimore Orioles,10,3,1,Eli Morgan,Jorge López
+2021-06-17,San Francisco Giants,Arizona Diamondbacks,10,3,1,Kevin Gausman,Zac Gallen
+2021-06-17,Toronto Blue Jays,New York Yankees,4,8,0,T.J. Zeuch,Michael King
+2021-06-17,New York Mets,Chicago Cubs,0,2,0,Marcus Stroman,Kyle Hendricks
+2021-06-17,Atlanta Braves,St. Louis Cardinals,4,0,1,Charlie Morton,John Gant
+2021-06-17,Houston Astros,Chicago White Sox,10,2,1,José Urquidy,Dylan Cease
+2021-06-17,San Diego Padres,Cincinnati Reds,6,4,1,Joe Musgrove,Wade Miley
+2021-06-17,Colorado Rockies,Milwaukee Brewers,7,3,1,Germán Márquez,Brandon Woodruff
+2021-06-17,Los Angeles Angels,Detroit Tigers,7,5,1,Shohei Ohtani,Matt Manning
+2021-06-17,Seattle Mariners,Tampa Bay Rays,6,5,1,Justin Dunn,Rich Hill
+2021-06-18,Washington Nationals,New York Mets,1,0,1,Erick Fedde,Joey Lucchesi
+2021-06-18,Pittsburgh Pirates,Cleveland Indians,11,10,1,Chad Kuhl,J.C. Mejía
+2021-06-18,Baltimore Orioles,Toronto Blue Jays,7,1,1,Thomas Eshelman,Robbie Ray
+2021-06-18,New York Yankees,Oakland Athletics,3,5,0,Jameson Taillon,James Kaprielian
+2021-06-18,Atlanta Braves,St. Louis Cardinals,9,1,1,Max Fried,Carlos Martinez
+2021-06-18,Texas Rangers,Minnesota Twins,5,7,0,Mike Foltynewicz,José Berríos
+2021-06-18,Chicago Cubs,Miami Marlins,2,10,0,Zach Davies,Cody Poteet
+2021-06-18,Kansas City Royals,Boston Red Sox,5,3,1,Kyle Zimmer,Nick Pivetta
+2021-06-18,Houston Astros,Chicago White Sox,2,1,1,Luis Garcia,Carlos Rodón
+2021-06-18,Colorado Rockies,Milwaukee Brewers,6,5,1,Antonio Senzatela,Corbin Burnes
+2021-06-18,Los Angeles Angels,Detroit Tigers,11,3,1,Alex Cobb,José Ureña
+2021-06-18,Arizona Diamondbacks,Los Angeles Dodgers,0,3,0,Caleb Smith,Trevor Bauer
+2021-06-18,San Francisco Giants,Philadelphia Phillies,5,3,1,Johnny Cueto,Vince Velasquez
+2021-06-18,San Diego Padres,Cincinnati Reds,8,2,1,Chris Paddack,Tony Santillan
+2021-06-18,Seattle Mariners,Tampa Bay Rays,5,1,1,Yusei Kikuchi,Michael Wacha
+2021-06-19,Washington Nationals,New York Mets,1,5,0,Joe Ross,David Peterson
+2021-06-19,Washington Nationals,New York Mets,6,2,1,Jon Lester,Robert Gsellman
+2021-06-19,New York Yankees,Oakland Athletics,7,5,1,Domingo Germán,Chris Bassitt
+2021-06-19,Chicago Cubs,Miami Marlins,1,11,0,Jake Arrieta,Pablo López
+2021-06-19,Pittsburgh Pirates,Cleveland Indians,6,3,1,Wil Crowe,Cal Quantrill
+2021-06-19,Baltimore Orioles,Toronto Blue Jays,7,10,0,Dean Kremer,Alek Manoah
+2021-06-19,Texas Rangers,Minnesota Twins,2,3,0,Kolby Allard,Randy Dobnak
+2021-06-19,San Francisco Giants,Philadelphia Phillies,6,13,0,Alex Wood,Aaron Nola
+2021-06-19,Kansas City Royals,Boston Red Sox,1,7,0,Brad Keller,Martín Pérez
+2021-06-19,San Diego Padres,Cincinnati Reds,7,5,1,Miguel Díaz,Vladimir Gutierrez
+2021-06-19,Houston Astros,Chicago White Sox,7,3,1,Framber Valdez,Lance Lynn
+2021-06-19,Colorado Rockies,Milwaukee Brewers,5,6,0,Austin Gomber,Adrian Houser
+2021-06-19,Los Angeles Angels,Detroit Tigers,8,3,1,Patrick Sandoval,Wily Peralta
+2021-06-19,Arizona Diamondbacks,Los Angeles Dodgers,3,9,0,Matt Peacock,Walker Buehler
+2021-06-19,Seattle Mariners,Tampa Bay Rays,6,5,1,Logan Gilbert,Josh Fleming
+2021-06-20,Washington Nationals,New York Mets,5,2,1,Patrick Corbin,Taijuan Walker
+2021-06-20,Pittsburgh Pirates,Cleveland Indians,1,2,0,JT Brubaker,Sam Hentges
+2021-06-20,Baltimore Orioles,Toronto Blue Jays,4,7,0,Matt Harvey,Hyun Jin Ryu
+2021-06-20,New York Yankees,Oakland Athletics,2,1,1,Jordan Montgomery,Sean Manaea
+2021-06-20,Kansas City Royals,Boston Red Sox,7,3,1,Mike Minor,Nathan Eovaldi
+2021-06-20,Atlanta Braves,St. Louis Cardinals,1,9,0,Bryse Wilson,Adam Wainwright
+2021-06-20,Atlanta Braves,St. Louis Cardinals,1,0,1,Drew Smyly,Kwang Hyun Kim
+2021-06-20,Houston Astros,Chicago White Sox,8,2,1,Lance McCullers Jr.,Dallas Keuchel
+2021-06-20,Chicago Cubs,Miami Marlins,2,0,1,Alec Mills,Zach Thompson
+2021-06-20,Texas Rangers,Minnesota Twins,2,4,0,Dane Dunning,Kenta Maeda
+2021-06-20,Colorado Rockies,Milwaukee Brewers,6,7,0,Chi Chi González,Eric Lauer
+2021-06-20,San Francisco Giants,Philadelphia Phillies,11,2,1,Sam Long,Zach Eflin
+2021-06-20,Los Angeles Angels,Detroit Tigers,3,5,0,Dylan Bundy,Casey Mize
+2021-06-20,Arizona Diamondbacks,Los Angeles Dodgers,8,9,0,Alex Young,Tony Gonsolin
+2021-06-20,San Diego Padres,Cincinnati Reds,3,2,1,Dinelson Lamet,Luis Castillo
+2021-06-20,Seattle Mariners,Tampa Bay Rays,6,2,1,Marco Gonzales,Shane McClanahan
+2021-06-21,New York Mets,Atlanta Braves,4,2,1,Jacob deGrom,Kyle Muller
+2021-06-21,New York Mets,Atlanta Braves,0,1,0,Jerad Eickhoff,Ian Anderson
+2021-06-21,Baltimore Orioles,Houston Astros,2,10,0,Keegan Akin,Jake Odorizzi
+2021-06-21,Chicago Cubs,Cleveland Indians,0,4,0,Adbert Alzolay,Aaron Civale
+2021-06-21,Texas Rangers,Oakland Athletics,8,3,1,Kyle Gibson,Frankie Montas
+2021-06-21,Minnesota Twins,Cincinnati Reds,7,5,1,J.A. Happ,Tyler Mahle
+2021-06-21,Arizona Diamondbacks,Milwaukee Brewers,5,1,1,Merrill Kelly,Brett Anderson
+2021-06-21,San Diego Padres,Los Angeles Dodgers,6,2,1,Yu Darvish,Julio Urías
+2021-06-22,Minnesota Twins,Cincinnati Reds,7,10,0,Bailey Ober,Wade Miley
+2021-06-22,Baltimore Orioles,Houston Astros,1,3,0,Jorge López,Zack Greinke
+2021-06-22,Philadelphia Phillies,Washington Nationals,2,3,0,Zack Wheeler,Max Scherzer
+2021-06-22,Pittsburgh Pirates,Chicago White Sox,6,3,1,Tyler Anderson,Lucas Giolito
+2021-06-22,New York Yankees,Kansas City Royals,5,6,0,Gerrit Cole,Brady Singer
+2021-06-22,Detroit Tigers,St. Louis Cardinals,8,2,1,Tarik Skubal,Johan Oviedo
+2021-06-22,Tampa Bay Rays,Boston Red Sox,5,9,0,Andrew Kittredge,Eduardo Rodriguez
+2021-06-22,New York Mets,Atlanta Braves,0,3,0,Marcus Stroman,Charlie Morton
+2021-06-22,Miami Marlins,Toronto Blue Jays,1,2,0,Sandy Alcantara,Ross Stripling
+2021-06-22,Chicago Cubs,Cleveland Indians,7,1,1,Kyle Hendricks,Eli Morgan
+2021-06-22,Texas Rangers,Oakland Athletics,6,13,0,Taylor Hearn,Cole Irvin
+2021-06-22,Los Angeles Angels,San Francisco Giants,0,5,0,Andrew Heaney,Anthony DeSclafani
+2021-06-22,Arizona Diamondbacks,Milwaukee Brewers,0,5,0,Zac Gallen,Freddy Peralta
+2021-06-22,San Diego Padres,Los Angeles Dodgers,3,2,1,Blake Snell,Clayton Kershaw
+2021-06-22,Seattle Mariners,Colorado Rockies,2,1,1,Chris Flexen,Kyle Freeland
+2021-06-23,Pittsburgh Pirates,Chicago White Sox,3,4,0,Chase De Jong,Dylan Cease
+2021-06-23,Philadelphia Phillies,Washington Nationals,12,13,0,Vince Velasquez,Erick Fedde
+2021-06-23,Detroit Tigers,St. Louis Cardinals,6,2,1,Matt Manning,John Gant
+2021-06-23,Arizona Diamondbacks,Milwaukee Brewers,2,3,0,Caleb Smith,Brandon Woodruff
+2021-06-23,Los Angeles Angels,San Francisco Giants,3,9,0,Shohei Ohtani,Kevin Gausman
+2021-06-23,Seattle Mariners,Colorado Rockies,2,5,0,Justus Sheffield,Germán Márquez
+2021-06-23,Baltimore Orioles,Houston Astros,0,13,0,Thomas Eshelman,José Urquidy
+2021-06-23,New York Yankees,Kansas City Royals,6,5,1,Michael King,Danny Duffy
+2021-06-23,Tampa Bay Rays,Boston Red Sox,8,2,1,Rich Hill,Garrett Richards
+2021-06-23,New York Mets,Atlanta Braves,7,3,1,Tylor Megill,Kyle Wright
+2021-06-23,Miami Marlins,Toronto Blue Jays,1,3,0,Trevor Rogers,Robbie Ray
+2021-06-23,Texas Rangers,Oakland Athletics,5,3,1,Mike Foltynewicz,James Kaprielian
+2021-06-23,San Diego Padres,Los Angeles Dodgers,5,3,1,Joe Musgrove,Trevor Bauer
+2021-06-24,New York Yankees,Kansas City Royals,8,1,1,Jameson Taillon,Brad Keller
+2021-06-24,Texas Rangers,Oakland Athletics,1,5,0,Kolby Allard,Chris Bassitt
+2021-06-24,Toronto Blue Jays,Baltimore Orioles,9,0,1,Anthony Kay,Dean Kremer
+2021-06-24,Detroit Tigers,Houston Astros,3,12,0,José Ureña,Luis Garcia
+2021-06-24,Tampa Bay Rays,Boston Red Sox,1,0,1,Michael Wacha,Nick Pivetta
+2021-06-24,Cincinnati Reds,Atlanta Braves,5,3,1,Tony Santillan,
+2021-06-24,Miami Marlins,Washington Nationals,3,7,0,Cody Poteet,Joe Ross
+2021-06-24,Minnesota Twins,Cleveland Indians,1,4,0,José Berríos,J.C. Mejía
+2021-06-24,St. Louis Cardinals,Pittsburgh Pirates,2,8,0,Carlos Martinez,Chad Kuhl
+2021-06-24,Los Angeles Dodgers,Chicago Cubs,0,4,0,Walker Buehler,Zach Davies
+2021-06-25,New York Mets,Philadelphia Phillies,2,1,1,Taijuan Walker,Aaron Nola
+2021-06-25,New York Mets,Philadelphia Phillies,1,2,0,David Peterson,Matt Moore
+2021-06-25,Milwaukee Brewers,Colorado Rockies,5,4,1,Corbin Burnes,Jon Gray
+2021-06-25,Toronto Blue Jays,Baltimore Orioles,5,6,0,Alek Manoah,Matt Harvey
+2021-06-25,Tampa Bay Rays,Los Angeles Angels,4,3,1,Andrew Kittredge,Griffin Canning
+2021-06-25,Cincinnati Reds,Atlanta Braves,2,3,0,Vladimir Gutierrez,Drew Smyly
+2021-06-25,Miami Marlins,Washington Nationals,11,2,1,Pablo López,Jon Lester
+2021-06-25,Boston Red Sox,New York Yankees,5,3,1,Martín Pérez,Domingo Germán
+2021-06-25,Texas Rangers,Kansas City Royals,9,4,1,Dane Dunning,Mike Minor
+2021-06-25,Minnesota Twins,Cleveland Indians,8,7,1,Danny Coulombe,Cal Quantrill
+2021-06-25,Chicago White Sox,Seattle Mariners,3,9,0,Carlos Rodón,Yusei Kikuchi
+2021-06-25,St. Louis Cardinals,Pittsburgh Pirates,4,5,0,Kwang Hyun Kim,Wil Crowe
+2021-06-25,San Francisco Giants,Oakland Athletics,2,0,1,Johnny Cueto,Sean Manaea
+2021-06-25,Los Angeles Dodgers,Chicago Cubs,6,2,1,Tony Gonsolin,Jake Arrieta
+2021-06-25,San Diego Padres,Arizona Diamondbacks,11,5,1,Chris Paddack,Corbin Martin
+2021-06-26,Detroit Tigers,Houston Astros,3,1,1,Casey Mize,Framber Valdez
+2021-06-26,Detroit Tigers,Houston Astros,2,3,0,Wily Peralta,Lance McCullers Jr.
+2021-06-26,Chicago White Sox,Seattle Mariners,2,3,0,Lance Lynn,Logan Gilbert
+2021-06-26,St. Louis Cardinals,Pittsburgh Pirates,3,1,1,Adam Wainwright,JT Brubaker
+2021-06-26,Toronto Blue Jays,Baltimore Orioles,12,4,1,Hyun Jin Ryu,Keegan Akin
+2021-06-26,Texas Rangers,Kansas City Royals,8,0,1,Kyle Gibson,Kyle Zimmer
+2021-06-26,Tampa Bay Rays,Los Angeles Angels,13,3,1,Shane McClanahan,Alex Cobb
+2021-06-26,New York Mets,Philadelphia Phillies,4,3,1,Jacob deGrom,Zach Eflin
+2021-06-26,Cincinnati Reds,Atlanta Braves,4,1,1,Luis Castillo,Ian Anderson
+2021-06-26,Miami Marlins,Washington Nationals,3,2,1,Zach Thompson,Patrick Corbin
+2021-06-26,Milwaukee Brewers,Colorado Rockies,10,4,1,Adrian Houser,Antonio Senzatela
+2021-06-26,Los Angeles Dodgers,Chicago Cubs,3,2,1,Julio Urías,Alec Mills
+2021-06-26,Boston Red Sox,New York Yankees,4,2,1,Nathan Eovaldi,Jordan Montgomery
+2021-06-26,San Francisco Giants,Oakland Athletics,6,5,1,Alex Wood,Frankie Montas
+2021-06-26,San Diego Padres,Arizona Diamondbacks,1,10,0,Dinelson Lamet,Merrill Kelly
+2021-06-27,Toronto Blue Jays,Baltimore Orioles,5,2,1,Ross Stripling,Jorge López
+2021-06-27,Detroit Tigers,Houston Astros,2,1,1,Tarik Skubal,Jake Odorizzi
+2021-06-27,Tampa Bay Rays,Los Angeles Angels,4,6,0,Ryan Yarbrough,Patrick Sandoval
+2021-06-27,New York Mets,Philadelphia Phillies,2,4,0,Marcus Stroman,Zack Wheeler
+2021-06-27,Cincinnati Reds,Atlanta Braves,0,4,0,Tyler Mahle,Kyle Muller
+2021-06-27,Miami Marlins,Washington Nationals,1,5,0,Sandy Alcantara,Max Scherzer
+2021-06-27,Boston Red Sox,New York Yankees,9,2,1,Eduardo Rodriguez,Gerrit Cole
+2021-06-27,Minnesota Twins,Cleveland Indians,8,2,1,J.A. Happ,Sam Hentges
+2021-06-27,Chicago White Sox,Seattle Mariners,2,3,0,Lance Lynn,Logan Gilbert
+2021-06-27,Milwaukee Brewers,Colorado Rockies,5,0,1,Eric Lauer,Chi Chi González
+2021-06-27,St. Louis Cardinals,Pittsburgh Pirates,2,7,0,Johan Oviedo,Max Kranick
+2021-06-27,Texas Rangers,Kansas City Royals,4,1,1,Jordan Lyles,Brady Singer
+2021-06-27,San Francisco Giants,Oakland Athletics,2,6,0,Sam Long,Cole Irvin
+2021-06-27,San Diego Padres,Arizona Diamondbacks,5,4,1,Yu Darvish,Zac Gallen
+2021-06-27,Chicago White Sox,Seattle Mariners,7,5,1,Ryan Burr,Robert Dugger
+2021-06-27,Los Angeles Dodgers,Chicago Cubs,7,1,1,Clayton Kershaw,Adbert Alzolay
+2021-06-28,Colorado Rockies,Pittsburgh Pirates,2,0,1,Kyle Freeland,Tyler Anderson
+2021-06-28,Cincinnati Reds,Philadelphia Phillies,12,4,1,Wade Miley,Spencer Howard
+2021-06-28,Washington Nationals,New York Mets,8,4,1,Paolo Espino,Jerad Eickhoff
+2021-06-28,New York Yankees,Los Angeles Angels,3,5,0,Michael King,Dylan Bundy
+2021-06-28,Cleveland Indians,Detroit Tigers,13,5,1,Eli Morgan,Matt Manning
+2021-06-28,Boston Red Sox,Kansas City Royals,6,5,1,Garrett Richards,Danny Duffy
+2021-06-28,Houston Astros,Baltimore Orioles,7,9,0,Zack Greinke,Thomas Eshelman
+2021-06-28,Milwaukee Brewers,Chicago Cubs,14,4,1,Freddy Peralta,Kyle Hendricks
+2021-06-28,St. Louis Cardinals,Arizona Diamondbacks,7,1,1,Wade LeBlanc,Jake Faria
+2021-06-28,Los Angeles Dodgers,San Francisco Giants,3,2,1,Trevor Bauer,Anthony DeSclafani
+2021-06-29,Washington Nationals,Tampa Bay Rays,4,3,1,Joe Ross,Rich Hill
+2021-06-29,Philadelphia Phillies,Miami Marlins,4,3,1,Vince Velasquez,Trevor Rogers
+2021-06-29,New York Yankees,Los Angeles Angels,11,5,1,Jameson Taillon,Andrew Heaney
+2021-06-29,Toronto Blue Jays,Seattle Mariners,9,3,1,Robbie Ray,Chris Flexen
+2021-06-29,Boston Red Sox,Kansas City Royals,7,6,1,Nick Pivetta,Brad Keller
+2021-06-29,Cincinnati Reds,San Diego Padres,4,5,0,Tony Santillan,Craig Stammen
+2021-06-29,Atlanta Braves,New York Mets,3,4,0,Charlie Morton,Tylor Megill
+2021-06-29,Houston Astros,Baltimore Orioles,3,13,0,José Urquidy,Travis Lakins
+2021-06-29,Chicago White Sox,Minnesota Twins,7,6,1,Lucas Giolito,Kenta Maeda
+2021-06-29,Milwaukee Brewers,Chicago Cubs,2,1,1,Brandon Woodruff,Zach Davies
+2021-06-29,St. Louis Cardinals,Arizona Diamondbacks,3,2,1,Carlos Martinez,Caleb Smith
+2021-06-29,Colorado Rockies,Pittsburgh Pirates,8,0,1,Germán Márquez,Chase De Jong
+2021-06-29,Oakland Athletics,Texas Rangers,4,5,0,James Kaprielian,Mike Foltynewicz
+2021-06-29,Los Angeles Dodgers,San Francisco Giants,3,1,1,Walker Buehler,Kevin Gausman
+2021-06-30,St. Louis Cardinals,Arizona Diamondbacks,7,4,1,Kwang Hyun Kim,Riley Smith
+2021-06-30,Milwaukee Brewers,Chicago Cubs,15,7,1,Aaron Ashby,Jake Arrieta
+2021-06-30,Colorado Rockies,Pittsburgh Pirates,6,2,1,Jon Gray,Chad Kuhl
+2021-06-30,Washington Nationals,Tampa Bay Rays,15,6,1,Jon Lester,Drew Rasmussen
+2021-06-30,Cleveland Indians,Detroit Tigers,4,9,0,Cal Quantrill,José Ureña
+2021-06-30,Cleveland Indians,Detroit Tigers,1,7,0,Logan Allen,Wily Peralta
+2021-06-30,Philadelphia Phillies,Miami Marlins,6,11,0,Aaron Nola,Jordan Holloway
+2021-06-30,New York Yankees,Los Angeles Angels,8,11,0,Domingo Germán,Shohei Ohtani
+2021-06-30,Toronto Blue Jays,Seattle Mariners,7,9,0,Steven Matz,Justus Sheffield
+2021-06-30,Boston Red Sox,Kansas City Royals,6,2,1,Martín Pérez,Mike Minor
+2021-06-30,Atlanta Braves,New York Mets,20,2,1,Max Fried,David Peterson
+2021-06-30,Houston Astros,Baltimore Orioles,2,5,0,Luis Garcia,Matt Harvey
+2021-06-30,Chicago White Sox,Minnesota Twins,13,3,1,Dylan Cease,Bailey Ober
+2021-06-30,Oakland Athletics,Texas Rangers,3,1,1,Chris Bassitt,Kolby Allard
+2021-07-01,Toronto Blue Jays,Seattle Mariners,2,7,0,Hyun Jin Ryu,Yusei Kikuchi
+2021-07-01,Boston Red Sox,Kansas City Royals,15,1,1,Nathan Eovaldi,Kris Bubic
+2021-07-01,Chicago White Sox,Minnesota Twins,8,5,1,Carlos Rodón,José Berríos
+2021-07-01,Oakland Athletics,Texas Rangers,3,8,0,Sean Manaea,Dane Dunning
+2021-07-01,Pittsburgh Pirates,Milwaukee Brewers,2,7,0,Wil Crowe,Corbin Burnes
+2021-07-01,Cleveland Indians,Houston Astros,2,7,0,J.C. Mejía,Framber Valdez
+2021-07-01,Cincinnati Reds,San Diego Padres,5,4,1,Luis Castillo,Ryan Weathers
+2021-07-01,Atlanta Braves,New York Mets,4,3,1,Ian Anderson,Jacob deGrom
+2021-07-01,Colorado Rockies,St. Louis Cardinals,5,2,1,Antonio Senzatela,Adam Wainwright
+2021-07-01,Arizona Diamondbacks,San Francisco Giants,5,3,1,Merrill Kelly,Johnny Cueto
+2021-07-02,Philadelphia Phillies,San Diego Padres,4,3,1,Zack Wheeler,Chris Paddack
+2021-07-02,Washington Nationals,Los Angeles Dodgers,5,10,0,Max Scherzer,Julio Urías
+2021-07-02,Pittsburgh Pirates,Milwaukee Brewers,2,7,0,JT Brubaker,Adrian Houser
+2021-07-02,Toronto Blue Jays,Tampa Bay Rays,11,1,1,Alek Manoah,Luis Patiño
+2021-07-02,Cincinnati Reds,Chicago Cubs,2,1,1,Sonny Gray,Alec Mills
+2021-07-02,Cleveland Indians,Houston Astros,3,6,0,Sam Hentges,Lance McCullers Jr.
+2021-07-02,Detroit Tigers,Chicago White Sox,2,8,0,Casey Mize,Lance Lynn
+2021-07-02,Atlanta Braves,Miami Marlins,1,0,1,Drew Smyly,Pablo López
+2021-07-02,Colorado Rockies,St. Louis Cardinals,3,9,0,Chi Chi González,Johan Oviedo
+2021-07-02,Kansas City Royals,Minnesota Twins,7,4,1,Brady Singer,J.A. Happ
+2021-07-02,Los Angeles Angels,Baltimore Orioles,8,7,1,Griffin Canning,Keegan Akin
+2021-07-02,Oakland Athletics,Boston Red Sox,2,3,0,Frankie Montas,Eduardo Rodriguez
+2021-07-02,Arizona Diamondbacks,San Francisco Giants,4,11,0,Zac Gallen,Alex Wood
+2021-07-02,Seattle Mariners,Texas Rangers,5,4,1,Logan Gilbert,Kyle Gibson
+2021-07-03,New York Yankees,New York Mets,3,8,0,Jordan Montgomery,Taijuan Walker
+2021-07-03,Toronto Blue Jays,Tampa Bay Rays,6,3,1,Ross Stripling,Shane McClanahan
+2021-07-03,Philadelphia Phillies,San Diego Padres,4,2,1,Zach Eflin,Yu Darvish
+2021-07-03,Pittsburgh Pirates,Milwaukee Brewers,2,11,0,Cody Ponce,Eric Lauer
+2021-07-03,Cincinnati Reds,Chicago Cubs,3,2,1,Tyler Mahle,Adbert Alzolay
+2021-07-03,Kansas City Royals,Minnesota Twins,6,3,1,Danny Duffy,
+2021-07-03,Detroit Tigers,Chicago White Sox,11,5,1,Tarik Skubal,Dallas Keuchel
+2021-07-03,Atlanta Braves,Miami Marlins,2,3,0,Kyle Muller,Sandy Alcantara
+2021-07-03,Cleveland Indians,Houston Astros,2,3,0,Eli Morgan,Jake Odorizzi
+2021-07-03,Washington Nationals,Los Angeles Dodgers,3,5,0,Paolo Espino,Clayton Kershaw
+2021-07-03,Oakland Athletics,Boston Red Sox,7,6,1,Cole Irvin,Garrett Richards
+2021-07-03,Colorado Rockies,St. Louis Cardinals,3,2,1,Kyle Freeland,Wade LeBlanc
+2021-07-03,Los Angeles Angels,Baltimore Orioles,4,1,1,Alex Cobb,Jorge López
+2021-07-03,Arizona Diamondbacks,San Francisco Giants,5,6,0,Jake Faria,Sam Long
+2021-07-03,Seattle Mariners,Texas Rangers,3,7,0,Marco Gonzales,Jordan Lyles
+2021-07-04,Washington Nationals,Los Angeles Dodgers,1,5,0,Joe Ross,Garrett Cleavinger
+2021-07-04,Philadelphia Phillies,San Diego Padres,1,11,0,Vince Velasquez,Blake Snell
+2021-07-04,Pittsburgh Pirates,Milwaukee Brewers,2,0,1,Tyler Anderson,Freddy Peralta
+2021-07-04,Toronto Blue Jays,Tampa Bay Rays,1,5,0,Robbie Ray,Ryan Yarbrough
+2021-07-04,Cincinnati Reds,Chicago Cubs,3,2,1,Wade Miley,Kyle Hendricks
+2021-07-04,Cleveland Indians,Houston Astros,3,4,0,Cal Quantrill,Zack Greinke
+2021-07-04,Detroit Tigers,Chicago White Sox,6,5,1,Matt Manning,Lucas Giolito
+2021-07-04,Atlanta Braves,Miami Marlins,8,7,1,Charlie Morton,Zach Thompson
+2021-07-04,New York Yankees,New York Mets,5,10,0,Gerrit Cole,Marcus Stroman
+2021-07-04,New York Yankees,New York Mets,4,2,1,Nestor Cortes,Corey Oswalt
+2021-07-04,Kansas City Royals,Minnesota Twins,2,6,0,Brad Keller,Kenta Maeda
+2021-07-04,Colorado Rockies,St. Louis Cardinals,3,2,1,Germán Márquez,Carlos Martinez
+2021-07-04,Los Angeles Angels,Baltimore Orioles,6,5,1,Patrick Sandoval,Thomas Eshelman
+2021-07-04,Oakland Athletics,Boston Red Sox,0,1,0,James Kaprielian,Nick Pivetta
+2021-07-04,Seattle Mariners,Texas Rangers,4,1,1,Chris Flexen,Mike Foltynewicz
+2021-07-04,Arizona Diamondbacks,San Francisco Giants,2,5,0,Caleb Smith,Anthony DeSclafani
+2021-07-05,San Francisco Giants,St. Louis Cardinals,3,5,0,Kevin Gausman,Kwang Hyun Kim
+2021-07-05,Miami Marlins,Los Angeles Dodgers,5,4,1,Trevor Rogers,Walker Buehler
+2021-07-05,Pittsburgh Pirates,Atlanta Braves,11,1,1,Chase De Jong,Max Fried
+2021-07-05,Tampa Bay Rays,Cleveland Indians,9,8,1,Rich Hill,Logan Allen
+2021-07-05,Minnesota Twins,Chicago White Sox,8,5,1,Bailey Ober,Dylan Cease
+2021-07-05,New York Mets,Milwaukee Brewers,4,2,1,Tylor Megill,Brandon Woodruff
+2021-07-05,Texas Rangers,Detroit Tigers,3,7,0,Kolby Allard,Wily Peralta
+2021-07-05,Chicago Cubs,Philadelphia Phillies,3,13,0,Zach Davies,Matt Moore
+2021-07-05,Kansas City Royals,Cincinnati Reds,2,6,0,Mike Minor,Vladimir Gutierrez
+2021-07-05,Los Angeles Angels,Boston Red Sox,4,5,0,José Suarez,Martín Pérez
+2021-07-05,San Diego Padres,Washington Nationals,5,7,0,Joe Musgrove,Jon Lester
+2021-07-06,Baltimore Orioles,Toronto Blue Jays,7,5,1,Spenser Watkins,Steven Matz
+2021-07-06,Pittsburgh Pirates,Atlanta Braves,2,1,1,Chad Kuhl,Ian Anderson
+2021-07-06,Miami Marlins,Los Angeles Dodgers,2,1,1,Pablo López,Tony Gonsolin
+2021-07-06,Texas Rangers,Detroit Tigers,10,5,1,Dane Dunning,José Ureña
+2021-07-06,Chicago Cubs,Philadelphia Phillies,10,15,0,Jake Arrieta,Aaron Nola
+2021-07-06,Kansas City Royals,Cincinnati Reds,7,6,1,Kris Bubic,Luis Castillo
+2021-07-06,Houston Astros,Oakland Athletics,9,6,1,Framber Valdez,Chris Bassitt
+2021-07-06,Minnesota Twins,Chicago White Sox,1,4,0,José Berríos,Carlos Rodón
+2021-07-06,Los Angeles Angels,Boston Red Sox,5,3,1,Shohei Ohtani,Nathan Eovaldi
+2021-07-06,Arizona Diamondbacks,Colorado Rockies,4,3,1,Merrill Kelly,Jon Gray
+2021-07-06,San Francisco Giants,St. Louis Cardinals,5,6,0,Johnny Cueto,Adam Wainwright
+2021-07-06,San Diego Padres,Washington Nationals,7,4,1,Ryan Weathers,Erick Fedde
+2021-07-06,Seattle Mariners,New York Yankees,1,12,0,Justus Sheffield,Jameson Taillon
+2021-07-07,Tampa Bay Rays,Cleveland Indians,8,1,1,Michael Wacha,J.C. Mejía
+2021-07-07,Tampa Bay Rays,Cleveland Indians,4,0,1,Collin McHugh,Sam Hentges
+2021-07-07,Pittsburgh Pirates,Atlanta Braves,3,14,0,Wil Crowe,Drew Smyly
+2021-07-07,Minnesota Twins,Chicago White Sox,1,6,0,Michael Pineda,Lance Lynn
+2021-07-07,Texas Rangers,Detroit Tigers,3,5,0,Kyle Gibson,Casey Mize
+2021-07-07,Kansas City Royals,Cincinnati Reds,2,5,0,Brady Singer,Sonny Gray
+2021-07-07,New York Mets,Milwaukee Brewers,4,3,1,Jacob deGrom,Corbin Burnes
+2021-07-07,New York Mets,Milwaukee Brewers,0,5,0,Robert Stock,Brett Anderson
+2021-07-07,Los Angeles Angels,Boston Red Sox,5,4,1,Andrew Heaney,Eduardo Rodriguez
+2021-07-07,Baltimore Orioles,Toronto Blue Jays,2,10,0,Matt Harvey,Hyun Jin Ryu
+2021-07-07,Miami Marlins,Los Angeles Dodgers,9,6,1,Ross Detwiler,Jake Reed
+2021-07-07,Chicago Cubs,Philadelphia Phillies,8,3,1,Alec Mills,Zack Wheeler
+2021-07-07,Houston Astros,Oakland Athletics,4,3,1,Luis Garcia,Sean Manaea
+2021-07-07,Arizona Diamondbacks,Colorado Rockies,6,4,1,Humberto Castellanos,Antonio Senzatela
+2021-07-07,San Francisco Giants,St. Louis Cardinals,5,2,1,Alex Wood,Johan Oviedo
+2021-07-07,San Diego Padres,Washington Nationals,5,15,0,Chris Paddack,Patrick Corbin
+2021-07-07,Seattle Mariners,New York Yankees,4,5,0,Yusei Kikuchi,Nick Nelson
+2021-07-08,Miami Marlins,Los Angeles Dodgers,1,6,0,Sandy Alcantara,Julio Urías
+2021-07-08,Houston Astros,Oakland Athletics,1,2,0,Lance McCullers Jr.,Frankie Montas
+2021-07-08,Arizona Diamondbacks,Colorado Rockies,3,9,0,Jake Faria,Chi Chi González
+2021-07-08,Seattle Mariners,New York Yankees,4,0,1,Logan Gilbert,Jordan Montgomery
+2021-07-08,Cleveland Indians,Kansas City Royals,7,4,1,Zach Plesac,Danny Duffy
+2021-07-08,Chicago Cubs,Philadelphia Phillies,0,8,0,Adbert Alzolay,Zach Eflin
+2021-07-08,Minnesota Twins,Detroit Tigers,5,3,1,J.A. Happ,Tarik Skubal
+2021-07-08,Milwaukee Brewers,Cincinnati Reds,5,3,1,Adrian Houser,Tyler Mahle
+2021-07-08,San Diego Padres,Washington Nationals,9,8,1,Yu Darvish,Max Scherzer
+2021-07-09,Chicago Cubs,St. Louis Cardinals,10,5,1,Kyle Hendricks,Wade LeBlanc
+2021-07-09,Baltimore Orioles,Chicago White Sox,1,12,0,Jorge López,Dallas Keuchel
+2021-07-09,Cleveland Indians,Kansas City Royals,2,1,1,Triston McKenzie,Brad Keller
+2021-07-09,New York Mets,Pittsburgh Pirates,13,4,1,Taijuan Walker,JT Brubaker
+2021-07-09,Tampa Bay Rays,Toronto Blue Jays,7,1,1,Shane McClanahan,Alek Manoah
+2021-07-09,Boston Red Sox,Philadelphia Phillies,11,5,1,Garrett Richards,Vince Velasquez
+2021-07-09,Miami Marlins,Atlanta Braves,0,5,0,Zach Thompson,Charlie Morton
+2021-07-09,Texas Rangers,Oakland Athletics,3,2,1,Jordan Lyles,Cole Irvin
+2021-07-09,Minnesota Twins,Detroit Tigers,4,2,1,Kenta Maeda,Matt Manning
+2021-07-09,Houston Astros,New York Yankees,0,4,0,Jake Odorizzi,Nestor Cortes
+2021-07-09,Milwaukee Brewers,Cincinnati Reds,0,2,0,Eric Lauer,Wade Miley
+2021-07-09,San Francisco Giants,Washington Nationals,5,3,1,Logan Webb,Paolo Espino
+2021-07-09,Los Angeles Dodgers,Arizona Diamondbacks,2,5,0,David Price,Taylor Widener
+2021-07-09,San Diego Padres,Colorado Rockies,4,2,1,Reiss Knehr,Kyle Freeland
+2021-07-09,Seattle Mariners,Los Angeles Angels,7,3,1,Marco Gonzales,Alex Cobb
+2021-07-10,Tampa Bay Rays,Toronto Blue Jays,5,2,1,Ryan Yarbrough,Ross Stripling
+2021-07-10,Minnesota Twins,Detroit Tigers,9,4,1,Bailey Ober,Kyle Funkhouser
+2021-07-10,San Francisco Giants,Washington Nationals,10,4,1,Anthony DeSclafani,Jon Lester
+2021-07-10,Texas Rangers,Oakland Athletics,4,8,0,Mike Foltynewicz,James Kaprielian
+2021-07-10,Baltimore Orioles,Chicago White Sox,3,8,0,Thomas Eshelman,Lucas Giolito
+2021-07-10,New York Mets,Pittsburgh Pirates,2,6,0,Marcus Stroman,Tyler Anderson
+2021-07-10,New York Mets,Pittsburgh Pirates,4,2,1,Tylor Megill,Max Kranick
+2021-07-10,Boston Red Sox,Philadelphia Phillies,2,11,0,Martín Pérez,Matt Moore
+2021-07-10,Miami Marlins,Atlanta Braves,4,5,0,Trevor Rogers,Max Fried
+2021-07-10,Cleveland Indians,Kansas City Royals,14,6,1,Cal Quantrill,Mike Minor
+2021-07-10,Chicago Cubs,St. Louis Cardinals,0,6,0,Zach Davies,Kwang Hyun Kim
+2021-07-10,Houston Astros,New York Yankees,0,1,0,Zack Greinke,Gerrit Cole
+2021-07-10,Milwaukee Brewers,Cincinnati Reds,3,4,0,Freddy Peralta,Vladimir Gutierrez
+2021-07-10,Los Angeles Dodgers,Arizona Diamondbacks,22,1,1,Walker Buehler,Caleb Smith
+2021-07-10,San Diego Padres,Colorado Rockies,0,3,0,Joe Musgrove,Germán Márquez
+2021-07-10,Seattle Mariners,Los Angeles Angels,2,0,1,Chris Flexen,Patrick Sandoval
+2021-07-11,Baltimore Orioles,Chicago White Sox,5,7,0,Spenser Watkins,Dylan Cease
+2021-07-11,New York Mets,Pittsburgh Pirates,5,6,0,Aaron Loup,Chase De Jong
+2021-07-11,Tampa Bay Rays,Toronto Blue Jays,1,3,0,Rich Hill,Robbie Ray
+2021-07-11,Boston Red Sox,Philadelphia Phillies,4,5,0,Nick Pivetta,Brandon Kintzler
+2021-07-11,Miami Marlins,Atlanta Braves,7,4,1,Pablo López,Ian Anderson
+2021-07-11,Minnesota Twins,Detroit Tigers,12,9,1,José Berríos,Wily Peralta
+2021-07-11,Houston Astros,New York Yankees,8,7,1,Framber Valdez,Jameson Taillon
+2021-07-11,Milwaukee Brewers,Cincinnati Reds,1,3,0,Brandon Woodruff,Luis Castillo
+2021-07-11,Texas Rangers,Oakland Athletics,1,4,0,Kolby Allard,Chris Bassitt
+2021-07-11,San Francisco Giants,Washington Nationals,3,1,1,Kevin Gausman,Erick Fedde
+2021-07-11,Los Angeles Dodgers,Arizona Diamondbacks,7,4,1,Tony Gonsolin,Merrill Kelly
+2021-07-11,San Diego Padres,Colorado Rockies,1,3,0,Ryan Weathers,Jon Gray
+2021-07-11,Seattle Mariners,Los Angeles Angels,1,7,0,Héctor Santiago,José Suarez
+2021-07-16,Philadelphia Phillies,Miami Marlins,5,2,1,Matt Moore,Sandy Alcantara
+2021-07-16,Philadelphia Phillies,Miami Marlins,0,7,0,Zach Eflin,Ross Detwiler
+2021-07-16,Pittsburgh Pirates,New York Mets,4,1,1,Chad Kuhl,Marcus Stroman
+2021-07-16,Washington Nationals,San Diego Padres,8,24,0,Erick Fedde,Chris Paddack
+2021-07-16,New York Yankees,Boston Red Sox,0,4,0,Jordan Montgomery,Eduardo Rodriguez
+2021-07-16,Toronto Blue Jays,Texas Rangers,10,2,1,Robbie Ray,Jordan Lyles
+2021-07-16,Cincinnati Reds,Milwaukee Brewers,6,11,0,Tyler Mahle,Adrian Houser
+2021-07-16,Atlanta Braves,Tampa Bay Rays,6,7,0,Charlie Morton,Michael Wacha
+2021-07-16,Kansas City Royals,Baltimore Orioles,9,2,1,Danny Duffy,Keegan Akin
+2021-07-16,Chicago White Sox,Houston Astros,1,7,0,Dylan Cease,Lance McCullers Jr.
+2021-07-16,St. Louis Cardinals,San Francisco Giants,2,7,0,Adam Wainwright,Logan Webb
+2021-07-16,Colorado Rockies,Los Angeles Dodgers,4,10,0,Chi Chi González,Julio Urías
+2021-07-16,Los Angeles Angels,Seattle Mariners,5,6,0,Andrew Heaney,Chris Flexen
+2021-07-16,Arizona Diamondbacks,Chicago Cubs,1,5,0,Madison Bumgarner,Kyle Hendricks
+2021-07-16,Oakland Athletics,Cleveland Indians,5,4,1,Sean Manaea,Eli Morgan
+2021-07-17,Detroit Tigers,Minnesota Twins,1,0,1,José Ureña,Charlie Barnes
+2021-07-17,Detroit Tigers,Minnesota Twins,5,4,1,Tyler Alexander,Kenta Maeda
+2021-07-17,Oakland Athletics,Cleveland Indians,2,3,0,Frankie Montas,Cal Quantrill
+2021-07-17,Arizona Diamondbacks,Chicago Cubs,2,4,0,Zac Gallen,Adbert Alzolay
+2021-07-17,Philadelphia Phillies,Miami Marlins,4,2,1,Vince Velasquez,Zach Thompson
+2021-07-17,Pittsburgh Pirates,New York Mets,9,7,1,Wil Crowe,Tylor Megill
+2021-07-17,Washington Nationals,San Diego Padres,4,10,0,Patrick Corbin,Blake Snell
+2021-07-17,Kansas City Royals,Baltimore Orioles,4,8,0,Brady Singer,Jorge López
+2021-07-17,Cincinnati Reds,Milwaukee Brewers,4,7,0,Luis Castillo,Brandon Woodruff
+2021-07-17,St. Louis Cardinals,San Francisco Giants,3,1,1,Kwang Hyun Kim,Anthony DeSclafani
+2021-07-17,Chicago White Sox,Houston Astros,10,1,1,Lucas Giolito,Jake Odorizzi
+2021-07-17,Atlanta Braves,Tampa Bay Rays,9,0,1,Max Fried,Josh Fleming
+2021-07-17,Colorado Rockies,Los Angeles Dodgers,2,9,0,Kyle Freeland,Walker Buehler
+2021-07-17,Los Angeles Angels,Seattle Mariners,9,4,1,Alex Cobb,Yusei Kikuchi
+2021-07-18,Pittsburgh Pirates,New York Mets,6,7,0,JT Brubaker,Taijuan Walker
+2021-07-18,Washington Nationals,San Diego Padres,4,10,0,Patrick Corbin,Blake Snell
+2021-07-18,Philadelphia Phillies,Miami Marlins,4,2,1,Vince Velasquez,Zach Thompson
+2021-07-18,Toronto Blue Jays,Texas Rangers,5,0,1,Hyun Jin Ryu,Kolby Allard
+2021-07-18,Toronto Blue Jays,Texas Rangers,10,0,1,Steven Matz,Mike Foltynewicz
+2021-07-18,Detroit Tigers,Minnesota Twins,7,0,1,Wily Peralta,J.A. Happ
+2021-07-18,Cincinnati Reds,Milwaukee Brewers,0,8,0,Sonny Gray,Corbin Burnes
+2021-07-18,Atlanta Braves,Tampa Bay Rays,5,7,0,Drew Smyly,Rich Hill
+2021-07-18,Philadelphia Phillies,Miami Marlins,7,4,1,Zack Wheeler,Braxton Garrett
+2021-07-18,Kansas City Royals,Baltimore Orioles,0,5,0,Carlos Hernández,Matt Harvey
+2021-07-18,Chicago White Sox,Houston Astros,4,0,1,Carlos Rodón,Framber Valdez
+2021-07-18,St. Louis Cardinals,San Francisco Giants,2,1,1,Wade LeBlanc,Johnny Cueto
+2021-07-18,Washington Nationals,San Diego Padres,8,7,1,Max Scherzer,Joe Musgrove
+2021-07-18,Colorado Rockies,Los Angeles Dodgers,6,5,1,Jon Gray,David Price
+2021-07-18,Oakland Athletics,Cleveland Indians,2,4,0,Chris Bassitt,Zach Plesac
+2021-07-18,Los Angeles Angels,Seattle Mariners,4,7,0,Patrick Sandoval,Logan Gilbert
+2021-07-18,Arizona Diamondbacks,Chicago Cubs,6,4,1,Merrill Kelly,Zach Davies
+2021-07-18,New York Yankees,Boston Red Sox,9,1,1,Jameson Taillon,Martín Pérez
+2021-07-19,Chicago White Sox,Minnesota Twins,2,3,0,Lance Lynn,Griffin Jax
+2021-07-19,Chicago White Sox,Minnesota Twins,5,3,1,Reynaldo López,José Berríos
+2021-07-19,Washington Nationals,Miami Marlins,18,1,1,Jon Lester,Ross Detwiler
+2021-07-19,Toronto Blue Jays,Boston Red Sox,4,13,0,Ross Stripling,Nick Pivetta
+2021-07-19,Cincinnati Reds,New York Mets,11,15,0,Vladimir Gutierrez,Jerad Eickhoff
+2021-07-19,Tampa Bay Rays,Baltimore Orioles,1,6,0,Ryan Yarbrough,Spenser Watkins
+2021-07-19,Detroit Tigers,Texas Rangers,14,0,1,Casey Mize,Kyle Gibson
+2021-07-19,Houston Astros,Cleveland Indians,4,3,1,Zack Greinke,J.C. Mejía
+2021-07-19,St. Louis Cardinals,Chicago Cubs,8,3,1,Jake Woodford,Alec Mills
+2021-07-19,Oakland Athletics,Los Angeles Angels,4,1,1,Cole Irvin,Shohei Ohtani
+2021-07-19,Arizona Diamondbacks,Pittsburgh Pirates,4,2,1,Caleb Smith,Chase De Jong
+2021-07-19,Los Angeles Dodgers,San Francisco Giants,2,7,0,Tony Gonsolin,Kevin Gausman
+2021-07-20,Oakland Athletics,Los Angeles Angels,6,0,1,James Kaprielian,José Suarez
+2021-07-20,Milwaukee Brewers,Kansas City Royals,2,5,0,Brett Anderson,Mike Minor
+2021-07-20,Washington Nationals,Miami Marlins,6,3,1,Paolo Espino,Trevor Rogers
+2021-07-20,New York Yankees,Philadelphia Phillies,6,4,1,Domingo Germán,Aaron Nola
+2021-07-20,Cincinnati Reds,New York Mets,4,3,1,Wade Miley,Robert Stock
+2021-07-20,Tampa Bay Rays,Baltimore Orioles,9,3,1,Shane McClanahan,John Means
+2021-07-20,Detroit Tigers,Texas Rangers,4,1,1,Tarik Skubal,Dane Dunning
+2021-07-20,Atlanta Braves,San Diego Padres,2,1,1,Touki Toussaint,Yu Darvish
+2021-07-20,Houston Astros,Cleveland Indians,9,3,1,Luis Garcia,Triston McKenzie
+2021-07-20,Chicago White Sox,Minnesota Twins,9,5,1,Dallas Keuchel,Bailey Ober
+2021-07-20,St. Louis Cardinals,Chicago Cubs,6,7,0,Johan Oviedo,Trevor Williams
+2021-07-20,Colorado Rockies,Seattle Mariners,4,6,0,Germán Márquez,Marco Gonzales
+2021-07-20,Arizona Diamondbacks,Pittsburgh Pirates,11,6,1,Taylor Widener,Tyler Anderson
+2021-07-20,Los Angeles Dodgers,San Francisco Giants,8,6,1,Darien Núñez,Alex Wood
+2021-07-21,Tampa Bay Rays,Baltimore Orioles,5,4,1,Michael Wacha,Alex Wells
+2021-07-21,Atlanta Braves,San Diego Padres,2,3,0,Kyle Muller,Chris Paddack
+2021-07-21,Atlanta Braves,San Diego Padres,5,6,0,Bryse Wilson,Reiss Knehr
+2021-07-21,Cincinnati Reds,New York Mets,0,7,0,Jeff Hoffman,Marcus Stroman
+2021-07-21,Milwaukee Brewers,Kansas City Royals,3,6,0,Eric Lauer,Brad Keller
+2021-07-21,Colorado Rockies,Seattle Mariners,6,3,1,Austin Gomber,Keynan Middleton
+2021-07-21,Arizona Diamondbacks,Pittsburgh Pirates,6,4,1,Madison Bumgarner,Max Kranick
+2021-07-21,Washington Nationals,Miami Marlins,1,3,0,Erick Fedde,Nick Neidert
+2021-07-21,New York Yankees,Philadelphia Phillies,6,5,1,Asher Wojciechowski,Spencer Howard
+2021-07-21,Toronto Blue Jays,Boston Red Sox,4,7,0,Robbie Ray,Garrett Richards
+2021-07-21,Detroit Tigers,Texas Rangers,4,2,1,Matt Manning,Jordan Lyles
+2021-07-21,Houston Astros,Cleveland Indians,4,5,0,Lance McCullers Jr.,Eli Morgan
+2021-07-21,Chicago White Sox,Minnesota Twins,2,7,0,Dylan Cease,Michael Pineda
+2021-07-21,St. Louis Cardinals,Chicago Cubs,3,2,1,Adam Wainwright,Kyle Hendricks
+2021-07-21,Los Angeles Dodgers,San Francisco Giants,2,4,0,Julio Urías,Logan Webb
+2021-07-22,Detroit Tigers,Texas Rangers,7,5,1,Tyler Alexander,Mike Foltynewicz
+2021-07-22,Philadelphia Phillies,Atlanta Braves,2,7,0,Matt Moore,Charlie Morton
+2021-07-22,Cleveland Indians,Tampa Bay Rays,4,5,0,Cal Quantrill,Luis Patiño
+2021-07-22,Miami Marlins,San Diego Padres,2,3,0,Anthony Bender,Blake Snell
+2021-07-22,Boston Red Sox,New York Yankees,5,4,1,Tanner Houck,Jordan Montgomery
+2021-07-22,St. Louis Cardinals,Chicago Cubs,3,2,1,Kwang Hyun Kim,Adbert Alzolay
+2021-07-22,Minnesota Twins,Los Angeles Angels,2,3,0,Kenta Maeda,Andrew Heaney
+2021-07-22,Seattle Mariners,Oakland Athletics,1,4,0,Chris Flexen,Sean Manaea
+2021-07-22,Los Angeles Dodgers,San Francisco Giants,3,5,0,Walker Buehler,Anthony DeSclafani
+2021-07-23,Chicago Cubs,Arizona Diamondbacks,8,3,1,Zach Davies,Zac Gallen
+2021-07-23,Baltimore Orioles,Washington Nationals,6,1,1,Jorge López,Patrick Corbin
+2021-07-23,Philadelphia Phillies,Atlanta Braves,5,1,1,Zack Wheeler,Max Fried
+2021-07-23,Cincinnati Reds,St. Louis Cardinals,6,5,1,Tyler Mahle,Wade LeBlanc
+2021-07-23,Cleveland Indians,Tampa Bay Rays,5,10,0,Zach Plesac,Josh Fleming
+2021-07-23,New York Mets,Toronto Blue Jays,3,0,1,Tylor Megill,Steven Matz
+2021-07-23,Miami Marlins,San Diego Padres,2,5,0,Zach Thompson,Joe Musgrove
+2021-07-23,Boston Red Sox,New York Yankees,6,2,1,Eduardo Rodriguez,Gerrit Cole
+2021-07-23,Kansas City Royals,Detroit Tigers,5,3,1,Kris Bubic,Wily Peralta
+2021-07-23,Houston Astros,Texas Rangers,7,3,1,Jake Odorizzi,Kolby Allard
+2021-07-23,Minnesota Twins,Los Angeles Angels,5,4,1,J.A. Happ,Alex Cobb
+2021-07-23,Milwaukee Brewers,Chicago White Sox,7,1,1,Freddy Peralta,Lucas Giolito
+2021-07-23,San Francisco Giants,Pittsburgh Pirates,4,6,0,Johnny Cueto,Chad Kuhl
+2021-07-23,Los Angeles Dodgers,Colorado Rockies,6,9,0,David Price,Chi Chi González
+2021-07-23,Seattle Mariners,Oakland Athletics,4,3,1,Yusei Kikuchi,Frankie Montas
+2021-07-24,Chicago Cubs,Arizona Diamondbacks,3,7,0,Alec Mills,Merrill Kelly
+2021-07-24,Boston Red Sox,New York Yankees,3,4,0,Nathan Eovaldi,Jameson Taillon
+2021-07-24,Philadelphia Phillies,Atlanta Braves,3,15,0,Vince Velasquez,Drew Smyly
+2021-07-24,Miami Marlins,San Diego Padres,3,2,1,Braxton Garrett,Ryan Weathers
+2021-07-24,Baltimore Orioles,Washington Nationals,5,3,1,Matt Harvey,Jon Lester
+2021-07-24,Kansas City Royals,Detroit Tigers,9,8,1,Carlos Hernández,Casey Mize
+2021-07-24,Cincinnati Reds,St. Louis Cardinals,5,3,1,Luis Castillo,Jake Woodford
+2021-07-24,Cleveland Indians,Tampa Bay Rays,2,8,0,J.C. Mejía,Drew Rasmussen
+2021-07-24,Houston Astros,Texas Rangers,4,1,1,Framber Valdez,Kyle Gibson
+2021-07-24,New York Mets,Toronto Blue Jays,3,10,0,Taijuan Walker,Hyun Jin Ryu
+2021-07-24,Minnesota Twins,Los Angeles Angels,1,2,0,José Berríos,Patrick Sandoval
+2021-07-24,Milwaukee Brewers,Chicago White Sox,6,1,1,Corbin Burnes,Carlos Rodón
+2021-07-24,San Francisco Giants,Pittsburgh Pirates,2,10,0,Kevin Gausman,Wil Crowe
+2021-07-24,Los Angeles Dodgers,Colorado Rockies,1,0,1,Tony Gonsolin,Kyle Freeland
+2021-07-24,Seattle Mariners,Oakland Athletics,5,4,1,Logan Gilbert,Chris Bassitt
+2021-07-25,Baltimore Orioles,Washington Nationals,5,4,1,John Means,Paolo Espino
+2021-07-25,Philadelphia Phillies,Atlanta Braves,2,1,1,Aaron Nola,Touki Toussaint
+2021-07-25,Cincinnati Reds,St. Louis Cardinals,6,10,0,Sonny Gray,Johan Oviedo
+2021-07-25,Cleveland Indians,Tampa Bay Rays,3,2,1,Triston McKenzie,Ryan Yarbrough
+2021-07-25,New York Mets,Toronto Blue Jays,5,4,1,Rich Hill,Ross Stripling
+2021-07-25,Miami Marlins,San Diego Padres,9,3,1,John Curtiss,Yu Darvish
+2021-07-25,Boston Red Sox,New York Yankees,5,4,1,Martín Pérez,Domingo Germán
+2021-07-25,Kansas City Royals,Detroit Tigers,6,1,1,Daniel Lynch IV,Tarik Skubal
+2021-07-25,Houston Astros,Texas Rangers,3,1,1,Zack Greinke,Taylor Hearn
+2021-07-25,Minnesota Twins,Los Angeles Angels,2,6,0,Bailey Ober,Jaime Barria
+2021-07-25,Chicago Cubs,Arizona Diamondbacks,5,1,1,Trevor Williams,Caleb Smith
+2021-07-25,San Francisco Giants,Pittsburgh Pirates,6,1,1,Alex Wood,JT Brubaker
+2021-07-25,Los Angeles Dodgers,Colorado Rockies,3,2,1,Josiah Gray,Jon Gray
+2021-07-25,Seattle Mariners,Oakland Athletics,4,3,1,Marco Gonzales,Cole Irvin
+2021-07-25,Milwaukee Brewers,Chicago White Sox,1,3,0,Brandon Woodruff,Lance Lynn
+2021-07-26,New York Mets,Atlanta Braves,0,2,0,Marcus Stroman,Kyle Muller
+2021-07-26,New York Mets,Atlanta Braves,1,0,1,Aaron Loup,Bryse Wilson
+2021-07-26,Philadelphia Phillies,Washington Nationals,6,5,1,Spencer Howard,Joe Ross
+2021-07-26,Boston Red Sox,Toronto Blue Jays,5,4,1,Nick Pivetta,Thomas Hatch
+2021-07-26,Chicago Cubs,Cincinnati Reds,6,5,1,Kyle Hendricks,Wade Miley
+2021-07-26,Minnesota Twins,Detroit Tigers,6,5,1,Michael Pineda,Matt Manning
+2021-07-26,Kansas City Royals,Chicago White Sox,4,3,1,Mike Minor,Dallas Keuchel
+2021-07-26,Los Angeles Angels,Colorado Rockies,6,2,1,Shohei Ohtani,Germán Márquez
+2021-07-26,Seattle Mariners,Houston Astros,11,8,1,Darren McCaughan,Luis Garcia
+2021-07-27,Philadelphia Phillies,Washington Nationals,4,6,0,Matt Moore,Erick Fedde
+2021-07-27,Baltimore Orioles,Miami Marlins,3,7,0,Spenser Watkins,Sandy Alcantara
+2021-07-27,Pittsburgh Pirates,Milwaukee Brewers,0,9,0,Luis Oviedo,Brett Anderson
+2021-07-27,Cleveland Indians,St. Louis Cardinals,2,4,0,Cal Quantrill,Adam Wainwright
+2021-07-27,New York Mets,Atlanta Braves,5,12,0,Jerad Eickhoff,Charlie Morton
+2021-07-27,Tampa Bay Rays,New York Yankees,3,4,0,Shane McClanahan,Jordan Montgomery
+2021-07-27,Chicago Cubs,Cincinnati Reds,4,7,0,Adbert Alzolay,Vladimir Gutierrez
+2021-07-27,Texas Rangers,Arizona Diamondbacks,5,4,1,Dane Dunning,Taylor Widener
+2021-07-27,Minnesota Twins,Detroit Tigers,5,6,0,Kenta Maeda,Tyler Alexander
+2021-07-27,Kansas City Royals,Chicago White Sox,3,5,0,Brad Keller,Dylan Cease
+2021-07-27,Los Angeles Angels,Colorado Rockies,3,12,0,José Suarez,Austin Gomber
+2021-07-27,San Francisco Giants,Los Angeles Dodgers,2,1,1,Logan Webb,Julio Urías
+2021-07-27,San Diego Padres,Oakland Athletics,7,4,1,Chris Paddack,James Kaprielian
+2021-07-27,Seattle Mariners,Houston Astros,6,8,0,Chris Flexen,Lance McCullers Jr.
+2021-07-28,Cleveland Indians,St. Louis Cardinals,7,2,1,Zach Plesac,Kwang Hyun Kim
+2021-07-28,Minnesota Twins,Detroit Tigers,14,17,0,J.A. Happ,Wily Peralta
+2021-07-28,Boston Red Sox,Toronto Blue Jays,1,4,0,Garrett Richards,Robbie Ray
+2021-07-28,Boston Red Sox,Toronto Blue Jays,4,1,1,Tanner Houck,Steven Matz
+2021-07-28,Seattle Mariners,Houston Astros,4,11,0,Yusei Kikuchi,Jake Odorizzi
+2021-07-28,San Diego Padres,Oakland Athletics,4,10,0,Blake Snell,Sean Manaea
+2021-07-28,Baltimore Orioles,Miami Marlins,8,7,1,Jorge López,Jordan Holloway
+2021-07-28,Pittsburgh Pirates,Milwaukee Brewers,3,7,0,Max Kranick,Adrian Houser
+2021-07-28,New York Mets,Atlanta Braves,2,1,1,Tylor Megill,Max Fried
+2021-07-28,Tampa Bay Rays,New York Yankees,1,3,0,Michael Wacha,Nestor Cortes
+2021-07-28,Chicago Cubs,Cincinnati Reds,2,8,0,Zach Davies,Tyler Mahle
+2021-07-28,Texas Rangers,Arizona Diamondbacks,2,3,0,Jordan Lyles,Madison Bumgarner
+2021-07-28,Kansas City Royals,Chicago White Sox,3,2,1,Kris Bubic,Lucas Giolito
+2021-07-28,Los Angeles Angels,Colorado Rockies,8,7,1,Andrew Heaney,Lucas Gilbreath
+2021-07-28,San Francisco Giants,Los Angeles Dodgers,0,8,0,Anthony DeSclafani,Walker Buehler
+2021-07-29,Philadelphia Phillies,Washington Nationals,1,3,0,Zack Wheeler,Max Scherzer
+2021-07-29,Philadelphia Phillies,Washington Nationals,11,8,1,Cristopher Sánchez,Patrick Corbin
+2021-07-29,New York Mets,Atlanta Braves,3,6,0,Taijuan Walker,Drew Smyly
+2021-07-29,Tampa Bay Rays,New York Yankees,14,0,1,Luis Patiño,Gerrit Cole
+2021-07-29,Kansas City Royals,Chicago White Sox,5,0,1,Carlos Hernández,Carlos Rodón
+2021-07-29,Chicago Cubs,Cincinnati Reds,4,7,0,Alec Mills,Luis Castillo
+2021-07-29,San Francisco Giants,Los Angeles Dodgers,5,0,1,Johnny Cueto,David Price
+2021-07-29,Pittsburgh Pirates,Milwaukee Brewers,0,12,0,Chad Kuhl,Freddy Peralta
+2021-07-29,Detroit Tigers,Baltimore Orioles,6,2,1,Casey Mize,Alex Wells
+2021-07-29,Boston Red Sox,Toronto Blue Jays,1,13,0,Eduardo Rodriguez,Hyun Jin Ryu
+2021-07-29,Los Angeles Angels,Oakland Athletics,0,4,0,Dylan Bundy,Frankie Montas
+2021-07-29,San Diego Padres,Colorado Rockies,3,0,1,Joe Musgrove,Kyle Freeland
+2021-07-30,Washington Nationals,Chicago Cubs,4,3,1,Paolo Espino,Jake Arrieta
+2021-07-30,Pittsburgh Pirates,Philadelphia Phillies,7,0,1,Wil Crowe,Vince Velasquez
+2021-07-30,Toronto Blue Jays,Kansas City Royals,6,4,1,Ross Stripling,Daniel Lynch IV
+2021-07-30,Detroit Tigers,Baltimore Orioles,3,4,0,Tarik Skubal,Matt Harvey
+2021-07-30,New York Mets,Cincinnati Reds,2,6,0,Carlos Carrasco,Sonny Gray
+2021-07-30,Tampa Bay Rays,Boston Red Sox,7,3,1,Josh Fleming,Martín Pérez
+2021-07-30,Miami Marlins,New York Yankees,1,3,0,Zach Thompson,Jameson Taillon
+2021-07-30,Atlanta Braves,Milwaukee Brewers,5,9,0,Touki Toussaint,Corbin Burnes
+2021-07-30,Texas Rangers,Seattle Mariners,5,9,0,Kolby Allard,Logan Gilbert
+2021-07-30,Chicago White Sox,Cleveland Indians,6,4,1,Lance Lynn,J.C. Mejía
+2021-07-30,St. Louis Cardinals,Minnesota Twins,5,1,1,Wade LeBlanc,Griffin Jax
+2021-07-30,Los Angeles Angels,Oakland Athletics,0,2,0,Patrick Sandoval,Chris Bassitt
+2021-07-30,Arizona Diamondbacks,Los Angeles Dodgers,6,5,1,Zac Gallen,Tony Gonsolin
+2021-07-30,San Francisco Giants,Houston Astros,6,9,0,Kevin Gausman,Framber Valdez
+2021-07-30,San Diego Padres,Colorado Rockies,4,9,0,Ryan Weathers,Jon Gray
+2021-07-31,Toronto Blue Jays,Kansas City Royals,4,0,1,Alek Manoah,Mike Minor
+2021-07-31,Los Angeles Angels,Oakland Athletics,1,0,1,Jaime Barria,Cole Irvin
+2021-07-31,San Francisco Giants,Houston Astros,8,6,1,Alex Wood,Zack Greinke
+2021-07-31,Detroit Tigers,Baltimore Orioles,2,5,0,Matt Manning,John Means
+2021-07-31,Tampa Bay Rays,Boston Red Sox,9,5,1,Ryan Yarbrough,Nathan Eovaldi
+2021-07-31,Miami Marlins,New York Yankees,2,4,0,Trevor Rogers,Domingo Germán
+2021-07-31,Washington Nationals,Chicago Cubs,3,6,0,Joe Ross,Kyle Hendricks
+2021-07-31,Texas Rangers,Seattle Mariners,5,4,1,Taylor Hearn,Tyler Anderson
+2021-07-31,Pittsburgh Pirates,Philadelphia Phillies,3,2,1,JT Brubaker,Aaron Nola
+2021-07-31,New York Mets,Cincinnati Reds,5,4,1,Rich Hill,Wade Miley
+2021-07-31,Chicago White Sox,Cleveland Indians,11,12,0,Dallas Keuchel,Triston McKenzie
+2021-07-31,St. Louis Cardinals,Minnesota Twins,1,8,0,Jake Woodford,Bailey Ober
+2021-07-31,Atlanta Braves,Milwaukee Brewers,8,1,1,Kyle Muller,Brandon Woodruff
+2021-07-31,Arizona Diamondbacks,Los Angeles Dodgers,3,8,0,Merrill Kelly,Mitch White
+2021-07-31,San Diego Padres,Colorado Rockies,3,5,0,Yu Darvish,Germán Márquez
+2021-08-01,Washington Nationals,Chicago Cubs,6,5,1,Erick Fedde,Adbert Alzolay
+2021-08-01,Pittsburgh Pirates,Philadelphia Phillies,4,15,0,Mitch Keller,Kyle Gibson
+2021-08-01,Toronto Blue Jays,Kansas City Royals,5,1,1,José Berríos,Brad Keller
+2021-08-01,Detroit Tigers,Baltimore Orioles,6,2,1,Tyler Alexander,Spenser Watkins
+2021-08-01,New York Mets,Cincinnati Reds,1,7,0,Marcus Stroman,Vladimir Gutierrez
+2021-08-01,Miami Marlins,New York Yankees,1,3,0,Sandy Alcantara,Jordan Montgomery
+2021-08-01,Atlanta Braves,Milwaukee Brewers,1,2,0,Charlie Morton,Brett Anderson
+2021-08-01,Chicago White Sox,Cleveland Indians,2,1,1,Jimmy Lambert,Cal Quantrill
+2021-08-01,St. Louis Cardinals,Minnesota Twins,7,3,1,Adam Wainwright,Michael Pineda
+2021-08-01,Texas Rangers,Seattle Mariners,4,3,1,Mike Foltynewicz,Marco Gonzales
+2021-08-01,San Francisco Giants,Houston Astros,5,3,1,Logan Webb,Luis Garcia
+2021-08-01,Los Angeles Angels,Oakland Athletics,3,8,0,Reid Detmers,Daulton Jefferies
+2021-08-01,Arizona Diamondbacks,Los Angeles Dodgers,0,13,0,Caleb Smith,Julio Urías
+2021-08-01,San Diego Padres,Colorado Rockies,8,1,1,Reiss Knehr,Austin Gomber
+2021-08-01,Tampa Bay Rays,Boston Red Sox,3,2,1,Shane McClanahan,Nick Pivetta
+2021-08-02,Toronto Blue Jays,Cleveland Indians,2,5,0,Robbie Ray,Eli Morgan
+2021-08-02,Washington Nationals,Philadelphia Phillies,5,7,0,Josiah Gray,Ranger Suarez
+2021-08-02,New York Yankees,Baltimore Orioles,1,7,0,Andrew Heaney,Jorge López
+2021-08-02,Tampa Bay Rays,Seattle Mariners,2,8,0,Michael Wacha,Chris Flexen
+2021-08-02,Miami Marlins,New York Mets,6,3,1,Jesús Luzardo,Tylor Megill
+2021-08-02,Texas Rangers,Los Angeles Angels,4,1,1,Dane Dunning,Chris Rodriguez
+2021-08-02,Milwaukee Brewers,Pittsburgh Pirates,6,2,1,Eric Lauer,Bryse Wilson
+2021-08-02,Arizona Diamondbacks,San Francisco Giants,8,11,0,Taylor Widener,Anthony DeSclafani
+2021-08-03,Washington Nationals,Philadelphia Phillies,4,5,0,Patrick Corbin,Zack Wheeler
+2021-08-03,New York Yankees,Baltimore Orioles,13,1,1,Luis Gil,Alex Wells
+2021-08-03,Toronto Blue Jays,Cleveland Indians,7,2,1,Hyun Jin Ryu,Zach Plesac
+2021-08-03,Detroit Tigers,Boston Red Sox,4,2,1,Wily Peralta,Garrett Richards
+2021-08-03,Tampa Bay Rays,Seattle Mariners,2,4,0,Luis Patiño,Yusei Kikuchi
+2021-08-03,Cincinnati Reds,Minnesota Twins,5,7,0,Tyler Mahle,Kenta Maeda
+2021-08-03,Miami Marlins,New York Mets,5,4,1,Nick Neidert,Taijuan Walker
+2021-08-03,Texas Rangers,Los Angeles Angels,3,11,0,Jordan Lyles,José Suarez
+2021-08-03,Chicago White Sox,Kansas City Royals,7,1,1,Dylan Cease,Kris Bubic
+2021-08-03,Milwaukee Brewers,Pittsburgh Pirates,5,8,0,Adrian Houser,Max Kranick
+2021-08-03,St. Louis Cardinals,Atlanta Braves,1,6,0,Jon Lester,Max Fried
+2021-08-03,Colorado Rockies,Chicago Cubs,13,6,1,Kyle Freeland,Zach Davies
+2021-08-03,Oakland Athletics,San Diego Padres,1,8,0,Sean Manaea,Blake Snell
+2021-08-03,Arizona Diamondbacks,San Francisco Giants,3,1,1,Madison Bumgarner,Johnny Cueto
+2021-08-03,Los Angeles Dodgers,Houston Astros,0,3,0,Walker Buehler,Lance McCullers Jr.
+2021-08-04,Cincinnati Reds,Minnesota Twins,6,5,1,Luis Castillo,Charlie Barnes
+2021-08-04,Tampa Bay Rays,Seattle Mariners,4,3,1,Josh Fleming,Logan Gilbert
+2021-08-04,Milwaukee Brewers,Pittsburgh Pirates,4,2,1,Freddy Peralta,Steven Brault
+2021-08-04,Oakland Athletics,San Diego Padres,5,4,1,Frankie Montas,Joe Musgrove
+2021-08-04,Washington Nationals,Philadelphia Phillies,5,9,0,Paolo Espino,Chase Anderson
+2021-08-04,New York Yankees,Baltimore Orioles,10,3,1,Jameson Taillon,Matt Harvey
+2021-08-04,Toronto Blue Jays,Cleveland Indians,8,6,1,Steven Matz,J.C. Mejía
+2021-08-04,Detroit Tigers,Boston Red Sox,1,4,0,Casey Mize,Eduardo Rodriguez
+2021-08-04,Miami Marlins,New York Mets,3,5,0,Zach Thompson,Carlos Carrasco
+2021-08-04,Texas Rangers,Los Angeles Angels,1,2,0,Kolby Allard,Shohei Ohtani
+2021-08-04,Chicago White Sox,Kansas City Royals,1,9,0,Lucas Giolito,Carlos Hernández
+2021-08-04,St. Louis Cardinals,Atlanta Braves,4,7,0,J.A. Happ,Drew Smyly
+2021-08-04,Colorado Rockies,Chicago Cubs,2,3,0,Jon Gray,Alec Mills
+2021-08-04,Los Angeles Dodgers,Houston Astros,7,5,1,Max Scherzer,Jake Odorizzi
+2021-08-04,Arizona Diamondbacks,San Francisco Giants,1,7,0,Zac Gallen,Kevin Gausman
+2021-08-05,Miami Marlins,New York Mets,4,2,1,Braxton Garrett,Rich Hill
+2021-08-05,Detroit Tigers,Boston Red Sox,8,1,1,Tarik Skubal,Martín Pérez
+2021-08-05,Texas Rangers,Los Angeles Angels,0,5,0,Spencer Howard,Dylan Bundy
+2021-08-05,Colorado Rockies,Chicago Cubs,6,5,1,Antonio Senzatela,Jake Arrieta
+2021-08-05,Arizona Diamondbacks,San Francisco Giants,4,5,0,Merrill Kelly,Alex Wood
+2021-08-05,Washington Nationals,Philadelphia Phillies,6,7,0,Joe Ross,Aaron Nola
+2021-08-05,New York Yankees,Seattle Mariners,5,3,1,Nestor Cortes,Tyler Anderson
+2021-08-05,Toronto Blue Jays,Cleveland Indians,3,0,1,Ross Stripling,Triston McKenzie
+2021-08-05,Cincinnati Reds,Pittsburgh Pirates,7,4,1,Sonny Gray,Wil Crowe
+2021-08-05,Houston Astros,Minnesota Twins,3,5,0,Framber Valdez,Griffin Jax
+2021-08-05,Chicago White Sox,Kansas City Royals,2,3,0,Dallas Keuchel,Daniel Lynch IV
+2021-08-05,St. Louis Cardinals,Atlanta Braves,4,8,0,Wade LeBlanc,Touki Toussaint
+2021-08-06,Chicago Cubs,Chicago White Sox,6,8,0,Kyle Hendricks,Lance Lynn
+2021-08-06,Baltimore Orioles,Tampa Bay Rays,6,10,0,John Means,Ryan Yarbrough
+2021-08-06,Philadelphia Phillies,New York Mets,4,2,1,Kyle Gibson,Marcus Stroman
+2021-08-06,New York Yankees,Seattle Mariners,3,2,1,Wandy Peralta,Marco Gonzales
+2021-08-06,Toronto Blue Jays,Boston Red Sox,12,4,1,Alek Manoah,Nathan Eovaldi
+2021-08-06,Cleveland Indians,Detroit Tigers,6,1,1,Cal Quantrill,Matt Manning
+2021-08-06,Cincinnati Reds,Pittsburgh Pirates,10,0,1,Wade Miley,JT Brubaker
+2021-08-06,Atlanta Braves,Washington Nationals,8,4,1,Kyle Muller,Erick Fedde
+2021-08-06,Houston Astros,Minnesota Twins,4,5,0,Zack Greinke,Bailey Ober
+2021-08-06,Milwaukee Brewers,San Francisco Giants,2,1,1,Corbin Burnes,Logan Webb
+2021-08-06,St. Louis Cardinals,Kansas City Royals,4,2,1,Adam Wainwright,Mike Minor
+2021-08-06,Colorado Rockies,Miami Marlins,14,2,1,Germán Márquez,Sandy Alcantara
+2021-08-06,Oakland Athletics,Texas Rangers,4,1,1,Chris Bassitt,Mike Foltynewicz
+2021-08-06,Los Angeles Dodgers,Los Angeles Angels,3,4,0,David Price,Patrick Sandoval
+2021-08-06,San Diego Padres,Arizona Diamondbacks,5,8,0,Ryan Weathers,Caleb Smith
+2021-08-07,New York Yankees,Seattle Mariners,5,4,1,Andrew Heaney,Chris Flexen
+2021-08-07,Chicago Cubs,Chicago White Sox,0,4,0,Adbert Alzolay,Carlos Rodón
+2021-08-07,Toronto Blue Jays,Boston Red Sox,1,0,1,Robbie Ray,Nick Pivetta
+2021-08-07,Toronto Blue Jays,Boston Red Sox,1,2,0,José Berríos,Tanner Houck
+2021-08-07,Oakland Athletics,Texas Rangers,12,3,1,Cole Irvin,Drew Anderson
+2021-08-07,Philadelphia Phillies,New York Mets,5,3,1,Ranger Suarez,Tylor Megill
+2021-08-07,Baltimore Orioles,Tampa Bay Rays,3,12,0,Spenser Watkins,Shane McClanahan
+2021-08-07,Cleveland Indians,Detroit Tigers,1,2,0,Eli Morgan,Tyler Alexander
+2021-08-07,Cincinnati Reds,Pittsburgh Pirates,11,3,1,Vladimir Gutierrez,Mitch Keller
+2021-08-07,Houston Astros,Minnesota Twins,4,0,1,Luis Garcia,Michael Pineda
+2021-08-07,Milwaukee Brewers,San Francisco Giants,6,9,0,Brandon Woodruff,Aaron Sanchez
+2021-08-07,St. Louis Cardinals,Kansas City Royals,5,2,1,Kwang Hyun Kim,Brad Keller
+2021-08-07,Atlanta Braves,Washington Nationals,2,3,0,Charlie Morton,Josiah Gray
+2021-08-07,Colorado Rockies,Miami Marlins,7,4,1,Austin Gomber,Jesús Luzardo
+2021-08-07,San Diego Padres,Arizona Diamondbacks,6,2,1,Yu Darvish,Taylor Widener
+2021-08-07,Los Angeles Dodgers,Los Angeles Angels,5,3,1,Julio Urías,Jaime Barria
+2021-08-08,Baltimore Orioles,Tampa Bay Rays,6,9,0,Jorge López,Michael Wacha
+2021-08-08,Philadelphia Phillies,New York Mets,3,0,1,Zack Wheeler,Taijuan Walker
+2021-08-08,New York Yankees,Seattle Mariners,0,2,0,Luis Gil,Yusei Kikuchi
+2021-08-08,Toronto Blue Jays,Boston Red Sox,9,8,1,Hyun Jin Ryu,Garrett Richards
+2021-08-08,Cleveland Indians,Detroit Tigers,7,5,1,Zach Plesac,Wily Peralta
+2021-08-08,Cincinnati Reds,Pittsburgh Pirates,3,2,1,Tyler Mahle,Bryse Wilson
+2021-08-08,Atlanta Braves,Washington Nationals,5,4,1,Max Fried,Patrick Corbin
+2021-08-08,Houston Astros,Minnesota Twins,5,7,0,Lance McCullers Jr.,Kenta Maeda
+2021-08-08,Milwaukee Brewers,San Francisco Giants,4,5,0,Brett Anderson,Johnny Cueto
+2021-08-08,St. Louis Cardinals,Kansas City Royals,5,6,0,Jon Lester,Kris Bubic
+2021-08-08,Colorado Rockies,Miami Marlins,13,8,1,Kyle Freeland,David Hess
+2021-08-08,Oakland Athletics,Texas Rangers,6,3,1,James Kaprielian,Jordan Lyles
+2021-08-08,Los Angeles Dodgers,Los Angeles Angels,8,2,1,Walker Buehler,Reid Detmers
+2021-08-08,San Diego Padres,Arizona Diamondbacks,2,0,1,Blake Snell,Madison Bumgarner
+2021-08-08,Chicago Cubs,Chicago White Sox,3,9,0,Zach Davies,Dylan Cease
+2021-08-09,Cleveland Indians,Cincinnati Reds,9,3,1,Sam Hentges,Luis Castillo
+2021-08-09,Minnesota Twins,Chicago White Sox,1,11,0,Beau Burrows,Lucas Giolito
+2021-08-09,Kansas City Royals,New York Yankees,6,8,0,Carlos Hernández,Jameson Taillon
+2021-08-09,San Diego Padres,Miami Marlins,8,3,1,Joe Musgrove,Zach Thompson
+2021-08-10,Chicago Cubs,Milwaukee Brewers,2,4,0,Justin Steele,Freddy Peralta
+2021-08-10,Chicago Cubs,Milwaukee Brewers,3,6,0,Alec Mills,Aaron Ashby
+2021-08-10,Toronto Blue Jays,Los Angeles Angels,3,6,0,Steven Matz,Chris Rodriguez
+2021-08-10,Los Angeles Angels,Toronto Blue Jays,0,4,0,José Suarez,Ross Stripling
+2021-08-10,Baltimore Orioles,Detroit Tigers,4,9,0,Keegan Akin,Casey Mize
+2021-08-10,Pittsburgh Pirates,St. Louis Cardinals,1,4,0,Steven Brault,J.A. Happ
+2021-08-10,Philadelphia Phillies,Los Angeles Dodgers,0,5,0,Aaron Nola,Max Scherzer
+2021-08-10,New York Mets,Washington Nationals,8,7,1,Carlos Carrasco,Paolo Espino
+2021-08-10,Cleveland Indians,Oakland Athletics,3,4,0,Triston McKenzie,Sean Manaea
+2021-08-10,Boston Red Sox,Tampa Bay Rays,4,8,0,Eduardo Rodriguez,Luis Patiño
+2021-08-10,Atlanta Braves,Cincinnati Reds,3,2,1,Drew Smyly,Sonny Gray
+2021-08-10,Houston Astros,Colorado Rockies,5,0,1,Jake Odorizzi,Jon Gray
+2021-08-10,Minnesota Twins,Chicago White Sox,4,3,1,Griffin Jax,Dallas Keuchel
+2021-08-10,Kansas City Royals,New York Yankees,8,4,1,Daniel Lynch IV,Nestor Cortes
+2021-08-10,San Francisco Giants,Arizona Diamondbacks,8,7,1,Alex Wood,Zac Gallen
+2021-08-10,Seattle Mariners,Texas Rangers,4,5,0,Logan Gilbert,Kolby Allard
+2021-08-10,San Diego Padres,Miami Marlins,6,5,1,Craig Stammen,Braxton Garrett
+2021-08-11,Minnesota Twins,Chicago White Sox,1,0,1,Bailey Ober,Reynaldo López
+2021-08-11,Houston Astros,Colorado Rockies,5,1,1,Framber Valdez,Antonio Senzatela
+2021-08-11,Kansas City Royals,New York Yankees,2,5,0,Brady Singer,Lucas Luetge
+2021-08-11,New York Mets,Washington Nationals,8,7,1,Carlos Carrasco,Paolo Espino
+2021-08-11,San Diego Padres,Miami Marlins,0,7,0,Ryan Weathers,Sandy Alcantara
+2021-08-11,Baltimore Orioles,Detroit Tigers,2,5,0,Matt Harvey,Tarik Skubal
+2021-08-11,Pittsburgh Pirates,St. Louis Cardinals,0,4,0,Wil Crowe,Adam Wainwright
+2021-08-11,Philadelphia Phillies,Los Angeles Dodgers,2,8,0,Kyle Gibson,David Price
+2021-08-11,Cleveland Indians,Oakland Athletics,3,6,0,Cal Quantrill,Frankie Montas
+2021-08-11,Boston Red Sox,Tampa Bay Rays,20,8,1,Nathan Eovaldi,Josh Fleming
+2021-08-11,Atlanta Braves,Cincinnati Reds,8,6,1,Touki Toussaint,Wade Miley
+2021-08-11,Chicago Cubs,Milwaukee Brewers,0,10,0,Jake Arrieta,Corbin Burnes
+2021-08-11,Los Angeles Angels,Toronto Blue Jays,2,10,0,Dylan Bundy,Alek Manoah
+2021-08-11,San Francisco Giants,Arizona Diamondbacks,7,2,1,Kevin Gausman,Merrill Kelly
+2021-08-11,Seattle Mariners,Texas Rangers,2,1,1,Tyler Anderson,Spencer Howard
+2021-08-12,New York Mets,Washington Nationals,4,1,1,Marcus Stroman,Sean Nolin
+2021-08-12,New York Mets,Washington Nationals,5,4,1,Trevor Williams,Erick Fedde
+2021-08-12,Pittsburgh Pirates,St. Louis Cardinals,6,7,0,JT Brubaker,Wade LeBlanc
+2021-08-12,Philadelphia Phillies,Los Angeles Dodgers,2,1,1,Ranger Suarez,Mitch White
+2021-08-12,Cleveland Indians,Oakland Athletics,0,17,0,Eli Morgan,Chris Bassitt
+2021-08-12,Chicago Cubs,Milwaukee Brewers,4,17,0,Kyle Hendricks,Brandon Woodruff
+2021-08-12,Baltimore Orioles,Detroit Tigers,4,6,0,John Means,Matt Manning
+2021-08-12,Boston Red Sox,Tampa Bay Rays,1,8,0,Tanner Houck,Drew Rasmussen
+2021-08-12,Seattle Mariners,Texas Rangers,3,1,1,Marco Gonzales,Mike Foltynewicz
+2021-08-12,Atlanta Braves,Cincinnati Reds,3,12,0,Kyle Muller,Vladimir Gutierrez
+2021-08-12,Chicago White Sox,New York Yankees,9,8,1,Lance Lynn,Andrew Heaney
+2021-08-12,Los Angeles Angels,Toronto Blue Jays,6,3,1,Shohei Ohtani,José Berríos
+2021-08-12,Arizona Diamondbacks,San Diego Padres,12,3,1,Matt Peacock,Yu Darvish
+2021-08-12,San Francisco Giants,Colorado Rockies,7,0,1,Logan Webb,Germán Márquez
+2021-08-13,Philadelphia Phillies,Cincinnati Reds,1,6,0,Zack Wheeler,Tyler Mahle
+2021-08-13,Washington Nationals,Atlanta Braves,2,4,0,Josiah Gray,Charlie Morton
+2021-08-13,Boston Red Sox,Baltimore Orioles,8,1,1,Nick Pivetta,Spenser Watkins
+2021-08-13,Detroit Tigers,Cleveland Indians,4,7,0,Tyler Alexander,Zach Plesac
+2021-08-13,New York Mets,Los Angeles Dodgers,5,6,0,Tylor Megill,Julio Urías
+2021-08-13,Miami Marlins,Chicago Cubs,14,10,1,Jesús Luzardo,Adbert Alzolay
+2021-08-13,Texas Rangers,Oakland Athletics,8,6,1,Dane Dunning,Cole Irvin
+2021-08-13,Kansas City Royals,St. Louis Cardinals,0,6,0,Mike Minor,Jack Flaherty
+2021-08-13,Minnesota Twins,Tampa Bay Rays,4,10,0,Michael Pineda,Shane McClanahan
+2021-08-13,Los Angeles Angels,Houston Astros,1,4,0,Patrick Sandoval,Zack Greinke
+2021-08-13,Arizona Diamondbacks,San Diego Padres,3,2,1,Madison Bumgarner,Blake Snell
+2021-08-13,San Francisco Giants,Colorado Rockies,5,4,1,Anthony DeSclafani,Austin Gomber
+2021-08-13,Seattle Mariners,Toronto Blue Jays,3,2,1,Chris Flexen,Robbie Ray
+2021-08-14,Pittsburgh Pirates,Milwaukee Brewers,14,4,1,Bryse Wilson,Brett Anderson
+2021-08-14,Pittsburgh Pirates,Milwaukee Brewers,0,6,0,Mitch Keller,Aaron Ashby
+2021-08-14,Philadelphia Phillies,Cincinnati Reds,6,1,1,Matt Moore,Luis Castillo
+2021-08-14,Boston Red Sox,Baltimore Orioles,16,2,1,Chris Sale,Jorge López
+2021-08-14,Washington Nationals,Atlanta Braves,2,12,0,Patrick Corbin,Max Fried
+2021-08-14,Detroit Tigers,Cleveland Indians,6,4,1,Wily Peralta,Sam Hentges
+2021-08-14,Miami Marlins,Chicago Cubs,5,4,1,Zach Thompson,Zach Davies
+2021-08-14,Texas Rangers,Oakland Athletics,3,8,0,Jordan Lyles,James Kaprielian
+2021-08-14,New York Mets,Los Angeles Dodgers,1,2,0,Taijuan Walker,Walker Buehler
+2021-08-14,Kansas City Royals,St. Louis Cardinals,4,9,0,Brad Keller,Jon Lester
+2021-08-14,Minnesota Twins,Tampa Bay Rays,12,0,1,Kenta Maeda,Michael Wacha
+2021-08-14,Chicago White Sox,New York Yankees,5,7,0,Dylan Cease,Jameson Taillon
+2021-08-14,Arizona Diamondbacks,San Diego Padres,7,0,1,Tyler Gilbert,Joe Musgrove
+2021-08-14,San Francisco Giants,Colorado Rockies,1,4,0,Sam Long,Kyle Freeland
+2021-08-14,Los Angeles Angels,Houston Astros,2,8,0,Jaime Barria,Luis Garcia
+2021-08-14,Seattle Mariners,Toronto Blue Jays,9,3,1,Yusei Kikuchi,Hyun Jin Ryu
+2021-08-15,Philadelphia Phillies,Cincinnati Reds,4,7,0,Aaron Nola,Sonny Gray
+2021-08-15,Washington Nationals,Atlanta Braves,5,6,0,Paolo Espino,Drew Smyly
+2021-08-15,Pittsburgh Pirates,Milwaukee Brewers,1,2,0,Dillon Peters,Eric Lauer
+2021-08-15,Boston Red Sox,Baltimore Orioles,6,2,1,Eduardo Rodriguez,Keegan Akin
+2021-08-15,Detroit Tigers,Cleveland Indians,0,11,0,Drew Hutchison,Triston McKenzie
+2021-08-15,Miami Marlins,Chicago Cubs,4,1,1,Elieser Hernández,Alec Mills
+2021-08-15,Kansas City Royals,St. Louis Cardinals,2,7,0,Kris Bubic,J.A. Happ
+2021-08-15,Minnesota Twins,Tampa Bay Rays,5,4,1,Charlie Barnes,Luis Patiño
+2021-08-15,Chicago White Sox,New York Yankees,3,5,0,Lucas Giolito,Nestor Cortes
+2021-08-15,Texas Rangers,Oakland Athletics,7,4,1,Kolby Allard,Sean Manaea
+2021-08-15,San Francisco Giants,Colorado Rockies,5,2,1,Alex Wood,Jon Gray
+2021-08-15,Los Angeles Angels,Houston Astros,3,1,1,Reid Detmers,Lance McCullers Jr.
+2021-08-15,Arizona Diamondbacks,San Diego Padres,2,8,0,Zac Gallen,Craig Stammen
+2021-08-15,Seattle Mariners,Toronto Blue Jays,3,8,0,Logan Gilbert,Steven Matz
+2021-08-15,New York Mets,Los Angeles Dodgers,4,14,0,Carlos Carrasco,Max Scherzer
+2021-08-16,New York Yankees,Los Angeles Angels,2,1,1,Gerrit Cole,José Suarez
+2021-08-16,Cincinnati Reds,Chicago Cubs,14,5,1,Wade Miley,Justin Steele
+2021-08-16,Tampa Bay Rays,Baltimore Orioles,9,2,1,Collin McHugh,Matt Harvey
+2021-08-16,Miami Marlins,Atlanta Braves,2,12,0,Braxton Garrett,Touki Toussaint
+2021-08-16,Kansas City Royals,Houston Astros,7,6,1,Carlos Hernández,Jake Odorizzi
+2021-08-16,Minnesota Twins,Cleveland Indians,5,4,1,Griffin Jax,Cal Quantrill
+2021-08-16,Chicago White Sox,Oakland Athletics,5,2,1,Dallas Keuchel,Frankie Montas
+2021-08-16,Colorado Rockies,San Diego Padres,6,5,1,Antonio Senzatela,Ryan Weathers
+2021-08-16,San Francisco Giants,New York Mets,7,5,1,Kevin Gausman,Rich Hill
+2021-08-16,Los Angeles Dodgers,Pittsburgh Pirates,2,1,1,Justin Bruihl,Steven Brault
+2021-08-17,New York Yankees,Boston Red Sox,5,3,1,Jordan Montgomery,Tanner Houck
+2021-08-17,New York Yankees,Boston Red Sox,2,0,1,Luis Gil,Nathan Eovaldi
+2021-08-17,Washington Nationals,Toronto Blue Jays,12,6,1,Erick Fedde,Alek Manoah
+2021-08-17,Cincinnati Reds,Chicago Cubs,1,2,0,Vladimir Gutierrez,Kyle Hendricks
+2021-08-17,Detroit Tigers,Los Angeles Angels,2,8,0,Casey Mize,Dylan Bundy
+2021-08-17,Tampa Bay Rays,Baltimore Orioles,10,0,1,Drew Rasmussen,John Means
+2021-08-17,Miami Marlins,Atlanta Braves,0,2,0,Sandy Alcantara,Huascar Ynoa
+2021-08-17,St. Louis Cardinals,Milwaukee Brewers,0,2,0,Adam Wainwright,Corbin Burnes
+2021-08-17,Texas Rangers,Seattle Mariners,1,3,0,Taylor Hearn,Tyler Anderson
+2021-08-17,Kansas City Royals,Houston Astros,3,1,1,Daniel Lynch IV,Framber Valdez
+2021-08-17,Minnesota Twins,Cleveland Indians,1,3,0,Bailey Ober,Eli Morgan
+2021-08-17,Chicago White Sox,Oakland Athletics,9,0,1,Reynaldo López,Chris Bassitt
+2021-08-17,Colorado Rockies,San Diego Padres,7,3,1,Germán Márquez,Matt Strahm
+2021-08-17,Arizona Diamondbacks,Philadelphia Phillies,3,2,1,Taylor Widener,Kyle Gibson
+2021-08-17,San Francisco Giants,New York Mets,3,2,1,Logan Webb,Marcus Stroman
+2021-08-17,Los Angeles Dodgers,Pittsburgh Pirates,4,3,1,David Price,Wil Crowe
+2021-08-18,Cincinnati Reds,Chicago Cubs,1,7,0,Tyler Mahle,Adrian Sampson
+2021-08-18,Minnesota Twins,Cleveland Indians,8,7,1,Lewis Thorpe,Zach Plesac
+2021-08-18,Colorado Rockies,San Diego Padres,7,5,1,Chi Chi González,Jake Arrieta
+2021-08-18,San Francisco Giants,New York Mets,2,6,0,Anthony DeSclafani,Tylor Megill
+2021-08-18,Washington Nationals,Toronto Blue Jays,8,5,1,Josiah Gray,José Berríos
+2021-08-18,New York Yankees,Boston Red Sox,5,2,1,Andrew Heaney,Nick Pivetta
+2021-08-18,Detroit Tigers,Los Angeles Angels,1,3,0,Tarik Skubal,Shohei Ohtani
+2021-08-18,Tampa Bay Rays,Baltimore Orioles,8,4,1,Louis Head,Spenser Watkins
+2021-08-18,Miami Marlins,Atlanta Braves,9,11,0,Jesús Luzardo,Charlie Morton
+2021-08-18,St. Louis Cardinals,Milwaukee Brewers,4,6,0,Jack Flaherty,Freddy Peralta
+2021-08-18,Texas Rangers,Seattle Mariners,1,3,0,Mike Foltynewicz,Marco Gonzales
+2021-08-18,Kansas City Royals,Houston Astros,3,2,1,Brady Singer,Zack Greinke
+2021-08-18,Chicago White Sox,Oakland Athletics,3,2,1,Lance Lynn,Cole Irvin
+2021-08-18,Arizona Diamondbacks,Philadelphia Phillies,4,2,1,Humberto Castellanos,Ranger Suarez
+2021-08-18,Los Angeles Dodgers,Pittsburgh Pirates,9,0,1,Justin Bruihl,JT Brubaker
+2021-08-19,Detroit Tigers,Los Angeles Angels,10,13,0,Matt Manning,Jose Quintana
+2021-08-19,Tampa Bay Rays,Baltimore Orioles,7,2,1,Shane McClanahan,Jorge López
+2021-08-19,Texas Rangers,Seattle Mariners,8,9,0,Spencer Howard,Chris Flexen
+2021-08-19,Kansas City Royals,Houston Astros,3,6,0,Mike Minor,Luis Garcia
+2021-08-19,Chicago White Sox,Oakland Athletics,4,5,0,Dylan Cease,Cole Irvin
+2021-08-19,Arizona Diamondbacks,Philadelphia Phillies,6,2,1,Madison Bumgarner,Zack Wheeler
+2021-08-19,New York Yankees,Minnesota Twins,7,5,1,Jameson Taillon,John Gant
+2021-08-19,Cincinnati Reds,Miami Marlins,6,1,1,Luis Castillo,Nick Neidert
+2021-08-19,St. Louis Cardinals,Milwaukee Brewers,8,4,1,Jon Lester,Brandon Woodruff
+2021-08-19,Los Angeles Dodgers,New York Mets,4,1,1,Corey Knebel,Taijuan Walker
+2021-08-20,Chicago Cubs,Kansas City Royals,2,6,0,Zach Davies,Brad Keller
+2021-08-20,Baltimore Orioles,Atlanta Braves,0,3,0,Keegan Akin,Max Fried
+2021-08-20,New York Yankees,Minnesota Twins,10,2,1,Nestor Cortes,Charlie Barnes
+2021-08-20,Toronto Blue Jays,Detroit Tigers,1,4,0,Robbie Ray,Tyler Alexander
+2021-08-20,Cleveland Indians,Los Angeles Angels,9,1,1,Sam Hentges,Jaime Barria
+2021-08-20,Boston Red Sox,Texas Rangers,6,0,1,Chris Sale,Dane Dunning
+2021-08-20,Tampa Bay Rays,Chicago White Sox,5,7,0,Michael Wacha,Lucas Giolito
+2021-08-20,Cincinnati Reds,Miami Marlins,5,3,1,Sonny Gray,Elieser Hernández
+2021-08-20,Houston Astros,Seattle Mariners,12,3,1,Lance McCullers Jr.,Yusei Kikuchi
+2021-08-20,Milwaukee Brewers,Washington Nationals,1,4,0,Brett Anderson,Patrick Corbin
+2021-08-20,St. Louis Cardinals,Pittsburgh Pirates,0,4,0,Miles Mikolas,Mitch Keller
+2021-08-20,Colorado Rockies,Arizona Diamondbacks,9,4,1,Austin Gomber,Tyler Gilbert
+2021-08-20,Oakland Athletics,San Francisco Giants,4,1,1,James Kaprielian,Alex Wood
+2021-08-20,Los Angeles Dodgers,New York Mets,3,2,1,Walker Buehler,Carlos Carrasco
+2021-08-20,San Diego Padres,Philadelphia Phillies,3,4,0,Blake Snell,Matt Moore
+2021-08-21,New York Yankees,Minnesota Twins,7,1,1,Gerrit Cole,Kenta Maeda
+2021-08-21,Tampa Bay Rays,Chicago White Sox,8,4,1,Luis Patiño,Dallas Keuchel
+2021-08-21,Chicago Cubs,Kansas City Royals,2,4,0,Keegan Thompson,Kris Bubic
+2021-08-21,Toronto Blue Jays,Detroit Tigers,3,0,1,Hyun Jin Ryu,Wily Peralta
+2021-08-21,Los Angeles Dodgers,New York Mets,4,3,1,Max Scherzer,Rich Hill
+2021-08-21,Milwaukee Brewers,Washington Nationals,9,6,1,Eric Lauer,Paolo Espino
+2021-08-21,Oakland Athletics,San Francisco Giants,5,6,0,Sean Manaea,Kevin Gausman
+2021-08-21,Cleveland Indians,Los Angeles Angels,5,1,1,Triston McKenzie,Reid Detmers
+2021-08-21,Houston Astros,Seattle Mariners,15,1,1,Jake Odorizzi,Logan Gilbert
+2021-08-21,Cincinnati Reds,Miami Marlins,7,4,1,Wade Miley,Zach Thompson
+2021-08-21,Baltimore Orioles,Atlanta Braves,4,5,0,Matt Harvey,Drew Smyly
+2021-08-21,Boston Red Sox,Texas Rangers,1,10,0,Eduardo Rodriguez,Jordan Lyles
+2021-08-21,St. Louis Cardinals,Pittsburgh Pirates,4,5,0,J.A. Happ,Dillon Peters
+2021-08-21,Colorado Rockies,Arizona Diamondbacks,5,2,1,Kyle Freeland,Zac Gallen
+2021-08-21,San Diego Padres,Philadelphia Phillies,4,3,1,Joe Musgrove,Aaron Nola
+2021-08-22,Baltimore Orioles,Atlanta Braves,1,3,0,John Means,Touki Toussaint
+2021-08-22,Toronto Blue Jays,Detroit Tigers,3,5,0,Steven Matz,Drew Hutchison
+2021-08-22,Tampa Bay Rays,Chicago White Sox,9,0,1,Chris Archer,Reynaldo López
+2021-08-22,Cincinnati Reds,Miami Marlins,3,1,1,Vladimir Gutierrez,Sandy Alcantara
+2021-08-22,Houston Astros,Seattle Mariners,3,6,0,Framber Valdez,Tyler Anderson
+2021-08-22,Milwaukee Brewers,Washington Nationals,7,3,1,Adrian Houser,Sean Nolin
+2021-08-22,St. Louis Cardinals,Pittsburgh Pirates,3,0,1,Adam Wainwright,Steven Brault
+2021-08-22,Chicago Cubs,Kansas City Royals,1,9,0,Alec Mills,Carlos Hernández
+2021-08-22,Colorado Rockies,Arizona Diamondbacks,4,8,0,Jon Gray,Taylor Widener
+2021-08-22,San Diego Padres,Philadelphia Phillies,4,7,0,Craig Stammen,Kyle Gibson
+2021-08-22,Oakland Athletics,San Francisco Giants,1,2,0,Frankie Montas,Logan Webb
+2021-08-22,Los Angeles Dodgers,New York Mets,2,7,0,David Price,Marcus Stroman
+2021-08-22,Cleveland Indians,Los Angeles Angels,3,0,1,Cal Quantrill,José Suarez
+2021-08-23,Boston Red Sox,Texas Rangers,8,4,1,Nathan Eovaldi,Kolby Allard
+2021-08-23,Pittsburgh Pirates,Arizona Diamondbacks,6,5,1,Wil Crowe,Humberto Mejía
+2021-08-23,Toronto Blue Jays,Chicago White Sox,2,1,1,Alek Manoah,Lance Lynn
+2021-08-23,Atlanta Braves,New York Yankees,1,5,0,Huascar Ynoa,Jordan Montgomery
+2021-08-23,Chicago Cubs,Colorado Rockies,6,4,1,Kyle Hendricks,Antonio Senzatela
+2021-08-23,Houston Astros,Kansas City Royals,1,7,0,Zack Greinke,Daniel Lynch IV
+2021-08-23,Oakland Athletics,Seattle Mariners,3,5,0,Paul Blackburn,Marco Gonzales
+2021-08-24,Oakland Athletics,Seattle Mariners,1,5,0,Cole Irvin,Chris Flexen
+2021-08-24,Baltimore Orioles,Los Angeles Angels,8,14,0,Spenser Watkins,Dylan Bundy
+2021-08-24,Pittsburgh Pirates,Arizona Diamondbacks,4,2,1,JT Brubaker,Madison Bumgarner
+2021-08-24,Philadelphia Phillies,Tampa Bay Rays,1,3,0,Ranger Suarez,Drew Rasmussen
+2021-08-24,Toronto Blue Jays,Chicago White Sox,2,5,0,José Berríos,Dylan Cease
+2021-08-24,New York Mets,San Francisco Giants,0,8,0,Tylor Megill,Sam Long
+2021-08-24,Cleveland Indians,Texas Rangers,3,7,0,Eli Morgan,Taylor Hearn
+2021-08-24,Boston Red Sox,Minnesota Twins,11,9,1,Tanner Houck,Griffin Jax
+2021-08-24,Miami Marlins,Washington Nationals,1,5,0,Jesús Luzardo,Erick Fedde
+2021-08-24,Atlanta Braves,New York Yankees,4,5,0,Charlie Morton,Andrew Heaney
+2021-08-24,St. Louis Cardinals,Detroit Tigers,3,4,0,Jack Flaherty,Casey Mize
+2021-08-24,Houston Astros,Kansas City Royals,4,0,1,Luis Garcia,Brady Singer
+2021-08-24,Milwaukee Brewers,Cincinnati Reds,7,4,1,Corbin Burnes,Tyler Mahle
+2021-08-24,San Diego Padres,Los Angeles Dodgers,2,5,0,Pierce Johnson,Julio Urías
+2021-08-25,St. Louis Cardinals,Detroit Tigers,3,2,1,Jon Lester,Tarik Skubal
+2021-08-25,Houston Astros,Kansas City Royals,6,5,1,Lance McCullers Jr.,Mike Minor
+2021-08-25,Chicago Cubs,Colorado Rockies,5,2,1,Zach Davies,Austin Gomber
+2021-08-25,Chicago Cubs,Colorado Rockies,10,13,0,Justin Steele,Germán Márquez
+2021-08-25,Baltimore Orioles,Los Angeles Angels,10,6,1,Chris Ellis,Shohei Ohtani
+2021-08-25,Pittsburgh Pirates,Arizona Diamondbacks,2,5,0,Bryse Wilson,Tyler Gilbert
+2021-08-25,Philadelphia Phillies,Tampa Bay Rays,4,7,0,Zack Wheeler,Ryan Yarbrough
+2021-08-25,Toronto Blue Jays,Chicago White Sox,3,1,1,Robbie Ray,Lucas Giolito
+2021-08-25,New York Mets,San Francisco Giants,2,3,0,Taijuan Walker,Johnny Cueto
+2021-08-25,Cleveland Indians,Texas Rangers,7,2,1,Zach Plesac,Jacob Latz
+2021-08-25,Boston Red Sox,Minnesota Twins,6,9,0,Nick Pivetta,Bailey Ober
+2021-08-25,Miami Marlins,Washington Nationals,4,3,1,Edward Cabrera,Josiah Gray
+2021-08-25,Milwaukee Brewers,Cincinnati Reds,4,1,1,Brandon Woodruff,Luis Castillo
+2021-08-25,San Diego Padres,Los Angeles Dodgers,3,5,0,Blake Snell,Walker Buehler
+2021-08-26,Baltimore Orioles,Los Angeles Angels,13,1,1,Keegan Akin,Jaime Barria
+2021-08-26,Milwaukee Brewers,Cincinnati Reds,1,5,0,Brett Anderson,Sonny Gray
+2021-08-26,Toronto Blue Jays,Chicago White Sox,7,10,0,Hyun Jin Ryu,Carlos Rodón
+2021-08-26,Pittsburgh Pirates,St. Louis Cardinals,11,7,1,Mitch Keller,Miles Mikolas
+2021-08-26,Philadelphia Phillies,Arizona Diamondbacks,7,8,0,Matt Moore,Zac Gallen
+2021-08-26,New York Mets,San Francisco Giants,2,3,0,Carlos Carrasco,Alex Wood
+2021-08-26,Cleveland Indians,Texas Rangers,10,6,1,Sam Hentges,Jordan Lyles
+2021-08-26,Boston Red Sox,Minnesota Twins,12,2,1,Chris Sale,John Gant
+2021-08-26,Miami Marlins,Washington Nationals,7,5,1,Elieser Hernández,Patrick Corbin
+2021-08-26,San Diego Padres,Los Angeles Dodgers,0,4,0,Yu Darvish,Max Scherzer
+2021-08-26,Oakland Athletics,New York Yankees,6,7,0,James Kaprielian,Jameson Taillon
+2021-08-26,Seattle Mariners,Kansas City Royals,4,6,0,Yusei Kikuchi,Brad Keller
+2021-08-27,Pittsburgh Pirates,St. Louis Cardinals,3,4,0,Dillon Peters,J.A. Happ
+2021-08-27,Baltimore Orioles,Tampa Bay Rays,3,6,0,Matt Harvey,Shane McClanahan
+2021-08-27,Philadelphia Phillies,Arizona Diamondbacks,7,6,1,Aaron Nola,Taylor Widener
+2021-08-27,Cleveland Indians,Boston Red Sox,3,4,0,Logan Allen,Eduardo Rodriguez
+2021-08-27,New York Mets,Washington Nationals,1,2,0,Rich Hill,Paolo Espino
+2021-08-27,Detroit Tigers,Toronto Blue Jays,2,1,1,Matt Manning,Steven Matz
+2021-08-27,Miami Marlins,Cincinnati Reds,0,6,0,Zach Thompson,Wade Miley
+2021-08-27,Atlanta Braves,San Francisco Giants,6,5,1,Max Fried,Kevin Gausman
+2021-08-27,Texas Rangers,Houston Astros,4,5,0,Glenn Otto Jr.,Jake Odorizzi
+2021-08-27,Chicago White Sox,Chicago Cubs,17,13,1,Dallas Keuchel,Keegan Thompson
+2021-08-27,Minnesota Twins,Milwaukee Brewers,2,0,1,Andrew Albers,Eric Lauer
+2021-08-27,Los Angeles Angels,San Diego Padres,0,5,0,Cooper Criswell,Joe Musgrove
+2021-08-27,Oakland Athletics,New York Yankees,2,8,0,Sean Manaea,Gerrit Cole
+2021-08-27,Los Angeles Dodgers,Colorado Rockies,2,4,0,Brusdar Graterol,Kyle Freeland
+2021-08-27,Seattle Mariners,Kansas City Royals,7,8,0,Logan Gilbert,Kris Bubic
+2021-08-28,Cleveland Indians,Boston Red Sox,3,5,0,Cal Quantrill,Nathan Eovaldi
+2021-08-28,Oakland Athletics,New York Yankees,3,2,1,Frankie Montas,Nestor Cortes
+2021-08-28,Seattle Mariners,Kansas City Royals,2,4,0,Tyler Anderson,Daniel Lynch IV
+2021-08-28,Philadelphia Phillies,Arizona Diamondbacks,7,0,1,Kyle Gibson,Humberto Mejía
+2021-08-28,Detroit Tigers,Toronto Blue Jays,2,3,0,José Ureña,Alek Manoah
+2021-08-28,Miami Marlins,Cincinnati Reds,6,1,1,Sandy Alcantara,Vladimir Gutierrez
+2021-08-28,Pittsburgh Pirates,St. Louis Cardinals,0,13,0,Steven Brault,Adam Wainwright
+2021-08-28,Baltimore Orioles,Tampa Bay Rays,3,4,0,John Means,Michael Wacha
+2021-08-28,Texas Rangers,Houston Astros,2,5,0,Kolby Allard,Framber Valdez
+2021-08-28,New York Mets,Washington Nationals,5,3,1,Marcus Stroman,Sean Nolin
+2021-08-28,Chicago White Sox,Chicago Cubs,0,7,0,Lance Lynn,Alec Mills
+2021-08-28,Minnesota Twins,Milwaukee Brewers,6,4,1,Charlie Barnes,Adrian Houser
+2021-08-28,Atlanta Braves,San Francisco Giants,0,5,0,Huascar Ynoa,Logan Webb
+2021-08-28,Los Angeles Angels,San Diego Padres,10,2,1,José Suarez,Ryan Weathers
+2021-08-28,Los Angeles Dodgers,Colorado Rockies,5,2,1,Corey Knebel,Jon Gray
+2021-08-29,Pittsburgh Pirates,St. Louis Cardinals,4,3,1,Wil Crowe,Kwang Hyun Kim
+2021-08-29,Baltimore Orioles,Tampa Bay Rays,8,12,0,Spenser Watkins,Chris Archer
+2021-08-29,Philadelphia Phillies,Arizona Diamondbacks,7,4,1,Ranger Suarez,Madison Bumgarner
+2021-08-29,Cleveland Indians,Boston Red Sox,7,5,1,Eli Morgan,Tanner Houck
+2021-08-29,New York Mets,Washington Nationals,9,4,1,Tylor Megill,Erick Fedde
+2021-08-29,Detroit Tigers,Toronto Blue Jays,1,2,0,Matthew Boyd,José Berríos
+2021-08-29,Miami Marlins,Cincinnati Reds,2,1,1,Jesús Luzardo,Tyler Mahle
+2021-08-29,Atlanta Braves,San Francisco Giants,9,0,1,Ian Anderson,Anthony DeSclafani
+2021-08-29,Chicago White Sox,Chicago Cubs,13,1,1,Dylan Cease,Kyle Hendricks
+2021-08-29,Minnesota Twins,Milwaukee Brewers,2,6,0,Griffin Jax,Aaron Ashby
+2021-08-29,Texas Rangers,Houston Astros,13,2,1,Taylor Hearn,Zack Greinke
+2021-08-29,Los Angeles Dodgers,Colorado Rockies,0,5,0,Mitch White,Antonio Senzatela
+2021-08-29,Seattle Mariners,Kansas City Royals,4,3,1,Marco Gonzales,Brady Singer
+2021-08-29,Oakland Athletics,New York Yankees,3,1,1,Paul Blackburn,Jordan Montgomery
+2021-08-30,Detroit Tigers,Minnesota Twins,2,3,0,Casey Mize,Bailey Ober
+2021-08-30,Cincinnati Reds,St. Louis Cardinals,1,3,0,Luis Castillo,Jon Lester
+2021-08-30,Washington Nationals,Philadelphia Phillies,4,7,0,Josiah Gray,Zack Wheeler
+2021-08-30,Toronto Blue Jays,Baltimore Orioles,7,3,1,Robbie Ray,Chris Ellis
+2021-08-30,Tampa Bay Rays,Boston Red Sox,6,1,1,Luis Patiño,Nick Pivetta
+2021-08-30,Texas Rangers,Colorado Rockies,4,3,1,A.J. Alexy,Germán Márquez
+2021-08-30,Los Angeles Angels,New York Yankees,8,7,1,Mike Mayers,Corey Kluber
+2021-08-30,Arizona Diamondbacks,San Diego Padres,5,7,0,Tyler Gilbert,Chris Paddack
+2021-08-30,San Francisco Giants,Milwaukee Brewers,1,3,0,Jose Alvarez,Corbin Burnes
+2021-08-30,Seattle Mariners,Houston Astros,3,4,0,Chris Flexen,Luis Garcia
+2021-08-30,Los Angeles Dodgers,Atlanta Braves,5,3,1,Julio Urías,Drew Smyly
+2021-08-31,New York Mets,Miami Marlins,6,5,1,Taijuan Walker,Elieser Hernández
+2021-08-31,Washington Nationals,Philadelphia Phillies,6,12,0,Patrick Corbin,Matt Moore
+2021-08-31,Toronto Blue Jays,Baltimore Orioles,2,4,0,Hyun Jin Ryu,Keegan Akin
+2021-08-31,Detroit Tigers,Oakland Athletics,3,9,0,Tarik Skubal,Cole Irvin
+2021-08-31,Tampa Bay Rays,Boston Red Sox,8,5,1,Ryan Yarbrough,Brad Peacock
+2021-08-31,New York Mets,Miami Marlins,3,1,1,Trevor Williams,Edward Cabrera
+2021-08-31,Texas Rangers,Colorado Rockies,4,3,1,Jordan Lyles,Austin Gomber
+2021-08-31,Kansas City Royals,Cleveland Indians,2,7,0,Jakob Junis,Zach Plesac
+2021-08-31,Minnesota Twins,Chicago Cubs,1,3,0,John Gant,Zach Davies
+2021-08-31,Chicago White Sox,Pittsburgh Pirates,4,2,1,Lucas Giolito,Bryse Wilson
+2021-08-31,Los Angeles Angels,New York Yankees,6,4,1,Jaime Barria,Jameson Taillon
+2021-08-31,Arizona Diamondbacks,San Diego Padres,0,3,0,Zac Gallen,Blake Snell
+2021-08-31,San Francisco Giants,Milwaukee Brewers,2,6,0,Johnny Cueto,Brandon Woodruff
+2021-08-31,Seattle Mariners,Houston Astros,4,0,1,Yusei Kikuchi,Lance McCullers Jr.
+2021-08-31,Los Angeles Dodgers,Atlanta Braves,3,2,1,Walker Buehler,Charlie Morton
+2021-09-01,Cincinnati Reds,St. Louis Cardinals,4,5,0,Wade Miley,Miles Mikolas
+2021-09-01,Cincinnati Reds,St. Louis Cardinals,12,2,1,Sonny Gray,J.A. Happ
+2021-09-01,Texas Rangers,Colorado Rockies,5,9,0,Kohei Arihara,Kyle Freeland
+2021-09-01,Arizona Diamondbacks,San Diego Padres,8,3,1,Luke Weaver,Yu Darvish
+2021-09-01,Seattle Mariners,Houston Astros,1,0,1,Logan Gilbert,Jake Odorizzi
+2021-09-01,Toronto Blue Jays,Baltimore Orioles,5,4,1,Steven Matz,Matt Harvey
+2021-09-01,Los Angeles Angels,New York Yankees,1,4,0,Packy Naughton,Gerrit Cole
+2021-09-01,Detroit Tigers,Oakland Athletics,8,6,1,Wily Peralta,James Kaprielian
+2021-09-01,Tampa Bay Rays,Boston Red Sox,2,3,0,Drew Rasmussen,Chris Sale
+2021-09-01,Kansas City Royals,Cleveland Indians,3,5,0,Jackson Kowar,Logan Allen
+2021-09-01,Minnesota Twins,Chicago Cubs,0,3,0,Joe Ryan,Justin Steele
+2021-09-01,Chicago White Sox,Pittsburgh Pirates,6,3,1,Carlos Rodón,Max Kranick
+2021-09-01,San Francisco Giants,Milwaukee Brewers,2,5,0,Kevin Gausman,Brett Anderson
+2021-09-01,Los Angeles Dodgers,Atlanta Braves,4,3,1,Max Scherzer,Max Fried
+2021-09-02,Washington Nationals,Philadelphia Phillies,6,7,0,Paolo Espino,Aaron Nola
+2021-09-02,Detroit Tigers,Oakland Athletics,6,8,0,Matt Manning,Frankie Montas
+2021-09-02,San Francisco Giants,Milwaukee Brewers,5,1,1,Logan Webb,Eric Lauer
+2021-09-02,Tampa Bay Rays,Boston Red Sox,0,4,0,Shane McClanahan,Eduardo Rodriguez
+2021-09-02,New York Mets,Miami Marlins,4,3,1,Carlos Carrasco,Sandy Alcantara
+2021-09-02,Chicago Cubs,Pittsburgh Pirates,6,5,1,Keegan Thompson,Mitch Keller
+2021-09-02,Kansas City Royals,Cleveland Indians,2,4,0,Mike Minor,Triston McKenzie
+2021-09-02,Colorado Rockies,Atlanta Braves,5,6,0,Chi Chi González,Touki Toussaint
+2021-09-03,Chicago Cubs,Pittsburgh Pirates,6,5,1,Alec Mills,Steven Brault
+2021-09-03,Washington Nationals,New York Mets,2,6,0,Sean Nolin,Rich Hill
+2021-09-03,New York Yankees,Baltimore Orioles,4,3,1,Nestor Cortes,John Means
+2021-09-03,Toronto Blue Jays,Oakland Athletics,11,10,1,Alek Manoah,Sean Manaea
+2021-09-03,Boston Red Sox,Cleveland Indians,8,5,1,Nathan Eovaldi,Cal Quantrill
+2021-09-03,Cincinnati Reds,Detroit Tigers,5,15,0,Vladimir Gutierrez,Tyler Alexander
+2021-09-03,Tampa Bay Rays,Minnesota Twins,5,3,1,Michael Wacha,Randy Dobnak
+2021-09-03,Miami Marlins,Philadelphia Phillies,10,3,1,Jesús Luzardo,Kyle Gibson
+2021-09-03,Kansas City Royals,Chicago White Sox,7,2,1,Carlos Hernández,Dallas Keuchel
+2021-09-03,Milwaukee Brewers,St. Louis Cardinals,4,15,0,Freddy Peralta,Adam Wainwright
+2021-09-03,Colorado Rockies,Atlanta Braves,4,3,1,Antonio Senzatela,Huascar Ynoa
+2021-09-03,Los Angeles Angels,Texas Rangers,3,2,1,Shohei Ohtani,Glenn Otto Jr.
+2021-09-03,Arizona Diamondbacks,Seattle Mariners,5,6,0,Madison Bumgarner,Tyler Anderson
+2021-09-03,San Francisco Giants,Los Angeles Dodgers,3,2,1,Anthony DeSclafani,Corey Knebel
+2021-09-03,San Diego Padres,Houston Astros,3,6,0,Jake Arrieta,José Urquidy
+2021-09-04,Washington Nationals,New York Mets,9,11,0,Erick Fedde,Marcus Stroman
+2021-09-04,Washington Nationals,New York Mets,4,3,1,Josh Rogers,Tylor Megill
+2021-09-04,New York Yankees,Baltimore Orioles,3,4,0,Jordan Montgomery,Chris Ellis
+2021-09-04,Chicago Cubs,Pittsburgh Pirates,7,6,1,Kyle Hendricks,JT Brubaker
+2021-09-04,Toronto Blue Jays,Oakland Athletics,10,8,1,José Berríos,Paul Blackburn
+2021-09-04,Tampa Bay Rays,Minnesota Twins,11,4,1,Chris Archer,Andrew Albers
+2021-09-04,Boston Red Sox,Cleveland Indians,4,3,1,Tanner Houck,Eli Morgan
+2021-09-04,Miami Marlins,Philadelphia Phillies,3,2,1,Trevor Rogers,Ranger Suarez
+2021-09-04,Cincinnati Reds,Detroit Tigers,7,4,1,Tyler Mahle,Matthew Boyd
+2021-09-04,Kansas City Royals,Chicago White Sox,7,10,0,Daniel Lynch IV,Reynaldo López
+2021-09-04,Milwaukee Brewers,St. Louis Cardinals,4,0,1,Adrian Houser,Kwang Hyun Kim
+2021-09-04,Arizona Diamondbacks,Seattle Mariners,5,8,0,Humberto Castellanos,Marco Gonzales
+2021-09-04,Colorado Rockies,Atlanta Braves,7,6,1,Germán Márquez,Ian Anderson
+2021-09-04,San Diego Padres,Houston Astros,10,2,1,Joe Musgrove,Framber Valdez
+2021-09-04,San Francisco Giants,Los Angeles Dodgers,1,6,0,Jay Jackson,Julio Urías
+2021-09-04,Los Angeles Angels,Texas Rangers,4,1,1,José Suarez,Kolby Allard
+2021-09-05,Washington Nationals,New York Mets,6,13,0,Josiah Gray,Taijuan Walker
+2021-09-05,New York Yankees,Baltimore Orioles,7,8,0,Corey Kluber,Keegan Akin
+2021-09-05,Toronto Blue Jays,Oakland Athletics,8,0,1,Robbie Ray,Cole Irvin
+2021-09-05,Boston Red Sox,Cleveland Indians,5,11,0,Kutter Crawford,Zach Plesac
+2021-09-05,Cincinnati Reds,Detroit Tigers,1,4,0,Luis Castillo,Casey Mize
+2021-09-05,Tampa Bay Rays,Minnesota Twins,5,6,0,Luis Patiño,Griffin Jax
+2021-09-05,Miami Marlins,Philadelphia Phillies,3,4,0,Elieser Hernández,Sam Coonrod
+2021-09-05,Kansas City Royals,Chicago White Sox,6,0,1,Brady Singer,Dylan Cease
+2021-09-05,Milwaukee Brewers,St. Louis Cardinals,6,5,1,Corbin Burnes,Jon Lester
+2021-09-05,Chicago Cubs,Pittsburgh Pirates,11,8,1,Zach Davies,Wil Crowe
+2021-09-05,Colorado Rockies,Atlanta Braves,2,9,0,Ryan Feltner,Charlie Morton
+2021-09-05,Los Angeles Angels,Texas Rangers,3,7,0,Janson Junk,Taylor Hearn
+2021-09-05,San Diego Padres,Houston Astros,4,3,1,Chris Paddack,Luis Garcia
+2021-09-05,Arizona Diamondbacks,Seattle Mariners,4,10,0,Tyler Gilbert,Chris Flexen
+2021-09-05,San Francisco Giants,Los Angeles Dodgers,6,4,1,Dominic Leone,Walker Buehler
+2021-09-06,Baltimore Orioles,Kansas City Royals,2,3,0,Zac Lowther,Kris Bubic
+2021-09-06,Washington Nationals,New York Mets,4,3,1,Patrick Corbin,Trevor Williams
+2021-09-06,New York Yankees,Toronto Blue Jays,0,8,0,Jameson Taillon,Hyun Jin Ryu
+2021-09-06,Boston Red Sox,Tampa Bay Rays,10,11,0,Chris Sale,Ryan Yarbrough
+2021-09-06,Pittsburgh Pirates,Detroit Tigers,6,3,1,Bryse Wilson,Tarik Skubal
+2021-09-06,Milwaukee Brewers,Philadelphia Phillies,0,12,0,Brandon Woodruff,Zack Wheeler
+2021-09-06,Chicago Cubs,Cincinnati Reds,4,3,1,Justin Steele,Sonny Gray
+2021-09-06,Colorado Rockies,San Francisco Giants,5,10,0,Kyle Freeland,Kevin Gausman
+2021-09-06,St. Louis Cardinals,Los Angeles Dodgers,1,5,0,Miles Mikolas,Max Scherzer
+2021-09-06,Cleveland Indians,Minnesota Twins,2,5,0,Logan Allen,Bailey Ober
+2021-09-06,Houston Astros,Seattle Mariners,11,2,1,Lance McCullers Jr.,Yusei Kikuchi
+2021-09-06,Los Angeles Angels,Texas Rangers,0,4,0,Jaime Barria,A.J. Alexy
+2021-09-07,Cleveland Indians,Minnesota Twins,0,3,0,Aaron Civale,John Gant
+2021-09-07,Pittsburgh Pirates,Detroit Tigers,3,2,1,Dillon Peters,Wily Peralta
+2021-09-07,Miami Marlins,New York Mets,4,9,0,Edward Cabrera,Carlos Carrasco
+2021-09-07,Baltimore Orioles,Kansas City Royals,7,3,1,Alex Wells,Jackson Kowar
+2021-09-07,New York Yankees,Toronto Blue Jays,1,5,0,Gerrit Cole,Steven Matz
+2021-09-07,Boston Red Sox,Tampa Bay Rays,7,12,0,Eduardo Rodriguez,Drew Rasmussen
+2021-09-07,Atlanta Braves,Washington Nationals,8,5,1,Max Fried,Paolo Espino
+2021-09-07,Chicago Cubs,Cincinnati Reds,3,4,0,Adrian Sampson,Wade Miley
+2021-09-07,Milwaukee Brewers,Philadelphia Phillies,10,0,1,Eric Lauer,Aaron Nola
+2021-09-07,St. Louis Cardinals,Los Angeles Dodgers,2,7,0,J.A. Happ,Corey Knebel
+2021-09-07,Houston Astros,Seattle Mariners,5,4,1,Jake Odorizzi,Logan Gilbert
+2021-09-07,Colorado Rockies,San Francisco Giants,3,12,0,Chi Chi González,Logan Webb
+2021-09-07,Arizona Diamondbacks,Texas Rangers,1,3,0,Zac Gallen,Spencer Howard
+2021-09-07,Oakland Athletics,Chicago White Sox,3,6,0,James Kaprielian,Jimmy Lambert
+2021-09-07,San Diego Padres,Los Angeles Angels,0,4,0,Blake Snell,Packy Naughton
+2021-09-08,Houston Astros,Seattle Mariners,5,8,0,José Urquidy,Tyler Anderson
+2021-09-08,Colorado Rockies,San Francisco Giants,4,7,0,Jon Gray,Anthony DeSclafani
+2021-09-08,Arizona Diamondbacks,Texas Rangers,5,8,0,Luke Weaver,Kohei Arihara
+2021-09-08,Cleveland Indians,Minnesota Twins,0,3,0,Triston McKenzie,Joe Ryan
+2021-09-08,Pittsburgh Pirates,Detroit Tigers,1,5,0,Mitch Keller,Matt Manning
+2021-09-08,Miami Marlins,New York Mets,2,1,1,Sandy Alcantara,Rich Hill
+2021-09-08,Baltimore Orioles,Kansas City Royals,9,8,1,Matt Harvey,Mike Minor
+2021-09-08,New York Yankees,Toronto Blue Jays,3,6,0,Luis Gil,Alek Manoah
+2021-09-08,Boston Red Sox,Tampa Bay Rays,2,1,1,Nathan Eovaldi,Shane McClanahan
+2021-09-08,Atlanta Braves,Washington Nationals,2,4,0,Touki Toussaint,Sean Nolin
+2021-09-08,Chicago Cubs,Cincinnati Reds,4,1,1,Alec Mills,Vladimir Gutierrez
+2021-09-08,Milwaukee Brewers,Philadelphia Phillies,4,3,1,Freddy Peralta,Kyle Gibson
+2021-09-08,St. Louis Cardinals,Los Angeles Dodgers,5,4,1,Adam Wainwright,Mitch White
+2021-09-08,San Diego Padres,Los Angeles Angels,8,5,1,Yu Darvish,Mike Mayers
+2021-09-08,Oakland Athletics,Chicago White Sox,5,1,1,Frankie Montas,Dallas Keuchel
+2021-09-09,St. Louis Cardinals,Los Angeles Dodgers,2,1,1,Jake Woodford,Tony Gonsolin
+2021-09-09,Oakland Athletics,Chicago White Sox,3,1,1,Sean Manaea,Reynaldo López
+2021-09-09,Cleveland Indians,Minnesota Twins,4,1,1,Cal Quantrill,Andrew Albers
+2021-09-09,Miami Marlins,New York Mets,3,2,1,Jesús Luzardo,Marcus Stroman
+2021-09-09,Baltimore Orioles,Kansas City Royals,0,6,0,John Means,Carlos Hernández
+2021-09-09,Philadelphia Phillies,Colorado Rockies,3,4,0,Ranger Suarez,Antonio Senzatela
+2021-09-09,New York Yankees,Toronto Blue Jays,4,6,0,Nestor Cortes,José Berríos
+2021-09-09,Atlanta Braves,Washington Nationals,7,6,1,Huascar Ynoa,Erick Fedde
+2021-09-10,Chicago Cubs,San Francisco Giants,1,6,0,Kyle Hendricks,Dominic Leone
+2021-09-10,Pittsburgh Pirates,Washington Nationals,4,3,1,Steven Brault,Josh Rogers
+2021-09-10,Baltimore Orioles,Toronto Blue Jays,6,3,1,Chris Ellis,Robbie Ray
+2021-09-10,Philadelphia Phillies,Colorado Rockies,2,11,0,Sam Coonrod,Germán Márquez
+2021-09-10,Detroit Tigers,Tampa Bay Rays,10,4,1,Tyler Alexander,Michael Wacha
+2021-09-10,New York Mets,New York Yankees,10,3,1,Tylor Megill,Jordan Montgomery
+2021-09-10,Cleveland Indians,Milwaukee Brewers,3,10,0,Eli Morgan,Adrian Houser
+2021-09-10,Atlanta Braves,Miami Marlins,6,2,1,Ian Anderson,Trevor Rogers
+2021-09-10,Houston Astros,Los Angeles Angels,10,5,1,Framber Valdez,Shohei Ohtani
+2021-09-10,Minnesota Twins,Kansas City Royals,4,6,0,Griffin Jax,Daniel Lynch IV
+2021-09-10,Chicago White Sox,Boston Red Sox,4,3,1,Carlos Rodón,Tanner Houck
+2021-09-10,St. Louis Cardinals,Cincinnati Reds,2,4,0,Jon Lester,Tyler Mahle
+2021-09-10,Oakland Athletics,Texas Rangers,10,5,1,Paul Blackburn,Glenn Otto Jr.
+2021-09-10,Los Angeles Dodgers,San Diego Padres,3,0,1,Julio Urías,Joe Musgrove
+2021-09-10,Seattle Mariners,Arizona Diamondbacks,5,4,1,Marco Gonzales,Madison Bumgarner
+2021-09-11,Chicago Cubs,San Francisco Giants,4,15,0,Zach Davies,Kevin Gausman
+2021-09-11,Oakland Athletics,Texas Rangers,6,8,0,Cole Irvin,Wes Benjamin
+2021-09-11,Baltimore Orioles,Toronto Blue Jays,10,11,0,Dean Kremer,Hyun Jin Ryu
+2021-09-11,Baltimore Orioles,Toronto Blue Jays,2,11,0,Keegan Akin,Thomas Hatch
+2021-09-11,Philadelphia Phillies,Colorado Rockies,6,1,1,Zack Wheeler,Kyle Freeland
+2021-09-11,Detroit Tigers,Tampa Bay Rays,2,7,0,Casey Mize,Chris Archer
+2021-09-11,Cleveland Indians,Milwaukee Brewers,0,3,0,Zach Plesac,Corbin Burnes
+2021-09-11,Pittsburgh Pirates,Washington Nationals,10,7,1,Wil Crowe,Josiah Gray
+2021-09-11,Houston Astros,Los Angeles Angels,2,4,0,Luis Garcia,José Suarez
+2021-09-11,Minnesota Twins,Kansas City Royals,9,2,1,Michael Pineda,Brady Singer
+2021-09-11,Chicago White Sox,Boston Red Sox,8,9,0,Dylan Cease,Connor Seabold
+2021-09-11,St. Louis Cardinals,Cincinnati Reds,6,4,1,Miles Mikolas,Luis Castillo
+2021-09-11,Atlanta Braves,Miami Marlins,4,6,0,Charlie Morton,Elieser Hernández
+2021-09-11,New York Mets,New York Yankees,7,8,0,Taijuan Walker,Corey Kluber
+2021-09-11,Los Angeles Dodgers,San Diego Padres,5,4,1,Walker Buehler,Chris Paddack
+2021-09-11,Seattle Mariners,Arizona Diamondbacks,3,7,0,Chris Flexen,Humberto Castellanos
+2021-09-12,Detroit Tigers,Tampa Bay Rays,8,7,1,Tarik Skubal,Luis Patiño
+2021-09-12,Pittsburgh Pirates,Washington Nationals,2,6,0,Bryse Wilson,Patrick Corbin
+2021-09-12,Baltimore Orioles,Toronto Blue Jays,7,22,0,Zac Lowther,Steven Matz
+2021-09-12,Philadelphia Phillies,Colorado Rockies,4,5,0,Aaron Nola,Ryan Feltner
+2021-09-12,Cleveland Indians,Milwaukee Brewers,1,11,0,Aaron Civale,Eric Lauer
+2021-09-12,Atlanta Braves,Miami Marlins,5,3,1,Max Fried,Edward Cabrera
+2021-09-12,Houston Astros,Los Angeles Angels,3,1,1,Lance McCullers Jr.,Jaime Barria
+2021-09-12,Minnesota Twins,Kansas City Royals,3,5,0,Bailey Ober,Kris Bubic
+2021-09-12,Chicago White Sox,Boston Red Sox,2,1,1,Lance Lynn,Nick Pivetta
+2021-09-12,St. Louis Cardinals,Cincinnati Reds,2,0,1,J.A. Happ,Sonny Gray
+2021-09-12,Chicago Cubs,San Francisco Giants,5,6,0,Justin Steele,Logan Webb
+2021-09-12,Oakland Athletics,Texas Rangers,3,4,0,James Kaprielian,Taylor Hearn
+2021-09-12,Los Angeles Dodgers,San Diego Padres,8,0,1,Max Scherzer,Blake Snell
+2021-09-12,Seattle Mariners,Arizona Diamondbacks,4,5,0,Yusei Kikuchi,Tyler Gilbert
+2021-09-12,New York Mets,New York Yankees,7,6,1,Carlos Carrasco,Clarke Schmidt
+2021-09-13,New York Yankees,Minnesota Twins,6,5,1,Luis Gil,John Gant
+2021-09-13,Washington Nationals,Miami Marlins,0,3,0,Paolo Espino,Sandy Alcantara
+2021-09-13,Toronto Blue Jays,Tampa Bay Rays,8,1,1,Alek Manoah,Collin McHugh
+2021-09-13,New York Mets,St. Louis Cardinals,0,7,0,Rich Hill,Adam Wainwright
+2021-09-13,Texas Rangers,Houston Astros,1,15,0,Spencer Howard,Jake Odorizzi
+2021-09-13,San Francisco Giants,San Diego Padres,9,1,1,Dominic Leone,Yu Darvish
+2021-09-13,Los Angeles Dodgers,Arizona Diamondbacks,5,1,1,Clayton Kershaw,Zac Gallen
+2021-09-13,Seattle Mariners,Boston Red Sox,5,4,1,Logan Gilbert,Eduardo Rodriguez
+2021-09-14,Minnesota Twins,Cleveland Indians,1,3,0,Joe Ryan,Triston McKenzie
+2021-09-14,Minnesota Twins,Cleveland Indians,6,3,1,Charlie Barnes,Logan Allen
+2021-09-14,Pittsburgh Pirates,Cincinnati Reds,6,5,1,Dillon Peters,Wade Miley
+2021-09-14,Detroit Tigers,Milwaukee Brewers,1,0,1,Wily Peralta,Freddy Peralta
+2021-09-14,Philadelphia Phillies,Chicago Cubs,3,6,0,Kyle Gibson,Adrian Sampson
+2021-09-14,Washington Nationals,Miami Marlins,8,2,1,Erick Fedde,Jesús Luzardo
+2021-09-14,Baltimore Orioles,New York Yankees,2,7,0,Alex Wells,Gerrit Cole
+2021-09-14,Toronto Blue Jays,Tampa Bay Rays,0,2,0,José Berríos,Drew Rasmussen
+2021-09-14,New York Mets,St. Louis Cardinals,6,7,0,Marcus Stroman,Jake Woodford
+2021-09-14,Atlanta Braves,Colorado Rockies,4,5,0,Touki Toussaint,Jon Gray
+2021-09-14,Texas Rangers,Houston Astros,8,1,1,Jordan Lyles,Zack Greinke
+2021-09-14,Kansas City Royals,Oakland Athletics,10,7,1,Jackson Kowar,Frankie Montas
+2021-09-14,Chicago White Sox,Los Angeles Angels,9,3,1,Lucas Giolito,Packy Naughton
+2021-09-14,San Francisco Giants,San Diego Padres,6,1,1,Anthony DeSclafani,Jake Arrieta
+2021-09-14,Los Angeles Dodgers,Arizona Diamondbacks,8,4,1,Tony Gonsolin,Luke Weaver
+2021-09-14,Seattle Mariners,Boston Red Sox,4,8,0,Tyler Anderson,Nathan Eovaldi
+2021-09-15,Washington Nationals,Miami Marlins,6,8,0,Josh Rogers,Trevor Rogers
+2021-09-15,Detroit Tigers,Milwaukee Brewers,4,1,1,Matt Manning,Brandon Woodruff
+2021-09-15,Toronto Blue Jays,Tampa Bay Rays,6,3,1,Robbie Ray,Michael Wacha
+2021-09-15,Seattle Mariners,Boston Red Sox,4,9,0,Marco Gonzales,Tanner Houck
+2021-09-15,Pittsburgh Pirates,Cincinnati Reds,5,4,1,Mitch Keller,Vladimir Gutierrez
+2021-09-15,Philadelphia Phillies,Chicago Cubs,6,5,1,Ranger Suarez,Alec Mills
+2021-09-15,Baltimore Orioles,New York Yankees,3,4,0,John Means,Nestor Cortes
+2021-09-15,New York Mets,St. Louis Cardinals,4,11,0,Tylor Megill,Jon Lester
+2021-09-15,Atlanta Braves,Colorado Rockies,2,3,0,Huascar Ynoa,Antonio Senzatela
+2021-09-15,Minnesota Twins,Cleveland Indians,3,12,0,Griffin Jax,Cal Quantrill
+2021-09-15,Texas Rangers,Houston Astros,2,7,0,Kohei Arihara,José Urquidy
+2021-09-15,Kansas City Royals,Oakland Athletics,10,12,0,Carlos Hernández,Sean Manaea
+2021-09-15,Chicago White Sox,Los Angeles Angels,2,3,0,Dallas Keuchel,Janson Junk
+2021-09-15,San Francisco Giants,San Diego Padres,6,9,0,Dominic Leone,Joe Musgrove
+2021-09-15,Los Angeles Dodgers,Arizona Diamondbacks,5,3,1,Julio Urías,Merrill Kelly
+2021-09-16,Pittsburgh Pirates,Cincinnati Reds,0,1,0,Connor Overton,Tyler Mahle
+2021-09-16,Kansas City Royals,Oakland Athletics,2,7,0,Daniel Lynch IV,Paul Blackburn
+2021-09-16,Chicago White Sox,Los Angeles Angels,3,9,0,Reynaldo López,Alex Cobb
+2021-09-16,San Francisco Giants,San Diego Padres,4,7,0,Kevin Gausman,Pierce Johnson
+2021-09-16,Baltimore Orioles,New York Yankees,3,2,1,Chris Ellis,Jordan Montgomery
+2021-09-16,Philadelphia Phillies,Chicago Cubs,17,8,1,Cam Bedrosian,Kyle Hendricks
+2021-09-16,Tampa Bay Rays,Detroit Tigers,5,2,1,Louis Head,Tyler Alexander
+2021-09-16,Texas Rangers,Houston Astros,1,12,0,Glenn Otto Jr.,Luis Garcia
+2021-09-17,Washington Nationals,Colorado Rockies,8,9,0,Josiah Gray,Germán Márquez
+2021-09-17,New York Yankees,Cleveland Indians,8,0,1,Corey Kluber,Zach Plesac
+2021-09-17,Toronto Blue Jays,Minnesota Twins,3,7,0,Hyun Jin Ryu,Michael Pineda
+2021-09-17,Boston Red Sox,Baltimore Orioles,7,1,1,Chris Sale,Keegan Akin
+2021-09-17,Cincinnati Reds,Los Angeles Dodgers,3,1,1,Luis Castillo,Walker Buehler
+2021-09-17,Tampa Bay Rays,Detroit Tigers,7,4,1,Luis Patiño,Casey Mize
+2021-09-17,New York Mets,Philadelphia Phillies,3,4,0,Taijuan Walker,Zack Wheeler
+2021-09-17,Miami Marlins,Pittsburgh Pirates,1,2,0,Elieser Hernández,Wil Crowe
+2021-09-17,Texas Rangers,Chicago White Sox,0,8,0,Taylor Hearn,Dylan Cease
+2021-09-17,Houston Astros,Arizona Diamondbacks,4,3,1,Brandon Bielak,Madison Bumgarner
+2021-09-17,Kansas City Royals,Seattle Mariners,2,6,0,Jonathan Heasley,Chris Flexen
+2021-09-17,Milwaukee Brewers,Chicago Cubs,8,5,1,Adrian Houser,Zach Davies
+2021-09-17,St. Louis Cardinals,San Diego Padres,8,2,1,Miles Mikolas,Vince Velasquez
+2021-09-17,Los Angeles Angels,Oakland Athletics,4,5,0,Jhonathan Díaz,Cole Irvin
+2021-09-17,San Francisco Giants,Atlanta Braves,6,5,1,Logan Webb,Ian Anderson
+2021-09-18,New York Yankees,Cleveland Indians,3,11,0,Luis Gil,Aaron Civale
+2021-09-18,Boston Red Sox,Baltimore Orioles,9,3,1,Nick Pivetta,Zac Lowther
+2021-09-18,Cincinnati Reds,Los Angeles Dodgers,1,5,0,Sonny Gray,Max Scherzer
+2021-09-18,Toronto Blue Jays,Minnesota Twins,6,2,1,Steven Matz,Bailey Ober
+2021-09-18,Washington Nationals,Colorado Rockies,0,6,0,Patrick Corbin,Kyle Freeland
+2021-09-18,Tampa Bay Rays,Detroit Tigers,3,4,0,Ryan Yarbrough,Tarik Skubal
+2021-09-18,Miami Marlins,Pittsburgh Pirates,3,6,0,Edward Cabrera,Bryse Wilson
+2021-09-18,Texas Rangers,Chicago White Sox,2,1,1,Spencer Howard,Lance Lynn
+2021-09-18,Houston Astros,Arizona Diamondbacks,4,6,0,Lance McCullers Jr.,Humberto Castellanos
+2021-09-18,Kansas City Royals,Seattle Mariners,8,1,1,Kris Bubic,Yusei Kikuchi
+2021-09-18,St. Louis Cardinals,San Diego Padres,3,2,1,Adam Wainwright,Yu Darvish
+2021-09-18,New York Mets,Philadelphia Phillies,3,5,0,Carlos Carrasco,Aaron Nola
+2021-09-18,Milwaukee Brewers,Chicago Cubs,6,4,1,Corbin Burnes,Justin Steele
+2021-09-18,San Francisco Giants,Atlanta Braves,2,0,1,Alex Wood,Charlie Morton
+2021-09-18,Los Angeles Angels,Oakland Athletics,1,3,0,José Suarez,James Kaprielian
+2021-09-19,Washington Nationals,Colorado Rockies,3,0,1,Paolo Espino,Jon Gray
+2021-09-19,New York Yankees,Cleveland Indians,1,11,0,Gerrit Cole,Eli Morgan
+2021-09-19,Toronto Blue Jays,Minnesota Twins,5,3,1,José Berríos,Luke Farrell
+2021-09-19,Boston Red Sox,Baltimore Orioles,8,6,1,Nathan Eovaldi,Alex Wells
+2021-09-19,Cincinnati Reds,Los Angeles Dodgers,5,8,0,Wade Miley,Clayton Kershaw
+2021-09-19,Tampa Bay Rays,Detroit Tigers,0,2,0,Shane McClanahan,Wily Peralta
+2021-09-19,Miami Marlins,Pittsburgh Pirates,6,5,1,Sandy Alcantara,Max Kranick
+2021-09-19,Houston Astros,Arizona Diamondbacks,7,6,1,Zack Greinke,Zac Gallen
+2021-09-19,Kansas City Royals,Seattle Mariners,1,7,0,Jackson Kowar,Logan Gilbert
+2021-09-19,Milwaukee Brewers,Chicago Cubs,4,6,0,Eric Lauer,Keegan Thompson
+2021-09-19,St. Louis Cardinals,San Diego Padres,8,7,1,J.A. Happ,Jake Arrieta
+2021-09-19,Texas Rangers,Chicago White Sox,2,7,0,Jordan Lyles,Lucas Giolito
+2021-09-19,San Francisco Giants,Atlanta Braves,0,3,0,Anthony DeSclafani,Max Fried
+2021-09-19,Los Angeles Angels,Oakland Athletics,2,3,0,Shohei Ohtani,Frankie Montas
+2021-09-19,New York Mets,Philadelphia Phillies,3,2,1,Rich Hill,Kyle Gibson
+2021-09-20,Cleveland Indians,Kansas City Royals,2,7,0,Triston McKenzie,Brady Singer
+2021-09-20,Cleveland Indians,Kansas City Royals,2,4,0,Nick Wittgren,Joel Payamps
+2021-09-20,Cincinnati Reds,Pittsburgh Pirates,9,5,1,Vladimir Gutierrez,Dillon Peters
+2021-09-20,Detroit Tigers,Chicago White Sox,4,3,1,Matt Manning,Carlos Rodón
+2021-09-20,Miami Marlins,Washington Nationals,8,7,1,Jesús Luzardo,Erick Fedde
+2021-09-20,Philadelphia Phillies,Baltimore Orioles,0,2,0,Ranger Suarez,John Means
+2021-09-20,New York Yankees,Texas Rangers,4,3,1,Nestor Cortes,A.J. Alexy
+2021-09-20,Tampa Bay Rays,Toronto Blue Jays,6,4,1,Shane Baz,Robbie Ray
+2021-09-20,Milwaukee Brewers,St. Louis Cardinals,2,5,0,Freddy Peralta,Jon Lester
+2021-09-20,Los Angeles Angels,Houston Astros,0,10,0,Jaime Barria,Framber Valdez
+2021-09-20,Oakland Athletics,Seattle Mariners,2,4,0,Sean Manaea,Tyler Anderson
+2021-09-20,Arizona Diamondbacks,Atlanta Braves,4,11,0,Humberto Mejía,Huascar Ynoa
+2021-09-21,Detroit Tigers,Chicago White Sox,5,3,1,Tyler Alexander,Dallas Keuchel
+2021-09-21,Cleveland Indians,Kansas City Royals,4,1,1,Cal Quantrill,Daniel Lynch IV
+2021-09-21,Cincinnati Reds,Pittsburgh Pirates,2,6,0,Tyler Mahle,Mitch Keller
+2021-09-21,Miami Marlins,Washington Nationals,1,7,0,Trevor Rogers,Josh Rogers
+2021-09-21,Philadelphia Phillies,Baltimore Orioles,3,2,1,Adonis Medina,Conner Greene
+2021-09-21,New York Yankees,Texas Rangers,7,1,1,Jordan Montgomery,Dane Dunning
+2021-09-21,Boston Red Sox,New York Mets,6,3,1,Eduardo Rodriguez,Marcus Stroman
+2021-09-21,Tampa Bay Rays,Toronto Blue Jays,2,4,0,Drew Rasmussen,Alek Manoah
+2021-09-21,Chicago Cubs,Minnesota Twins,5,9,0,Alec Mills,Griffin Jax
+2021-09-21,Milwaukee Brewers,St. Louis Cardinals,1,2,0,Brandon Woodruff,Jake Woodford
+2021-09-21,Colorado Rockies,Los Angeles Dodgers,4,5,0,Antonio Senzatela,Julio Urías
+2021-09-21,Los Angeles Angels,Houston Astros,5,10,0,Packy Naughton,José Urquidy
+2021-09-21,Oakland Athletics,Seattle Mariners,2,5,0,Paul Blackburn,Marco Gonzales
+2021-09-21,Arizona Diamondbacks,Atlanta Braves,1,6,0,Luke Weaver,Jesse Chavez
+2021-09-21,San Diego Padres,San Francisco Giants,5,6,0,Joe Musgrove,Kevin Gausman
+2021-09-22,Tampa Bay Rays,Toronto Blue Jays,7,1,1,Luis Patiño,Julian Merryweather
+2021-09-22,Miami Marlins,Washington Nationals,5,7,0,Elieser Hernández,Josiah Gray
+2021-09-22,Philadelphia Phillies,Baltimore Orioles,4,3,1,Zack Wheeler,Keegan Akin
+2021-09-22,New York Yankees,Texas Rangers,7,3,1,Corey Kluber,Taylor Hearn
+2021-09-22,Boston Red Sox,New York Mets,12,5,1,Chris Sale,Taijuan Walker
+2021-09-22,Chicago Cubs,Minnesota Twins,4,5,0,Kyle Hendricks,Joe Ryan
+2021-09-22,Milwaukee Brewers,St. Louis Cardinals,2,10,0,Brett Anderson,Miles Mikolas
+2021-09-22,Colorado Rockies,Los Angeles Dodgers,10,5,1,Germán Márquez,Walker Buehler
+2021-09-22,Los Angeles Angels,Houston Astros,5,9,0,Janson Junk,Luis Garcia
+2021-09-22,Oakland Athletics,Seattle Mariners,1,4,0,Cole Irvin,Chris Flexen
+2021-09-22,Arizona Diamondbacks,Atlanta Braves,2,9,0,Merrill Kelly,Ian Anderson
+2021-09-22,San Diego Padres,San Francisco Giants,6,8,0,Vince Velasquez,Scott Kazmir
+2021-09-23,Cleveland Indians,Chicago White Sox,2,7,0,Aaron Civale,Reynaldo López
+2021-09-23,Cleveland Indians,Chicago White Sox,5,3,1,Zach Plesac,Michael Kopech
+2021-09-23,Milwaukee Brewers,St. Louis Cardinals,5,8,0,Adrian Houser,Adam Wainwright
+2021-09-23,Colorado Rockies,Los Angeles Dodgers,5,7,0,Kyle Freeland,Max Scherzer
+2021-09-23,Oakland Athletics,Seattle Mariners,5,6,0,Chris Bassitt,Yusei Kikuchi
+2021-09-23,Arizona Diamondbacks,Atlanta Braves,6,4,1,Madison Bumgarner,Charlie Morton
+2021-09-23,San Diego Padres,San Francisco Giants,7,6,1,Yu Darvish,Logan Webb
+2021-09-23,Cincinnati Reds,Washington Nationals,2,3,0,Luis Castillo,Patrick Corbin
+2021-09-23,Baltimore Orioles,Texas Rangers,3,0,1,Zac Lowther,Glenn Otto Jr.
+2021-09-23,Philadelphia Phillies,Pittsburgh Pirates,12,6,1,Aaron Nola,Connor Overton
+2021-09-23,Minnesota Twins,Toronto Blue Jays,7,2,1,Michael Pineda,Steven Matz
+2021-09-23,Los Angeles Angels,Houston Astros,3,2,1,Alex Cobb,Lance McCullers Jr.
+2021-09-24,Chicago Cubs,St. Louis Cardinals,5,8,0,Justin Steele,J.A. Happ
+2021-09-24,Chicago Cubs,St. Louis Cardinals,4,12,0,Zach Davies,Jack Flaherty
+2021-09-24,Baltimore Orioles,Texas Rangers,5,8,0,Alex Wells,Spencer Howard
+2021-09-24,Philadelphia Phillies,Pittsburgh Pirates,8,6,1,Kyle Gibson,Sam Howard
+2021-09-24,Detroit Tigers,Kansas City Royals,1,3,0,Casey Mize,Carlos Hernández
+2021-09-24,Cincinnati Reds,Washington Nationals,8,7,1,Sonny Gray,Paolo Espino
+2021-09-24,Cleveland Indians,Chicago White Sox,0,1,0,Shane Bieber,Dylan Cease
+2021-09-24,Tampa Bay Rays,Miami Marlins,8,0,1,David Robertson,Edward Cabrera
+2021-09-24,Boston Red Sox,New York Yankees,3,8,0,Nathan Eovaldi,Gerrit Cole
+2021-09-24,Colorado Rockies,San Francisco Giants,2,7,0,Peter Lambert,Alex Wood
+2021-09-24,Minnesota Twins,Toronto Blue Jays,3,1,1,Bailey Ober,José Berríos
+2021-09-24,Atlanta Braves,San Diego Padres,5,6,0,Bryse Wilson,Reiss Knehr
+2021-09-24,Milwaukee Brewers,New York Mets,5,1,1,Eric Lauer,Tylor Megill
+2021-09-24,Los Angeles Angels,Seattle Mariners,5,6,0,José Suarez,Logan Gilbert
+2021-09-24,Arizona Diamondbacks,Los Angeles Dodgers,2,4,0,Humberto Castellanos,Tony Gonsolin
+2021-09-24,Oakland Athletics,Houston Astros,14,2,1,Frankie Montas,Brandon Bielak
+2021-09-24,San Diego Padres,Atlanta Braves,0,4,0,Reiss Knehr,Max Fried
+2021-09-25,Chicago Cubs,St. Louis Cardinals,5,8,0,Adrian Sampson,Jon Lester
+2021-09-25,Philadelphia Phillies,Pittsburgh Pirates,3,0,1,Ranger Suarez,Wil Crowe
+2021-09-25,Oakland Athletics,Houston Astros,2,1,1,Sean Manaea,Framber Valdez
+2021-09-25,Boston Red Sox,New York Yankees,3,5,0,Nick Pivetta,Nestor Cortes
+2021-09-25,Detroit Tigers,Kansas City Royals,5,1,1,Tarik Skubal,Jonathan Heasley
+2021-09-25,Tampa Bay Rays,Miami Marlins,7,3,1,Shane McClanahan,Sandy Alcantara
+2021-09-25,Baltimore Orioles,Texas Rangers,3,2,1,Chris Ellis,Jordan Lyles
+2021-09-25,Cincinnati Reds,Washington Nationals,7,6,1,Vladimir Gutierrez,Erick Fedde
+2021-09-25,Minnesota Twins,Toronto Blue Jays,1,6,0,John Gant,Robbie Ray
+2021-09-25,Milwaukee Brewers,New York Mets,2,1,1,Corbin Burnes,Rich Hill
+2021-09-25,San Diego Padres,Atlanta Braves,8,10,0,Vince Velasquez,Huascar Ynoa
+2021-09-25,Cleveland Indians,Chicago White Sox,6,0,1,Eli Morgan,Lance Lynn
+2021-09-25,Arizona Diamondbacks,Los Angeles Dodgers,7,2,1,Zac Gallen,Clayton Kershaw
+2021-09-25,Colorado Rockies,San Francisco Giants,2,7,0,Jon Gray,Anthony DeSclafani
+2021-09-25,Los Angeles Angels,Seattle Mariners,14,1,1,Jaime Barria,Tyler Anderson
+2021-09-26,Detroit Tigers,Kansas City Royals,1,2,0,Wily Peralta,Kris Bubic
+2021-09-26,Baltimore Orioles,Texas Rangers,4,7,0,John Means,Dane Dunning
+2021-09-26,Philadelphia Phillies,Pittsburgh Pirates,0,6,0,Hans Crouse,Max Kranick
+2021-09-26,Cincinnati Reds,Washington Nationals,9,2,1,Tyler Mahle,Josh Rogers
+2021-09-26,Cleveland Indians,Chicago White Sox,2,5,0,Triston McKenzie,Lucas Giolito
+2021-09-26,Tampa Bay Rays,Miami Marlins,3,2,1,Shane Baz,Jesús Luzardo
+2021-09-26,Minnesota Twins,Toronto Blue Jays,2,5,0,Griffin Jax,Alek Manoah
+2021-09-26,Milwaukee Brewers,New York Mets,8,4,1,Freddy Peralta,Carlos Carrasco
+2021-09-26,Chicago Cubs,St. Louis Cardinals,2,4,0,Keegan Thompson,Jake Woodford
+2021-09-26,Colorado Rockies,San Francisco Giants,2,6,0,Antonio Senzatela,Kevin Gausman
+2021-09-26,Oakland Athletics,Houston Astros,4,3,1,Paul Blackburn,Jake Odorizzi
+2021-09-26,Los Angeles Angels,Seattle Mariners,1,5,0,Shohei Ohtani,Marco Gonzales
+2021-09-26,Arizona Diamondbacks,Los Angeles Dodgers,0,3,0,Humberto Mejía,Julio Urías
+2021-09-26,San Diego Padres,Atlanta Braves,3,4,0,Joe Musgrove,Jesse Chavez
+2021-09-26,Boston Red Sox,New York Yankees,3,6,0,Eduardo Rodriguez,Jordan Montgomery
+2021-09-27,Cleveland Indians,Kansas City Royals,8,3,1,Cal Quantrill,Jackson Kowar
+2021-09-27,Cincinnati Reds,Pittsburgh Pirates,13,1,1,Reiver Sanmartin,Connor Overton
+2021-09-27,Detroit Tigers,Chicago White Sox,7,8,0,Matt Manning,Dallas Keuchel
+2021-09-27,Colorado Rockies,Washington Nationals,4,5,0,Germán Márquez,Josiah Gray
+2021-09-27,Seattle Mariners,Oakland Athletics,13,4,1,Chris Flexen,Cole Irvin
+2021-09-28,New York Mets,Miami Marlins,5,2,1,Marcus Stroman,Zach Thompson
+2021-09-28,New York Mets,Miami Marlins,2,1,1,Noah Syndergaard,Trevor Rogers
+2021-09-28,Pittsburgh Pirates,Chicago Cubs,8,6,1,Mitch Keller,Alec Mills
+2021-09-28,Baltimore Orioles,Boston Red Sox,4,2,1,Bruce Zimmermann,Chris Sale
+2021-09-28,Toronto Blue Jays,New York Yankees,2,7,0,Hyun Jin Ryu,Jameson Taillon
+2021-09-28,Atlanta Braves,Philadelphia Phillies,2,1,1,Charlie Morton,Zack Wheeler
+2021-09-28,Minnesota Twins,Detroit Tigers,3,2,1,Charlie Barnes,Tyler Alexander
+2021-09-28,St. Louis Cardinals,Milwaukee Brewers,6,2,1,Adam Wainwright,Brandon Woodruff
+2021-09-28,Texas Rangers,Los Angeles Angels,5,2,1,A.J. Alexy,Packy Naughton
+2021-09-28,Kansas City Royals,Cleveland Indians,6,4,1,Brady Singer,Aaron Civale
+2021-09-28,Houston Astros,Tampa Bay Rays,4,3,1,José Urquidy,Michael Wacha
+2021-09-28,Chicago White Sox,Cincinnati Reds,7,1,1,Reynaldo López,Riley O'Brien
+2021-09-28,Colorado Rockies,Washington Nationals,3,1,1,Kyle Freeland,Patrick Corbin
+2021-09-28,San Francisco Giants,Arizona Diamondbacks,6,4,1,Logan Webb,Luke Weaver
+2021-09-28,Los Angeles Dodgers,San Diego Padres,2,1,1,Walker Buehler,Yu Darvish
+2021-09-28,Seattle Mariners,Oakland Athletics,4,2,1,Tyler Anderson,Chris Bassitt
+2021-09-29,Colorado Rockies,Washington Nationals,10,5,1,Peter Lambert,Paolo Espino
+2021-09-29,Pittsburgh Pirates,Chicago Cubs,2,3,0,Roansy Contreras,Kyle Hendricks
+2021-09-29,Baltimore Orioles,Boston Red Sox,0,6,0,Zac Lowther,Nathan Eovaldi
+2021-09-29,Toronto Blue Jays,New York Yankees,6,5,1,José Berríos,Gerrit Cole
+2021-09-29,New York Mets,Miami Marlins,2,3,0,Taijuan Walker,Elieser Hernández
+2021-09-29,Atlanta Braves,Philadelphia Phillies,7,2,1,Max Fried,Aaron Nola
+2021-09-29,Minnesota Twins,Detroit Tigers,5,2,1,Michael Pineda,Casey Mize
+2021-09-29,St. Louis Cardinals,Milwaukee Brewers,0,4,0,Miles Mikolas,Adrian Houser
+2021-09-29,Texas Rangers,Los Angeles Angels,2,7,0,Taylor Hearn,Janson Junk
+2021-09-29,Kansas City Royals,Cleveland Indians,10,5,1,Daniel Lynch IV,Zach Plesac
+2021-09-29,Houston Astros,Tampa Bay Rays,0,7,0,Luis Garcia,Drew Rasmussen
+2021-09-29,Chicago White Sox,Cincinnati Reds,6,1,1,Carlos Rodón,Sonny Gray
+2021-09-29,San Francisco Giants,Arizona Diamondbacks,1,0,1,Alex Wood,Merrill Kelly
+2021-09-29,Los Angeles Dodgers,San Diego Padres,11,9,1,Max Scherzer,Ryan Weathers
+2021-09-29,Seattle Mariners,Oakland Athletics,4,2,1,Logan Gilbert,Frankie Montas
+2021-09-30,St. Louis Cardinals,Milwaukee Brewers,4,3,1,J.A. Happ,Brett Anderson
+2021-09-30,Texas Rangers,Los Angeles Angels,7,6,1,Glenn Otto Jr.,Alex Cobb
+2021-09-30,Pittsburgh Pirates,Chicago Cubs,0,9,0,Miguel Yajure,Justin Steele
+2021-09-30,Baltimore Orioles,Boston Red Sox,6,2,1,Alex Wells,Nick Pivetta
+2021-09-30,Toronto Blue Jays,New York Yankees,2,6,0,Robbie Ray,Corey Kluber
+2021-09-30,Houston Astros,Tampa Bay Rays,3,2,1,Lance McCullers Jr.,Collin McHugh
+2021-09-30,New York Mets,Miami Marlins,12,3,1,Rich Hill,Edward Cabrera
+2021-09-30,Atlanta Braves,Philadelphia Phillies,5,3,1,Ian Anderson,Kyle Gibson
+2021-09-30,Minnesota Twins,Detroit Tigers,7,10,0,Joe Ryan,Tarik Skubal
+2021-09-30,Kansas City Royals,Cleveland Indians,1,6,0,Angel Zerpa,Shane Bieber
+2021-09-30,San Francisco Giants,Arizona Diamondbacks,5,4,1,Scott Kazmir,Madison Bumgarner
+2021-09-30,Los Angeles Dodgers,San Diego Padres,8,3,1,Tony Gonsolin,Vince Velasquez

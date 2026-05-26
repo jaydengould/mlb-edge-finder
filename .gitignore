@@ -1,6 +1,7 @@
 .DS_Store
 .env
-data/raw/
+data/raw/*
+!data/raw/historical_*.csv
 data/processed/
 __pycache__/
 *.pyc

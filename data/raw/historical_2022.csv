@@ -1,0 +1,2348 @@
+game_date,home_name,away_name,home_score,away_score,home_win,home_starter_name,away_starter_name
+2022-04-07,Chicago Cubs,Milwaukee Brewers,5,4,1,Kyle Hendricks,Corbin Burnes
+2022-04-07,Kansas City Royals,Cleveland Guardians,3,1,1,Zack Greinke,Shane Bieber
+2022-04-07,St. Louis Cardinals,Pittsburgh Pirates,9,0,1,Adam Wainwright,JT Brubaker
+2022-04-07,Washington Nationals,New York Mets,1,5,0,Patrick Corbin,Tylor Megill
+2022-04-07,Atlanta Braves,Cincinnati Reds,3,6,0,Max Fried,Tyler Mahle
+2022-04-07,Los Angeles Angels,Houston Astros,1,3,0,Shohei Ohtani,Framber Valdez
+2022-04-07,Arizona Diamondbacks,San Diego Padres,4,2,1,Madison Bumgarner,Yu Darvish
+2022-04-08,New York Yankees,Boston Red Sox,6,5,1,Gerrit Cole,Nathan Eovaldi
+2022-04-08,Detroit Tigers,Chicago White Sox,5,4,1,Eduardo Rodriguez,Lucas Giolito
+2022-04-08,Philadelphia Phillies,Oakland Athletics,9,5,1,Aaron Nola,Frankie Montas
+2022-04-08,Tampa Bay Rays,Baltimore Orioles,2,1,1,Shane McClanahan,John Means
+2022-04-08,Colorado Rockies,Los Angeles Dodgers,3,5,0,Kyle Freeland,Walker Buehler
+2022-04-08,Minnesota Twins,Seattle Mariners,1,2,0,Joe Ryan,Robbie Ray
+2022-04-08,San Francisco Giants,Miami Marlins,6,5,1,Logan Webb,Sandy Alcantara
+2022-04-08,Washington Nationals,New York Mets,3,7,0,Josiah Gray,Max Scherzer
+2022-04-08,Toronto Blue Jays,Texas Rangers,10,8,1,José Berríos,Jon Gray
+2022-04-08,Atlanta Braves,Cincinnati Reds,7,6,1,Charlie Morton,Reiver Sanmartin
+2022-04-08,Los Angeles Angels,Houston Astros,6,13,0,Reid Detmers,Jake Odorizzi
+2022-04-08,Arizona Diamondbacks,San Diego Padres,0,3,0,Merrill Kelly,Sean Manaea
+2022-04-09,Tampa Bay Rays,Baltimore Orioles,5,3,1,Drew Rasmussen,Jordan Lyles
+2022-04-09,Detroit Tigers,Chicago White Sox,2,5,0,Casey Mize,Dylan Cease
+2022-04-09,Minnesota Twins,Seattle Mariners,3,4,0,Sonny Gray,Logan Gilbert
+2022-04-09,St. Louis Cardinals,Pittsburgh Pirates,6,2,1,Miles Mikolas,Mitch Keller
+2022-04-09,Chicago Cubs,Milwaukee Brewers,9,0,1,Justin Steele,Brandon Woodruff
+2022-04-09,Toronto Blue Jays,Texas Rangers,4,3,1,Kevin Gausman,Dane Dunning
+2022-04-09,Philadelphia Phillies,Oakland Athletics,4,2,1,Kyle Gibson,Cole Irvin
+2022-04-09,San Francisco Giants,Miami Marlins,1,2,0,Carlos Rodón,Pablo López
+2022-04-09,New York Yankees,Boston Red Sox,4,2,1,Luis Severino,Nick Pivetta
+2022-04-09,Kansas City Royals,Cleveland Guardians,1,0,1,Brad Keller,Zach Plesac
+2022-04-09,Washington Nationals,New York Mets,0,5,0,Joan Adon,Chris Bassitt
+2022-04-09,Atlanta Braves,Cincinnati Reds,2,1,1,Kyle Wright,Vladimir Gutierrez
+2022-04-09,Colorado Rockies,Los Angeles Dodgers,3,2,1,Germán Márquez,Tony Gonsolin
+2022-04-09,Arizona Diamondbacks,San Diego Padres,2,5,0,Zach Davies,Joe Musgrove
+2022-04-09,Los Angeles Angels,Houston Astros,2,0,1,Noah Syndergaard,Justin Verlander
+2022-04-10,Philadelphia Phillies,Oakland Athletics,1,4,0,Zach Eflin,Daulton Jefferies
+2022-04-10,Tampa Bay Rays,Baltimore Orioles,8,0,1,Corey Kluber,Tyler Wells
+2022-04-10,Detroit Tigers,Chicago White Sox,1,10,0,Tarik Skubal,Michael Kopech
+2022-04-10,Washington Nationals,New York Mets,4,2,1,Erick Fedde,Carlos Carrasco
+2022-04-10,Atlanta Braves,Cincinnati Reds,3,6,0,Ian Anderson,Hunter Greene
+2022-04-10,Toronto Blue Jays,Texas Rangers,6,12,0,Hyun Jin Ryu,Spencer Howard
+2022-04-10,Kansas City Royals,Cleveland Guardians,3,17,0,Kris Bubic,Cal Quantrill
+2022-04-10,Minnesota Twins,Seattle Mariners,10,4,1,Bailey Ober,Marco Gonzales
+2022-04-10,St. Louis Cardinals,Pittsburgh Pirates,4,9,0,Steven Matz,Bryse Wilson
+2022-04-10,Chicago Cubs,Milwaukee Brewers,4,5,0,Marcus Stroman,Freddy Peralta
+2022-04-10,Colorado Rockies,Los Angeles Dodgers,9,4,1,Antonio Senzatela,Julio Urías
+2022-04-10,San Francisco Giants,Miami Marlins,3,2,1,Anthony DeSclafani,Trevor Rogers
+2022-04-10,Los Angeles Angels,Houston Astros,1,4,0,José Suarez,José Urquidy
+2022-04-10,Arizona Diamondbacks,San Diego Padres,5,10,0,Caleb Smith,Blake Snell
+2022-04-10,New York Yankees,Boston Red Sox,3,4,0,Jordan Montgomery,Tanner Houck
+2022-04-11,Kansas City Royals,Cleveland Guardians,7,10,0,Carlos Hernández,Aaron Civale
+2022-04-11,Baltimore Orioles,Milwaukee Brewers,2,0,1,Bruce Zimmermann,Adrian Houser
+2022-04-11,Texas Rangers,Colorado Rockies,4,6,0,Taylor Hearn,Austin Gomber
+2022-04-11,Detroit Tigers,Boston Red Sox,3,1,1,Matt Manning,Michael Wacha
+2022-04-11,Tampa Bay Rays,Oakland Athletics,2,13,0,Luis Patiño,Paul Blackburn
+2022-04-11,Philadelphia Phillies,New York Mets,5,4,1,Ranger Suarez,Taijuan Walker
+2022-04-11,New York Yankees,Toronto Blue Jays,0,3,0,Jameson Taillon,Alek Manoah
+2022-04-11,Atlanta Braves,Washington Nationals,2,11,0,Huascar Ynoa,Josh Rogers
+2022-04-11,Minnesota Twins,Seattle Mariners,4,0,1,Dylan Bundy,Chris Flexen
+2022-04-11,Los Angeles Angels,Miami Marlins,6,2,1,Michael Lorenzen,Elieser Hernández
+2022-04-11,San Francisco Giants,San Diego Padres,2,4,0,Alex Wood,Nick Martinez
+2022-04-12,Detroit Tigers,Boston Red Sox,3,5,0,Tyler Alexander,Rich Hill
+2022-04-12,Cincinnati Reds,Cleveland Guardians,5,10,0,Tyler Mahle,Shane Bieber
+2022-04-12,Chicago White Sox,Seattle Mariners,3,2,1,Vince Velasquez,Matt Brash
+2022-04-12,Pittsburgh Pirates,Chicago Cubs,1,2,0,Jose Quintana,Drew Smyly
+2022-04-12,Tampa Bay Rays,Oakland Athletics,9,8,1,Tommy Romero,Adam Oller
+2022-04-12,Philadelphia Phillies,New York Mets,0,2,0,Zack Wheeler,Tylor Megill
+2022-04-12,New York Yankees,Toronto Blue Jays,4,0,1,Nestor Cortes,Yusei Kikuchi
+2022-04-12,Baltimore Orioles,Milwaukee Brewers,4,5,0,Spenser Watkins,Eric Lauer
+2022-04-12,Los Angeles Angels,Miami Marlins,4,3,1,Patrick Sandoval,Jesús Luzardo
+2022-04-12,Atlanta Braves,Washington Nationals,16,4,1,Bryce Elder,Patrick Corbin
+2022-04-12,Minnesota Twins,Los Angeles Dodgers,2,7,0,Chris Archer,Andrew Heaney
+2022-04-12,St. Louis Cardinals,Kansas City Royals,6,5,1,Dakota Hudson,Daniel Lynch IV
+2022-04-12,Texas Rangers,Colorado Rockies,1,4,0,Martín Pérez,Chad Kuhl
+2022-04-12,Arizona Diamondbacks,Houston Astros,1,2,0,Madison Bumgarner,Luis Garcia
+2022-04-12,San Francisco Giants,San Diego Padres,13,2,1,Alex Cobb,Yu Darvish
+2022-04-13,Atlanta Braves,Washington Nationals,1,3,0,Max Fried,Josiah Gray
+2022-04-13,Cincinnati Reds,Cleveland Guardians,3,7,0,Nick Lodolo,Triston McKenzie
+2022-04-13,Pittsburgh Pirates,Chicago Cubs,6,2,1,Zach Thompson,Kyle Hendricks
+2022-04-13,Philadelphia Phillies,New York Mets,6,9,0,Aaron Nola,Max Scherzer
+2022-04-13,Detroit Tigers,Boston Red Sox,7,9,0,Eduardo Rodriguez,Nathan Eovaldi
+2022-04-13,Minnesota Twins,Los Angeles Dodgers,0,7,0,Chris Paddack,Clayton Kershaw
+2022-04-13,Arizona Diamondbacks,Houston Astros,3,2,1,Merrill Kelly,Framber Valdez
+2022-04-13,San Francisco Giants,San Diego Padres,2,1,1,Logan Webb,Sean Manaea
+2022-04-13,Tampa Bay Rays,Oakland Athletics,2,4,0,Shane McClanahan,Frankie Montas
+2022-04-13,New York Yankees,Toronto Blue Jays,4,6,0,Gerrit Cole,José Berríos
+2022-04-13,Baltimore Orioles,Milwaukee Brewers,2,4,0,John Means,Corbin Burnes
+2022-04-13,Chicago White Sox,Seattle Mariners,6,4,1,Dallas Keuchel,Robbie Ray
+2022-04-14,Tampa Bay Rays,Oakland Athletics,3,6,0,Josh Fleming,Cole Irvin
+2022-04-14,Chicago White Sox,Seattle Mariners,1,5,0,Jimmy Lambert,Logan Gilbert
+2022-04-14,Milwaukee Brewers,St. Louis Cardinals,5,1,1,Brandon Woodruff,Adam Wainwright
+2022-04-14,Pittsburgh Pirates,Washington Nationals,9,4,1,JT Brubaker,Joan Adon
+2022-04-14,Miami Marlins,Philadelphia Phillies,4,3,1,Sandy Alcantara,Kyle Gibson
+2022-04-14,New York Yankees,Toronto Blue Jays,3,0,1,Luis Severino,Kevin Gausman
+2022-04-14,Texas Rangers,Los Angeles Angels,10,5,1,Dane Dunning,Shohei Ohtani
+2022-04-14,Kansas City Royals,Detroit Tigers,2,4,0,Zack Greinke,Casey Mize
+2022-04-14,San Diego Padres,Atlanta Braves,12,1,1,Joe Musgrove,Charlie Morton
+2022-04-14,Colorado Rockies,Chicago Cubs,2,5,0,Kyle Freeland,Justin Steele
+2022-04-14,Los Angeles Dodgers,Cincinnati Reds,9,3,1,Walker Buehler,Luis Cessa
+2022-04-15,New York Mets,Arizona Diamondbacks,10,3,1,Chris Bassitt,Zach Davies
+2022-04-15,Boston Red Sox,Minnesota Twins,4,8,0,Nick Pivetta,Joe Ryan
+2022-04-15,Pittsburgh Pirates,Washington Nationals,2,7,0,Mitch Keller,Erick Fedde
+2022-04-15,Miami Marlins,Philadelphia Phillies,7,1,1,Pablo López,Zach Eflin
+2022-04-15,Baltimore Orioles,New York Yankees,2,1,1,Jordan Lyles,Jordan Montgomery
+2022-04-15,Toronto Blue Jays,Oakland Athletics,4,1,1,Ross Stripling,Daulton Jefferies
+2022-04-15,Cleveland Guardians,San Francisco Giants,1,4,0,Zach Plesac,Carlos Rodón
+2022-04-15,Chicago White Sox,Tampa Bay Rays,3,2,1,Dylan Cease,Drew Rasmussen
+2022-04-15,Texas Rangers,Los Angeles Angels,6,9,0,Matt Bush,Reid Detmers
+2022-04-15,Kansas City Royals,Detroit Tigers,1,2,0,Brad Keller,Tarik Skubal
+2022-04-15,Milwaukee Brewers,St. Louis Cardinals,1,10,0,Freddy Peralta,Miles Mikolas
+2022-04-15,Colorado Rockies,Chicago Cubs,6,5,1,Germán Márquez,Marcus Stroman
+2022-04-15,San Diego Padres,Atlanta Braves,2,5,0,MacKenzie Gore,Kyle Wright
+2022-04-15,Seattle Mariners,Houston Astros,11,1,1,Marco Gonzales,Jake Odorizzi
+2022-04-15,Los Angeles Dodgers,Cincinnati Reds,3,1,1,Tony Gonsolin,Vladimir Gutierrez
+2022-04-16,New York Mets,Arizona Diamondbacks,2,3,0,Carlos Carrasco,Zac Gallen
+2022-04-16,Chicago White Sox,Tampa Bay Rays,3,2,1,Michael Kopech,Corey Kluber
+2022-04-16,Toronto Blue Jays,Oakland Athletics,5,7,0,Hyun Jin Ryu,Paul Blackburn
+2022-04-16,San Diego Padres,Atlanta Braves,2,5,0,Nick Martinez,Ian Anderson
+2022-04-16,Kansas City Royals,Detroit Tigers,3,1,1,Kris Bubic,Matt Manning
+2022-04-16,Boston Red Sox,Minnesota Twins,4,0,1,Tanner Houck,Sonny Gray
+2022-04-16,Cleveland Guardians,San Francisco Giants,2,4,0,Cal Quantrill,Anthony DeSclafani
+2022-04-16,Miami Marlins,Philadelphia Phillies,3,10,0,Trevor Rogers,Ranger Suarez
+2022-04-16,Pittsburgh Pirates,Washington Nationals,6,4,1,Bryse Wilson,Josh Rogers
+2022-04-16,Texas Rangers,Los Angeles Angels,2,7,0,Taylor Hearn,Noah Syndergaard
+2022-04-16,Baltimore Orioles,New York Yankees,2,5,0,Tyler Wells,Jameson Taillon
+2022-04-16,Milwaukee Brewers,St. Louis Cardinals,1,2,0,Adrian Houser,Steven Matz
+2022-04-16,Colorado Rockies,Chicago Cubs,9,6,1,Antonio Senzatela,Mark Leiter Jr.
+2022-04-16,Seattle Mariners,Houston Astros,0,4,0,Chris Flexen,Justin Verlander
+2022-04-16,Los Angeles Dodgers,Cincinnati Reds,5,2,1,Julio Urías,Hunter Greene
+2022-04-17,Baltimore Orioles,New York Yankees,5,0,1,Bruce Zimmermann,Nestor Cortes
+2022-04-17,Pittsburgh Pirates,Washington Nationals,5,3,1,Jose Quintana,Patrick Corbin
+2022-04-17,Boston Red Sox,Minnesota Twins,8,1,1,Michael Wacha,Bailey Ober
+2022-04-17,Toronto Blue Jays,Oakland Athletics,4,3,1,Alek Manoah,Adam Oller
+2022-04-17,New York Mets,Arizona Diamondbacks,5,0,1,David Peterson,Humberto Castellanos
+2022-04-17,Cleveland Guardians,San Francisco Giants,1,8,0,Aaron Civale,Alex Wood
+2022-04-17,Miami Marlins,Philadelphia Phillies,11,3,1,Elieser Hernández,Zack Wheeler
+2022-04-17,Chicago White Sox,Tampa Bay Rays,3,9,0,Vince Velasquez,J.P. Feyereisen
+2022-04-17,Milwaukee Brewers,St. Louis Cardinals,6,5,1,Aaron Ashby,Dakota Hudson
+2022-04-17,Texas Rangers,Los Angeles Angels,3,8,0,Martín Pérez,José Suarez
+2022-04-17,Colorado Rockies,Chicago Cubs,4,6,0,Austin Gomber,Drew Smyly
+2022-04-17,Los Angeles Dodgers,Cincinnati Reds,9,1,1,Andrew Heaney,Tyler Mahle
+2022-04-17,Seattle Mariners,Houston Astros,7,2,1,Matt Brash,José Urquidy
+2022-04-17,San Diego Padres,Atlanta Braves,2,1,1,Yu Darvish,Bryce Elder
+2022-04-18,Boston Red Sox,Minnesota Twins,3,8,0,Rich Hill,Dylan Bundy
+2022-04-18,Chicago Cubs,Tampa Bay Rays,4,2,1,Kyle Hendricks,Shane McClanahan
+2022-04-18,Milwaukee Brewers,Pittsburgh Pirates,6,1,1,Eric Lauer,Zach Thompson
+2022-04-18,Houston Astros,Los Angeles Angels,8,3,1,Luis Garcia,Michael Lorenzen
+2022-04-18,Colorado Rockies,Philadelphia Phillies,4,1,1,Chad Kuhl,Aaron Nola
+2022-04-18,Oakland Athletics,Baltimore Orioles,5,1,1,Frankie Montas,Spenser Watkins
+2022-04-18,San Diego Padres,Cincinnati Reds,4,1,1,Sean Manaea,Nick Lodolo
+2022-04-18,Los Angeles Dodgers,Atlanta Braves,7,4,1,Clayton Kershaw,Huascar Ynoa
+2022-04-19,Washington Nationals,Arizona Diamondbacks,6,1,1,Josiah Gray,Madison Bumgarner
+2022-04-19,Washington Nationals,Arizona Diamondbacks,1,0,1,Joan Adon,Tyler Gilbert
+2022-04-19,New York Mets,San Francisco Giants,5,4,1,Tylor Megill,Alex Cobb
+2022-04-19,New York Mets,San Francisco Giants,3,1,1,Max Scherzer,Logan Webb
+2022-04-19,Miami Marlins,St. Louis Cardinals,1,5,0,Jesús Luzardo,Adam Wainwright
+2022-04-19,Detroit Tigers,New York Yankees,2,4,0,Tyler Alexander,Gerrit Cole
+2022-04-19,Boston Red Sox,Toronto Blue Jays,2,1,1,Nathan Eovaldi,Yusei Kikuchi
+2022-04-19,Chicago Cubs,Tampa Bay Rays,5,6,0,Justin Steele,Matt Wisler
+2022-04-19,Milwaukee Brewers,Pittsburgh Pirates,5,2,1,Corbin Burnes,JT Brubaker
+2022-04-19,Houston Astros,Los Angeles Angels,2,7,0,Framber Valdez,Patrick Sandoval
+2022-04-19,Kansas City Royals,Minnesota Twins,4,3,1,Carlos Hernández,Chris Archer
+2022-04-19,Colorado Rockies,Philadelphia Phillies,6,5,1,Kyle Freeland,Kyle Gibson
+2022-04-19,Oakland Athletics,Baltimore Orioles,2,1,1,Cole Irvin,Chris Ellis
+2022-04-19,San Diego Padres,Cincinnati Reds,6,2,1,Joe Musgrove,Reiver Sanmartin
+2022-04-19,Seattle Mariners,Texas Rangers,6,2,1,Robbie Ray,Jon Gray
+2022-04-19,Los Angeles Dodgers,Atlanta Braves,1,3,0,Walker Buehler,Max Fried
+2022-04-20,Milwaukee Brewers,Pittsburgh Pirates,4,2,1,Brandon Woodruff,Mitch Keller
+2022-04-20,Cleveland Guardians,Chicago White Sox,11,1,1,Shane Bieber,Dallas Keuchel
+2022-04-20,Cleveland Guardians,Chicago White Sox,2,1,1,Triston McKenzie,Jimmy Lambert
+2022-04-20,Colorado Rockies,Philadelphia Phillies,6,9,0,Germán Márquez,Zach Eflin
+2022-04-20,Los Angeles Dodgers,Atlanta Braves,5,1,1,Tony Gonsolin,Charlie Morton
+2022-04-20,San Diego Padres,Cincinnati Reds,6,0,1,MacKenzie Gore,Vladimir Gutierrez
+2022-04-20,Oakland Athletics,Baltimore Orioles,0,1,0,Daulton Jefferies,Jordan Lyles
+2022-04-20,Houston Astros,Los Angeles Angels,0,6,0,Jake Odorizzi,Shohei Ohtani
+2022-04-20,Miami Marlins,St. Louis Cardinals,0,2,0,Sandy Alcantara,Miles Mikolas
+2022-04-20,Detroit Tigers,New York Yankees,3,5,0,Eduardo Rodriguez,Luis Severino
+2022-04-20,Washington Nationals,Arizona Diamondbacks,2,11,0,Erick Fedde,Merrill Kelly
+2022-04-20,New York Mets,San Francisco Giants,2,5,0,Chris Bassitt,Carlos Rodón
+2022-04-20,Boston Red Sox,Toronto Blue Jays,1,6,0,Nick Pivetta,José Berríos
+2022-04-20,Kansas City Royals,Minnesota Twins,2,0,1,Daniel Lynch IV,Chris Paddack
+2022-04-20,Seattle Mariners,Texas Rangers,4,2,1,Logan Gilbert,Dane Dunning
+2022-04-21,New York Mets,San Francisco Giants,6,2,1,Carlos Carrasco,Anthony DeSclafani
+2022-04-21,Cleveland Guardians,Chicago White Sox,6,3,1,Zach Plesac,Dylan Cease
+2022-04-21,Detroit Tigers,New York Yankees,3,0,1,Michael Pineda,Jordan Montgomery
+2022-04-21,Boston Red Sox,Toronto Blue Jays,2,3,0,Tanner Houck,Kevin Gausman
+2022-04-21,Kansas City Royals,Minnesota Twins,0,1,0,Zack Greinke,Joe Ryan
+2022-04-21,Oakland Athletics,Baltimore Orioles,6,4,1,Paul Blackburn,Tyler Wells
+2022-04-21,Washington Nationals,Arizona Diamondbacks,3,4,0,Josh Rogers,Zach Davies
+2022-04-21,Miami Marlins,St. Louis Cardinals,5,0,1,Pablo López,Jordan Hicks
+2022-04-21,Chicago Cubs,Pittsburgh Pirates,3,4,0,Mark Leiter Jr.,Bryse Wilson
+2022-04-21,Seattle Mariners,Texas Rangers,6,8,0,Marco Gonzales,Taylor Hearn
+2022-04-22,Cincinnati Reds,St. Louis Cardinals,2,4,0,Hunter Greene,Steven Matz
+2022-04-22,Washington Nationals,San Francisco Giants,1,7,0,Patrick Corbin,Sam Long
+2022-04-22,New York Yankees,Cleveland Guardians,4,1,1,Jameson Taillon,Eli Morgan
+2022-04-22,Philadelphia Phillies,Milwaukee Brewers,4,2,1,Ranger Suarez,Freddy Peralta
+2022-04-22,Tampa Bay Rays,Boston Red Sox,3,4,0,Corey Kluber,Michael Wacha
+2022-04-22,Atlanta Braves,Miami Marlins,3,0,1,Kyle Wright,Trevor Rogers
+2022-04-22,Chicago Cubs,Pittsburgh Pirates,2,4,0,Drew Smyly,Jose Quintana
+2022-04-22,Houston Astros,Toronto Blue Jays,3,4,0,Justin Verlander,Ross Stripling
+2022-04-22,Minnesota Twins,Chicago White Sox,2,1,1,Bailey Ober,Michael Kopech
+2022-04-22,Los Angeles Angels,Baltimore Orioles,3,5,0,Reid Detmers,Bruce Zimmermann
+2022-04-22,Arizona Diamondbacks,New York Mets,5,6,0,Zac Gallen,David Peterson
+2022-04-22,San Diego Padres,Los Angeles Dodgers,1,6,0,Nick Martinez,Julio Urías
+2022-04-22,Seattle Mariners,Kansas City Royals,4,1,1,Chris Flexen,Brad Keller
+2022-04-22,Oakland Athletics,Texas Rangers,1,8,0,Adam Oller,Glenn Otto Jr.
+2022-04-23,Washington Nationals,San Francisco Giants,2,5,0,Aaron Sanchez,Alex Wood
+2022-04-23,New York Yankees,Cleveland Guardians,5,4,1,Nestor Cortes,Cal Quantrill
+2022-04-23,Detroit Tigers,Colorado Rockies,13,0,1,Tarik Skubal,Antonio Senzatela
+2022-04-23,Detroit Tigers,Colorado Rockies,2,3,0,Beau Brieske,Austin Gomber
+2022-04-23,Chicago Cubs,Pittsburgh Pirates,21,0,1,Kyle Hendricks,Zach Thompson
+2022-04-23,Minnesota Twins,Chicago White Sox,9,2,1,Dylan Bundy,Vince Velasquez
+2022-04-23,Philadelphia Phillies,Milwaukee Brewers,3,5,0,Zack Wheeler,Adrian Houser
+2022-04-23,Oakland Athletics,Texas Rangers,0,2,0,Frankie Montas,Martín Pérez
+2022-04-23,Cincinnati Reds,St. Louis Cardinals,0,5,0,Tyler Mahle,Dakota Hudson
+2022-04-23,Houston Astros,Toronto Blue Jays,2,3,0,José Urquidy,Alek Manoah
+2022-04-23,Tampa Bay Rays,Boston Red Sox,3,2,1,J.P. Feyereisen,Garrett Whitlock
+2022-04-23,Atlanta Braves,Miami Marlins,7,9,0,Ian Anderson,Elieser Hernández
+2022-04-23,Arizona Diamondbacks,New York Mets,5,2,1,Humberto Castellanos,Trevor Williams
+2022-04-23,San Diego Padres,Los Angeles Dodgers,3,2,1,Yu Darvish,Tyler Anderson
+2022-04-23,Los Angeles Angels,Baltimore Orioles,4,5,0,Noah Syndergaard,Spenser Watkins
+2022-04-23,Seattle Mariners,Kansas City Royals,13,7,1,Matt Brash,Kris Bubic
+2022-04-24,Detroit Tigers,Colorado Rockies,2,6,0,Tyler Alexander,Chad Kuhl
+2022-04-24,Tampa Bay Rays,Boston Red Sox,5,2,1,Shane McClanahan,Rich Hill
+2022-04-24,Washington Nationals,San Francisco Giants,3,12,0,Joan Adon,Logan Webb
+2022-04-24,Atlanta Braves,Miami Marlins,4,5,0,Bryce Elder,Jesús Luzardo
+2022-04-24,New York Yankees,Cleveland Guardians,10,2,1,Gerrit Cole,Aaron Civale
+2022-04-24,Cincinnati Reds,St. Louis Cardinals,4,1,1,Nick Lodolo,Adam Wainwright
+2022-04-24,Houston Astros,Toronto Blue Jays,8,7,1,Luis Garcia,Yusei Kikuchi
+2022-04-24,Minnesota Twins,Chicago White Sox,6,4,1,Chris Archer,Lucas Giolito
+2022-04-24,Chicago Cubs,Pittsburgh Pirates,3,4,0,Justin Steele,JT Brubaker
+2022-04-24,Los Angeles Angels,Baltimore Orioles,7,6,1,José Suarez,Chris Ellis
+2022-04-24,Oakland Athletics,Texas Rangers,2,0,1,Cole Irvin,Garrett Richards
+2022-04-24,Arizona Diamondbacks,New York Mets,2,6,0,Madison Bumgarner,Tylor Megill
+2022-04-24,San Diego Padres,Los Angeles Dodgers,2,10,0,Sean Manaea,Clayton Kershaw
+2022-04-24,Seattle Mariners,Kansas City Royals,5,4,1,Robbie Ray,Carlos Hernández
+2022-04-24,Philadelphia Phillies,Milwaukee Brewers,0,1,0,Aaron Nola,Eric Lauer
+2022-04-25,Milwaukee Brewers,San Francisco Giants,2,4,0,Corbin Burnes,Sam Long
+2022-04-25,Philadelphia Phillies,Colorado Rockies,8,2,1,Kyle Gibson,Kyle Freeland
+2022-04-25,Toronto Blue Jays,Boston Red Sox,6,2,1,José Berríos,Nathan Eovaldi
+2022-04-25,St. Louis Cardinals,New York Mets,2,5,0,Miles Mikolas,Max Scherzer
+2022-04-25,Texas Rangers,Houston Astros,6,2,1,Dane Dunning,Framber Valdez
+2022-04-25,Los Angeles Angels,Cleveland Guardians,3,0,1,Michael Lorenzen,Shane Bieber
+2022-04-25,Arizona Diamondbacks,Los Angeles Dodgers,0,4,0,Merrill Kelly,Walker Buehler
+2022-04-26,Pittsburgh Pirates,Milwaukee Brewers,8,12,0,Mitch Keller,Brandon Woodruff
+2022-04-26,Cincinnati Reds,San Diego Padres,6,9,0,Reiver Sanmartin,Joe Musgrove
+2022-04-26,Tampa Bay Rays,Seattle Mariners,4,8,0,Matt Wisler,Logan Gilbert
+2022-04-26,Philadelphia Phillies,Colorado Rockies,10,3,1,Zach Eflin,Germán Márquez
+2022-04-26,Washington Nationals,Miami Marlins,2,5,0,Josiah Gray,Sandy Alcantara
+2022-04-26,New York Yankees,Baltimore Orioles,12,8,1,Luis Severino,Jordan Lyles
+2022-04-26,Toronto Blue Jays,Boston Red Sox,6,5,1,Kevin Gausman,Nick Pivetta
+2022-04-26,Chicago White Sox,Kansas City Royals,0,6,0,Dallas Keuchel,Daniel Lynch IV
+2022-04-26,Atlanta Braves,Chicago Cubs,3,1,1,Max Fried,Marcus Stroman
+2022-04-26,Minnesota Twins,Detroit Tigers,5,4,1,Chris Paddack,Eduardo Rodriguez
+2022-04-26,St. Louis Cardinals,New York Mets,0,3,0,Jordan Hicks,Chris Bassitt
+2022-04-26,Texas Rangers,Houston Astros,1,5,0,Taylor Hearn,Jake Odorizzi
+2022-04-26,Los Angeles Angels,Cleveland Guardians,4,1,1,Patrick Sandoval,Triston McKenzie
+2022-04-26,Arizona Diamondbacks,Los Angeles Dodgers,5,3,1,Zach Davies,Tony Gonsolin
+2022-04-26,San Francisco Giants,Oakland Athletics,8,2,1,Carlos Rodón,Daulton Jefferies
+2022-04-27,St. Louis Cardinals,New York Mets,10,5,1,Steven Matz,Carlos Carrasco
+2022-04-27,Chicago White Sox,Kansas City Royals,7,3,1,Dylan Cease,Zack Greinke
+2022-04-27,Arizona Diamondbacks,Los Angeles Dodgers,3,1,1,Zac Gallen,Julio Urías
+2022-04-27,Pittsburgh Pirates,Milwaukee Brewers,1,3,0,Dillon Peters,Aaron Ashby
+2022-04-27,Cincinnati Reds,San Diego Padres,5,8,0,Vladimir Gutierrez,MacKenzie Gore
+2022-04-27,Tampa Bay Rays,Seattle Mariners,3,2,1,Drew Rasmussen,Marco Gonzales
+2022-04-27,Philadelphia Phillies,Colorado Rockies,7,3,1,Ranger Suarez,Ryan Feltner
+2022-04-27,Washington Nationals,Miami Marlins,1,2,0,Erick Fedde,Pablo López
+2022-04-27,New York Yankees,Baltimore Orioles,5,2,1,Jordan Montgomery,Tyler Wells
+2022-04-27,Toronto Blue Jays,Boston Red Sox,1,7,0,Ross Stripling,Michael Wacha
+2022-04-27,Atlanta Braves,Chicago Cubs,3,6,0,Charlie Morton,Mark Leiter Jr.
+2022-04-27,Minnesota Twins,Detroit Tigers,5,0,1,Joe Ryan,Michael Pineda
+2022-04-27,Texas Rangers,Houston Astros,3,4,0,Glenn Otto Jr.,Cristian Javier
+2022-04-27,Los Angeles Angels,Cleveland Guardians,9,5,1,Shohei Ohtani,Zach Plesac
+2022-04-27,San Francisco Giants,Oakland Athletics,0,1,0,Sam Long,Paul Blackburn
+2022-04-28,Cincinnati Reds,San Diego Padres,5,7,0,Tyler Mahle,Nick Martinez
+2022-04-28,Pittsburgh Pirates,Milwaukee Brewers,2,3,0,Jose Quintana,Freddy Peralta
+2022-04-28,Philadelphia Phillies,Colorado Rockies,7,1,1,Zack Wheeler,Austin Gomber
+2022-04-28,Washington Nationals,Miami Marlins,2,3,0,Patrick Corbin,Trevor Rogers
+2022-04-28,New York Yankees,Baltimore Orioles,10,5,1,Jameson Taillon,Bruce Zimmermann
+2022-04-28,Tampa Bay Rays,Seattle Mariners,2,1,1,Jeffrey Springs,Chris Flexen
+2022-04-28,Minnesota Twins,Detroit Tigers,7,1,1,Bailey Ober,Tarik Skubal
+2022-04-28,Texas Rangers,Houston Astros,2,3,0,Martín Pérez,Justin Verlander
+2022-04-28,Chicago White Sox,Kansas City Royals,2,5,0,Michael Kopech,Brad Keller
+2022-04-28,Toronto Blue Jays,Boston Red Sox,1,0,1,Alek Manoah,Garrett Whitlock
+2022-04-28,Los Angeles Angels,Cleveland Guardians,4,1,1,Reid Detmers,Cal Quantrill
+2022-04-28,Atlanta Braves,Chicago Cubs,5,1,1,Kyle Wright,Drew Smyly
+2022-04-28,St. Louis Cardinals,Arizona Diamondbacks,8,3,1,Dakota Hudson,Humberto Castellanos
+2022-04-29,Pittsburgh Pirates,San Diego Padres,3,7,0,Zach Thompson,Yu Darvish
+2022-04-29,Miami Marlins,Seattle Mariners,8,6,1,Elieser Hernández,Matt Brash
+2022-04-29,Baltimore Orioles,Boston Red Sox,1,3,0,Kyle Bradish,Rich Hill
+2022-04-29,Toronto Blue Jays,Houston Astros,7,11,0,Yusei Kikuchi,José Urquidy
+2022-04-29,Tampa Bay Rays,Minnesota Twins,6,1,1,Corey Kluber,Dylan Bundy
+2022-04-29,New York Mets,Philadelphia Phillies,3,0,1,Tylor Megill,Aaron Nola
+2022-04-29,Chicago White Sox,Los Angeles Angels,1,5,0,Lucas Giolito,Jimmy Herget
+2022-04-29,Texas Rangers,Atlanta Braves,3,6,0,Garrett Richards,Ian Anderson
+2022-04-29,Milwaukee Brewers,Chicago Cubs,11,1,1,Adrian Houser,Kyle Hendricks
+2022-04-29,St. Louis Cardinals,Arizona Diamondbacks,2,6,0,Adam Wainwright,Madison Bumgarner
+2022-04-29,Colorado Rockies,Cincinnati Reds,10,4,1,Antonio Senzatela,Hunter Greene
+2022-04-29,Oakland Athletics,Cleveland Guardians,8,9,0,Frankie Montas,Aaron Civale
+2022-04-29,Los Angeles Dodgers,Detroit Tigers,5,1,1,Tyler Anderson,Tyler Alexander
+2022-04-29,San Francisco Giants,Washington Nationals,4,14,0,Alex Wood,Aaron Sanchez
+2022-04-30,St. Louis Cardinals,Arizona Diamondbacks,0,2,0,Miles Mikolas,Merrill Kelly
+2022-04-30,Toronto Blue Jays,Houston Astros,2,1,1,José Berríos,Luis Garcia
+2022-04-30,San Francisco Giants,Washington Nationals,9,3,1,Logan Webb,Joan Adon
+2022-04-30,Chicago White Sox,Los Angeles Angels,4,0,1,Vince Velasquez,José Suarez
+2022-04-30,Oakland Athletics,Cleveland Guardians,1,3,0,Cole Irvin,Shane Bieber
+2022-04-30,Tampa Bay Rays,Minnesota Twins,1,9,0,Shane McClanahan,Chris Archer
+2022-04-30,Miami Marlins,Seattle Mariners,3,1,1,Jesús Luzardo,Robbie Ray
+2022-04-30,Pittsburgh Pirates,San Diego Padres,7,6,1,JT Brubaker,Sean Manaea
+2022-04-30,Baltimore Orioles,Boston Red Sox,2,1,1,Spenser Watkins,Nathan Eovaldi
+2022-04-30,Texas Rangers,Atlanta Braves,3,1,1,Dane Dunning,Bryce Elder
+2022-04-30,New York Mets,Philadelphia Phillies,1,4,0,Taijuan Walker,Kyle Gibson
+2022-04-30,Kansas City Royals,New York Yankees,0,3,0,Carlos Hernández,Gerrit Cole
+2022-04-30,Milwaukee Brewers,Chicago Cubs,9,1,1,Eric Lauer,Justin Steele
+2022-04-30,Colorado Rockies,Cincinnati Reds,4,3,1,Chad Kuhl,Connor Overton
+2022-04-30,Los Angeles Dodgers,Detroit Tigers,1,5,0,Clayton Kershaw,Beau Brieske
+2022-05-01,Baltimore Orioles,Boston Red Sox,9,5,1,Jordan Lyles,Nick Pivetta
+2022-05-01,Tampa Bay Rays,Minnesota Twins,3,9,0,Josh Fleming,Josh Winder
+2022-05-01,Pittsburgh Pirates,San Diego Padres,2,5,0,Mitch Keller,Joe Musgrove
+2022-05-01,Toronto Blue Jays,Houston Astros,3,2,1,Kevin Gausman,Framber Valdez
+2022-05-01,Miami Marlins,Seattle Mariners,3,7,0,Sandy Alcantara,Logan Gilbert
+2022-05-01,Chicago White Sox,Los Angeles Angels,5,6,0,Dallas Keuchel,Michael Lorenzen
+2022-05-01,Kansas City Royals,New York Yankees,4,6,0,Daniel Lynch IV,Luis Severino
+2022-05-01,Milwaukee Brewers,Chicago Cubs,0,2,0,Corbin Burnes,Marcus Stroman
+2022-05-01,St. Louis Cardinals,Arizona Diamondbacks,7,5,1,Jordan Hicks,Zach Davies
+2022-05-01,Texas Rangers,Atlanta Braves,7,3,1,Taylor Hearn,Kyle Muller
+2022-05-01,Colorado Rockies,Cincinnati Reds,10,1,1,Kyle Freeland,Reiver Sanmartin
+2022-05-01,San Francisco Giants,Washington Nationals,5,11,0,Alex Cobb,Josiah Gray
+2022-05-01,Oakland Athletics,Cleveland Guardians,3,7,0,James Kaprielian,Triston McKenzie
+2022-05-01,Los Angeles Dodgers,Detroit Tigers,6,3,1,Walker Buehler,Eduardo Rodriguez
+2022-05-01,New York Mets,Philadelphia Phillies,10,6,1,Max Scherzer,Zach Eflin
+2022-05-02,St. Louis Cardinals,Kansas City Royals,1,0,1,Steven Matz,Zack Greinke
+2022-05-02,Chicago White Sox,Los Angeles Angels,3,0,1,Dylan Cease,Patrick Sandoval
+2022-05-02,Miami Marlins,Arizona Diamondbacks,4,5,0,Pablo López,Zac Gallen
+2022-05-02,Baltimore Orioles,Minnesota Twins,1,2,0,Tyler Wells,Chris Paddack
+2022-05-02,Toronto Blue Jays,New York Yankees,2,3,0,Ross Stripling,Jordan Montgomery
+2022-05-02,New York Mets,Atlanta Braves,2,5,0,Chris Bassitt,Max Fried
+2022-05-02,Houston Astros,Seattle Mariners,3,0,1,Jake Odorizzi,Marco Gonzales
+2022-05-02,Oakland Athletics,Tampa Bay Rays,1,6,0,Daulton Jefferies,Drew Rasmussen
+2022-05-03,New York Mets,Atlanta Braves,5,4,1,David Peterson,Charlie Morton
+2022-05-03,New York Mets,Atlanta Braves,3,0,1,Carlos Carrasco,Kyle Wright
+2022-05-03,Miami Marlins,Arizona Diamondbacks,4,5,0,Trevor Rogers,Humberto Castellanos
+2022-05-03,Philadelphia Phillies,Texas Rangers,4,6,0,Ranger Suarez,Jon Gray
+2022-05-03,Baltimore Orioles,Minnesota Twins,2,7,0,Bruce Zimmermann,Joe Ryan
+2022-05-03,Toronto Blue Jays,New York Yankees,1,9,0,Alek Manoah,Jameson Taillon
+2022-05-03,Boston Red Sox,Los Angeles Angels,4,0,1,Michael Wacha,Noah Syndergaard
+2022-05-03,Chicago Cubs,Chicago White Sox,1,3,0,Scott Effross,Michael Kopech
+2022-05-03,Milwaukee Brewers,Cincinnati Reds,6,3,1,Brandon Woodruff,Tyler Mahle
+2022-05-03,Houston Astros,Seattle Mariners,4,0,1,Cristian Javier,Chris Flexen
+2022-05-03,Kansas City Royals,St. Louis Cardinals,7,1,1,Brad Keller,Dakota Hudson
+2022-05-03,Colorado Rockies,Washington Nationals,2,10,0,Germán Márquez,Erick Fedde
+2022-05-03,Oakland Athletics,Tampa Bay Rays,7,10,0,Paul Blackburn,Ryan Yarbrough
+2022-05-03,Los Angeles Dodgers,San Francisco Giants,3,1,1,Julio Urías,Carlos Rodón
+2022-05-04,Miami Marlins,Arizona Diamondbacks,7,8,0,Elieser Hernández,Madison Bumgarner
+2022-05-04,Detroit Tigers,Pittsburgh Pirates,3,2,1,Michael Pineda,Dillon Peters
+2022-05-04,Detroit Tigers,Pittsburgh Pirates,2,7,0,Alex Faedo,Jose Quintana
+2022-05-04,Cleveland Guardians,San Diego Padres,4,5,0,Zach Plesac,Mike Clevinger
+2022-05-04,Cleveland Guardians,San Diego Padres,6,5,1,Cal Quantrill,MacKenzie Gore
+2022-05-04,Kansas City Royals,St. Louis Cardinals,0,10,0,Kris Bubic,Adam Wainwright
+2022-05-04,New York Mets,Atlanta Braves,2,9,0,Tylor Megill,Ian Anderson
+2022-05-04,Houston Astros,Seattle Mariners,7,2,1,Justin Verlander,Matt Brash
+2022-05-04,Oakland Athletics,Tampa Bay Rays,0,3,0,Frankie Montas,Corey Kluber
+2022-05-04,Philadelphia Phillies,Texas Rangers,1,2,0,Zack Wheeler,Martín Pérez
+2022-05-04,Baltimore Orioles,Minnesota Twins,9,4,1,Kyle Bradish,Dylan Bundy
+2022-05-04,Toronto Blue Jays,New York Yankees,2,1,1,Yusei Kikuchi,Nestor Cortes
+2022-05-04,Boston Red Sox,Los Angeles Angels,5,10,0,Garrett Whitlock,Reid Detmers
+2022-05-04,Chicago Cubs,Chicago White Sox,3,4,0,Kyle Hendricks,Lucas Giolito
+2022-05-04,Milwaukee Brewers,Cincinnati Reds,18,4,1,Freddy Peralta,Vladimir Gutierrez
+2022-05-04,Colorado Rockies,Washington Nationals,5,2,1,Austin Gomber,Patrick Corbin
+2022-05-04,Los Angeles Dodgers,San Francisco Giants,9,1,1,Tony Gonsolin,Alex Wood
+2022-05-05,Boston Red Sox,Los Angeles Angels,0,8,0,Rich Hill,Shohei Ohtani
+2022-05-05,Milwaukee Brewers,Cincinnati Reds,10,5,1,Adrian Houser,Hunter Greene
+2022-05-05,Colorado Rockies,Washington Nationals,9,7,1,Antonio Senzatela,Aaron Sanchez
+2022-05-05,Cleveland Guardians,Toronto Blue Jays,6,5,1,Aaron Civale,José Berríos
+2022-05-05,Philadelphia Phillies,New York Mets,7,8,0,Aaron Nola,Taijuan Walker
+2022-05-05,Baltimore Orioles,Minnesota Twins,5,3,1,Spenser Watkins,Chris Archer
+2022-05-05,Houston Astros,Detroit Tigers,3,2,1,José Urquidy,Tarik Skubal
+2022-05-05,Seattle Mariners,Tampa Bay Rays,3,4,0,Robbie Ray,Shane McClanahan
+2022-05-05,San Diego Padres,Miami Marlins,2,1,1,Nick Martinez,Jesús Luzardo
+2022-05-05,San Francisco Giants,St. Louis Cardinals,1,7,0,Mauricio Llovera,Miles Mikolas
+2022-05-06,Boston Red Sox,Chicago White Sox,2,4,0,Nathan Eovaldi,Vince Velasquez
+2022-05-06,Atlanta Braves,Milwaukee Brewers,3,6,0,Jesse Chavez,Eric Lauer
+2022-05-06,Houston Astros,Detroit Tigers,3,2,1,Luis Garcia,Beau Brieske
+2022-05-06,Minnesota Twins,Oakland Athletics,2,1,1,Josh Winder,Zach Logue
+2022-05-06,Los Angeles Angels,Washington Nationals,3,0,1,Jhonathan Díaz,Joan Adon
+2022-05-06,Arizona Diamondbacks,Colorado Rockies,4,1,1,Merrill Kelly,Chad Kuhl
+2022-05-06,Seattle Mariners,Tampa Bay Rays,7,8,0,Logan Gilbert,Matt Wisler
+2022-05-06,San Diego Padres,Miami Marlins,3,2,1,Yu Darvish,Sandy Alcantara
+2022-05-06,San Francisco Giants,St. Louis Cardinals,2,3,0,Alex Cobb,Jordan Hicks
+2022-05-07,Cincinnati Reds,Pittsburgh Pirates,9,2,1,Connor Overton,JT Brubaker
+2022-05-07,Cincinnati Reds,Pittsburgh Pirates,5,8,0,Dauri Moreta,Mitch Keller
+2022-05-07,Chicago Cubs,Los Angeles Dodgers,0,7,0,Drew Smyly,Clayton Kershaw
+2022-05-07,Chicago Cubs,Los Angeles Dodgers,2,6,0,Daniel Norris,Tyler Anderson
+2022-05-07,Cleveland Guardians,Toronto Blue Jays,3,8,0,Shane Bieber,Kevin Gausman
+2022-05-07,Cleveland Guardians,Toronto Blue Jays,8,2,1,Triston McKenzie,Ross Stripling
+2022-05-07,Minnesota Twins,Oakland Athletics,1,0,1,Sonny Gray,James Kaprielian
+2022-05-07,Houston Astros,Detroit Tigers,3,2,1,Framber Valdez,Eduardo Rodriguez
+2022-05-07,Boston Red Sox,Chicago White Sox,1,3,0,Nick Pivetta,Dylan Cease
+2022-05-07,San Francisco Giants,St. Louis Cardinals,13,7,1,Logan Webb,Steven Matz
+2022-05-07,Atlanta Braves,Milwaukee Brewers,3,2,1,Max Fried,Corbin Burnes
+2022-05-07,Arizona Diamondbacks,Colorado Rockies,1,4,0,Zach Davies,Kyle Freeland
+2022-05-07,San Diego Padres,Miami Marlins,0,8,0,Sean Manaea,Pablo López
+2022-05-07,Los Angeles Angels,Washington Nationals,3,7,0,Michael Lorenzen,Josiah Gray
+2022-05-07,Seattle Mariners,Tampa Bay Rays,2,8,0,Marco Gonzales,Drew Rasmussen
+2022-05-08,Boston Red Sox,Chicago White Sox,2,3,0,Tanner Houck,Dallas Keuchel
+2022-05-08,Philadelphia Phillies,New York Mets,3,2,1,Kyle Gibson,Max Scherzer
+2022-05-08,Philadelphia Phillies,New York Mets,1,6,0,Cristopher Sánchez,Chris Bassitt
+2022-05-08,Baltimore Orioles,Kansas City Royals,4,6,0,Jordan Lyles,Zack Greinke
+2022-05-08,Baltimore Orioles,Kansas City Royals,4,2,1,Bruce Zimmermann,Daniel Lynch IV
+2022-05-08,New York Yankees,Texas Rangers,2,1,1,Gerrit Cole,Dane Dunning
+2022-05-08,New York Yankees,Texas Rangers,2,4,0,Jordan Montgomery,Glenn Otto Jr.
+2022-05-08,Atlanta Braves,Milwaukee Brewers,9,2,1,Charlie Morton,Aaron Ashby
+2022-05-08,Cincinnati Reds,Pittsburgh Pirates,7,3,1,Tyler Mahle,Zach Thompson
+2022-05-08,Cleveland Guardians,Toronto Blue Jays,4,3,1,Konnor Pilkington,Alek Manoah
+2022-05-08,Houston Astros,Detroit Tigers,5,0,1,Jake Odorizzi,Wily Peralta
+2022-05-08,Minnesota Twins,Oakland Athletics,4,3,1,Chris Paddack,Daulton Jefferies
+2022-05-08,San Francisco Giants,St. Louis Cardinals,4,3,1,Jakob Junis,Dakota Hudson
+2022-05-08,Los Angeles Angels,Washington Nationals,5,4,1,Patrick Sandoval,Erick Fedde
+2022-05-08,Arizona Diamondbacks,Colorado Rockies,4,0,1,Zac Gallen,Germán Márquez
+2022-05-08,Seattle Mariners,Tampa Bay Rays,2,1,1,George Kirby,Ryan Yarbrough
+2022-05-08,San Diego Padres,Miami Marlins,3,2,1,Joe Musgrove,Trevor Rogers
+2022-05-08,Chicago Cubs,Los Angeles Dodgers,1,7,0,Justin Steele,Walker Buehler
+2022-05-09,Baltimore Orioles,Kansas City Royals,6,1,1,Tyler Wells,Carlos Hernández
+2022-05-09,New York Yankees,Texas Rangers,1,0,1,Nestor Cortes,Jon Gray
+2022-05-09,Pittsburgh Pirates,Los Angeles Dodgers,5,1,1,Jose Quintana,Julio Urías
+2022-05-09,Cincinnati Reds,Milwaukee Brewers,10,5,1,Luis Castillo,Brandon Woodruff
+2022-05-09,Detroit Tigers,Oakland Athletics,0,2,0,Michael Pineda,Paul Blackburn
+2022-05-09,Chicago White Sox,Cleveland Guardians,9,12,0,Michael Kopech,Zach Plesac
+2022-05-09,Los Angeles Angels,Tampa Bay Rays,11,3,1,Noah Syndergaard,Jeffrey Springs
+2022-05-09,San Diego Padres,Chicago Cubs,0,6,0,MacKenzie Gore,Kyle Hendricks
+2022-05-09,Seattle Mariners,Philadelphia Phillies,0,9,0,Chris Flexen,Ranger Suarez
+2022-05-09,Arizona Diamondbacks,Miami Marlins,4,3,1,Humberto Castellanos,Elieser Hernández
+2022-05-09,San Francisco Giants,Colorado Rockies,8,5,1,Carlos Rodón,Austin Gomber
+2022-05-10,Oakland Athletics,Detroit Tigers,0,6,0,Frankie Montas,Tarik Skubal
+2022-05-10,Detroit Tigers,Oakland Athletics,1,4,0,Alex Faedo,Adrián Martinez
+2022-05-10,Pittsburgh Pirates,Los Angeles Dodgers,1,11,0,Bryse Wilson,Tony Gonsolin
+2022-05-10,Cincinnati Reds,Milwaukee Brewers,4,5,0,Hunter Greene,Freddy Peralta
+2022-05-10,Washington Nationals,New York Mets,2,4,0,Patrick Corbin,Carlos Carrasco
+2022-05-10,New York Yankees,Toronto Blue Jays,6,5,1,Luis Severino,Yusei Kikuchi
+2022-05-10,Atlanta Braves,Boston Red Sox,4,9,0,Kyle Wright,Garrett Whitlock
+2022-05-10,Minnesota Twins,Houston Astros,0,5,0,Joe Ryan,Justin Verlander
+2022-05-10,St. Louis Cardinals,Baltimore Orioles,3,5,0,Packy Naughton,Kyle Bradish
+2022-05-10,Texas Rangers,Kansas City Royals,6,4,1,Martín Pérez,Brad Keller
+2022-05-10,Chicago White Sox,Cleveland Guardians,4,1,1,Lucas Giolito,Cal Quantrill
+2022-05-10,Los Angeles Angels,Tampa Bay Rays,12,0,1,Reid Detmers,Corey Kluber
+2022-05-10,San Diego Padres,Chicago Cubs,5,4,1,Mike Clevinger,Wade Miley
+2022-05-10,Seattle Mariners,Philadelphia Phillies,5,4,1,Robbie Ray,Aaron Nola
+2022-05-10,Arizona Diamondbacks,Miami Marlins,9,3,1,Madison Bumgarner,Jesús Luzardo
+2022-05-10,San Francisco Giants,Colorado Rockies,9,2,1,Alex Wood,Antonio Senzatela
+2022-05-11,Pittsburgh Pirates,Los Angeles Dodgers,5,3,1,Dillon Peters,Ryan Pepiot
+2022-05-11,New York Yankees,Toronto Blue Jays,5,3,1,Jameson Taillon,José Berríos
+2022-05-11,Cincinnati Reds,Milwaukee Brewers,14,11,1,Vladimir Gutierrez,Adrian Houser
+2022-05-11,Seattle Mariners,Philadelphia Phillies,2,4,0,Logan Gilbert,Bailey Falter
+2022-05-11,Arizona Diamondbacks,Miami Marlins,3,11,0,Merrill Kelly,Sandy Alcantara
+2022-05-11,San Francisco Giants,Colorado Rockies,7,1,1,Alex Cobb,Chad Kuhl
+2022-05-11,San Diego Padres,Chicago Cubs,5,7,0,Nick Martinez,Keegan Thompson
+2022-05-11,Washington Nationals,New York Mets,8,3,1,Aaron Sanchez,Tylor Megill
+2022-05-11,Los Angeles Angels,Tampa Bay Rays,2,4,0,Shohei Ohtani,Shane McClanahan
+2022-05-11,Detroit Tigers,Oakland Athletics,0,9,0,Joey Wentz,Zach Logue
+2022-05-11,Atlanta Braves,Boston Red Sox,5,3,1,Ian Anderson,Nathan Eovaldi
+2022-05-11,Minnesota Twins,Houston Astros,3,11,0,Chris Archer,José Urquidy
+2022-05-11,St. Louis Cardinals,Baltimore Orioles,10,1,1,Miles Mikolas,Spenser Watkins
+2022-05-11,Texas Rangers,Kansas City Royals,2,8,0,Matt Bush,Gabe Speier
+2022-05-12,Washington Nationals,New York Mets,1,4,0,Joan Adon,Taijuan Walker
+2022-05-12,Detroit Tigers,Oakland Athletics,3,5,0,Beau Brieske,James Kaprielian
+2022-05-12,Minnesota Twins,Houston Astros,3,11,0,Chris Archer,José Urquidy
+2022-05-12,St. Louis Cardinals,Baltimore Orioles,2,3,0,Steven Matz,Bryan Baker
+2022-05-12,Minnesota Twins,Houston Astros,0,5,0,Josh Winder,Luis Garcia
+2022-05-12,Pittsburgh Pirates,Cincinnati Reds,0,4,0,JT Brubaker,Connor Overton
+2022-05-12,Texas Rangers,Kansas City Royals,3,1,1,Taylor Hearn,Jonathan Heasley
+2022-05-12,Chicago White Sox,New York Yankees,7,15,0,Dylan Cease,Luis Gil
+2022-05-12,Los Angeles Dodgers,Philadelphia Phillies,7,9,0,Tyler Anderson,Zack Wheeler
+2022-05-13,Pittsburgh Pirates,Cincinnati Reds,2,8,0,Mitch Keller,Tyler Mahle
+2022-05-13,Miami Marlins,Milwaukee Brewers,1,2,0,Pablo López,Corbin Burnes
+2022-05-13,Washington Nationals,Houston Astros,1,6,0,Josiah Gray,Framber Valdez
+2022-05-13,Detroit Tigers,Baltimore Orioles,4,2,1,Eduardo Rodriguez,Jordan Lyles
+2022-05-13,New York Mets,Seattle Mariners,1,2,0,Max Scherzer,Marco Gonzales
+2022-05-13,Tampa Bay Rays,Toronto Blue Jays,5,2,1,Drew Rasmussen,Kevin Gausman
+2022-05-13,Atlanta Braves,San Diego Padres,6,11,0,Max Fried,Yu Darvish
+2022-05-13,Texas Rangers,Boston Red Sox,1,7,0,Dane Dunning,Nick Pivetta
+2022-05-13,Minnesota Twins,Cleveland Guardians,12,8,1,Sonny Gray,Aaron Civale
+2022-05-13,Chicago White Sox,New York Yankees,4,10,0,Vince Velasquez,Gerrit Cole
+2022-05-13,St. Louis Cardinals,San Francisco Giants,2,8,0,Jordan Hicks,Logan Webb
+2022-05-13,Colorado Rockies,Kansas City Royals,10,14,0,Kyle Freeland,Zack Greinke
+2022-05-13,Arizona Diamondbacks,Chicago Cubs,4,3,1,Zach Davies,Drew Smyly
+2022-05-13,Oakland Athletics,Los Angeles Angels,0,2,0,Daulton Jefferies,Chase Silseth
+2022-05-13,Los Angeles Dodgers,Philadelphia Phillies,10,12,0,Walker Buehler,Kyle Gibson
+2022-05-14,St. Louis Cardinals,San Francisco Giants,4,0,1,Dakota Hudson,Jakob Junis
+2022-05-14,Atlanta Braves,San Diego Padres,6,5,1,Charlie Morton,Sean Manaea
+2022-05-14,Oakland Athletics,Los Angeles Angels,4,3,1,Paul Blackburn,Jhonathan Díaz
+2022-05-14,Oakland Athletics,Los Angeles Angels,1,9,0,Adam Oller,Michael Lorenzen
+2022-05-14,Detroit Tigers,Baltimore Orioles,3,0,1,Michael Pineda,Bruce Zimmermann
+2022-05-14,Tampa Bay Rays,Toronto Blue Jays,1,5,0,Ryan Yarbrough,Hyun Jin Ryu
+2022-05-14,Miami Marlins,Milwaukee Brewers,9,3,1,Trevor Rogers,Eric Lauer
+2022-05-14,Pittsburgh Pirates,Cincinnati Reds,3,1,1,Zach Thompson,Luis Castillo
+2022-05-14,Washington Nationals,Houston Astros,13,6,1,Erick Fedde,Cristian Javier
+2022-05-14,Texas Rangers,Boston Red Sox,3,11,0,Glenn Otto Jr.,Rich Hill
+2022-05-14,New York Mets,Seattle Mariners,5,4,1,Chris Bassitt,George Kirby
+2022-05-14,Minnesota Twins,Cleveland Guardians,2,3,0,Devin Smeltzer,Shane Bieber
+2022-05-14,Chicago White Sox,New York Yankees,3,2,1,Dallas Keuchel,Jordan Montgomery
+2022-05-14,Arizona Diamondbacks,Chicago Cubs,2,4,0,Zac Gallen,Kyle Hendricks
+2022-05-14,Colorado Rockies,Kansas City Royals,10,4,1,Germán Márquez,Carlos Hernández
+2022-05-14,Los Angeles Dodgers,Philadelphia Phillies,3,8,0,Julio Urías,Ranger Suarez
+2022-05-15,Atlanta Braves,San Diego Padres,3,7,0,Kyle Wright,Joe Musgrove
+2022-05-15,Washington Nationals,Houston Astros,0,8,0,Patrick Corbin,Justin Verlander
+2022-05-15,Pittsburgh Pirates,Cincinnati Reds,1,0,1,Jose Quintana,Hunter Greene
+2022-05-15,Detroit Tigers,Baltimore Orioles,5,1,1,Tarik Skubal,Tyler Wells
+2022-05-15,New York Mets,Seattle Mariners,7,8,0,Carlos Carrasco,Robbie Ray
+2022-05-15,Tampa Bay Rays,Toronto Blue Jays,3,0,1,Jeffrey Springs,Alek Manoah
+2022-05-15,Miami Marlins,Milwaukee Brewers,3,7,0,Elieser Hernández,Brandon Woodruff
+2022-05-15,Minnesota Twins,Cleveland Guardians,3,1,1,Joe Ryan,Triston McKenzie
+2022-05-15,Chicago White Sox,New York Yankees,1,5,0,Michael Kopech,Nestor Cortes
+2022-05-15,Texas Rangers,Boston Red Sox,7,1,1,Martín Pérez,Austin Davis
+2022-05-15,Colorado Rockies,Kansas City Royals,7,8,0,Austin Gomber,Daniel Lynch IV
+2022-05-15,Oakland Athletics,Los Angeles Angels,1,4,0,Frankie Montas,Patrick Sandoval
+2022-05-15,Arizona Diamondbacks,Chicago Cubs,2,3,0,Humberto Castellanos,Justin Steele
+2022-05-15,Los Angeles Dodgers,Philadelphia Phillies,5,4,1,Michael Grove,Aaron Nola
+2022-05-15,St. Louis Cardinals,San Francisco Giants,15,6,1,Adam Wainwright,Carlos Rodón
+2022-05-16,Tampa Bay Rays,Detroit Tigers,2,3,0,Corey Kluber,Alex Faedo
+2022-05-16,Miami Marlins,Washington Nationals,8,2,1,Sandy Alcantara,Aaron Sanchez
+2022-05-16,Baltimore Orioles,New York Yankees,2,6,0,Kyle Bradish,Luis Severino
+2022-05-16,Toronto Blue Jays,Seattle Mariners,6,2,1,Yusei Kikuchi,Chris Flexen
+2022-05-16,Boston Red Sox,Houston Astros,6,3,1,Garrett Whitlock,Jake Odorizzi
+2022-05-16,Chicago Cubs,Pittsburgh Pirates,9,0,1,Wade Miley,Dillon Peters
+2022-05-16,Milwaukee Brewers,Atlanta Braves,1,0,1,Freddy Peralta,Ian Anderson
+2022-05-16,Texas Rangers,Los Angeles Angels,7,4,1,Jon Gray,Noah Syndergaard
+2022-05-16,Kansas City Royals,Chicago White Sox,3,5,0,Brad Keller,Johnny Cueto
+2022-05-16,Colorado Rockies,San Francisco Giants,6,7,0,Antonio Senzatela,Alex Wood
+2022-05-16,Oakland Athletics,Minnesota Twins,1,3,0,Zach Logue,Chris Archer
+2022-05-16,Los Angeles Dodgers,Arizona Diamondbacks,5,4,1,Tony Gonsolin,Madison Bumgarner
+2022-05-17,Kansas City Royals,Chicago White Sox,0,3,0,Jonathan Heasley,Dylan Cease
+2022-05-17,Kansas City Royals,Chicago White Sox,2,1,1,Brady Singer,Davis Martin
+2022-05-17,Los Angeles Dodgers,Arizona Diamondbacks,7,6,1,Ryan Pepiot,Tyler Gilbert
+2022-05-17,Los Angeles Dodgers,Arizona Diamondbacks,12,3,1,Tyler Anderson,Merrill Kelly
+2022-05-17,New York Mets,St. Louis Cardinals,3,1,1,Trevor Williams,Miles Mikolas
+2022-05-17,New York Mets,St. Louis Cardinals,3,4,0,Taijuan Walker,Steven Matz
+2022-05-17,Cleveland Guardians,Cincinnati Reds,4,5,0,Zach Plesac,Connor Overton
+2022-05-17,Tampa Bay Rays,Detroit Tigers,8,1,1,Shane McClanahan,Beau Brieske
+2022-05-17,Miami Marlins,Washington Nationals,5,1,1,Cody Poteet,Joan Adon
+2022-05-17,Philadelphia Phillies,San Diego Padres,0,3,0,Zach Eflin,Mike Clevinger
+2022-05-17,Baltimore Orioles,New York Yankees,4,5,0,Spenser Watkins,Jameson Taillon
+2022-05-17,Toronto Blue Jays,Seattle Mariners,3,0,1,José Berríos,Logan Gilbert
+2022-05-17,Boston Red Sox,Houston Astros,4,13,0,Nathan Eovaldi,José Urquidy
+2022-05-17,Chicago Cubs,Pittsburgh Pirates,7,0,1,Keegan Thompson,JT Brubaker
+2022-05-17,Milwaukee Brewers,Atlanta Braves,0,3,0,Adrian Houser,Tucker Davidson
+2022-05-17,Texas Rangers,Los Angeles Angels,10,5,1,Taylor Hearn,Reid Detmers
+2022-05-17,Colorado Rockies,San Francisco Giants,7,10,0,Chad Kuhl,Alex Cobb
+2022-05-17,Oakland Athletics,Minnesota Twins,5,2,1,James Kaprielian,Dylan Bundy
+2022-05-18,Tampa Bay Rays,Detroit Tigers,6,1,1,Drew Rasmussen,Eduardo Rodriguez
+2022-05-18,Milwaukee Brewers,Atlanta Braves,7,6,1,Corbin Burnes,Max Fried
+2022-05-18,Colorado Rockies,San Francisco Giants,5,3,1,Kyle Freeland,Logan Webb
+2022-05-18,Oakland Athletics,Minnesota Twins,4,14,0,Daulton Jefferies,Sonny Gray
+2022-05-18,Los Angeles Dodgers,Arizona Diamondbacks,5,3,1,Walker Buehler,Zach Davies
+2022-05-18,Boston Red Sox,Houston Astros,5,1,1,Nick Pivetta,Luis Garcia
+2022-05-18,Miami Marlins,Washington Nationals,4,5,0,Pablo López,Josiah Gray
+2022-05-18,Philadelphia Phillies,San Diego Padres,3,0,1,Zack Wheeler,Blake Snell
+2022-05-18,Baltimore Orioles,New York Yankees,2,3,0,Jordan Lyles,Gerrit Cole
+2022-05-18,Toronto Blue Jays,Seattle Mariners,1,5,0,Kevin Gausman,Marco Gonzales
+2022-05-18,New York Mets,St. Louis Cardinals,11,4,1,Max Scherzer,Jordan Hicks
+2022-05-18,Chicago Cubs,Pittsburgh Pirates,2,3,0,Drew Smyly,Wil Crowe
+2022-05-18,Texas Rangers,Los Angeles Angels,6,5,1,Dane Dunning,Shohei Ohtani
+2022-05-18,Kansas City Royals,Chicago White Sox,6,2,1,Zack Greinke,Lucas Giolito
+2022-05-19,Baltimore Orioles,New York Yankees,9,6,1,Bruce Zimmermann,Jordan Montgomery
+2022-05-19,Philadelphia Phillies,San Diego Padres,0,2,0,Kyle Gibson,Yu Darvish
+2022-05-19,Cleveland Guardians,Cincinnati Reds,2,4,0,Cal Quantrill,Tyler Mahle
+2022-05-19,New York Mets,St. Louis Cardinals,7,6,1,Chris Bassitt,Dakota Hudson
+2022-05-19,Kansas City Royals,Chicago White Sox,4,7,0,Carlos Hernández,Vince Velasquez
+2022-05-19,Boston Red Sox,Seattle Mariners,12,6,1,Rich Hill,George Kirby
+2022-05-19,Chicago Cubs,Arizona Diamondbacks,1,3,0,Marcus Stroman,Zac Gallen
+2022-05-19,Houston Astros,Texas Rangers,5,1,1,Framber Valdez,Glenn Otto Jr.
+2022-05-20,Chicago Cubs,Arizona Diamondbacks,6,10,0,Kyle Hendricks,Humberto Castellanos
+2022-05-20,Pittsburgh Pirates,St. Louis Cardinals,3,5,0,Zach Thompson,Adam Wainwright
+2022-05-20,Miami Marlins,Atlanta Braves,3,5,0,Trevor Rogers,Charlie Morton
+2022-05-20,Baltimore Orioles,Tampa Bay Rays,8,6,1,Tyler Wells,Jalen Beeks
+2022-05-20,Philadelphia Phillies,Los Angeles Dodgers,1,4,0,Ranger Suarez,Julio Urías
+2022-05-20,Toronto Blue Jays,Cincinnati Reds,2,1,1,Hyun Jin Ryu,Luis Castillo
+2022-05-20,Cleveland Guardians,Detroit Tigers,6,1,1,Aaron Civale,Tarik Skubal
+2022-05-20,Boston Red Sox,Seattle Mariners,7,3,1,Michael Wacha,Robbie Ray
+2022-05-20,Houston Astros,Texas Rangers,0,3,0,Cristian Javier,Martín Pérez
+2022-05-20,Kansas City Royals,Minnesota Twins,4,6,0,Daniel Lynch IV,Devin Smeltzer
+2022-05-20,Milwaukee Brewers,Washington Nationals,7,0,1,Eric Lauer,Erick Fedde
+2022-05-20,Los Angeles Angels,Oakland Athletics,2,4,0,Chase Silseth,Paul Blackburn
+2022-05-20,San Francisco Giants,San Diego Padres,7,8,0,Jakob Junis,Sean Manaea
+2022-05-21,New York Yankees,Chicago White Sox,7,5,1,Nestor Cortes,Dallas Keuchel
+2022-05-21,Chicago Cubs,Arizona Diamondbacks,6,7,0,Justin Steele,Madison Bumgarner
+2022-05-21,Toronto Blue Jays,Cincinnati Reds,3,1,1,Alek Manoah,Hunter Greene
+2022-05-21,Colorado Rockies,New York Mets,1,5,0,Germán Márquez,Carlos Carrasco
+2022-05-21,Colorado Rockies,New York Mets,11,3,1,Ty Blach,Trevor Williams
+2022-05-21,San Francisco Giants,San Diego Padres,1,2,0,Carlos Rodón,Joe Musgrove
+2022-05-21,Boston Red Sox,Seattle Mariners,6,5,1,Garrett Whitlock,Chris Flexen
+2022-05-21,Philadelphia Phillies,Los Angeles Dodgers,4,7,0,Aaron Nola,Mitch White
+2022-05-21,Miami Marlins,Atlanta Braves,3,4,0,Elieser Hernández,Kyle Wright
+2022-05-21,Pittsburgh Pirates,St. Louis Cardinals,4,5,0,Jose Quintana,Matthew Liberatore
+2022-05-21,Baltimore Orioles,Tampa Bay Rays,1,6,0,Kyle Bradish,Jeffrey Springs
+2022-05-21,Houston Astros,Texas Rangers,2,1,1,Justin Verlander,Jon Gray
+2022-05-21,Kansas City Royals,Minnesota Twins,2,9,0,Brad Keller,Joe Ryan
+2022-05-21,Milwaukee Brewers,Washington Nationals,5,1,1,Brandon Woodruff,Patrick Corbin
+2022-05-21,Los Angeles Angels,Oakland Athletics,5,3,1,Michael Lorenzen,Frankie Montas
+2022-05-22,Pittsburgh Pirates,St. Louis Cardinals,4,18,0,Bryse Wilson,Steven Matz
+2022-05-22,Boston Red Sox,Seattle Mariners,8,4,1,Nathan Eovaldi,Logan Gilbert
+2022-05-22,Baltimore Orioles,Tampa Bay Rays,7,6,1,Spenser Watkins,Corey Kluber
+2022-05-22,Philadelphia Phillies,Los Angeles Dodgers,4,3,1,Zach Eflin,Tony Gonsolin
+2022-05-22,Toronto Blue Jays,Cincinnati Reds,2,3,0,Yusei Kikuchi,Graham Ashcraft
+2022-05-22,Cleveland Guardians,Detroit Tigers,2,4,0,Shane Bieber,Alex Faedo
+2022-05-22,Miami Marlins,Atlanta Braves,4,3,1,Sandy Alcantara,Ian Anderson
+2022-05-22,Houston Astros,Texas Rangers,5,2,1,José Urquidy,Taylor Hearn
+2022-05-22,Kansas City Royals,Minnesota Twins,6,7,0,Brady Singer,Bailey Ober
+2022-05-22,Milwaukee Brewers,Washington Nationals,2,8,0,Freddy Peralta,Aaron Sanchez
+2022-05-22,Chicago Cubs,Arizona Diamondbacks,5,4,1,Wade Miley,Merrill Kelly
+2022-05-22,New York Yankees,Chicago White Sox,1,3,0,Jameson Taillon,Johnny Cueto
+2022-05-22,New York Yankees,Chicago White Sox,0,5,0,Luis Severino,Michael Kopech
+2022-05-22,Colorado Rockies,New York Mets,0,2,0,Austin Gomber,Taijuan Walker
+2022-05-22,San Francisco Giants,San Diego Padres,1,10,0,Alex Wood,MacKenzie Gore
+2022-05-22,Los Angeles Angels,Oakland Athletics,4,1,1,Patrick Sandoval,Cole Irvin
+2022-05-23,Pittsburgh Pirates,Colorado Rockies,2,1,1,JT Brubaker,Chad Kuhl
+2022-05-23,Cincinnati Reds,Chicago Cubs,4,7,0,Vladimir Gutierrez,Drew Smyly
+2022-05-23,Washington Nationals,Los Angeles Dodgers,1,10,0,Joan Adon,Tyler Anderson
+2022-05-23,New York Yankees,Baltimore Orioles,4,6,0,Gerrit Cole,Jordan Lyles
+2022-05-23,Atlanta Braves,Philadelphia Phillies,3,7,0,Tucker Davidson,Zack Wheeler
+2022-05-23,Minnesota Twins,Detroit Tigers,5,4,1,Chris Archer,Elvin Rodríguez
+2022-05-23,St. Louis Cardinals,Toronto Blue Jays,7,3,1,Miles Mikolas,José Berríos
+2022-05-23,Houston Astros,Cleveland Guardians,1,6,0,Luis Garcia,Triston McKenzie
+2022-05-23,Arizona Diamondbacks,Kansas City Royals,9,5,1,Zach Davies,Zack Greinke
+2022-05-23,Seattle Mariners,Oakland Athletics,7,6,1,Marco Gonzales,Zach Logue
+2022-05-23,San Diego Padres,Milwaukee Brewers,3,2,1,Nick Martinez,Adrian Houser
+2022-05-23,San Francisco Giants,New York Mets,3,13,0,Alex Cobb,David Peterson
+2022-05-24,Pittsburgh Pirates,Colorado Rockies,1,2,0,Roansy Contreras,Kyle Freeland
+2022-05-24,Cincinnati Reds,Chicago Cubs,4,11,0,Tyler Mahle,Marcus Stroman
+2022-05-24,Tampa Bay Rays,Miami Marlins,4,0,1,Shane McClanahan,Pablo López
+2022-05-24,Washington Nationals,Los Angeles Dodgers,4,9,0,Josiah Gray,Walker Buehler
+2022-05-24,New York Yankees,Baltimore Orioles,7,6,1,Jordan Montgomery,Bruce Zimmermann
+2022-05-24,Atlanta Braves,Philadelphia Phillies,6,5,1,Max Fried,Kyle Gibson
+2022-05-24,Minnesota Twins,Detroit Tigers,2,0,1,Sonny Gray,Beau Brieske
+2022-05-24,St. Louis Cardinals,Toronto Blue Jays,1,8,0,Jordan Hicks,Kevin Gausman
+2022-05-24,Houston Astros,Cleveland Guardians,7,3,1,Framber Valdez,Zach Plesac
+2022-05-24,Chicago White Sox,Boston Red Sox,3,16,0,Dylan Cease,Nick Pivetta
+2022-05-24,Los Angeles Angels,Texas Rangers,5,3,1,Noah Syndergaard,Dane Dunning
+2022-05-24,Arizona Diamondbacks,Kansas City Royals,8,6,1,Zac Gallen,Jonathan Heasley
+2022-05-24,Seattle Mariners,Oakland Athletics,5,7,0,George Kirby,James Kaprielian
+2022-05-24,San Diego Padres,Milwaukee Brewers,1,4,0,Blake Snell,Corbin Burnes
+2022-05-24,San Francisco Giants,New York Mets,13,12,1,Logan Webb,Chris Bassitt
+2022-05-25,Pittsburgh Pirates,Colorado Rockies,10,5,1,Zach Thompson,Ryan Feltner
+2022-05-25,Minnesota Twins,Detroit Tigers,2,4,0,Dylan Bundy,Rony García
+2022-05-25,San Francisco Giants,New York Mets,9,3,1,Jakob Junis,Thomas Szapucki
+2022-05-25,Washington Nationals,Los Angeles Dodgers,1,0,1,Erick Fedde,Julio Urías
+2022-05-25,Seattle Mariners,Oakland Athletics,2,4,0,Robbie Ray,Paul Blackburn
+2022-05-25,San Diego Padres,Milwaukee Brewers,1,2,0,Yu Darvish,Aaron Ashby
+2022-05-25,Cincinnati Reds,Chicago Cubs,4,3,1,Luis Castillo,Kyle Hendricks
+2022-05-25,Tampa Bay Rays,Miami Marlins,5,4,1,Drew Rasmussen,Cody Poteet
+2022-05-25,New York Yankees,Baltimore Orioles,2,0,1,JP Sears,Tyler Wells
+2022-05-25,Atlanta Braves,Philadelphia Phillies,8,4,1,Charlie Morton,Ranger Suarez
+2022-05-25,Houston Astros,Cleveland Guardians,2,1,1,Cristian Javier,Cal Quantrill
+2022-05-25,Chicago White Sox,Boston Red Sox,3,1,1,Lucas Giolito,Rich Hill
+2022-05-25,Los Angeles Angels,Texas Rangers,2,7,0,Reid Detmers,Glenn Otto Jr.
+2022-05-26,Cincinnati Reds,Chicago Cubs,20,5,1,Hunter Greene,Justin Steele
+2022-05-26,Tampa Bay Rays,New York Yankees,2,7,0,Ryan Yarbrough,Nestor Cortes
+2022-05-26,Washington Nationals,Colorado Rockies,7,3,1,Patrick Corbin,Germán Márquez
+2022-05-26,Detroit Tigers,Cleveland Guardians,4,3,1,Tarik Skubal,Konnor Pilkington
+2022-05-26,Atlanta Braves,Philadelphia Phillies,1,4,0,Kyle Wright,Aaron Nola
+2022-05-26,Minnesota Twins,Kansas City Royals,2,3,0,Devin Smeltzer,Daniel Lynch IV
+2022-05-26,St. Louis Cardinals,Milwaukee Brewers,3,4,0,Adam Wainwright,Eric Lauer
+2022-05-26,Chicago White Sox,Boston Red Sox,7,16,0,Dallas Keuchel,Michael Wacha
+2022-05-26,Los Angeles Angels,Toronto Blue Jays,3,6,0,Shohei Ohtani,Hyun Jin Ryu
+2022-05-26,Arizona Diamondbacks,Los Angeles Dodgers,1,14,0,Humberto Castellanos,Mitch White
+2022-05-26,Oakland Athletics,Texas Rangers,1,4,0,Frankie Montas,Martín Pérez
+2022-05-27,Cincinnati Reds,San Francisco Giants,5,1,1,Graham Ashcraft,Carlos Rodón
+2022-05-27,Boston Red Sox,Baltimore Orioles,8,12,0,Garrett Whitlock,Kyle Bradish
+2022-05-27,New York Mets,Philadelphia Phillies,8,6,1,Carlos Carrasco,Bailey Falter
+2022-05-27,Tampa Bay Rays,New York Yankees,0,2,0,Jeffrey Springs,Jameson Taillon
+2022-05-27,Atlanta Braves,Miami Marlins,6,4,1,Ian Anderson,Trevor Rogers
+2022-05-27,Minnesota Twins,Kansas City Royals,10,7,1,Bailey Ober,Brad Keller
+2022-05-27,St. Louis Cardinals,Milwaukee Brewers,4,2,1,Dakota Hudson,Brandon Woodruff
+2022-05-27,Los Angeles Angels,Toronto Blue Jays,3,4,0,Chase Silseth,Alek Manoah
+2022-05-27,Arizona Diamondbacks,Los Angeles Dodgers,4,6,0,Madison Bumgarner,Ryan Pepiot
+2022-05-27,San Diego Padres,Pittsburgh Pirates,4,3,1,Sean Manaea,Jose Quintana
+2022-05-27,Seattle Mariners,Houston Astros,6,1,1,Chris Flexen,Justin Verlander
+2022-05-27,Oakland Athletics,Texas Rangers,5,8,0,Cole Irvin,Jon Gray
+2022-05-28,Washington Nationals,Colorado Rockies,13,7,1,Aaron Sanchez,Austin Gomber
+2022-05-28,Washington Nationals,Colorado Rockies,2,3,0,Joan Adon,Chad Kuhl
+2022-05-28,Boston Red Sox,Baltimore Orioles,5,3,1,Nathan Eovaldi,Jordan Lyles
+2022-05-28,Boston Red Sox,Baltimore Orioles,2,4,0,Josh Winckowski,Denyi Reyes
+2022-05-28,Minnesota Twins,Kansas City Royals,3,7,0,Chris Archer,Brady Singer
+2022-05-28,St. Louis Cardinals,Milwaukee Brewers,8,3,1,Matthew Liberatore,Adrian Houser
+2022-05-28,Oakland Athletics,Texas Rangers,4,11,0,Zach Logue,Taylor Hearn
+2022-05-28,Detroit Tigers,Cleveland Guardians,1,8,0,Alex Faedo,Shane Bieber
+2022-05-28,Cincinnati Reds,San Francisco Giants,3,2,1,Vladimir Gutierrez,Alex Wood
+2022-05-28,Atlanta Braves,Miami Marlins,1,4,0,Tucker Davidson,Sandy Alcantara
+2022-05-28,Tampa Bay Rays,New York Yankees,3,1,1,Corey Kluber,Gerrit Cole
+2022-05-28,Arizona Diamondbacks,Los Angeles Dodgers,2,3,0,Merrill Kelly,Tony Gonsolin
+2022-05-28,New York Mets,Philadelphia Phillies,8,2,1,Taijuan Walker,Zach Eflin
+2022-05-28,Chicago White Sox,Chicago Cubs,1,5,0,Johnny Cueto,Keegan Thompson
+2022-05-28,Los Angeles Angels,Toronto Blue Jays,5,6,0,Michael Lorenzen,Yusei Kikuchi
+2022-05-28,San Diego Padres,Pittsburgh Pirates,2,4,0,Joe Musgrove,JT Brubaker
+2022-05-28,Seattle Mariners,Houston Astros,6,0,1,Logan Gilbert,José Urquidy
+2022-05-29,Cincinnati Reds,San Francisco Giants,4,6,0,Tyler Mahle,Alex Cobb
+2022-05-29,Boston Red Sox,Baltimore Orioles,12,2,1,Nick Pivetta,Bruce Zimmermann
+2022-05-29,Washington Nationals,Colorado Rockies,6,5,1,Josiah Gray,Kyle Freeland
+2022-05-29,Atlanta Braves,Miami Marlins,6,3,1,Max Fried,Elieser Hernández
+2022-05-29,Detroit Tigers,Cleveland Guardians,2,1,1,Elvin Rodríguez,Triston McKenzie
+2022-05-29,Tampa Bay Rays,New York Yankees,4,2,1,Shane McClanahan,Luis Severino
+2022-05-29,Minnesota Twins,Kansas City Royals,7,3,1,Sonny Gray,Zack Greinke
+2022-05-29,Chicago White Sox,Chicago Cubs,5,4,1,Dylan Cease,Marcus Stroman
+2022-05-29,St. Louis Cardinals,Milwaukee Brewers,0,8,0,Miles Mikolas,Corbin Burnes
+2022-05-29,Oakland Athletics,Texas Rangers,6,5,1,James Kaprielian,Dane Dunning
+2022-05-29,Los Angeles Angels,Toronto Blue Jays,10,11,0,Patrick Sandoval,José Berríos
+2022-05-29,Arizona Diamondbacks,Los Angeles Dodgers,1,3,0,Zach Davies,Tyler Anderson
+2022-05-29,San Diego Padres,Pittsburgh Pirates,4,2,1,MacKenzie Gore,Roansy Contreras
+2022-05-29,Seattle Mariners,Houston Astros,1,2,0,Marco Gonzales,Luis Garcia
+2022-05-29,New York Mets,Philadelphia Phillies,5,4,1,Chris Bassitt,Zack Wheeler
+2022-05-30,Chicago Cubs,Milwaukee Brewers,6,7,0,Matt Swarmer,Ethan Small
+2022-05-30,Chicago Cubs,Milwaukee Brewers,1,3,0,Drew Smyly,Aaron Ashby
+2022-05-30,Detroit Tigers,Minnesota Twins,7,5,1,Beau Brieske,Dylan Bundy
+2022-05-30,St. Louis Cardinals,San Diego Padres,6,3,1,Packy Naughton,Nick Martinez
+2022-05-30,Philadelphia Phillies,San Francisco Giants,4,5,0,Kyle Gibson,Logan Webb
+2022-05-30,Oakland Athletics,Houston Astros,1,5,0,Paul Blackburn,Framber Valdez
+2022-05-30,Colorado Rockies,Miami Marlins,7,1,1,Ryan Feltner,Pablo López
+2022-05-30,Cleveland Guardians,Kansas City Royals,7,3,1,Zach Plesac,Jonathan Heasley
+2022-05-30,Boston Red Sox,Baltimore Orioles,0,10,0,Rich Hill,Tyler Wells
+2022-05-30,New York Mets,Washington Nationals,13,5,1,David Peterson,Erick Fedde
+2022-05-30,Texas Rangers,Tampa Bay Rays,9,5,1,Glenn Otto Jr.,Drew Rasmussen
+2022-05-30,Arizona Diamondbacks,Atlanta Braves,6,2,1,Zac Gallen,Spencer Strider
+2022-05-30,Los Angeles Dodgers,Pittsburgh Pirates,5,6,0,Walker Buehler,Zach Thompson
+2022-05-31,Detroit Tigers,Minnesota Twins,2,8,0,Rony García,Devin Smeltzer
+2022-05-31,Detroit Tigers,Minnesota Twins,4,0,1,Joey Wentz,Cole Sands
+2022-05-31,Cleveland Guardians,Kansas City Royals,8,3,1,Cal Quantrill,Daniel Lynch IV
+2022-05-31,Philadelphia Phillies,San Francisco Giants,4,7,0,Ranger Suarez,Jakob Junis
+2022-05-31,Baltimore Orioles,Seattle Mariners,0,10,0,Bryan Baker,George Kirby
+2022-05-31,New York Yankees,Los Angeles Angels,9,1,1,Jordan Montgomery,Noah Syndergaard
+2022-05-31,Toronto Blue Jays,Chicago White Sox,6,5,1,Kevin Gausman,Lucas Giolito
+2022-05-31,Boston Red Sox,Cincinnati Reds,1,2,0,Michael Wacha,Luis Castillo
+2022-05-31,New York Mets,Washington Nationals,10,0,1,Trevor Williams,Patrick Corbin
+2022-05-31,St. Louis Cardinals,San Diego Padres,3,2,1,Adam Wainwright,Blake Snell
+2022-05-31,Texas Rangers,Tampa Bay Rays,3,0,1,Martín Pérez,Ryan Yarbrough
+2022-05-31,Chicago Cubs,Milwaukee Brewers,8,7,1,Justin Steele,Eric Lauer
+2022-05-31,Oakland Athletics,Houston Astros,1,3,0,Frankie Montas,Cristian Javier
+2022-05-31,Arizona Diamondbacks,Atlanta Braves,8,7,1,Humberto Castellanos,Charlie Morton
+2022-05-31,Los Angeles Dodgers,Pittsburgh Pirates,3,5,0,Julio Urías,Mitch Keller
+2022-06-01,Cleveland Guardians,Kansas City Royals,4,0,1,Konnor Pilkington,Brad Keller
+2022-06-01,New York Mets,Washington Nationals,5,0,1,Carlos Carrasco,Evan Lee
+2022-06-01,St. Louis Cardinals,San Diego Padres,5,2,1,Dakota Hudson,Yu Darvish
+2022-06-01,Colorado Rockies,Miami Marlins,1,14,0,Antonio Senzatela,Edward Cabrera
+2022-06-01,Colorado Rockies,Miami Marlins,13,12,1,Germán Márquez,Trevor Rogers
+2022-06-01,Oakland Athletics,Houston Astros,4,5,0,Cole Irvin,Justin Verlander
+2022-06-01,Arizona Diamondbacks,Atlanta Braves,0,6,0,Madison Bumgarner,Kyle Wright
+2022-06-01,Philadelphia Phillies,San Francisco Giants,6,5,1,Aaron Nola,Carlos Rodón
+2022-06-01,Baltimore Orioles,Seattle Mariners,9,2,1,Kyle Bradish,Robbie Ray
+2022-06-01,Toronto Blue Jays,Chicago White Sox,7,3,1,Hyun Jin Ryu,Michael Kopech
+2022-06-01,Boston Red Sox,Cincinnati Reds,7,1,1,Garrett Whitlock,Hunter Greene
+2022-06-01,Detroit Tigers,Minnesota Twins,5,0,1,Tarik Skubal,Bailey Ober
+2022-06-01,Texas Rangers,Tampa Bay Rays,3,4,0,Jon Gray,Jeffrey Springs
+2022-06-01,Chicago Cubs,Milwaukee Brewers,4,3,1,Kyle Hendricks,Jason Alexander
+2022-06-01,Los Angeles Dodgers,Pittsburgh Pirates,4,8,0,Mitch White,Jose Quintana
+2022-06-02,New York Yankees,Los Angeles Angels,6,1,1,Nestor Cortes,Shohei Ohtani
+2022-06-02,New York Yankees,Los Angeles Angels,2,1,1,Jameson Taillon,Reid Detmers
+2022-06-02,Detroit Tigers,Minnesota Twins,3,2,1,Alex Faedo,Chris Archer
+2022-06-02,Texas Rangers,Tampa Bay Rays,1,3,0,Taylor Hearn,Corey Kluber
+2022-06-02,Toronto Blue Jays,Chicago White Sox,8,3,1,Alek Manoah,Johnny Cueto
+2022-06-02,Cincinnati Reds,Washington Nationals,8,1,1,Graham Ashcraft,Joan Adon
+2022-06-02,Miami Marlins,San Francisco Giants,3,0,1,Sandy Alcantara,Alex Wood
+2022-06-02,Baltimore Orioles,Seattle Mariners,6,7,0,Jordan Lyles,Chris Flexen
+2022-06-02,Milwaukee Brewers,San Diego Padres,5,4,1,Adrian Houser,Sean Manaea
+2022-06-02,Chicago Cubs,St. Louis Cardinals,7,5,1,Keegan Thompson,Matthew Liberatore
+2022-06-02,Colorado Rockies,Atlanta Braves,6,13,0,Austin Gomber,Ian Anderson
+2022-06-02,Los Angeles Dodgers,New York Mets,2,0,1,Tony Gonsolin,Taijuan Walker
+2022-06-03,Chicago Cubs,St. Louis Cardinals,5,14,0,Marcus Stroman,Miles Mikolas
+2022-06-03,Cincinnati Reds,Washington Nationals,5,8,0,Mike Minor,Josiah Gray
+2022-06-03,Miami Marlins,San Francisco Giants,6,15,0,Richard Bleier,John Brebbia
+2022-06-03,Baltimore Orioles,Cleveland Guardians,3,6,0,Bruce Zimmermann,Shane Bieber
+2022-06-03,Pittsburgh Pirates,Arizona Diamondbacks,6,8,0,JT Brubaker,Merrill Kelly
+2022-06-03,Philadelphia Phillies,Los Angeles Angels,10,0,1,Zach Eflin,Chase Silseth
+2022-06-03,New York Yankees,Detroit Tigers,13,0,1,Gerrit Cole,Elvin Rodríguez
+2022-06-03,Toronto Blue Jays,Minnesota Twins,3,9,0,Yusei Kikuchi,Chi Chi González
+2022-06-03,Tampa Bay Rays,Chicago White Sox,6,3,1,Shane McClanahan,Davis Martin
+2022-06-03,Texas Rangers,Seattle Mariners,3,4,0,Dane Dunning,Logan Gilbert
+2022-06-03,Kansas City Royals,Houston Astros,3,10,0,Brady Singer,José Urquidy
+2022-06-03,Milwaukee Brewers,San Diego Padres,0,7,0,Corbin Burnes,Joe Musgrove
+2022-06-03,Colorado Rockies,Atlanta Braves,1,3,0,Chad Kuhl,Max Fried
+2022-06-03,Oakland Athletics,Boston Red Sox,2,7,0,James Kaprielian,Nathan Eovaldi
+2022-06-03,Los Angeles Dodgers,New York Mets,6,1,1,Tyler Anderson,Chris Bassitt
+2022-06-04,New York Yankees,Detroit Tigers,3,0,1,Luis Severino,Beau Brieske
+2022-06-04,Chicago Cubs,St. Louis Cardinals,6,1,1,Matt Swarmer,Johan Oviedo
+2022-06-04,Chicago Cubs,St. Louis Cardinals,4,7,0,Caleb Kilian,Andre Pallante
+2022-06-04,Toronto Blue Jays,Minnesota Twins,12,3,1,José Berríos,Dylan Bundy
+2022-06-04,Baltimore Orioles,Cleveland Guardians,5,4,1,Tyler Wells,Triston McKenzie
+2022-06-04,Pittsburgh Pirates,Arizona Diamondbacks,2,1,1,Roansy Contreras,Zach Davies
+2022-06-04,Texas Rangers,Seattle Mariners,3,2,1,Glenn Otto Jr.,Marco Gonzales
+2022-06-04,Oakland Athletics,Boston Red Sox,0,8,0,Paul Blackburn,Nick Pivetta
+2022-06-04,Kansas City Royals,Houston Astros,6,0,1,Kris Bubic,Luis Garcia
+2022-06-04,Cincinnati Reds,Washington Nationals,8,10,0,Tyler Mahle,Erick Fedde
+2022-06-04,Tampa Bay Rays,Chicago White Sox,2,3,0,Drew Rasmussen,Dylan Cease
+2022-06-04,Miami Marlins,San Francisco Giants,5,4,1,Pablo López,Logan Webb
+2022-06-04,Milwaukee Brewers,San Diego Padres,0,4,0,Aaron Ashby,MacKenzie Gore
+2022-06-04,Philadelphia Phillies,Los Angeles Angels,7,2,1,Zack Wheeler,Michael Lorenzen
+2022-06-04,Colorado Rockies,Atlanta Braves,2,6,0,Kyle Freeland,Spencer Strider
+2022-06-04,Los Angeles Dodgers,New York Mets,4,9,0,Walker Buehler,David Peterson
+2022-06-05,New York Yankees,Detroit Tigers,5,4,1,Jordan Montgomery,Rony García
+2022-06-05,Baltimore Orioles,Cleveland Guardians,2,3,0,Dean Kremer,Zach Plesac
+2022-06-05,Pittsburgh Pirates,Arizona Diamondbacks,3,0,1,Zach Thompson,Zac Gallen
+2022-06-05,Philadelphia Phillies,Los Angeles Angels,9,7,1,Kyle Gibson,Patrick Sandoval
+2022-06-05,Toronto Blue Jays,Minnesota Twins,6,8,0,Kevin Gausman,Devin Smeltzer
+2022-06-05,Cincinnati Reds,Washington Nationals,4,5,0,Luis Castillo,Patrick Corbin
+2022-06-05,Tampa Bay Rays,Chicago White Sox,5,6,0,Ryan Yarbrough,Lucas Giolito
+2022-06-05,Miami Marlins,San Francisco Giants,1,5,0,Braxton Garrett,Jakob Junis
+2022-06-05,Kansas City Royals,Houston Astros,4,7,0,Jonathan Heasley,Framber Valdez
+2022-06-05,Milwaukee Brewers,San Diego Padres,4,6,0,Eric Lauer,Mike Clevinger
+2022-06-05,Texas Rangers,Seattle Mariners,5,6,0,Martín Pérez,George Kirby
+2022-06-05,Colorado Rockies,Atlanta Braves,7,8,0,Ryan Feltner,Charlie Morton
+2022-06-05,Oakland Athletics,Boston Red Sox,2,5,0,Frankie Montas,Rich Hill
+2022-06-05,Los Angeles Dodgers,New York Mets,4,5,0,Julio Urías,Trevor Williams
+2022-06-05,Chicago Cubs,St. Louis Cardinals,3,5,0,Justin Steele,Adam Wainwright
+2022-06-06,Houston Astros,Seattle Mariners,4,7,0,Cristian Javier,Robbie Ray
+2022-06-06,Kansas City Royals,Toronto Blue Jays,0,8,0,Daniel Lynch IV,Ross Stripling
+2022-06-06,Los Angeles Angels,Boston Red Sox,0,1,0,Noah Syndergaard,Michael Wacha
+2022-06-06,San Diego Padres,New York Mets,5,11,0,Blake Snell,Carlos Carrasco
+2022-06-07,Cleveland Guardians,Texas Rangers,6,3,1,Cal Quantrill,Jon Gray
+2022-06-07,Cleveland Guardians,Texas Rangers,3,6,0,Kirk McCarty,Taylor Hearn
+2022-06-07,Cincinnati Reds,Arizona Diamondbacks,14,8,1,Graham Ashcraft,Tyler Gilbert
+2022-06-07,Miami Marlins,Washington Nationals,12,2,1,Edward Cabrera,Joan Adon
+2022-06-07,Baltimore Orioles,Chicago Cubs,9,3,1,Kyle Bradish,Keegan Thompson
+2022-06-07,Pittsburgh Pirates,Detroit Tigers,3,5,0,Jose Quintana,Wily Peralta
+2022-06-07,Tampa Bay Rays,St. Louis Cardinals,4,2,1,Jeffrey Springs,Dakota Hudson
+2022-06-07,Atlanta Braves,Oakland Athletics,3,2,1,Kyle Wright,Cole Irvin
+2022-06-07,Minnesota Twins,New York Yankees,4,10,0,Cole Sands,Jameson Taillon
+2022-06-07,Houston Astros,Seattle Mariners,4,1,1,Justin Verlander,Chris Flexen
+2022-06-07,Kansas City Royals,Toronto Blue Jays,0,7,0,Brad Keller,Alek Manoah
+2022-06-07,Chicago White Sox,Los Angeles Dodgers,4,0,1,Michael Kopech,Mitch White
+2022-06-07,Milwaukee Brewers,Philadelphia Phillies,2,3,0,Jason Alexander,Ranger Suarez
+2022-06-07,Los Angeles Angels,Boston Red Sox,5,6,0,José Suarez,Garrett Whitlock
+2022-06-07,San Diego Padres,New York Mets,7,0,1,Yu Darvish,Taijuan Walker
+2022-06-07,San Francisco Giants,Colorado Rockies,3,5,0,Carlos Rodón,Germán Márquez
+2022-06-08,Pittsburgh Pirates,Detroit Tigers,1,3,0,Mitch Keller,Alex Faedo
+2022-06-08,Kansas City Royals,Toronto Blue Jays,8,4,1,Brady Singer,Yusei Kikuchi
+2022-06-08,Cincinnati Reds,Arizona Diamondbacks,0,7,0,Mike Minor,Merrill Kelly
+2022-06-08,Houston Astros,Seattle Mariners,3,6,0,José Urquidy,Logan Gilbert
+2022-06-08,Miami Marlins,Washington Nationals,2,1,1,Sandy Alcantara,Josiah Gray
+2022-06-08,Tampa Bay Rays,St. Louis Cardinals,11,3,1,Corey Kluber,Packy Naughton
+2022-06-08,Cleveland Guardians,Texas Rangers,4,0,1,Shane Bieber,Dane Dunning
+2022-06-08,Atlanta Braves,Oakland Athletics,13,2,1,Ian Anderson,Jared Koenig
+2022-06-08,Minnesota Twins,New York Yankees,8,1,1,Chris Archer,Nestor Cortes
+2022-06-08,Chicago White Sox,Los Angeles Dodgers,1,4,0,Johnny Cueto,Tony Gonsolin
+2022-06-08,Milwaukee Brewers,Philadelphia Phillies,0,10,0,Adrian Houser,Aaron Nola
+2022-06-08,Los Angeles Angels,Boston Red Sox,0,1,0,Reid Detmers,Nathan Eovaldi
+2022-06-08,San Diego Padres,New York Mets,13,2,1,Sean Manaea,Chris Bassitt
+2022-06-08,San Francisco Giants,Colorado Rockies,2,1,1,Alex Wood,Antonio Senzatela
+2022-06-09,Cincinnati Reds,Arizona Diamondbacks,4,5,0,Tyler Mahle,Zach Davies
+2022-06-09,Tampa Bay Rays,St. Louis Cardinals,2,1,1,Shane McClanahan,Miles Mikolas
+2022-06-09,Chicago White Sox,Los Angeles Dodgers,9,11,0,Dylan Cease,Tyler Anderson
+2022-06-09,Milwaukee Brewers,Philadelphia Phillies,3,8,0,Corbin Burnes,Zach Eflin
+2022-06-09,San Francisco Giants,Colorado Rockies,2,4,0,Logan Webb,Austin Gomber
+2022-06-09,Miami Marlins,Washington Nationals,7,4,1,Trevor Rogers,Stephen Strasburg
+2022-06-09,Cleveland Guardians,Oakland Athletics,8,4,1,Konnor Pilkington,James Kaprielian
+2022-06-09,Atlanta Braves,Pittsburgh Pirates,3,1,1,Max Fried,JT Brubaker
+2022-06-09,Minnesota Twins,New York Yankees,7,10,0,Dylan Bundy,Gerrit Cole
+2022-06-09,Kansas City Royals,Baltimore Orioles,7,5,1,Kris Bubic,Jordan Lyles
+2022-06-09,Los Angeles Angels,Boston Red Sox,5,2,1,Shohei Ohtani,Nick Pivetta
+2022-06-10,Philadelphia Phillies,Arizona Diamondbacks,7,5,1,Kyle Gibson,Zac Gallen
+2022-06-10,New York Yankees,Chicago Cubs,2,1,1,Luis Severino,Wade Miley
+2022-06-10,Washington Nationals,Milwaukee Brewers,11,5,1,Erick Fedde,Aaron Ashby
+2022-06-10,Cleveland Guardians,Oakland Athletics,3,2,1,Triston McKenzie,Paul Blackburn
+2022-06-10,Detroit Tigers,Toronto Blue Jays,1,10,0,Elvin Rodríguez,José Berríos
+2022-06-10,Atlanta Braves,Pittsburgh Pirates,4,2,1,Spencer Strider,Roansy Contreras
+2022-06-10,Kansas City Royals,Baltimore Orioles,8,1,1,Jonathan Heasley,Bruce Zimmermann
+2022-06-10,Minnesota Twins,Tampa Bay Rays,9,4,1,Devin Smeltzer,Drew Rasmussen
+2022-06-10,Chicago White Sox,Texas Rangers,8,3,1,Reynaldo López,Matt Bush
+2022-06-10,Houston Astros,Miami Marlins,4,7,0,Luis Garcia,Pablo López
+2022-06-10,St. Louis Cardinals,Cincinnati Reds,2,0,1,Andre Pallante,Luis Castillo
+2022-06-10,Los Angeles Angels,New York Mets,3,7,0,Jhonathan Díaz,Tylor Megill
+2022-06-10,San Diego Padres,Colorado Rockies,9,0,1,Joe Musgrove,Chad Kuhl
+2022-06-10,Seattle Mariners,Boston Red Sox,3,4,0,Marco Gonzales,Rich Hill
+2022-06-10,San Francisco Giants,Los Angeles Dodgers,7,2,1,Jakob Junis,Walker Buehler
+2022-06-11,Minnesota Twins,Tampa Bay Rays,6,5,1,Chi Chi González,Shane Baz
+2022-06-11,Chicago White Sox,Texas Rangers,9,11,0,Lucas Giolito,Martín Pérez
+2022-06-11,St. Louis Cardinals,Cincinnati Reds,5,4,1,Adam Wainwright,Hunter Greene
+2022-06-11,Philadelphia Phillies,Arizona Diamondbacks,4,0,1,Zack Wheeler,Madison Bumgarner
+2022-06-11,Washington Nationals,Milwaukee Brewers,8,6,1,Patrick Corbin,Eric Lauer
+2022-06-11,Kansas City Royals,Baltimore Orioles,4,6,0,Daniel Lynch IV,Tyler Wells
+2022-06-11,Cleveland Guardians,Oakland Athletics,5,10,0,Zach Plesac,Frankie Montas
+2022-06-11,San Diego Padres,Colorado Rockies,2,1,1,Nick Martinez,Ryan Feltner
+2022-06-11,San Diego Padres,Colorado Rockies,2,6,0,MacKenzie Gore,Kyle Freeland
+2022-06-11,Detroit Tigers,Toronto Blue Jays,3,1,1,Beau Brieske,Kevin Gausman
+2022-06-11,Atlanta Braves,Pittsburgh Pirates,10,4,1,Charlie Morton,Zach Thompson
+2022-06-11,Houston Astros,Miami Marlins,1,5,0,Framber Valdez,Braxton Garrett
+2022-06-11,San Francisco Giants,Los Angeles Dodgers,3,2,1,Sam Long,Clayton Kershaw
+2022-06-11,New York Yankees,Chicago Cubs,8,0,1,Jordan Montgomery,Matt Swarmer
+2022-06-11,Los Angeles Angels,New York Mets,11,6,1,Michael Lorenzen,Carlos Carrasco
+2022-06-11,Seattle Mariners,Boston Red Sox,7,6,1,George Kirby,Michael Wacha
+2022-06-12,Cleveland Guardians,Oakland Athletics,6,3,1,Cal Quantrill,Cole Irvin
+2022-06-12,Philadelphia Phillies,Arizona Diamondbacks,1,13,0,Ranger Suarez,Kyle Nelson
+2022-06-12,Atlanta Braves,Pittsburgh Pirates,5,3,1,Kyle Wright,Jose Quintana
+2022-06-12,New York Yankees,Chicago Cubs,18,4,1,Jameson Taillon,Keegan Thompson
+2022-06-12,Washington Nationals,Milwaukee Brewers,1,4,0,Paolo Espino,Jason Alexander
+2022-06-12,Detroit Tigers,Toronto Blue Jays,0,6,0,Tarik Skubal,Ross Stripling
+2022-06-12,Kansas City Royals,Baltimore Orioles,7,10,0,Brad Keller,Dean Kremer
+2022-06-12,Minnesota Twins,Tampa Bay Rays,0,6,0,Cole Sands,Jeffrey Springs
+2022-06-12,Chicago White Sox,Texas Rangers,6,8,0,Michael Kopech,Jon Gray
+2022-06-12,Houston Astros,Miami Marlins,9,4,1,Justin Verlander,Edward Cabrera
+2022-06-12,St. Louis Cardinals,Cincinnati Reds,6,7,0,Dakota Hudson,Graham Ashcraft
+2022-06-12,San Francisco Giants,Los Angeles Dodgers,2,0,1,Carlos Rodón,Julio Urías
+2022-06-12,San Diego Padres,Colorado Rockies,2,4,0,Blake Snell,Germán Márquez
+2022-06-12,Seattle Mariners,Boston Red Sox,0,2,0,Robbie Ray,Kutter Crawford
+2022-06-12,Los Angeles Angels,New York Mets,1,4,0,Patrick Sandoval,Taijuan Walker
+2022-06-13,Washington Nationals,Atlanta Braves,5,9,0,Erasmo Ramírez,Ian Anderson
+2022-06-13,Philadelphia Phillies,Miami Marlins,3,2,1,Aaron Nola,Sandy Alcantara
+2022-06-13,Toronto Blue Jays,Baltimore Orioles,11,1,1,Alek Manoah,Kyle Bradish
+2022-06-13,Detroit Tigers,Chicago White Sox,5,9,0,Rony García,Lance Lynn
+2022-06-13,St. Louis Cardinals,Pittsburgh Pirates,7,5,1,Zack Thompson,Mitch Keller
+2022-06-13,Chicago Cubs,San Diego Padres,1,4,0,Justin Steele,Yu Darvish
+2022-06-13,Texas Rangers,Houston Astros,5,3,1,Taylor Hearn,Cristian Javier
+2022-06-13,Arizona Diamondbacks,Cincinnati Reds,4,5,0,Merrill Kelly,Mike Minor
+2022-06-13,San Francisco Giants,Kansas City Royals,6,2,1,Alex Wood,Brady Singer
+2022-06-13,Seattle Mariners,Minnesota Twins,2,3,0,Chris Flexen,Chris Archer
+2022-06-14,St. Louis Cardinals,Pittsburgh Pirates,3,1,1,Matthew Liberatore,JT Brubaker
+2022-06-14,St. Louis Cardinals,Pittsburgh Pirates,9,1,1,Miles Mikolas,Bryse Wilson
+2022-06-14,Washington Nationals,Atlanta Braves,4,10,0,Jackson Tetreault,Max Fried
+2022-06-14,Philadelphia Phillies,Miami Marlins,9,11,0,Zach Eflin,Trevor Rogers
+2022-06-14,New York Yankees,Tampa Bay Rays,2,0,1,Gerrit Cole,Corey Kluber
+2022-06-14,Toronto Blue Jays,Baltimore Orioles,5,6,0,Yusei Kikuchi,Jordan Lyles
+2022-06-14,Boston Red Sox,Oakland Athletics,6,1,1,Nick Pivetta,Jared Koenig
+2022-06-14,Detroit Tigers,Chicago White Sox,1,5,0,Drew Hutchison,Dylan Cease
+2022-06-14,New York Mets,Milwaukee Brewers,4,0,1,Chris Bassitt,Adrian Houser
+2022-06-14,Chicago Cubs,San Diego Padres,5,12,0,Kyle Hendricks,Sean Manaea
+2022-06-14,Texas Rangers,Houston Astros,3,4,0,Dane Dunning,José Urquidy
+2022-06-14,Colorado Rockies,Cleveland Guardians,3,4,0,Antonio Senzatela,Shane Bieber
+2022-06-14,Arizona Diamondbacks,Cincinnati Reds,3,5,0,Zach Davies,Tyler Mahle
+2022-06-14,San Francisco Giants,Kansas City Royals,4,2,1,Logan Webb,Kris Bubic
+2022-06-14,Los Angeles Dodgers,Los Angeles Angels,2,0,1,Tony Gonsolin,Noah Syndergaard
+2022-06-14,Seattle Mariners,Minnesota Twins,5,0,1,Logan Gilbert,Joe Ryan
+2022-06-15,Philadelphia Phillies,Miami Marlins,3,1,1,Kyle Gibson,Daniel Castano
+2022-06-15,Detroit Tigers,Chicago White Sox,0,13,0,Alex Faedo,Vince Velasquez
+2022-06-15,Texas Rangers,Houston Astros,2,9,0,Tyson Miller,Luis Garcia
+2022-06-15,Arizona Diamondbacks,Cincinnati Reds,7,4,1,Zac Gallen,Luis Castillo
+2022-06-15,San Francisco Giants,Kansas City Royals,2,3,0,Sam Long,Jonathan Heasley
+2022-06-15,Seattle Mariners,Minnesota Twins,0,5,0,Marco Gonzales,Sonny Gray
+2022-06-15,Washington Nationals,Atlanta Braves,2,8,0,Erick Fedde,Spencer Strider
+2022-06-15,New York Yankees,Tampa Bay Rays,4,3,1,Nestor Cortes,Shane McClanahan
+2022-06-15,Toronto Blue Jays,Baltimore Orioles,7,6,1,José Berríos,Bruce Zimmermann
+2022-06-15,Boston Red Sox,Oakland Athletics,10,1,1,Josh Winckowski,James Kaprielian
+2022-06-15,New York Mets,Milwaukee Brewers,2,10,0,David Peterson,Corbin Burnes
+2022-06-15,St. Louis Cardinals,Pittsburgh Pirates,4,6,0,Jack Flaherty,Roansy Contreras
+2022-06-15,Chicago Cubs,San Diego Padres,5,19,0,Caleb Kilian,Ryan Weathers
+2022-06-15,Colorado Rockies,Cleveland Guardians,5,7,0,Austin Gomber,Konnor Pilkington
+2022-06-15,Los Angeles Dodgers,Los Angeles Angels,4,1,1,Tyler Anderson,Reid Detmers
+2022-06-16,Boston Red Sox,Oakland Athletics,3,4,0,Rich Hill,Paul Blackburn
+2022-06-16,Chicago Cubs,San Diego Padres,4,6,0,Matt Swarmer,Joe Musgrove
+2022-06-16,Toronto Blue Jays,Baltimore Orioles,2,10,0,Kevin Gausman,Tyler Wells
+2022-06-16,Colorado Rockies,Cleveland Guardians,2,4,0,Chad Kuhl,Triston McKenzie
+2022-06-16,Washington Nationals,Philadelphia Phillies,1,10,0,Patrick Corbin,Zack Wheeler
+2022-06-16,New York Yankees,Tampa Bay Rays,2,1,1,Clarke Schmidt,Jalen Beeks
+2022-06-16,Detroit Tigers,Texas Rangers,1,3,0,Beau Brieske,Martín Pérez
+2022-06-16,New York Mets,Milwaukee Brewers,5,4,1,Tylor Megill,Aaron Ashby
+2022-06-16,Seattle Mariners,Los Angeles Angels,1,4,0,George Kirby,Shohei Ohtani
+2022-06-17,Washington Nationals,Philadelphia Phillies,3,5,0,Joan Adon,Ranger Suarez
+2022-06-17,Washington Nationals,Philadelphia Phillies,7,8,0,Paolo Espino,Bailey Falter
+2022-06-17,Chicago Cubs,Atlanta Braves,1,0,1,Keegan Thompson,Charlie Morton
+2022-06-17,Baltimore Orioles,Tampa Bay Rays,1,0,1,Dean Kremer,Shane Baz
+2022-06-17,Cincinnati Reds,Milwaukee Brewers,4,5,0,Hunter Greene,Eric Lauer
+2022-06-17,Pittsburgh Pirates,San Francisco Giants,0,2,0,Zach Thompson,Carlos Rodón
+2022-06-17,Toronto Blue Jays,New York Yankees,3,12,0,Ross Stripling,Jordan Montgomery
+2022-06-17,Boston Red Sox,St. Louis Cardinals,6,5,1,Michael Wacha,Adam Wainwright
+2022-06-17,Detroit Tigers,Texas Rangers,0,7,0,Tarik Skubal,Jon Gray
+2022-06-17,New York Mets,Miami Marlins,10,4,1,Carlos Carrasco,Pablo López
+2022-06-17,Houston Astros,Chicago White Sox,13,3,1,Framber Valdez,Lucas Giolito
+2022-06-17,Colorado Rockies,San Diego Padres,10,4,1,Kyle Freeland,MacKenzie Gore
+2022-06-17,Oakland Athletics,Kansas City Royals,1,5,0,Frankie Montas,Daniel Lynch IV
+2022-06-17,Arizona Diamondbacks,Minnesota Twins,7,2,1,Madison Bumgarner,Devin Smeltzer
+2022-06-17,Los Angeles Dodgers,Cleveland Guardians,1,2,0,Clayton Kershaw,Zach Plesac
+2022-06-17,Seattle Mariners,Los Angeles Angels,8,1,1,Robbie Ray,Michael Lorenzen
+2022-06-18,Chicago Cubs,Atlanta Braves,6,3,1,Justin Steele,Kyle Wright
+2022-06-18,Toronto Blue Jays,New York Yankees,0,4,0,Alek Manoah,Jameson Taillon
+2022-06-18,Pittsburgh Pirates,San Francisco Giants,5,7,0,Jose Quintana,Alex Wood
+2022-06-18,Baltimore Orioles,Tampa Bay Rays,6,7,0,Kyle Bradish,Jeffrey Springs
+2022-06-18,Oakland Athletics,Kansas City Royals,0,2,0,Cole Irvin,Brad Keller
+2022-06-18,Seattle Mariners,Los Angeles Angels,2,4,0,Chris Flexen,Patrick Sandoval
+2022-06-18,Seattle Mariners,Los Angeles Angels,0,3,0,Penn Murfee,José Suarez
+2022-06-18,Detroit Tigers,Texas Rangers,14,7,1,Rony García,Taylor Hearn
+2022-06-18,Houston Astros,Chicago White Sox,0,7,0,Justin Verlander,Johnny Cueto
+2022-06-18,New York Mets,Miami Marlins,3,2,1,Taijuan Walker,Braxton Garrett
+2022-06-18,Cincinnati Reds,Milwaukee Brewers,3,7,0,Graham Ashcraft,Jason Alexander
+2022-06-18,Washington Nationals,Philadelphia Phillies,1,2,0,Josiah Gray,Aaron Nola
+2022-06-18,Los Angeles Dodgers,Cleveland Guardians,7,1,1,Julio Urías,Cal Quantrill
+2022-06-18,Boston Red Sox,St. Louis Cardinals,2,11,0,Kutter Crawford,Dakota Hudson
+2022-06-18,Colorado Rockies,San Diego Padres,5,4,1,Germán Márquez,Nick Martinez
+2022-06-18,Arizona Diamondbacks,Minnesota Twins,1,11,0,Luke Weaver,Dylan Bundy
+2022-06-19,Washington Nationals,Philadelphia Phillies,9,3,1,Jackson Tetreault,Zach Eflin
+2022-06-19,Pittsburgh Pirates,San Francisco Giants,4,3,1,Mitch Keller,Alex Cobb
+2022-06-19,Boston Red Sox,St. Louis Cardinals,6,4,1,Nick Pivetta,Andre Pallante
+2022-06-19,Baltimore Orioles,Tampa Bay Rays,2,1,1,Austin Voth,Corey Kluber
+2022-06-19,Toronto Blue Jays,New York Yankees,10,9,1,Yusei Kikuchi,Luis Severino
+2022-06-19,Detroit Tigers,Texas Rangers,7,3,1,Drew Hutchison,Dane Dunning
+2022-06-19,New York Mets,Miami Marlins,2,6,0,Chris Bassitt,Sandy Alcantara
+2022-06-19,Cincinnati Reds,Milwaukee Brewers,3,6,0,Mike Minor,Adrian Houser
+2022-06-19,Chicago Cubs,Atlanta Braves,0,6,0,Kyle Hendricks,Ian Anderson
+2022-06-19,Colorado Rockies,San Diego Padres,8,3,1,Antonio Senzatela,Blake Snell
+2022-06-19,Oakland Athletics,Kansas City Royals,4,0,1,Jared Koenig,Brady Singer
+2022-06-19,Los Angeles Dodgers,Cleveland Guardians,3,5,0,Andrew Heaney,Shane Bieber
+2022-06-19,Seattle Mariners,Los Angeles Angels,0,4,0,Logan Gilbert,Kenny Rosenberg
+2022-06-19,Arizona Diamondbacks,Minnesota Twins,7,1,1,Merrill Kelly,Chris Archer
+2022-06-19,Houston Astros,Chicago White Sox,4,3,1,Cristian Javier,Michael Kopech
+2022-06-20,New York Mets,Miami Marlins,6,0,1,David Peterson,Trevor Rogers
+2022-06-20,Pittsburgh Pirates,Chicago Cubs,12,1,1,JT Brubaker,Caleb Kilian
+2022-06-20,Boston Red Sox,Detroit Tigers,5,2,1,Josh Winckowski,Alex Faedo
+2022-06-20,Tampa Bay Rays,New York Yankees,2,4,0,Shane McClanahan,Gerrit Cole
+2022-06-20,Atlanta Braves,San Francisco Giants,2,1,1,Max Fried,Logan Webb
+2022-06-20,Chicago White Sox,Toronto Blue Jays,8,7,1,Lance Lynn,José Berríos
+2022-06-20,Milwaukee Brewers,St. Louis Cardinals,2,0,1,Corbin Burnes,Miles Mikolas
+2022-06-20,Los Angeles Angels,Kansas City Royals,2,6,0,Noah Syndergaard,Kris Bubic
+2022-06-20,San Diego Padres,Arizona Diamondbacks,4,1,1,Yu Darvish,Zach Davies
+2022-06-21,Cincinnati Reds,Los Angeles Dodgers,2,8,0,Tyler Mahle,Tony Gonsolin
+2022-06-21,Miami Marlins,Colorado Rockies,9,8,1,Daniel Castano,Ryan Feltner
+2022-06-21,Baltimore Orioles,Washington Nationals,0,3,0,Jordan Lyles,Erick Fedde
+2022-06-21,Pittsburgh Pirates,Chicago Cubs,7,1,1,Roansy Contreras,Matt Swarmer
+2022-06-21,Boston Red Sox,Detroit Tigers,5,4,1,Rich Hill,Beau Brieske
+2022-06-21,Tampa Bay Rays,New York Yankees,5,4,1,Jalen Beeks,Nestor Cortes
+2022-06-21,Atlanta Braves,San Francisco Giants,10,12,0,Spencer Strider,Anthony DeSclafani
+2022-06-21,Minnesota Twins,Cleveland Guardians,5,6,0,Joe Ryan,Aaron Civale
+2022-06-21,Texas Rangers,Philadelphia Phillies,7,0,1,Martín Pérez,Kyle Gibson
+2022-06-21,Houston Astros,New York Mets,8,2,1,José Urquidy,Trevor Williams
+2022-06-21,Chicago White Sox,Toronto Blue Jays,7,6,1,Dylan Cease,Kevin Gausman
+2022-06-21,Milwaukee Brewers,St. Louis Cardinals,2,6,0,Chi Chi González,Jack Flaherty
+2022-06-21,Los Angeles Angels,Kansas City Royals,11,12,0,Reid Detmers,Jonathan Heasley
+2022-06-21,San Diego Padres,Arizona Diamondbacks,3,2,1,Sean Manaea,Zac Gallen
+2022-06-21,Oakland Athletics,Seattle Mariners,2,8,0,James Kaprielian,Marco Gonzales
+2022-06-22,Houston Astros,New York Mets,5,3,1,Luis Garcia,Carlos Carrasco
+2022-06-22,Chicago White Sox,Toronto Blue Jays,5,9,0,Lucas Giolito,Ross Stripling
+2022-06-22,Texas Rangers,Philadelphia Phillies,4,2,1,Jon Gray,Zack Wheeler
+2022-06-22,San Diego Padres,Arizona Diamondbacks,10,4,1,Mike Clevinger,Madison Bumgarner
+2022-06-22,Cincinnati Reds,Los Angeles Dodgers,4,8,0,Luis Castillo,Tyler Anderson
+2022-06-22,Miami Marlins,Colorado Rockies,7,4,1,Pablo López,Chad Kuhl
+2022-06-22,Pittsburgh Pirates,Chicago Cubs,5,14,0,Jerad Eickhoff,Keegan Thompson
+2022-06-22,Boston Red Sox,Detroit Tigers,6,2,1,Michael Wacha,Tarik Skubal
+2022-06-22,Tampa Bay Rays,New York Yankees,4,5,0,Shane Baz,Jordan Montgomery
+2022-06-22,Atlanta Braves,San Francisco Giants,4,3,1,Charlie Morton,Carlos Rodón
+2022-06-22,Minnesota Twins,Cleveland Guardians,10,11,0,Sonny Gray,Triston McKenzie
+2022-06-22,Milwaukee Brewers,St. Louis Cardinals,4,5,0,Eric Lauer,Adam Wainwright
+2022-06-22,Oakland Athletics,Seattle Mariners,0,9,0,Paul Blackburn,George Kirby
+2022-06-22,Los Angeles Angels,Kansas City Royals,5,0,1,Shohei Ohtani,Daniel Lynch IV
+2022-06-23,Miami Marlins,Colorado Rockies,3,2,1,Braxton Garrett,Kyle Freeland
+2022-06-23,Atlanta Braves,San Francisco Giants,7,6,1,Kyle Wright,Alex Wood
+2022-06-23,Cincinnati Reds,Los Angeles Dodgers,5,10,0,Hunter Greene,Clayton Kershaw
+2022-06-23,Pittsburgh Pirates,Chicago Cubs,8,7,1,Jose Quintana,Justin Steele
+2022-06-23,Minnesota Twins,Cleveland Guardians,1,0,1,Devin Smeltzer,Zach Plesac
+2022-06-23,Milwaukee Brewers,St. Louis Cardinals,6,4,1,Jason Alexander,Dakota Hudson
+2022-06-23,Oakland Athletics,Seattle Mariners,1,2,0,Frankie Montas,Robbie Ray
+2022-06-23,New York Yankees,Houston Astros,7,6,1,Jameson Taillon,Framber Valdez
+2022-06-23,Chicago White Sox,Baltimore Orioles,0,4,0,Johnny Cueto,Dean Kremer
+2022-06-23,San Diego Padres,Philadelphia Phillies,2,6,0,Joe Musgrove,Ranger Suarez
+2022-06-24,Miami Marlins,New York Mets,3,5,0,Sandy Alcantara,Taijuan Walker
+2022-06-24,New York Yankees,Houston Astros,1,3,0,Luis Severino,Justin Verlander
+2022-06-24,Cleveland Guardians,Boston Red Sox,3,6,0,Cal Quantrill,Nick Pivetta
+2022-06-24,Tampa Bay Rays,Pittsburgh Pirates,4,3,1,Jeffrey Springs,Mitch Keller
+2022-06-24,Atlanta Braves,Los Angeles Dodgers,1,4,0,Ian Anderson,Julio Urías
+2022-06-24,Texas Rangers,Washington Nationals,1,2,0,Dane Dunning,Paolo Espino
+2022-06-24,Kansas City Royals,Oakland Athletics,3,1,1,Zack Greinke,Cole Irvin
+2022-06-24,Minnesota Twins,Colorado Rockies,0,1,0,Dylan Bundy,Germán Márquez
+2022-06-24,Chicago White Sox,Baltimore Orioles,1,4,0,Michael Kopech,Austin Voth
+2022-06-24,Milwaukee Brewers,Toronto Blue Jays,4,9,0,Adrian Houser,Alek Manoah
+2022-06-24,St. Louis Cardinals,Chicago Cubs,0,3,0,Andre Pallante,Kyle Hendricks
+2022-06-24,Los Angeles Angels,Seattle Mariners,3,4,0,Michael Lorenzen,Chris Flexen
+2022-06-24,Arizona Diamondbacks,Detroit Tigers,1,5,0,Merrill Kelly,Rony García
+2022-06-24,San Diego Padres,Philadelphia Phillies,1,0,1,MacKenzie Gore,Aaron Nola
+2022-06-24,San Francisco Giants,Cincinnati Reds,2,4,0,Alex Cobb,Graham Ashcraft
+2022-06-25,New York Yankees,Houston Astros,0,3,0,Gerrit Cole,Cristian Javier
+2022-06-25,Tampa Bay Rays,Pittsburgh Pirates,6,5,1,Corey Kluber,JT Brubaker
+2022-06-25,Chicago White Sox,Baltimore Orioles,2,6,0,Lance Lynn,Spenser Watkins
+2022-06-25,St. Louis Cardinals,Chicago Cubs,5,3,1,Miles Mikolas,Adrian Sampson
+2022-06-25,Texas Rangers,Washington Nationals,3,2,1,Brett Martin,Josiah Gray
+2022-06-25,Kansas City Royals,Oakland Athletics,7,9,0,Brad Keller,Jared Koenig
+2022-06-25,Miami Marlins,New York Mets,3,5,0,Trevor Rogers,Chris Bassitt
+2022-06-25,Milwaukee Brewers,Toronto Blue Jays,5,4,1,Corbin Burnes,Yusei Kikuchi
+2022-06-25,Cleveland Guardians,Boston Red Sox,2,4,0,Shane Bieber,Josh Winckowski
+2022-06-25,San Francisco Giants,Cincinnati Reds,9,2,1,Logan Webb,Mike Minor
+2022-06-25,Minnesota Twins,Colorado Rockies,6,0,1,Chris Archer,Antonio Senzatela
+2022-06-25,Atlanta Braves,Los Angeles Dodgers,5,3,1,Max Fried,Mitch White
+2022-06-25,Los Angeles Angels,Seattle Mariners,3,5,0,Patrick Sandoval,Logan Gilbert
+2022-06-25,Arizona Diamondbacks,Detroit Tigers,3,6,0,Zach Davies,Alex Faedo
+2022-06-25,San Diego Padres,Philadelphia Phillies,2,4,0,Blake Snell,Zach Eflin
+2022-06-26,Miami Marlins,New York Mets,3,2,1,Daniel Castano,David Peterson
+2022-06-26,New York Yankees,Houston Astros,6,3,1,Nestor Cortes,José Urquidy
+2022-06-26,Cleveland Guardians,Boston Red Sox,3,8,0,Aaron Civale,Rich Hill
+2022-06-26,Tampa Bay Rays,Pittsburgh Pirates,4,2,1,Shane McClanahan,Roansy Contreras
+2022-06-26,Kansas City Royals,Oakland Athletics,3,5,0,Brady Singer,James Kaprielian
+2022-06-26,Minnesota Twins,Colorado Rockies,6,3,1,Joe Ryan,Ryan Feltner
+2022-06-26,Chicago White Sox,Baltimore Orioles,4,3,1,Dylan Cease,Jordan Lyles
+2022-06-26,Milwaukee Brewers,Toronto Blue Jays,10,3,1,Chi Chi González,José Berríos
+2022-06-26,St. Louis Cardinals,Chicago Cubs,5,6,0,Jack Flaherty,Alec Mills
+2022-06-26,Texas Rangers,Washington Nationals,4,6,0,Glenn Otto Jr.,Jackson Tetreault
+2022-06-26,San Francisco Giants,Cincinnati Reds,3,10,0,Anthony DeSclafani,Tyler Mahle
+2022-06-26,Los Angeles Angels,Seattle Mariners,2,1,1,Andrew Wantz,Marco Gonzales
+2022-06-26,Arizona Diamondbacks,Detroit Tigers,11,7,1,Dallas Keuchel,Beau Brieske
+2022-06-26,San Diego Padres,Philadelphia Phillies,5,8,0,Yu Darvish,Kyle Gibson
+2022-06-26,Atlanta Braves,Los Angeles Dodgers,3,5,0,Spencer Strider,Tony Gonsolin
+2022-06-27,Washington Nationals,Pittsburgh Pirates,3,2,1,Erick Fedde,Miguel Yajure
+2022-06-27,New York Yankees,Oakland Athletics,9,5,1,Jordan Montgomery,Paul Blackburn
+2022-06-27,Toronto Blue Jays,Boston Red Sox,7,2,1,Kevin Gausman,Connor Seabold
+2022-06-27,Cleveland Guardians,Minnesota Twins,1,11,0,Triston McKenzie,Sonny Gray
+2022-06-27,St. Louis Cardinals,Miami Marlins,9,0,1,Adam Wainwright,Pablo López
+2022-06-27,Kansas City Royals,Texas Rangers,4,10,0,Kris Bubic,Martín Pérez
+2022-06-27,Colorado Rockies,Los Angeles Dodgers,4,0,1,Chad Kuhl,Tyler Anderson
+2022-06-27,Los Angeles Angels,Chicago White Sox,4,3,1,Noah Syndergaard,Lucas Giolito
+2022-06-27,Seattle Mariners,Baltimore Orioles,2,9,0,George Kirby,Tyler Wells
+2022-06-28,Cleveland Guardians,Minnesota Twins,3,2,1,Zach Plesac,Devin Smeltzer
+2022-06-28,Cleveland Guardians,Minnesota Twins,0,6,0,Konnor Pilkington,Josh Winder
+2022-06-28,Washington Nationals,Pittsburgh Pirates,3,1,1,Patrick Corbin,Jose Quintana
+2022-06-28,Philadelphia Phillies,Atlanta Braves,3,5,0,Zack Wheeler,Charlie Morton
+2022-06-28,New York Yankees,Oakland Athletics,2,1,1,JP Sears,Frankie Montas
+2022-06-28,Toronto Blue Jays,Boston Red Sox,6,5,1,Ross Stripling,Michael Wacha
+2022-06-28,New York Mets,Houston Astros,1,9,0,Carlos Carrasco,Framber Valdez
+2022-06-28,Tampa Bay Rays,Milwaukee Brewers,3,5,0,Shane Baz,Brandon Woodruff
+2022-06-28,St. Louis Cardinals,Miami Marlins,5,3,1,Dakota Hudson,Braxton Garrett
+2022-06-28,Chicago Cubs,Cincinnati Reds,3,5,0,Keegan Thompson,Luis Castillo
+2022-06-28,Kansas City Royals,Texas Rangers,3,8,0,Jonathan Heasley,Jon Gray
+2022-06-28,Colorado Rockies,Los Angeles Dodgers,7,4,1,Kyle Freeland,Clayton Kershaw
+2022-06-28,Los Angeles Angels,Chicago White Sox,4,11,0,Chase Silseth,Johnny Cueto
+2022-06-28,Arizona Diamondbacks,San Diego Padres,7,6,1,Zac Gallen,Sean Manaea
+2022-06-28,San Francisco Giants,Detroit Tigers,4,3,1,Carlos Rodón,Tarik Skubal
+2022-06-28,Seattle Mariners,Baltimore Orioles,2,0,1,Robbie Ray,Dean Kremer
+2022-06-29,Tampa Bay Rays,Milwaukee Brewers,3,5,0,Jalen Beeks,Eric Lauer
+2022-06-29,Washington Nationals,Pittsburgh Pirates,7,8,0,Paolo Espino,Mitch Keller
+2022-06-29,New York Yankees,Oakland Athletics,5,3,1,Jameson Taillon,Cole Irvin
+2022-06-29,New York Mets,Houston Astros,0,2,0,Taijuan Walker,Justin Verlander
+2022-06-29,Kansas City Royals,Texas Rangers,2,1,1,Zack Greinke,Dane Dunning
+2022-06-29,Arizona Diamondbacks,San Diego Padres,0,4,0,Madison Bumgarner,Mike Clevinger
+2022-06-29,San Francisco Giants,Detroit Tigers,2,3,0,Alex Wood,Rony García
+2022-06-29,Seattle Mariners,Baltimore Orioles,9,3,1,Chris Flexen,Austin Voth
+2022-06-29,Philadelphia Phillies,Atlanta Braves,1,4,0,Ranger Suarez,Kyle Wright
+2022-06-29,Toronto Blue Jays,Boston Red Sox,5,6,0,Alek Manoah,Nick Pivetta
+2022-06-29,Cleveland Guardians,Minnesota Twins,7,6,1,Cal Quantrill,Dylan Bundy
+2022-06-29,St. Louis Cardinals,Miami Marlins,3,4,0,Andre Pallante,Sandy Alcantara
+2022-06-29,Chicago Cubs,Cincinnati Reds,8,3,1,Justin Steele,Hunter Greene
+2022-06-29,Colorado Rockies,Los Angeles Dodgers,4,8,0,Germán Márquez,Julio Urías
+2022-06-29,Los Angeles Angels,Chicago White Sox,4,1,1,Shohei Ohtani,Michael Kopech
+2022-06-30,Cleveland Guardians,Minnesota Twins,5,3,1,Shane Bieber,Chris Archer
+2022-06-30,Philadelphia Phillies,Atlanta Braves,14,4,1,Aaron Nola,Ian Anderson
+2022-06-30,Houston Astros,New York Yankees,2,1,1,Luis Garcia,Luis Severino
+2022-06-30,Pittsburgh Pirates,Milwaukee Brewers,8,7,1,JT Brubaker,Adrian Houser
+2022-06-30,Toronto Blue Jays,Tampa Bay Rays,4,1,1,Yusei Kikuchi,Matt Wisler
+2022-06-30,Chicago Cubs,Cincinnati Reds,15,7,1,Kyle Hendricks,Graham Ashcraft
+2022-06-30,Los Angeles Dodgers,San Diego Padres,3,1,1,Mitch White,Joe Musgrove
+2022-06-30,Seattle Mariners,Oakland Athletics,8,6,1,Logan Gilbert,Adrián Martinez
+2022-07-01,Chicago Cubs,Boston Red Sox,6,5,1,Adrian Sampson,Rich Hill
+2022-07-01,Toronto Blue Jays,Tampa Bay Rays,9,2,1,José Berríos,Corey Kluber
+2022-07-01,Philadelphia Phillies,St. Louis Cardinals,5,3,1,Bailey Falter,Miles Mikolas
+2022-07-01,Washington Nationals,Miami Marlins,3,6,0,Josiah Gray,Trevor Rogers
+2022-07-01,Cincinnati Reds,Atlanta Braves,1,9,0,Mike Minor,Max Fried
+2022-07-01,Pittsburgh Pirates,Milwaukee Brewers,2,19,0,Roansy Contreras,Corbin Burnes
+2022-07-01,Detroit Tigers,Kansas City Royals,1,3,0,Michael Pineda,Brad Keller
+2022-07-01,New York Mets,Texas Rangers,4,3,1,David Peterson,Glenn Otto Jr.
+2022-07-01,Colorado Rockies,Arizona Diamondbacks,3,9,0,Antonio Senzatela,Merrill Kelly
+2022-07-01,Houston Astros,Los Angeles Angels,8,1,1,Cristian Javier,Michael Lorenzen
+2022-07-01,Minnesota Twins,Baltimore Orioles,3,2,1,Joe Ryan,Spenser Watkins
+2022-07-01,Los Angeles Dodgers,San Diego Padres,5,1,1,Tony Gonsolin,Blake Snell
+2022-07-01,Seattle Mariners,Oakland Athletics,1,3,0,Marco Gonzales,James Kaprielian
+2022-07-01,San Francisco Giants,Chicago White Sox,0,1,0,Alex Cobb,Lance Lynn
+2022-07-02,Toronto Blue Jays,Tampa Bay Rays,2,6,0,Kevin Gausman,Shane McClanahan
+2022-07-02,Toronto Blue Jays,Tampa Bay Rays,5,11,0,Thomas Hatch,Drew Rasmussen
+2022-07-02,Cleveland Guardians,New York Yankees,4,13,0,Kirk McCarty,Gerrit Cole
+2022-07-02,Cleveland Guardians,New York Yankees,1,6,0,Aaron Civale,Nestor Cortes
+2022-07-02,Minnesota Twins,Baltimore Orioles,4,3,1,Sonny Gray,Jordan Lyles
+2022-07-02,Philadelphia Phillies,St. Louis Cardinals,6,7,0,Kyle Gibson,Matthew Liberatore
+2022-07-02,San Francisco Giants,Chicago White Sox,3,5,0,Logan Webb,Dylan Cease
+2022-07-02,Washington Nationals,Miami Marlins,3,5,0,Jackson Tetreault,Daniel Castano
+2022-07-02,Pittsburgh Pirates,Milwaukee Brewers,7,4,1,Bryse Wilson,Aaron Ashby
+2022-07-02,Houston Astros,Los Angeles Angels,9,1,1,José Urquidy,Patrick Sandoval
+2022-07-02,Detroit Tigers,Kansas City Royals,4,3,1,Beau Brieske,Kris Bubic
+2022-07-02,Seattle Mariners,Oakland Athletics,2,1,1,George Kirby,Paul Blackburn
+2022-07-02,New York Mets,Texas Rangers,3,7,0,Trevor Williams,Martín Pérez
+2022-07-02,Cincinnati Reds,Atlanta Braves,1,4,0,Tyler Mahle,Spencer Strider
+2022-07-02,Chicago Cubs,Boston Red Sox,3,1,1,Alec Mills,Josh Winckowski
+2022-07-02,Los Angeles Dodgers,San Diego Padres,7,2,1,Tyler Anderson,Yu Darvish
+2022-07-02,Colorado Rockies,Arizona Diamondbacks,11,7,1,Austin Gomber,Dallas Keuchel
+2022-07-03,Detroit Tigers,Kansas City Royals,4,7,0,Tarik Skubal,Brady Singer
+2022-07-03,Washington Nationals,Miami Marlins,4,7,0,Erick Fedde,Pablo López
+2022-07-03,Pittsburgh Pirates,Milwaukee Brewers,0,2,0,Zach Thompson,Brandon Woodruff
+2022-07-03,Toronto Blue Jays,Tampa Bay Rays,3,7,0,Ross Stripling,Shane Baz
+2022-07-03,New York Mets,Texas Rangers,4,1,1,Carlos Carrasco,Jon Gray
+2022-07-03,Cincinnati Reds,Atlanta Braves,4,3,1,Luis Castillo,Charlie Morton
+2022-07-03,Cleveland Guardians,New York Yankees,2,0,1,Triston McKenzie,Jordan Montgomery
+2022-07-03,Houston Astros,Los Angeles Angels,4,2,1,Framber Valdez,José Suarez
+2022-07-03,Minnesota Twins,Baltimore Orioles,1,3,0,Devin Smeltzer,Tyler Wells
+2022-07-03,Chicago Cubs,Boston Red Sox,2,4,0,Keegan Thompson,Connor Seabold
+2022-07-03,Colorado Rockies,Arizona Diamondbacks,6,5,1,Chad Kuhl,Zac Gallen
+2022-07-03,San Francisco Giants,Chicago White Sox,4,13,0,John Brebbia,Lucas Giolito
+2022-07-03,Los Angeles Dodgers,San Diego Padres,2,4,0,Clayton Kershaw,MacKenzie Gore
+2022-07-03,Seattle Mariners,Oakland Athletics,2,1,1,Robbie Ray,Frankie Montas
+2022-07-03,Philadelphia Phillies,St. Louis Cardinals,4,0,1,Zack Wheeler,Adam Wainwright
+2022-07-04,Washington Nationals,Miami Marlins,2,3,0,Patrick Corbin,Braxton Garrett
+2022-07-04,Baltimore Orioles,Texas Rangers,7,6,1,Dean Kremer,Dane Dunning
+2022-07-04,Detroit Tigers,Cleveland Guardians,4,1,1,Garrett Hill,Zach Plesac
+2022-07-04,Detroit Tigers,Cleveland Guardians,5,3,1,Alex Faedo,Konnor Pilkington
+2022-07-04,Boston Red Sox,Tampa Bay Rays,4,0,1,Austin Davis,Jalen Beeks
+2022-07-04,Houston Astros,Kansas City Royals,7,6,1,Jake Odorizzi,Jonathan Heasley
+2022-07-04,Milwaukee Brewers,Chicago Cubs,5,2,1,Eric Lauer,Justin Steele
+2022-07-04,Arizona Diamondbacks,San Francisco Giants,8,3,1,Madison Bumgarner,Carlos Rodón
+2022-07-04,Cincinnati Reds,New York Mets,4,7,0,Hunter Greene,Taijuan Walker
+2022-07-04,San Diego Padres,Seattle Mariners,2,8,0,Sean Manaea,Chris Flexen
+2022-07-04,Atlanta Braves,St. Louis Cardinals,6,3,1,Kyle Wright,Dakota Hudson
+2022-07-04,Chicago White Sox,Minnesota Twins,3,6,0,Johnny Cueto,Dylan Bundy
+2022-07-04,Oakland Athletics,Toronto Blue Jays,5,1,1,Cole Irvin,Alek Manoah
+2022-07-04,Los Angeles Dodgers,Colorado Rockies,5,3,1,Julio Urías,Kyle Freeland
+2022-07-05,San Diego Padres,Seattle Mariners,2,6,0,Mike Clevinger,Logan Gilbert
+2022-07-05,Cincinnati Reds,New York Mets,1,0,1,Nick Lodolo,Max Scherzer
+2022-07-05,Miami Marlins,Los Angeles Angels,2,1,1,Sandy Alcantara,Noah Syndergaard
+2022-07-05,Baltimore Orioles,Texas Rangers,10,9,1,Austin Voth,Spencer Howard
+2022-07-05,Philadelphia Phillies,Washington Nationals,11,0,1,Cristopher Sánchez,Paolo Espino
+2022-07-05,Pittsburgh Pirates,New York Yankees,5,2,1,Jose Quintana,Jameson Taillon
+2022-07-05,Detroit Tigers,Cleveland Guardians,11,4,1,Drew Hutchison,Cal Quantrill
+2022-07-05,Boston Red Sox,Tampa Bay Rays,4,8,0,Nick Pivetta,Jeffrey Springs
+2022-07-05,Atlanta Braves,St. Louis Cardinals,7,1,1,Ian Anderson,Andre Pallante
+2022-07-05,Houston Astros,Kansas City Royals,9,7,1,Luis Garcia,Zack Greinke
+2022-07-05,Chicago White Sox,Minnesota Twins,2,8,0,Michael Kopech,Josh Winder
+2022-07-05,Milwaukee Brewers,Chicago Cubs,3,8,0,Jason Alexander,Kyle Hendricks
+2022-07-05,Arizona Diamondbacks,San Francisco Giants,6,2,1,Tyler Gilbert,Alex Wood
+2022-07-05,Oakland Athletics,Toronto Blue Jays,5,3,1,Adrián Martinez,Yusei Kikuchi
+2022-07-05,Los Angeles Dodgers,Colorado Rockies,5,2,1,Ryan Pepiot,Germán Márquez
+2022-07-06,Detroit Tigers,Cleveland Guardians,8,2,1,Michael Pineda,Shane Bieber
+2022-07-06,Chicago White Sox,Minnesota Twins,9,8,1,Lance Lynn,Joe Ryan
+2022-07-06,Milwaukee Brewers,Chicago Cubs,1,2,0,Corbin Burnes,Adrian Sampson
+2022-07-06,Oakland Athletics,Toronto Blue Jays,1,2,0,James Kaprielian,José Berríos
+2022-07-06,Cincinnati Reds,New York Mets,3,8,0,Graham Ashcraft,David Peterson
+2022-07-06,Miami Marlins,Los Angeles Angels,2,5,0,Trevor Rogers,Shohei Ohtani
+2022-07-06,Baltimore Orioles,Texas Rangers,2,1,1,Spenser Watkins,Glenn Otto Jr.
+2022-07-06,Philadelphia Phillies,Washington Nationals,2,3,0,Aaron Nola,Josiah Gray
+2022-07-06,Pittsburgh Pirates,New York Yankees,0,16,0,Mitch Keller,Luis Severino
+2022-07-06,Boston Red Sox,Tampa Bay Rays,1,7,0,Brayan Bello,Corey Kluber
+2022-07-06,Atlanta Braves,St. Louis Cardinals,3,0,1,Max Fried,Miles Mikolas
+2022-07-06,Houston Astros,Kansas City Royals,4,7,0,Cristian Javier,Brad Keller
+2022-07-06,Arizona Diamondbacks,San Francisco Giants,5,7,0,Merrill Kelly,Alex Cobb
+2022-07-06,Los Angeles Dodgers,Colorado Rockies,2,1,1,Mitch White,José Ureña
+2022-07-07,Houston Astros,Kansas City Royals,5,2,1,Justin Verlander,Kris Bubic
+2022-07-07,Cincinnati Reds,Pittsburgh Pirates,2,4,0,Mike Minor,Roansy Contreras
+2022-07-07,Cincinnati Reds,Pittsburgh Pirates,5,1,1,Jeff Hoffman,Bryse Wilson
+2022-07-07,Philadelphia Phillies,Washington Nationals,5,3,1,Bailey Falter,Joan Adon
+2022-07-07,Baltimore Orioles,Los Angeles Angels,4,1,1,Jordan Lyles,Chase Silseth
+2022-07-07,New York Mets,Miami Marlins,10,0,1,Trevor Williams,Daniel Castano
+2022-07-07,Boston Red Sox,New York Yankees,5,6,0,Josh Winckowski,Gerrit Cole
+2022-07-07,Atlanta Braves,St. Louis Cardinals,2,3,0,Spencer Strider,Matthew Liberatore
+2022-07-07,Chicago White Sox,Detroit Tigers,1,2,0,Dylan Cease,Beau Brieske
+2022-07-07,Arizona Diamondbacks,Colorado Rockies,3,4,0,Dallas Keuchel,Austin Gomber
+2022-07-07,San Diego Padres,San Francisco Giants,2,1,1,Joe Musgrove,Logan Webb
+2022-07-07,Los Angeles Dodgers,Chicago Cubs,5,3,1,Tony Gonsolin,Mark Leiter Jr.
+2022-07-07,Seattle Mariners,Toronto Blue Jays,8,3,1,Marco Gonzales,Anthony Banda
+2022-07-08,Cincinnati Reds,Tampa Bay Rays,2,1,1,Luis Castillo,Shane McClanahan
+2022-07-08,Baltimore Orioles,Los Angeles Angels,5,4,1,Tyler Wells,Reid Detmers
+2022-07-08,New York Mets,Miami Marlins,2,5,0,Chris Bassitt,Pablo López
+2022-07-08,Boston Red Sox,New York Yankees,5,12,0,Connor Seabold,Nestor Cortes
+2022-07-08,Atlanta Braves,Washington Nationals,12,2,1,Charlie Morton,Erick Fedde
+2022-07-08,Texas Rangers,Minnesota Twins,6,5,1,Jon Gray,Sonny Gray
+2022-07-08,Kansas City Royals,Cleveland Guardians,4,3,1,Brady Singer,Aaron Civale
+2022-07-08,Chicago White Sox,Detroit Tigers,5,7,0,Lucas Giolito,Tarik Skubal
+2022-07-08,Milwaukee Brewers,Pittsburgh Pirates,4,3,1,Aaron Ashby,JT Brubaker
+2022-07-08,St. Louis Cardinals,Philadelphia Phillies,0,2,0,Adam Wainwright,Zack Wheeler
+2022-07-08,Arizona Diamondbacks,Colorado Rockies,5,6,0,Zac Gallen,Chad Kuhl
+2022-07-08,Oakland Athletics,Houston Astros,3,8,0,Paul Blackburn,José Urquidy
+2022-07-08,San Diego Padres,San Francisco Giants,6,3,1,Blake Snell,Sam Long
+2022-07-08,Los Angeles Dodgers,Chicago Cubs,4,3,1,Tyler Anderson,Keegan Thompson
+2022-07-08,Seattle Mariners,Toronto Blue Jays,5,2,1,George Kirby,Ross Stripling
+2022-07-09,Chicago White Sox,Detroit Tigers,8,0,1,Johnny Cueto,Garrett Hill
+2022-07-09,St. Louis Cardinals,Philadelphia Phillies,0,1,0,Dakota Hudson,Kyle Gibson
+2022-07-09,Baltimore Orioles,Los Angeles Angels,1,0,1,Dean Kremer,Patrick Sandoval
+2022-07-09,Texas Rangers,Minnesota Twins,9,7,1,Martín Pérez,Devin Smeltzer
+2022-07-09,Oakland Athletics,Houston Astros,3,2,1,Zach Logue,Framber Valdez
+2022-07-09,Arizona Diamondbacks,Colorado Rockies,9,2,1,Madison Bumgarner,Kyle Freeland
+2022-07-09,Kansas City Royals,Cleveland Guardians,1,13,0,Jonathan Heasley,Triston McKenzie
+2022-07-09,Cincinnati Reds,Tampa Bay Rays,5,4,1,Hunter Greene,Drew Rasmussen
+2022-07-09,Atlanta Braves,Washington Nationals,4,3,1,Kyle Wright,Patrick Corbin
+2022-07-09,New York Mets,Miami Marlins,5,4,1,Carlos Carrasco,Braxton Garrett
+2022-07-09,Milwaukee Brewers,Pittsburgh Pirates,3,4,0,Brandon Woodruff,Zach Thompson
+2022-07-09,San Diego Padres,San Francisco Giants,1,3,0,Yu Darvish,Carlos Rodón
+2022-07-09,Boston Red Sox,New York Yankees,6,5,1,Kutter Crawford,Jordan Montgomery
+2022-07-09,Los Angeles Dodgers,Chicago Cubs,4,2,1,Clayton Kershaw,Marcus Stroman
+2022-07-09,Seattle Mariners,Toronto Blue Jays,2,1,1,Robbie Ray,Alek Manoah
+2022-07-10,Baltimore Orioles,Los Angeles Angels,9,5,1,Austin Voth,José Suarez
+2022-07-10,Atlanta Braves,Washington Nationals,4,3,1,Ian Anderson,Paolo Espino
+2022-07-10,Cincinnati Reds,Tampa Bay Rays,10,5,1,Nick Lodolo,Shane Baz
+2022-07-10,New York Mets,Miami Marlins,0,2,0,Taijuan Walker,Sandy Alcantara
+2022-07-10,Kansas City Royals,Cleveland Guardians,5,1,1,Zack Greinke,Zach Plesac
+2022-07-10,Chicago White Sox,Detroit Tigers,4,2,1,Michael Kopech,Drew Hutchison
+2022-07-10,Milwaukee Brewers,Pittsburgh Pirates,6,8,0,Eric Lauer,Jose Quintana
+2022-07-10,St. Louis Cardinals,Philadelphia Phillies,4,3,1,Andre Pallante,Nick Nelson
+2022-07-10,Texas Rangers,Minnesota Twins,5,6,0,Dane Dunning,Dylan Bundy
+2022-07-10,Oakland Athletics,Houston Astros,1,6,0,Cole Irvin,Jake Odorizzi
+2022-07-10,Arizona Diamondbacks,Colorado Rockies,2,3,0,Tyler Gilbert,Germán Márquez
+2022-07-10,Los Angeles Dodgers,Chicago Cubs,11,9,1,Julio Urías,Drew Smyly
+2022-07-10,San Diego Padres,San Francisco Giants,0,12,0,MacKenzie Gore,Alex Wood
+2022-07-10,Seattle Mariners,Toronto Blue Jays,6,5,1,Logan Gilbert,
+2022-07-10,Boston Red Sox,New York Yankees,11,6,1,Nick Pivetta,Jameson Taillon
+2022-07-11,Kansas City Royals,Detroit Tigers,3,1,1,Brad Keller,Michael Pineda
+2022-07-11,Kansas City Royals,Detroit Tigers,7,3,1,Daniel Lynch IV,Alex Faedo
+2022-07-11,Miami Marlins,Pittsburgh Pirates,1,5,0,Trevor Rogers,Mitch Keller
+2022-07-11,Tampa Bay Rays,Boston Red Sox,10,5,1,Matt Wisler,Brayan Bello
+2022-07-11,Cleveland Guardians,Chicago White Sox,8,4,1,Cal Quantrill,Lance Lynn
+2022-07-11,St. Louis Cardinals,Philadelphia Phillies,6,1,1,Miles Mikolas,Aaron Nola
+2022-07-11,Atlanta Braves,New York Mets,1,4,0,Max Fried,Max Scherzer
+2022-07-11,Texas Rangers,Oakland Athletics,10,8,1,Spencer Howard,Adrián Martinez
+2022-07-11,Colorado Rockies,San Diego Padres,5,6,0,José Ureña,Sean Manaea
+2022-07-11,San Francisco Giants,Arizona Diamondbacks,3,4,0,Alex Cobb,Merrill Kelly
+2022-07-12,Cleveland Guardians,Chicago White Sox,4,1,1,Shane Bieber,Davis Martin
+2022-07-12,Cleveland Guardians,Chicago White Sox,0,7,0,Konnor Pilkington,Dylan Cease
+2022-07-12,Miami Marlins,Pittsburgh Pirates,2,3,0,Daniel Castano,Chris Stratton
+2022-07-12,New York Yankees,Cincinnati Reds,3,4,0,Gerrit Cole,Graham Ashcraft
+2022-07-12,Toronto Blue Jays,Philadelphia Phillies,4,3,1,José Berríos,Andrew Bellatti
+2022-07-12,Tampa Bay Rays,Boston Red Sox,3,2,1,Corey Kluber,Chris Sale
+2022-07-12,Atlanta Braves,New York Mets,4,1,1,Spencer Strider,David Peterson
+2022-07-12,Minnesota Twins,Milwaukee Brewers,3,6,0,Josh Winder,Jason Alexander
+2022-07-12,St. Louis Cardinals,Los Angeles Dodgers,7,6,1,Jordan Hicks,Mitch White
+2022-07-12,Chicago Cubs,Baltimore Orioles,2,4,0,Adrian Sampson,Jordan Lyles
+2022-07-12,Texas Rangers,Oakland Athletics,7,14,0,Glenn Otto Jr.,James Kaprielian
+2022-07-12,Kansas City Royals,Detroit Tigers,5,7,0,Kris Bubic,Beau Brieske
+2022-07-12,Colorado Rockies,San Diego Padres,5,3,1,Austin Gomber,Mike Clevinger
+2022-07-12,Los Angeles Angels,Houston Astros,5,6,0,Noah Syndergaard,Luis Garcia
+2022-07-12,San Francisco Giants,Arizona Diamondbacks,13,0,1,Logan Webb,Dallas Keuchel
+2022-07-13,Washington Nationals,Seattle Mariners,4,6,0,Josiah Gray,Chris Flexen
+2022-07-13,Washington Nationals,Seattle Mariners,1,2,0,Erick Fedde,Erik Swanson
+2022-07-13,Atlanta Braves,New York Mets,3,7,0,Charlie Morton,Chris Bassitt
+2022-07-13,Minnesota Twins,Milwaukee Brewers,4,1,1,Joe Ryan,Aaron Ashby
+2022-07-13,Kansas City Royals,Detroit Tigers,5,2,1,Brady Singer,Tarik Skubal
+2022-07-13,San Francisco Giants,Arizona Diamondbacks,4,3,1,John Brebbia,Zac Gallen
+2022-07-13,Miami Marlins,Pittsburgh Pirates,5,4,1,Pablo López,JT Brubaker
+2022-07-13,New York Yankees,Cincinnati Reds,7,6,1,Luis Severino,Mike Minor
+2022-07-13,Toronto Blue Jays,Philadelphia Phillies,8,2,1,Ross Stripling,Zack Wheeler
+2022-07-13,Tampa Bay Rays,Boston Red Sox,4,1,1,Shane McClanahan,Josh Winckowski
+2022-07-13,Cleveland Guardians,Chicago White Sox,1,2,0,Aaron Civale,Lucas Giolito
+2022-07-13,St. Louis Cardinals,Los Angeles Dodgers,6,7,0,Adam Wainwright,Tony Gonsolin
+2022-07-13,Chicago Cubs,Baltimore Orioles,1,7,0,Justin Steele,Spenser Watkins
+2022-07-13,Texas Rangers,Oakland Athletics,5,2,1,Jon Gray,Paul Blackburn
+2022-07-13,Colorado Rockies,San Diego Padres,10,6,1,Chad Kuhl,Joe Musgrove
+2022-07-13,Los Angeles Angels,Houston Astros,7,1,1,Shohei Ohtani,Cristian Javier
+2022-07-14,Miami Marlins,Pittsburgh Pirates,3,2,1,Braxton Garrett,Zach Thompson
+2022-07-14,Colorado Rockies,San Diego Padres,8,5,1,Kyle Freeland,Blake Snell
+2022-07-14,Washington Nationals,Atlanta Braves,4,5,0,Aníbal Sánchez,Kyle Wright
+2022-07-14,New York Yankees,Cincinnati Reds,6,7,0,Nestor Cortes,Luis Castillo
+2022-07-14,Toronto Blue Jays,Kansas City Royals,1,3,0,Kevin Gausman,Angel Zerpa
+2022-07-14,Cleveland Guardians,Detroit Tigers,4,0,1,Triston McKenzie,Elvin Rodríguez
+2022-07-14,Tampa Bay Rays,Boston Red Sox,5,4,1,Drew Rasmussen,Kutter Crawford
+2022-07-14,St. Louis Cardinals,Los Angeles Dodgers,0,4,0,Dakota Hudson,Tyler Anderson
+2022-07-14,Minnesota Twins,Chicago White Sox,2,12,0,Sonny Gray,Johnny Cueto
+2022-07-14,Chicago Cubs,New York Mets,0,8,0,Keegan Thompson,Carlos Carrasco
+2022-07-14,Texas Rangers,Seattle Mariners,5,6,0,Martín Pérez,Marco Gonzales
+2022-07-14,Los Angeles Angels,Houston Astros,2,3,0,Reid Detmers,Framber Valdez
+2022-07-14,San Francisco Giants,Milwaukee Brewers,2,3,0,Carlos Rodón,Corbin Burnes
+2022-07-15,Miami Marlins,Philadelphia Phillies,1,2,0,Sandy Alcantara,Kyle Gibson
+2022-07-15,Washington Nationals,Atlanta Braves,4,8,0,Patrick Corbin,Ian Anderson
+2022-07-15,New York Yankees,Boston Red Sox,4,5,0,Jordan Montgomery,Nathan Eovaldi
+2022-07-15,Toronto Blue Jays,Kansas City Royals,8,1,1,Alek Manoah,Zack Greinke
+2022-07-15,Cleveland Guardians,Detroit Tigers,6,5,1,Zach Plesac,Drew Hutchison
+2022-07-15,Tampa Bay Rays,Baltimore Orioles,5,4,1,Luis Patiño,Tyler Wells
+2022-07-15,Texas Rangers,Seattle Mariners,3,8,0,Matt Bush,Robbie Ray
+2022-07-15,Houston Astros,Oakland Athletics,1,5,0,José Urquidy,Cole Irvin
+2022-07-15,Minnesota Twins,Chicago White Sox,2,6,0,Devin Smeltzer,Michael Kopech
+2022-07-15,St. Louis Cardinals,Cincinnati Reds,7,3,1,Andre Pallante,Hunter Greene
+2022-07-15,Colorado Rockies,Pittsburgh Pirates,13,2,1,Germán Márquez,Jose Quintana
+2022-07-15,Los Angeles Angels,Los Angeles Dodgers,1,9,0,Patrick Sandoval,Clayton Kershaw
+2022-07-15,San Diego Padres,Arizona Diamondbacks,5,3,1,Yu Darvish,Madison Bumgarner
+2022-07-15,San Francisco Giants,Milwaukee Brewers,8,5,1,Alex Wood,Brandon Woodruff
+2022-07-16,Minnesota Twins,Chicago White Sox,6,3,1,Dylan Bundy,Lance Lynn
+2022-07-16,St. Louis Cardinals,Cincinnati Reds,11,3,1,Miles Mikolas,Nick Lodolo
+2022-07-16,Chicago Cubs,New York Mets,1,2,0,Marcus Stroman,Taijuan Walker
+2022-07-16,Chicago Cubs,New York Mets,3,4,0,Drew Smyly,Max Scherzer
+2022-07-16,Toronto Blue Jays,Kansas City Royals,6,5,1,Max Castillo,Daniel Lynch IV
+2022-07-16,Colorado Rockies,Pittsburgh Pirates,2,0,1,José Ureña,Mitch Keller
+2022-07-16,Texas Rangers,Seattle Mariners,2,3,0,Spencer Howard,Logan Gilbert
+2022-07-16,Washington Nationals,Atlanta Braves,3,6,0,Paolo Espino,Max Fried
+2022-07-16,Cleveland Guardians,Detroit Tigers,10,0,1,Cal Quantrill,Michael Pineda
+2022-07-16,Houston Astros,Oakland Athletics,5,0,1,Justin Verlander,Jared Koenig
+2022-07-16,Tampa Bay Rays,Baltimore Orioles,4,6,0,Ryan Yarbrough,Dean Kremer
+2022-07-16,Miami Marlins,Philadelphia Phillies,0,10,0,Max Meyer,Ranger Suarez
+2022-07-16,New York Yankees,Boston Red Sox,14,1,1,Jameson Taillon,Nick Pivetta
+2022-07-16,San Francisco Giants,Milwaukee Brewers,2,1,1,Alex Cobb,Eric Lauer
+2022-07-16,San Diego Padres,Arizona Diamondbacks,4,3,1,Sean Manaea,Tyler Gilbert
+2022-07-16,Los Angeles Angels,Los Angeles Dodgers,1,7,0,José Suarez,Julio Urías
+2022-07-17,Toronto Blue Jays,Kansas City Royals,4,2,1,José Berríos,Kris Bubic
+2022-07-17,Washington Nationals,Atlanta Braves,7,3,1,Erasmo Ramírez,Spencer Strider
+2022-07-17,New York Yankees,Boston Red Sox,13,2,1,Gerrit Cole,Chris Sale
+2022-07-17,Tampa Bay Rays,Baltimore Orioles,7,5,1,Corey Kluber,Jordan Lyles
+2022-07-17,Miami Marlins,Philadelphia Phillies,0,4,0,Trevor Rogers,Aaron Nola
+2022-07-17,Houston Astros,Oakland Athletics,3,4,0,Jake Odorizzi,Adam Oller
+2022-07-17,Minnesota Twins,Chicago White Sox,0,11,0,Chris Archer,Dylan Cease
+2022-07-17,Chicago Cubs,New York Mets,3,2,1,Adrian Sampson,David Peterson
+2022-07-17,Texas Rangers,Seattle Mariners,2,6,0,Glenn Otto Jr.,Chris Flexen
+2022-07-17,Colorado Rockies,Pittsburgh Pirates,3,8,0,Austin Gomber,Bryse Wilson
+2022-07-17,San Francisco Giants,Milwaukee Brewers,9,5,1,Logan Webb,Aaron Ashby
+2022-07-17,San Diego Padres,Arizona Diamondbacks,1,3,0,Mike Clevinger,Merrill Kelly
+2022-07-21,Miami Marlins,Texas Rangers,0,8,0,Pablo López,Jon Gray
+2022-07-21,Houston Astros,New York Yankees,3,2,1,Cristian Javier,Jordan Montgomery
+2022-07-21,Houston Astros,New York Yankees,7,5,1,Luis Garcia,Domingo Germán
+2022-07-21,Oakland Athletics,Detroit Tigers,2,7,0,Zach Logue,Tarik Skubal
+2022-07-21,Oakland Athletics,Detroit Tigers,5,0,1,Frankie Montas,Garrett Hill
+2022-07-21,Los Angeles Dodgers,San Francisco Giants,9,6,1,Mitch White,Carlos Rodón
+2022-07-22,Cincinnati Reds,St. Louis Cardinals,9,5,1,Graham Ashcraft,Adam Wainwright
+2022-07-22,Philadelphia Phillies,Chicago Cubs,2,15,0,Kyle Gibson,Justin Steele
+2022-07-22,Pittsburgh Pirates,Miami Marlins,1,8,0,Zach Thompson,Braxton Garrett
+2022-07-22,Baltimore Orioles,New York Yankees,6,7,0,Tyler Wells,Jameson Taillon
+2022-07-22,New York Mets,San Diego Padres,1,4,0,Max Scherzer,Yu Darvish
+2022-07-22,Boston Red Sox,Toronto Blue Jays,5,28,0,Nathan Eovaldi,Kevin Gausman
+2022-07-22,Atlanta Braves,Los Angeles Angels,8,1,1,Charlie Morton,Shohei Ohtani
+2022-07-22,Kansas City Royals,Tampa Bay Rays,3,7,0,Brad Keller,Drew Rasmussen
+2022-07-22,Chicago White Sox,Cleveland Guardians,2,8,0,Lucas Giolito,Cal Quantrill
+2022-07-22,Milwaukee Brewers,Colorado Rockies,6,5,1,Corbin Burnes,Antonio Senzatela
+2022-07-22,Arizona Diamondbacks,Washington Nationals,10,1,1,Zac Gallen,Patrick Corbin
+2022-07-22,Oakland Athletics,Texas Rangers,5,4,1,Cole Irvin,Spencer Howard
+2022-07-22,Seattle Mariners,Houston Astros,2,5,0,Marco Gonzales,José Urquidy
+2022-07-22,Los Angeles Dodgers,San Francisco Giants,5,1,1,Tyler Anderson,Logan Webb
+2022-07-23,Chicago White Sox,Cleveland Guardians,4,7,0,Johnny Cueto,Triston McKenzie
+2022-07-23,Chicago White Sox,Cleveland Guardians,5,4,1,Lance Lynn,Konnor Pilkington
+2022-07-23,Seattle Mariners,Houston Astros,1,3,0,Logan Gilbert,Justin Verlander
+2022-07-23,Boston Red Sox,Toronto Blue Jays,1,4,0,Kutter Crawford,Alek Manoah
+2022-07-23,Philadelphia Phillies,Chicago Cubs,2,6,0,Zack Wheeler,Marcus Stroman
+2022-07-23,Detroit Tigers,Minnesota Twins,4,8,0,Michael Pineda,Joe Ryan
+2022-07-23,Cincinnati Reds,St. Louis Cardinals,3,6,0,Mike Minor,Steven Matz
+2022-07-23,Pittsburgh Pirates,Miami Marlins,1,0,1,Jose Quintana,Max Meyer
+2022-07-23,Baltimore Orioles,New York Yankees,6,3,1,Jordan Lyles,Gerrit Cole
+2022-07-23,New York Mets,San Diego Padres,1,2,0,Chris Bassitt,Blake Snell
+2022-07-23,Kansas City Royals,Tampa Bay Rays,6,3,1,Brady Singer,Luis Patiño
+2022-07-23,Milwaukee Brewers,Colorado Rockies,9,4,1,Brandon Woodruff,José Ureña
+2022-07-23,Los Angeles Dodgers,San Francisco Giants,4,2,1,Julio Urías,Alex Wood
+2022-07-23,Atlanta Braves,Los Angeles Angels,7,2,1,Kyle Wright,Patrick Sandoval
+2022-07-23,Arizona Diamondbacks,Washington Nationals,7,2,1,Madison Bumgarner,Aníbal Sánchez
+2022-07-23,Oakland Athletics,Texas Rangers,3,1,1,James Kaprielian,Matt Bush
+2022-07-24,Philadelphia Phillies,Chicago Cubs,3,4,0,Bailey Falter,Drew Smyly
+2022-07-24,Boston Red Sox,Toronto Blue Jays,4,8,0,Brayan Bello,Ross Stripling
+2022-07-24,Atlanta Braves,Los Angeles Angels,1,9,0,Ian Anderson,Reid Detmers
+2022-07-24,Pittsburgh Pirates,Miami Marlins,5,6,0,Mitch Keller,Sandy Alcantara
+2022-07-24,Baltimore Orioles,New York Yankees,0,6,0,Dean Kremer,Nestor Cortes
+2022-07-24,Cincinnati Reds,St. Louis Cardinals,6,3,1,Tyler Mahle,Miles Mikolas
+2022-07-24,Detroit Tigers,Minnesota Twins,1,9,0,Rony García,Sonny Gray
+2022-07-24,Kansas City Royals,Tampa Bay Rays,4,2,1,Kris Bubic,Jeffrey Springs
+2022-07-24,Chicago White Sox,Cleveland Guardians,6,3,1,Dylan Cease,Shane Bieber
+2022-07-24,Milwaukee Brewers,Colorado Rockies,10,9,1,Eric Lauer,Chad Kuhl
+2022-07-24,Oakland Athletics,Texas Rangers,8,11,0,Paul Blackburn,Martín Pérez
+2022-07-24,Arizona Diamondbacks,Washington Nationals,3,4,0,Corbin Martin,Erick Fedde
+2022-07-24,Seattle Mariners,Houston Astros,5,8,0,Robbie Ray,Framber Valdez
+2022-07-24,Los Angeles Dodgers,San Francisco Giants,7,4,1,Clayton Kershaw,Alex Cobb
+2022-07-24,New York Mets,San Diego Padres,8,5,1,Carlos Carrasco,Joe Musgrove
+2022-07-25,Cincinnati Reds,Miami Marlins,11,2,1,Nick Lodolo,Trevor Rogers
+2022-07-25,Baltimore Orioles,Tampa Bay Rays,5,1,1,Austin Voth,Corey Kluber
+2022-07-25,Philadelphia Phillies,Atlanta Braves,6,4,1,Ranger Suarez,Max Fried
+2022-07-25,Boston Red Sox,Cleveland Guardians,3,1,1,Nick Pivetta,Zach Plesac
+2022-07-25,Detroit Tigers,San Diego Padres,12,4,1,Drew Hutchison,Sean Manaea
+2022-07-25,Chicago Cubs,Pittsburgh Pirates,3,2,1,Adrian Sampson,JT Brubaker
+2022-07-25,Kansas City Royals,Los Angeles Angels,7,0,1,Zack Greinke,Noah Syndergaard
+2022-07-25,Milwaukee Brewers,Colorado Rockies,0,2,0,Aaron Ashby,Kyle Freeland
+2022-07-25,Oakland Athletics,Houston Astros,7,5,1,Adam Oller,Jake Odorizzi
+2022-07-25,Arizona Diamondbacks,San Francisco Giants,7,0,1,Merrill Kelly,Jakob Junis
+2022-07-25,Los Angeles Dodgers,Washington Nationals,1,4,0,Tony Gonsolin,Paolo Espino
+2022-07-25,Seattle Mariners,Texas Rangers,4,3,1,Chris Flexen,Glenn Otto Jr.
+2022-07-26,Chicago Cubs,Pittsburgh Pirates,4,2,1,Keegan Thompson,Bryse Wilson
+2022-07-26,Cincinnati Reds,Miami Marlins,1,2,0,Hunter Greene,Pablo López
+2022-07-26,Baltimore Orioles,Tampa Bay Rays,5,3,1,Spenser Watkins,Shane McClanahan
+2022-07-26,Philadelphia Phillies,Atlanta Braves,3,6,0,Aaron Nola,Spencer Strider
+2022-07-26,Toronto Blue Jays,St. Louis Cardinals,10,3,1,José Berríos,Andre Pallante
+2022-07-26,Boston Red Sox,Cleveland Guardians,3,8,0,Josh Winckowski,Bryan Shaw
+2022-07-26,Detroit Tigers,San Diego Padres,4,6,0,Garrett Hill,Mike Clevinger
+2022-07-26,New York Mets,New York Yankees,6,3,1,Taijuan Walker,Jordan Montgomery
+2022-07-26,Kansas City Royals,Los Angeles Angels,0,6,0,Angel Zerpa,José Suarez
+2022-07-26,Milwaukee Brewers,Minnesota Twins,7,6,1,Ethan Small,Dylan Bundy
+2022-07-26,Colorado Rockies,Chicago White Sox,1,2,0,Germán Márquez,Michael Kopech
+2022-07-26,Oakland Athletics,Houston Astros,5,3,1,Frankie Montas,Luis Garcia
+2022-07-26,Arizona Diamondbacks,San Francisco Giants,7,3,1,Tyler Gilbert,Carlos Rodón
+2022-07-26,Los Angeles Dodgers,Washington Nationals,3,8,0,Mitch White,Josiah Gray
+2022-07-26,Seattle Mariners,Texas Rangers,5,4,1,George Kirby,Dane Dunning
+2022-07-27,Philadelphia Phillies,Atlanta Braves,7,2,1,Kyle Gibson,Charlie Morton
+2022-07-27,Detroit Tigers,San Diego Padres,4,3,1,Tarik Skubal,Yu Darvish
+2022-07-27,Kansas City Royals,Los Angeles Angels,0,4,0,Brad Keller,Janson Junk
+2022-07-27,Milwaukee Brewers,Minnesota Twins,10,4,1,Corbin Burnes,Chris Archer
+2022-07-27,Los Angeles Dodgers,Washington Nationals,7,1,1,Andrew Heaney,Patrick Corbin
+2022-07-27,Colorado Rockies,Chicago White Sox,6,5,1,Antonio Senzatela,Lucas Giolito
+2022-07-27,Oakland Athletics,Houston Astros,4,2,1,Cole Irvin,Cristian Javier
+2022-07-27,Arizona Diamondbacks,San Francisco Giants,5,3,1,Zac Gallen,Logan Webb
+2022-07-27,Seattle Mariners,Texas Rangers,4,2,1,Marco Gonzales,Jon Gray
+2022-07-27,Cincinnati Reds,Miami Marlins,5,3,1,Luis Castillo,Braxton Garrett
+2022-07-27,Baltimore Orioles,Tampa Bay Rays,4,6,0,Tyler Wells,Drew Rasmussen
+2022-07-27,Toronto Blue Jays,St. Louis Cardinals,1,6,0,Kevin Gausman,Adam Wainwright
+2022-07-27,Boston Red Sox,Cleveland Guardians,6,7,0,Nathan Eovaldi,Cal Quantrill
+2022-07-27,New York Mets,New York Yankees,3,2,1,Max Scherzer,Domingo Germán
+2022-07-28,Baltimore Orioles,Tampa Bay Rays,3,0,1,Jordan Lyles,Ryan Yarbrough
+2022-07-28,Cincinnati Reds,Miami Marlins,6,7,0,Graham Ashcraft,Daniel Castano
+2022-07-28,Pittsburgh Pirates,Philadelphia Phillies,7,8,0,Zach Thompson,Zack Wheeler
+2022-07-28,New York Yankees,Kansas City Royals,1,0,1,Jameson Taillon,Brady Singer
+2022-07-28,Toronto Blue Jays,Detroit Tigers,5,3,1,Yusei Kikuchi,Tyler Alexander
+2022-07-28,Boston Red Sox,Cleveland Guardians,4,2,1,Kutter Crawford,Triston McKenzie
+2022-07-28,Houston Astros,Seattle Mariners,4,2,1,José Urquidy,Logan Gilbert
+2022-07-28,Colorado Rockies,Los Angeles Dodgers,0,13,0,José Ureña,Tyler Anderson
+2022-07-28,Los Angeles Angels,Texas Rangers,0,2,0,Shohei Ohtani,Spencer Howard
+2022-07-28,San Francisco Giants,Chicago Cubs,4,2,1,Alex Wood,Justin Steele
+2022-07-29,Cincinnati Reds,Baltimore Orioles,2,6,0,Mike Minor,Kyle Bradish
+2022-07-29,Miami Marlins,New York Mets,4,6,0,Sandy Alcantara,Chris Bassitt
+2022-07-29,Washington Nationals,St. Louis Cardinals,2,6,0,Aníbal Sánchez,Miles Mikolas
+2022-07-29,Pittsburgh Pirates,Philadelphia Phillies,2,4,0,Jose Quintana,Bailey Falter
+2022-07-29,New York Yankees,Kansas City Royals,11,5,1,Gerrit Cole,Kris Bubic
+2022-07-29,Toronto Blue Jays,Detroit Tigers,2,4,0,Alek Manoah,Bryan Garcia
+2022-07-29,Tampa Bay Rays,Cleveland Guardians,1,4,0,Jeffrey Springs,Shane Bieber
+2022-07-29,Boston Red Sox,Milwaukee Brewers,1,4,0,Austin Davis,Brandon Woodruff
+2022-07-29,Atlanta Braves,Arizona Diamondbacks,5,2,1,Kyle Wright,Madison Bumgarner
+2022-07-29,Houston Astros,Seattle Mariners,11,1,1,Justin Verlander,Robbie Ray
+2022-07-29,Chicago White Sox,Oakland Athletics,3,7,0,Lance Lynn,James Kaprielian
+2022-07-29,Colorado Rockies,Los Angeles Dodgers,4,5,0,Chad Kuhl,Julio Urías
+2022-07-29,Los Angeles Angels,Texas Rangers,2,7,0,Patrick Sandoval,Martín Pérez
+2022-07-29,San Diego Padres,Minnesota Twins,10,1,1,Blake Snell,Joe Ryan
+2022-07-29,San Francisco Giants,Chicago Cubs,2,4,0,Alex Cobb,Marcus Stroman
+2022-07-30,Tampa Bay Rays,Cleveland Guardians,6,4,1,Corey Kluber,Zach Plesac
+2022-07-30,New York Yankees,Kansas City Royals,8,2,1,Nestor Cortes,Jonathan Heasley
+2022-07-30,Toronto Blue Jays,Detroit Tigers,5,3,1,Ross Stripling,Drew Hutchison
+2022-07-30,Boston Red Sox,Milwaukee Brewers,4,9,0,Nick Pivetta,Eric Lauer
+2022-07-30,Miami Marlins,New York Mets,0,4,0,Nick Neidert,Carlos Carrasco
+2022-07-30,Cincinnati Reds,Baltimore Orioles,8,2,1,Tyler Mahle,Dean Kremer
+2022-07-30,Houston Astros,Seattle Mariners,4,5,0,Framber Valdez,Chris Flexen
+2022-07-30,Washington Nationals,St. Louis Cardinals,7,6,1,Paolo Espino,Dakota Hudson
+2022-07-30,San Diego Padres,Minnesota Twins,4,7,0,Joe Musgrove,Sonny Gray
+2022-07-30,Pittsburgh Pirates,Philadelphia Phillies,1,2,0,Mitch Keller,Ranger Suarez
+2022-07-30,Chicago White Sox,Oakland Athletics,3,2,1,Johnny Cueto,Paul Blackburn
+2022-07-30,Atlanta Braves,Arizona Diamondbacks,6,2,1,Ian Anderson,Corbin Martin
+2022-07-30,Colorado Rockies,Los Angeles Dodgers,5,3,1,Kyle Freeland,Clayton Kershaw
+2022-07-30,San Francisco Giants,Chicago Cubs,5,4,1,Jakob Junis,Drew Smyly
+2022-07-30,Los Angeles Angels,Texas Rangers,9,7,1,Chase Silseth,Glenn Otto Jr.
+2022-07-31,Toronto Blue Jays,Detroit Tigers,4,1,1,José Berríos,Garrett Hill
+2022-07-31,Washington Nationals,St. Louis Cardinals,0,5,0,Josiah Gray,Andre Pallante
+2022-07-31,Pittsburgh Pirates,Philadelphia Phillies,2,8,0,JT Brubaker,Aaron Nola
+2022-07-31,Atlanta Braves,Arizona Diamondbacks,1,0,1,Max Fried,Merrill Kelly
+2022-07-31,New York Yankees,Kansas City Royals,6,8,0,Jordan Montgomery,Zack Greinke
+2022-07-31,Boston Red Sox,Milwaukee Brewers,7,2,1,Josh Winckowski,Aaron Ashby
+2022-07-31,Cincinnati Reds,Baltimore Orioles,3,2,1,Nick Lodolo,Austin Voth
+2022-07-31,Tampa Bay Rays,Cleveland Guardians,3,5,0,Shane McClanahan,Bryan Shaw
+2022-07-31,Miami Marlins,New York Mets,3,9,0,Pablo López,Taijuan Walker
+2022-07-31,Houston Astros,Seattle Mariners,3,2,1,Jake Odorizzi,George Kirby
+2022-07-31,Chicago White Sox,Oakland Athletics,4,1,1,Dylan Cease,Adam Oller
+2022-07-31,Colorado Rockies,Los Angeles Dodgers,3,7,0,Germán Márquez,Tony Gonsolin
+2022-07-31,Los Angeles Angels,Texas Rangers,2,5,0,Reid Detmers,Dane Dunning
+2022-07-31,San Diego Padres,Minnesota Twins,3,2,1,Sean Manaea,Dylan Bundy
+2022-07-31,San Francisco Giants,Chicago Cubs,4,0,1,Carlos Rodón,Adrian Sampson
+2022-08-01,Miami Marlins,Cincinnati Reds,1,3,0,Jesús Luzardo,Hunter Greene
+2022-08-01,Washington Nationals,New York Mets,3,7,0,Patrick Corbin,Max Scherzer
+2022-08-01,New York Yankees,Seattle Mariners,7,2,1,Domingo Germán,Marco Gonzales
+2022-08-01,Cleveland Guardians,Arizona Diamondbacks,6,5,1,Cal Quantrill,Zach Davies
+2022-08-01,Minnesota Twins,Detroit Tigers,5,3,1,Aaron Sanchez,Tarik Skubal
+2022-08-01,Texas Rangers,Baltimore Orioles,2,7,0,Jon Gray,Spenser Watkins
+2022-08-01,Houston Astros,Boston Red Sox,2,3,0,Luis Garcia,Nathan Eovaldi
+2022-08-01,Chicago White Sox,Kansas City Royals,1,2,0,Michael Kopech,Daniel Lynch IV
+2022-08-01,San Diego Padres,Colorado Rockies,4,1,1,Mike Clevinger,Antonio Senzatela
+2022-08-01,San Francisco Giants,Los Angeles Dodgers,2,8,0,Logan Webb,Andrew Heaney
+2022-08-02,San Diego Padres,Colorado Rockies,13,5,1,Yu Darvish,Ryan Feltner
+2022-08-02,San Diego Padres,Colorado Rockies,3,2,1,Reiss Knehr,José Ureña
+2022-08-02,Miami Marlins,Cincinnati Reds,1,2,0,Braxton Garrett,Graham Ashcraft
+2022-08-02,Washington Nationals,New York Mets,5,1,1,Cory Abbott,Jacob deGrom
+2022-08-02,New York Yankees,Seattle Mariners,6,8,0,Jameson Taillon,Logan Gilbert
+2022-08-02,Pittsburgh Pirates,Milwaukee Brewers,5,3,1,Bryse Wilson,Corbin Burnes
+2022-08-02,Cleveland Guardians,Arizona Diamondbacks,3,6,0,Triston McKenzie,Zac Gallen
+2022-08-02,Tampa Bay Rays,Toronto Blue Jays,1,3,0,Drew Rasmussen,Kevin Gausman
+2022-08-02,Atlanta Braves,Philadelphia Phillies,13,1,1,Spencer Strider,Nick Nelson
+2022-08-02,Minnesota Twins,Detroit Tigers,3,5,0,Chris Archer,Matt Manning
+2022-08-02,St. Louis Cardinals,Chicago Cubs,6,0,1,Adam Wainwright,Keegan Thompson
+2022-08-02,Texas Rangers,Baltimore Orioles,2,8,0,Spencer Howard,Jordan Lyles
+2022-08-02,Houston Astros,Boston Red Sox,1,2,0,Cristian Javier,Kutter Crawford
+2022-08-02,Chicago White Sox,Kansas City Royals,9,2,1,Lucas Giolito,Brad Keller
+2022-08-02,Los Angeles Angels,Oakland Athletics,3,1,1,José Suarez,Cole Irvin
+2022-08-02,San Francisco Giants,Los Angeles Dodgers,5,9,0,Alex Wood,Tyler Anderson
+2022-08-03,Tampa Bay Rays,Toronto Blue Jays,3,2,1,Jalen Beeks,Yusei Kikuchi
+2022-08-03,Atlanta Braves,Philadelphia Phillies,1,3,0,Charlie Morton,Zack Wheeler
+2022-08-03,New York Yankees,Seattle Mariners,3,7,0,Gerrit Cole,Luis Castillo
+2022-08-03,Cleveland Guardians,Arizona Diamondbacks,7,4,1,Shane Bieber,Tommy Henry
+2022-08-03,Minnesota Twins,Detroit Tigers,4,1,1,Joe Ryan,Tyler Alexander
+2022-08-03,Texas Rangers,Baltimore Orioles,3,6,0,Martín Pérez,Kyle Bradish
+2022-08-03,Houston Astros,Boston Red Sox,6,1,1,José Urquidy,Rich Hill
+2022-08-03,Chicago White Sox,Kansas City Royals,4,1,1,Lance Lynn,Brady Singer
+2022-08-03,Washington Nationals,New York Mets,5,9,0,Aníbal Sánchez,Chris Bassitt
+2022-08-03,Miami Marlins,Cincinnati Reds,3,0,1,Sandy Alcantara,Mike Minor
+2022-08-03,Pittsburgh Pirates,Milwaukee Brewers,8,7,1,Tyler Beede,Freddy Peralta
+2022-08-03,Los Angeles Angels,Oakland Athletics,1,3,0,Shohei Ohtani,James Kaprielian
+2022-08-03,San Diego Padres,Colorado Rockies,9,1,1,Blake Snell,Chad Kuhl
+2022-08-03,San Francisco Giants,Los Angeles Dodgers,0,3,0,Alex Cobb,Julio Urías
+2022-08-04,Pittsburgh Pirates,Milwaukee Brewers,5,4,1,Zach Thompson,Brandon Woodruff
+2022-08-04,St. Louis Cardinals,Chicago Cubs,4,3,1,Miles Mikolas,Marcus Stroman
+2022-08-04,St. Louis Cardinals,Chicago Cubs,7,2,1,Jose Quintana,Sean Newcomb
+2022-08-04,San Francisco Giants,Los Angeles Dodgers,3,5,0,Jakob Junis,Clayton Kershaw
+2022-08-04,Los Angeles Angels,Oakland Athletics,7,8,0,Janson Junk,Paul Blackburn
+2022-08-04,San Diego Padres,Colorado Rockies,3,7,0,Joe Musgrove,Kyle Freeland
+2022-08-04,Philadelphia Phillies,Washington Nationals,5,4,1,Noah Syndergaard,Paolo Espino
+2022-08-04,Cleveland Guardians,Houston Astros,0,6,0,Zach Plesac,Justin Verlander
+2022-08-04,Detroit Tigers,Tampa Bay Rays,2,6,0,Drew Hutchison,Jeffrey Springs
+2022-08-04,New York Mets,Atlanta Braves,6,4,1,Carlos Carrasco,Kyle Wright
+2022-08-04,Minnesota Twins,Toronto Blue Jays,3,9,0,Sonny Gray,Alek Manoah
+2022-08-04,Texas Rangers,Chicago White Sox,3,2,1,Cole Ragans,Johnny Cueto
+2022-08-04,Kansas City Royals,Boston Red Sox,7,3,1,Kris Bubic,Nick Pivetta
+2022-08-05,Chicago Cubs,Miami Marlins,2,1,1,Justin Steele,Edward Cabrera
+2022-08-05,Baltimore Orioles,Pittsburgh Pirates,1,0,1,Dean Kremer,Mitch Keller
+2022-08-05,Philadelphia Phillies,Washington Nationals,7,2,1,Kyle Gibson,Josiah Gray
+2022-08-05,Cleveland Guardians,Houston Astros,3,9,0,Hunter Gaddis,Framber Valdez
+2022-08-05,Detroit Tigers,Tampa Bay Rays,3,5,0,Bryan Garcia,Corey Kluber
+2022-08-05,New York Mets,Atlanta Braves,6,9,0,Taijuan Walker,Ian Anderson
+2022-08-05,Texas Rangers,Chicago White Sox,1,2,0,Glenn Otto Jr.,Dylan Cease
+2022-08-05,Kansas City Royals,Boston Red Sox,4,7,0,Zack Greinke,Josh Winckowski
+2022-08-05,Minnesota Twins,Toronto Blue Jays,6,5,1,Tyler Mahle,José Berríos
+2022-08-05,Milwaukee Brewers,Cincinnati Reds,5,1,1,Eric Lauer,Robert Dugger
+2022-08-05,St. Louis Cardinals,New York Yankees,4,3,1,Dakota Hudson,Nestor Cortes
+2022-08-05,Arizona Diamondbacks,Colorado Rockies,6,5,1,Madison Bumgarner,Germán Márquez
+2022-08-05,Los Angeles Dodgers,San Diego Padres,8,1,1,Tony Gonsolin,Sean Manaea
+2022-08-05,Seattle Mariners,Los Angeles Angels,3,4,0,Robbie Ray,Patrick Sandoval
+2022-08-06,New York Mets,Atlanta Braves,8,5,1,David Peterson,Jake Odorizzi
+2022-08-06,New York Mets,Atlanta Braves,6,2,1,Max Scherzer,Max Fried
+2022-08-06,Chicago Cubs,Miami Marlins,4,0,1,Drew Smyly,Pablo López
+2022-08-06,Seattle Mariners,Los Angeles Angels,2,1,1,George Kirby,Jaime Barria
+2022-08-06,Seattle Mariners,Los Angeles Angels,1,7,0,Chris Flexen,Reid Detmers
+2022-08-06,Baltimore Orioles,Pittsburgh Pirates,6,3,1,Austin Voth,JT Brubaker
+2022-08-06,Philadelphia Phillies,Washington Nationals,11,5,1,Ranger Suarez,Patrick Corbin
+2022-08-06,Cleveland Guardians,Houston Astros,4,1,1,Cal Quantrill,Luis Garcia
+2022-08-06,Detroit Tigers,Tampa Bay Rays,9,1,1,Garrett Hill,Shane McClanahan
+2022-08-06,Texas Rangers,Chicago White Sox,8,0,1,Dane Dunning,Michael Kopech
+2022-08-06,Oakland Athletics,San Francisco Giants,3,7,0,Adam Oller,Carlos Rodón
+2022-08-06,Kansas City Royals,Boston Red Sox,5,4,1,Daniel Lynch IV,Nathan Eovaldi
+2022-08-06,Minnesota Twins,Toronto Blue Jays,7,3,1,Dylan Bundy,Mitch White
+2022-08-06,St. Louis Cardinals,New York Yankees,1,0,1,Jordan Montgomery,Domingo Germán
+2022-08-06,Milwaukee Brewers,Cincinnati Reds,5,7,0,Aaron Ashby,Nick Lodolo
+2022-08-06,Arizona Diamondbacks,Colorado Rockies,2,3,0,Merrill Kelly,Antonio Senzatela
+2022-08-06,Los Angeles Dodgers,San Diego Padres,8,3,1,Andrew Heaney,Mike Clevinger
+2022-08-07,Cleveland Guardians,Houston Astros,1,0,1,Triston McKenzie,Cristian Javier
+2022-08-07,Baltimore Orioles,Pittsburgh Pirates,1,8,0,Spenser Watkins,Bryse Wilson
+2022-08-07,Philadelphia Phillies,Washington Nationals,13,1,1,Aaron Nola,Cory Abbott
+2022-08-07,Detroit Tigers,Tampa Bay Rays,0,7,0,Matt Manning,Drew Rasmussen
+2022-08-07,Kansas City Royals,Boston Red Sox,13,5,1,Brad Keller,Kutter Crawford
+2022-08-07,Minnesota Twins,Toronto Blue Jays,2,3,0,Chris Archer,Kevin Gausman
+2022-08-07,Milwaukee Brewers,Cincinnati Reds,2,4,0,Corbin Burnes,Graham Ashcraft
+2022-08-07,St. Louis Cardinals,New York Yankees,12,9,1,Adam Wainwright,Frankie Montas
+2022-08-07,Chicago Cubs,Miami Marlins,0,3,0,Adrian Sampson,Jesús Luzardo
+2022-08-07,Texas Rangers,Chicago White Sox,2,8,0,Spencer Howard,Lucas Giolito
+2022-08-07,Oakland Athletics,San Francisco Giants,4,6,0,Adrián Martinez,Logan Webb
+2022-08-07,Arizona Diamondbacks,Colorado Rockies,6,4,1,Zach Davies,José Ureña
+2022-08-07,Seattle Mariners,Los Angeles Angels,6,3,1,Marco Gonzales,Tucker Davidson
+2022-08-07,New York Mets,Atlanta Braves,5,2,1,Jacob deGrom,Spencer Strider
+2022-08-07,Los Angeles Dodgers,San Diego Padres,4,0,1,Tyler Anderson,Yu Darvish
+2022-08-08,Baltimore Orioles,Toronto Blue Jays,7,4,1,Jordan Lyles,Yusei Kikuchi
+2022-08-08,New York Mets,Cincinnati Reds,5,1,1,Chris Bassitt,Justin Dunn
+2022-08-08,Chicago Cubs,Washington Nationals,6,3,1,Keegan Thompson,Aníbal Sánchez
+2022-08-08,Oakland Athletics,Los Angeles Angels,0,1,0,Cole Irvin,José Suarez
+2022-08-08,Arizona Diamondbacks,Pittsburgh Pirates,3,0,1,Zac Gallen,Tyler Beede
+2022-08-08,San Diego Padres,San Francisco Giants,0,1,0,Blake Snell,Alex Wood
+2022-08-08,Seattle Mariners,New York Yankees,4,9,0,Logan Gilbert,Jameson Taillon
+2022-08-09,Kansas City Royals,Chicago White Sox,4,2,1,Brady Singer,Lance Lynn
+2022-08-09,Kansas City Royals,Chicago White Sox,2,3,0,Jonathan Heasley,Davis Martin
+2022-08-09,Baltimore Orioles,Toronto Blue Jays,6,5,1,Kyle Bradish,Alek Manoah
+2022-08-09,Philadelphia Phillies,Miami Marlins,4,1,1,Zack Wheeler,Braxton Garrett
+2022-08-09,Detroit Tigers,Cleveland Guardians,2,5,0,Tyler Alexander,Shane Bieber
+2022-08-09,New York Mets,Cincinnati Reds,6,2,1,Carlos Carrasco,Mike Minor
+2022-08-09,Boston Red Sox,Atlanta Braves,7,9,0,Rich Hill,Charlie Morton
+2022-08-09,Chicago Cubs,Washington Nationals,5,6,0,Marcus Stroman,Paolo Espino
+2022-08-09,Houston Astros,Texas Rangers,7,5,1,José Urquidy,Martín Pérez
+2022-08-09,Milwaukee Brewers,Tampa Bay Rays,5,3,1,Freddy Peralta,Jimmy Yacabonis
+2022-08-09,Colorado Rockies,St. Louis Cardinals,16,5,1,Ryan Feltner,Miles Mikolas
+2022-08-09,Oakland Athletics,Los Angeles Angels,1,5,0,James Kaprielian,Shohei Ohtani
+2022-08-09,Arizona Diamondbacks,Pittsburgh Pirates,6,4,1,Tommy Henry,Zach Thompson
+2022-08-09,San Diego Padres,San Francisco Giants,7,4,1,Joe Musgrove,Alex Cobb
+2022-08-09,Los Angeles Dodgers,Minnesota Twins,10,3,1,Julio Urías,Joe Ryan
+2022-08-09,Seattle Mariners,New York Yankees,1,0,1,Luis Castillo,Gerrit Cole
+2022-08-10,New York Mets,Cincinnati Reds,10,2,1,Taijuan Walker,T.J. Zeuch
+2022-08-10,Milwaukee Brewers,Tampa Bay Rays,4,3,1,Brandon Woodruff,Jeffrey Springs
+2022-08-10,Chicago Cubs,Washington Nationals,4,2,1,Justin Steele,Josiah Gray
+2022-08-10,Oakland Athletics,Los Angeles Angels,4,5,0,Paul Blackburn,Touki Toussaint
+2022-08-10,San Diego Padres,San Francisco Giants,13,7,1,Sean Manaea,Jakob Junis
+2022-08-10,Seattle Mariners,New York Yankees,4,3,1,Robbie Ray,Nestor Cortes
+2022-08-10,Philadelphia Phillies,Miami Marlins,4,3,1,Noah Syndergaard,Sandy Alcantara
+2022-08-10,Detroit Tigers,Cleveland Guardians,2,3,0,Drew Hutchison,Aaron Civale
+2022-08-10,Boston Red Sox,Atlanta Braves,4,8,0,Nick Pivetta,Kyle Wright
+2022-08-10,Houston Astros,Texas Rangers,4,8,0,Justin Verlander,Glenn Otto Jr.
+2022-08-10,Kansas City Royals,Chicago White Sox,8,3,1,Kris Bubic,Johnny Cueto
+2022-08-10,Colorado Rockies,St. Louis Cardinals,5,9,0,Kyle Freeland,Jose Quintana
+2022-08-10,Arizona Diamondbacks,Pittsburgh Pirates,4,6,0,Madison Bumgarner,Mitch Keller
+2022-08-10,Los Angeles Dodgers,Minnesota Twins,8,5,1,Ryan Pepiot,Sonny Gray
+2022-08-11,Philadelphia Phillies,Miami Marlins,0,3,0,Kyle Gibson,Edward Cabrera
+2022-08-11,Detroit Tigers,Cleveland Guardians,3,4,0,Garrett Hill,Zach Plesac
+2022-08-11,Houston Astros,Texas Rangers,7,3,1,Framber Valdez,Cole Ragans
+2022-08-11,Kansas City Royals,Chicago White Sox,5,3,1,Zack Greinke,Dylan Cease
+2022-08-11,Colorado Rockies,St. Louis Cardinals,8,6,1,Germán Márquez,Dakota Hudson
+2022-08-11,Arizona Diamondbacks,Pittsburgh Pirates,9,3,1,Merrill Kelly,JT Brubaker
+2022-08-11,Boston Red Sox,Baltimore Orioles,4,3,1,Josh Winckowski,Dean Kremer
+2022-08-11,Cincinnati Reds,Chicago Cubs,2,4,0,Nick Lodolo,Drew Smyly
+2022-08-12,Miami Marlins,Atlanta Braves,3,4,0,Pablo López,Jake Odorizzi
+2022-08-12,Washington Nationals,San Diego Padres,5,10,0,Cory Abbott,Mike Clevinger
+2022-08-12,Toronto Blue Jays,Cleveland Guardians,0,8,0,José Berríos,Cal Quantrill
+2022-08-12,Tampa Bay Rays,Baltimore Orioles,3,10,0,Corey Kluber,Austin Voth
+2022-08-12,New York Mets,Philadelphia Phillies,1,2,0,Max Scherzer,Ranger Suarez
+2022-08-12,Chicago White Sox,Detroit Tigers,2,0,1,Michael Kopech,Daniel Norris
+2022-08-12,Boston Red Sox,New York Yankees,3,2,1,Nathan Eovaldi,Domingo Germán
+2022-08-12,Texas Rangers,Seattle Mariners,2,6,0,Josh Sborz,George Kirby
+2022-08-12,Kansas City Royals,Los Angeles Dodgers,3,8,0,Daniel Lynch IV,Tony Gonsolin
+2022-08-12,Houston Astros,Oakland Athletics,7,5,1,Luis Garcia,Adam Oller
+2022-08-12,St. Louis Cardinals,Milwaukee Brewers,3,1,1,Jordan Montgomery,Eric Lauer
+2022-08-12,Colorado Rockies,Arizona Diamondbacks,5,3,1,Antonio Senzatela,Zach Davies
+2022-08-12,Los Angeles Angels,Minnesota Twins,0,4,0,Patrick Sandoval,Tyler Mahle
+2022-08-12,San Francisco Giants,Pittsburgh Pirates,5,3,1,Carlos Rodón,Bryse Wilson
+2022-08-13,Miami Marlins,Atlanta Braves,2,5,0,Jesús Luzardo,Kyle Muller
+2022-08-13,Miami Marlins,Atlanta Braves,2,6,0,Tommy Nance,Ian Anderson
+2022-08-13,Toronto Blue Jays,Cleveland Guardians,2,1,1,Mitch White,Triston McKenzie
+2022-08-13,Tampa Bay Rays,Baltimore Orioles,8,2,1,Shane McClanahan,DL Hall
+2022-08-13,Cincinnati Reds,Chicago Cubs,2,7,0,Graham Ashcraft,Adrian Sampson
+2022-08-13,Washington Nationals,San Diego Padres,4,3,1,Aníbal Sánchez,Yu Darvish
+2022-08-13,Kansas City Royals,Los Angeles Dodgers,3,13,0,Brad Keller,Andrew Heaney
+2022-08-13,Houston Astros,Oakland Athletics,8,0,1,Lance McCullers Jr.,Zach Logue
+2022-08-13,New York Mets,Philadelphia Phillies,1,0,1,Jacob deGrom,Aaron Nola
+2022-08-13,Chicago White Sox,Detroit Tigers,6,4,1,Lucas Giolito,Matt Manning
+2022-08-13,Texas Rangers,Seattle Mariners,7,4,1,Dane Dunning,Marco Gonzales
+2022-08-13,Boston Red Sox,New York Yankees,2,3,0,Kutter Crawford,Frankie Montas
+2022-08-13,St. Louis Cardinals,Milwaukee Brewers,2,3,0,Adam Wainwright,Corbin Burnes
+2022-08-13,Colorado Rockies,Arizona Diamondbacks,0,6,0,José Ureña,Zac Gallen
+2022-08-13,San Francisco Giants,Pittsburgh Pirates,2,0,1,Logan Webb,Tyler Beede
+2022-08-13,Los Angeles Angels,Minnesota Twins,5,3,1,Reid Detmers,Dylan Bundy
+2022-08-14,Washington Nationals,San Diego Padres,0,6,0,Paolo Espino,Blake Snell
+2022-08-14,Toronto Blue Jays,Cleveland Guardians,2,7,0,Kevin Gausman,Shane Bieber
+2022-08-14,Cincinnati Reds,Chicago Cubs,8,5,1,Justin Dunn,Keegan Thompson
+2022-08-14,Tampa Bay Rays,Baltimore Orioles,4,1,1,Drew Rasmussen,Jordan Lyles
+2022-08-14,New York Mets,Philadelphia Phillies,6,0,1,Chris Bassitt,Zack Wheeler
+2022-08-14,Miami Marlins,Atlanta Braves,1,3,0,Braxton Garrett,Bryce Elder
+2022-08-14,Kansas City Royals,Los Angeles Dodgers,4,0,1,Brady Singer,Tyler Anderson
+2022-08-14,Houston Astros,Oakland Athletics,6,3,1,Cristian Javier,Cole Irvin
+2022-08-14,Chicago White Sox,Detroit Tigers,5,3,1,Lance Lynn,Tyler Alexander
+2022-08-14,St. Louis Cardinals,Milwaukee Brewers,6,3,1,Miles Mikolas,Aaron Ashby
+2022-08-14,Texas Rangers,Seattle Mariners,5,3,1,Martín Pérez,Logan Gilbert
+2022-08-14,Colorado Rockies,Arizona Diamondbacks,4,7,0,Ryan Feltner,Tommy Henry
+2022-08-14,San Francisco Giants,Pittsburgh Pirates,8,7,1,Alex Wood,Zach Thompson
+2022-08-14,Los Angeles Angels,Minnesota Twins,4,2,1,Tucker Davidson,Chris Archer
+2022-08-14,Boston Red Sox,New York Yankees,3,0,1,Michael Wacha,Jameson Taillon
+2022-08-15,Cleveland Guardians,Detroit Tigers,4,1,1,Aaron Civale,Drew Hutchison
+2022-08-15,Cleveland Guardians,Detroit Tigers,5,7,0,Xzavion Curry,Bryan Garcia
+2022-08-15,Cincinnati Reds,Philadelphia Phillies,3,4,0,Mike Minor,Noah Syndergaard
+2022-08-15,Miami Marlins,San Diego Padres,3,0,1,Sandy Alcantara,Joe Musgrove
+2022-08-15,Washington Nationals,Chicago Cubs,5,4,1,Josiah Gray,Marcus Stroman
+2022-08-15,New York Yankees,Tampa Bay Rays,0,4,0,Gerrit Cole,Jalen Beeks
+2022-08-15,Toronto Blue Jays,Baltimore Orioles,3,7,0,Yusei Kikuchi,Kyle Bradish
+2022-08-15,Atlanta Braves,New York Mets,13,1,1,Spencer Strider,Carlos Carrasco
+2022-08-15,Minnesota Twins,Kansas City Royals,4,2,1,Joe Ryan,Kris Bubic
+2022-08-15,Texas Rangers,Oakland Athletics,2,1,1,Glenn Otto Jr.,James Kaprielian
+2022-08-15,Chicago White Sox,Houston Astros,4,2,1,Johnny Cueto,José Urquidy
+2022-08-15,Milwaukee Brewers,Los Angeles Dodgers,0,4,0,Freddy Peralta,Julio Urías
+2022-08-15,Los Angeles Angels,Seattle Mariners,2,6,0,Shohei Ohtani,Luis Castillo
+2022-08-15,San Francisco Giants,Arizona Diamondbacks,6,1,1,Alex Cobb,Madison Bumgarner
+2022-08-16,Cincinnati Reds,Philadelphia Phillies,4,11,0,T.J. Zeuch,Kyle Gibson
+2022-08-16,Miami Marlins,San Diego Padres,4,3,1,Edward Cabrera,Sean Manaea
+2022-08-16,Washington Nationals,Chicago Cubs,5,7,0,Patrick Corbin,Justin Steele
+2022-08-16,Pittsburgh Pirates,Boston Red Sox,3,5,0,Mitch Keller,Nick Pivetta
+2022-08-16,New York Yankees,Tampa Bay Rays,1,3,0,Nestor Cortes,Jeffrey Springs
+2022-08-16,Toronto Blue Jays,Baltimore Orioles,2,4,0,Alek Manoah,Dean Kremer
+2022-08-16,Cleveland Guardians,Detroit Tigers,3,4,0,Zach Plesac,Garrett Hill
+2022-08-16,Atlanta Braves,New York Mets,5,0,1,Charlie Morton,Taijuan Walker
+2022-08-16,Minnesota Twins,Kansas City Royals,9,0,1,Sonny Gray,Zack Greinke
+2022-08-16,St. Louis Cardinals,Colorado Rockies,5,4,1,Jose Quintana,Kyle Freeland
+2022-08-16,Texas Rangers,Oakland Athletics,1,5,0,Kohei Arihara,JP Sears
+2022-08-16,Chicago White Sox,Houston Astros,4,3,1,Dylan Cease,Justin Verlander
+2022-08-16,Milwaukee Brewers,Los Angeles Dodgers,5,4,1,Brandon Woodruff,Ryan Pepiot
+2022-08-16,Los Angeles Angels,Seattle Mariners,2,8,0,José Suarez,Robbie Ray
+2022-08-16,San Francisco Giants,Arizona Diamondbacks,2,1,1,Jakob Junis,Merrill Kelly
+2022-08-17,Cincinnati Reds,Philadelphia Phillies,1,0,1,Nick Lodolo,Ranger Suarez
+2022-08-17,Washington Nationals,Chicago Cubs,2,3,0,Cory Abbott,Drew Smyly
+2022-08-17,Minnesota Twins,Kansas City Royals,4,0,1,Tyler Mahle,Daniel Lynch IV
+2022-08-17,Toronto Blue Jays,Baltimore Orioles,6,1,1,Ross Stripling,Austin Voth
+2022-08-17,Los Angeles Angels,Seattle Mariners,7,11,0,Touki Toussaint,George Kirby
+2022-08-17,Miami Marlins,San Diego Padres,3,10,0,Pablo López,Mike Clevinger
+2022-08-17,Pittsburgh Pirates,Boston Red Sox,3,8,0,Roansy Contreras,Rich Hill
+2022-08-17,New York Yankees,Tampa Bay Rays,8,7,1,Domingo Germán,Corey Kluber
+2022-08-17,Cleveland Guardians,Detroit Tigers,8,4,1,Cal Quantrill,Daniel Norris
+2022-08-17,Atlanta Braves,New York Mets,7,9,0,Jake Odorizzi,Max Scherzer
+2022-08-17,St. Louis Cardinals,Colorado Rockies,5,1,1,Jordan Montgomery,Germán Márquez
+2022-08-17,Texas Rangers,Oakland Athletics,2,7,0,Cole Ragans,Adam Oller
+2022-08-17,Chicago White Sox,Houston Astros,2,3,0,Michael Kopech,Framber Valdez
+2022-08-17,Milwaukee Brewers,Los Angeles Dodgers,1,2,0,Eric Lauer,Tony Gonsolin
+2022-08-17,San Francisco Giants,Arizona Diamondbacks,2,3,0,Carlos Rodón,Zach Davies
+2022-08-18,St. Louis Cardinals,Colorado Rockies,13,0,1,Adam Wainwright,Antonio Senzatela
+2022-08-18,Texas Rangers,Oakland Athletics,10,3,1,Dane Dunning,Zach Logue
+2022-08-18,Chicago White Sox,Houston Astros,5,21,0,Lucas Giolito,Luis Garcia
+2022-08-18,Milwaukee Brewers,Los Angeles Dodgers,5,3,1,Corbin Burnes,Andrew Heaney
+2022-08-18,Baltimore Orioles,Chicago Cubs,2,3,0,Spenser Watkins,Adrian Sampson
+2022-08-18,San Francisco Giants,Arizona Diamondbacks,0,5,0,Logan Webb,Zac Gallen
+2022-08-18,Pittsburgh Pirates,Boston Red Sox,8,2,1,JT Brubaker,Josh Winckowski
+2022-08-18,New York Yankees,Toronto Blue Jays,2,9,0,Frankie Montas,José Berríos
+2022-08-18,Tampa Bay Rays,Kansas City Royals,7,1,1,Luis Patiño,Max Castillo
+2022-08-18,Atlanta Braves,New York Mets,3,2,1,Max Fried,Jacob deGrom
+2022-08-18,San Diego Padres,Washington Nationals,1,3,0,Yu Darvish,Aníbal Sánchez
+2022-08-19,Chicago Cubs,Milwaukee Brewers,8,7,1,Keegan Thompson,Aaron Ashby
+2022-08-19,Baltimore Orioles,Boston Red Sox,15,10,1,Jordan Lyles,Kutter Crawford
+2022-08-19,Pittsburgh Pirates,Cincinnati Reds,5,4,1,Bryse Wilson,Graham Ashcraft
+2022-08-19,Philadelphia Phillies,New York Mets,2,7,0,Aaron Nola,Chris Bassitt
+2022-08-19,New York Yankees,Toronto Blue Jays,0,4,0,Jameson Taillon,Kevin Gausman
+2022-08-19,Detroit Tigers,Los Angeles Angels,0,1,0,Matt Manning,Patrick Sandoval
+2022-08-19,Tampa Bay Rays,Kansas City Royals,2,3,0,Shane McClanahan,Brady Singer
+2022-08-19,Cleveland Guardians,Chicago White Sox,5,2,1,Triston McKenzie,Lance Lynn
+2022-08-19,Atlanta Braves,Houston Astros,6,2,1,Kyle Wright,Lance McCullers Jr.
+2022-08-19,Minnesota Twins,Texas Rangers,2,1,1,Dylan Bundy,Martín Pérez
+2022-08-19,Colorado Rockies,San Francisco Giants,7,4,1,José Ureña,Alex Wood
+2022-08-19,San Diego Padres,Washington Nationals,3,6,0,Blake Snell,Paolo Espino
+2022-08-19,Oakland Athletics,Seattle Mariners,2,10,0,Cole Irvin,Marco Gonzales
+2022-08-19,Arizona Diamondbacks,St. Louis Cardinals,1,5,0,Tommy Henry,Miles Mikolas
+2022-08-19,Los Angeles Dodgers,Miami Marlins,2,1,1,Tyler Anderson,Jesús Luzardo
+2022-08-20,Philadelphia Phillies,New York Mets,2,8,0,Zack Wheeler,Trevor Williams
+2022-08-20,Philadelphia Phillies,New York Mets,4,1,1,Bailey Falter,David Peterson
+2022-08-20,New York Yankees,Toronto Blue Jays,2,5,0,Gerrit Cole,Mitch White
+2022-08-20,Detroit Tigers,Los Angeles Angels,4,3,1,Tyler Alexander,Reid Detmers
+2022-08-20,Chicago Cubs,Milwaukee Brewers,6,5,1,Marcus Stroman,Freddy Peralta
+2022-08-20,Baltimore Orioles,Boston Red Sox,3,4,0,Kyle Bradish,Michael Wacha
+2022-08-20,Tampa Bay Rays,Kansas City Royals,5,2,1,Drew Rasmussen,Kris Bubic
+2022-08-20,Cleveland Guardians,Chicago White Sox,0,2,0,Shane Bieber,Johnny Cueto
+2022-08-20,Pittsburgh Pirates,Cincinnati Reds,1,10,0,Tyler Beede,Justin Dunn
+2022-08-20,Minnesota Twins,Texas Rangers,3,4,0,Chris Archer,Glenn Otto Jr.
+2022-08-20,Oakland Athletics,Seattle Mariners,4,3,1,James Kaprielian,Logan Gilbert
+2022-08-20,Atlanta Braves,Houston Astros,5,4,1,Spencer Strider,Cristian Javier
+2022-08-20,Colorado Rockies,San Francisco Giants,4,3,1,Ryan Feltner,Alex Cobb
+2022-08-20,Arizona Diamondbacks,St. Louis Cardinals,7,16,0,Madison Bumgarner,Dakota Hudson
+2022-08-20,San Diego Padres,Washington Nationals,2,1,1,Joe Musgrove,Josiah Gray
+2022-08-20,Los Angeles Dodgers,Miami Marlins,7,0,1,Dustin May,Bryan Hoeing
+2022-08-21,Pittsburgh Pirates,Cincinnati Reds,5,9,0,Zach Thompson,Mike Minor
+2022-08-21,Philadelphia Phillies,New York Mets,9,10,0,Kyle Gibson,José Buttó
+2022-08-21,Atlanta Braves,Houston Astros,4,5,0,Charlie Morton,José Urquidy
+2022-08-21,New York Yankees,Toronto Blue Jays,4,2,1,Nestor Cortes,Alek Manoah
+2022-08-21,Detroit Tigers,Los Angeles Angels,4,0,1,Eduardo Rodriguez,Shohei Ohtani
+2022-08-21,Tampa Bay Rays,Kansas City Royals,3,2,1,Ryan Yarbrough,Zack Greinke
+2022-08-21,Minnesota Twins,Texas Rangers,0,7,0,Joe Ryan,Kohei Arihara
+2022-08-21,Chicago Cubs,Milwaukee Brewers,2,5,0,Justin Steele,Brandon Woodruff
+2022-08-21,Colorado Rockies,San Francisco Giants,8,9,0,Kyle Freeland,Jakob Junis
+2022-08-21,Oakland Athletics,Seattle Mariners,5,3,1,JP Sears,Luis Castillo
+2022-08-21,San Diego Padres,Washington Nationals,2,1,1,Sean Manaea,Patrick Corbin
+2022-08-21,Arizona Diamondbacks,St. Louis Cardinals,4,6,0,Merrill Kelly,Jose Quintana
+2022-08-21,Los Angeles Dodgers,Miami Marlins,10,3,1,Ryan Pepiot,Sandy Alcantara
+2022-08-21,Baltimore Orioles,Boston Red Sox,5,3,1,Dean Kremer,Nick Pivetta
+2022-08-22,Kansas City Royals,Chicago White Sox,6,4,1,Daniel Lynch IV,Michael Kopech
+2022-08-22,Philadelphia Phillies,Cincinnati Reds,4,1,1,Noah Syndergaard,Luis Cessa
+2022-08-22,Pittsburgh Pirates,Atlanta Braves,1,2,0,Roansy Contreras,Jake Odorizzi
+2022-08-22,New York Yankees,New York Mets,4,2,1,Domingo Germán,Max Scherzer
+2022-08-22,Tampa Bay Rays,Los Angeles Angels,2,1,1,Jeffrey Springs,Tucker Davidson
+2022-08-22,Minnesota Twins,Texas Rangers,1,2,0,Sonny Gray,Cole Ragans
+2022-08-22,Chicago Cubs,St. Louis Cardinals,0,1,0,Drew Smyly,Jordan Montgomery
+2022-08-22,Oakland Athletics,Miami Marlins,0,3,0,Adam Oller,Edward Cabrera
+2022-08-22,Los Angeles Dodgers,Milwaukee Brewers,0,4,0,Julio Urías,Eric Lauer
+2022-08-23,Chicago Cubs,St. Louis Cardinals,2,0,1,Javier Assad,Adam Wainwright
+2022-08-23,Chicago Cubs,St. Louis Cardinals,3,13,0,Adrian Sampson,Jake Woodford
+2022-08-23,Philadelphia Phillies,Cincinnati Reds,7,6,1,Ranger Suarez,Nick Lodolo
+2022-08-23,Pittsburgh Pirates,Atlanta Braves,1,6,0,JT Brubaker,Max Fried
+2022-08-23,Baltimore Orioles,Chicago White Sox,5,3,1,Austin Voth,Dylan Cease
+2022-08-23,New York Yankees,New York Mets,4,2,1,Frankie Montas,Taijuan Walker
+2022-08-23,Detroit Tigers,San Francisco Giants,1,3,0,Drew Hutchison,Carlos Rodón
+2022-08-23,Tampa Bay Rays,Los Angeles Angels,11,1,1,Corey Kluber,José Suarez
+2022-08-23,Boston Red Sox,Toronto Blue Jays,3,9,0,Josh Winckowski,Ross Stripling
+2022-08-23,Kansas City Royals,Arizona Diamondbacks,3,7,0,Jonathan Heasley,Zach Davies
+2022-08-23,Houston Astros,Minnesota Twins,4,2,1,Justin Verlander,Aaron Sanchez
+2022-08-23,Colorado Rockies,Texas Rangers,7,6,1,Germán Márquez,Dane Dunning
+2022-08-23,San Diego Padres,Cleveland Guardians,1,3,0,Mike Clevinger,Aaron Civale
+2022-08-23,Oakland Athletics,Miami Marlins,3,5,0,Zach Logue,Pablo López
+2022-08-23,Seattle Mariners,Washington Nationals,4,2,1,Robbie Ray,Erick Fedde
+2022-08-23,Los Angeles Dodgers,Milwaukee Brewers,10,1,1,Tony Gonsolin,Corbin Burnes
+2022-08-24,Pittsburgh Pirates,Atlanta Braves,2,14,0,Mitch Keller,Kyle Wright
+2022-08-24,Detroit Tigers,San Francisco Giants,6,1,1,Matt Manning,Logan Webb
+2022-08-24,Colorado Rockies,Texas Rangers,4,16,0,José Ureña,Martín Pérez
+2022-08-24,Oakland Athletics,Miami Marlins,3,2,1,Cole Irvin,Jesús Luzardo
+2022-08-24,San Diego Padres,Cleveland Guardians,0,7,0,Blake Snell,Cal Quantrill
+2022-08-24,Seattle Mariners,Washington Nationals,1,3,0,George Kirby,Aníbal Sánchez
+2022-08-24,Philadelphia Phillies,Cincinnati Reds,7,5,1,Cristopher Sánchez,T.J. Zeuch
+2022-08-24,Baltimore Orioles,Chicago White Sox,3,5,0,Spenser Watkins,Lucas Giolito
+2022-08-24,Tampa Bay Rays,Los Angeles Angels,4,3,1,Shane McClanahan,Mike Mayers
+2022-08-24,Boston Red Sox,Toronto Blue Jays,2,3,0,Brayan Bello,José Berríos
+2022-08-24,Chicago Cubs,St. Louis Cardinals,7,1,1,Luke Farrell,Miles Mikolas
+2022-08-24,Kansas City Royals,Arizona Diamondbacks,5,3,1,Brady Singer,Zac Gallen
+2022-08-24,Houston Astros,Minnesota Twins,5,3,1,Framber Valdez,Dylan Bundy
+2022-08-24,Los Angeles Dodgers,Milwaukee Brewers,12,6,1,Andrew Heaney,Adrian Houser
+2022-08-25,Tampa Bay Rays,Los Angeles Angels,8,3,1,Drew Rasmussen,Patrick Sandoval
+2022-08-25,Chicago Cubs,St. Louis Cardinals,3,8,0,Marcus Stroman,Dakota Hudson
+2022-08-25,Seattle Mariners,Cleveland Guardians,3,1,1,Marco Gonzales,Triston McKenzie
+2022-08-25,Philadelphia Phillies,Cincinnati Reds,4,0,1,Aaron Nola,Justin Dunn
+2022-08-25,Baltimore Orioles,Chicago White Sox,4,3,1,Jordan Lyles,Lance Lynn
+2022-08-25,New York Mets,Colorado Rockies,3,1,1,Jacob deGrom,Ryan Feltner
+2022-08-25,Boston Red Sox,Toronto Blue Jays,5,6,0,Kutter Crawford,Kevin Gausman
+2022-08-25,Houston Astros,Minnesota Twins,6,3,1,Luis Garcia,Chris Archer
+2022-08-25,Oakland Athletics,New York Yankees,4,13,0,James Kaprielian,Jameson Taillon
+2022-08-26,Miami Marlins,Los Angeles Dodgers,6,10,0,Tommy Nance,Tyler Anderson
+2022-08-26,Washington Nationals,Cincinnati Reds,3,7,0,Cade Cavalli,Mike Minor
+2022-08-26,Philadelphia Phillies,Pittsburgh Pirates,7,4,1,Bailey Falter,Bryse Wilson
+2022-08-26,Toronto Blue Jays,Los Angeles Angels,0,12,0,Mitch White,Reid Detmers
+2022-08-26,New York Mets,Colorado Rockies,7,6,1,Chris Bassitt,Chad Kuhl
+2022-08-26,Boston Red Sox,Tampa Bay Rays,9,8,1,Michael Wacha,JT Chargois
+2022-08-26,Texas Rangers,Detroit Tigers,7,6,1,Glenn Otto Jr.,Tyler Alexander
+2022-08-26,Houston Astros,Baltimore Orioles,0,2,0,Lance McCullers Jr.,Kyle Bradish
+2022-08-26,Kansas City Royals,San Diego Padres,5,13,0,Kris Bubic,Joe Musgrove
+2022-08-26,Minnesota Twins,San Francisco Giants,9,0,1,Joe Ryan,Alex Wood
+2022-08-26,Chicago White Sox,Arizona Diamondbacks,2,7,0,Johnny Cueto,Tommy Henry
+2022-08-26,Milwaukee Brewers,Chicago Cubs,3,4,0,Freddy Peralta,Justin Steele
+2022-08-26,St. Louis Cardinals,Atlanta Braves,4,11,0,Jose Quintana,Spencer Strider
+2022-08-26,Oakland Athletics,New York Yankees,2,3,0,JP Sears,Gerrit Cole
+2022-08-26,Seattle Mariners,Cleveland Guardians,3,2,1,Logan Gilbert,Shane Bieber
+2022-08-27,Toronto Blue Jays,Los Angeles Angels,0,2,0,Alek Manoah,Shohei Ohtani
+2022-08-27,Boston Red Sox,Tampa Bay Rays,5,1,1,Rich Hill,Jeffrey Springs
+2022-08-27,Philadelphia Phillies,Pittsburgh Pirates,6,0,1,Kyle Gibson,Tyler Beede
+2022-08-27,Miami Marlins,Los Angeles Dodgers,2,1,1,Sandy Alcantara,Dustin May
+2022-08-27,Washington Nationals,Cincinnati Reds,2,6,0,Paolo Espino,Luis Cessa
+2022-08-27,Texas Rangers,Detroit Tigers,2,11,0,Dallas Keuchel,Eduardo Rodriguez
+2022-08-27,Houston Astros,Baltimore Orioles,1,3,0,José Urquidy,Dean Kremer
+2022-08-27,New York Mets,Colorado Rockies,3,0,1,David Peterson,Kyle Freeland
+2022-08-27,Kansas City Royals,San Diego Padres,3,4,0,Daniel Lynch IV,Yu Darvish
+2022-08-27,Chicago White Sox,Arizona Diamondbacks,5,10,0,Davis Martin,Merrill Kelly
+2022-08-27,Milwaukee Brewers,Chicago Cubs,7,0,1,Brandon Woodruff,Drew Smyly
+2022-08-27,Minnesota Twins,San Francisco Giants,3,2,1,Sonny Gray,Alex Cobb
+2022-08-27,St. Louis Cardinals,Atlanta Braves,6,5,1,Jordan Montgomery,Charlie Morton
+2022-08-27,Oakland Athletics,New York Yankees,3,2,1,Adam Oller,Domingo Germán
+2022-08-27,Seattle Mariners,Cleveland Guardians,3,4,0,Luis Castillo,Zach Plesac
+2022-08-28,Miami Marlins,Los Angeles Dodgers,1,8,0,Edward Cabrera,Julio Urías
+2022-08-28,Washington Nationals,Cincinnati Reds,3,2,1,Patrick Corbin,Nick Lodolo
+2022-08-28,Boston Red Sox,Tampa Bay Rays,4,12,0,Nick Pivetta,Corey Kluber
+2022-08-28,Philadelphia Phillies,Pittsburgh Pirates,0,5,0,Noah Syndergaard,Roansy Contreras
+2022-08-28,Toronto Blue Jays,Los Angeles Angels,3,8,0,Ross Stripling,Tucker Davidson
+2022-08-28,New York Mets,Colorado Rockies,0,1,0,Max Scherzer,Germán Márquez
+2022-08-28,Houston Astros,Baltimore Orioles,3,1,1,Justin Verlander,Austin Voth
+2022-08-28,Kansas City Royals,San Diego Padres,15,7,1,Jonathan Heasley,Sean Manaea
+2022-08-28,Minnesota Twins,San Francisco Giants,8,3,1,Aaron Sanchez,Jakob Junis
+2022-08-28,Chicago White Sox,Arizona Diamondbacks,2,3,0,Dylan Cease,Zach Davies
+2022-08-28,Milwaukee Brewers,Chicago Cubs,9,7,1,Eric Lauer,Adrian Sampson
+2022-08-28,Texas Rangers,Detroit Tigers,8,9,0,Kohei Arihara,Drew Hutchison
+2022-08-28,Oakland Athletics,New York Yankees,4,1,1,Adrián Martinez,Clarke Schmidt
+2022-08-28,Seattle Mariners,Cleveland Guardians,4,0,1,Robbie Ray,Aaron Civale
+2022-08-28,St. Louis Cardinals,Atlanta Braves,6,3,1,Adam Wainwright,Jake Odorizzi
+2022-08-29,Cincinnati Reds,St. Louis Cardinals,4,13,0,Chase Anderson,Miles Mikolas
+2022-08-29,Miami Marlins,Los Angeles Dodgers,2,3,0,Pablo López,Michael Grove
+2022-08-29,Toronto Blue Jays,Chicago Cubs,5,4,1,José Berríos,Javier Assad
+2022-08-29,Minnesota Twins,Boston Red Sox,4,2,1,Dylan Bundy,Brayan Bello
+2022-08-29,Milwaukee Brewers,Pittsburgh Pirates,7,5,1,Corbin Burnes,Bryse Wilson
+2022-08-29,Los Angeles Angels,New York Yankees,4,3,1,José Suarez,Frankie Montas
+2022-08-29,Arizona Diamondbacks,Philadelphia Phillies,13,7,1,Madison Bumgarner,Ranger Suarez
+2022-08-29,San Francisco Giants,San Diego Padres,5,6,0,Carlos Rodón,Mike Clevinger
+2022-08-30,Cleveland Guardians,Baltimore Orioles,5,1,1,Cal Quantrill,Spenser Watkins
+2022-08-30,Cincinnati Reds,St. Louis Cardinals,5,1,1,Justin Dunn,Dakota Hudson
+2022-08-30,Miami Marlins,Tampa Bay Rays,2,7,0,Jesús Luzardo,Shane McClanahan
+2022-08-30,Washington Nationals,Oakland Athletics,6,10,0,Erick Fedde,Cole Irvin
+2022-08-30,Toronto Blue Jays,Chicago Cubs,5,3,1,Kevin Gausman,Marcus Stroman
+2022-08-30,New York Mets,Los Angeles Dodgers,3,4,0,Taijuan Walker,Andrew Heaney
+2022-08-30,Detroit Tigers,Seattle Mariners,3,9,0,Matt Manning,George Kirby
+2022-08-30,Atlanta Braves,Colorado Rockies,2,3,0,Max Fried,José Ureña
+2022-08-30,Minnesota Twins,Boston Red Sox,10,5,1,Chris Archer,Kutter Crawford
+2022-08-30,Texas Rangers,Houston Astros,2,4,0,Dane Dunning,Framber Valdez
+2022-08-30,Chicago White Sox,Kansas City Royals,7,9,0,Lucas Giolito,Brady Singer
+2022-08-30,Milwaukee Brewers,Pittsburgh Pirates,2,4,0,Jason Alexander,Mitch Keller
+2022-08-30,Los Angeles Angels,New York Yankees,4,7,0,Mike Mayers,Jameson Taillon
+2022-08-30,Arizona Diamondbacks,Philadelphia Phillies,12,3,1,Zac Gallen,Aaron Nola
+2022-08-30,San Francisco Giants,San Diego Padres,3,4,0,Logan Webb,Blake Snell
+2022-08-31,Texas Rangers,Houston Astros,3,5,0,Martín Pérez,Cristian Javier
+2022-08-31,Milwaukee Brewers,Pittsburgh Pirates,6,1,1,Freddy Peralta,Zach Thompson
+2022-08-31,San Francisco Giants,San Diego Padres,4,5,0,Alex Wood,Joe Musgrove
+2022-08-31,Cleveland Guardians,Baltimore Orioles,0,4,0,Triston McKenzie,Jordan Lyles
+2022-08-31,Cincinnati Reds,St. Louis Cardinals,3,5,0,Mike Minor,Jose Quintana
+2022-08-31,Miami Marlins,Tampa Bay Rays,1,2,0,Trevor Rogers,Drew Rasmussen
+2022-08-31,Washington Nationals,Oakland Athletics,5,1,1,Aníbal Sánchez,James Kaprielian
+2022-08-31,Toronto Blue Jays,Chicago Cubs,5,7,0,Mitch White,Luke Farrell
+2022-08-31,New York Mets,Los Angeles Dodgers,2,1,1,Jacob deGrom,Tyler Anderson
+2022-08-31,Detroit Tigers,Seattle Mariners,3,5,0,Tyler Alexander,Marco Gonzales
+2022-08-31,Atlanta Braves,Colorado Rockies,3,2,1,Kyle Wright,Ryan Feltner
+2022-08-31,Minnesota Twins,Boston Red Sox,5,6,0,Joe Ryan,Michael Wacha
+2022-08-31,Chicago White Sox,Kansas City Royals,4,2,1,Lance Lynn,Kris Bubic
+2022-08-31,Los Angeles Angels,New York Yankees,3,2,1,Patrick Sandoval,Gerrit Cole
+2022-08-31,Arizona Diamondbacks,Philadelphia Phillies,2,18,0,Tommy Henry,Bailey Falter
+2022-09-01,Detroit Tigers,Seattle Mariners,0,7,0,Eduardo Rodriguez,Logan Gilbert
+2022-09-01,Chicago White Sox,Kansas City Royals,7,1,1,Johnny Cueto,Daniel Mengden
+2022-09-01,Washington Nationals,Oakland Athletics,7,5,1,Paolo Espino,Ken Waldichuk
+2022-09-01,New York Mets,Los Angeles Dodgers,5,3,1,Chris Bassitt,Clayton Kershaw
+2022-09-01,Cleveland Guardians,Baltimore Orioles,0,3,0,Shane Bieber,Kyle Bradish
+2022-09-01,Boston Red Sox,Texas Rangers,9,8,1,Rich Hill,Glenn Otto Jr.
+2022-09-01,Atlanta Braves,Colorado Rockies,3,0,1,Spencer Strider,Chad Kuhl
+2022-09-01,Arizona Diamondbacks,Milwaukee Brewers,5,0,1,Merrill Kelly,Brandon Woodruff
+2022-09-02,Pittsburgh Pirates,Toronto Blue Jays,0,4,0,Johan Oviedo,Alek Manoah
+2022-09-02,Cincinnati Reds,Colorado Rockies,3,2,1,Luis Cessa,Kyle Freeland
+2022-09-02,Baltimore Orioles,Oakland Athletics,5,2,1,Dean Kremer,JP Sears
+2022-09-02,Detroit Tigers,Kansas City Royals,5,4,1,Drew Hutchison,Daniel Lynch IV
+2022-09-02,New York Mets,Washington Nationals,7,3,1,David Peterson,Josiah Gray
+2022-09-02,Cleveland Guardians,Seattle Mariners,1,6,0,Cody Morris,Luis Castillo
+2022-09-02,Boston Red Sox,Texas Rangers,9,1,1,Nick Pivetta,Dallas Keuchel
+2022-09-02,Tampa Bay Rays,New York Yankees,9,0,1,Jeffrey Springs,Domingo Germán
+2022-09-02,Atlanta Braves,Miami Marlins,8,1,1,Charlie Morton,Sandy Alcantara
+2022-09-02,Chicago White Sox,Minnesota Twins,4,3,1,Joe Kelly,Sonny Gray
+2022-09-02,St. Louis Cardinals,Chicago Cubs,8,0,1,Jordan Montgomery,Adrian Sampson
+2022-09-02,Los Angeles Angels,Houston Astros,2,4,0,Reid Detmers,Lance McCullers Jr.
+2022-09-02,Arizona Diamondbacks,Milwaukee Brewers,2,1,1,Zach Davies,Eric Lauer
+2022-09-02,Los Angeles Dodgers,San Diego Padres,1,7,0,Dustin May,Yu Darvish
+2022-09-02,San Francisco Giants,Philadelphia Phillies,13,1,1,Alex Cobb,Kyle Gibson
+2022-09-03,San Francisco Giants,Philadelphia Phillies,5,4,1,Jakob Junis,Noah Syndergaard
+2022-09-03,Boston Red Sox,Texas Rangers,5,3,1,Brayan Bello,Dennis Santana
+2022-09-03,Detroit Tigers,Kansas City Royals,2,12,0,Michael Pineda,Jonathan Heasley
+2022-09-03,Tampa Bay Rays,New York Yankees,2,1,1,Corey Kluber,Clarke Schmidt
+2022-09-03,Pittsburgh Pirates,Toronto Blue Jays,1,4,0,Roansy Contreras,Trevor Richards
+2022-09-03,Baltimore Orioles,Oakland Athletics,8,1,1,Austin Voth,Adam Oller
+2022-09-03,New York Mets,Washington Nationals,1,7,0,Max Scherzer,Patrick Corbin
+2022-09-03,Cleveland Guardians,Seattle Mariners,0,4,0,Xzavion Curry,Robbie Ray
+2022-09-03,St. Louis Cardinals,Chicago Cubs,8,4,1,Adam Wainwright,Drew Smyly
+2022-09-03,Chicago White Sox,Minnesota Twins,13,0,1,Dylan Cease,Tyler Mahle
+2022-09-03,Atlanta Braves,Miami Marlins,2,1,1,Bryce Elder,Edward Cabrera
+2022-09-03,Arizona Diamondbacks,Milwaukee Brewers,6,8,0,Madison Bumgarner,Corbin Burnes
+2022-09-03,Los Angeles Angels,Houston Astros,2,1,1,Shohei Ohtani,Luis Garcia
+2022-09-03,Los Angeles Dodgers,San Diego Padres,12,1,1,Julio Urías,Sean Manaea
+2022-09-04,Pittsburgh Pirates,Toronto Blue Jays,3,4,0,JT Brubaker,Ross Stripling
+2022-09-04,Cincinnati Reds,Colorado Rockies,4,8,0,Nick Lodolo,Germán Márquez
+2022-09-04,Cincinnati Reds,Colorado Rockies,10,0,1,Chase Anderson,José Ureña
+2022-09-04,Baltimore Orioles,Oakland Athletics,0,5,0,Spenser Watkins,Adrián Martinez
+2022-09-04,Boston Red Sox,Texas Rangers,5,2,1,Jonathan Diaz,Cody Freeman
+2022-09-04,Atlanta Braves,Miami Marlins,7,1,1,Max Fried,Pablo López
+2022-09-04,Detroit Tigers,Kansas City Royals,2,3,0,Matt Manning,Max Castillo
+2022-09-04,New York Mets,Washington Nationals,1,7,0,Carlos Carrasco,Erick Fedde
+2022-09-04,Tampa Bay Rays,New York Yankees,1,2,0,Shawn Armstrong,Frankie Montas
+2022-09-04,Chicago White Sox,Minnesota Twins,1,5,0,Lucas Giolito,Dylan Bundy
+2022-09-04,St. Louis Cardinals,Chicago Cubs,2,0,1,Miles Mikolas,Marcus Stroman
+2022-09-04,Cleveland Guardians,Seattle Mariners,3,6,0,Cal Quantrill,George Kirby
+2022-09-04,San Francisco Giants,Philadelphia Phillies,5,3,1,Carlos Rodón,Ranger Suarez
+2022-09-04,Los Angeles Angels,Houston Astros,1,9,0,Tucker Davidson,José Urquidy
+2022-09-04,Arizona Diamondbacks,Milwaukee Brewers,5,1,1,Zac Gallen,Jason Alexander
+2022-09-04,Los Angeles Dodgers,San Diego Padres,9,4,1,Caleb Ferguson,Mike Clevinger
+2022-09-05,Baltimore Orioles,Toronto Blue Jays,3,7,0,Mike Baumann,Kevin Gausman
+2022-09-05,Baltimore Orioles,Toronto Blue Jays,4,8,0,Keegan Akin,José Berríos
+2022-09-05,New York Yankees,Minnesota Twins,5,2,1,Jameson Taillon,Chris Archer
+2022-09-05,Tampa Bay Rays,Boston Red Sox,4,3,1,Luis Patiño,Michael Wacha
+2022-09-05,Colorado Rockies,Milwaukee Brewers,4,6,0,Ryan Feltner,Adrian Houser
+2022-09-05,St. Louis Cardinals,Washington Nationals,0,6,0,Jack Flaherty,Aníbal Sánchez
+2022-09-05,San Diego Padres,Arizona Diamondbacks,0,5,0,Blake Snell,Ryne Nelson
+2022-09-05,Seattle Mariners,Chicago White Sox,2,3,0,Marco Gonzales,Lance Lynn
+2022-09-05,Houston Astros,Texas Rangers,1,0,1,Hunter Brown,Martín Pérez
+2022-09-05,Kansas City Royals,Cleveland Guardians,5,6,0,Brady Singer,Triston McKenzie
+2022-09-05,Los Angeles Angels,Detroit Tigers,10,0,1,José Suarez,Tyler Alexander
+2022-09-05,Los Angeles Dodgers,San Francisco Giants,4,7,0,Andrew Heaney,Logan Webb
+2022-09-06,Pittsburgh Pirates,New York Mets,8,2,1,Mitch Keller,Taijuan Walker
+2022-09-06,Tampa Bay Rays,Boston Red Sox,8,4,1,JT Chargois,Rich Hill
+2022-09-06,Philadelphia Phillies,Miami Marlins,3,2,1,Aaron Nola,Jesús Luzardo
+2022-09-06,Baltimore Orioles,Toronto Blue Jays,9,6,1,Kyle Bradish,Mitch White
+2022-09-06,Chicago Cubs,Cincinnati Reds,9,3,1,Wade Miley,Justin Dunn
+2022-09-06,St. Louis Cardinals,Washington Nationals,4,1,1,Jose Quintana,Paolo Espino
+2022-09-06,Kansas City Royals,Cleveland Guardians,1,4,0,Kris Bubic,Shane Bieber
+2022-09-06,Houston Astros,Texas Rangers,3,4,0,Framber Valdez,Glenn Otto Jr.
+2022-09-06,Colorado Rockies,Milwaukee Brewers,10,7,1,Chad Kuhl,Brandon Woodruff
+2022-09-06,Los Angeles Angels,Detroit Tigers,5,4,1,Mike Mayers,Eduardo Rodriguez
+2022-09-06,San Diego Padres,Arizona Diamondbacks,6,5,1,Joe Musgrove,Merrill Kelly
+2022-09-06,Oakland Athletics,Atlanta Braves,9,10,0,Cole Irvin,Kyle Wright
+2022-09-06,Seattle Mariners,Chicago White Sox,3,0,1,Logan Gilbert,Johnny Cueto
+2022-09-06,Los Angeles Dodgers,San Francisco Giants,6,3,1,Tyler Anderson,John Brebbia
+2022-09-07,Pittsburgh Pirates,New York Mets,1,5,0,Duane Underwood Jr.,Chris Bassitt
+2022-09-07,Pittsburgh Pirates,New York Mets,0,10,0,Johan Oviedo,Jacob deGrom
+2022-09-07,New York Yankees,Minnesota Twins,5,4,1,Domingo Germán,Louis Varland
+2022-09-07,New York Yankees,Minnesota Twins,7,1,1,Gerrit Cole,Joe Ryan
+2022-09-07,Colorado Rockies,Milwaukee Brewers,8,4,1,Kyle Freeland,Eric Lauer
+2022-09-07,Oakland Athletics,Atlanta Braves,3,7,0,Ken Waldichuk,Spencer Strider
+2022-09-07,Los Angeles Angels,Detroit Tigers,4,5,0,Patrick Sandoval,Drew Hutchison
+2022-09-07,Los Angeles Dodgers,San Francisco Giants,7,3,1,Clayton Kershaw,Alex Cobb
+2022-09-07,Seattle Mariners,Chicago White Sox,6,9,0,Luis Castillo,Michael Kopech
+2022-09-07,Tampa Bay Rays,Boston Red Sox,1,0,1,Jeffrey Springs,Nick Pivetta
+2022-09-07,Philadelphia Phillies,Miami Marlins,4,3,1,Bailey Falter,Trevor Rogers
+2022-09-07,Baltimore Orioles,Toronto Blue Jays,1,4,0,Tyler Wells,Alek Manoah
+2022-09-07,Chicago Cubs,Cincinnati Reds,1,7,0,Javier Assad,Mike Minor
+2022-09-07,St. Louis Cardinals,Washington Nationals,6,5,1,Jordan Montgomery,Cory Abbott
+2022-09-07,Kansas City Royals,Cleveland Guardians,2,1,1,Zack Greinke,Cody Morris
+2022-09-07,Houston Astros,Texas Rangers,4,3,1,Cristian Javier,Cole Ragans
+2022-09-07,San Diego Padres,Arizona Diamondbacks,6,3,1,Yu Darvish,Tommy Henry
+2022-09-08,St. Louis Cardinals,Washington Nationals,6,11,0,Adam Wainwright,Josiah Gray
+2022-09-08,Chicago Cubs,Cincinnati Reds,3,4,0,Adrian Sampson,Luis Cessa
+2022-09-08,Milwaukee Brewers,San Francisco Giants,2,1,1,Corbin Burnes,Scott Alexander
+2022-09-08,Milwaukee Brewers,San Francisco Giants,4,2,1,Freddy Peralta,Alex Young
+2022-09-08,Philadelphia Phillies,Miami Marlins,5,6,0,Kyle Gibson,Sandy Alcantara
+2022-09-08,New York Yankees,Minnesota Twins,3,4,0,Nestor Cortes,Sonny Gray
+2022-09-08,Oakland Athletics,Chicago White Sox,2,14,0,JP Sears,Dylan Cease
+2022-09-09,Chicago Cubs,San Francisco Giants,4,2,1,Drew Smyly,Carlos Rodón
+2022-09-09,Pittsburgh Pirates,St. Louis Cardinals,8,2,1,Roansy Contreras,Miles Mikolas
+2022-09-09,Miami Marlins,New York Mets,6,3,1,Max Meyer,Max Scherzer
+2022-09-09,Baltimore Orioles,Boston Red Sox,3,2,1,Austin Voth,Brayan Bello
+2022-09-09,Philadelphia Phillies,Washington Nationals,5,3,1,Noah Syndergaard,Patrick Corbin
+2022-09-09,New York Yankees,Tampa Bay Rays,2,4,0,Frankie Montas,Drew Rasmussen
+2022-09-09,Texas Rangers,Toronto Blue Jays,3,4,0,Dane Dunning,Ross Stripling
+2022-09-09,Houston Astros,Los Angeles Angels,4,3,1,Lance McCullers Jr.,Michael Lorenzen
+2022-09-09,Kansas City Royals,Detroit Tigers,2,10,0,Daniel Lynch IV,Joey Wentz
+2022-09-09,Minnesota Twins,Cleveland Guardians,6,7,0,Dylan Bundy,Cal Quantrill
+2022-09-09,Milwaukee Brewers,Cincinnati Reds,2,8,0,Jason Alexander,Nick Lodolo
+2022-09-09,Colorado Rockies,Arizona Diamondbacks,13,10,1,Germán Márquez,Zach Davies
+2022-09-09,San Diego Padres,Los Angeles Dodgers,5,4,1,Mike Clevinger,Dustin May
+2022-09-09,Seattle Mariners,Atlanta Braves,4,6,0,Robbie Ray,Charlie Morton
+2022-09-09,Oakland Athletics,Chicago White Sox,3,5,0,Austin Pruitt,Lucas Giolito
+2022-09-10,New York Yankees,Tampa Bay Rays,10,3,1,Jameson Taillon,Corey Kluber
+2022-09-10,Chicago Cubs,San Francisco Giants,2,5,0,Marcus Stroman,Logan Webb
+2022-09-10,Oakland Athletics,Chicago White Sox,2,10,0,Adrián Martinez,Lance Lynn
+2022-09-10,Baltimore Orioles,Boston Red Sox,4,17,0,Jordan Lyles,Michael Wacha
+2022-09-10,Philadelphia Phillies,Washington Nationals,8,5,1,Ranger Suarez,Erick Fedde
+2022-09-10,Miami Marlins,New York Mets,3,11,0,Pablo López,Carlos Carrasco
+2022-09-10,Texas Rangers,Toronto Blue Jays,7,11,0,Kohei Arihara,Kevin Gausman
+2022-09-10,Houston Astros,Los Angeles Angels,1,6,0,José Urquidy,Shohei Ohtani
+2022-09-10,Minnesota Twins,Cleveland Guardians,4,6,0,Chris Archer,Triston McKenzie
+2022-09-10,Milwaukee Brewers,Cincinnati Reds,5,1,1,Adrian Houser,Chase Anderson
+2022-09-10,Pittsburgh Pirates,St. Louis Cardinals,5,7,0,JT Brubaker,Jack Flaherty
+2022-09-10,Colorado Rockies,Arizona Diamondbacks,4,1,1,José Ureña,Madison Bumgarner
+2022-09-10,San Diego Padres,Los Angeles Dodgers,4,8,0,Blake Snell,Julio Urías
+2022-09-10,Seattle Mariners,Atlanta Braves,3,1,1,George Kirby,Max Fried
+2022-09-11,Baltimore Orioles,Boston Red Sox,0,1,0,Kyle Bradish,Rich Hill
+2022-09-11,Philadelphia Phillies,Washington Nationals,7,5,1,Aaron Nola,Aníbal Sánchez
+2022-09-11,Pittsburgh Pirates,St. Louis Cardinals,3,4,0,Mitch Keller,Jose Quintana
+2022-09-11,New York Yankees,Tampa Bay Rays,10,4,1,Domingo Germán,Luis Patiño
+2022-09-11,Miami Marlins,New York Mets,3,9,0,Jesús Luzardo,Taijuan Walker
+2022-09-11,Houston Astros,Los Angeles Angels,12,4,1,Luis Garcia,Tucker Davidson
+2022-09-11,Kansas City Royals,Detroit Tigers,4,0,1,Brady Singer,Tyler Alexander
+2022-09-11,Minnesota Twins,Cleveland Guardians,1,4,0,Josh Winder,Shane Bieber
+2022-09-11,Milwaukee Brewers,Cincinnati Reds,7,6,1,Brandon Woodruff,Justin Dunn
+2022-09-11,Texas Rangers,Toronto Blue Jays,4,1,1,Martín Pérez,Trevor Richards
+2022-09-11,Colorado Rockies,Arizona Diamondbacks,6,12,0,Ryan Feltner,Zac Gallen
+2022-09-11,Oakland Athletics,Chicago White Sox,10,3,1,Cole Irvin,Johnny Cueto
+2022-09-11,San Diego Padres,Los Angeles Dodgers,2,11,0,Joe Musgrove,Andrew Heaney
+2022-09-11,Seattle Mariners,Atlanta Braves,8,7,1,Marco Gonzales,Jake Odorizzi
+2022-09-11,Chicago Cubs,San Francisco Giants,2,4,0,Wade Miley,John Brebbia
+2022-09-12,Miami Marlins,Texas Rangers,2,3,0,Trevor Rogers,Glenn Otto Jr.
+2022-09-12,Miami Marlins,Texas Rangers,10,6,1,Braxton Garrett,Jon Gray
+2022-09-12,Cleveland Guardians,Los Angeles Angels,5,4,1,Konnor Pilkington,Reid Detmers
+2022-09-12,Detroit Tigers,Houston Astros,0,7,0,Eduardo Rodriguez,Framber Valdez
+2022-09-12,Cincinnati Reds,Pittsburgh Pirates,3,6,0,Mike Minor,Bryse Wilson
+2022-09-12,Toronto Blue Jays,Tampa Bay Rays,3,2,1,José Berríos,Cooper Criswell
+2022-09-12,New York Mets,Chicago Cubs,2,5,0,Chris Bassitt,Javier Assad
+2022-09-12,Arizona Diamondbacks,Los Angeles Dodgers,0,6,0,Ryne Nelson,Tyler Anderson
+2022-09-12,San Francisco Giants,Atlanta Braves,3,2,1,Alex Cobb,Spencer Strider
+2022-09-13,Cincinnati Reds,Pittsburgh Pirates,1,6,0,Luis Cessa,Johan Oviedo
+2022-09-13,Cincinnati Reds,Pittsburgh Pirates,0,1,0,Fernando Cruz,Luis Ortiz
+2022-09-13,Toronto Blue Jays,Tampa Bay Rays,2,4,0,Julian Merryweather,Jeffrey Springs
+2022-09-13,Toronto Blue Jays,Tampa Bay Rays,7,2,1,Alek Manoah,Yonny Chirinos
+2022-09-13,Cleveland Guardians,Los Angeles Angels,3,1,1,Cody Morris,José Suarez
+2022-09-13,Detroit Tigers,Houston Astros,3,6,0,Drew Hutchison,Hunter Brown
+2022-09-13,Miami Marlins,Philadelphia Phillies,1,2,0,Sandy Alcantara,Bailey Falter
+2022-09-13,Washington Nationals,Baltimore Orioles,3,4,0,Cory Abbott,Dean Kremer
+2022-09-13,New York Mets,Chicago Cubs,1,4,0,Jacob deGrom,Adrian Sampson
+2022-09-13,Boston Red Sox,New York Yankees,6,7,0,Nick Pivetta,Gerrit Cole
+2022-09-13,Minnesota Twins,Kansas City Royals,6,3,1,Joe Ryan,Kris Bubic
+2022-09-13,St. Louis Cardinals,Milwaukee Brewers,4,8,0,Jordan Montgomery,Matt Bush
+2022-09-13,Texas Rangers,Oakland Athletics,8,7,1,Cole Ragans,Ken Waldichuk
+2022-09-13,Chicago White Sox,Colorado Rockies,4,2,1,Michael Kopech,Chad Kuhl
+2022-09-13,Arizona Diamondbacks,Los Angeles Dodgers,0,4,0,Merrill Kelly,Clayton Kershaw
+2022-09-13,Seattle Mariners,San Diego Padres,0,2,0,Logan Gilbert,Yu Darvish
+2022-09-13,San Francisco Giants,Atlanta Braves,1,5,0,Jakob Junis,Kyle Wright
+2022-09-14,Cincinnati Reds,Pittsburgh Pirates,4,10,0,Nick Lodolo,Roansy Contreras
+2022-09-14,Cleveland Guardians,Los Angeles Angels,5,3,1,Cal Quantrill,Patrick Sandoval
+2022-09-14,Detroit Tigers,Houston Astros,1,2,0,Joey Wentz,Cristian Javier
+2022-09-14,Chicago White Sox,Colorado Rockies,0,3,0,Dylan Cease,Kyle Freeland
+2022-09-14,San Francisco Giants,Atlanta Braves,4,1,1,Carlos Rodón,Charlie Morton
+2022-09-14,Seattle Mariners,San Diego Padres,6,1,1,Luis Castillo,Mike Clevinger
+2022-09-14,Miami Marlins,Philadelphia Phillies,1,6,0,Edward Cabrera,Kyle Gibson
+2022-09-14,Washington Nationals,Baltimore Orioles,2,6,0,Patrick Corbin,Tyler Wells
+2022-09-14,Toronto Blue Jays,Tampa Bay Rays,5,1,1,Ross Stripling,Drew Rasmussen
+2022-09-14,New York Mets,Chicago Cubs,3,6,0,David Peterson,Drew Smyly
+2022-09-14,Boston Red Sox,New York Yankees,3,5,0,Brayan Bello,Nestor Cortes
+2022-09-14,Minnesota Twins,Kansas City Royals,4,0,1,Sonny Gray,Zack Greinke
+2022-09-14,St. Louis Cardinals,Milwaukee Brewers,4,1,1,Adam Wainwright,Corbin Burnes
+2022-09-14,Texas Rangers,Oakland Athletics,7,8,0,Dane Dunning,JP Sears
+2022-09-14,Arizona Diamondbacks,Los Angeles Dodgers,5,3,1,Zach Davies,Michael Grove
+2022-09-15,Cleveland Guardians,Chicago White Sox,2,8,0,Hunter Gaddis,Lance Lynn
+2022-09-15,Toronto Blue Jays,Tampa Bay Rays,0,11,0,Kevin Gausman,Shane McClanahan
+2022-09-15,Miami Marlins,Philadelphia Phillies,5,3,1,Pablo López,Noah Syndergaard
+2022-09-15,Houston Astros,Oakland Athletics,5,2,1,Lance McCullers Jr.,James Kaprielian
+2022-09-15,New York Mets,Pittsburgh Pirates,7,1,1,Carlos Carrasco,JT Brubaker
+2022-09-15,Minnesota Twins,Kansas City Royals,3,2,1,Dylan Bundy,Daniel Lynch IV
+2022-09-15,St. Louis Cardinals,Cincinnati Reds,2,3,0,Miles Mikolas,Chase Anderson
+2022-09-15,Arizona Diamondbacks,San Diego Padres,4,0,1,Drey Jameson,Sean Manaea
+2022-09-16,Chicago Cubs,Colorado Rockies,2,1,1,Marcus Stroman,Germán Márquez
+2022-09-16,Washington Nationals,Miami Marlins,5,4,1,Josiah Gray,Jesús Luzardo
+2022-09-16,Toronto Blue Jays,Baltimore Orioles,6,3,1,Trevor Richards,Jordan Lyles
+2022-09-16,Boston Red Sox,Kansas City Royals,2,1,1,Michael Wacha,Jonathan Heasley
+2022-09-16,New York Mets,Pittsburgh Pirates,4,3,1,Taijuan Walker,Mitch Keller
+2022-09-16,Tampa Bay Rays,Texas Rangers,3,4,0,Corey Kluber,Martín Pérez
+2022-09-16,Cleveland Guardians,Minnesota Twins,4,3,1,Triston McKenzie,Bailey Ober
+2022-09-16,Detroit Tigers,Chicago White Sox,3,2,1,Matt Manning,Lucas Giolito
+2022-09-16,Atlanta Braves,Philadelphia Phillies,7,2,1,Max Fried,Ranger Suarez
+2022-09-16,Houston Astros,Oakland Athletics,5,0,1,Justin Verlander,Adrián Martinez
+2022-09-16,Milwaukee Brewers,New York Yankees,7,6,1,Adrian Houser,Frankie Montas
+2022-09-16,St. Louis Cardinals,Cincinnati Reds,6,5,1,Jack Flaherty,Fernando Cruz
+2022-09-16,Los Angeles Angels,Seattle Mariners,8,7,1,Michael Lorenzen,Robbie Ray
+2022-09-16,Arizona Diamondbacks,San Diego Padres,3,12,0,Madison Bumgarner,Blake Snell
+2022-09-16,San Francisco Giants,Los Angeles Dodgers,0,5,0,Logan Webb,Dustin May
+2022-09-17,Cleveland Guardians,Minnesota Twins,5,1,1,Shane Bieber,Louis Varland
+2022-09-17,Cleveland Guardians,Minnesota Twins,7,6,1,Konnor Pilkington,Josh Winder
+2022-09-17,St. Louis Cardinals,Cincinnati Reds,5,1,1,Dakota Hudson,Mike Minor
+2022-09-17,St. Louis Cardinals,Cincinnati Reds,1,0,1,Jose Quintana,Hunter Greene
+2022-09-17,Chicago Cubs,Colorado Rockies,1,3,0,Hayden Wesneski,José Ureña
+2022-09-17,Toronto Blue Jays,Baltimore Orioles,6,3,1,José Berríos,Kyle Bradish
+2022-09-17,Washington Nationals,Miami Marlins,5,3,1,Erick Fedde,Trevor Rogers
+2022-09-17,Boston Red Sox,Kansas City Royals,0,9,0,Rich Hill,Brady Singer
+2022-09-17,Tampa Bay Rays,Texas Rangers,5,1,1,Shawn Armstrong,Jon Gray
+2022-09-17,Detroit Tigers,Chicago White Sox,3,4,0,Eduardo Rodriguez,Davis Martin
+2022-09-17,Houston Astros,Oakland Athletics,5,8,0,José Urquidy,Cole Irvin
+2022-09-17,New York Mets,Pittsburgh Pirates,5,1,1,Chris Bassitt,Bryse Wilson
+2022-09-17,Milwaukee Brewers,New York Yankees,4,1,1,Brandon Woodruff,Jameson Taillon
+2022-09-17,Atlanta Braves,Philadelphia Phillies,4,3,1,Jake Odorizzi,Aaron Nola
+2022-09-17,Arizona Diamondbacks,San Diego Padres,0,2,0,Zac Gallen,Joe Musgrove
+2022-09-17,San Francisco Giants,Los Angeles Dodgers,2,7,0,John Brebbia,Julio Urías
+2022-09-17,Los Angeles Angels,Seattle Mariners,2,1,1,Shohei Ohtani,George Kirby
+2022-09-18,Detroit Tigers,Chicago White Sox,5,11,0,Drew Hutchison,Vince Velasquez
+2022-09-18,Tampa Bay Rays,Texas Rangers,5,3,1,Jeffrey Springs,Glenn Otto Jr.
+2022-09-18,Boston Red Sox,Kansas City Royals,13,3,1,Nick Pivetta,Kris Bubic
+2022-09-18,Atlanta Braves,Philadelphia Phillies,5,2,1,Spencer Strider,Bailey Falter
+2022-09-18,Washington Nationals,Miami Marlins,1,3,0,Aníbal Sánchez,Sandy Alcantara
+2022-09-18,Toronto Blue Jays,Baltimore Orioles,4,5,0,Alek Manoah,Dean Kremer
+2022-09-18,New York Mets,Pittsburgh Pirates,7,3,1,Jacob deGrom,Johan Oviedo
+2022-09-18,Cleveland Guardians,Minnesota Twins,0,3,0,Cody Morris,Joe Ryan
+2022-09-18,Houston Astros,Oakland Athletics,11,2,1,Framber Valdez,Ken Waldichuk
+2022-09-18,Milwaukee Brewers,New York Yankees,8,12,0,Jason Alexander,Gerrit Cole
+2022-09-18,St. Louis Cardinals,Cincinnati Reds,0,3,0,Jordan Montgomery,Luis Cessa
+2022-09-18,Chicago Cubs,Colorado Rockies,3,4,0,Javier Assad,Ryan Feltner
+2022-09-18,Los Angeles Angels,Seattle Mariners,5,1,1,Reid Detmers,Marco Gonzales
+2022-09-18,Arizona Diamondbacks,San Diego Padres,1,6,0,Ryne Nelson,Yu Darvish
+2022-09-18,San Francisco Giants,Los Angeles Dodgers,3,4,0,Alex Cobb,Andrew Heaney
+2022-09-19,Cleveland Guardians,Minnesota Twins,11,4,1,Cal Quantrill,Sonny Gray
+2022-09-19,Los Angeles Angels,Seattle Mariners,1,9,0,José Suarez,Logan Gilbert
+2022-09-19,Tampa Bay Rays,Houston Astros,0,4,0,Drew Rasmussen,Luis Garcia
+2022-09-19,Miami Marlins,Chicago Cubs,10,3,1,Edward Cabrera,Wade Miley
+2022-09-19,Baltimore Orioles,Detroit Tigers,0,11,0,Tyler Wells,Tyler Alexander
+2022-09-19,Atlanta Braves,Washington Nationals,5,2,1,Kyle Wright,Cory Abbott
+2022-09-19,Milwaukee Brewers,New York Mets,2,7,0,Corbin Burnes,Max Scherzer
+2022-09-19,Colorado Rockies,San Francisco Giants,7,10,0,Chad Kuhl,Jakob Junis
+2022-09-19,Los Angeles Dodgers,Arizona Diamondbacks,5,2,1,Clayton Kershaw,Merrill Kelly
+2022-09-20,Los Angeles Dodgers,Arizona Diamondbacks,6,5,1,Logan Salow,A.J. Vukovich
+2022-09-20,Los Angeles Dodgers,Arizona Diamondbacks,2,5,0,Agustin Acosta,Drey Jameson
+2022-09-20,Cincinnati Reds,Boston Red Sox,3,5,0,Nick Lodolo,Brayan Bello
+2022-09-20,Tampa Bay Rays,Houston Astros,0,5,0,Shane McClanahan,Cristian Javier
+2022-09-20,Miami Marlins,Chicago Cubs,1,2,0,Pablo López,Adrian Sampson
+2022-09-20,Philadelphia Phillies,Toronto Blue Jays,11,18,0,Kyle Gibson,Ross Stripling
+2022-09-20,Baltimore Orioles,Detroit Tigers,2,3,0,Austin Voth,Joey Wentz
+2022-09-20,New York Yankees,Pittsburgh Pirates,9,8,1,Nestor Cortes,Luis Ortiz
+2022-09-20,Atlanta Braves,Washington Nationals,3,2,1,Charlie Morton,Patrick Corbin
+2022-09-20,Milwaukee Brewers,New York Mets,5,7,0,Abraham Toro,Sebastian Castro
+2022-09-20,Texas Rangers,Los Angeles Angels,2,5,0,Cole Ragans,Patrick Sandoval
+2022-09-20,Kansas City Royals,Minnesota Twins,5,4,1,Zack Greinke,Dylan Bundy
+2022-09-20,Chicago White Sox,Cleveland Guardians,7,10,0,Dylan Cease,Aaron Civale
+2022-09-20,Colorado Rockies,San Francisco Giants,3,6,0,Kyle Freeland,John Brebbia
+2022-09-20,Oakland Athletics,Seattle Mariners,4,1,1,JP Sears,Luis Castillo
+2022-09-20,San Diego Padres,St. Louis Cardinals,5,0,1,Mike Clevinger,Adam Wainwright
+2022-09-21,Atlanta Braves,Washington Nationals,2,3,0,Bryce Elder,Paolo Espino
+2022-09-21,Milwaukee Brewers,New York Mets,6,0,1,Adrian Houser,Taijuan Walker
+2022-09-21,Cincinnati Reds,Boston Red Sox,5,1,1,Chase Anderson,Connor Seabold
+2022-09-21,Tampa Bay Rays,Houston Astros,2,5,0,Corey Kluber,Lance McCullers Jr.
+2022-09-21,Miami Marlins,Chicago Cubs,3,4,0,Jesús Luzardo,Marcus Stroman
+2022-09-21,Philadelphia Phillies,Toronto Blue Jays,4,3,1,Zack Wheeler,Kevin Gausman
+2022-09-21,Baltimore Orioles,Detroit Tigers,8,1,1,Jordan Lyles,Matt Manning
+2022-09-21,New York Yankees,Pittsburgh Pirates,14,2,1,Luis Severino,Roansy Contreras
+2022-09-21,Texas Rangers,Los Angeles Angels,7,2,1,Dane Dunning,Tucker Davidson
+2022-09-21,Kansas City Royals,Minnesota Twins,5,2,1,Daniel Lynch IV,Bailey Ober
+2022-09-21,Chicago White Sox,Cleveland Guardians,2,8,0,Lance Lynn,Triston McKenzie
+2022-09-21,Colorado Rockies,San Francisco Giants,1,6,0,Germán Márquez,Logan Webb
+2022-09-21,Oakland Athletics,Seattle Mariners,2,1,1,James Kaprielian,Robbie Ray
+2022-09-21,San Diego Padres,St. Louis Cardinals,1,0,1,Blake Snell,Miles Mikolas
+2022-09-21,Los Angeles Dodgers,Arizona Diamondbacks,1,6,0,Dustin May,Luis Diaz
+2022-09-22,Texas Rangers,Los Angeles Angels,5,3,1,Martín Pérez,Michael Lorenzen
+2022-09-22,Kansas City Royals,Minnesota Twins,4,1,1,Jonathan Heasley,Josh Winder
+2022-09-22,Colorado Rockies,San Francisco Giants,0,3,0,José Ureña,John Brebbia
+2022-09-22,Oakland Athletics,Seattle Mariners,5,9,0,Adrián Martinez,George Kirby
+2022-09-22,San Diego Padres,St. Louis Cardinals,4,5,0,Joe Musgrove,Jack Flaherty
+2022-09-22,Pittsburgh Pirates,Chicago Cubs,2,3,0,Mitch Keller,Hayden Wesneski
+2022-09-22,Tampa Bay Rays,Toronto Blue Jays,10,5,1,JT Chargois,José Berríos
+2022-09-22,Cincinnati Reds,Milwaukee Brewers,1,5,0,Hunter Greene,Brandon Woodruff
+2022-09-22,Baltimore Orioles,Houston Astros,2,0,1,Kyle Bradish,Justin Verlander
+2022-09-22,Philadelphia Phillies,Atlanta Braves,1,0,1,Ranger Suarez,Max Fried
+2022-09-22,New York Yankees,Boston Red Sox,5,4,1,Jameson Taillon,Michael Wacha
+2022-09-22,Chicago White Sox,Cleveland Guardians,2,4,0,Johnny Cueto,Shane Bieber
+2022-09-22,Los Angeles Dodgers,Arizona Diamondbacks,3,2,1,Julio Urías,Zac Gallen
+2022-09-23,Pittsburgh Pirates,Chicago Cubs,5,6,0,Bryse Wilson,Javier Assad
+2022-09-23,Miami Marlins,Washington Nationals,5,2,1,Braxton Garrett,Josiah Gray
+2022-09-23,Cincinnati Reds,Milwaukee Brewers,3,5,0,Luis Cessa,Eric Lauer
+2022-09-23,Baltimore Orioles,Houston Astros,6,0,1,Dean Kremer,José Urquidy
+2022-09-23,Philadelphia Phillies,Atlanta Braves,9,1,1,Aaron Nola,Jake Odorizzi
+2022-09-23,New York Yankees,Boston Red Sox,5,4,1,Gerrit Cole,Rich Hill
+2022-09-23,Tampa Bay Rays,Toronto Blue Jays,10,6,1,Jeffrey Springs,Mitch White
+2022-09-23,Texas Rangers,Cleveland Guardians,3,6,0,Jon Gray,Cody Morris
+2022-09-23,Colorado Rockies,San Diego Padres,4,3,1,Ryan Feltner,Sean Manaea
+2022-09-23,Kansas City Royals,Seattle Mariners,5,1,1,Brady Singer,Marco Gonzales
+2022-09-23,Minnesota Twins,Los Angeles Angels,2,4,0,Louis Varland,Shohei Ohtani
+2022-09-23,Chicago White Sox,Detroit Tigers,3,5,0,Lucas Giolito,Eduardo Rodriguez
+2022-09-23,Oakland Athletics,New York Mets,2,9,0,Cole Irvin,Chris Bassitt
+2022-09-23,Arizona Diamondbacks,San Francisco Giants,5,6,0,Tommy Henry,Carlos Rodón
+2022-09-23,Los Angeles Dodgers,St. Louis Cardinals,0,11,0,Andrew Heaney,Jose Quintana
+2022-09-24,New York Yankees,Boston Red Sox,7,5,1,Domingo Germán,Nick Pivetta
+2022-09-24,Philadelphia Phillies,Atlanta Braves,3,6,0,Bailey Falter,Kyle Wright
+2022-09-24,Oakland Athletics,New York Mets,10,4,1,Ken Waldichuk,Jacob deGrom
+2022-09-24,Tampa Bay Rays,Toronto Blue Jays,1,3,0,Drew Rasmussen,Alek Manoah
+2022-09-24,Miami Marlins,Washington Nationals,4,1,1,Sandy Alcantara,Erick Fedde
+2022-09-24,Pittsburgh Pirates,Chicago Cubs,6,0,1,Johan Oviedo,Wade Miley
+2022-09-24,Cincinnati Reds,Milwaukee Brewers,2,10,0,Graham Ashcraft,Corbin Burnes
+2022-09-24,Baltimore Orioles,Houston Astros,10,11,0,Mike Baumann,Framber Valdez
+2022-09-24,Texas Rangers,Cleveland Guardians,2,4,0,Glenn Otto Jr.,Cal Quantrill
+2022-09-24,Kansas City Royals,Seattle Mariners,5,6,0,Kris Bubic,Logan Gilbert
+2022-09-24,Minnesota Twins,Los Angeles Angels,8,4,1,Joe Ryan,Reid Detmers
+2022-09-24,Chicago White Sox,Detroit Tigers,2,7,0,Davis Martin,Drew Hutchison
+2022-09-24,Colorado Rockies,San Diego Padres,3,9,0,Chad Kuhl,Yu Darvish
+2022-09-24,Arizona Diamondbacks,San Francisco Giants,5,2,1,Merrill Kelly,Alex Cobb
+2022-09-24,Los Angeles Dodgers,St. Louis Cardinals,6,2,1,Clayton Kershaw,Jordan Montgomery
+2022-09-25,Baltimore Orioles,Houston Astros,3,6,0,Austin Voth,Cristian Javier
+2022-09-25,Philadelphia Phillies,Atlanta Braves,7,8,0,Kyle Gibson,Charlie Morton
+2022-09-25,Tampa Bay Rays,Toronto Blue Jays,1,7,0,Shane McClanahan,Ross Stripling
+2022-09-25,Pittsburgh Pirates,Chicago Cubs,3,8,0,Luis Ortiz,Adrian Sampson
+2022-09-25,Miami Marlins,Washington Nationals,1,6,0,Edward Cabrera,Aníbal Sánchez
+2022-09-25,Cincinnati Reds,Milwaukee Brewers,2,1,1,Nick Lodolo,Freddy Peralta
+2022-09-25,Kansas City Royals,Seattle Mariners,13,12,1,Max Castillo,Luis Castillo
+2022-09-25,Minnesota Twins,Los Angeles Angels,3,10,0,Dylan Bundy,José Suarez
+2022-09-25,Chicago White Sox,Detroit Tigers,1,4,0,Dylan Cease,Tyler Alexander
+2022-09-25,Texas Rangers,Cleveland Guardians,4,10,0,Cole Ragans,Aaron Civale
+2022-09-25,Colorado Rockies,San Diego Padres,6,13,0,Kyle Freeland,Mike Clevinger
+2022-09-25,Arizona Diamondbacks,San Francisco Giants,2,3,0,Drey Jameson,Scott Alexander
+2022-09-25,Oakland Athletics,New York Mets,4,13,0,JP Sears,Max Scherzer
+2022-09-25,Los Angeles Dodgers,St. Louis Cardinals,4,1,1,Michael Grove,Adam Wainwright
+2022-09-26,Pittsburgh Pirates,Cincinnati Reds,8,3,1,Roansy Contreras,Chase Anderson
+2022-09-26,Washington Nationals,Atlanta Braves,0,8,0,Cory Abbott,Bryce Elder
+2022-09-26,Toronto Blue Jays,New York Yankees,3,2,1,Kevin Gausman,Luis Severino
+2022-09-26,Boston Red Sox,Baltimore Orioles,8,14,0,Connor Seabold,Jordan Lyles
+2022-09-27,Cleveland Guardians,Tampa Bay Rays,5,6,0,Shane Bieber,Corey Kluber
+2022-09-27,Pittsburgh Pirates,Cincinnati Reds,4,1,1,Mitch Keller,Hunter Greene
+2022-09-27,Detroit Tigers,Kansas City Royals,4,3,1,Joey Wentz,Zack Greinke
+2022-09-27,Washington Nationals,Atlanta Braves,2,8,0,Paolo Espino,Kyle Muller
+2022-09-27,Toronto Blue Jays,New York Yankees,2,5,0,José Berríos,Jameson Taillon
+2022-09-27,Boston Red Sox,Baltimore Orioles,13,9,1,Michael Wacha,Kyle Bradish
+2022-09-27,New York Mets,Miami Marlins,4,6,0,Carlos Carrasco,Pablo López
+2022-09-27,Chicago Cubs,Philadelphia Phillies,2,1,1,Marcus Stroman,Zack Wheeler
+2022-09-27,Minnesota Twins,Chicago White Sox,4,0,1,Bailey Ober,Lance Lynn
+2022-09-27,Milwaukee Brewers,St. Louis Cardinals,2,6,0,Adrian Houser,Miles Mikolas
+2022-09-27,Houston Astros,Arizona Diamondbacks,10,2,1,Luis Garcia,Zach Davies
+2022-09-27,Los Angeles Angels,Oakland Athletics,4,3,1,Patrick Sandoval,James Kaprielian
+2022-09-27,San Diego Padres,Los Angeles Dodgers,4,3,1,Blake Snell,Tyler Anderson
+2022-09-27,Seattle Mariners,Texas Rangers,0,5,0,Robbie Ray,Jesus Tinoco
+2022-09-27,San Francisco Giants,Colorado Rockies,5,2,1,Logan Webb,Germán Márquez
+2022-09-28,Pittsburgh Pirates,Cincinnati Reds,4,3,1,Bryse Wilson,Luis Cessa
+2022-09-28,Cleveland Guardians,Tampa Bay Rays,2,1,1,Triston McKenzie,Tyler Glasnow
+2022-09-28,Detroit Tigers,Kansas City Royals,2,1,1,Matt Manning,Daniel Lynch IV
+2022-09-28,Washington Nationals,Atlanta Braves,3,2,1,Josiah Gray,Jake Odorizzi
+2022-09-28,Toronto Blue Jays,New York Yankees,3,8,0,Mitch White,Gerrit Cole
+2022-09-28,Boston Red Sox,Baltimore Orioles,3,1,1,Rich Hill,Dean Kremer
+2022-09-28,New York Mets,Miami Marlins,5,4,1,Taijuan Walker,Jesús Luzardo
+2022-09-28,Chicago Cubs,Philadelphia Phillies,4,2,1,Hayden Wesneski,Aaron Nola
+2022-09-28,Minnesota Twins,Chicago White Sox,8,4,1,Josh Winder,Johnny Cueto
+2022-09-28,Milwaukee Brewers,St. Louis Cardinals,5,1,1,Brandon Woodruff,Jose Quintana
+2022-09-28,Houston Astros,Arizona Diamondbacks,2,5,0,Justin Verlander,Zac Gallen
+2022-09-28,Los Angeles Angels,Oakland Athletics,4,1,1,Michael Lorenzen,Adrián Martinez
+2022-09-28,San Diego Padres,Los Angeles Dodgers,0,1,0,Joe Musgrove,Julio Urías
+2022-09-28,Seattle Mariners,Texas Rangers,3,1,1,George Kirby,Martín Pérez
+2022-09-28,San Francisco Giants,Colorado Rockies,6,3,1,John Brebbia,José Ureña
+2022-09-29,Detroit Tigers,Kansas City Royals,10,3,1,Eduardo Rodriguez,Jonathan Heasley
+2022-09-29,Minnesota Twins,Chicago White Sox,3,4,0,Louis Varland,Lucas Giolito
+2022-09-29,Boston Red Sox,Baltimore Orioles,5,3,1,Nathan Eovaldi,Mike Baumann
+2022-09-29,Chicago Cubs,Philadelphia Phillies,2,0,1,Javier Assad,Ranger Suarez
+2022-09-29,Cleveland Guardians,Tampa Bay Rays,2,1,1,Cal Quantrill,Jeffrey Springs
+2022-09-29,Milwaukee Brewers,Miami Marlins,2,4,0,Eric Lauer,Braxton Garrett
+2022-09-29,Los Angeles Angels,Oakland Athletics,4,2,1,Shohei Ohtani,Cole Irvin
+2022-09-29,San Diego Padres,Los Angeles Dodgers,2,5,0,Steven Wilson,Brusdar Graterol
+2022-09-29,Seattle Mariners,Texas Rangers,10,9,1,Marco Gonzales,Jon Gray
+2022-09-29,San Francisco Giants,Colorado Rockies,6,4,1,Carlos Rodón,Ryan Feltner
+2022-09-30,Washington Nationals,Philadelphia Phillies,1,5,0,Erick Fedde,Bailey Falter
+2022-09-30,Chicago Cubs,Cincinnati Reds,6,1,1,Adrian Sampson,Graham Ashcraft
+2022-09-30,New York Yankees,Baltimore Orioles,1,2,0,Domingo Germán,Jordan Lyles
+2022-09-30,Toronto Blue Jays,Boston Red Sox,9,0,1,Alek Manoah,Nick Pivetta
+2022-09-30,Cleveland Guardians,Kansas City Royals,6,3,1,Aaron Civale,Brady Singer
+2022-09-30,Detroit Tigers,Minnesota Twins,0,7,0,Tyler Alexander,Joe Ryan
+2022-09-30,Atlanta Braves,New York Mets,5,2,1,Max Fried,Jacob deGrom
+2022-09-30,Houston Astros,Tampa Bay Rays,3,7,0,Framber Valdez,Drew Rasmussen
+2022-09-30,Milwaukee Brewers,Miami Marlins,1,0,1,Corbin Burnes,Sandy Alcantara
+2022-09-30,St. Louis Cardinals,Pittsburgh Pirates,2,1,1,Jack Flaherty,Johan Oviedo
+2022-09-30,Los Angeles Angels,Texas Rangers,4,1,1,Reid Detmers,Glenn Otto Jr.
+2022-09-30,Seattle Mariners,Oakland Athletics,2,1,1,Logan Gilbert,Ken Waldichuk
+2022-09-30,San Diego Padres,Chicago White Sox,1,3,0,Yu Darvish,Davis Martin
+2022-09-30,Los Angeles Dodgers,Colorado Rockies,10,1,1,Clayton Kershaw,Chad Kuhl
+2022-09-30,San Francisco Giants,Arizona Diamondbacks,10,4,1,Alex Cobb,Merrill Kelly

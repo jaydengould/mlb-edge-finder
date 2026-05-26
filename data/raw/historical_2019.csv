@@ -1,0 +1,2424 @@
+game_date,home_name,away_name,home_score,away_score,home_win,home_starter_name,away_starter_name
+2019-03-20,Oakland Athletics,Seattle Mariners,7,9,0,Mike Fiers,Marco Gonzales
+2019-03-21,Oakland Athletics,Seattle Mariners,4,5,0,Marco Estrada,Yusei Kikuchi
+2019-03-28,Washington Nationals,New York Mets,0,2,0,Max Scherzer,Jacob deGrom
+2019-03-28,New York Yankees,Baltimore Orioles,7,2,1,Masahiro Tanaka,Andrew Cashner
+2019-03-28,Milwaukee Brewers,St. Louis Cardinals,5,4,1,Jhoulys Chacín,Miles Mikolas
+2019-03-28,Philadelphia Phillies,Atlanta Braves,10,4,1,Aaron Nola,Julio Teheran
+2019-03-28,Toronto Blue Jays,Detroit Tigers,0,2,0,Marcus Stroman,Jordan Zimmermann
+2019-03-28,Tampa Bay Rays,Houston Astros,1,5,0,Blake Snell,Justin Verlander
+2019-03-28,Texas Rangers,Chicago Cubs,4,12,0,Mike Minor,Jon Lester
+2019-03-28,Oakland Athletics,Los Angeles Angels,4,0,1,Mike Fiers,Trevor Cahill
+2019-03-28,Los Angeles Dodgers,Arizona Diamondbacks,12,5,1,Hyun Jin Ryu,Zack Greinke
+2019-03-28,Cincinnati Reds,Pittsburgh Pirates,5,3,1,Luis Castillo,Jameson Taillon
+2019-03-28,San Diego Padres,San Francisco Giants,2,0,1,Eric Lauer,Madison Bumgarner
+2019-03-28,Minnesota Twins,Cleveland Indians,2,0,1,José Berríos,Corey Kluber
+2019-03-28,Miami Marlins,Colorado Rockies,3,6,0,José Ureña,Kyle Freeland
+2019-03-28,Kansas City Royals,Chicago White Sox,5,3,1,Brad Keller,Carlos Rodón
+2019-03-28,Seattle Mariners,Boston Red Sox,12,4,1,Marco Gonzales,Chris Sale
+2019-03-29,Toronto Blue Jays,Detroit Tigers,6,0,1,Matt Shoemaker,Matthew Boyd
+2019-03-29,Tampa Bay Rays,Houston Astros,4,2,1,Charlie Morton,Gerrit Cole
+2019-03-29,Miami Marlins,Colorado Rockies,1,6,0,Trevor Richards,Germán Márquez
+2019-03-29,Milwaukee Brewers,St. Louis Cardinals,5,9,0,Freddy Peralta,Jack Flaherty
+2019-03-29,Oakland Athletics,Los Angeles Angels,2,6,0,Marco Estrada,Matt Harvey
+2019-03-29,Los Angeles Dodgers,Arizona Diamondbacks,4,5,0,Ross Stripling,Robbie Ray
+2019-03-29,Seattle Mariners,Boston Red Sox,6,7,0,Yusei Kikuchi,Nathan Eovaldi
+2019-03-29,San Diego Padres,San Francisco Giants,4,1,1,Joey Lucchesi,Derek Holland
+2019-03-30,Washington Nationals,New York Mets,8,11,0,Stephen Strasburg,Noah Syndergaard
+2019-03-30,New York Yankees,Baltimore Orioles,3,5,0,James Paxton,Nate Karns
+2019-03-30,Minnesota Twins,Cleveland Indians,1,2,0,Jake Odorizzi,Trevor Bauer
+2019-03-30,Kansas City Royals,Chicago White Sox,8,6,1,Jakob Junis,Reynaldo López
+2019-03-30,Toronto Blue Jays,Detroit Tigers,3,0,1,Aaron Sanchez,Spencer Turnbull
+2019-03-30,Philadelphia Phillies,Atlanta Braves,8,6,1,Nick Pivetta,Bryse Wilson
+2019-03-30,Tampa Bay Rays,Houston Astros,3,1,1,Tyler Glasnow,Collin McHugh
+2019-03-30,Miami Marlins,Colorado Rockies,7,3,1,Pablo López,Tyler Anderson
+2019-03-30,Milwaukee Brewers,St. Louis Cardinals,4,2,1,Brandon Woodruff,Dakota Hudson
+2019-03-30,Texas Rangers,Chicago Cubs,8,6,1,Edinson Volquez,Yu Darvish
+2019-03-30,San Diego Padres,San Francisco Giants,2,3,0,Nick Margevicius,Dereck Rodríguez
+2019-03-30,Oakland Athletics,Los Angeles Angels,4,2,1,Brett Anderson,Félix Peña
+2019-03-30,Los Angeles Dodgers,Arizona Diamondbacks,18,5,1,Kenta Maeda,Zack Godley
+2019-03-30,Seattle Mariners,Boston Red Sox,6,5,1,Mike Leake,Eduardo Rodriguez
+2019-03-31,New York Yankees,Baltimore Orioles,5,7,0,J.A. Happ,Dylan Bundy
+2019-03-31,Toronto Blue Jays,Detroit Tigers,3,4,0,Trent Thornton,Matt Moore
+2019-03-31,Cincinnati Reds,Pittsburgh Pirates,0,5,0,Sonny Gray,Trevor Williams
+2019-03-31,Tampa Bay Rays,Houston Astros,3,1,1,Yonny Chirinos,Wade Miley
+2019-03-31,Miami Marlins,Colorado Rockies,3,0,1,Sandy Alcantara,Jon Gray
+2019-03-31,Washington Nationals,New York Mets,6,5,1,Patrick Corbin,Zack Wheeler
+2019-03-31,Minnesota Twins,Cleveland Indians,9,3,1,Michael Pineda,Carlos Carrasco
+2019-03-31,Milwaukee Brewers,St. Louis Cardinals,5,4,1,Corbin Burnes,Michael Wacha
+2019-03-31,Kansas City Royals,Chicago White Sox,3,6,0,Jorge López,Lucas Giolito
+2019-03-31,Texas Rangers,Chicago Cubs,11,10,1,Lance Lynn,Cole Hamels
+2019-03-31,Oakland Athletics,Los Angeles Angels,2,1,1,Frankie Montas,Tyler Skaggs
+2019-03-31,Los Angeles Dodgers,Arizona Diamondbacks,8,7,1,Walker Buehler,Luke Weaver
+2019-03-31,Seattle Mariners,Boston Red Sox,10,8,1,Wade LeBlanc,Rick Porcello
+2019-03-31,San Diego Padres,San Francisco Giants,3,1,1,Chris Paddack,Jeff Samardzija
+2019-03-31,Philadelphia Phillies,Atlanta Braves,5,1,1,Jake Arrieta,Kyle Wright
+2019-04-01,Pittsburgh Pirates,St. Louis Cardinals,5,6,0,Chris Archer,Adam Wainwright
+2019-04-01,Cleveland Indians,Chicago White Sox,5,3,1,Mike Clevinger,Iván Nova
+2019-04-01,New York Yankees,Detroit Tigers,3,1,1,Domingo Germán,Tyson Ross
+2019-04-01,Cincinnati Reds,Milwaukee Brewers,3,4,0,Tanner Roark,Zach Davies
+2019-04-01,Toronto Blue Jays,Baltimore Orioles,5,6,0,Sean Reid-Foley,David Hess
+2019-04-01,Tampa Bay Rays,Colorado Rockies,7,1,1,Ryne Stanek,Chad Bettis
+2019-04-01,Atlanta Braves,Chicago Cubs,8,0,1,Sean Newcomb,Kyle Hendricks
+2019-04-01,Miami Marlins,New York Mets,3,7,0,Caleb Smith,Steven Matz
+2019-04-01,Texas Rangers,Houston Astros,1,2,0,Drew Smyly,Brad Peacock
+2019-04-01,Oakland Athletics,Boston Red Sox,7,0,1,Aaron Brooks,David Price
+2019-04-01,San Diego Padres,Arizona Diamondbacks,3,10,0,Matt Strahm,Merrill Kelly
+2019-04-01,Seattle Mariners,Los Angeles Angels,6,3,1,Félix Hernández,Chris Stratton
+2019-04-01,Los Angeles Dodgers,San Francisco Giants,2,4,0,Julio Urías,Drew Pomeranz
+2019-04-02,New York Yankees,Detroit Tigers,1,3,0,Masahiro Tanaka,Jordan Zimmermann
+2019-04-02,Cincinnati Reds,Milwaukee Brewers,3,4,0,Anthony DeSclafani,Jhoulys Chacín
+2019-04-02,Washington Nationals,Philadelphia Phillies,2,8,0,Max Scherzer,Zach Eflin
+2019-04-02,Toronto Blue Jays,Baltimore Orioles,1,2,0,Marcus Stroman,Andrew Cashner
+2019-04-02,Tampa Bay Rays,Colorado Rockies,4,0,1,Blake Snell,Kyle Freeland
+2019-04-02,Miami Marlins,New York Mets,5,6,0,José Ureña,Jason Vargas
+2019-04-02,Texas Rangers,Houston Astros,6,4,1,Shelby Miller,Justin Verlander
+2019-04-02,Kansas City Royals,Minnesota Twins,4,5,0,Brad Keller,José Berríos
+2019-04-02,Oakland Athletics,Boston Red Sox,1,0,1,Mike Fiers,Chris Sale
+2019-04-02,San Diego Padres,Arizona Diamondbacks,5,8,0,Eric Lauer,Zack Greinke
+2019-04-02,Seattle Mariners,Los Angeles Angels,2,1,1,Marco Gonzales,Trevor Cahill
+2019-04-02,Los Angeles Dodgers,San Francisco Giants,6,5,1,Hyun Jin Ryu,Madison Bumgarner
+2019-04-03,Cincinnati Reds,Milwaukee Brewers,0,1,0,Luis Castillo,Freddy Peralta
+2019-04-03,Washington Nationals,Philadelphia Phillies,9,8,1,Aníbal Sánchez,Aaron Nola
+2019-04-03,Tampa Bay Rays,Colorado Rockies,0,1,0,Charlie Morton,Germán Márquez
+2019-04-03,Cleveland Indians,Chicago White Sox,3,8,0,Corey Kluber,Carlos Rodón
+2019-04-03,Kansas City Royals,Minnesota Twins,6,7,0,Homer Bailey,Kyle Gibson
+2019-04-03,San Diego Padres,Arizona Diamondbacks,4,1,1,Joey Lucchesi,Robbie Ray
+2019-04-03,New York Yankees,Detroit Tigers,1,2,0,Jonathan Loáisiga,Matthew Boyd
+2019-04-03,Toronto Blue Jays,Baltimore Orioles,5,3,1,Matt Shoemaker,Nate Karns
+2019-04-03,Miami Marlins,New York Mets,4,6,0,Trevor Richards,Jacob deGrom
+2019-04-03,Pittsburgh Pirates,St. Louis Cardinals,4,5,0,Jameson Taillon,Miles Mikolas
+2019-04-03,Atlanta Braves,Chicago Cubs,6,4,1,Julio Teheran,Jon Lester
+2019-04-03,Texas Rangers,Houston Astros,4,0,1,Mike Minor,Gerrit Cole
+2019-04-03,Oakland Athletics,Boston Red Sox,3,6,0,Marco Estrada,Nathan Eovaldi
+2019-04-03,Los Angeles Dodgers,San Francisco Giants,5,3,1,Ross Stripling,Derek Holland
+2019-04-04,Detroit Tigers,Kansas City Royals,5,4,1,Spencer Turnbull,Jakob Junis
+2019-04-04,New York Mets,Washington Nationals,0,4,0,Noah Syndergaard,Stephen Strasburg
+2019-04-04,Baltimore Orioles,New York Yankees,4,8,0,Alex Cobb,James Paxton
+2019-04-04,Oakland Athletics,Boston Red Sox,7,3,1,Brett Anderson,Eduardo Rodriguez
+2019-04-04,Cleveland Indians,Toronto Blue Jays,4,1,1,Trevor Bauer,Aaron Sanchez
+2019-04-04,Pittsburgh Pirates,Cincinnati Reds,2,0,1,Jordan Lyles,Tyler Mahle
+2019-04-04,Atlanta Braves,Chicago Cubs,9,4,1,Max Fried,Yu Darvish
+2019-04-04,Los Angeles Angels,Texas Rangers,4,11,0,Matt Harvey,Edinson Volquez
+2019-04-05,Chicago White Sox,Seattle Mariners,10,8,1,Reynaldo López,Yusei Kikuchi
+2019-04-05,Colorado Rockies,Los Angeles Dodgers,6,10,0,Tyler Anderson,Kenta Maeda
+2019-04-05,St. Louis Cardinals,San Diego Padres,3,5,0,Jack Flaherty,Nick Margevicius
+2019-04-05,San Francisco Giants,Tampa Bay Rays,2,5,0,Dereck Rodríguez,Tyler Glasnow
+2019-04-05,Pittsburgh Pirates,Cincinnati Reds,2,0,1,Joe Musgrove,Sonny Gray
+2019-04-05,Philadelphia Phillies,Minnesota Twins,10,4,1,Nick Pivetta,Jake Odorizzi
+2019-04-05,Arizona Diamondbacks,Boston Red Sox,15,8,1,Zack Godley,Rick Porcello
+2019-04-05,Cleveland Indians,Toronto Blue Jays,3,2,1,Shane Bieber,Trent Thornton
+2019-04-05,Atlanta Braves,Miami Marlins,4,0,1,Kevin Gausman,Pablo López
+2019-04-05,Houston Astros,Oakland Athletics,3,2,1,Collin McHugh,Frankie Montas
+2019-04-05,Milwaukee Brewers,Chicago Cubs,13,10,1,Brandon Woodruff,Jose Quintana
+2019-04-05,Los Angeles Angels,Texas Rangers,3,1,1,Félix Peña,Lance Lynn
+2019-04-06,Detroit Tigers,Kansas City Royals,7,4,1,Matt Moore,Jorge López
+2019-04-06,New York Mets,Washington Nationals,6,5,1,Steven Matz,Patrick Corbin
+2019-04-06,Pittsburgh Pirates,Cincinnati Reds,6,5,1,Trevor Williams,Tanner Roark
+2019-04-06,Philadelphia Phillies,Minnesota Twins,2,6,0,Jake Arrieta,Michael Pineda
+2019-04-06,Chicago White Sox,Seattle Mariners,2,9,0,Lucas Giolito,Mike Leake
+2019-04-06,St. Louis Cardinals,San Diego Padres,4,6,0,Michael Wacha,Chris Paddack
+2019-04-06,San Francisco Giants,Tampa Bay Rays,6,4,1,Jeff Samardzija,Ryne Stanek
+2019-04-06,Los Angeles Angels,Texas Rangers,5,1,1,Tyler Skaggs,Drew Smyly
+2019-04-06,Cleveland Indians,Toronto Blue Jays,7,2,1,Carlos Carrasco,Thomas Pannone
+2019-04-06,Baltimore Orioles,New York Yankees,4,6,0,Dylan Bundy,J.A. Happ
+2019-04-06,Houston Astros,Oakland Athletics,6,0,1,Wade Miley,Aaron Brooks
+2019-04-06,Milwaukee Brewers,Chicago Cubs,8,14,0,Corbin Burnes,Cole Hamels
+2019-04-06,Atlanta Braves,Miami Marlins,2,4,0,Kyle Wright,Sandy Alcantara
+2019-04-06,Arizona Diamondbacks,Boston Red Sox,5,4,1,Luke Weaver,David Price
+2019-04-06,Colorado Rockies,Los Angeles Dodgers,2,7,0,Jon Gray,Walker Buehler
+2019-04-07,Philadelphia Phillies,Minnesota Twins,2,1,1,Zach Eflin,José Berríos
+2019-04-07,Baltimore Orioles,New York Yankees,3,15,0,David Hess,Domingo Germán
+2019-04-07,Detroit Tigers,Kansas City Royals,3,1,1,Tyson Ross,Brad Keller
+2019-04-07,New York Mets,Washington Nationals,9,12,0,Zack Wheeler,Max Scherzer
+2019-04-07,Cleveland Indians,Toronto Blue Jays,3,1,1,Mike Clevinger,Marcus Stroman
+2019-04-07,Atlanta Braves,Miami Marlins,4,3,1,Sean Newcomb,Caleb Smith
+2019-04-07,Pittsburgh Pirates,Cincinnati Reds,7,5,1,Chris Archer,Anthony DeSclafani
+2019-04-07,Houston Astros,Oakland Athletics,9,8,1,Brad Peacock,Mike Fiers
+2019-04-07,Chicago White Sox,Seattle Mariners,5,12,0,Iván Nova,Wade LeBlanc
+2019-04-07,Milwaukee Brewers,Chicago Cubs,4,2,1,Zach Davies,Kyle Hendricks
+2019-04-07,St. Louis Cardinals,San Diego Padres,4,1,1,Adam Wainwright,Matt Strahm
+2019-04-07,San Francisco Giants,Tampa Bay Rays,0,3,0,Drew Pomeranz,Yonny Chirinos
+2019-04-07,Los Angeles Angels,Texas Rangers,7,2,1,Chris Stratton,Shelby Miller
+2019-04-07,Arizona Diamondbacks,Boston Red Sox,0,1,0,Merrill Kelly,Hector Velázquez
+2019-04-07,Colorado Rockies,Los Angeles Dodgers,6,12,0,Chad Bettis,Julio Urías
+2019-04-08,Chicago White Sox,Tampa Bay Rays,1,5,0,Carlos Rodón,Blake Snell
+2019-04-08,Chicago Cubs,Pittsburgh Pirates,10,0,1,Jon Lester,Jameson Taillon
+2019-04-08,Baltimore Orioles,Oakland Athletics,12,4,1,Andrew Cashner,Marco Estrada
+2019-04-08,Philadelphia Phillies,Washington Nationals,4,3,1,Vince Velasquez,Aníbal Sánchez
+2019-04-08,Houston Astros,New York Yankees,4,3,1,Justin Verlander,Masahiro Tanaka
+2019-04-08,St. Louis Cardinals,Los Angeles Dodgers,4,3,1,Miles Mikolas,Hyun Jin Ryu
+2019-04-08,Kansas City Royals,Seattle Mariners,5,13,0,Homer Bailey,Félix Hernández
+2019-04-08,Colorado Rockies,Atlanta Braves,6,8,0,Kyle Freeland,Julio Teheran
+2019-04-08,San Francisco Giants,San Diego Padres,5,6,0,Madison Bumgarner,Eric Lauer
+2019-04-08,Los Angeles Angels,Milwaukee Brewers,5,2,1,Trevor Cahill,Jhoulys Chacín
+2019-04-09,Detroit Tigers,Cleveland Indians,2,8,0,Jordan Zimmermann,Corey Kluber
+2019-04-09,Boston Red Sox,Toronto Blue Jays,5,7,0,Chris Sale,Matt Shoemaker
+2019-04-09,Chicago White Sox,Tampa Bay Rays,5,10,0,Ervin Santana,Charlie Morton
+2019-04-09,Cincinnati Reds,Miami Marlins,14,0,1,Luis Castillo,José Ureña
+2019-04-09,Baltimore Orioles,Oakland Athletics,2,13,0,John Means,Brett Anderson
+2019-04-09,Philadelphia Phillies,Washington Nationals,6,10,0,Aaron Nola,Stephen Strasburg
+2019-04-09,New York Mets,Minnesota Twins,8,14,0,Jacob deGrom,Kyle Gibson
+2019-04-09,St. Louis Cardinals,Los Angeles Dodgers,4,0,1,Dakota Hudson,Ross Stripling
+2019-04-09,Houston Astros,New York Yankees,6,3,1,Gerrit Cole,Jonathan Loáisiga
+2019-04-09,Kansas City Royals,Seattle Mariners,3,6,0,Jakob Junis,Marco Gonzales
+2019-04-09,Colorado Rockies,Atlanta Braves,1,7,0,Germán Márquez,Max Fried
+2019-04-09,Arizona Diamondbacks,Texas Rangers,5,4,1,Zack Greinke,Mike Minor
+2019-04-09,San Francisco Giants,San Diego Padres,7,2,1,Derek Holland,Joey Lucchesi
+2019-04-09,Los Angeles Angels,Milwaukee Brewers,11,8,1,Matt Harvey,Freddy Peralta
+2019-04-10,Detroit Tigers,Cleveland Indians,4,1,1,Matthew Boyd,Trevor Bauer
+2019-04-10,Chicago White Sox,Tampa Bay Rays,1,9,0,Reynaldo López,Tyler Glasnow
+2019-04-10,San Francisco Giants,San Diego Padres,1,3,0,Dereck Rodríguez,Nick Margevicius
+2019-04-10,Cincinnati Reds,Miami Marlins,2,1,1,Tyler Mahle,Trevor Richards
+2019-04-10,Baltimore Orioles,Oakland Athletics,3,10,0,Dan Straily,Frankie Montas
+2019-04-10,Philadelphia Phillies,Washington Nationals,1,15,0,Nick Pivetta,Jeremy Hellickson
+2019-04-10,New York Mets,Minnesota Twins,9,6,1,Noah Syndergaard,Jake Odorizzi
+2019-04-10,Houston Astros,New York Yankees,8,6,1,Collin McHugh,James Paxton
+2019-04-10,St. Louis Cardinals,Los Angeles Dodgers,7,2,1,Jack Flaherty,Kenta Maeda
+2019-04-10,Chicago Cubs,Pittsburgh Pirates,2,5,0,Yu Darvish,Jordan Lyles
+2019-04-10,Kansas City Royals,Seattle Mariners,5,6,0,Heath Fillmyer,Yusei Kikuchi
+2019-04-10,Arizona Diamondbacks,Texas Rangers,2,5,0,Robbie Ray,Lance Lynn
+2019-04-10,Los Angeles Angels,Milwaukee Brewers,4,2,1,Félix Peña,Brandon Woodruff
+2019-04-11,Baltimore Orioles,Oakland Athletics,5,8,0,Dylan Bundy,Aaron Brooks
+2019-04-11,Cincinnati Reds,Miami Marlins,5,0,1,Sonny Gray,Pablo López
+2019-04-11,Detroit Tigers,Cleveland Indians,0,4,0,Spencer Turnbull,Shane Bieber
+2019-04-11,Kansas City Royals,Seattle Mariners,6,7,0,Jorge López,Mike Leake
+2019-04-11,St. Louis Cardinals,Los Angeles Dodgers,11,7,1,Michael Wacha,Walker Buehler
+2019-04-11,Boston Red Sox,Toronto Blue Jays,7,6,1,Nathan Eovaldi,Aaron Sanchez
+2019-04-11,Atlanta Braves,New York Mets,3,6,0,Kevin Gausman,Steven Matz
+2019-04-11,Chicago Cubs,Pittsburgh Pirates,2,0,1,Jose Quintana,Joe Musgrove
+2019-04-11,Arizona Diamondbacks,San Diego Padres,6,7,0,Zack Godley,Pedro Avila
+2019-04-11,San Francisco Giants,Colorado Rockies,1,0,1,Jeff Samardzija,Jon Gray
+2019-04-12,Chicago Cubs,Los Angeles Angels,5,1,1,Cole Hamels,Tyler Skaggs
+2019-04-12,Washington Nationals,Pittsburgh Pirates,3,6,0,Patrick Corbin,Trevor Williams
+2019-04-12,Toronto Blue Jays,Tampa Bay Rays,7,11,0,Trent Thornton,Ryne Stanek
+2019-04-12,Boston Red Sox,Baltimore Orioles,6,4,1,Eduardo Rodriguez,David Hess
+2019-04-12,Miami Marlins,Philadelphia Phillies,1,9,0,Sandy Alcantara,Jake Arrieta
+2019-04-12,Atlanta Braves,New York Mets,2,6,0,Kyle Wright,Zack Wheeler
+2019-04-12,Texas Rangers,Oakland Athletics,6,8,0,Drew Smyly,Mike Fiers
+2019-04-12,Kansas City Royals,Cleveland Indians,8,1,1,Brad Keller,Carlos Carrasco
+2019-04-12,Arizona Diamondbacks,San Diego Padres,1,2,0,Luke Weaver,Chris Paddack
+2019-04-12,Seattle Mariners,Houston Astros,6,10,0,Wade LeBlanc,Wade Miley
+2019-04-12,Los Angeles Dodgers,Milwaukee Brewers,5,8,0,Julio Urías,Corbin Burnes
+2019-04-12,San Francisco Giants,Colorado Rockies,3,2,1,Drew Pomeranz,Chad Bettis
+2019-04-13,Boston Red Sox,Baltimore Orioles,5,9,0,Rick Porcello,Andrew Cashner
+2019-04-13,New York Yankees,Chicago White Sox,4,0,1,CC Sabathia,Iván Nova
+2019-04-13,Minnesota Twins,Detroit Tigers,4,3,1,Michael Pineda,Tyson Ross
+2019-04-13,Chicago Cubs,Los Angeles Angels,5,6,0,Kyle Hendricks,Chris Stratton
+2019-04-13,Toronto Blue Jays,Tampa Bay Rays,3,1,1,Clay Buchholz,Blake Snell
+2019-04-13,Washington Nationals,Pittsburgh Pirates,3,2,1,Aníbal Sánchez,Chris Archer
+2019-04-13,San Francisco Giants,Colorado Rockies,5,2,1,Madison Bumgarner,Kyle Freeland
+2019-04-13,Miami Marlins,Philadelphia Phillies,10,3,1,Caleb Smith,Zach Eflin
+2019-04-13,Cincinnati Reds,St. Louis Cardinals,5,2,1,Tanner Roark,Adam Wainwright
+2019-04-13,Kansas City Royals,Cleveland Indians,3,0,1,Homer Bailey,Jefry Rodriguez
+2019-04-13,Atlanta Braves,New York Mets,11,7,1,Sean Newcomb,Jason Vargas
+2019-04-13,Arizona Diamondbacks,San Diego Padres,4,5,0,Merrill Kelly,Matt Strahm
+2019-04-13,Seattle Mariners,Houston Astros,1,3,0,Félix Hernández,Justin Verlander
+2019-04-13,Los Angeles Dodgers,Milwaukee Brewers,1,4,0,Caleb Ferguson,Zach Davies
+2019-04-14,Boston Red Sox,Baltimore Orioles,4,0,1,David Price,John Means
+2019-04-14,New York Yankees,Chicago White Sox,2,5,0,Masahiro Tanaka,Carlos Rodón
+2019-04-14,Toronto Blue Jays,Tampa Bay Rays,4,8,0,Marcus Stroman,Charlie Morton
+2019-04-14,Miami Marlins,Philadelphia Phillies,1,3,0,José Ureña,Vince Velasquez
+2019-04-14,Washington Nationals,Pittsburgh Pirates,3,4,0,Max Scherzer,Jameson Taillon
+2019-04-14,Minnesota Twins,Detroit Tigers,6,4,1,José Berríos,Jordan Zimmermann
+2019-04-14,Kansas City Royals,Cleveland Indians,9,8,1,Jakob Junis,Corey Kluber
+2019-04-14,Texas Rangers,Oakland Athletics,8,7,1,Adrian Sampson,Brett Anderson
+2019-04-14,San Francisco Giants,Colorado Rockies,0,4,0,Derek Holland,Germán Márquez
+2019-04-14,Arizona Diamondbacks,San Diego Padres,8,4,1,Zack Greinke,Eric Lauer
+2019-04-14,Seattle Mariners,Houston Astros,2,3,0,Marco Gonzales,Gerrit Cole
+2019-04-14,Cincinnati Reds,St. Louis Cardinals,5,9,0,Anthony DeSclafani,Miles Mikolas
+2019-04-14,Los Angeles Dodgers,Milwaukee Brewers,7,1,1,Ross Stripling,Jhoulys Chacín
+2019-04-14,Atlanta Braves,New York Mets,7,3,1,Julio Teheran,Jacob deGrom
+2019-04-15,Boston Red Sox,Baltimore Orioles,1,8,0,Hector Velázquez,Dan Straily
+2019-04-15,Philadelphia Phillies,New York Mets,6,7,0,Aaron Nola,Noah Syndergaard
+2019-04-15,Miami Marlins,Chicago Cubs,2,7,0,Trevor Richards,Yu Darvish
+2019-04-15,Minnesota Twins,Toronto Blue Jays,3,5,0,Martín Pérez,Matt Shoemaker
+2019-04-15,Milwaukee Brewers,St. Louis Cardinals,10,7,1,Freddy Peralta,Dakota Hudson
+2019-04-15,Texas Rangers,Los Angeles Angels,12,7,1,Shelby Miller,Trevor Cahill
+2019-04-15,Chicago White Sox,Kansas City Royals,5,4,1,Ervin Santana,Heath Fillmyer
+2019-04-15,Los Angeles Dodgers,Cincinnati Reds,4,3,1,Clayton Kershaw,Luis Castillo
+2019-04-15,San Diego Padres,Colorado Rockies,2,5,0,Joey Lucchesi,Antonio Senzatela
+2019-04-15,Seattle Mariners,Cleveland Indians,4,6,0,Yusei Kikuchi,Trevor Bauer
+2019-04-16,New York Yankees,Boston Red Sox,8,0,1,James Paxton,Chris Sale
+2019-04-16,Detroit Tigers,Pittsburgh Pirates,3,5,0,Matthew Boyd,Joe Musgrove
+2019-04-16,Washington Nationals,San Francisco Giants,3,7,0,Stephen Strasburg,Dereck Rodríguez
+2019-04-16,Philadelphia Phillies,New York Mets,14,3,1,Nick Pivetta,Steven Matz
+2019-04-16,Tampa Bay Rays,Baltimore Orioles,4,2,1,Tyler Glasnow,Dylan Bundy
+2019-04-16,Miami Marlins,Chicago Cubs,0,4,0,Pablo López,Jose Quintana
+2019-04-16,Atlanta Braves,Arizona Diamondbacks,6,9,0,Max Fried,Robbie Ray
+2019-04-16,Minnesota Twins,Toronto Blue Jays,5,6,0,Kyle Gibson,Aaron Sanchez
+2019-04-16,Milwaukee Brewers,St. Louis Cardinals,8,4,1,Brandon Woodruff,Jack Flaherty
+2019-04-16,Texas Rangers,Los Angeles Angels,5,0,1,Mike Minor,Jaime Barria
+2019-04-16,Chicago White Sox,Kansas City Royals,5,1,1,Reynaldo López,Jorge López
+2019-04-16,San Diego Padres,Colorado Rockies,2,8,0,Nick Margevicius,Jon Gray
+2019-04-16,Oakland Athletics,Houston Astros,1,9,0,Marco Estrada,Collin McHugh
+2019-04-16,Los Angeles Dodgers,Cincinnati Reds,6,1,1,Kenta Maeda,Tyler Mahle
+2019-04-16,Seattle Mariners,Cleveland Indians,2,4,0,Mike Leake,Shane Bieber
+2019-04-17,Philadelphia Phillies,New York Mets,3,2,1,Jake Arrieta,Zack Wheeler
+2019-04-17,Milwaukee Brewers,St. Louis Cardinals,3,6,0,Corbin Burnes,Michael Wacha
+2019-04-17,Chicago White Sox,Kansas City Royals,3,4,0,Lucas Giolito,Brad Keller
+2019-04-17,Los Angeles Dodgers,Cincinnati Reds,3,2,1,Walker Buehler,Sonny Gray
+2019-04-17,New York Yankees,Boston Red Sox,5,3,1,J.A. Happ,Nathan Eovaldi
+2019-04-17,Detroit Tigers,Pittsburgh Pirates,2,3,0,Spencer Turnbull,Trevor Williams
+2019-04-17,Seattle Mariners,Cleveland Indians,0,1,0,Erik Swanson,Carlos Carrasco
+2019-04-17,Washington Nationals,San Francisco Giants,9,6,1,Jeremy Hellickson,Jeff Samardzija
+2019-04-17,Tampa Bay Rays,Baltimore Orioles,8,1,1,Ryne Stanek,David Hess
+2019-04-17,Miami Marlins,Chicago Cubs,0,6,0,Sandy Alcantara,Cole Hamels
+2019-04-17,Atlanta Braves,Arizona Diamondbacks,2,3,0,Kevin Gausman,Zack Godley
+2019-04-17,Minnesota Twins,Toronto Blue Jays,4,1,1,Jake Odorizzi,Trent Thornton
+2019-04-17,Texas Rangers,Los Angeles Angels,5,4,1,Lance Lynn,Matt Harvey
+2019-04-17,Oakland Athletics,Houston Astros,2,1,1,Frankie Montas,Wade Miley
+2019-04-18,Atlanta Braves,Arizona Diamondbacks,1,4,0,Michael Soroka,Luke Weaver
+2019-04-18,Washington Nationals,San Francisco Giants,4,2,1,Patrick Corbin,Drew Pomeranz
+2019-04-18,Minnesota Twins,Toronto Blue Jays,4,7,0,Michael Pineda,Clay Buchholz
+2019-04-18,Detroit Tigers,Chicago White Sox,9,7,1,Tyson Ross,Iván Nova
+2019-04-18,New York Yankees,Kansas City Royals,1,6,0,Domingo Germán,Homer Bailey
+2019-04-18,Tampa Bay Rays,Baltimore Orioles,5,6,0,Hunter Wood,Andrew Cashner
+2019-04-18,Milwaukee Brewers,Los Angeles Dodgers,1,3,0,Zach Davies,Julio Urías
+2019-04-18,Colorado Rockies,Philadelphia Phillies,6,2,1,Kyle Freeland,Zach Eflin
+2019-04-18,Los Angeles Angels,Seattle Mariners,10,11,0,Chris Stratton,Félix Hernández
+2019-04-18,San Diego Padres,Cincinnati Reds,1,4,0,Chris Paddack,Tanner Roark
+2019-04-19,Chicago Cubs,Arizona Diamondbacks,5,1,1,Kyle Hendricks,Merrill Kelly
+2019-04-19,Pittsburgh Pirates,San Francisco Giants,4,1,1,Jordan Lyles,Madison Bumgarner
+2019-04-19,New York Yankees,Kansas City Royals,6,2,1,CC Sabathia,Jakob Junis
+2019-04-19,Tampa Bay Rays,Boston Red Sox,4,6,0,Ryne Stanek,Eduardo Rodriguez
+2019-04-19,Detroit Tigers,Chicago White Sox,3,7,0,Jordan Zimmermann,Carlos Rodón
+2019-04-19,Miami Marlins,Washington Nationals,3,2,1,Caleb Smith,Aníbal Sánchez
+2019-04-19,Texas Rangers,Houston Astros,2,7,0,Drew Smyly,Justin Verlander
+2019-04-19,Milwaukee Brewers,Los Angeles Dodgers,3,5,0,Jhoulys Chacín,Ross Stripling
+2019-04-19,St. Louis Cardinals,New York Mets,4,5,0,Adam Wainwright,Jason Vargas
+2019-04-19,Colorado Rockies,Philadelphia Phillies,4,3,1,Germán Márquez,Vince Velasquez
+2019-04-19,Los Angeles Angels,Seattle Mariners,3,5,0,Félix Peña,Marco Gonzales
+2019-04-19,Oakland Athletics,Toronto Blue Jays,1,5,0,Aaron Brooks,Marcus Stroman
+2019-04-19,San Diego Padres,Cincinnati Reds,2,3,0,Matt Strahm,Anthony DeSclafani
+2019-04-20,New York Yankees,Kansas City Royals,9,2,1,Masahiro Tanaka,Heath Fillmyer
+2019-04-20,St. Louis Cardinals,New York Mets,10,2,1,Miles Mikolas,Chris Flexen
+2019-04-20,Chicago Cubs,Arizona Diamondbacks,0,6,0,Yu Darvish,Zack Greinke
+2019-04-20,Baltimore Orioles,Minnesota Twins,5,6,0,Dan Straily,José Berríos
+2019-04-20,Baltimore Orioles,Minnesota Twins,7,16,0,Alex Cobb,Martín Pérez
+2019-04-20,Oakland Athletics,Toronto Blue Jays,1,10,0,Mike Fiers,Matt Shoemaker
+2019-04-20,Cleveland Indians,Atlanta Braves,8,4,1,Corey Kluber,Julio Teheran
+2019-04-20,Cleveland Indians,Atlanta Braves,7,8,0,Trevor Bauer,Touki Toussaint
+2019-04-20,Tampa Bay Rays,Boston Red Sox,5,6,0,Charlie Morton,Rick Porcello
+2019-04-20,Miami Marlins,Washington Nationals,9,3,1,José Ureña,Max Scherzer
+2019-04-20,Milwaukee Brewers,Los Angeles Dodgers,5,0,1,Chase Anderson,Hyun Jin Ryu
+2019-04-20,Texas Rangers,Houston Astros,9,4,1,Adrian Sampson,Gerrit Cole
+2019-04-20,Colorado Rockies,Philadelphia Phillies,5,8,0,Antonio Senzatela,Aaron Nola
+2019-04-20,San Diego Padres,Cincinnati Reds,2,4,0,Eric Lauer,Luis Castillo
+2019-04-20,Los Angeles Angels,Seattle Mariners,5,6,0,Trevor Cahill,Yusei Kikuchi
+2019-04-21,Baltimore Orioles,Minnesota Twins,3,4,0,Dylan Bundy,Kyle Gibson
+2019-04-21,New York Yankees,Kansas City Royals,7,6,1,James Paxton,Jorge López
+2019-04-21,Detroit Tigers,Chicago White Sox,4,3,1,Daniel Norris,Reynaldo López
+2019-04-21,Miami Marlins,Washington Nationals,0,5,0,Trevor Richards,Stephen Strasburg
+2019-04-21,Pittsburgh Pirates,San Francisco Giants,2,3,0,Chris Archer,Dereck Rodríguez
+2019-04-21,Tampa Bay Rays,Boston Red Sox,3,4,0,Tyler Glasnow,David Price
+2019-04-21,Milwaukee Brewers,Los Angeles Dodgers,5,6,0,Brandon Woodruff,Clayton Kershaw
+2019-04-21,St. Louis Cardinals,New York Mets,6,4,1,Dakota Hudson,Noah Syndergaard
+2019-04-21,Chicago Cubs,Arizona Diamondbacks,2,1,1,Tyler Chatwood,Robbie Ray
+2019-04-21,Texas Rangers,Houston Astros,11,10,1,Shelby Miller,Collin McHugh
+2019-04-21,Colorado Rockies,Philadelphia Phillies,4,1,1,Jon Gray,Jerad Eickhoff
+2019-04-21,Los Angeles Angels,Seattle Mariners,8,6,1,Hansel Robles,Mike Leake
+2019-04-21,Oakland Athletics,Toronto Blue Jays,4,5,0,Brett Anderson,Aaron Sanchez
+2019-04-21,San Diego Padres,Cincinnati Reds,4,3,1,Joey Lucchesi,Tyler Mahle
+2019-04-21,Cleveland Indians,Atlanta Braves,5,11,0,Shane Bieber,Max Fried
+2019-04-22,Pittsburgh Pirates,Arizona Diamondbacks,4,12,0,Joe Musgrove,Zack Godley
+2019-04-22,Baltimore Orioles,Chicago White Sox,2,12,0,David Hess,Manny Banuelos
+2019-04-22,Tampa Bay Rays,Kansas City Royals,6,3,1,Yonny Chirinos,Brad Keller
+2019-04-22,New York Mets,Philadelphia Phillies,5,1,1,Steven Matz,Jake Arrieta
+2019-04-22,St. Louis Cardinals,Milwaukee Brewers,13,5,1,Jack Flaherty,Adrian Houser
+2019-04-22,Houston Astros,Minnesota Twins,5,9,0,Brad Peacock,Jake Odorizzi
+2019-04-22,Colorado Rockies,Washington Nationals,7,5,1,Tyler Anderson,Jeremy Hellickson
+2019-04-22,Oakland Athletics,Texas Rangers,6,1,1,Chris Bassitt,Mike Minor
+2019-04-22,Los Angeles Angels,New York Yankees,3,4,0,Matt Harvey,J.A. Happ
+2019-04-23,Boston Red Sox,Detroit Tigers,4,7,0,Chris Sale,Matthew Boyd
+2019-04-23,Boston Red Sox,Detroit Tigers,2,4,0,Hector Velázquez,Spencer Turnbull
+2019-04-23,Cleveland Indians,Miami Marlins,1,3,0,Carlos Carrasco,Pablo López
+2019-04-23,Cincinnati Reds,Atlanta Braves,7,6,1,Sonny Gray,Kevin Gausman
+2019-04-23,Pittsburgh Pirates,Arizona Diamondbacks,1,2,0,Trevor Williams,Luke Weaver
+2019-04-23,Baltimore Orioles,Chicago White Sox,9,1,1,Andrew Cashner,Iván Nova
+2019-04-23,Toronto Blue Jays,San Francisco Giants,6,7,0,Trent Thornton,Jeff Samardzija
+2019-04-23,Tampa Bay Rays,Kansas City Royals,5,2,1,Ryne Stanek,Homer Bailey
+2019-04-23,New York Mets,Philadelphia Phillies,9,0,1,Zack Wheeler,Zach Eflin
+2019-04-23,St. Louis Cardinals,Milwaukee Brewers,4,3,1,Daniel Ponce de Leon,Zach Davies
+2019-04-23,Chicago Cubs,Los Angeles Dodgers,7,2,1,Jose Quintana,Kenta Maeda
+2019-04-23,Houston Astros,Minnesota Twins,10,4,1,Wade Miley,Michael Pineda
+2019-04-23,Colorado Rockies,Washington Nationals,3,6,0,Jeff Hoffman,Patrick Corbin
+2019-04-23,Oakland Athletics,Texas Rangers,11,5,1,Frankie Montas,Lance Lynn
+2019-04-23,Los Angeles Angels,New York Yankees,5,7,0,Chris Stratton,Domingo Germán
+2019-04-23,San Diego Padres,Seattle Mariners,6,3,1,Nick Margevicius,Erik Swanson
+2019-04-24,Tampa Bay Rays,Kansas City Royals,2,10,0,Blake Snell,Jakob Junis
+2019-04-24,Cleveland Indians,Miami Marlins,6,2,1,Jefry Rodriguez,Sandy Alcantara
+2019-04-24,St. Louis Cardinals,Milwaukee Brewers,5,2,1,Adam Wainwright,Jhoulys Chacín
+2019-04-24,Colorado Rockies,Washington Nationals,9,5,1,Germán Márquez,Aníbal Sánchez
+2019-04-24,Oakland Athletics,Texas Rangers,6,5,1,Aaron Brooks,Kyle Dowdy
+2019-04-24,San Diego Padres,Seattle Mariners,1,0,1,Chris Paddack,Félix Hernández
+2019-04-24,Toronto Blue Jays,San Francisco Giants,0,4,0,Clay Buchholz,Drew Pomeranz
+2019-04-24,Cincinnati Reds,Atlanta Braves,1,3,0,Tanner Roark,Michael Soroka
+2019-04-24,Pittsburgh Pirates,Arizona Diamondbacks,2,11,0,Jordan Lyles,Merrill Kelly
+2019-04-24,Baltimore Orioles,Chicago White Sox,4,3,1,John Means,Ervin Santana
+2019-04-24,Boston Red Sox,Detroit Tigers,11,4,1,Eduardo Rodriguez,Tyson Ross
+2019-04-24,New York Mets,Philadelphia Phillies,0,6,0,Jason Vargas,Vince Velasquez
+2019-04-24,Chicago Cubs,Los Angeles Dodgers,7,6,1,Cole Hamels,Walker Buehler
+2019-04-24,Houston Astros,Minnesota Twins,7,1,1,Justin Verlander,Kohl Stewart
+2019-04-24,Los Angeles Angels,New York Yankees,5,6,0,Cam Bedrosian,CC Sabathia
+2019-04-25,Pittsburgh Pirates,Arizona Diamondbacks,0,5,0,Jameson Taillon,Zack Greinke
+2019-04-25,Chicago Cubs,Los Angeles Dodgers,1,2,0,Jon Lester,Ross Stripling
+2019-04-25,Cincinnati Reds,Atlanta Braves,4,2,1,Luis Castillo,Julio Teheran
+2019-04-25,Philadelphia Phillies,Miami Marlins,1,3,0,Aaron Nola,Caleb Smith
+2019-04-25,Boston Red Sox,Detroit Tigers,7,3,1,Rick Porcello,Jordan Zimmermann
+2019-04-25,Houston Astros,Cleveland Indians,1,2,0,Gerrit Cole,Trevor Bauer
+2019-04-25,Los Angeles Angels,New York Yankees,11,5,1,Trevor Cahill,Masahiro Tanaka
+2019-04-25,Seattle Mariners,Texas Rangers,14,2,1,Marco Gonzales,Taylor Hearn
+2019-04-26,Washington Nationals,San Diego Padres,3,4,0,Max Scherzer,Matt Strahm
+2019-04-26,Philadelphia Phillies,Miami Marlins,4,0,1,Jerad Eickhoff,José Ureña
+2019-04-26,Toronto Blue Jays,Oakland Athletics,4,2,1,Marcus Stroman,Mike Fiers
+2019-04-26,New York Mets,Milwaukee Brewers,2,10,0,Jacob deGrom,Chase Anderson
+2019-04-26,Atlanta Braves,Colorado Rockies,4,8,0,Max Fried,Antonio Senzatela
+2019-04-26,Houston Astros,Cleveland Indians,3,6,0,Collin McHugh,Corey Kluber
+2019-04-26,Minnesota Twins,Baltimore Orioles,6,1,1,Martín Pérez,Alex Cobb
+2019-04-26,Chicago White Sox,Detroit Tigers,12,11,1,Carlos Rodón,Daniel Norris
+2019-04-26,Kansas City Royals,Los Angeles Angels,1,5,0,Danny Duffy,Tyler Skaggs
+2019-04-26,St. Louis Cardinals,Cincinnati Reds,1,12,0,Miles Mikolas,Anthony DeSclafani
+2019-04-26,Arizona Diamondbacks,Chicago Cubs,8,3,1,Robbie Ray,Kyle Hendricks
+2019-04-26,Los Angeles Dodgers,Pittsburgh Pirates,6,2,1,Hyun Jin Ryu,Chris Archer
+2019-04-26,Seattle Mariners,Texas Rangers,5,4,1,Yusei Kikuchi,Shelby Miller
+2019-04-26,San Francisco Giants,New York Yankees,3,7,0,Madison Bumgarner,James Paxton
+2019-04-27,Minnesota Twins,Baltimore Orioles,9,2,1,José Berríos,Dan Straily
+2019-04-27,St. Louis Cardinals,Cincinnati Reds,6,3,1,Dakota Hudson,Tyler Mahle
+2019-04-27,Toronto Blue Jays,Oakland Athletics,7,1,1,Aaron Sanchez,Brett Anderson
+2019-04-27,Houston Astros,Cleveland Indians,4,3,1,Brad Peacock,Shane Bieber
+2019-04-27,Washington Nationals,San Diego Padres,3,8,0,Stephen Strasburg,Eric Lauer
+2019-04-27,Boston Red Sox,Tampa Bay Rays,1,2,0,David Price,Charlie Morton
+2019-04-27,San Francisco Giants,New York Yankees,4,6,0,Derek Holland,J.A. Happ
+2019-04-27,Philadelphia Phillies,Miami Marlins,12,9,1,Jake Arrieta,Trevor Richards
+2019-04-27,New York Mets,Milwaukee Brewers,6,8,0,Noah Syndergaard,Brandon Woodruff
+2019-04-27,Kansas City Royals,Los Angeles Angels,9,4,1,Jorge López,Cam Bedrosian
+2019-04-27,Atlanta Braves,Colorado Rockies,5,9,0,Mike Foltynewicz,Jon Gray
+2019-04-27,Arizona Diamondbacks,Chicago Cubs,1,9,0,Zack Godley,Yu Darvish
+2019-04-27,Los Angeles Dodgers,Pittsburgh Pirates,3,1,1,Clayton Kershaw,Joe Musgrove
+2019-04-27,Seattle Mariners,Texas Rangers,1,15,0,Mike Leake,Mike Minor
+2019-04-28,Boston Red Sox,Tampa Bay Rays,2,5,0,Chris Sale,Tyler Glasnow
+2019-04-28,Philadelphia Phillies,Miami Marlins,5,1,1,Zach Eflin,Pablo López
+2019-04-28,Toronto Blue Jays,Oakland Athletics,5,4,1,Trent Thornton,Chris Bassitt
+2019-04-28,New York Mets,Milwaukee Brewers,5,2,1,Steven Matz,Gio Gonzalez
+2019-04-28,Atlanta Braves,Colorado Rockies,8,7,1,Kevin Gausman,Tyler Anderson
+2019-04-28,Washington Nationals,San Diego Padres,7,6,1,Jeremy Hellickson,Joey Lucchesi
+2019-04-28,Minnesota Twins,Baltimore Orioles,4,1,1,Kyle Gibson,Dylan Bundy
+2019-04-28,Chicago White Sox,Detroit Tigers,4,1,1,Reynaldo López,Matthew Boyd
+2019-04-28,Kansas City Royals,Los Angeles Angels,3,7,0,Homer Bailey,Matt Harvey
+2019-04-28,St. Louis Cardinals,Cincinnati Reds,5,2,1,Jack Flaherty,Sonny Gray
+2019-04-28,San Francisco Giants,New York Yankees,5,11,0,Dereck Rodríguez,Domingo Germán
+2019-04-28,Arizona Diamondbacks,Chicago Cubs,5,6,0,Luke Weaver,Jose Quintana
+2019-04-28,Los Angeles Dodgers,Pittsburgh Pirates,7,6,1,Rich Hill,Trevor Williams
+2019-04-28,Seattle Mariners,Texas Rangers,1,14,0,Erik Swanson,Lance Lynn
+2019-04-28,Houston Astros,Cleveland Indians,4,1,1,Wade Miley,Carlos Carrasco
+2019-04-29,Washington Nationals,St. Louis Cardinals,3,6,0,Patrick Corbin,Michael Wacha
+2019-04-29,New York Mets,Cincinnati Reds,4,5,0,Zack Wheeler,Tanner Roark
+2019-04-29,Boston Red Sox,Oakland Athletics,9,4,1,Eduardo Rodriguez,Frankie Montas
+2019-04-29,Atlanta Braves,San Diego Padres,3,1,1,Michael Soroka,Nick Margevicius
+2019-04-29,Minnesota Twins,Houston Astros,1,0,1,Jake Odorizzi,Justin Verlander
+2019-04-29,Milwaukee Brewers,Colorado Rockies,5,1,1,Zach Davies,Kyle Freeland
+2019-04-29,Chicago White Sox,Baltimore Orioles,5,3,1,Manny Banuelos,John Means
+2019-04-29,Kansas City Royals,Tampa Bay Rays,5,8,0,Brad Keller,Ryne Stanek
+2019-04-29,San Francisco Giants,Los Angeles Dodgers,3,2,1,Jeff Samardzija,Kenta Maeda
+2019-04-30,Washington Nationals,St. Louis Cardinals,2,3,0,Aníbal Sánchez,Adam Wainwright
+2019-04-30,Philadelphia Phillies,Detroit Tigers,1,3,0,Vince Velasquez,Spencer Turnbull
+2019-04-30,New York Mets,Cincinnati Reds,4,3,1,Jason Vargas,Luis Castillo
+2019-04-30,Boston Red Sox,Oakland Athletics,5,1,1,Rick Porcello,Aaron Brooks
+2019-04-30,Miami Marlins,Cleveland Indians,4,7,0,Sandy Alcantara,Trevor Bauer
+2019-04-30,Atlanta Braves,San Diego Padres,3,4,0,Julio Teheran,Chris Paddack
+2019-04-30,Minnesota Twins,Houston Astros,0,11,0,Michael Pineda,Gerrit Cole
+2019-04-30,Milwaukee Brewers,Colorado Rockies,4,3,1,Jhoulys Chacín,Germán Márquez
+2019-04-30,Texas Rangers,Pittsburgh Pirates,4,6,0,Adrian Sampson,Jordan Lyles
+2019-04-30,Arizona Diamondbacks,New York Yankees,3,1,1,Zack Greinke,CC Sabathia
+2019-04-30,San Francisco Giants,Los Angeles Dodgers,3,10,0,Drew Pomeranz,Walker Buehler
+2019-04-30,Los Angeles Angels,Toronto Blue Jays,4,3,1,Griffin Canning,Clay Buchholz
+2019-04-30,Seattle Mariners,Chicago Cubs,5,6,0,Félix Hernández,Cole Hamels
+2019-05-01,Boston Red Sox,Oakland Athletics,7,3,1,Hector Velázquez,Mike Fiers
+2019-05-01,Kansas City Royals,Tampa Bay Rays,3,2,1,Jakob Junis,Ryne Stanek
+2019-05-01,Kansas City Royals,Tampa Bay Rays,8,2,1,Glenn Sparkman,Blake Snell
+2019-05-01,Texas Rangers,Pittsburgh Pirates,5,7,0,Shelby Miller,Jameson Taillon
+2019-05-01,Arizona Diamondbacks,New York Yankees,3,2,1,Merrill Kelly,Masahiro Tanaka
+2019-05-01,Chicago White Sox,Baltimore Orioles,4,5,0,Carlos Rodón,David Hess
+2019-05-01,Chicago White Sox,Baltimore Orioles,7,6,1,Iván Nova,Andrew Cashner
+2019-05-01,Seattle Mariners,Chicago Cubs,0,11,0,Marco Gonzales,Jon Lester
+2019-05-01,Washington Nationals,St. Louis Cardinals,1,5,0,Max Scherzer,Miles Mikolas
+2019-05-01,Philadelphia Phillies,Detroit Tigers,7,3,1,Aaron Nola,Daniel Norris
+2019-05-01,New York Mets,Cincinnati Reds,0,1,0,Jacob deGrom,Anthony DeSclafani
+2019-05-01,Miami Marlins,Cleveland Indians,4,2,1,Caleb Smith,Corey Kluber
+2019-05-01,Atlanta Braves,San Diego Padres,5,1,1,Max Fried,Cal Quantrill
+2019-05-01,Milwaukee Brewers,Colorado Rockies,4,11,0,Chase Anderson,Antonio Senzatela
+2019-05-01,Minnesota Twins,Houston Astros,6,2,1,Martín Pérez,Collin McHugh
+2019-05-01,San Francisco Giants,Los Angeles Dodgers,2,1,1,Madison Bumgarner,Hyun Jin Ryu
+2019-05-01,Los Angeles Angels,Toronto Blue Jays,6,3,1,Luke Bard,Marcus Stroman
+2019-05-02,New York Mets,Cincinnati Reds,1,0,1,Noah Syndergaard,Tyler Mahle
+2019-05-02,Atlanta Braves,San Diego Padres,2,11,0,Mike Foltynewicz,Matt Strahm
+2019-05-02,Minnesota Twins,Houston Astros,8,2,1,José Berríos,Brad Peacock
+2019-05-02,Milwaukee Brewers,Colorado Rockies,6,11,0,Freddy Peralta,Jon Gray
+2019-05-02,Kansas City Royals,Tampa Bay Rays,1,3,0,Danny Duffy,Charlie Morton
+2019-05-02,Washington Nationals,St. Louis Cardinals,2,1,1,Stephen Strasburg,Dakota Hudson
+2019-05-02,Chicago White Sox,Boston Red Sox,6,4,1,Lucas Giolito,David Price
+2019-05-02,Los Angeles Angels,Toronto Blue Jays,6,2,1,Tyler Skaggs,Aaron Sanchez
+2019-05-03,Chicago Cubs,St. Louis Cardinals,4,0,1,Kyle Hendricks,Jack Flaherty
+2019-05-03,Pittsburgh Pirates,Oakland Athletics,1,14,0,Joe Musgrove,Brett Anderson
+2019-05-03,Baltimore Orioles,Tampa Bay Rays,0,7,0,Dan Straily,Tyler Glasnow
+2019-05-03,Philadelphia Phillies,Washington Nationals,4,2,1,Jerad Eickhoff,Jeremy Hellickson
+2019-05-03,New York Yankees,Minnesota Twins,6,3,1,James Paxton,Kyle Gibson
+2019-05-03,Detroit Tigers,Kansas City Royals,4,3,1,Matthew Boyd,Jorge López
+2019-05-03,Cleveland Indians,Seattle Mariners,2,1,1,Shane Bieber,Yusei Kikuchi
+2019-05-03,Cincinnati Reds,San Francisco Giants,11,12,0,Sonny Gray,Tyler Beede
+2019-05-03,Miami Marlins,Atlanta Braves,2,7,0,José Ureña,Kevin Gausman
+2019-05-03,Texas Rangers,Toronto Blue Jays,0,1,0,Mike Minor,Trent Thornton
+2019-05-03,Chicago White Sox,Boston Red Sox,1,6,0,Reynaldo López,Chris Sale
+2019-05-03,Milwaukee Brewers,New York Mets,3,1,1,Brandon Woodruff,Steven Matz
+2019-05-03,Colorado Rockies,Arizona Diamondbacks,9,10,0,Tyler Anderson,Robbie Ray
+2019-05-03,San Diego Padres,Los Angeles Dodgers,3,4,0,Eric Lauer,Clayton Kershaw
+2019-05-04,New York Yankees,Minnesota Twins,3,7,0,J.A. Happ,Jake Odorizzi
+2019-05-04,Chicago Cubs,St. Louis Cardinals,6,5,1,Yu Darvish,Michael Wacha
+2019-05-04,Detroit Tigers,Kansas City Royals,3,15,0,Tyson Ross,Homer Bailey
+2019-05-04,Cleveland Indians,Seattle Mariners,5,4,1,Carlos Carrasco,Mike Leake
+2019-05-04,Miami Marlins,Atlanta Braves,2,9,0,Trevor Richards,Michael Soroka
+2019-05-04,Pittsburgh Pirates,Oakland Athletics,6,4,1,Trevor Williams,Chris Bassitt
+2019-05-04,Baltimore Orioles,Tampa Bay Rays,3,0,1,Dylan Bundy,Yonny Chirinos
+2019-05-04,Philadelphia Phillies,Washington Nationals,8,10,0,Jake Arrieta,Patrick Corbin
+2019-05-04,Los Angeles Angels,Houston Astros,2,14,0,Trevor Cahill,Wade Miley
+2019-05-04,Cincinnati Reds,San Francisco Giants,9,2,1,Tanner Roark,Dereck Rodríguez
+2019-05-04,Chicago White Sox,Boston Red Sox,2,15,0,Manny Banuelos,Eduardo Rodriguez
+2019-05-04,Milwaukee Brewers,New York Mets,4,3,1,Gio Gonzalez,Zack Wheeler
+2019-05-04,Texas Rangers,Toronto Blue Jays,8,5,1,Lance Lynn,Thomas Pannone
+2019-05-04,Colorado Rockies,Arizona Diamondbacks,2,9,0,Kyle Freeland,Luke Weaver
+2019-05-04,San Diego Padres,Los Angeles Dodgers,6,7,0,Joey Lucchesi,Rich Hill
+2019-05-05,Detroit Tigers,Kansas City Royals,5,2,1,Spencer Turnbull,Brad Keller
+2019-05-05,Cleveland Indians,Seattle Mariners,0,10,0,Cody Anderson,Erik Swanson
+2019-05-05,Miami Marlins,Atlanta Braves,1,3,0,Pablo López,Julio Teheran
+2019-05-05,Pittsburgh Pirates,Oakland Athletics,5,3,1,Jordan Lyles,Frankie Montas
+2019-05-05,Philadelphia Phillies,Washington Nationals,7,1,1,Zach Eflin,Aníbal Sánchez
+2019-05-05,Chicago White Sox,Boston Red Sox,2,9,0,Dylan Covey,Rick Porcello
+2019-05-05,Milwaukee Brewers,New York Mets,3,2,1,Zach Davies,Jason Vargas
+2019-05-05,Texas Rangers,Toronto Blue Jays,10,2,1,Drew Smyly,Clay Buchholz
+2019-05-05,Colorado Rockies,Arizona Diamondbacks,8,7,1,Germán Márquez,Zack Greinke
+2019-05-05,Los Angeles Angels,Houston Astros,4,10,0,Matt Harvey,Justin Verlander
+2019-05-05,San Diego Padres,Los Angeles Dodgers,8,5,1,Nick Margevicius,Kenta Maeda
+2019-05-05,Cincinnati Reds,San Francisco Giants,5,6,0,Luis Castillo,Jeff Samardzija
+2019-05-05,Chicago Cubs,St. Louis Cardinals,13,5,1,Jose Quintana,Adam Wainwright
+2019-05-06,Cincinnati Reds,San Francisco Giants,12,4,1,Anthony DeSclafani,Drew Pomeranz
+2019-05-06,Cleveland Indians,Chicago White Sox,1,9,0,Trevor Bauer,Iván Nova
+2019-05-06,New York Yankees,Seattle Mariners,7,3,1,CC Sabathia,Félix Hernández
+2019-05-06,Baltimore Orioles,Boston Red Sox,4,1,1,John Means,Josh A. Smith
+2019-05-06,Toronto Blue Jays,Minnesota Twins,0,8,0,Marcus Stroman,Martín Pérez
+2019-05-06,Tampa Bay Rays,Arizona Diamondbacks,12,1,1,Blake Snell,Merrill Kelly
+2019-05-06,Milwaukee Brewers,Washington Nationals,5,3,1,Jhoulys Chacín,Max Scherzer
+2019-05-06,St. Louis Cardinals,Philadelphia Phillies,6,0,1,Miles Mikolas,Vince Velasquez
+2019-05-06,Chicago Cubs,Miami Marlins,5,6,0,Cole Hamels,Sandy Alcantara
+2019-05-06,Houston Astros,Kansas City Royals,6,4,1,Gerrit Cole,Jakob Junis
+2019-05-06,San Diego Padres,New York Mets,4,0,1,Chris Paddack,Jacob deGrom
+2019-05-06,Los Angeles Dodgers,Atlanta Braves,5,3,1,Walker Buehler,Kevin Gausman
+2019-05-07,Cleveland Indians,Chicago White Sox,0,2,0,Jefry Rodriguez,Lucas Giolito
+2019-05-07,New York Yankees,Seattle Mariners,5,4,1,Masahiro Tanaka,Marco Gonzales
+2019-05-07,Baltimore Orioles,Boston Red Sox,5,8,0,David Hess,Hector Velázquez
+2019-05-07,Pittsburgh Pirates,Texas Rangers,5,4,1,Steven Brault,Adrian Sampson
+2019-05-07,Toronto Blue Jays,Minnesota Twins,0,3,0,Aaron Sanchez,José Berríos
+2019-05-07,Detroit Tigers,Los Angeles Angels,2,5,0,Daniel Norris,Griffin Canning
+2019-05-07,Tampa Bay Rays,Arizona Diamondbacks,6,3,1,Ryne Stanek,Taylor Clarke
+2019-05-07,Milwaukee Brewers,Washington Nationals,6,0,1,Adrian Houser,Stephen Strasburg
+2019-05-07,St. Louis Cardinals,Philadelphia Phillies,1,11,0,Dakota Hudson,Aaron Nola
+2019-05-07,Chicago Cubs,Miami Marlins,5,2,1,Jon Lester,Caleb Smith
+2019-05-07,Houston Astros,Kansas City Royals,2,12,0,Collin McHugh,Danny Duffy
+2019-05-07,Colorado Rockies,San Francisco Giants,4,14,0,Antonio Senzatela,Madison Bumgarner
+2019-05-07,Oakland Athletics,Cincinnati Reds,2,0,1,Mike Fiers,Tyler Mahle
+2019-05-07,San Diego Padres,New York Mets,6,7,0,Cal Quantrill,Noah Syndergaard
+2019-05-07,Los Angeles Dodgers,Atlanta Braves,9,0,1,Hyun Jin Ryu,Max Fried
+2019-05-08,Pittsburgh Pirates,Texas Rangers,6,9,0,Nick Kingham,Shelby Miller
+2019-05-08,Tampa Bay Rays,Arizona Diamondbacks,2,3,0,Charlie Morton,Robbie Ray
+2019-05-08,Milwaukee Brewers,Washington Nationals,7,3,1,Brandon Woodruff,Jeremy Hellickson
+2019-05-08,St. Louis Cardinals,Philadelphia Phillies,0,5,0,Jack Flaherty,Jerad Eickhoff
+2019-05-08,San Diego Padres,New York Mets,3,2,1,Matt Strahm,Wilmer Font
+2019-05-08,Cleveland Indians,Chicago White Sox,5,3,1,Shane Bieber,Reynaldo López
+2019-05-08,New York Yankees,Seattle Mariners,1,10,0,Jonathan Loáisiga,Yusei Kikuchi
+2019-05-08,Baltimore Orioles,Boston Red Sox,1,2,0,Andrew Cashner,Chris Sale
+2019-05-08,Toronto Blue Jays,Minnesota Twins,1,9,0,Trent Thornton,Kyle Gibson
+2019-05-08,Detroit Tigers,Los Angeles Angels,10,3,1,Matthew Boyd,Tyler Skaggs
+2019-05-08,Chicago Cubs,Miami Marlins,3,2,1,Kyle Hendricks,José Ureña
+2019-05-08,Houston Astros,Kansas City Royals,9,0,1,Brad Peacock,Jorge López
+2019-05-08,Oakland Athletics,Cincinnati Reds,5,4,1,Brett Anderson,Sonny Gray
+2019-05-08,Los Angeles Dodgers,Atlanta Braves,9,4,1,Clayton Kershaw,Mike Foltynewicz
+2019-05-09,Detroit Tigers,Los Angeles Angels,0,13,0,Ryan Carpenter,Luke Bard
+2019-05-09,Chicago Cubs,Miami Marlins,4,1,1,Yu Darvish,Trevor Richards
+2019-05-09,Colorado Rockies,San Francisco Giants,12,11,1,Kyle Freeland,Derek Holland
+2019-05-09,Oakland Athletics,Cincinnati Reds,0,3,0,Chris Bassitt,Tanner Roark
+2019-05-09,New York Yankees,Seattle Mariners,3,1,1,J.A. Happ,Mike Leake
+2019-05-09,St. Louis Cardinals,Pittsburgh Pirates,17,4,1,Michael Wacha,Joe Musgrove
+2019-05-09,Houston Astros,Texas Rangers,4,2,1,Wade Miley,Mike Minor
+2019-05-09,Arizona Diamondbacks,Atlanta Braves,3,2,1,Luke Weaver,Michael Soroka
+2019-05-09,Los Angeles Dodgers,Washington Nationals,0,6,0,Rich Hill,Patrick Corbin
+2019-05-10,Chicago Cubs,Milwaukee Brewers,0,7,0,Jose Quintana,Gio Gonzalez
+2019-05-10,Baltimore Orioles,Los Angeles Angels,3,8,0,Dan Straily,Trevor Cahill
+2019-05-10,Toronto Blue Jays,Chicago White Sox,4,3,1,Daniel Hudson,Dylan Covey
+2019-05-10,Boston Red Sox,Seattle Mariners,14,1,1,Eduardo Rodriguez,Erik Swanson
+2019-05-10,New York Mets,Miami Marlins,11,2,1,Zack Wheeler,Pablo López
+2019-05-10,Tampa Bay Rays,New York Yankees,3,4,0,Tyler Glasnow,Domingo Germán
+2019-05-10,Houston Astros,Texas Rangers,3,0,1,Justin Verlander,Lance Lynn
+2019-05-10,Minnesota Twins,Detroit Tigers,6,0,1,Jake Odorizzi,Tyson Ross
+2019-05-10,St. Louis Cardinals,Pittsburgh Pirates,1,2,0,Adam Wainwright,Trevor Williams
+2019-05-10,Kansas City Royals,Philadelphia Phillies,5,1,1,Homer Bailey,Jake Arrieta
+2019-05-10,Colorado Rockies,San Diego Padres,12,2,1,Germán Márquez,Eric Lauer
+2019-05-10,Oakland Athletics,Cleveland Indians,4,3,1,Frankie Montas,Cody Anderson
+2019-05-10,Arizona Diamondbacks,Atlanta Braves,1,2,0,Zack Greinke,Julio Teheran
+2019-05-10,Los Angeles Dodgers,Washington Nationals,5,0,1,Kenta Maeda,Aníbal Sánchez
+2019-05-10,San Francisco Giants,Cincinnati Reds,0,7,0,Dereck Rodríguez,Luis Castillo
+2019-05-11,Boston Red Sox,Seattle Mariners,9,5,1,Rick Porcello,Félix Hernández
+2019-05-11,Minnesota Twins,Detroit Tigers,3,5,0,Michael Pineda,Spencer Turnbull
+2019-05-11,Minnesota Twins,Detroit Tigers,8,3,1,Kohl Stewart,Gregory Soto
+2019-05-11,St. Louis Cardinals,Pittsburgh Pirates,1,2,0,Miles Mikolas,Jordan Lyles
+2019-05-11,Chicago Cubs,Milwaukee Brewers,2,1,1,Cole Hamels,Zach Davies
+2019-05-11,Toronto Blue Jays,Chicago White Sox,2,7,0,Marcus Stroman,Iván Nova
+2019-05-11,Baltimore Orioles,Los Angeles Angels,2,7,0,Dylan Bundy,Matt Harvey
+2019-05-11,Oakland Athletics,Cleveland Indians,3,2,1,Liam Hendriks,Trevor Bauer
+2019-05-11,Tampa Bay Rays,New York Yankees,7,2,1,Ryne Stanek,CC Sabathia
+2019-05-11,New York Mets,Miami Marlins,4,1,1,Jacob deGrom,Sandy Alcantara
+2019-05-11,Kansas City Royals,Philadelphia Phillies,0,7,0,Brad Keller,Zach Eflin
+2019-05-11,Colorado Rockies,San Diego Padres,3,4,0,Jon Gray,Joey Lucchesi
+2019-05-11,Houston Astros,Texas Rangers,11,4,1,Gerrit Cole,Jesse Chavez
+2019-05-11,Arizona Diamondbacks,Atlanta Braves,4,6,0,Merrill Kelly,Kevin Gausman
+2019-05-11,San Francisco Giants,Cincinnati Reds,4,5,0,Jeff Samardzija,Anthony DeSclafani
+2019-05-11,Los Angeles Dodgers,Washington Nationals,2,5,0,Walker Buehler,Max Scherzer
+2019-05-12,Baltimore Orioles,Los Angeles Angels,5,1,1,John Means,Griffin Canning
+2019-05-12,Boston Red Sox,Seattle Mariners,11,2,1,Hector Velázquez,Marco Gonzales
+2019-05-12,Toronto Blue Jays,Chicago White Sox,1,5,0,Aaron Sanchez,Lucas Giolito
+2019-05-12,Tampa Bay Rays,New York Yankees,1,7,0,Blake Snell,Masahiro Tanaka
+2019-05-12,Houston Astros,Texas Rangers,15,5,1,Corbin Martin,Adrian Sampson
+2019-05-12,Minnesota Twins,Detroit Tigers,3,5,0,Martín Pérez,Daniel Norris
+2019-05-12,St. Louis Cardinals,Pittsburgh Pirates,6,10,0,Dakota Hudson,Steven Brault
+2019-05-12,Kansas City Royals,Philadelphia Phillies,1,6,0,Jakob Junis,Cole Irvin
+2019-05-12,Colorado Rockies,San Diego Padres,10,7,1,Antonio Senzatela,Nick Margevicius
+2019-05-12,San Francisco Giants,Cincinnati Reds,6,5,1,Madison Bumgarner,Tyler Mahle
+2019-05-12,Oakland Athletics,Cleveland Indians,3,5,0,Daniel Mengden,Jefry Rodriguez
+2019-05-12,Los Angeles Dodgers,Washington Nationals,6,0,1,Hyun Jin Ryu,Stephen Strasburg
+2019-05-12,Arizona Diamondbacks,Atlanta Braves,3,5,0,Zack Godley,Max Fried
+2019-05-12,Chicago Cubs,Milwaukee Brewers,4,1,1,Jon Lester,Jhoulys Chacín
+2019-05-13,Philadelphia Phillies,Milwaukee Brewers,7,4,1,Aaron Nola,Freddy Peralta
+2019-05-13,Detroit Tigers,Houston Astros,1,8,0,Matthew Boyd,Brad Peacock
+2019-05-13,Minnesota Twins,Los Angeles Angels,4,5,0,José Berríos,Tyler Skaggs
+2019-05-13,Chicago White Sox,Cleveland Indians,5,2,1,Reynaldo López,Shane Bieber
+2019-05-13,Arizona Diamondbacks,Pittsburgh Pirates,9,3,1,Robbie Ray,Nick Kingham
+2019-05-13,Seattle Mariners,Oakland Athletics,6,5,1,Yusei Kikuchi,Mike Fiers
+2019-05-14,Chicago White Sox,Cleveland Indians,0,9,0,Manny Banuelos,Carlos Carrasco
+2019-05-14,Cincinnati Reds,Chicago Cubs,1,3,0,Tanner Roark,Kyle Hendricks
+2019-05-14,Washington Nationals,New York Mets,2,6,0,Jeremy Hellickson,Noah Syndergaard
+2019-05-14,Philadelphia Phillies,Milwaukee Brewers,1,6,0,Jerad Eickhoff,Brandon Woodruff
+2019-05-14,Boston Red Sox,Colorado Rockies,4,5,0,Chris Sale,Kyle Freeland
+2019-05-14,Detroit Tigers,Houston Astros,4,11,0,Ryan Carpenter,Wade Miley
+2019-05-14,Miami Marlins,Tampa Bay Rays,0,4,0,Caleb Smith,Charlie Morton
+2019-05-14,Atlanta Braves,St. Louis Cardinals,3,14,0,Mike Foltynewicz,Jack Flaherty
+2019-05-14,Minnesota Twins,Los Angeles Angels,4,3,1,Kyle Gibson,Cam Bedrosian
+2019-05-14,Kansas City Royals,Texas Rangers,11,5,1,Danny Duffy,Shelby Miller
+2019-05-14,Arizona Diamondbacks,Pittsburgh Pirates,2,6,0,Luke Weaver,Joe Musgrove
+2019-05-14,San Francisco Giants,Toronto Blue Jays,3,7,0,Nick Vincent,Trent Thornton
+2019-05-14,Los Angeles Dodgers,San Diego Padres,6,3,1,Clayton Kershaw,Chris Paddack
+2019-05-14,Seattle Mariners,Oakland Athletics,4,3,1,Mike Leake,Brett Anderson
+2019-05-15,Minnesota Twins,Los Angeles Angels,8,7,1,Jake Odorizzi,Trevor Cahill
+2019-05-15,New York Yankees,Baltimore Orioles,5,3,1,J.A. Happ,David Hess
+2019-05-15,New York Yankees,Baltimore Orioles,3,1,1,Domingo Germán,Andrew Cashner
+2019-05-15,Arizona Diamondbacks,Pittsburgh Pirates,11,1,1,Zack Greinke,Chris Archer
+2019-05-15,San Francisco Giants,Toronto Blue Jays,4,3,1,Shaun Anderson,Edwin Jackson
+2019-05-15,Cincinnati Reds,Chicago Cubs,6,5,1,Sonny Gray,Yu Darvish
+2019-05-15,Washington Nationals,New York Mets,5,1,1,Patrick Corbin,Wilmer Font
+2019-05-15,Philadelphia Phillies,Milwaukee Brewers,2,5,0,Jake Arrieta,Gio Gonzalez
+2019-05-15,Boston Red Sox,Colorado Rockies,6,5,1,Eduardo Rodriguez,Germán Márquez
+2019-05-15,Detroit Tigers,Houston Astros,1,5,0,Gregory Soto,Justin Verlander
+2019-05-15,Miami Marlins,Tampa Bay Rays,0,1,0,José Ureña,Ryne Stanek
+2019-05-15,Atlanta Braves,St. Louis Cardinals,4,0,1,Michael Soroka,Michael Wacha
+2019-05-15,Kansas City Royals,Texas Rangers,1,6,0,Jorge López,Mike Minor
+2019-05-15,Los Angeles Dodgers,San Diego Padres,2,0,1,Kenta Maeda,Matt Strahm
+2019-05-16,Washington Nationals,New York Mets,7,6,1,Aníbal Sánchez,Zack Wheeler
+2019-05-16,Philadelphia Phillies,Milwaukee Brewers,3,11,0,Zach Eflin,Zach Davies
+2019-05-16,Detroit Tigers,Oakland Athletics,3,17,0,Spencer Turnbull,Chris Bassitt
+2019-05-16,Kansas City Royals,Texas Rangers,1,16,0,Homer Bailey,Lance Lynn
+2019-05-16,Cleveland Indians,Baltimore Orioles,14,7,1,Trevor Bauer,Dan Straily
+2019-05-16,Cincinnati Reds,Chicago Cubs,4,2,1,Luis Castillo,Jose Quintana
+2019-05-16,Atlanta Braves,St. Louis Cardinals,10,2,1,Julio Teheran,Adam Wainwright
+2019-05-16,Chicago White Sox,Toronto Blue Jays,4,2,1,Dylan Covey,Marcus Stroman
+2019-05-16,San Diego Padres,Pittsburgh Pirates,4,3,1,Eric Lauer,Trevor Williams
+2019-05-16,Seattle Mariners,Minnesota Twins,6,11,0,Erik Swanson,Michael Pineda
+2019-05-17,Washington Nationals,Chicago Cubs,6,14,0,Max Scherzer,Cole Hamels
+2019-05-17,Philadelphia Phillies,Colorado Rockies,5,4,1,Cole Irvin,Jon Gray
+2019-05-17,New York Yankees,Tampa Bay Rays,4,3,1,CC Sabathia,Ryne Stanek
+2019-05-17,Cleveland Indians,Baltimore Orioles,1,5,0,Jefry Rodriguez,Dylan Bundy
+2019-05-17,Boston Red Sox,Houston Astros,1,3,0,Rick Porcello,Gerrit Cole
+2019-05-17,Cincinnati Reds,Los Angeles Dodgers,0,6,0,Anthony DeSclafani,Rich Hill
+2019-05-17,Detroit Tigers,Oakland Athletics,2,7,0,Daniel Norris,Frankie Montas
+2019-05-17,Miami Marlins,New York Mets,8,6,1,Trevor Richards,Jacob deGrom
+2019-05-17,Atlanta Braves,Milwaukee Brewers,12,8,1,Max Fried,Jhoulys Chacín
+2019-05-17,Texas Rangers,St. Louis Cardinals,7,3,1,José Leclerc,Miles Mikolas
+2019-05-17,Chicago White Sox,Toronto Blue Jays,2,10,0,Iván Nova,Aaron Sanchez
+2019-05-17,Arizona Diamondbacks,San Francisco Giants,7,0,1,Merrill Kelly,Jeff Samardzija
+2019-05-17,Los Angeles Angels,Kansas City Royals,5,2,1,Matt Harvey,Brad Keller
+2019-05-17,San Diego Padres,Pittsburgh Pirates,3,5,0,Joey Lucchesi,Jordan Lyles
+2019-05-17,Seattle Mariners,Minnesota Twins,1,7,0,Marco Gonzales,Martín Pérez
+2019-05-18,New York Yankees,Tampa Bay Rays,1,2,0,Masahiro Tanaka,Blake Snell
+2019-05-18,Texas Rangers,St. Louis Cardinals,2,8,0,Ariel Jurado,Dakota Hudson
+2019-05-18,Philadelphia Phillies,Colorado Rockies,2,1,1,Aaron Nola,Antonio Senzatela
+2019-05-18,Cleveland Indians,Baltimore Orioles,4,1,1,Adam Plutko,John Means
+2019-05-18,Cincinnati Reds,Los Angeles Dodgers,4,0,1,Tyler Mahle,Walker Buehler
+2019-05-18,Detroit Tigers,Oakland Athletics,1,4,0,Matthew Boyd,Daniel Mengden
+2019-05-18,Miami Marlins,New York Mets,2,0,1,Pablo López,Steven Matz
+2019-05-18,Boston Red Sox,Houston Astros,3,7,0,Hector Velázquez,Corbin Martin
+2019-05-18,Washington Nationals,Chicago Cubs,5,2,1,Stephen Strasburg,Jon Lester
+2019-05-18,Atlanta Braves,Milwaukee Brewers,4,3,1,Kevin Gausman,Chase Anderson
+2019-05-18,San Diego Padres,Pittsburgh Pirates,2,7,0,Nick Margevicius,Montana DuRapau
+2019-05-18,Los Angeles Angels,Kansas City Royals,6,3,1,Griffin Canning,Jakob Junis
+2019-05-18,Arizona Diamondbacks,San Francisco Giants,5,8,0,Zack Godley,Madison Bumgarner
+2019-05-18,Seattle Mariners,Minnesota Twins,4,18,0,Wade LeBlanc,José Berríos
+2019-05-19,Boston Red Sox,Houston Astros,4,3,1,Chris Sale,Wade Miley
+2019-05-19,Philadelphia Phillies,Colorado Rockies,7,5,1,Jerad Eickhoff,Kyle Freeland
+2019-05-19,New York Yankees,Tampa Bay Rays,13,5,1,Chad Green,Charlie Morton
+2019-05-19,Cleveland Indians,Baltimore Orioles,10,0,1,Shane Bieber,Yefry Ramírez
+2019-05-19,Cincinnati Reds,Los Angeles Dodgers,3,8,0,Tanner Roark,Hyun Jin Ryu
+2019-05-19,Detroit Tigers,Oakland Athletics,3,7,0,Gregory Soto,Mike Fiers
+2019-05-19,Miami Marlins,New York Mets,3,0,1,Sandy Alcantara,Noah Syndergaard
+2019-05-19,Atlanta Braves,Milwaukee Brewers,2,3,0,Mike Foltynewicz,Brandon Woodruff
+2019-05-19,Chicago White Sox,Toronto Blue Jays,2,5,0,Reynaldo López,Trent Thornton
+2019-05-19,Texas Rangers,St. Louis Cardinals,5,4,1,Drew Smyly,Jack Flaherty
+2019-05-19,Los Angeles Angels,Kansas City Royals,1,5,0,Tyler Skaggs,Danny Duffy
+2019-05-19,San Diego Padres,Pittsburgh Pirates,4,6,0,Cal Quantrill,Joe Musgrove
+2019-05-19,Arizona Diamondbacks,San Francisco Giants,2,3,0,Robbie Ray,Drew Pomeranz
+2019-05-19,Seattle Mariners,Minnesota Twins,7,4,1,Yusei Kikuchi,Kyle Gibson
+2019-05-19,Washington Nationals,Chicago Cubs,5,6,0,Jeremy Hellickson,Kyle Hendricks
+2019-05-20,Toronto Blue Jays,Boston Red Sox,2,12,0,Edwin Jackson,David Price
+2019-05-20,Cleveland Indians,Oakland Athletics,4,6,0,Carlos Carrasco,Brett Anderson
+2019-05-20,Baltimore Orioles,New York Yankees,7,10,0,Andrew Cashner,J.A. Happ
+2019-05-20,New York Mets,Washington Nationals,5,3,1,Wilmer Font,Patrick Corbin
+2019-05-20,Texas Rangers,Seattle Mariners,10,9,1,Mike Minor,Mike Leake
+2019-05-20,Chicago Cubs,Philadelphia Phillies,4,5,0,Yu Darvish,Jake Arrieta
+2019-05-20,Houston Astros,Chicago White Sox,3,0,1,Brad Peacock,
+2019-05-20,San Francisco Giants,Atlanta Braves,1,4,0,Andrew Suárez,Michael Soroka
+2019-05-20,Los Angeles Angels,Minnesota Twins,1,3,0,Taylor Cole,Jake Odorizzi
+2019-05-20,San Diego Padres,Arizona Diamondbacks,2,1,1,Chris Paddack,Luke Weaver
+2019-05-21,Cleveland Indians,Oakland Athletics,3,5,0,Trevor Bauer,Chris Bassitt
+2019-05-21,Pittsburgh Pirates,Colorado Rockies,0,5,0,Chris Archer,Germán Márquez
+2019-05-21,Chicago Cubs,Philadelphia Phillies,3,2,1,Jose Quintana,Zach Eflin
+2019-05-21,Baltimore Orioles,New York Yankees,4,11,0,David Hess,Domingo Germán
+2019-05-21,Toronto Blue Jays,Boston Red Sox,10,3,1,Marcus Stroman,Eduardo Rodriguez
+2019-05-21,New York Mets,Washington Nationals,6,5,1,Zack Wheeler,Erick Fedde
+2019-05-21,Tampa Bay Rays,Los Angeles Dodgers,3,7,0,Hunter Wood,Clayton Kershaw
+2019-05-21,Detroit Tigers,Miami Marlins,4,5,0,Spencer Turnbull,Caleb Smith
+2019-05-21,Milwaukee Brewers,Cincinnati Reds,0,3,0,Gio Gonzalez,Sonny Gray
+2019-05-21,Texas Rangers,Seattle Mariners,5,3,1,Lance Lynn,Tommy Milone
+2019-05-21,Houston Astros,Chicago White Sox,5,1,1,Justin Verlander,Dylan Covey
+2019-05-21,San Francisco Giants,Atlanta Braves,4,3,1,Shaun Anderson,Julio Teheran
+2019-05-21,Los Angeles Angels,Minnesota Twins,3,8,0,Trevor Cahill,Michael Pineda
+2019-05-21,San Diego Padres,Arizona Diamondbacks,3,2,1,Matt Strahm,Zack Greinke
+2019-05-22,Cleveland Indians,Oakland Athletics,2,7,0,Jefry Rodriguez,Frankie Montas
+2019-05-22,Milwaukee Brewers,Cincinnati Reds,11,9,1,Zach Davies,Luis Castillo
+2019-05-22,St. Louis Cardinals,Kansas City Royals,2,8,0,Michael Wacha,Brad Keller
+2019-05-22,St. Louis Cardinals,Kansas City Royals,10,3,1,Adam Wainwright,Homer Bailey
+2019-05-22,Texas Rangers,Seattle Mariners,2,1,1,Jesse Chavez,Marco Gonzales
+2019-05-22,San Diego Padres,Arizona Diamondbacks,5,2,1,Eric Lauer,Merrill Kelly
+2019-05-22,Pittsburgh Pirates,Colorado Rockies,3,9,0,Montana DuRapau,Jon Gray
+2019-05-22,Baltimore Orioles,New York Yankees,5,7,0,Dan Straily,CC Sabathia
+2019-05-22,Toronto Blue Jays,Boston Red Sox,5,6,0,Aaron Sanchez,Rick Porcello
+2019-05-22,New York Mets,Washington Nationals,6,1,1,Jacob deGrom,Max Scherzer
+2019-05-22,Tampa Bay Rays,Los Angeles Dodgers,8,1,1,Ryne Stanek,Rich Hill
+2019-05-22,Detroit Tigers,Miami Marlins,3,6,0,Daniel Norris,José Ureña
+2019-05-22,Chicago Cubs,Philadelphia Phillies,8,4,1,Cole Hamels,Cole Irvin
+2019-05-22,Houston Astros,Chicago White Sox,4,9,0,Gerrit Cole,Iván Nova
+2019-05-22,San Francisco Giants,Atlanta Braves,2,9,0,Jeff Samardzija,Max Fried
+2019-05-23,New York Mets,Washington Nationals,6,4,1,Steven Matz,Stephen Strasburg
+2019-05-23,Pittsburgh Pirates,Colorado Rockies,14,6,1,Jordan Lyles,Antonio Senzatela
+2019-05-23,Baltimore Orioles,New York Yankees,5,6,0,Dylan Bundy,Masahiro Tanaka
+2019-05-23,Toronto Blue Jays,Boston Red Sox,2,8,0,Clayton Richard,Ryan Weber
+2019-05-23,Detroit Tigers,Miami Marlins,2,5,0,Matthew Boyd,Trevor Richards
+2019-05-23,Chicago Cubs,Philadelphia Phillies,7,9,0,Jon Lester,Aaron Nola
+2019-05-23,San Francisco Giants,Atlanta Braves,4,5,0,Madison Bumgarner,Kevin Gausman
+2019-05-23,Los Angeles Angels,Minnesota Twins,7,16,0,Matt Harvey,Martín Pérez
+2019-05-23,Cleveland Indians,Tampa Bay Rays,2,7,0,Adam Plutko,Ryan Yarbrough
+2019-05-23,Houston Astros,Chicago White Sox,0,4,0,Corbin Martin,Lucas Giolito
+2019-05-24,Chicago Cubs,Cincinnati Reds,5,6,0,Kyle Hendricks,Anthony DeSclafani
+2019-05-24,Pittsburgh Pirates,Los Angeles Dodgers,2,10,0,Michael Feliz,Walker Buehler
+2019-05-24,Washington Nationals,Miami Marlins,12,10,1,Kyle McGowin,Pablo López
+2019-05-24,Toronto Blue Jays,San Diego Padres,3,6,0,Trent Thornton,Joey Lucchesi
+2019-05-24,New York Mets,Detroit Tigers,8,9,0,Noah Syndergaard,Gregory Soto
+2019-05-24,Cleveland Indians,Tampa Bay Rays,3,1,1,Shane Bieber,Blake Snell
+2019-05-24,Houston Astros,Boston Red Sox,4,3,1,Wade Miley,Chris Sale
+2019-05-24,Minnesota Twins,Chicago White Sox,11,4,1,José Berríos,Reynaldo López
+2019-05-24,Milwaukee Brewers,Philadelphia Phillies,4,6,0,Chase Anderson,Jerad Eickhoff
+2019-05-24,St. Louis Cardinals,Atlanta Braves,2,5,0,Miles Mikolas,Mike Foltynewicz
+2019-05-24,Colorado Rockies,Baltimore Orioles,8,6,1,Jeff Hoffman,John Means
+2019-05-24,Oakland Athletics,Seattle Mariners,6,2,1,Daniel Mengden,Wade LeBlanc
+2019-05-24,Los Angeles Angels,Texas Rangers,3,4,0,Griffin Canning,Drew Smyly
+2019-05-24,San Francisco Giants,Arizona Diamondbacks,2,18,0,Drew Pomeranz,Robbie Ray
+2019-05-25,Minnesota Twins,Chicago White Sox,8,1,1,Kyle Gibson,Manny Banuelos
+2019-05-25,Kansas City Royals,New York Yankees,3,7,0,Jakob Junis,J.A. Happ
+2019-05-25,Kansas City Royals,New York Yankees,5,6,0,Jorge López,Chad Green
+2019-05-25,Chicago Cubs,Cincinnati Reds,8,6,1,Yu Darvish,Tyler Mahle
+2019-05-25,Toronto Blue Jays,San Diego Padres,4,19,0,Edwin Jackson,Cal Quantrill
+2019-05-25,San Francisco Giants,Arizona Diamondbacks,4,10,0,Andrew Suárez,Taylor Clarke
+2019-05-25,Washington Nationals,Miami Marlins,5,0,1,Patrick Corbin,Sandy Alcantara
+2019-05-25,Oakland Athletics,Seattle Mariners,6,5,1,Mike Fiers,Yusei Kikuchi
+2019-05-25,New York Mets,Detroit Tigers,5,4,1,Jason Vargas,Ryan Carpenter
+2019-05-25,Cleveland Indians,Tampa Bay Rays,2,6,0,Carlos Carrasco,Charlie Morton
+2019-05-25,Milwaukee Brewers,Philadelphia Phillies,2,7,0,Jhoulys Chacín,Jake Arrieta
+2019-05-25,Houston Astros,Boston Red Sox,4,3,1,Brad Peacock,David Price
+2019-05-25,Pittsburgh Pirates,Los Angeles Dodgers,2,7,0,Joe Musgrove,Hyun Jin Ryu
+2019-05-25,St. Louis Cardinals,Atlanta Braves,6,3,1,Dakota Hudson,Michael Soroka
+2019-05-25,Colorado Rockies,Baltimore Orioles,6,9,0,Kyle Freeland,Andrew Cashner
+2019-05-25,Los Angeles Angels,Texas Rangers,3,2,1,Tyler Skaggs,Mike Minor
+2019-05-26,Toronto Blue Jays,San Diego Padres,10,1,1,Marcus Stroman,Robbie Erlin
+2019-05-26,New York Mets,Detroit Tigers,4,3,1,Zack Wheeler,Spencer Turnbull
+2019-05-26,Cleveland Indians,Tampa Bay Rays,3,6,0,Trevor Bauer,Ryne Stanek
+2019-05-26,Pittsburgh Pirates,Los Angeles Dodgers,7,11,0,Chris Archer,Kenta Maeda
+2019-05-26,Washington Nationals,Miami Marlins,9,6,1,Erick Fedde,Caleb Smith
+2019-05-26,Houston Astros,Boston Red Sox,1,4,0,Justin Verlander,Eduardo Rodriguez
+2019-05-26,Minnesota Twins,Chicago White Sox,7,0,1,Jake Odorizzi,Dylan Covey
+2019-05-26,Milwaukee Brewers,Philadelphia Phillies,9,1,1,Brandon Woodruff,Zach Eflin
+2019-05-26,Kansas City Royals,New York Yankees,8,7,1,Danny Duffy,Domingo Germán
+2019-05-26,Chicago Cubs,Cincinnati Reds,2,10,0,Jose Quintana,Tanner Roark
+2019-05-26,Colorado Rockies,Baltimore Orioles,8,7,1,Germán Márquez,David Hess
+2019-05-26,San Francisco Giants,Arizona Diamondbacks,2,6,0,Shaun Anderson,Luke Weaver
+2019-05-26,Oakland Athletics,Seattle Mariners,7,1,1,Brett Anderson,Mike Leake
+2019-05-26,Los Angeles Angels,Texas Rangers,7,6,1,Andrew Heaney,Ariel Jurado
+2019-05-26,St. Louis Cardinals,Atlanta Braves,3,4,0,Jack Flaherty,Julio Teheran
+2019-05-27,Baltimore Orioles,Detroit Tigers,5,3,1,Gabriel Ynoa,Daniel Norris
+2019-05-27,Washington Nationals,Miami Marlins,2,3,0,Max Scherzer,José Ureña
+2019-05-27,New York Yankees,San Diego Padres,5,2,1,Chad Green,Matt Strahm
+2019-05-27,Cincinnati Reds,Pittsburgh Pirates,5,8,0,Luis Castillo,Nick Kingham
+2019-05-27,Cincinnati Reds,Pittsburgh Pirates,8,1,1,Sonny Gray,Mitch Keller
+2019-05-27,Tampa Bay Rays,Toronto Blue Jays,8,3,1,Yonny Chirinos,Aaron Sanchez
+2019-05-27,Houston Astros,Chicago Cubs,6,5,1,Gerrit Cole,Cole Hamels
+2019-05-27,Chicago White Sox,Kansas City Royals,2,1,1,Iván Nova,Homer Bailey
+2019-05-27,Colorado Rockies,Arizona Diamondbacks,4,3,1,Jon Gray,Zack Greinke
+2019-05-27,Boston Red Sox,Cleveland Indians,12,5,1,Rick Porcello,Jefry Rodriguez
+2019-05-27,Oakland Athletics,Los Angeles Angels,8,5,1,Chris Bassitt,Trevor Cahill
+2019-05-27,Minnesota Twins,Milwaukee Brewers,4,5,0,Michael Pineda,Gio Gonzalez
+2019-05-27,Los Angeles Dodgers,New York Mets,9,5,1,Clayton Kershaw,Jacob deGrom
+2019-05-27,Seattle Mariners,Texas Rangers,6,2,1,Tommy Milone,Lance Lynn
+2019-05-28,Chicago White Sox,Kansas City Royals,2,1,1,Iván Nova,Homer Bailey
+2019-05-28,New York Yankees,San Diego Padres,4,5,0,Masahiro Tanaka,Eric Lauer
+2019-05-28,Cincinnati Reds,Pittsburgh Pirates,11,6,1,Lucas Sims,Jordan Lyles
+2019-05-28,Baltimore Orioles,Detroit Tigers,0,3,0,Dylan Bundy,Matthew Boyd
+2019-05-28,Philadelphia Phillies,St. Louis Cardinals,4,3,1,Nick Pivetta,Adam Wainwright
+2019-05-28,Boston Red Sox,Cleveland Indians,5,7,0,David Price,Zach Plesac
+2019-05-28,Tampa Bay Rays,Toronto Blue Jays,3,1,1,Ryne Stanek,Clayton Richard
+2019-05-28,Miami Marlins,San Francisco Giants,11,3,1,Trevor Richards,Jeff Samardzija
+2019-05-28,Atlanta Braves,Washington Nationals,4,5,0,Max Fried,Stephen Strasburg
+2019-05-28,Houston Astros,Chicago Cubs,9,6,1,Corbin Martin,Jon Lester
+2019-05-28,Chicago White Sox,Kansas City Royals,4,3,1,Lucas Giolito,Brad Keller
+2019-05-28,Minnesota Twins,Milwaukee Brewers,5,3,1,Devin Smeltzer,Zach Davies
+2019-05-28,Colorado Rockies,Arizona Diamondbacks,6,2,1,Antonio Senzatela,Merrill Kelly
+2019-05-28,Oakland Athletics,Los Angeles Angels,4,6,0,Frankie Montas,Cam Bedrosian
+2019-05-28,Los Angeles Dodgers,New York Mets,3,7,0,Rich Hill,Steven Matz
+2019-05-28,Seattle Mariners,Texas Rangers,4,11,0,Marco Gonzales,Jesse Chavez
+2019-05-29,Cincinnati Reds,Pittsburgh Pirates,2,7,0,Anthony DeSclafani,Steven Brault
+2019-05-29,New York Yankees,San Diego Padres,7,0,1,James Paxton,Chris Paddack
+2019-05-29,Oakland Athletics,Los Angeles Angels,7,12,0,Daniel Mengden,Griffin Canning
+2019-05-29,Seattle Mariners,Texas Rangers,7,8,0,Wade LeBlanc,José Leclerc
+2019-05-29,Boston Red Sox,Cleveland Indians,9,14,0,Ryan Weber,Shane Bieber
+2019-05-29,Baltimore Orioles,Detroit Tigers,2,4,0,John Means,Ryan Carpenter
+2019-05-29,Philadelphia Phillies,St. Louis Cardinals,11,4,1,Aaron Nola,Génesis Cabrera
+2019-05-29,Tampa Bay Rays,Toronto Blue Jays,4,3,1,Blake Snell,Trent Thornton
+2019-05-29,Miami Marlins,San Francisco Giants,4,2,1,Pablo López,Madison Bumgarner
+2019-05-29,Atlanta Braves,Washington Nationals,4,14,0,Kevin Gausman,Aníbal Sánchez
+2019-05-29,Houston Astros,Chicago Cubs,1,2,0,Wade Miley,Kyle Hendricks
+2019-05-29,Chicago White Sox,Kansas City Royals,8,7,1,Reynaldo López,Glenn Sparkman
+2019-05-29,Colorado Rockies,Arizona Diamondbacks,5,4,1,Jeff Hoffman,Robbie Ray
+2019-05-29,Los Angeles Dodgers,New York Mets,9,8,1,Walker Buehler,Noah Syndergaard
+2019-05-30,Philadelphia Phillies,St. Louis Cardinals,3,5,0,Jerad Eickhoff,Dakota Hudson
+2019-05-30,Miami Marlins,San Francisco Giants,1,3,0,Sandy Alcantara,Tyler Beede
+2019-05-30,Colorado Rockies,Arizona Diamondbacks,11,10,1,Kyle Freeland,Taylor Clarke
+2019-05-30,Pittsburgh Pirates,Milwaukee Brewers,5,11,0,Joe Musgrove,Chase Anderson
+2019-05-30,Tampa Bay Rays,Minnesota Twins,14,3,1,Charlie Morton,Martín Pérez
+2019-05-30,Texas Rangers,Kansas City Royals,2,4,0,Mike Minor,Jakob Junis
+2019-05-30,Chicago White Sox,Cleveland Indians,10,4,1,Manny Banuelos,Carlos Carrasco
+2019-05-30,Los Angeles Dodgers,New York Mets,2,0,1,Hyun Jin Ryu,Jason Vargas
+2019-05-30,Seattle Mariners,Los Angeles Angels,3,9,0,Yusei Kikuchi,Félix Peña
+2019-05-31,Baltimore Orioles,San Francisco Giants,9,6,1,Andrew Cashner,Drew Pomeranz
+2019-05-31,New York Yankees,Boston Red Sox,4,1,1,J.A. Happ,Chris Sale
+2019-05-31,Pittsburgh Pirates,Milwaukee Brewers,9,4,1,Chris Archer,Jhoulys Chacín
+2019-05-31,Cincinnati Reds,Washington Nationals,9,3,1,Tyler Mahle,Patrick Corbin
+2019-05-31,Tampa Bay Rays,Minnesota Twins,3,5,0,Ryne Stanek,José Berríos
+2019-05-31,Atlanta Braves,Detroit Tigers,2,8,0,Mike Foltynewicz,Spencer Turnbull
+2019-05-31,Texas Rangers,Kansas City Royals,6,2,1,Ariel Jurado,Danny Duffy
+2019-05-31,Chicago White Sox,Cleveland Indians,6,1,1,Dylan Covey,Trevor Bauer
+2019-05-31,St. Louis Cardinals,Chicago Cubs,2,1,1,Miles Mikolas,Yu Darvish
+2019-05-31,Colorado Rockies,Toronto Blue Jays,13,6,1,Germán Márquez,Edwin Jackson
+2019-05-31,Arizona Diamondbacks,New York Mets,4,5,0,Jon Duplantier,Zack Wheeler
+2019-05-31,Oakland Athletics,Houston Astros,2,3,0,Mike Fiers,Brad Peacock
+2019-05-31,Seattle Mariners,Los Angeles Angels,4,3,1,Mike Leake,Tyler Skaggs
+2019-05-31,Los Angeles Dodgers,Philadelphia Phillies,6,3,1,Kenta Maeda,Jake Arrieta
+2019-05-31,San Diego Padres,Miami Marlins,5,2,1,Joey Lucchesi,Caleb Smith
+2019-06-01,Tampa Bay Rays,Minnesota Twins,2,6,0,Yonny Chirinos,Kyle Gibson
+2019-06-01,Chicago White Sox,Cleveland Indians,2,5,0,Iván Nova,Jefry Rodriguez
+2019-06-01,Baltimore Orioles,San Francisco Giants,2,8,0,David Hess,Shaun Anderson
+2019-06-01,Texas Rangers,Kansas City Royals,6,2,1,Lance Lynn,Homer Bailey
+2019-06-01,Pittsburgh Pirates,Milwaukee Brewers,10,12,0,Nick Kingham,Brandon Woodruff
+2019-06-01,Cincinnati Reds,Washington Nationals,2,5,0,Tanner Roark,Erick Fedde
+2019-06-01,Atlanta Braves,Detroit Tigers,10,5,1,Michael Soroka,Daniel Norris
+2019-06-01,Seattle Mariners,Los Angeles Angels,3,6,0,Tommy Milone,Andrew Heaney
+2019-06-01,St. Louis Cardinals,Chicago Cubs,7,4,1,Jack Flaherty,Jose Quintana
+2019-06-01,New York Yankees,Boston Red Sox,5,3,1,Domingo Germán,Rick Porcello
+2019-06-01,Colorado Rockies,Toronto Blue Jays,4,2,1,Jon Gray,Marcus Stroman
+2019-06-01,Oakland Athletics,Houston Astros,1,5,0,Brett Anderson,Justin Verlander
+2019-06-01,Arizona Diamondbacks,New York Mets,6,5,1,Zack Greinke,Jacob deGrom
+2019-06-01,Los Angeles Dodgers,Philadelphia Phillies,4,3,1,Clayton Kershaw,Jose Alvarez
+2019-06-01,San Diego Padres,Miami Marlins,3,9,0,Nick Margevicius,José Ureña
+2019-06-02,Baltimore Orioles,San Francisco Giants,1,8,0,Gabriel Ynoa,Jeff Samardzija
+2019-06-02,Cincinnati Reds,Washington Nationals,1,4,0,Sonny Gray,Max Scherzer
+2019-06-02,Tampa Bay Rays,Minnesota Twins,7,9,0,Ryan Yarbrough,Jake Odorizzi
+2019-06-02,Atlanta Braves,Detroit Tigers,7,4,1,Julio Teheran,Matthew Boyd
+2019-06-02,Pittsburgh Pirates,Milwaukee Brewers,2,4,0,Jordan Lyles,Zach Davies
+2019-06-02,Chicago White Sox,Cleveland Indians,2,0,1,Lucas Giolito,Zach Plesac
+2019-06-02,St. Louis Cardinals,Chicago Cubs,2,1,1,Adam Wainwright,Cole Hamels
+2019-06-02,Texas Rangers,Kansas City Royals,5,1,1,Adrian Sampson,Brad Keller
+2019-06-02,Colorado Rockies,Toronto Blue Jays,5,1,1,Antonio Senzatela,Aaron Sanchez
+2019-06-02,Oakland Athletics,Houston Astros,4,6,0,Chris Bassitt,Gerrit Cole
+2019-06-02,Arizona Diamondbacks,New York Mets,7,1,1,Merrill Kelly,Steven Matz
+2019-06-02,Seattle Mariners,Los Angeles Angels,3,13,0,Marco Gonzales,José Suarez
+2019-06-02,Los Angeles Dodgers,Philadelphia Phillies,8,0,1,Rich Hill,Nick Pivetta
+2019-06-02,San Diego Padres,Miami Marlins,3,9,0,Matt Strahm,Trevor Richards
+2019-06-02,New York Yankees,Boston Red Sox,5,8,0,CC Sabathia,David Price
+2019-06-03,Chicago Cubs,Los Angeles Angels,8,1,1,Jon Lester,Cam Bedrosian
+2019-06-03,Arizona Diamondbacks,Los Angeles Dodgers,1,3,0,Robbie Ray,Walker Buehler
+2019-06-03,Seattle Mariners,Houston Astros,2,4,0,Wade LeBlanc,Corbin Martin
+2019-06-03,San Diego Padres,Philadelphia Phillies,8,2,1,Eric Lauer,Aaron Nola
+2019-06-04,Pittsburgh Pirates,Atlanta Braves,5,12,0,Steven Brault,Max Fried
+2019-06-04,Washington Nationals,Chicago White Sox,9,5,1,Stephen Strasburg,Reynaldo López
+2019-06-04,Toronto Blue Jays,New York Yankees,4,3,1,Clayton Richard,Masahiro Tanaka
+2019-06-04,New York Mets,San Francisco Giants,3,9,0,Noah Syndergaard,Madison Bumgarner
+2019-06-04,Detroit Tigers,Tampa Bay Rays,9,6,1,Ryan Carpenter,Blake Snell
+2019-06-04,Cleveland Indians,Minnesota Twins,5,2,1,Shane Bieber,Devin Smeltzer
+2019-06-04,Milwaukee Brewers,Miami Marlins,0,16,0,Chase Anderson,Pablo López
+2019-06-04,Chicago Cubs,Colorado Rockies,6,3,1,Kyle Hendricks,Jeff Hoffman
+2019-06-04,Texas Rangers,Baltimore Orioles,11,12,0,Drew Smyly,Dylan Bundy
+2019-06-04,Kansas City Royals,Boston Red Sox,3,8,0,Glenn Sparkman,Eduardo Rodriguez
+2019-06-04,St. Louis Cardinals,Cincinnati Reds,1,4,0,Génesis Cabrera,Luis Castillo
+2019-06-04,Arizona Diamondbacks,Los Angeles Dodgers,0,9,0,Taylor Clarke,Hyun Jin Ryu
+2019-06-04,Los Angeles Angels,Oakland Athletics,2,4,0,Griffin Canning,Frankie Montas
+2019-06-04,Seattle Mariners,Houston Astros,5,11,0,Andrew Moore,Wade Miley
+2019-06-04,San Diego Padres,Philadelphia Phillies,6,9,0,Chris Paddack,Jerad Eickhoff
+2019-06-05,Washington Nationals,Chicago White Sox,6,4,1,Aníbal Sánchez,Dylan Covey
+2019-06-05,Arizona Diamondbacks,Los Angeles Dodgers,3,2,1,Jon Duplantier,Kenta Maeda
+2019-06-05,San Diego Padres,Philadelphia Phillies,5,7,0,Cal Quantrill,Jake Arrieta
+2019-06-05,Pittsburgh Pirates,Atlanta Braves,7,4,1,Joe Musgrove,Kevin Gausman
+2019-06-05,Toronto Blue Jays,New York Yankees,11,7,1,Trent Thornton,James Paxton
+2019-06-05,New York Mets,San Francisco Giants,7,0,1,Jason Vargas,Tyler Beede
+2019-06-05,Detroit Tigers,Tampa Bay Rays,0,4,0,Spencer Turnbull,Charlie Morton
+2019-06-05,Cleveland Indians,Minnesota Twins,9,7,1,Tyler Clippard,Martín Pérez
+2019-06-05,Milwaukee Brewers,Miami Marlins,3,8,0,Jimmy Nelson,Sandy Alcantara
+2019-06-05,Chicago Cubs,Colorado Rockies,9,8,1,Yu Darvish,Germán Márquez
+2019-06-05,Texas Rangers,Baltimore Orioles,2,1,1,Mike Minor,John Means
+2019-06-05,Kansas City Royals,Boston Red Sox,0,8,0,Jakob Junis,Chris Sale
+2019-06-05,Los Angeles Angels,Oakland Athletics,10,9,1,Cam Bedrosian,Daniel Mengden
+2019-06-05,Seattle Mariners,Houston Astros,14,1,1,Mike Leake,Brad Peacock
+2019-06-06,New York Mets,San Francisco Giants,7,3,1,Zack Wheeler,Shaun Anderson
+2019-06-06,Pittsburgh Pirates,Atlanta Braves,6,1,1,Chris Archer,Mike Foltynewicz
+2019-06-06,Detroit Tigers,Tampa Bay Rays,1,6,0,Daniel Norris,Ryne Stanek
+2019-06-06,Kansas City Royals,Boston Red Sox,5,7,0,Danny Duffy,Ryan Weber
+2019-06-06,St. Louis Cardinals,Cincinnati Reds,3,1,1,Dakota Hudson,Anthony DeSclafani
+2019-06-06,Milwaukee Brewers,Miami Marlins,5,1,1,Freddy Peralta,Caleb Smith
+2019-06-06,Chicago Cubs,Colorado Rockies,1,3,0,Jose Quintana,Peter Lambert
+2019-06-06,Seattle Mariners,Houston Astros,7,8,0,Austin Adams,Justin Verlander
+2019-06-06,Toronto Blue Jays,New York Yankees,2,6,0,Edwin Jackson,J.A. Happ
+2019-06-06,Cleveland Indians,Minnesota Twins,4,5,0,Trevor Bauer,José Berríos
+2019-06-06,Texas Rangers,Baltimore Orioles,4,3,1,Ariel Jurado,David Hess
+2019-06-06,Los Angeles Angels,Oakland Athletics,4,7,0,Tyler Skaggs,Mike Fiers
+2019-06-06,San Diego Padres,Washington Nationals,5,4,1,Joey Lucchesi,Patrick Corbin
+2019-06-07,Chicago Cubs,St. Louis Cardinals,3,1,1,Cole Hamels,Miles Mikolas
+2019-06-07,Philadelphia Phillies,Cincinnati Reds,4,2,1,Zach Eflin,Tyler Mahle
+2019-06-07,Toronto Blue Jays,Arizona Diamondbacks,2,8,0,Marcus Stroman,Merrill Kelly
+2019-06-07,New York Mets,Colorado Rockies,1,5,0,Jacob deGrom,Antonio Senzatela
+2019-06-07,Boston Red Sox,Tampa Bay Rays,1,5,0,Rick Porcello,Yonny Chirinos
+2019-06-07,Detroit Tigers,Minnesota Twins,3,6,0,Matthew Boyd,Michael Pineda
+2019-06-07,Miami Marlins,Atlanta Braves,1,7,0,José Ureña,Michael Soroka
+2019-06-07,Cleveland Indians,New York Yankees,5,2,1,Zach Plesac,Domingo Germán
+2019-06-07,Texas Rangers,Oakland Athletics,3,5,0,Lance Lynn,Brett Anderson
+2019-06-07,Houston Astros,Baltimore Orioles,4,3,1,Gerrit Cole,Gabriel Ynoa
+2019-06-07,Milwaukee Brewers,Pittsburgh Pirates,10,4,1,Brandon Woodruff,Rookie Davis
+2019-06-07,Kansas City Royals,Chicago White Sox,6,4,1,Homer Bailey,Iván Nova
+2019-06-07,Los Angeles Angels,Seattle Mariners,2,6,0,Andrew Heaney,Marco Gonzales
+2019-06-07,San Diego Padres,Washington Nationals,5,4,1,Nick Margevicius,Erick Fedde
+2019-06-07,San Francisco Giants,Los Angeles Dodgers,2,1,1,Drew Pomeranz,Clayton Kershaw
+2019-06-08,Boston Red Sox,Tampa Bay Rays,2,9,0,Josh A. Smith,Ryan Yarbrough
+2019-06-08,Boston Red Sox,Tampa Bay Rays,5,1,1,David Price,Ryne Stanek
+2019-06-08,Texas Rangers,Oakland Athletics,10,5,1,Joe Palumbo,Paul Blackburn
+2019-06-08,Texas Rangers,Oakland Athletics,3,1,1,Adrian Sampson,Chris Bassitt
+2019-06-08,Kansas City Royals,Chicago White Sox,0,2,0,Brad Keller,Lucas Giolito
+2019-06-08,Toronto Blue Jays,Arizona Diamondbacks,0,6,0,Aaron Sanchez,Zack Greinke
+2019-06-08,Philadelphia Phillies,Cincinnati Reds,4,1,1,Nick Pivetta,Tanner Roark
+2019-06-08,Houston Astros,Baltimore Orioles,1,4,0,Framber Valdez,Andrew Cashner
+2019-06-08,Detroit Tigers,Minnesota Twins,9,3,1,Buck Farmer,Kyle Gibson
+2019-06-08,Miami Marlins,Atlanta Braves,0,1,0,Trevor Richards,Julio Teheran
+2019-06-08,Cleveland Indians,New York Yankees,8,4,1,Adam Plutko,CC Sabathia
+2019-06-08,Milwaukee Brewers,Pittsburgh Pirates,5,3,1,Zach Davies,Jordan Lyles
+2019-06-08,New York Mets,Colorado Rockies,5,3,1,Steven Matz,Jon Gray
+2019-06-08,San Francisco Giants,Los Angeles Dodgers,2,7,0,Jeff Samardzija,Rich Hill
+2019-06-08,Chicago Cubs,St. Louis Cardinals,9,4,1,Jon Lester,Jack Flaherty
+2019-06-08,Los Angeles Angels,Seattle Mariners,12,3,1,Dillon Peters,Yusei Kikuchi
+2019-06-08,San Diego Padres,Washington Nationals,1,4,0,Eric Lauer,Max Scherzer
+2019-06-09,Boston Red Sox,Tampa Bay Rays,1,6,0,Eduardo Rodriguez,Blake Snell
+2019-06-09,Philadelphia Phillies,Cincinnati Reds,3,4,0,Aaron Nola,Sonny Gray
+2019-06-09,Toronto Blue Jays,Arizona Diamondbacks,2,8,0,Clayton Richard,Robbie Ray
+2019-06-09,New York Mets,Colorado Rockies,6,1,1,Noah Syndergaard,Jeff Hoffman
+2019-06-09,Detroit Tigers,Minnesota Twins,2,12,0,Ryan Carpenter,Jake Odorizzi
+2019-06-09,Miami Marlins,Atlanta Braves,6,7,0,Pablo López,Max Fried
+2019-06-09,Cleveland Indians,New York Yankees,6,7,0,Shane Bieber,Chad Green
+2019-06-09,Houston Astros,Baltimore Orioles,4,0,1,Wade Miley,Dylan Bundy
+2019-06-09,Milwaukee Brewers,Pittsburgh Pirates,5,2,1,Chase Anderson,Steven Brault
+2019-06-09,Kansas City Royals,Chicago White Sox,2,5,0,Glenn Sparkman,Reynaldo López
+2019-06-09,Texas Rangers,Oakland Athletics,8,9,0,Drew Smyly,Frankie Montas
+2019-06-09,San Francisco Giants,Los Angeles Dodgers,0,1,0,Madison Bumgarner,Walker Buehler
+2019-06-09,Los Angeles Angels,Seattle Mariners,3,9,0,José Suarez,Wade LeBlanc
+2019-06-09,San Diego Padres,Washington Nationals,2,5,0,Luis Perdomo,Stephen Strasburg
+2019-06-09,Chicago Cubs,St. Louis Cardinals,5,1,1,Kyle Hendricks,Adam Wainwright
+2019-06-10,Philadelphia Phillies,Arizona Diamondbacks,8,13,0,Jerad Eickhoff,Taylor Clarke
+2019-06-10,Tampa Bay Rays,Oakland Athletics,6,2,1,Charlie Morton,Tanner Anderson
+2019-06-10,Boston Red Sox,Texas Rangers,3,4,0,Chris Sale,Mike Minor
+2019-06-10,Miami Marlins,St. Louis Cardinals,1,4,0,Sandy Alcantara,Michael Wacha
+2019-06-10,Atlanta Braves,Pittsburgh Pirates,13,7,1,Kevin Gausman,Joe Musgrove
+2019-06-10,Chicago White Sox,Washington Nationals,1,12,0,Odrisamer Despaigne,Aníbal Sánchez
+2019-06-10,Colorado Rockies,Chicago Cubs,6,5,1,Germán Márquez,Yu Darvish
+2019-06-10,Los Angeles Angels,Los Angeles Dodgers,5,3,1,Griffin Canning,Hyun Jin Ryu
+2019-06-11,New York Yankees,New York Mets,12,5,1,Masahiro Tanaka,Zack Wheeler
+2019-06-11,New York Yankees,New York Mets,4,10,0,James Paxton,Jason Vargas
+2019-06-11,Baltimore Orioles,Toronto Blue Jays,4,2,1,John Means,Trent Thornton
+2019-06-11,Philadelphia Phillies,Arizona Diamondbacks,7,4,1,Jake Arrieta,Jon Duplantier
+2019-06-11,Cleveland Indians,Cincinnati Reds,2,1,1,Trevor Bauer,Luis Castillo
+2019-06-11,Tampa Bay Rays,Oakland Athletics,3,4,0,Ryne Stanek,Mike Fiers
+2019-06-11,Boston Red Sox,Texas Rangers,5,9,0,Darwinzon Hernández,Ariel Jurado
+2019-06-11,Miami Marlins,St. Louis Cardinals,1,7,0,Elieser Hernández,Dakota Hudson
+2019-06-11,Minnesota Twins,Seattle Mariners,6,5,1,Martín Pérez,Mike Leake
+2019-06-11,Chicago White Sox,Washington Nationals,7,5,1,Manny Banuelos,Patrick Corbin
+2019-06-11,Houston Astros,Milwaukee Brewers,10,8,1,Brad Peacock,Freddy Peralta
+2019-06-11,Kansas City Royals,Detroit Tigers,3,2,1,Jakob Junis,Spencer Turnbull
+2019-06-11,Colorado Rockies,Chicago Cubs,10,3,1,Peter Lambert,Jose Quintana
+2019-06-11,San Francisco Giants,San Diego Padres,6,5,1,Tyler Beede,Chris Paddack
+2019-06-11,Los Angeles Angels,Los Angeles Dodgers,5,3,1,Cam Bedrosian,Kenta Maeda
+2019-06-12,Tampa Bay Rays,Oakland Athletics,2,6,0,Yonny Chirinos,Brett Anderson
+2019-06-12,Cleveland Indians,Cincinnati Reds,2,7,0,Zach Plesac,Anthony DeSclafani
+2019-06-12,Colorado Rockies,Chicago Cubs,1,10,0,Antonio Senzatela,Cole Hamels
+2019-06-12,Boston Red Sox,Texas Rangers,4,3,1,Rick Porcello,Lance Lynn
+2019-06-12,Baltimore Orioles,Toronto Blue Jays,6,8,0,David Hess,Derek Law
+2019-06-12,Philadelphia Phillies,Arizona Diamondbacks,0,2,0,Zach Eflin,Merrill Kelly
+2019-06-12,Miami Marlins,St. Louis Cardinals,9,0,1,Jordan Yamamoto,Miles Mikolas
+2019-06-12,Atlanta Braves,Pittsburgh Pirates,8,7,1,Michael Soroka,Mitch Keller
+2019-06-12,Minnesota Twins,Seattle Mariners,6,9,0,José Berríos,Gerson Bautista
+2019-06-12,Houston Astros,Milwaukee Brewers,3,6,0,Justin Verlander,Brandon Woodruff
+2019-06-12,Kansas City Royals,Detroit Tigers,2,3,0,Danny Duffy,Daniel Norris
+2019-06-12,San Francisco Giants,San Diego Padres,4,2,1,Shaun Anderson,Joey Lucchesi
+2019-06-13,Atlanta Braves,Pittsburgh Pirates,6,5,1,Julio Teheran,Joe Musgrove
+2019-06-13,Minnesota Twins,Seattle Mariners,10,5,1,Michael Pineda,Yusei Kikuchi
+2019-06-13,Washington Nationals,Arizona Diamondbacks,0,5,0,Erick Fedde,Zack Greinke
+2019-06-13,Baltimore Orioles,Toronto Blue Jays,3,12,0,Gabriel Ynoa,Marcus Stroman
+2019-06-13,New York Mets,St. Louis Cardinals,4,5,0,Jacob deGrom,Jack Flaherty
+2019-06-13,Tampa Bay Rays,Los Angeles Angels,3,5,0,Ryan Yarbrough,Tyler Skaggs
+2019-06-13,Boston Red Sox,Texas Rangers,7,6,1,David Price,Adrian Sampson
+2019-06-13,Kansas City Royals,Detroit Tigers,7,3,1,Homer Bailey,Matthew Boyd
+2019-06-13,Chicago White Sox,New York Yankees,5,4,1,Iván Nova,J.A. Happ
+2019-06-13,Colorado Rockies,San Diego Padres,9,6,1,Jon Gray,Matt Strahm
+2019-06-13,Los Angeles Dodgers,Chicago Cubs,7,3,1,Clayton Kershaw,Jon Lester
+2019-06-14,New York Mets,St. Louis Cardinals,4,5,0,Jacob deGrom,Jack Flaherty
+2019-06-14,Baltimore Orioles,Boston Red Sox,2,13,0,Luis Ortiz,Eduardo Rodriguez
+2019-06-14,Washington Nationals,Arizona Diamondbacks,7,3,1,Max Scherzer,Robbie Ray
+2019-06-14,Detroit Tigers,Cleveland Indians,4,13,0,Ryan Carpenter,Adam Plutko
+2019-06-14,New York Mets,St. Louis Cardinals,5,9,0,Steven Matz,Daniel Ponce de Leon
+2019-06-14,Tampa Bay Rays,Los Angeles Angels,9,4,1,Blake Snell,Andrew Heaney
+2019-06-14,Cincinnati Reds,Texas Rangers,1,7,0,Tyler Mahle,Jesse Chavez
+2019-06-14,Miami Marlins,Pittsburgh Pirates,0,11,0,Trevor Richards,Steven Brault
+2019-06-14,Atlanta Braves,Philadelphia Phillies,9,8,1,Max Fried,Nick Pivetta
+2019-06-14,Houston Astros,Toronto Blue Jays,15,2,1,Gerrit Cole,Aaron Sanchez
+2019-06-14,Minnesota Twins,Kansas City Royals,2,0,1,Kyle Gibson,Brad Keller
+2019-06-14,Chicago White Sox,New York Yankees,10,2,1,Lucas Giolito,CC Sabathia
+2019-06-14,Colorado Rockies,San Diego Padres,12,16,0,Jeff Hoffman,Cal Quantrill
+2019-06-14,Oakland Athletics,Seattle Mariners,2,9,0,Chris Bassitt,Marco Gonzales
+2019-06-14,Los Angeles Dodgers,Chicago Cubs,5,3,1,Rich Hill,Kyle Hendricks
+2019-06-14,San Francisco Giants,Milwaukee Brewers,5,3,1,Drew Pomeranz,Zach Davies
+2019-06-15,Tampa Bay Rays,Los Angeles Angels,3,5,0,Charlie Morton,José Suarez
+2019-06-15,Baltimore Orioles,Boston Red Sox,2,7,0,Dylan Bundy,Chris Sale
+2019-06-15,Washington Nationals,Arizona Diamondbacks,3,10,0,Stephen Strasburg,Taylor Clarke
+2019-06-15,San Francisco Giants,Milwaukee Brewers,8,7,1,Madison Bumgarner,Jimmy Nelson
+2019-06-15,Houston Astros,Toronto Blue Jays,7,2,1,Framber Valdez,Clayton Richard
+2019-06-15,Detroit Tigers,Cleveland Indians,2,4,0,Gregory Soto,Shane Bieber
+2019-06-15,Miami Marlins,Pittsburgh Pirates,4,3,1,Pablo López,Dario Agrazal
+2019-06-15,New York Mets,St. Louis Cardinals,8,7,1,Noah Syndergaard,Michael Wacha
+2019-06-15,Cincinnati Reds,Texas Rangers,3,4,0,Tanner Roark,Mike Minor
+2019-06-15,Minnesota Twins,Kansas City Royals,5,4,1,Jake Odorizzi,Glenn Sparkman
+2019-06-15,Chicago White Sox,New York Yankees,4,8,0,Reynaldo López,Chad Green
+2019-06-15,Atlanta Braves,Philadelphia Phillies,5,6,0,Sean Newcomb,Aaron Nola
+2019-06-15,Colorado Rockies,San Diego Padres,14,8,1,Germán Márquez,Eric Lauer
+2019-06-15,Oakland Athletics,Seattle Mariners,11,2,1,Frankie Montas,Gerson Bautista
+2019-06-15,Los Angeles Dodgers,Chicago Cubs,1,2,0,Walker Buehler,Yu Darvish
+2019-06-16,Baltimore Orioles,Boston Red Sox,6,8,0,John Means,Brian Johnson
+2019-06-16,Detroit Tigers,Cleveland Indians,0,8,0,Spencer Turnbull,Trevor Bauer
+2019-06-16,New York Mets,St. Louis Cardinals,3,4,0,Jason Vargas,Dakota Hudson
+2019-06-16,Tampa Bay Rays,Los Angeles Angels,6,5,1,Ryne Stanek,Griffin Canning
+2019-06-16,Cincinnati Reds,Texas Rangers,11,3,1,Sonny Gray,Ariel Jurado
+2019-06-16,Miami Marlins,Pittsburgh Pirates,4,5,0,Sandy Alcantara,Chris Archer
+2019-06-16,Atlanta Braves,Philadelphia Phillies,15,1,1,Mike Foltynewicz,Vince Velasquez
+2019-06-16,Washington Nationals,Arizona Diamondbacks,15,5,1,Aníbal Sánchez,Archie Bradley
+2019-06-16,Houston Astros,Toronto Blue Jays,0,12,0,Brad Peacock,Trent Thornton
+2019-06-16,Minnesota Twins,Kansas City Royals,6,8,0,Martín Pérez,Jakob Junis
+2019-06-16,Chicago White Sox,New York Yankees,3,10,0,Odrisamer Despaigne,James Paxton
+2019-06-16,Colorado Rockies,San Diego Padres,13,14,0,Peter Lambert,Nick Margevicius
+2019-06-16,San Francisco Giants,Milwaukee Brewers,3,5,0,Jeff Samardzija,Chase Anderson
+2019-06-16,Oakland Athletics,Seattle Mariners,3,6,0,Tanner Anderson,Mike Leake
+2019-06-16,Los Angeles Dodgers,Chicago Cubs,3,2,1,Hyun Jin Ryu,Jose Quintana
+2019-06-17,New York Yankees,Tampa Bay Rays,3,0,1,Masahiro Tanaka,Yonny Chirinos
+2019-06-17,Toronto Blue Jays,Los Angeles Angels,5,10,0,Derek Law,Luis García
+2019-06-17,Cincinnati Reds,Houston Astros,3,2,1,Luis Castillo,Wade Miley
+2019-06-17,Atlanta Braves,New York Mets,12,3,1,Michael Soroka,Zack Wheeler
+2019-06-17,Texas Rangers,Cleveland Indians,7,2,1,Lance Lynn,Mike Clevinger
+2019-06-17,Minnesota Twins,Boston Red Sox,0,2,0,José Berríos,Rick Porcello
+2019-06-17,St. Louis Cardinals,Miami Marlins,5,0,1,Miles Mikolas,Elieser Hernández
+2019-06-17,Oakland Athletics,Baltimore Orioles,3,2,1,Mike Fiers,Andrew Cashner
+2019-06-17,Seattle Mariners,Kansas City Royals,4,6,0,Tayler Scott,Danny Duffy
+2019-06-17,Los Angeles Dodgers,San Francisco Giants,2,3,0,Kenta Maeda,Tyler Beede
+2019-06-17,San Diego Padres,Milwaukee Brewers,2,0,1,Joey Lucchesi,Jhoulys Chacín
+2019-06-18,Pittsburgh Pirates,Detroit Tigers,4,5,0,Mitch Keller,Daniel Norris
+2019-06-18,New York Yankees,Tampa Bay Rays,6,3,1,J.A. Happ,Ryne Stanek
+2019-06-18,Toronto Blue Jays,Los Angeles Angels,1,3,0,Marcus Stroman,Tyler Skaggs
+2019-06-18,Cincinnati Reds,Houston Astros,4,3,1,Anthony DeSclafani,Justin Verlander
+2019-06-18,Atlanta Braves,New York Mets,2,10,0,Julio Teheran,Jacob deGrom
+2019-06-18,Texas Rangers,Cleveland Indians,3,10,0,Adrian Sampson,Zach Plesac
+2019-06-18,Chicago Cubs,Chicago White Sox,1,3,0,Cole Hamels,Iván Nova
+2019-06-18,Minnesota Twins,Boston Red Sox,4,3,1,Michael Pineda,David Price
+2019-06-18,St. Louis Cardinals,Miami Marlins,0,6,0,Jack Flaherty,Jordan Yamamoto
+2019-06-18,Arizona Diamondbacks,Colorado Rockies,1,8,0,Merrill Kelly,Antonio Senzatela
+2019-06-18,Oakland Athletics,Baltimore Orioles,16,2,1,Brett Anderson,Gabriel Ynoa
+2019-06-18,Seattle Mariners,Kansas City Royals,0,9,0,Yusei Kikuchi,Homer Bailey
+2019-06-18,Los Angeles Dodgers,San Francisco Giants,9,0,1,Clayton Kershaw,Shaun Anderson
+2019-06-18,San Diego Padres,Milwaukee Brewers,4,1,1,Logan Allen,Brandon Woodruff
+2019-06-19,Cincinnati Reds,Houston Astros,3,2,1,Tyler Mahle,Gerrit Cole
+2019-06-19,Washington Nationals,Philadelphia Phillies,6,2,1,Patrick Corbin,Zach Eflin
+2019-06-19,Washington Nationals,Philadelphia Phillies,2,0,1,Max Scherzer,Jake Arrieta
+2019-06-19,New York Yankees,Tampa Bay Rays,12,1,1,CC Sabathia,Blake Snell
+2019-06-19,Oakland Athletics,Baltimore Orioles,8,3,1,Chris Bassitt,Jimmy Yacabonis
+2019-06-19,San Diego Padres,Milwaukee Brewers,8,7,1,Matt Strahm,Zach Davies
+2019-06-19,Seattle Mariners,Kansas City Royals,8,2,1,Marco Gonzales,Brad Keller
+2019-06-19,Pittsburgh Pirates,Detroit Tigers,8,7,1,Trevor Williams,Jordan Zimmermann
+2019-06-19,Toronto Blue Jays,Los Angeles Angels,6,11,0,Aaron Sanchez,Andrew Heaney
+2019-06-19,Atlanta Braves,New York Mets,7,2,1,Max Fried,Steven Matz
+2019-06-19,Texas Rangers,Cleveland Indians,4,10,0,Joe Palumbo,Adam Plutko
+2019-06-19,Chicago Cubs,Chicago White Sox,7,3,1,Jon Lester,Lucas Giolito
+2019-06-19,Minnesota Twins,Boston Red Sox,4,9,0,Kyle Gibson,Eduardo Rodriguez
+2019-06-19,St. Louis Cardinals,Miami Marlins,2,1,1,Daniel Ponce de Leon,Trevor Richards
+2019-06-19,Arizona Diamondbacks,Colorado Rockies,4,6,0,Zack Greinke,Jon Gray
+2019-06-19,Los Angeles Dodgers,San Francisco Giants,9,2,1,Rich Hill,Drew Pomeranz
+2019-06-20,Texas Rangers,Cleveland Indians,4,2,1,Mike Minor,Shane Bieber
+2019-06-20,Arizona Diamondbacks,Colorado Rockies,4,6,0,Robbie Ray,Jeff Hoffman
+2019-06-20,Washington Nationals,Philadelphia Phillies,7,4,1,Erick Fedde,Nick Pivetta
+2019-06-20,New York Yankees,Houston Astros,10,6,1,Chad Green,Framber Valdez
+2019-06-20,Toronto Blue Jays,Los Angeles Angels,7,5,1,Clayton Richard,José Suarez
+2019-06-20,St. Louis Cardinals,Miami Marlins,6,7,0,Adam Wainwright,Zac Gallen
+2019-06-20,Chicago Cubs,New York Mets,7,4,1,Tyler Chatwood,Walker Lockett
+2019-06-20,Milwaukee Brewers,Cincinnati Reds,1,7,0,Jimmy Nelson,Tanner Roark
+2019-06-20,Kansas City Royals,Minnesota Twins,4,1,1,Glenn Sparkman,Jake Odorizzi
+2019-06-20,Oakland Athletics,Tampa Bay Rays,5,4,1,Frankie Montas,Charlie Morton
+2019-06-20,Seattle Mariners,Baltimore Orioles,5,2,1,Tayler Scott,Dylan Bundy
+2019-06-20,Los Angeles Dodgers,San Francisco Giants,9,8,1,Julio Urías,Madison Bumgarner
+2019-06-21,Chicago Cubs,New York Mets,4,5,0,Yu Darvish,Jason Vargas
+2019-06-21,Pittsburgh Pirates,San Diego Padres,2,1,1,Joe Musgrove,Eric Lauer
+2019-06-21,Washington Nationals,Atlanta Braves,4,3,1,Stephen Strasburg,Dallas Keuchel
+2019-06-21,Philadelphia Phillies,Miami Marlins,1,2,0,Aaron Nola,Sandy Alcantara
+2019-06-21,New York Yankees,Houston Astros,4,1,1,James Paxton,Brad Peacock
+2019-06-21,Cleveland Indians,Detroit Tigers,7,6,1,Trevor Bauer,Matthew Boyd
+2019-06-21,Boston Red Sox,Toronto Blue Jays,7,5,1,Chris Sale,Trent Thornton
+2019-06-21,Texas Rangers,Chicago White Sox,4,5,0,Ariel Jurado,Reynaldo López
+2019-06-21,Milwaukee Brewers,Cincinnati Reds,7,11,0,Chase Anderson,Sonny Gray
+2019-06-21,St. Louis Cardinals,Los Angeles Angels,5,1,1,Michael Wacha,Griffin Canning
+2019-06-21,Kansas City Royals,Minnesota Twins,7,8,0,Jakob Junis,Martín Pérez
+2019-06-21,Arizona Diamondbacks,San Francisco Giants,5,11,0,Taylor Clarke,Jeff Samardzija
+2019-06-21,Oakland Athletics,Tampa Bay Rays,3,5,0,Tanner Anderson,Andrew Kittredge
+2019-06-21,Los Angeles Dodgers,Colorado Rockies,4,2,1,Walker Buehler,Germán Márquez
+2019-06-21,Seattle Mariners,Baltimore Orioles,10,9,1,Mike Leake,Sean Gilmartin
+2019-06-22,St. Louis Cardinals,Los Angeles Angels,4,2,1,Dakota Hudson,Noé Ramirez
+2019-06-22,Kansas City Royals,Minnesota Twins,3,5,0,Danny Duffy,José Berríos
+2019-06-22,Chicago Cubs,New York Mets,2,10,0,Jose Quintana,Zack Wheeler
+2019-06-22,Pittsburgh Pirates,San Diego Padres,6,3,1,Chris Archer,Chris Paddack
+2019-06-22,Boston Red Sox,Toronto Blue Jays,7,8,0,Brian Johnson,Derek Law
+2019-06-22,Philadelphia Phillies,Miami Marlins,3,5,0,Vince Velasquez,Elieser Hernández
+2019-06-22,Oakland Athletics,Tampa Bay Rays,4,2,1,Mike Fiers,Yonny Chirinos
+2019-06-22,Cleveland Indians,Detroit Tigers,2,0,1,Aaron Civale,Spencer Turnbull
+2019-06-22,Seattle Mariners,Baltimore Orioles,4,8,0,Tommy Milone,Andrew Cashner
+2019-06-22,Milwaukee Brewers,Cincinnati Reds,6,5,1,Jhoulys Chacín,Luis Castillo
+2019-06-22,Los Angeles Dodgers,Colorado Rockies,5,4,1,Hyun Jin Ryu,Peter Lambert
+2019-06-22,Washington Nationals,Atlanta Braves,9,13,0,Aníbal Sánchez,Mike Foltynewicz
+2019-06-22,New York Yankees,Houston Astros,7,5,1,Masahiro Tanaka,Wade Miley
+2019-06-22,Texas Rangers,Chicago White Sox,6,5,1,Lance Lynn,Odrisamer Despaigne
+2019-06-22,Arizona Diamondbacks,San Francisco Giants,4,7,0,Zack Godley,Tyler Beede
+2019-06-23,Boston Red Sox,Toronto Blue Jays,1,6,0,Rick Porcello,Marcus Stroman
+2019-06-23,Philadelphia Phillies,Miami Marlins,4,6,0,Enyel De Los Santos,Jordan Yamamoto
+2019-06-23,Cleveland Indians,Detroit Tigers,8,3,1,Zach Plesac,Daniel Norris
+2019-06-23,Pittsburgh Pirates,San Diego Padres,11,10,1,Steven Brault,Joey Lucchesi
+2019-06-23,Washington Nationals,Atlanta Braves,3,4,0,Austin Voth,Michael Soroka
+2019-06-23,New York Yankees,Houston Astros,4,9,0,J.A. Happ,Justin Verlander
+2019-06-23,Milwaukee Brewers,Cincinnati Reds,7,5,1,Brandon Woodruff,Anthony DeSclafani
+2019-06-23,Kansas City Royals,Minnesota Twins,6,1,1,Homer Bailey,Michael Pineda
+2019-06-23,Chicago Cubs,New York Mets,5,3,1,Cole Hamels,Jacob deGrom
+2019-06-23,Texas Rangers,Chicago White Sox,7,4,1,Adrian Sampson,Iván Nova
+2019-06-23,Oakland Athletics,Tampa Bay Rays,2,8,0,Brett Anderson,Ryne Stanek
+2019-06-23,Los Angeles Dodgers,Colorado Rockies,6,3,1,Kenta Maeda,Antonio Senzatela
+2019-06-23,Seattle Mariners,Baltimore Orioles,13,3,1,Yusei Kikuchi,Gabriel Ynoa
+2019-06-23,Arizona Diamondbacks,San Francisco Giants,3,2,1,Merrill Kelly,Shaun Anderson
+2019-06-23,St. Louis Cardinals,Los Angeles Angels,4,6,0,Miles Mikolas,Tyler Skaggs
+2019-06-24,Philadelphia Phillies,New York Mets,13,7,1,Zach Eflin,Steven Matz
+2019-06-24,New York Yankees,Toronto Blue Jays,10,8,1,CC Sabathia,Aaron Sanchez
+2019-06-24,Cleveland Indians,Kansas City Royals,3,2,1,Adam Plutko,Brad Keller
+2019-06-24,Boston Red Sox,Chicago White Sox,6,5,1,Eduardo Rodriguez,Lucas Giolito
+2019-06-24,Chicago Cubs,Atlanta Braves,8,3,1,Jon Lester,Julio Teheran
+2019-06-24,Arizona Diamondbacks,Los Angeles Dodgers,8,5,1,Zack Greinke,Clayton Kershaw
+2019-06-24,San Francisco Giants,Colorado Rockies,0,2,0,Drew Pomeranz,Jon Gray
+2019-06-25,Baltimore Orioles,San Diego Padres,3,8,0,Jimmy Yacabonis,Logan Allen
+2019-06-25,Philadelphia Phillies,New York Mets,7,5,1,Jake Arrieta,Walker Lockett
+2019-06-25,New York Yankees,Toronto Blue Jays,4,3,1,Chad Green,Clayton Richard
+2019-06-25,Cleveland Indians,Kansas City Royals,6,8,0,Shane Bieber,Glenn Sparkman
+2019-06-25,Detroit Tigers,Texas Rangers,3,5,0,Jordan Zimmermann,Jesse Chavez
+2019-06-25,Boston Red Sox,Chicago White Sox,6,3,1,David Price,Carson Fulmer
+2019-06-25,Miami Marlins,Washington Nationals,1,6,0,Trevor Richards,Max Scherzer
+2019-06-25,Chicago Cubs,Atlanta Braves,2,3,0,Adbert Alzolay,Max Fried
+2019-06-25,Houston Astros,Pittsburgh Pirates,5,1,1,Gerrit Cole,Trevor Williams
+2019-06-25,Minnesota Twins,Tampa Bay Rays,9,4,1,Kyle Gibson,Blake Snell
+2019-06-25,Milwaukee Brewers,Seattle Mariners,3,8,0,Zach Davies,Marco Gonzales
+2019-06-25,St. Louis Cardinals,Oakland Athletics,3,7,0,Jack Flaherty,Chris Bassitt
+2019-06-25,Arizona Diamondbacks,Los Angeles Dodgers,2,3,0,Robbie Ray,Ross Stripling
+2019-06-25,San Francisco Giants,Colorado Rockies,4,2,1,Madison Bumgarner,Chi Chi González
+2019-06-25,Los Angeles Angels,Cincinnati Reds,5,1,1,Andrew Heaney,Tyler Mahle
+2019-06-26,Boston Red Sox,Chicago White Sox,7,8,0,Chris Sale,Reynaldo López
+2019-06-26,New York Yankees,Toronto Blue Jays,8,7,1,James Paxton,Trent Thornton
+2019-06-26,Cleveland Indians,Kansas City Royals,5,3,1,Trevor Bauer,Jakob Junis
+2019-06-26,Baltimore Orioles,San Diego Padres,5,10,0,Dylan Bundy,Matt Strahm
+2019-06-26,Arizona Diamondbacks,Los Angeles Dodgers,8,2,1,Taylor Clarke,Tony Gonsolin
+2019-06-26,San Francisco Giants,Colorado Rockies,3,6,0,Jeff Samardzija,Germán Márquez
+2019-06-26,Philadelphia Phillies,New York Mets,5,4,1,Nick Pivetta,Jason Vargas
+2019-06-26,Detroit Tigers,Texas Rangers,1,4,0,Matthew Boyd,Mike Minor
+2019-06-26,Miami Marlins,Washington Nationals,5,7,0,Zac Gallen,Patrick Corbin
+2019-06-26,St. Louis Cardinals,Oakland Athletics,0,2,0,Adam Wainwright,Daniel Mengden
+2019-06-26,Chicago Cubs,Atlanta Braves,3,5,0,Yu Darvish,Dallas Keuchel
+2019-06-26,Los Angeles Angels,Cincinnati Reds,5,1,1,Jaime Barria,Tanner Roark
+2019-06-26,Houston Astros,Pittsburgh Pirates,2,14,0,Framber Valdez,Dario Agrazal
+2019-06-26,Minnesota Twins,Tampa Bay Rays,6,4,1,Jake Odorizzi,Charlie Morton
+2019-06-26,Milwaukee Brewers,Seattle Mariners,2,4,0,Adrian Houser,Matt Carasiti
+2019-06-27,Philadelphia Phillies,New York Mets,6,3,1,Aaron Nola,Zack Wheeler
+2019-06-27,Detroit Tigers,Texas Rangers,1,3,0,Spencer Turnbull,Ariel Jurado
+2019-06-27,Minnesota Twins,Tampa Bay Rays,2,5,0,Martín Pérez,Ryne Stanek
+2019-06-27,Houston Astros,Pittsburgh Pirates,0,10,0,Brad Peacock,Joe Musgrove
+2019-06-27,Milwaukee Brewers,Seattle Mariners,4,2,1,Chase Anderson,Mike Leake
+2019-06-27,Chicago Cubs,Atlanta Braves,9,7,1,Tyler Chatwood,Bryse Wilson
+2019-06-27,Miami Marlins,Washington Nationals,5,8,0,Sandy Alcantara,Stephen Strasburg
+2019-06-27,Colorado Rockies,Los Angeles Dodgers,8,12,0,Peter Lambert,Walker Buehler
+2019-06-27,San Francisco Giants,Arizona Diamondbacks,1,5,0,Tyler Beede,Alex Young
+2019-06-27,Los Angeles Angels,Oakland Athletics,8,3,1,Griffin Canning,Tanner Anderson
+2019-06-28,Baltimore Orioles,Cleveland Indians,13,0,1,John Means,Mike Clevinger
+2019-06-28,Toronto Blue Jays,Kansas City Royals,6,2,1,Sean Reid-Foley,Danny Duffy
+2019-06-28,Cincinnati Reds,Chicago Cubs,6,3,1,Sonny Gray,Cole Hamels
+2019-06-28,Detroit Tigers,Washington Nationals,1,3,0,Daniel Norris,Aníbal Sánchez
+2019-06-28,Tampa Bay Rays,Texas Rangers,0,5,0,Yonny Chirinos,Lance Lynn
+2019-06-28,New York Mets,Atlanta Braves,2,6,0,Jacob deGrom,Michael Soroka
+2019-06-28,Miami Marlins,Philadelphia Phillies,6,2,1,Elieser Hernández,Vince Velasquez
+2019-06-28,Houston Astros,Seattle Mariners,2,1,1,Wade Miley,Matt Carasiti
+2019-06-28,Chicago White Sox,Minnesota Twins,6,4,1,Ross Detwiler,José Berríos
+2019-06-28,Milwaukee Brewers,Pittsburgh Pirates,2,3,0,Jhoulys Chacín,Chris Archer
+2019-06-28,Colorado Rockies,Los Angeles Dodgers,13,9,1,Antonio Senzatela,Hyun Jin Ryu
+2019-06-28,Los Angeles Angels,Oakland Athletics,2,7,0,Noé Ramirez,Mike Fiers
+2019-06-28,San Diego Padres,St. Louis Cardinals,3,1,1,Eric Lauer,Michael Wacha
+2019-06-28,San Francisco Giants,Arizona Diamondbacks,6,3,1,Shaun Anderson,Merrill Kelly
+2019-06-29,Boston Red Sox,New York Yankees,13,17,0,Rick Porcello,Masahiro Tanaka
+2019-06-29,Baltimore Orioles,Cleveland Indians,13,0,1,Andrew Cashner,Zach Plesac
+2019-06-29,Toronto Blue Jays,Kansas City Royals,7,5,1,Marcus Stroman,Homer Bailey
+2019-06-29,Cincinnati Reds,Chicago Cubs,0,6,0,Luis Castillo,Jose Quintana
+2019-06-29,Detroit Tigers,Washington Nationals,7,5,1,Gregory Soto,Austin Voth
+2019-06-29,Tampa Bay Rays,Texas Rangers,5,2,1,Brendan McKay,Adrian Sampson
+2019-06-29,New York Mets,Atlanta Braves,4,5,0,Steven Matz,Julio Teheran
+2019-06-29,Miami Marlins,Philadelphia Phillies,9,6,1,Jordan Yamamoto,Zach Eflin
+2019-06-29,Chicago White Sox,Minnesota Twins,3,10,0,Iván Nova,Michael Pineda
+2019-06-29,Colorado Rockies,Los Angeles Dodgers,5,3,1,Jon Gray,Clayton Kershaw
+2019-06-29,Houston Astros,Seattle Mariners,6,5,1,Justin Verlander,Yusei Kikuchi
+2019-06-29,Milwaukee Brewers,Pittsburgh Pirates,3,1,1,Brandon Woodruff,Jordan Lyles
+2019-06-29,San Francisco Giants,Arizona Diamondbacks,3,4,0,Drew Pomeranz,Zack Greinke
+2019-06-29,Los Angeles Angels,Oakland Athletics,0,4,0,Tyler Skaggs,Brett Anderson
+2019-06-29,San Diego Padres,St. Louis Cardinals,12,2,1,Chris Paddack,Dakota Hudson
+2019-06-30,Boston Red Sox,New York Yankees,8,12,0,Eduardo Rodriguez,Stephen Tarpley
+2019-06-30,Baltimore Orioles,Cleveland Indians,0,2,0,Gabriel Ynoa,Shane Bieber
+2019-06-30,Toronto Blue Jays,Kansas City Royals,6,7,0,Aaron Sanchez,Brad Keller
+2019-06-30,Cincinnati Reds,Chicago Cubs,8,6,1,Anthony DeSclafani,Jon Lester
+2019-06-30,Detroit Tigers,Washington Nationals,1,2,0,Jordan Zimmermann,Max Scherzer
+2019-06-30,Tampa Bay Rays,Texas Rangers,6,2,1,Blake Snell,Jesse Chavez
+2019-06-30,Miami Marlins,Philadelphia Phillies,6,13,0,Trevor Richards,Jake Arrieta
+2019-06-30,Houston Astros,Seattle Mariners,6,1,1,Gerrit Cole,Marco Gonzales
+2019-06-30,Chicago White Sox,Minnesota Twins,4,3,1,Lucas Giolito,Lewis Thorpe
+2019-06-30,Milwaukee Brewers,Pittsburgh Pirates,2,1,1,Zach Davies,Steven Brault
+2019-06-30,Colorado Rockies,Los Angeles Dodgers,5,10,0,Chi Chi González,Kenta Maeda
+2019-06-30,San Francisco Giants,Arizona Diamondbacks,10,4,1,Madison Bumgarner,Robbie Ray
+2019-06-30,Los Angeles Angels,Oakland Athletics,3,12,0,Andrew Heaney,Chris Bassitt
+2019-06-30,San Diego Padres,St. Louis Cardinals,3,5,0,Joey Lucchesi,Miles Mikolas
+2019-06-30,New York Mets,Atlanta Braves,8,5,1,Noah Syndergaard,Max Fried
+2019-07-01,Toronto Blue Jays,Kansas City Royals,11,4,1,Clayton Richard,Glenn Sparkman
+2019-07-01,Pittsburgh Pirates,Chicago Cubs,18,5,1,Trevor Williams,Adbert Alzolay
+2019-07-01,Tampa Bay Rays,Baltimore Orioles,6,3,1,Ryne Stanek,Thomas Eshelman
+2019-07-01,Cincinnati Reds,Milwaukee Brewers,6,8,0,Tyler Mahle,Adrian Houser
+2019-07-01,San Diego Padres,San Francisco Giants,2,13,0,Logan Allen,Jeff Samardzija
+2019-07-02,Pittsburgh Pirates,Chicago Cubs,5,1,1,Joe Musgrove,Kyle Hendricks
+2019-07-02,Washington Nationals,Miami Marlins,3,2,1,Patrick Corbin,Zac Gallen
+2019-07-02,Toronto Blue Jays,Boston Red Sox,6,10,0,Trent Thornton,David Price
+2019-07-02,Tampa Bay Rays,Baltimore Orioles,6,3,1,Charlie Morton,Asher Wojciechowski
+2019-07-02,New York Mets,New York Yankees,4,2,1,Zack Wheeler,James Paxton
+2019-07-02,Cincinnati Reds,Milwaukee Brewers,5,4,1,Tanner Roark,Chase Anderson
+2019-07-02,Atlanta Braves,Philadelphia Phillies,0,2,0,Dallas Keuchel,Aaron Nola
+2019-07-02,Texas Rangers,Los Angeles Angels,4,9,0,Mike Minor,José Suarez
+2019-07-02,Colorado Rockies,Houston Astros,8,9,0,Germán Márquez,José Urquidy
+2019-07-02,Kansas City Royals,Cleveland Indians,5,9,0,Jakob Junis,Trevor Bauer
+2019-07-02,Oakland Athletics,Minnesota Twins,8,6,1,Daniel Mengden,Jake Odorizzi
+2019-07-02,Los Angeles Dodgers,Arizona Diamondbacks,5,4,1,Ross Stripling,Taylor Clarke
+2019-07-02,San Diego Padres,San Francisco Giants,4,10,0,Matt Strahm,Tyler Beede
+2019-07-02,Seattle Mariners,St. Louis Cardinals,5,4,1,Matt Carasiti,Jack Flaherty
+2019-07-03,Chicago White Sox,Detroit Tigers,7,5,1,Dylan Cease,Daniel Norris
+2019-07-03,Chicago White Sox,Detroit Tigers,9,6,1,Ross Detwiler,Tyler Alexander
+2019-07-03,Washington Nationals,Miami Marlins,3,1,1,Stephen Strasburg,Sandy Alcantara
+2019-07-03,Pittsburgh Pirates,Chicago Cubs,6,5,1,Chris Archer,Yu Darvish
+2019-07-03,Toronto Blue Jays,Boston Red Sox,6,3,1,David Phelps,Chris Sale
+2019-07-03,Tampa Bay Rays,Baltimore Orioles,6,9,0,Ryne Stanek,John Means
+2019-07-03,New York Mets,New York Yankees,1,5,0,Jason Vargas,Domingo Germán
+2019-07-03,Cincinnati Reds,Milwaukee Brewers,3,0,1,Sonny Gray,Jhoulys Chacín
+2019-07-03,Atlanta Braves,Philadelphia Phillies,9,2,1,Bryse Wilson,Nick Pivetta
+2019-07-03,Texas Rangers,Los Angeles Angels,2,6,0,Ariel Jurado,Jaime Barria
+2019-07-03,Colorado Rockies,Houston Astros,2,4,0,Peter Lambert,Wade Miley
+2019-07-03,Kansas City Royals,Cleveland Indians,0,4,0,Danny Duffy,Mike Clevinger
+2019-07-03,Oakland Athletics,Minnesota Twins,3,4,0,Mike Fiers,Kyle Gibson
+2019-07-03,San Diego Padres,San Francisco Giants,5,7,0,Cal Quantrill,Shaun Anderson
+2019-07-03,Los Angeles Dodgers,Arizona Diamondbacks,5,4,1,Walker Buehler,Merrill Kelly
+2019-07-03,Seattle Mariners,St. Louis Cardinals,2,5,0,Mike Leake,Adam Wainwright
+2019-07-04,Washington Nationals,Miami Marlins,5,2,1,Aníbal Sánchez,Elieser Hernández
+2019-07-04,Kansas City Royals,Cleveland Indians,4,8,0,Homer Bailey,Zach Plesac
+2019-07-04,Chicago White Sox,Detroit Tigers,5,11,0,Reynaldo López,Matthew Boyd
+2019-07-04,Cincinnati Reds,Milwaukee Brewers,1,0,1,Luis Castillo,Brandon Woodruff
+2019-07-04,Pittsburgh Pirates,Chicago Cubs,3,11,0,Jordan Lyles,Jose Quintana
+2019-07-04,Oakland Athletics,Minnesota Twins,7,2,1,Tanner Anderson,José Berríos
+2019-07-04,Seattle Mariners,St. Louis Cardinals,4,5,0,Matt Carasiti,Michael Wacha
+2019-07-04,Tampa Bay Rays,New York Yankees,4,8,0,Yonny Chirinos,J.A. Happ
+2019-07-04,Toronto Blue Jays,Boston Red Sox,7,8,0,Derek Law,Hector Velázquez
+2019-07-04,Atlanta Braves,Philadelphia Phillies,12,6,1,Michael Soroka,Zach Eflin
+2019-07-04,Texas Rangers,Los Angeles Angels,9,3,1,Lance Lynn,Griffin Canning
+2019-07-04,Los Angeles Dodgers,San Diego Padres,5,1,1,Hyun Jin Ryu,Dinelson Lamet
+2019-07-05,Washington Nationals,Kansas City Royals,4,7,0,Austin Voth,Brad Keller
+2019-07-05,Pittsburgh Pirates,Milwaukee Brewers,6,7,0,Steven Brault,Zach Davies
+2019-07-05,Toronto Blue Jays,Baltimore Orioles,1,4,0,Aaron Sanchez,Dylan Bundy
+2019-07-05,Detroit Tigers,Boston Red Sox,6,9,0,Ryan Carpenter,Eduardo Rodriguez
+2019-07-05,New York Mets,Philadelphia Phillies,2,7,0,Jacob deGrom,Vince Velasquez
+2019-07-05,Tampa Bay Rays,New York Yankees,4,8,0,Brendan McKay,Masahiro Tanaka
+2019-07-05,Atlanta Braves,Miami Marlins,1,0,1,Julio Teheran,Jordan Yamamoto
+2019-07-05,Houston Astros,Los Angeles Angels,4,5,0,Justin Verlander,Noé Ramirez
+2019-07-05,Minnesota Twins,Texas Rangers,15,6,1,Martín Pérez,Adrian Sampson
+2019-07-05,Arizona Diamondbacks,Colorado Rockies,8,0,1,Zack Greinke,Antonio Senzatela
+2019-07-05,Los Angeles Dodgers,San Diego Padres,2,3,0,Clayton Kershaw,Eric Lauer
+2019-07-05,Seattle Mariners,Oakland Athletics,2,5,0,Yusei Kikuchi,Brett Anderson
+2019-07-05,San Francisco Giants,St. Louis Cardinals,4,9,0,Drew Pomeranz,Dakota Hudson
+2019-07-06,Minnesota Twins,Texas Rangers,7,4,1,Michael Pineda,Jesse Chavez
+2019-07-06,Toronto Blue Jays,Baltimore Orioles,1,8,0,Clayton Richard,Andrew Cashner
+2019-07-06,Washington Nationals,Kansas City Royals,6,0,1,Max Scherzer,Glenn Sparkman
+2019-07-06,Pittsburgh Pirates,Milwaukee Brewers,12,2,1,Dario Agrazal,Adrian Houser
+2019-07-06,Cincinnati Reds,Cleveland Indians,2,7,0,Anthony DeSclafani,Shane Bieber
+2019-07-06,Detroit Tigers,Boston Red Sox,6,10,0,Jordan Zimmermann,Rick Porcello
+2019-07-06,Atlanta Braves,Miami Marlins,4,5,0,Max Fried,Caleb Smith
+2019-07-06,Tampa Bay Rays,New York Yankees,4,3,1,Blake Snell,CC Sabathia
+2019-07-06,Houston Astros,Los Angeles Angels,4,0,1,Gerrit Cole,Andrew Heaney
+2019-07-06,New York Mets,Philadelphia Phillies,6,5,1,Noah Syndergaard,Jake Arrieta
+2019-07-06,Chicago White Sox,Chicago Cubs,3,6,0,Lucas Giolito,Jon Lester
+2019-07-06,San Francisco Giants,St. Louis Cardinals,8,4,1,Madison Bumgarner,Miles Mikolas
+2019-07-06,Arizona Diamondbacks,Colorado Rockies,4,2,1,Robbie Ray,Jon Gray
+2019-07-06,Los Angeles Dodgers,San Diego Padres,1,3,0,Kenta Maeda,Chris Paddack
+2019-07-06,Seattle Mariners,Oakland Athletics,6,3,1,Marco Gonzales,Chris Bassitt
+2019-07-07,Toronto Blue Jays,Baltimore Orioles,6,1,1,Trent Thornton,Asher Wojciechowski
+2019-07-07,Cincinnati Reds,Cleveland Indians,1,11,0,Tyler Mahle,Trevor Bauer
+2019-07-07,Detroit Tigers,Boston Red Sox,3,6,0,Gregory Soto,David Price
+2019-07-07,New York Mets,Philadelphia Phillies,3,8,0,Zack Wheeler,Aaron Nola
+2019-07-07,Tampa Bay Rays,New York Yankees,2,1,1,Charlie Morton,James Paxton
+2019-07-07,Atlanta Braves,Miami Marlins,4,3,1,Dallas Keuchel,Trevor Richards
+2019-07-07,Washington Nationals,Kansas City Royals,5,2,1,Patrick Corbin,Jakob Junis
+2019-07-07,Pittsburgh Pirates,Milwaukee Brewers,6,5,1,Joe Musgrove,Chase Anderson
+2019-07-07,Houston Astros,Los Angeles Angels,11,10,1,José Urquidy,José Suarez
+2019-07-07,Minnesota Twins,Texas Rangers,1,4,0,Kyle Gibson,José Leclerc
+2019-07-07,Chicago White Sox,Chicago Cubs,3,1,1,Iván Nova,Kyle Hendricks
+2019-07-07,San Francisco Giants,St. Louis Cardinals,1,0,1,Jeff Samardzija,Jack Flaherty
+2019-07-07,Arizona Diamondbacks,Colorado Rockies,5,3,1,Alex Young,Germán Márquez
+2019-07-07,Los Angeles Dodgers,San Diego Padres,3,5,0,Ross Stripling,Joey Lucchesi
+2019-07-07,Seattle Mariners,Oakland Athletics,4,7,0,Matt Carasiti,Daniel Mengden
+2019-07-11,Texas Rangers,Houston Astros,5,0,1,Lance Lynn,Framber Valdez
+2019-07-12,Chicago Cubs,Pittsburgh Pirates,4,3,1,Yu Darvish,Chris Archer
+2019-07-12,Philadelphia Phillies,Washington Nationals,0,4,0,Nick Pivetta,Stephen Strasburg
+2019-07-12,Baltimore Orioles,Tampa Bay Rays,4,16,0,Dylan Bundy,Yonny Chirinos
+2019-07-12,New York Yankees,Toronto Blue Jays,4,0,1,Domingo Germán,Aaron Sanchez
+2019-07-12,Boston Red Sox,Los Angeles Dodgers,8,1,1,Eduardo Rodriguez,Kenta Maeda
+2019-07-12,Cleveland Indians,Minnesota Twins,3,5,0,Mike Clevinger,Kyle Gibson
+2019-07-12,Miami Marlins,New York Mets,8,4,1,Caleb Smith,Jason Vargas
+2019-07-12,Texas Rangers,Houston Astros,9,8,1,Jesse Chavez,Gerrit Cole
+2019-07-12,Milwaukee Brewers,San Francisco Giants,7,10,0,Chase Anderson,Shaun Anderson
+2019-07-12,Kansas City Royals,Detroit Tigers,8,5,1,Danny Duffy,Spencer Turnbull
+2019-07-12,St. Louis Cardinals,Arizona Diamondbacks,2,4,0,Daniel Ponce de Leon,Robbie Ray
+2019-07-12,Colorado Rockies,Cincinnati Reds,3,2,1,Jon Gray,Sonny Gray
+2019-07-12,Los Angeles Angels,Seattle Mariners,13,0,1,Taylor Cole,Mike Leake
+2019-07-12,Oakland Athletics,Chicago White Sox,5,1,1,Mike Fiers,Iván Nova
+2019-07-12,San Diego Padres,Atlanta Braves,3,5,0,Dinelson Lamet,Dallas Keuchel
+2019-07-13,Baltimore Orioles,Tampa Bay Rays,2,1,1,Aaron Brooks,Brendan McKay
+2019-07-13,Baltimore Orioles,Tampa Bay Rays,4,12,0,John Means,Charlie Morton
+2019-07-13,New York Yankees,Toronto Blue Jays,1,2,0,J.A. Happ,Clayton Richard
+2019-07-13,Chicago Cubs,Pittsburgh Pirates,10,4,1,Jon Lester,Jordan Lyles
+2019-07-13,Oakland Athletics,Chicago White Sox,13,2,1,Chris Bassitt,Dylan Covey
+2019-07-13,Miami Marlins,New York Mets,2,4,0,Zac Gallen,Noah Syndergaard
+2019-07-13,Cleveland Indians,Minnesota Twins,2,6,0,Trevor Bauer,Jake Odorizzi
+2019-07-13,Kansas City Royals,Detroit Tigers,4,1,1,Brad Keller,Matthew Boyd
+2019-07-13,Boston Red Sox,Los Angeles Dodgers,2,11,0,Chris Sale,Ross Stripling
+2019-07-13,St. Louis Cardinals,Arizona Diamondbacks,4,2,1,Dakota Hudson,Merrill Kelly
+2019-07-13,Philadelphia Phillies,Washington Nationals,3,4,0,Aaron Nola,Patrick Corbin
+2019-07-13,Milwaukee Brewers,San Francisco Giants,5,4,1,Zach Davies,Madison Bumgarner
+2019-07-13,Texas Rangers,Houston Astros,6,7,0,Mike Minor,Wade Miley
+2019-07-13,Colorado Rockies,Cincinnati Reds,9,17,0,Kyle Freeland,Tanner Roark
+2019-07-13,San Diego Padres,Atlanta Braves,5,7,0,Joey Lucchesi,Julio Teheran
+2019-07-13,Los Angeles Angels,Seattle Mariners,9,2,1,Matt Harvey,Wade LeBlanc
+2019-07-14,Baltimore Orioles,Tampa Bay Rays,1,4,0,Thomas Eshelman,Ryne Stanek
+2019-07-14,Philadelphia Phillies,Washington Nationals,4,3,1,Jake Arrieta,Aníbal Sánchez
+2019-07-14,New York Yankees,Toronto Blue Jays,4,2,1,Masahiro Tanaka,Marcus Stroman
+2019-07-14,Cleveland Indians,Minnesota Twins,4,3,1,Shane Bieber,José Berríos
+2019-07-14,Miami Marlins,New York Mets,2,6,0,Sandy Alcantara,Jacob deGrom
+2019-07-14,Milwaukee Brewers,San Francisco Giants,3,8,0,Jhoulys Chacín,Tyler Beede
+2019-07-14,Kansas City Royals,Detroit Tigers,8,12,0,Homer Bailey,Jordan Zimmermann
+2019-07-14,St. Louis Cardinals,Arizona Diamondbacks,5,2,1,Adam Wainwright,Zack Greinke
+2019-07-14,Chicago Cubs,Pittsburgh Pirates,8,3,1,Jose Quintana,Trevor Williams
+2019-07-14,Texas Rangers,Houston Astros,4,12,0,Ariel Jurado,Justin Verlander
+2019-07-14,Colorado Rockies,Cincinnati Reds,10,9,1,Antonio Senzatela,Tyler Mahle
+2019-07-14,Los Angeles Angels,Seattle Mariners,6,3,1,José Suarez,Yusei Kikuchi
+2019-07-14,Oakland Athletics,Chicago White Sox,3,2,1,Brett Anderson,Reynaldo López
+2019-07-14,San Diego Padres,Atlanta Braves,1,4,0,Cal Quantrill,Michael Soroka
+2019-07-14,Boston Red Sox,Los Angeles Dodgers,4,7,0,David Price,Hyun Jin Ryu
+2019-07-15,Colorado Rockies,San Francisco Giants,2,19,0,Germán Márquez,Jeff Samardzija
+2019-07-15,Colorado Rockies,San Francisco Giants,1,2,0,Chi Chi González,Dereck Rodríguez
+2019-07-15,Philadelphia Phillies,Los Angeles Dodgers,2,16,0,Zach Eflin,Clayton Kershaw
+2019-07-15,New York Yankees,Tampa Bay Rays,4,5,0,James Paxton,Blake Snell
+2019-07-15,Cleveland Indians,Detroit Tigers,8,6,1,Adam Plutko,Daniel Norris
+2019-07-15,Boston Red Sox,Toronto Blue Jays,10,8,1,Rick Porcello,Trent Thornton
+2019-07-15,Chicago Cubs,Cincinnati Reds,3,6,0,Kyle Hendricks,Luis Castillo
+2019-07-15,Milwaukee Brewers,Atlanta Braves,2,4,0,Adrian Houser,Max Fried
+2019-07-15,St. Louis Cardinals,Pittsburgh Pirates,7,0,1,Miles Mikolas,Joe Musgrove
+2019-07-15,Kansas City Royals,Chicago White Sox,5,2,1,Jakob Junis,Lucas Giolito
+2019-07-15,Los Angeles Angels,Houston Astros,9,6,1,Griffin Canning,Josh James
+2019-07-16,Baltimore Orioles,Washington Nationals,1,8,0,Asher Wojciechowski,Austin Voth
+2019-07-16,Philadelphia Phillies,Los Angeles Dodgers,9,8,1,Vince Velasquez,Walker Buehler
+2019-07-16,New York Yankees,Tampa Bay Rays,8,3,1,CC Sabathia,Ryne Stanek
+2019-07-16,Cleveland Indians,Detroit Tigers,8,0,1,Zach Plesac,Ryan Carpenter
+2019-07-16,Boston Red Sox,Toronto Blue Jays,4,10,0,Andrew Cashner,Jacob Waguespack
+2019-07-16,Miami Marlins,San Diego Padres,12,7,1,Jordan Yamamoto,Logan Allen
+2019-07-16,Chicago Cubs,Cincinnati Reds,4,3,1,Alec Mills,Anthony DeSclafani
+2019-07-16,Texas Rangers,Arizona Diamondbacks,2,9,0,Lance Lynn,Alex Young
+2019-07-16,Minnesota Twins,New York Mets,2,3,0,Michael Pineda,Steven Matz
+2019-07-16,Milwaukee Brewers,Atlanta Braves,13,1,1,Brandon Woodruff,Bryse Wilson
+2019-07-16,St. Louis Cardinals,Pittsburgh Pirates,1,3,0,Jack Flaherty,Dario Agrazal
+2019-07-16,Kansas City Royals,Chicago White Sox,11,0,1,Glenn Sparkman,Dylan Cease
+2019-07-16,Colorado Rockies,San Francisco Giants,4,8,0,Peter Lambert,Drew Pomeranz
+2019-07-16,Los Angeles Angels,Houston Astros,7,2,1,Andrew Heaney,Héctor Rondón
+2019-07-16,Oakland Athletics,Seattle Mariners,9,2,1,Daniel Mengden,Marco Gonzales
+2019-07-17,Minnesota Twins,New York Mets,4,14,0,Martín Pérez,Jason Vargas
+2019-07-17,St. Louis Cardinals,Pittsburgh Pirates,6,5,1,Daniel Ponce de Leon,Chris Archer
+2019-07-17,Milwaukee Brewers,Atlanta Braves,5,4,1,Chase Anderson,Dallas Keuchel
+2019-07-17,Chicago Cubs,Cincinnati Reds,5,2,1,Yu Darvish,Sonny Gray
+2019-07-17,Colorado Rockies,San Francisco Giants,8,11,0,Jon Gray,Shaun Anderson
+2019-07-17,Oakland Athletics,Seattle Mariners,10,2,1,Homer Bailey,Erik Swanson
+2019-07-17,Baltimore Orioles,Washington Nationals,9,2,1,Aaron Brooks,Erick Fedde
+2019-07-17,Philadelphia Phillies,Los Angeles Dodgers,2,7,0,Nick Pivetta,Kenta Maeda
+2019-07-17,Cleveland Indians,Detroit Tigers,7,2,1,Mike Clevinger,Spencer Turnbull
+2019-07-17,Boston Red Sox,Toronto Blue Jays,5,4,1,Eduardo Rodriguez,Aaron Sanchez
+2019-07-17,Miami Marlins,San Diego Padres,2,3,0,Trevor Richards,Chris Paddack
+2019-07-17,Texas Rangers,Arizona Diamondbacks,4,19,0,Jesse Chavez,Robbie Ray
+2019-07-17,Kansas City Royals,Chicago White Sox,7,5,1,Danny Duffy,Iván Nova
+2019-07-17,Los Angeles Angels,Houston Astros,2,11,0,Félix Peña,Gerrit Cole
+2019-07-18,Miami Marlins,San Diego Padres,4,3,1,Caleb Smith,Dinelson Lamet
+2019-07-18,Philadelphia Phillies,Los Angeles Dodgers,7,6,1,Aaron Nola,Ross Stripling
+2019-07-18,Boston Red Sox,Toronto Blue Jays,5,0,1,Chris Sale,Thomas Pannone
+2019-07-18,Kansas City Royals,Chicago White Sox,6,5,1,Brad Keller,Ross Detwiler
+2019-07-18,New York Yankees,Tampa Bay Rays,6,2,1,Domingo Germán,Yonny Chirinos
+2019-07-18,New York Yankees,Tampa Bay Rays,5,1,1,Chad Green,Charlie Morton
+2019-07-18,Cleveland Indians,Detroit Tigers,6,3,1,Trevor Bauer,Matthew Boyd
+2019-07-18,Cincinnati Reds,St. Louis Cardinals,4,7,0,Tanner Roark,Dakota Hudson
+2019-07-18,Atlanta Braves,Washington Nationals,4,13,0,Kyle Wright,Stephen Strasburg
+2019-07-18,Minnesota Twins,Oakland Athletics,6,3,1,Kyle Gibson,Mike Fiers
+2019-07-18,Los Angeles Angels,Houston Astros,2,6,0,Matt Harvey,Wade Miley
+2019-07-18,Arizona Diamondbacks,Milwaukee Brewers,1,5,0,Merrill Kelly,Zach Davies
+2019-07-18,San Francisco Giants,New York Mets,3,2,1,Madison Bumgarner,Noah Syndergaard
+2019-07-19,Chicago Cubs,San Diego Padres,6,5,1,Jon Lester,Eric Lauer
+2019-07-19,Baltimore Orioles,Boston Red Sox,11,2,1,John Means,David Price
+2019-07-19,Pittsburgh Pirates,Philadelphia Phillies,1,6,0,Jordan Lyles,Jake Arrieta
+2019-07-19,New York Yankees,Colorado Rockies,8,2,1,J.A. Happ,Kyle Freeland
+2019-07-19,Cleveland Indians,Kansas City Royals,10,5,1,Shane Bieber,Mike Montgomery
+2019-07-19,Cincinnati Reds,St. Louis Cardinals,11,12,0,Tyler Mahle,Adam Wainwright
+2019-07-19,Detroit Tigers,Toronto Blue Jays,1,12,0,Jordan Zimmermann,Marcus Stroman
+2019-07-19,Tampa Bay Rays,Chicago White Sox,2,9,0,Brendan McKay,Reynaldo López
+2019-07-19,Atlanta Braves,Washington Nationals,4,3,1,Julio Teheran,Patrick Corbin
+2019-07-19,Houston Astros,Texas Rangers,4,3,1,Justin Verlander,Mike Minor
+2019-07-19,Minnesota Twins,Oakland Athletics,3,5,0,Jake Odorizzi,Chris Bassitt
+2019-07-19,Arizona Diamondbacks,Milwaukee Brewers,10,7,1,Taylor Clarke,Jhoulys Chacín
+2019-07-19,Seattle Mariners,Los Angeles Angels,10,0,1,Mike Leake,Taylor Cole
+2019-07-19,Los Angeles Dodgers,Miami Marlins,2,1,1,Hyun Jin Ryu,Zac Gallen
+2019-07-19,San Francisco Giants,New York Mets,1,0,1,Tyler Beede,Jacob deGrom
+2019-07-20,New York Yankees,Colorado Rockies,11,5,1,Masahiro Tanaka,Antonio Senzatela
+2019-07-20,Chicago Cubs,San Diego Padres,6,5,1,Jose Quintana,Joey Lucchesi
+2019-07-20,San Francisco Giants,New York Mets,4,11,0,Jeff Samardzija,Walker Lockett
+2019-07-20,Detroit Tigers,Toronto Blue Jays,5,7,0,Daniel Norris,Trent Thornton
+2019-07-20,Tampa Bay Rays,Chicago White Sox,1,2,0,Ryan Yarbrough,Lucas Giolito
+2019-07-20,Baltimore Orioles,Boston Red Sox,6,17,0,Thomas Eshelman,Rick Porcello
+2019-07-20,Pittsburgh Pirates,Philadelphia Phillies,5,1,1,Joe Musgrove,Zach Eflin
+2019-07-20,Cleveland Indians,Kansas City Royals,0,1,0,Adam Plutko,Jakob Junis
+2019-07-20,Cincinnati Reds,St. Louis Cardinals,3,2,1,Luis Castillo,Miles Mikolas
+2019-07-20,Houston Astros,Texas Rangers,6,1,1,José Urquidy,Ariel Jurado
+2019-07-20,Minnesota Twins,Oakland Athletics,4,5,0,José Berríos,Brett Anderson
+2019-07-20,Atlanta Braves,Washington Nationals,3,5,0,Michael Soroka,Aníbal Sánchez
+2019-07-20,Arizona Diamondbacks,Milwaukee Brewers,3,8,0,Zack Greinke,Gio Gonzalez
+2019-07-20,Seattle Mariners,Los Angeles Angels,2,6,0,Matt Wisler,Griffin Canning
+2019-07-20,Los Angeles Dodgers,Miami Marlins,10,6,1,Clayton Kershaw,Sandy Alcantara
+2019-07-21,Baltimore Orioles,Boston Red Sox,5,0,1,Asher Wojciechowski,Andrew Cashner
+2019-07-21,New York Yankees,Colorado Rockies,4,8,0,James Paxton,Germán Márquez
+2019-07-21,Cleveland Indians,Kansas City Royals,5,4,1,Zach Plesac,Glenn Sparkman
+2019-07-21,Cincinnati Reds,St. Louis Cardinals,1,3,0,Anthony DeSclafani,Jack Flaherty
+2019-07-21,Detroit Tigers,Toronto Blue Jays,4,3,1,Tyler Alexander,Jacob Waguespack
+2019-07-21,Tampa Bay Rays,Chicago White Sox,4,2,1,Blake Snell,Dylan Cease
+2019-07-21,Pittsburgh Pirates,Philadelphia Phillies,1,2,0,Dario Agrazal,Drew Smyly
+2019-07-21,Houston Astros,Texas Rangers,5,3,1,Rogelio Armenteros,Lance Lynn
+2019-07-21,Minnesota Twins,Oakland Athletics,7,6,1,Michael Pineda,Daniel Mengden
+2019-07-21,Chicago Cubs,San Diego Padres,1,5,0,Kyle Hendricks,Adrian Morejon
+2019-07-21,San Francisco Giants,New York Mets,3,2,1,Conner Menez,Steven Matz
+2019-07-21,Seattle Mariners,Los Angeles Angels,3,9,0,Yusei Kikuchi,Dillon Peters
+2019-07-21,Los Angeles Dodgers,Miami Marlins,9,0,1,Walker Buehler,Jordan Yamamoto
+2019-07-21,Arizona Diamondbacks,Milwaukee Brewers,4,7,0,Alex Young,Brandon Woodruff
+2019-07-21,Atlanta Braves,Washington Nationals,7,1,1,Kevin Gausman,Joe Ross
+2019-07-22,Pittsburgh Pirates,St. Louis Cardinals,5,6,0,Trevor Williams,Daniel Ponce de Leon
+2019-07-22,Toronto Blue Jays,Cleveland Indians,3,7,0,Ryan Borucki,Mike Clevinger
+2019-07-22,Tampa Bay Rays,Boston Red Sox,4,9,0,Jalen Beeks,Eduardo Rodriguez
+2019-07-22,Houston Astros,Oakland Athletics,11,1,1,Gerrit Cole,Homer Bailey
+2019-07-22,Chicago White Sox,Miami Marlins,9,1,1,Iván Nova,Trevor Richards
+2019-07-22,Minnesota Twins,New York Yankees,8,6,1,Martín Pérez,CC Sabathia
+2019-07-22,Milwaukee Brewers,Cincinnati Reds,5,6,0,Chase Anderson,Sonny Gray
+2019-07-22,Arizona Diamondbacks,Baltimore Orioles,6,3,1,Robbie Ray,Aaron Brooks
+2019-07-22,San Francisco Giants,Chicago Cubs,5,4,1,Shaun Anderson,Alec Mills
+2019-07-22,Seattle Mariners,Texas Rangers,7,3,1,Marco Gonzales,Adrian Sampson
+2019-07-23,Washington Nationals,Colorado Rockies,11,1,1,Stephen Strasburg,Peter Lambert
+2019-07-23,Pittsburgh Pirates,St. Louis Cardinals,3,4,0,Chris Archer,Dakota Hudson
+2019-07-23,Toronto Blue Jays,Cleveland Indians,2,1,1,Aaron Sanchez,Trevor Bauer
+2019-07-23,New York Mets,San Diego Padres,5,2,1,Jason Vargas,Chris Paddack
+2019-07-23,Tampa Bay Rays,Boston Red Sox,4,5,0,Yonny Chirinos,Chris Sale
+2019-07-23,Detroit Tigers,Philadelphia Phillies,2,3,0,Matthew Boyd,Aaron Nola
+2019-07-23,Atlanta Braves,Kansas City Royals,4,5,0,Dallas Keuchel,Danny Duffy
+2019-07-23,Houston Astros,Oakland Athletics,3,4,0,Wade Miley,Mike Fiers
+2019-07-23,Chicago White Sox,Miami Marlins,1,5,0,Dylan Covey,Caleb Smith
+2019-07-23,Minnesota Twins,New York Yankees,12,14,0,Kyle Gibson,Domingo Germán
+2019-07-23,Milwaukee Brewers,Cincinnati Reds,6,14,0,Zach Davies,Tanner Roark
+2019-07-23,Arizona Diamondbacks,Baltimore Orioles,2,7,0,Merrill Kelly,Dylan Bundy
+2019-07-23,San Francisco Giants,Chicago Cubs,5,4,1,Madison Bumgarner,Yu Darvish
+2019-07-23,Los Angeles Dodgers,Los Angeles Angels,4,5,0,Kenta Maeda,Taylor Cole
+2019-07-23,Seattle Mariners,Texas Rangers,2,7,0,Tommy Milone,Brett Martin
+2019-07-24,Tampa Bay Rays,Boston Red Sox,3,2,1,Charlie Morton,David Price
+2019-07-24,Washington Nationals,Colorado Rockies,3,2,1,Erick Fedde,Jon Gray
+2019-07-24,Washington Nationals,Colorado Rockies,2,0,1,Patrick Corbin,Kyle Freeland
+2019-07-24,Detroit Tigers,Philadelphia Phillies,0,4,0,Jordan Zimmermann,Vince Velasquez
+2019-07-24,Houston Astros,Oakland Athletics,4,2,1,Justin Verlander,Chris Bassitt
+2019-07-24,Milwaukee Brewers,Cincinnati Reds,5,4,1,Jhoulys Chacín,Lucas Sims
+2019-07-24,Arizona Diamondbacks,Baltimore Orioles,5,2,1,Taylor Clarke,John Means
+2019-07-24,Seattle Mariners,Texas Rangers,5,3,1,Mike Leake,Mike Minor
+2019-07-24,San Francisco Giants,Chicago Cubs,1,4,0,Tyler Beede,Tyler Chatwood
+2019-07-24,Pittsburgh Pirates,St. Louis Cardinals,8,14,0,Jordan Lyles,Adam Wainwright
+2019-07-24,Toronto Blue Jays,Cleveland Indians,0,4,0,Marcus Stroman,Shane Bieber
+2019-07-24,New York Mets,San Diego Padres,2,7,0,Noah Syndergaard,Dinelson Lamet
+2019-07-24,Atlanta Braves,Kansas City Royals,0,2,0,Julio Teheran,Brad Keller
+2019-07-24,Chicago White Sox,Miami Marlins,0,2,0,Reynaldo López,Zac Gallen
+2019-07-24,Minnesota Twins,New York Yankees,7,10,0,Jake Odorizzi,J.A. Happ
+2019-07-24,Los Angeles Dodgers,Los Angeles Angels,2,3,0,Ross Stripling,Jaime Barria
+2019-07-25,New York Mets,San Diego Padres,4,0,1,Jacob deGrom,Eric Lauer
+2019-07-25,Pittsburgh Pirates,St. Louis Cardinals,3,6,0,Joe Musgrove,Miles Mikolas
+2019-07-25,Washington Nationals,Colorado Rockies,7,8,0,Max Scherzer,Jeff Hoffman
+2019-07-25,Boston Red Sox,New York Yankees,19,3,1,Rick Porcello,Masahiro Tanaka
+2019-07-25,Chicago White Sox,Minnesota Twins,3,10,0,Lucas Giolito,José Berríos
+2019-07-25,Kansas City Royals,Cleveland Indians,4,5,0,Mike Montgomery,Adam Plutko
+2019-07-25,Los Angeles Angels,Baltimore Orioles,8,10,0,José Suarez,Jimmy Yacabonis
+2019-07-25,Oakland Athletics,Texas Rangers,3,11,0,Brett Anderson,Ariel Jurado
+2019-07-25,Seattle Mariners,Detroit Tigers,10,2,1,Erik Swanson,Drew VerHagen
+2019-07-26,Cincinnati Reds,Colorado Rockies,2,12,0,Luis Castillo,Germán Márquez
+2019-07-26,Washington Nationals,Los Angeles Dodgers,2,4,0,Aníbal Sánchez,Hyun Jin Ryu
+2019-07-26,Philadelphia Phillies,Atlanta Braves,2,9,0,Jake Arrieta,Michael Soroka
+2019-07-26,Toronto Blue Jays,Tampa Bay Rays,1,3,0,Jacob Waguespack,Diego Castillo
+2019-07-26,New York Mets,Pittsburgh Pirates,6,3,1,Zack Wheeler,Dario Agrazal
+2019-07-26,Miami Marlins,Arizona Diamondbacks,3,2,1,Sandy Alcantara,Zack Greinke
+2019-07-26,Boston Red Sox,New York Yankees,10,5,1,Andrew Cashner,James Paxton
+2019-07-26,Chicago White Sox,Minnesota Twins,2,6,0,Dylan Cease,Michael Pineda
+2019-07-26,Milwaukee Brewers,Chicago Cubs,3,2,1,Gio Gonzalez,Kyle Hendricks
+2019-07-26,Kansas City Royals,Cleveland Indians,3,8,0,Jakob Junis,Zach Plesac
+2019-07-26,St. Louis Cardinals,Houston Astros,5,3,1,Jack Flaherty,José Urquidy
+2019-07-26,Los Angeles Angels,Baltimore Orioles,3,9,0,Nick Tropeano,Asher Wojciechowski
+2019-07-26,Oakland Athletics,Texas Rangers,2,5,0,Daniel Mengden,Lance Lynn
+2019-07-26,Seattle Mariners,Detroit Tigers,3,2,1,Yusei Kikuchi,Daniel Norris
+2019-07-26,San Diego Padres,San Francisco Giants,1,2,0,Joey Lucchesi,Jeff Samardzija
+2019-07-27,Toronto Blue Jays,Tampa Bay Rays,10,9,1,Ryan Borucki,Andrew Kittredge
+2019-07-27,Washington Nationals,Los Angeles Dodgers,3,9,0,Matt Grace,Clayton Kershaw
+2019-07-27,Boston Red Sox,New York Yankees,9,5,1,Eduardo Rodriguez,CC Sabathia
+2019-07-27,Seattle Mariners,Detroit Tigers,8,1,1,Marco Gonzales,Tyler Alexander
+2019-07-27,Miami Marlins,Arizona Diamondbacks,2,9,0,Jordan Yamamoto,Alex Young
+2019-07-27,Philadelphia Phillies,Atlanta Braves,7,15,0,Zach Eflin,Max Fried
+2019-07-27,Cincinnati Reds,Colorado Rockies,3,1,1,Anthony DeSclafani,Chi Chi González
+2019-07-27,New York Mets,Pittsburgh Pirates,3,0,1,Steven Matz,Trevor Williams
+2019-07-27,Chicago White Sox,Minnesota Twins,5,1,1,Iván Nova,Martín Pérez
+2019-07-27,Milwaukee Brewers,Chicago Cubs,5,3,1,Chase Anderson,Jon Lester
+2019-07-27,Kansas City Royals,Cleveland Indians,1,9,0,Glenn Sparkman,Mike Clevinger
+2019-07-27,St. Louis Cardinals,Houston Astros,2,8,0,Daniel Ponce de Leon,Gerrit Cole
+2019-07-27,San Diego Padres,San Francisco Giants,5,1,1,Cal Quantrill,Shaun Anderson
+2019-07-27,Los Angeles Angels,Baltimore Orioles,7,8,0,Dillon Peters,Aaron Brooks
+2019-07-27,Oakland Athletics,Texas Rangers,5,4,1,Homer Bailey,Adrian Sampson
+2019-07-28,Philadelphia Phillies,Atlanta Braves,9,4,1,Aaron Nola,Kevin Gausman
+2019-07-28,Toronto Blue Jays,Tampa Bay Rays,9,10,0,Aaron Sanchez,Yonny Chirinos
+2019-07-28,Cincinnati Reds,Colorado Rockies,3,2,1,Alex Wood,Peter Lambert
+2019-07-28,New York Mets,Pittsburgh Pirates,8,7,1,Jason Vargas,Chris Archer
+2019-07-28,Miami Marlins,Arizona Diamondbacks,5,1,1,Elieser Hernández,Robbie Ray
+2019-07-28,Washington Nationals,Los Angeles Dodgers,11,4,1,Stephen Strasburg,Walker Buehler
+2019-07-28,Chicago White Sox,Minnesota Twins,1,11,0,Dylan Covey,Kyle Gibson
+2019-07-28,Milwaukee Brewers,Chicago Cubs,4,11,0,Zach Davies,Jose Quintana
+2019-07-28,Kansas City Royals,Cleveland Indians,9,6,1,Danny Duffy,Trevor Bauer
+2019-07-28,St. Louis Cardinals,Houston Astros,2,6,0,Dakota Hudson,Wade Miley
+2019-07-28,Los Angeles Angels,Baltimore Orioles,5,4,1,Félix Peña,Dylan Bundy
+2019-07-28,Oakland Athletics,Texas Rangers,6,5,1,Mike Fiers,Pedro Payano
+2019-07-28,Seattle Mariners,Detroit Tigers,3,2,1,Matt Wisler,Matthew Boyd
+2019-07-28,San Diego Padres,San Francisco Giants,6,7,0,Adrian Morejon,Madison Bumgarner
+2019-07-28,Boston Red Sox,New York Yankees,6,9,0,Chris Sale,Domingo Germán
+2019-07-29,Washington Nationals,Atlanta Braves,6,3,1,Patrick Corbin,Dallas Keuchel
+2019-07-29,Cincinnati Reds,Pittsburgh Pirates,11,6,1,Sonny Gray,Alex McRae
+2019-07-29,Miami Marlins,Arizona Diamondbacks,11,6,1,Caleb Smith,Merrill Kelly
+2019-07-29,Kansas City Royals,Toronto Blue Jays,3,7,0,Brad Keller,Thomas Pannone
+2019-07-29,Colorado Rockies,Los Angeles Dodgers,9,1,1,Jon Gray,Kenta Maeda
+2019-07-29,Los Angeles Angels,Detroit Tigers,2,7,0,Jaime Barria,Jordan Zimmermann
+2019-07-29,San Diego Padres,Baltimore Orioles,8,1,1,Chris Paddack,David Hess
+2019-07-30,San Diego Padres,Baltimore Orioles,5,8,0,Dinelson Lamet,Thomas Eshelman
+2019-07-30,Philadelphia Phillies,San Francisco Giants,4,2,1,Drew Smyly,Tyler Beede
+2019-07-30,Washington Nationals,Atlanta Braves,8,11,0,Erick Fedde,Julio Teheran
+2019-07-30,New York Yankees,Arizona Diamondbacks,2,4,0,J.A. Happ,Taylor Clarke
+2019-07-30,Cleveland Indians,Houston Astros,0,2,0,Shane Bieber,Justin Verlander
+2019-07-30,Cincinnati Reds,Pittsburgh Pirates,4,11,0,Tanner Roark,Joe Musgrove
+2019-07-30,Boston Red Sox,Tampa Bay Rays,5,6,0,David Price,Charlie Morton
+2019-07-30,Miami Marlins,Minnesota Twins,1,2,0,Zac Gallen,Jake Odorizzi
+2019-07-30,Texas Rangers,Seattle Mariners,5,8,0,Ariel Jurado,Mike Leake
+2019-07-30,Chicago White Sox,New York Mets,2,5,0,Reynaldo López,Noah Syndergaard
+2019-07-30,St. Louis Cardinals,Chicago Cubs,2,1,1,Adam Wainwright,Yu Darvish
+2019-07-30,Kansas City Royals,Toronto Blue Jays,2,9,0,Mike Montgomery,Sean Reid-Foley
+2019-07-30,Colorado Rockies,Los Angeles Dodgers,4,9,0,Kyle Freeland,Julio Urías
+2019-07-30,Los Angeles Angels,Detroit Tigers,6,1,1,Griffin Canning,Drew VerHagen
+2019-07-30,Oakland Athletics,Milwaukee Brewers,3,2,1,Chris Bassitt,Adrian Houser
+2019-07-31,Washington Nationals,Atlanta Braves,4,5,0,Aníbal Sánchez,Michael Soroka
+2019-07-31,Cincinnati Reds,Pittsburgh Pirates,4,1,1,Luis Castillo,Dario Agrazal
+2019-07-31,New York Yankees,Arizona Diamondbacks,7,5,1,Masahiro Tanaka,Zack Greinke
+2019-07-31,Kansas City Royals,Toronto Blue Jays,1,4,0,Jakob Junis,Jacob Waguespack
+2019-07-31,Colorado Rockies,Los Angeles Dodgers,1,5,0,Germán Márquez,Hyun Jin Ryu
+2019-07-31,Los Angeles Angels,Detroit Tigers,1,9,0,José Suarez,Daniel Norris
+2019-07-31,Philadelphia Phillies,San Francisco Giants,1,5,0,Vince Velasquez,Jeff Samardzija
+2019-07-31,Cleveland Indians,Houston Astros,10,4,1,Zach Plesac,José Urquidy
+2019-07-31,Boston Red Sox,Tampa Bay Rays,5,8,0,Rick Porcello,Andrew Kittredge
+2019-07-31,Miami Marlins,Minnesota Twins,4,7,0,Sandy Alcantara,José Berríos
+2019-07-31,Texas Rangers,Seattle Mariners,9,7,1,Mike Minor,Wade LeBlanc
+2019-07-31,Chicago White Sox,New York Mets,2,4,0,Lucas Giolito,Jacob deGrom
+2019-07-31,St. Louis Cardinals,Chicago Cubs,0,2,0,Miles Mikolas,Kyle Hendricks
+2019-07-31,Oakland Athletics,Milwaukee Brewers,2,4,0,Brett Anderson,Jordan Lyles
+2019-08-01,Miami Marlins,Minnesota Twins,5,4,1,Jordan Yamamoto,Michael Pineda
+2019-08-01,Philadelphia Phillies,San Francisco Giants,10,2,1,Jake Arrieta,Dereck Rodríguez
+2019-08-01,Chicago White Sox,New York Mets,0,4,0,Dylan Cease,Zack Wheeler
+2019-08-01,Oakland Athletics,Milwaukee Brewers,5,3,1,Homer Bailey,Chase Anderson
+2019-08-01,Baltimore Orioles,Toronto Blue Jays,2,11,0,Asher Wojciechowski,Trent Thornton
+2019-08-01,Cleveland Indians,Houston Astros,1,7,0,Danny Salazar,Gerrit Cole
+2019-08-01,Boston Red Sox,Tampa Bay Rays,4,9,0,Andrew Cashner,Brendan McKay
+2019-08-01,St. Louis Cardinals,Chicago Cubs,8,0,1,Jack Flaherty,Jon Lester
+2019-08-01,Los Angeles Dodgers,San Diego Padres,8,2,1,Clayton Kershaw,Joey Lucchesi
+2019-08-02,Chicago Cubs,Milwaukee Brewers,6,2,1,Jose Quintana,Zach Davies
+2019-08-02,Pittsburgh Pirates,New York Mets,8,4,1,Trevor Williams,Steven Matz
+2019-08-02,Baltimore Orioles,Toronto Blue Jays,2,5,0,Aaron Brooks,Wilmer Font
+2019-08-02,Philadelphia Phillies,Chicago White Sox,3,4,0,Jason Vargas,Iván Nova
+2019-08-02,New York Yankees,Boston Red Sox,4,2,1,James Paxton,Eduardo Rodriguez
+2019-08-02,Cleveland Indians,Los Angeles Angels,7,3,1,Mike Clevinger,Taylor Cole
+2019-08-02,Atlanta Braves,Cincinnati Reds,2,5,0,Kevin Gausman,Alex Wood
+2019-08-02,Texas Rangers,Detroit Tigers,5,4,1,Lance Lynn,Tyler Alexander
+2019-08-02,Houston Astros,Seattle Mariners,10,2,1,Wade Miley,Yusei Kikuchi
+2019-08-02,Minnesota Twins,Kansas City Royals,11,9,1,Martín Pérez,Glenn Sparkman
+2019-08-02,Colorado Rockies,San Francisco Giants,5,4,1,Peter Lambert,Shaun Anderson
+2019-08-02,Arizona Diamondbacks,Washington Nationals,0,3,0,Alex Young,Joe Ross
+2019-08-02,Los Angeles Dodgers,San Diego Padres,2,5,0,Dustin May,Eric Lauer
+2019-08-03,New York Yankees,Boston Red Sox,9,2,1,Domingo Germán,Chris Sale
+2019-08-03,New York Yankees,Boston Red Sox,6,4,1,Chad Green,Brian Johnson
+2019-08-03,Chicago Cubs,Milwaukee Brewers,4,1,1,Cole Hamels,Gio Gonzalez
+2019-08-03,Tampa Bay Rays,Miami Marlins,8,6,1,Diego Castillo,Elieser Hernández
+2019-08-03,Pittsburgh Pirates,New York Mets,5,7,0,Chris Archer,Marcus Stroman
+2019-08-03,Baltimore Orioles,Toronto Blue Jays,6,4,1,Dylan Bundy,Thomas Pannone
+2019-08-03,Philadelphia Phillies,Chicago White Sox,3,2,1,Aaron Nola,Ross Detwiler
+2019-08-03,Cleveland Indians,Los Angeles Angels,7,2,1,Adam Plutko,Félix Peña
+2019-08-03,Houston Astros,Seattle Mariners,9,0,1,Aaron Sanchez,Marco Gonzales
+2019-08-03,Minnesota Twins,Kansas City Royals,11,3,1,Kyle Gibson,Danny Duffy
+2019-08-03,Atlanta Braves,Cincinnati Reds,5,4,1,Dallas Keuchel,Trevor Bauer
+2019-08-03,Texas Rangers,Detroit Tigers,5,4,1,Adrian Sampson,Matthew Boyd
+2019-08-03,Arizona Diamondbacks,Washington Nationals,18,7,1,Robbie Ray,Stephen Strasburg
+2019-08-03,Colorado Rockies,San Francisco Giants,5,6,0,Jon Gray,Madison Bumgarner
+2019-08-03,Oakland Athletics,St. Louis Cardinals,8,3,1,Mike Fiers,Dakota Hudson
+2019-08-03,Los Angeles Dodgers,San Diego Padres,4,1,1,Walker Buehler,Cal Quantrill
+2019-08-04,Baltimore Orioles,Toronto Blue Jays,6,5,1,Jimmy Yacabonis,Sean Reid-Foley
+2019-08-04,Philadelphia Phillies,Chicago White Sox,5,10,0,Drew Smyly,Reynaldo López
+2019-08-04,Cleveland Indians,Los Angeles Angels,6,2,1,Shane Bieber,Jaime Barria
+2019-08-04,Tampa Bay Rays,Miami Marlins,7,2,1,Yonny Chirinos,Caleb Smith
+2019-08-04,Atlanta Braves,Cincinnati Reds,4,6,0,Julio Teheran,Sonny Gray
+2019-08-04,Pittsburgh Pirates,New York Mets,2,13,0,Joe Musgrove,Noah Syndergaard
+2019-08-04,Houston Astros,Seattle Mariners,3,1,1,Justin Verlander,Sam Tuivailala
+2019-08-04,Minnesota Twins,Kansas City Royals,3,0,1,Devin Smeltzer,Brad Keller
+2019-08-04,Chicago Cubs,Milwaukee Brewers,7,2,1,Yu Darvish,Adrian Houser
+2019-08-04,Texas Rangers,Detroit Tigers,9,4,1,Pedro Payano,Jordan Zimmermann
+2019-08-04,Colorado Rockies,San Francisco Giants,6,2,1,Kyle Freeland,Tyler Beede
+2019-08-04,Oakland Athletics,St. Louis Cardinals,4,2,1,Tanner Roark,Adam Wainwright
+2019-08-04,Arizona Diamondbacks,Washington Nationals,7,5,1,Taylor Clarke,Patrick Corbin
+2019-08-04,Los Angeles Dodgers,San Diego Padres,11,10,1,Kenta Maeda,Chris Paddack
+2019-08-04,New York Yankees,Boston Red Sox,7,4,1,J.A. Happ,David Price
+2019-08-05,New York Mets,Miami Marlins,6,2,1,Jacob deGrom,Robert Dugger
+2019-08-05,New York Mets,Miami Marlins,5,4,1,Walker Lockett,Sandy Alcantara
+2019-08-05,Baltimore Orioles,New York Yankees,6,9,0,Gabriel Ynoa,Masahiro Tanaka
+2019-08-05,Pittsburgh Pirates,Milwaukee Brewers,7,9,0,Dario Agrazal,Jordan Lyles
+2019-08-05,Cincinnati Reds,Los Angeles Angels,7,4,1,Luis Castillo,Taylor Cole
+2019-08-05,Boston Red Sox,Kansas City Royals,7,5,1,Rick Porcello,Mike Montgomery
+2019-08-05,Cleveland Indians,Texas Rangers,0,1,0,Aaron Civale,Mike Minor
+2019-08-05,Tampa Bay Rays,Toronto Blue Jays,0,2,0,Charlie Morton,Jacob Waguespack
+2019-08-05,Detroit Tigers,Chicago White Sox,4,7,0,Spencer Turnbull,Lucas Giolito
+2019-08-05,Chicago Cubs,Oakland Athletics,6,5,1,Kyle Hendricks,Chris Bassitt
+2019-08-05,Minnesota Twins,Atlanta Braves,5,3,1,Jake Odorizzi,Michael Soroka
+2019-08-05,Arizona Diamondbacks,Philadelphia Phillies,3,7,0,Merrill Kelly,Vince Velasquez
+2019-08-05,San Francisco Giants,Washington Nationals,0,4,0,Jeff Samardzija,Erick Fedde
+2019-08-05,Los Angeles Dodgers,St. Louis Cardinals,8,0,1,Tony Gonsolin,Michael Wacha
+2019-08-06,Detroit Tigers,Chicago White Sox,3,5,0,Daniel Norris,Dylan Cease
+2019-08-06,Detroit Tigers,Chicago White Sox,10,6,1,Drew VerHagen,Héctor Santiago
+2019-08-06,Baltimore Orioles,New York Yankees,4,9,0,Asher Wojciechowski,Jonathan Holder
+2019-08-06,Pittsburgh Pirates,Milwaukee Brewers,3,4,0,Steven Brault,Chase Anderson
+2019-08-06,Cincinnati Reds,Los Angeles Angels,8,4,1,Anthony DeSclafani,José Suarez
+2019-08-06,Boston Red Sox,Kansas City Royals,2,6,0,Andrew Cashner,Jakob Junis
+2019-08-06,Tampa Bay Rays,Toronto Blue Jays,7,6,1,Andrew Kittredge,Trent Thornton
+2019-08-06,New York Mets,Miami Marlins,5,0,1,Zack Wheeler,Hector Noesí
+2019-08-06,Chicago Cubs,Oakland Athletics,4,11,0,Jon Lester,Brett Anderson
+2019-08-06,Houston Astros,Colorado Rockies,11,6,1,Zack Greinke,Germán Márquez
+2019-08-06,Minnesota Twins,Atlanta Braves,7,12,0,José Berríos,Mike Foltynewicz
+2019-08-06,Arizona Diamondbacks,Philadelphia Phillies,8,4,1,Mike Leake,Jake Arrieta
+2019-08-06,San Francisco Giants,Washington Nationals,3,5,0,Conner Menez,Aníbal Sánchez
+2019-08-06,Seattle Mariners,San Diego Padres,4,9,0,Matt Wisler,Dinelson Lamet
+2019-08-06,Los Angeles Dodgers,St. Louis Cardinals,3,1,1,Clayton Kershaw,Miles Mikolas
+2019-08-07,New York Mets,Miami Marlins,7,2,1,Steven Matz,Jordan Yamamoto
+2019-08-07,Cleveland Indians,Texas Rangers,2,0,1,Zach Plesac,Ariel Jurado
+2019-08-07,Cleveland Indians,Texas Rangers,5,1,1,Tyler Clippard,Lance Lynn
+2019-08-07,Tampa Bay Rays,Toronto Blue Jays,3,4,0,Brendan McKay,Wilmer Font
+2019-08-07,Minnesota Twins,Atlanta Braves,7,11,0,Martín Pérez,Max Fried
+2019-08-07,Detroit Tigers,Chicago White Sox,1,8,0,Tyler Alexander,Iván Nova
+2019-08-07,Houston Astros,Colorado Rockies,14,3,1,Gerrit Cole,Peter Lambert
+2019-08-07,Chicago Cubs,Oakland Athletics,10,1,1,Jose Quintana,Homer Bailey
+2019-08-07,Los Angeles Dodgers,St. Louis Cardinals,2,1,1,Dustin May,Jack Flaherty
+2019-08-07,San Francisco Giants,Washington Nationals,1,4,0,Shaun Anderson,Joe Ross
+2019-08-07,Seattle Mariners,San Diego Padres,3,2,1,Yusei Kikuchi,Joey Lucchesi
+2019-08-07,Baltimore Orioles,New York Yankees,2,14,0,John Means,James Paxton
+2019-08-07,Pittsburgh Pirates,Milwaukee Brewers,3,8,0,Trevor Williams,Drew Pomeranz
+2019-08-07,Boston Red Sox,Kansas City Royals,5,4,1,Eduardo Rodriguez,Glenn Sparkman
+2019-08-07,Arizona Diamondbacks,Philadelphia Phillies,6,1,1,Zac Gallen,Jason Vargas
+2019-08-08,Toronto Blue Jays,New York Yankees,6,12,0,Thomas Pannone,Domingo Germán
+2019-08-08,Boston Red Sox,Los Angeles Angels,3,0,1,Chris Sale,Dillon Peters
+2019-08-08,Cincinnati Reds,Chicago Cubs,5,12,0,Alex Wood,Cole Hamels
+2019-08-08,Detroit Tigers,Kansas City Royals,10,8,1,Matthew Boyd,Jorge López
+2019-08-08,Miami Marlins,Atlanta Braves,9,2,1,Elieser Hernández,Dallas Keuchel
+2019-08-08,Minnesota Twins,Cleveland Indians,5,7,0,Kyle Gibson,Mike Clevinger
+2019-08-08,San Francisco Giants,Philadelphia Phillies,5,0,1,Madison Bumgarner,Aaron Nola
+2019-08-08,San Diego Padres,Colorado Rockies,9,3,1,Eric Lauer,Jon Gray
+2019-08-09,Chicago White Sox,Oakland Athletics,0,7,0,Ross Detwiler,Mike Fiers
+2019-08-09,Baltimore Orioles,Houston Astros,2,3,0,Dylan Bundy,Wade Miley
+2019-08-09,Toronto Blue Jays,New York Yankees,8,2,1,Sean Reid-Foley,J.A. Happ
+2019-08-09,Boston Red Sox,Los Angeles Angels,16,4,1,Brian Johnson,Jaime Barria
+2019-08-09,Cincinnati Reds,Chicago Cubs,5,2,1,Trevor Bauer,Yu Darvish
+2019-08-09,Detroit Tigers,Kansas City Royals,5,2,1,Edwin Jackson,Brad Keller
+2019-08-09,New York Mets,Washington Nationals,7,6,1,Marcus Stroman,Stephen Strasburg
+2019-08-09,Miami Marlins,Atlanta Braves,4,8,0,Caleb Smith,Julio Teheran
+2019-08-09,Minnesota Twins,Cleveland Indians,2,6,0,Devin Smeltzer,Shane Bieber
+2019-08-09,Milwaukee Brewers,Texas Rangers,6,5,1,Gio Gonzalez,Kolby Allard
+2019-08-09,St. Louis Cardinals,Pittsburgh Pirates,6,2,1,Dakota Hudson,Chris Archer
+2019-08-09,Los Angeles Dodgers,Arizona Diamondbacks,2,3,0,Walker Buehler,Robbie Ray
+2019-08-09,San Diego Padres,Colorado Rockies,7,1,1,Cal Quantrill,Kyle Freeland
+2019-08-09,Seattle Mariners,Tampa Bay Rays,3,5,0,Marco Gonzales,Jalen Beeks
+2019-08-09,San Francisco Giants,Philadelphia Phillies,6,9,0,Tyler Beede,Drew Smyly
+2019-08-10,Toronto Blue Jays,New York Yankees,5,4,1,Wilmer Font,Chad Green
+2019-08-10,Boston Red Sox,Los Angeles Angels,4,12,0,Rick Porcello,Andrew Heaney
+2019-08-10,San Francisco Giants,Philadelphia Phillies,3,1,1,Jeff Samardzija,Vince Velasquez
+2019-08-10,Detroit Tigers,Kansas City Royals,0,7,0,Spencer Turnbull,Mike Montgomery
+2019-08-10,Miami Marlins,Atlanta Braves,7,6,1,Sandy Alcantara,Michael Soroka
+2019-08-10,Baltimore Orioles,Houston Astros,2,23,0,Aaron Brooks,Aaron Sanchez
+2019-08-10,Cincinnati Reds,Chicago Cubs,10,1,1,Sonny Gray,Kyle Hendricks
+2019-08-10,New York Mets,Washington Nationals,4,3,1,Noah Syndergaard,Patrick Corbin
+2019-08-10,Minnesota Twins,Cleveland Indians,4,1,1,Jake Odorizzi,Adam Plutko
+2019-08-10,Chicago White Sox,Oakland Athletics,3,2,1,Reynaldo López,Tanner Roark
+2019-08-10,Milwaukee Brewers,Texas Rangers,3,2,1,Adrian Houser,Pedro Payano
+2019-08-10,St. Louis Cardinals,Pittsburgh Pirates,3,1,1,Adam Wainwright,Joe Musgrove
+2019-08-10,San Diego Padres,Colorado Rockies,8,5,1,Chris Paddack,Chi Chi González
+2019-08-10,Los Angeles Dodgers,Arizona Diamondbacks,4,0,1,Kenta Maeda,Alex Young
+2019-08-10,Seattle Mariners,Tampa Bay Rays,4,5,0,Matt Wisler,Charlie Morton
+2019-08-11,Boston Red Sox,Los Angeles Angels,4,5,0,Andrew Cashner,Patrick Sandoval
+2019-08-11,Baltimore Orioles,Houston Astros,8,7,1,Asher Wojciechowski,Justin Verlander
+2019-08-11,Toronto Blue Jays,New York Yankees,0,1,0,Trent Thornton,Masahiro Tanaka
+2019-08-11,Cincinnati Reds,Chicago Cubs,3,6,0,Luis Castillo,Jon Lester
+2019-08-11,Detroit Tigers,Kansas City Royals,2,10,0,Daniel Norris,Jakob Junis
+2019-08-11,New York Mets,Washington Nationals,4,7,0,Jacob deGrom,Aníbal Sánchez
+2019-08-11,Miami Marlins,Atlanta Braves,4,5,0,Hector Noesí,Mike Foltynewicz
+2019-08-11,Minnesota Twins,Cleveland Indians,3,7,0,José Berríos,Aaron Civale
+2019-08-11,Chicago White Sox,Oakland Athletics,0,2,0,Lucas Giolito,Chris Bassitt
+2019-08-11,Milwaukee Brewers,Texas Rangers,0,1,0,Jordan Lyles,Mike Minor
+2019-08-11,St. Louis Cardinals,Pittsburgh Pirates,11,9,1,Miles Mikolas,Steven Brault
+2019-08-11,San Diego Padres,Colorado Rockies,3,8,0,Dinelson Lamet,Germán Márquez
+2019-08-11,Los Angeles Dodgers,Arizona Diamondbacks,9,3,1,Hyun Jin Ryu,Mike Leake
+2019-08-11,Seattle Mariners,Tampa Bay Rays,0,1,0,Sam Tuivailala,Ryan Yarbrough
+2019-08-11,San Francisco Giants,Philadelphia Phillies,9,6,1,Conner Menez,Jake Arrieta
+2019-08-12,New York Yankees,Baltimore Orioles,8,5,1,James Paxton,Gabriel Ynoa
+2019-08-12,New York Yankees,Baltimore Orioles,11,8,1,Chad Green,Ty Blach
+2019-08-12,Washington Nationals,Cincinnati Reds,7,6,1,Erick Fedde,Anthony DeSclafani
+2019-08-12,Toronto Blue Jays,Texas Rangers,19,4,1,Neil Ramírez,Ariel Jurado
+2019-08-12,Cleveland Indians,Boston Red Sox,6,5,1,Zach Plesac,Eduardo Rodriguez
+2019-08-12,Colorado Rockies,Arizona Diamondbacks,6,8,0,Peter Lambert,Merrill Kelly
+2019-08-12,Los Angeles Angels,Pittsburgh Pirates,2,10,0,José Suarez,Mitch Keller
+2019-08-12,San Diego Padres,Tampa Bay Rays,4,10,0,Joey Lucchesi,Diego Castillo
+2019-08-13,Chicago White Sox,Houston Astros,2,6,0,Dylan Cease,Zack Greinke
+2019-08-13,Chicago White Sox,Houston Astros,4,1,1,Iván Nova,Gerrit Cole
+2019-08-13,Washington Nationals,Cincinnati Reds,3,1,1,Joe Ross,Alex Wood
+2019-08-13,Philadelphia Phillies,Chicago Cubs,4,2,1,Jason Vargas,Jose Quintana
+2019-08-13,New York Yankees,Baltimore Orioles,8,3,1,Domingo Germán,John Means
+2019-08-13,Toronto Blue Jays,Texas Rangers,3,0,1,Thomas Pannone,Lance Lynn
+2019-08-13,Cleveland Indians,Boston Red Sox,6,7,0,Mike Clevinger,Chris Sale
+2019-08-13,Detroit Tigers,Seattle Mariners,6,11,0,Matthew Boyd,Yusei Kikuchi
+2019-08-13,Miami Marlins,Los Angeles Dodgers,1,15,0,Jordan Yamamoto,Dustin May
+2019-08-13,Atlanta Braves,New York Mets,5,3,1,Max Fried,Zack Wheeler
+2019-08-13,Milwaukee Brewers,Minnesota Twins,5,7,0,Chase Anderson,Martín Pérez
+2019-08-13,Kansas City Royals,St. Louis Cardinals,0,2,0,Glenn Sparkman,Jack Flaherty
+2019-08-13,Colorado Rockies,Arizona Diamondbacks,3,9,0,Jeff Hoffman,Zac Gallen
+2019-08-13,San Francisco Giants,Oakland Athletics,3,2,1,Madison Bumgarner,Brett Anderson
+2019-08-13,Los Angeles Angels,Pittsburgh Pirates,7,10,0,Griffin Canning,Trevor Williams
+2019-08-13,San Diego Padres,Tampa Bay Rays,5,7,0,Eric Lauer,Brendan McKay
+2019-08-14,Toronto Blue Jays,Texas Rangers,3,7,0,Sean Reid-Foley,Kolby Allard
+2019-08-14,New York Yankees,Baltimore Orioles,6,5,1,J.A. Happ,Dylan Bundy
+2019-08-14,Cleveland Indians,Boston Red Sox,1,5,0,Shane Bieber,Brian Johnson
+2019-08-14,Chicago White Sox,Houston Astros,13,9,1,Ross Detwiler,Wade Miley
+2019-08-14,Milwaukee Brewers,Minnesota Twins,6,5,1,Gio Gonzalez,Kyle Gibson
+2019-08-14,Colorado Rockies,Arizona Diamondbacks,7,6,1,Kyle Freeland,Robbie Ray
+2019-08-14,San Diego Padres,Tampa Bay Rays,7,2,1,Cal Quantrill,Jalen Beeks
+2019-08-14,San Francisco Giants,Oakland Athletics,5,9,0,Tyler Beede,Homer Bailey
+2019-08-14,Washington Nationals,Cincinnati Reds,17,7,1,Stephen Strasburg,Trevor Bauer
+2019-08-14,Philadelphia Phillies,Chicago Cubs,11,1,1,Aaron Nola,Cole Hamels
+2019-08-14,Detroit Tigers,Seattle Mariners,3,2,1,Edwin Jackson,Marco Gonzales
+2019-08-14,Miami Marlins,Los Angeles Dodgers,1,9,0,Elieser Hernández,Clayton Kershaw
+2019-08-14,Atlanta Braves,New York Mets,6,4,1,Dallas Keuchel,Steven Matz
+2019-08-14,Los Angeles Angels,Pittsburgh Pirates,7,4,1,Dillon Peters,Chris Archer
+2019-08-14,Kansas City Royals,St. Louis Cardinals,0,6,0,Brad Keller,Dakota Hudson
+2019-08-15,Detroit Tigers,Seattle Mariners,2,7,0,Spencer Turnbull,Matt Wisler
+2019-08-15,Miami Marlins,Los Angeles Dodgers,13,7,1,Caleb Smith,Walker Buehler
+2019-08-15,Philadelphia Phillies,Chicago Cubs,7,5,1,Drew Smyly,Yu Darvish
+2019-08-15,New York Yankees,Cleveland Indians,5,19,0,Chad Green,Adam Plutko
+2019-08-15,Cincinnati Reds,St. Louis Cardinals,2,1,1,Sonny Gray,Michael Wacha
+2019-08-15,Atlanta Braves,New York Mets,8,10,0,Julio Teheran,Marcus Stroman
+2019-08-15,Texas Rangers,Minnesota Twins,6,13,0,Pedro Payano,Michael Pineda
+2019-08-15,Arizona Diamondbacks,San Francisco Giants,0,7,0,Alex Young,Dereck Rodríguez
+2019-08-15,Oakland Athletics,Houston Astros,7,6,1,Mike Fiers,Aaron Sanchez
+2019-08-15,Los Angeles Angels,Chicago White Sox,8,7,1,Andrew Heaney,Reynaldo López
+2019-08-16,Pittsburgh Pirates,Chicago Cubs,3,2,1,Joe Musgrove,Kyle Hendricks
+2019-08-16,Philadelphia Phillies,San Diego Padres,8,4,1,Vince Velasquez,Chris Paddack
+2019-08-16,New York Yankees,Cleveland Indians,3,2,1,Masahiro Tanaka,Aaron Civale
+2019-08-16,Washington Nationals,Milwaukee Brewers,2,1,1,Patrick Corbin,Adrian Houser
+2019-08-16,Toronto Blue Jays,Seattle Mariners,7,3,1,Jacob Waguespack,Matt Wisler
+2019-08-16,Boston Red Sox,Baltimore Orioles,9,1,1,Rick Porcello,Aaron Brooks
+2019-08-16,Cincinnati Reds,St. Louis Cardinals,4,13,0,Luis Castillo,Adam Wainwright
+2019-08-16,Tampa Bay Rays,Detroit Tigers,0,2,0,Charlie Morton,Daniel Norris
+2019-08-16,Atlanta Braves,Los Angeles Dodgers,3,8,0,Michael Soroka,Kenta Maeda
+2019-08-16,Texas Rangers,Minnesota Twins,3,4,0,Mike Minor,Jake Odorizzi
+2019-08-16,Kansas City Royals,New York Mets,4,1,1,Mike Montgomery,Noah Syndergaard
+2019-08-16,Colorado Rockies,Miami Marlins,3,0,1,Jon Gray,Sandy Alcantara
+2019-08-16,Arizona Diamondbacks,San Francisco Giants,9,10,0,Mike Leake,Jeff Samardzija
+2019-08-16,Oakland Athletics,Houston Astros,3,2,1,Tanner Roark,Justin Verlander
+2019-08-16,Los Angeles Angels,Chicago White Sox,2,7,0,Patrick Sandoval,Lucas Giolito
+2019-08-17,New York Yankees,Cleveland Indians,6,5,1,James Paxton,Zach Plesac
+2019-08-17,Pittsburgh Pirates,Chicago Cubs,0,2,0,Steven Brault,Jon Lester
+2019-08-17,Toronto Blue Jays,Seattle Mariners,3,4,0,Trent Thornton,Reggie McClain
+2019-08-17,Oakland Athletics,Houston Astros,8,4,1,Chris Bassitt,Rogelio Armenteros
+2019-08-17,Tampa Bay Rays,Detroit Tigers,1,0,1,Ryan Yarbrough,Jordan Zimmermann
+2019-08-17,Cincinnati Reds,St. Louis Cardinals,6,1,1,Anthony DeSclafani,Miles Mikolas
+2019-08-17,Philadelphia Phillies,San Diego Padres,3,5,0,Zach Eflin,Dinelson Lamet
+2019-08-17,Washington Nationals,Milwaukee Brewers,14,15,0,Aníbal Sánchez,Jordan Lyles
+2019-08-17,Boston Red Sox,Baltimore Orioles,4,0,1,Eduardo Rodriguez,Asher Wojciechowski
+2019-08-17,Kansas City Royals,New York Mets,1,4,0,Jakob Junis,Jacob deGrom
+2019-08-17,Atlanta Braves,Los Angeles Dodgers,4,3,1,Mike Foltynewicz,Hyun Jin Ryu
+2019-08-17,Texas Rangers,Minnesota Twins,7,12,0,Ariel Jurado,José Berríos
+2019-08-17,Arizona Diamondbacks,San Francisco Giants,6,11,0,Taylor Clarke,Logan Webb
+2019-08-17,Colorado Rockies,Miami Marlins,11,4,1,Germán Márquez,Hector Noesí
+2019-08-17,Los Angeles Angels,Chicago White Sox,6,5,1,Noé Ramirez,Héctor Santiago
+2019-08-18,Boston Red Sox,Baltimore Orioles,13,7,1,Nathan Eovaldi,Ty Blach
+2019-08-18,Philadelphia Phillies,San Diego Padres,2,3,0,Jason Vargas,Joey Lucchesi
+2019-08-18,New York Yankees,Cleveland Indians,4,8,0,CC Sabathia,Mike Clevinger
+2019-08-18,Toronto Blue Jays,Seattle Mariners,0,7,0,Wilmer Font,Yusei Kikuchi
+2019-08-18,Cincinnati Reds,St. Louis Cardinals,4,5,0,Alex Wood,Jack Flaherty
+2019-08-18,Tampa Bay Rays,Detroit Tigers,5,4,1,Trevor Richards,Matthew Boyd
+2019-08-18,Atlanta Braves,Los Angeles Dodgers,5,3,1,Max Fried,Tony Gonsolin
+2019-08-18,Washington Nationals,Milwaukee Brewers,16,8,1,Erick Fedde,Chase Anderson
+2019-08-18,Kansas City Royals,New York Mets,5,11,0,Glenn Sparkman,Zack Wheeler
+2019-08-18,Texas Rangers,Minnesota Twins,3,6,0,Lance Lynn,Martín Pérez
+2019-08-18,Colorado Rockies,Miami Marlins,7,6,1,Peter Lambert,Jordan Yamamoto
+2019-08-18,Oakland Athletics,Houston Astros,1,4,0,Brett Anderson,Zack Greinke
+2019-08-18,Los Angeles Angels,Chicago White Sox,9,2,1,Griffin Canning,Dylan Cease
+2019-08-18,Arizona Diamondbacks,San Francisco Giants,6,1,1,Merrill Kelly,Madison Bumgarner
+2019-08-18,Pittsburgh Pirates,Chicago Cubs,1,7,0,Mitch Keller,Jose Quintana
+2019-08-19,Baltimore Orioles,Kansas City Royals,4,5,0,John Means,Jorge López
+2019-08-19,Pittsburgh Pirates,Washington Nationals,0,13,0,Trevor Williams,Joe Ross
+2019-08-19,Cincinnati Reds,San Diego Padres,2,3,0,Trevor Bauer,Eric Lauer
+2019-08-19,Tampa Bay Rays,Seattle Mariners,3,9,0,Brendan McKay,Marco Gonzales
+2019-08-19,St. Louis Cardinals,Milwaukee Brewers,3,0,1,Dakota Hudson,Zach Davies
+2019-08-19,Texas Rangers,Los Angeles Angels,8,7,1,Kolby Allard,Dillon Peters
+2019-08-19,Houston Astros,Detroit Tigers,5,4,1,Wade Miley,Edwin Jackson
+2019-08-19,Minnesota Twins,Chicago White Sox,4,6,0,Kyle Gibson,Iván Nova
+2019-08-19,Arizona Diamondbacks,Colorado Rockies,5,3,1,Zac Gallen,Chi Chi González
+2019-08-20,Texas Rangers,Los Angeles Angels,1,5,0,Joe Palumbo,Andrew Heaney
+2019-08-20,Texas Rangers,Los Angeles Angels,3,2,1,Brock Burke,Jaime Barria
+2019-08-20,Baltimore Orioles,Kansas City Royals,4,1,1,Dylan Bundy,Brad Keller
+2019-08-20,Pittsburgh Pirates,Washington Nationals,4,1,1,Chris Archer,Stephen Strasburg
+2019-08-20,New York Mets,Cleveland Indians,9,2,1,Steven Matz,Shane Bieber
+2019-08-20,Cincinnati Reds,San Diego Padres,3,2,1,Sonny Gray,Cal Quantrill
+2019-08-20,Tampa Bay Rays,Seattle Mariners,4,7,0,Diego Castillo,Matt Wisler
+2019-08-20,Boston Red Sox,Philadelphia Phillies,2,3,0,Brian Johnson,Aaron Nola
+2019-08-20,Atlanta Braves,Miami Marlins,5,1,1,Dallas Keuchel,Elieser Hernández
+2019-08-20,St. Louis Cardinals,Milwaukee Brewers,9,4,1,Michael Wacha,Gio Gonzalez
+2019-08-20,Chicago Cubs,San Francisco Giants,5,3,1,Cole Hamels,Tyler Beede
+2019-08-20,Houston Astros,Detroit Tigers,6,3,1,Aaron Sanchez,Spencer Turnbull
+2019-08-20,Minnesota Twins,Chicago White Sox,14,4,1,Michael Pineda,Reynaldo López
+2019-08-20,Arizona Diamondbacks,Colorado Rockies,8,7,1,Alex Young,Kyle Freeland
+2019-08-20,Oakland Athletics,New York Yankees,6,2,1,Homer Bailey,Domingo Germán
+2019-08-20,Los Angeles Dodgers,Toronto Blue Jays,16,3,1,Clayton Kershaw,Buddy Boshers
+2019-08-21,Cincinnati Reds,San Diego Padres,4,2,1,Luis Castillo,Matt Strahm
+2019-08-21,Tampa Bay Rays,Seattle Mariners,7,6,1,Charlie Morton,Cory Gearrin
+2019-08-21,Minnesota Twins,Chicago White Sox,0,4,0,Jake Odorizzi,Lucas Giolito
+2019-08-21,Arizona Diamondbacks,Colorado Rockies,2,7,0,Mike Leake,Tim Melville
+2019-08-21,Baltimore Orioles,Kansas City Royals,8,1,1,Aaron Brooks,Mike Montgomery
+2019-08-21,Pittsburgh Pirates,Washington Nationals,1,11,0,Joe Musgrove,Patrick Corbin
+2019-08-21,Texas Rangers,Los Angeles Angels,8,7,1,Mike Minor,Patrick Sandoval
+2019-08-21,New York Mets,Cleveland Indians,4,3,1,Marcus Stroman,Adam Plutko
+2019-08-21,Boston Red Sox,Philadelphia Phillies,2,5,0,Rick Porcello,Drew Smyly
+2019-08-21,Atlanta Braves,Miami Marlins,5,0,1,Julio Teheran,Caleb Smith
+2019-08-21,Chicago Cubs,San Francisco Giants,12,11,1,Yu Darvish,Dereck Rodríguez
+2019-08-21,Houston Astros,Detroit Tigers,1,2,0,Justin Verlander,Daniel Norris
+2019-08-21,Oakland Athletics,New York Yankees,6,4,1,Mike Fiers,J.A. Happ
+2019-08-21,Los Angeles Dodgers,Toronto Blue Jays,2,1,1,Walker Buehler,Wilmer Font
+2019-08-22,Boston Red Sox,Kansas City Royals,5,4,1,Eduardo Rodriguez,Glenn Sparkman
+2019-08-22,Chicago Cubs,San Francisco Giants,1,0,1,Kyle Hendricks,Jeff Samardzija
+2019-08-22,Pittsburgh Pirates,Washington Nationals,1,7,0,Steven Brault,Max Scherzer
+2019-08-22,Baltimore Orioles,Tampa Bay Rays,2,5,0,Asher Wojciechowski,Ryan Yarbrough
+2019-08-22,Atlanta Braves,Miami Marlins,3,2,1,Michael Soroka,Sandy Alcantara
+2019-08-22,St. Louis Cardinals,Colorado Rockies,6,5,1,Miles Mikolas,Germán Márquez
+2019-08-22,Houston Astros,Detroit Tigers,6,3,1,Gerrit Cole,Jordan Zimmermann
+2019-08-22,Chicago White Sox,Texas Rangers,6,1,1,Ross Detwiler,Ariel Jurado
+2019-08-22,Oakland Athletics,New York Yankees,5,3,1,Tanner Roark,Masahiro Tanaka
+2019-08-22,Los Angeles Dodgers,Toronto Blue Jays,3,2,1,Kenta Maeda,Jacob Waguespack
+2019-08-23,Chicago Cubs,Washington Nationals,3,9,0,Jon Lester,Aníbal Sánchez
+2019-08-23,Pittsburgh Pirates,Cincinnati Reds,3,2,1,Mitch Keller,Anthony DeSclafani
+2019-08-23,Baltimore Orioles,Tampa Bay Rays,1,7,0,Ty Blach,Trevor Richards
+2019-08-23,Cleveland Indians,Kansas City Royals,4,1,1,Zach Plesac,Jakob Junis
+2019-08-23,New York Mets,Atlanta Braves,1,2,0,Jacob deGrom,Mike Foltynewicz
+2019-08-23,Miami Marlins,Philadelphia Phillies,19,11,1,Hector Noesí,Vince Velasquez
+2019-08-23,Houston Astros,Los Angeles Angels,5,4,1,Zack Greinke,José Suarez
+2019-08-23,Minnesota Twins,Detroit Tigers,6,9,0,José Berríos,Drew VerHagen
+2019-08-23,Chicago White Sox,Texas Rangers,8,3,1,Dylan Cease,Lance Lynn
+2019-08-23,Milwaukee Brewers,Arizona Diamondbacks,6,1,1,Jordan Lyles,Merrill Kelly
+2019-08-23,St. Louis Cardinals,Colorado Rockies,8,3,1,Jack Flaherty,Peter Lambert
+2019-08-23,San Diego Padres,Boston Red Sox,0,11,0,Chris Paddack,Eduardo Rodriguez
+2019-08-23,Seattle Mariners,Toronto Blue Jays,7,4,1,Justus Sheffield,Trent Thornton
+2019-08-23,Los Angeles Dodgers,New York Yankees,2,10,0,Hyun Jin Ryu,James Paxton
+2019-08-24,Chicago Cubs,Washington Nationals,2,7,0,Jose Quintana,Joe Ross
+2019-08-24,Los Angeles Dodgers,New York Yankees,2,1,1,Tony Gonsolin,CC Sabathia
+2019-08-24,Miami Marlins,Philadelphia Phillies,3,9,0,Jordan Yamamoto,Zach Eflin
+2019-08-24,Pittsburgh Pirates,Cincinnati Reds,14,0,1,Trevor Williams,Alex Wood
+2019-08-24,Baltimore Orioles,Tampa Bay Rays,7,1,1,John Means,José Alvarado
+2019-08-24,Houston Astros,Los Angeles Angels,5,2,1,Wade Miley,Dillon Peters
+2019-08-24,Cleveland Indians,Kansas City Royals,4,2,1,Mike Clevinger,Glenn Sparkman
+2019-08-24,Minnesota Twins,Detroit Tigers,8,5,1,Kyle Gibson,Edwin Jackson
+2019-08-24,New York Mets,Atlanta Braves,5,9,0,Zack Wheeler,Max Fried
+2019-08-24,Chicago White Sox,Texas Rangers,0,4,0,Iván Nova,Kolby Allard
+2019-08-24,Milwaukee Brewers,Arizona Diamondbacks,4,0,1,Chase Anderson,Zac Gallen
+2019-08-24,St. Louis Cardinals,Colorado Rockies,6,0,1,Dakota Hudson,Chi Chi González
+2019-08-24,San Diego Padres,Boston Red Sox,4,5,0,Dinelson Lamet,Nathan Eovaldi
+2019-08-24,Oakland Athletics,San Francisco Giants,5,10,0,Chris Bassitt,Madison Bumgarner
+2019-08-24,Seattle Mariners,Toronto Blue Jays,5,7,0,Félix Hernández,Wilmer Font
+2019-08-25,Baltimore Orioles,Tampa Bay Rays,8,3,1,Dylan Bundy,Diego Castillo
+2019-08-25,Cleveland Indians,Kansas City Royals,8,9,0,Shane Bieber,Eric Skoglund
+2019-08-25,New York Mets,Atlanta Braves,1,2,0,Steven Matz,Dallas Keuchel
+2019-08-25,Miami Marlins,Philadelphia Phillies,3,2,1,Elieser Hernández,Aaron Nola
+2019-08-25,Pittsburgh Pirates,Cincinnati Reds,9,8,1,Dario Agrazal,Trevor Bauer
+2019-08-25,Houston Astros,Los Angeles Angels,11,2,1,Framber Valdez,Jaime Barria
+2019-08-25,Minnesota Twins,Detroit Tigers,7,4,1,Martín Pérez,Matthew Boyd
+2019-08-25,Chicago White Sox,Texas Rangers,2,0,1,Reynaldo López,Brock Burke
+2019-08-25,Milwaukee Brewers,Arizona Diamondbacks,2,5,0,Zach Davies,Robbie Ray
+2019-08-25,St. Louis Cardinals,Colorado Rockies,11,4,1,Michael Wacha,Antonio Senzatela
+2019-08-25,Chicago Cubs,Washington Nationals,5,7,0,Cole Hamels,Stephen Strasburg
+2019-08-25,Oakland Athletics,San Francisco Giants,4,5,0,Brett Anderson,Logan Webb
+2019-08-25,San Diego Padres,Boston Red Sox,3,1,1,Joey Lucchesi,Brian Johnson
+2019-08-25,Seattle Mariners,Toronto Blue Jays,3,1,1,Marco Gonzales,Clay Buchholz
+2019-08-25,Los Angeles Dodgers,New York Yankees,1,5,0,Clayton Kershaw,Domingo Germán
+2019-08-26,Colorado Rockies,Atlanta Braves,3,1,1,Tim Melville,Julio Teheran
+2019-08-26,Philadelphia Phillies,Pittsburgh Pirates,6,5,1,Jason Vargas,Joe Musgrove
+2019-08-26,Milwaukee Brewers,St. Louis Cardinals,2,12,0,Gio Gonzalez,Adam Wainwright
+2019-08-26,Miami Marlins,Cincinnati Reds,3,6,0,Pablo López,Sonny Gray
+2019-08-26,Kansas City Royals,Oakland Athletics,4,19,0,Brad Keller,Homer Bailey
+2019-08-26,San Francisco Giants,Arizona Diamondbacks,4,6,0,Tyler Beede,Alex Young
+2019-08-26,San Diego Padres,Los Angeles Dodgers,4,3,1,Eric Lauer,Dustin May
+2019-08-26,Seattle Mariners,New York Yankees,4,5,0,Matt Wisler,J.A. Happ
+2019-08-27,Washington Nationals,Baltimore Orioles,0,2,0,Patrick Corbin,Aaron Brooks
+2019-08-27,Philadelphia Phillies,Pittsburgh Pirates,4,5,0,Drew Smyly,Steven Brault
+2019-08-27,Toronto Blue Jays,Atlanta Braves,3,1,1,Wilmer Font,Michael Soroka
+2019-08-27,Detroit Tigers,Cleveland Indians,1,10,0,Spencer Turnbull,Adam Plutko
+2019-08-27,New York Mets,Chicago Cubs,2,5,0,Marcus Stroman,Yu Darvish
+2019-08-27,Miami Marlins,Cincinnati Reds,5,8,0,Caleb Smith,Luis Castillo
+2019-08-27,Milwaukee Brewers,St. Louis Cardinals,3,6,0,Adrian Houser,Miles Mikolas
+2019-08-27,Houston Astros,Tampa Bay Rays,15,1,1,Justin Verlander,Charlie Morton
+2019-08-27,Chicago White Sox,Minnesota Twins,1,3,0,Lucas Giolito,Michael Pineda
+2019-08-27,Kansas City Royals,Oakland Athletics,1,2,0,Mike Montgomery,Mike Fiers
+2019-08-27,Colorado Rockies,Boston Red Sox,6,10,0,Rico Garcia,Rick Porcello
+2019-08-27,San Francisco Giants,Arizona Diamondbacks,2,3,0,Jeff Samardzija,Mike Leake
+2019-08-27,Los Angeles Angels,Texas Rangers,5,2,1,Andrew Heaney,Mike Minor
+2019-08-27,San Diego Padres,Los Angeles Dodgers,0,9,0,Cal Quantrill,Walker Buehler
+2019-08-27,Seattle Mariners,New York Yankees,0,7,0,Yusei Kikuchi,Masahiro Tanaka
+2019-08-28,Milwaukee Brewers,St. Louis Cardinals,4,1,1,Jordan Lyles,Jack Flaherty
+2019-08-28,Seattle Mariners,New York Yankees,3,7,0,Justus Sheffield,James Paxton
+2019-08-28,Philadelphia Phillies,Pittsburgh Pirates,12,3,1,Vince Velasquez,Mitch Keller
+2019-08-28,Washington Nationals,Baltimore Orioles,8,4,1,Max Scherzer,Asher Wojciechowski
+2019-08-28,Toronto Blue Jays,Atlanta Braves,4,9,0,Jacob Waguespack,Mike Foltynewicz
+2019-08-28,Detroit Tigers,Cleveland Indians,2,4,0,Jordan Zimmermann,Aaron Civale
+2019-08-28,New York Mets,Chicago Cubs,7,10,0,Noah Syndergaard,Kyle Hendricks
+2019-08-28,Miami Marlins,Cincinnati Reds,0,5,0,Sandy Alcantara,Anthony DeSclafani
+2019-08-28,Houston Astros,Tampa Bay Rays,8,6,1,Gerrit Cole,Ryan Yarbrough
+2019-08-28,Chicago White Sox,Minnesota Twins,2,8,0,Ross Detwiler,Jake Odorizzi
+2019-08-28,Kansas City Royals,Oakland Athletics,6,4,1,Jakob Junis,Tanner Roark
+2019-08-28,Colorado Rockies,Boston Red Sox,4,7,0,Peter Lambert,Eduardo Rodriguez
+2019-08-28,San Diego Padres,Los Angeles Dodgers,4,6,0,Trey Wingenter,Kenta Maeda
+2019-08-28,Los Angeles Angels,Texas Rangers,0,3,0,Patrick Sandoval,Emmanuel Clase
+2019-08-29,Detroit Tigers,Cleveland Indians,0,2,0,Daniel Norris,Mike Clevinger
+2019-08-29,Kansas City Royals,Oakland Athletics,8,9,0,Glenn Sparkman,Chris Bassitt
+2019-08-29,Houston Astros,Tampa Bay Rays,8,9,0,Zack Greinke,Andrew Kittredge
+2019-08-29,Chicago White Sox,Minnesota Twins,5,10,0,Dylan Cease,José Berríos
+2019-08-29,New York Mets,Chicago Cubs,1,4,0,Jacob deGrom,Jon Lester
+2019-08-29,Miami Marlins,Cincinnati Reds,4,3,1,Robert Dugger,Alex Wood
+2019-08-29,Texas Rangers,Seattle Mariners,3,5,0,Lance Lynn,Félix Hernández
+2019-08-29,Colorado Rockies,Pittsburgh Pirates,8,11,0,Chi Chi González,Trevor Williams
+2019-08-29,Arizona Diamondbacks,Los Angeles Dodgers,11,5,1,Merrill Kelly,Hyun Jin Ryu
+2019-08-29,San Francisco Giants,San Diego Padres,3,5,0,Dereck Rodríguez,Chris Paddack
+2019-08-30,Chicago Cubs,Milwaukee Brewers,7,1,1,Jose Quintana,Chase Anderson
+2019-08-30,Philadelphia Phillies,New York Mets,5,11,0,Aaron Nola,Zack Wheeler
+2019-08-30,Washington Nationals,Miami Marlins,7,6,1,Aníbal Sánchez,Elieser Hernández
+2019-08-30,New York Yankees,Oakland Athletics,2,8,0,CC Sabathia,Brett Anderson
+2019-08-30,Toronto Blue Jays,Houston Astros,4,7,0,Trent Thornton,Wade Miley
+2019-08-30,Tampa Bay Rays,Cleveland Indians,4,0,1,Austin Pruitt,Shane Bieber
+2019-08-30,Detroit Tigers,Minnesota Twins,5,13,0,Edwin Jackson,Kyle Gibson
+2019-08-30,Atlanta Braves,Chicago White Sox,10,7,1,Max Fried,Iván Nova
+2019-08-30,Texas Rangers,Seattle Mariners,6,3,1,Kolby Allard,Marco Gonzales
+2019-08-30,Kansas City Royals,Baltimore Orioles,2,14,0,Eric Skoglund,John Means
+2019-08-30,Colorado Rockies,Pittsburgh Pirates,4,9,0,Antonio Senzatela,Dario Agrazal
+2019-08-30,Arizona Diamondbacks,Los Angeles Dodgers,5,4,1,Zac Gallen,Tony Gonsolin
+2019-08-30,Los Angeles Angels,Boston Red Sox,6,7,0,José Suarez,Nathan Eovaldi
+2019-08-30,San Francisco Giants,San Diego Padres,8,3,1,Madison Bumgarner,Dinelson Lamet
+2019-08-31,New York Yankees,Oakland Athletics,4,3,1,Domingo Germán,Homer Bailey
+2019-08-31,St. Louis Cardinals,Cincinnati Reds,10,6,1,Dakota Hudson,Trevor Bauer
+2019-08-31,St. Louis Cardinals,Cincinnati Reds,3,2,1,Michael Wacha,Sonny Gray
+2019-08-31,Chicago Cubs,Milwaukee Brewers,0,2,0,Cole Hamels,Zach Davies
+2019-08-31,Toronto Blue Jays,Houston Astros,6,4,1,Clay Buchholz,Framber Valdez
+2019-08-31,Philadelphia Phillies,New York Mets,3,6,0,Jason Vargas,Steven Matz
+2019-08-31,Tampa Bay Rays,Cleveland Indians,9,6,1,Diego Castillo,Zach Plesac
+2019-08-31,Detroit Tigers,Minnesota Twins,10,7,1,Matthew Boyd,Martín Pérez
+2019-08-31,Washington Nationals,Miami Marlins,7,0,1,Stephen Strasburg,Pablo López
+2019-08-31,Kansas City Royals,Baltimore Orioles,7,5,1,Jorge López,Dylan Bundy
+2019-08-31,Atlanta Braves,Chicago White Sox,11,5,1,Dallas Keuchel,Reynaldo López
+2019-08-31,Texas Rangers,Seattle Mariners,3,2,1,Brock Burke,Tommy Milone
+2019-08-31,Arizona Diamondbacks,Los Angeles Dodgers,6,5,1,Robbie Ray,Clayton Kershaw
+2019-08-31,Colorado Rockies,Pittsburgh Pirates,4,11,0,Tim Melville,Joe Musgrove
+2019-08-31,San Francisco Giants,San Diego Padres,1,4,0,Logan Webb,Joey Lucchesi
+2019-08-31,Los Angeles Angels,Boston Red Sox,10,4,1,Dillon Peters,Josh Taylor
+2019-09-01,St. Louis Cardinals,Cincinnati Reds,4,3,1,Miles Mikolas,Tyler Mahle
+2019-09-01,St. Louis Cardinals,Cincinnati Reds,3,5,0,Daniel Ponce de Leon,Luis Castillo
+2019-09-01,New York Yankees,Oakland Athletics,5,4,1,J.A. Happ,Sean Manaea
+2019-09-01,Toronto Blue Jays,Houston Astros,0,2,0,Wilmer Font,Justin Verlander
+2019-09-01,Tampa Bay Rays,Cleveland Indians,8,2,1,Charlie Morton,Adam Plutko
+2019-09-01,Detroit Tigers,Minnesota Twins,3,8,0,Spencer Turnbull,Michael Pineda
+2019-09-01,Washington Nationals,Miami Marlins,9,3,1,Patrick Corbin,Caleb Smith
+2019-09-01,Kansas City Royals,Baltimore Orioles,6,4,1,Danny Duffy,Aaron Brooks
+2019-09-01,Chicago Cubs,Milwaukee Brewers,0,4,0,Tyler Chatwood,Gio Gonzalez
+2019-09-01,Texas Rangers,Seattle Mariners,3,11,0,Brett Martin,Yusei Kikuchi
+2019-09-01,Colorado Rockies,Pittsburgh Pirates,2,6,0,Jeff Hoffman,Steven Brault
+2019-09-01,San Francisco Giants,San Diego Padres,4,8,0,Jeff Samardzija,Eric Lauer
+2019-09-01,Los Angeles Angels,Boston Red Sox,3,4,0,Andrew Heaney,David Price
+2019-09-01,Arizona Diamondbacks,Los Angeles Dodgers,3,4,0,Alex Young,Ross Stripling
+2019-09-01,Atlanta Braves,Chicago White Sox,5,3,1,Julio Teheran,Lucas Giolito
+2019-09-01,Philadelphia Phillies,New York Mets,5,2,1,Zach Eflin,Marcus Stroman
+2019-09-02,Washington Nationals,New York Mets,3,7,0,Joe Ross,Noah Syndergaard
+2019-09-02,New York Yankees,Texas Rangers,0,7,0,Masahiro Tanaka,Mike Minor
+2019-09-02,Tampa Bay Rays,Baltimore Orioles,5,4,1,Ryan Yarbrough,Asher Wojciechowski
+2019-09-02,Detroit Tigers,Minnesota Twins,3,4,0,Jordan Zimmermann,Jake Odorizzi
+2019-09-02,Atlanta Braves,Toronto Blue Jays,6,3,1,Michael Soroka,Jacob Waguespack
+2019-09-02,Cincinnati Reds,Philadelphia Phillies,1,7,0,Anthony DeSclafani,Drew Smyly
+2019-09-02,St. Louis Cardinals,San Francisco Giants,3,1,1,Adam Wainwright,Tyler Beede
+2019-09-02,Chicago Cubs,Seattle Mariners,5,1,1,Kyle Hendricks,Justus Sheffield
+2019-09-02,Arizona Diamondbacks,San Diego Padres,14,7,1,Mike Leake,Cal Quantrill
+2019-09-02,Milwaukee Brewers,Houston Astros,2,3,0,Adrian Houser,Gerrit Cole
+2019-09-02,Cleveland Indians,Chicago White Sox,11,3,1,Aaron Civale,Ross Detwiler
+2019-09-02,Los Angeles Dodgers,Colorado Rockies,16,9,1,Walker Buehler,Peter Lambert
+2019-09-03,Tampa Bay Rays,Baltimore Orioles,2,4,0,Trevor Richards,Ty Blach
+2019-09-03,Tampa Bay Rays,Baltimore Orioles,2,0,1,Andrew Kittredge,Gabriel Ynoa
+2019-09-03,New York Yankees,Texas Rangers,10,1,1,James Paxton,Ariel Jurado
+2019-09-03,Cincinnati Reds,Philadelphia Phillies,2,6,0,Lucas Sims,Vince Velasquez
+2019-09-03,Washington Nationals,New York Mets,11,10,1,Max Scherzer,Jacob deGrom
+2019-09-03,Pittsburgh Pirates,Miami Marlins,4,5,0,Mitch Keller,Sandy Alcantara
+2019-09-03,Boston Red Sox,Minnesota Twins,5,6,0,Rick Porcello,Randy Dobnak
+2019-09-03,Cleveland Indians,Chicago White Sox,5,6,0,Mike Clevinger,Dylan Cease
+2019-09-03,Atlanta Braves,Toronto Blue Jays,7,2,1,Mike Foltynewicz,Wilmer Font
+2019-09-03,Milwaukee Brewers,Houston Astros,4,2,1,Jordan Lyles,Zack Greinke
+2019-09-03,St. Louis Cardinals,San Francisco Giants,1,0,1,Jack Flaherty,Dereck Rodríguez
+2019-09-03,Chicago Cubs,Seattle Mariners,6,1,1,Jon Lester,Félix Hernández
+2019-09-03,Kansas City Royals,Detroit Tigers,6,5,1,Mike Montgomery,Daniel Norris
+2019-09-03,Arizona Diamondbacks,San Diego Padres,2,1,1,Merrill Kelly,Ronald Bolaños
+2019-09-03,Oakland Athletics,Los Angeles Angels,7,5,1,Mike Fiers,Jaime Barria
+2019-09-03,Los Angeles Dodgers,Colorado Rockies,5,3,1,Julio Urías,Chi Chi González
+2019-09-04,Washington Nationals,New York Mets,4,8,0,Aníbal Sánchez,Zack Wheeler
+2019-09-04,New York Yankees,Texas Rangers,4,1,1,Chad Green,Lance Lynn
+2019-09-04,Cincinnati Reds,Philadelphia Phillies,8,5,1,Trevor Bauer,Aaron Nola
+2019-09-04,Pittsburgh Pirates,Miami Marlins,6,5,1,Trevor Williams,Robert Dugger
+2019-09-04,Boston Red Sox,Minnesota Twins,6,2,1,Eduardo Rodriguez,José Berríos
+2019-09-04,Cleveland Indians,Chicago White Sox,8,6,1,Shane Bieber,Iván Nova
+2019-09-04,St. Louis Cardinals,San Francisco Giants,8,9,0,Michael Wacha,Madison Bumgarner
+2019-09-04,Kansas City Royals,Detroit Tigers,5,4,1,Jakob Junis,Edwin Jackson
+2019-09-04,Arizona Diamondbacks,San Diego Padres,4,1,1,Zac Gallen,Chris Paddack
+2019-09-04,Oakland Athletics,Los Angeles Angels,4,0,1,Tanner Roark,Patrick Sandoval
+2019-09-04,Los Angeles Dodgers,Colorado Rockies,7,3,1,Hyun Jin Ryu,Antonio Senzatela
+2019-09-05,Cincinnati Reds,Philadelphia Phillies,4,3,1,Sonny Gray,Jason Vargas
+2019-09-05,Cleveland Indians,Chicago White Sox,1,7,0,Zach Plesac,Reynaldo López
+2019-09-05,Kansas City Royals,Detroit Tigers,4,6,0,Glenn Sparkman,Matthew Boyd
+2019-09-05,St. Louis Cardinals,San Francisco Giants,10,0,1,Dakota Hudson,Logan Webb
+2019-09-05,Oakland Athletics,Los Angeles Angels,10,6,1,Brett Anderson,Luke Bard
+2019-09-05,Baltimore Orioles,Texas Rangers,1,3,0,John Means,Kolby Allard
+2019-09-05,Pittsburgh Pirates,Miami Marlins,7,10,0,Dario Agrazal,Elieser Hernández
+2019-09-05,Tampa Bay Rays,Toronto Blue Jays,6,4,1,Austin Pruitt,Trent Thornton
+2019-09-05,Boston Red Sox,Minnesota Twins,1,2,0,Nathan Eovaldi,Martín Pérez
+2019-09-05,Milwaukee Brewers,Chicago Cubs,5,10,0,Chase Anderson,Jose Quintana
+2019-09-05,Atlanta Braves,Washington Nationals,4,2,1,Max Fried,Stephen Strasburg
+2019-09-05,Houston Astros,Seattle Mariners,11,9,1,Wade Miley,Marco Gonzales
+2019-09-06,Pittsburgh Pirates,St. Louis Cardinals,9,4,1,Alex McRae,Miles Mikolas
+2019-09-06,Baltimore Orioles,Texas Rangers,6,7,0,Dylan Bundy,Brock Burke
+2019-09-06,Cincinnati Reds,Arizona Diamondbacks,5,7,0,Tyler Mahle,Robbie Ray
+2019-09-06,Tampa Bay Rays,Toronto Blue Jays,5,0,1,Brendan McKay,Clay Buchholz
+2019-09-06,New York Mets,Philadelphia Phillies,5,4,1,Steven Matz,Zach Eflin
+2019-09-06,Miami Marlins,Kansas City Royals,0,3,0,Pablo López,Jorge López
+2019-09-06,Boston Red Sox,New York Yankees,6,1,1,Jhoulys Chacín,Domingo Germán
+2019-09-06,Atlanta Braves,Washington Nationals,4,3,1,Dallas Keuchel,Patrick Corbin
+2019-09-06,Houston Astros,Seattle Mariners,7,4,1,Framber Valdez,Reggie McClain
+2019-09-06,Minnesota Twins,Cleveland Indians,2,6,0,Michael Pineda,Adam Plutko
+2019-09-06,Chicago White Sox,Los Angeles Angels,4,5,0,Lucas Giolito,Dillon Peters
+2019-09-06,Milwaukee Brewers,Chicago Cubs,7,1,1,Zach Davies,Cole Hamels
+2019-09-06,Detroit Tigers,Oakland Athletics,3,7,0,Gregory Soto,Mike Fiers
+2019-09-06,Oakland Athletics,Detroit Tigers,4,5,0,Homer Bailey,Spencer Turnbull
+2019-09-06,San Diego Padres,Colorado Rockies,2,3,0,Dinelson Lamet,Tim Melville
+2019-09-06,Los Angeles Dodgers,San Francisco Giants,4,5,0,Clayton Kershaw,Jeff Samardzija
+2019-09-07,Boston Red Sox,New York Yankees,1,5,0,Travis Lakins,J.A. Happ
+2019-09-07,Cincinnati Reds,Arizona Diamondbacks,0,2,0,Luis Castillo,Alex Young
+2019-09-07,Tampa Bay Rays,Toronto Blue Jays,5,3,1,Charlie Morton,Anthony Kay
+2019-09-07,Miami Marlins,Kansas City Royals,2,7,0,Caleb Smith,Danny Duffy
+2019-09-07,Pittsburgh Pirates,St. Louis Cardinals,1,10,0,Steven Brault,Adam Wainwright
+2019-09-07,Baltimore Orioles,Texas Rangers,4,9,0,Aaron Brooks,Jonathan Hernández
+2019-09-07,Houston Astros,Seattle Mariners,2,1,1,Justin Verlander,Yusei Kikuchi
+2019-09-07,Minnesota Twins,Cleveland Indians,5,3,1,Jake Odorizzi,Aaron Civale
+2019-09-07,New York Mets,Philadelphia Phillies,0,5,0,Marcus Stroman,Drew Smyly
+2019-09-07,Chicago White Sox,Los Angeles Angels,7,8,0,Dylan Covey,Andrew Heaney
+2019-09-07,Milwaukee Brewers,Chicago Cubs,3,2,1,Gio Gonzalez,Yu Darvish
+2019-09-07,Atlanta Braves,Washington Nationals,5,4,1,Julio Teheran,Austin Voth
+2019-09-07,San Diego Padres,Colorado Rockies,3,0,1,Joey Lucchesi,Jeff Hoffman
+2019-09-07,Oakland Athletics,Detroit Tigers,10,2,1,Chris Bassitt,Jordan Zimmermann
+2019-09-07,Los Angeles Dodgers,San Francisco Giants,0,1,0,Tony Gonsolin,Tyler Beede
+2019-09-08,Baltimore Orioles,Texas Rangers,4,10,0,Asher Wojciechowski,Mike Minor
+2019-09-08,Cincinnati Reds,Arizona Diamondbacks,4,3,1,Anthony DeSclafani,Mike Leake
+2019-09-08,Tampa Bay Rays,Toronto Blue Jays,8,3,1,Tyler Glasnow,Jacob Waguespack
+2019-09-08,New York Mets,Philadelphia Phillies,7,10,0,Noah Syndergaard,Vince Velasquez
+2019-09-08,Miami Marlins,Kansas City Royals,9,0,1,Sandy Alcantara,Mike Montgomery
+2019-09-08,Atlanta Braves,Washington Nationals,4,9,0,Michael Soroka,Max Scherzer
+2019-09-08,Pittsburgh Pirates,St. Louis Cardinals,0,2,0,James Marvel,Jack Flaherty
+2019-09-08,Houston Astros,Seattle Mariners,21,1,1,Gerrit Cole,Félix Hernández
+2019-09-08,Minnesota Twins,Cleveland Indians,2,5,0,Randy Dobnak,Mike Clevinger
+2019-09-08,Chicago White Sox,Los Angeles Angels,5,1,1,Dylan Cease,Jaime Barria
+2019-09-08,Milwaukee Brewers,Chicago Cubs,8,5,1,Adrian Houser,Jon Lester
+2019-09-08,Oakland Athletics,Detroit Tigers,3,1,1,Sean Manaea,Daniel Norris
+2019-09-08,San Diego Padres,Colorado Rockies,2,1,1,Eric Lauer,Peter Lambert
+2019-09-08,Los Angeles Dodgers,San Francisco Giants,5,0,1,Julio Urías,Dereck Rodríguez
+2019-09-08,Boston Red Sox,New York Yankees,5,10,0,Rick Porcello,Masahiro Tanaka
+2019-09-09,Philadelphia Phillies,Atlanta Braves,2,7,0,Aaron Nola,Mike Foltynewicz
+2019-09-09,New York Mets,Arizona Diamondbacks,3,1,1,Jacob deGrom,Merrill Kelly
+2019-09-09,Boston Red Sox,New York Yankees,0,5,0,Eduardo Rodriguez,James Paxton
+2019-09-09,Miami Marlins,Milwaukee Brewers,3,8,0,Robert Dugger,Jordan Lyles
+2019-09-09,Houston Astros,Oakland Athletics,15,0,1,Zack Greinke,Mike Fiers
+2019-09-09,San Francisco Giants,Pittsburgh Pirates,4,6,0,Madison Bumgarner,Trevor Williams
+2019-09-09,Los Angeles Angels,Cleveland Indians,2,6,0,Patrick Sandoval,Shane Bieber
+2019-09-09,San Diego Padres,Chicago Cubs,2,10,0,Cal Quantrill,Kyle Hendricks
+2019-09-10,Detroit Tigers,New York Yankees,12,11,1,Edwin Jackson,Nestor Cortes
+2019-09-10,Baltimore Orioles,Los Angeles Dodgers,3,7,0,Ty Blach,Walker Buehler
+2019-09-10,Philadelphia Phillies,Atlanta Braves,6,5,1,Jason Vargas,Max Fried
+2019-09-10,Toronto Blue Jays,Boston Red Sox,4,3,1,T.J. Zeuch,Nathan Eovaldi
+2019-09-10,New York Mets,Arizona Diamondbacks,3,2,1,Zack Wheeler,Zac Gallen
+2019-09-10,Miami Marlins,Milwaukee Brewers,3,4,0,Elieser Hernández,Chase Anderson
+2019-09-10,Minnesota Twins,Washington Nationals,5,0,1,José Berríos,Aníbal Sánchez
+2019-09-10,Texas Rangers,Tampa Bay Rays,3,5,0,Lance Lynn,Ryan Yarbrough
+2019-09-10,Houston Astros,Oakland Athletics,7,21,0,Wade Miley,Tanner Roark
+2019-09-10,Chicago White Sox,Kansas City Royals,7,3,1,Iván Nova,Jakob Junis
+2019-09-10,Colorado Rockies,St. Louis Cardinals,2,1,1,Chi Chi González,Michael Wacha
+2019-09-10,San Francisco Giants,Pittsburgh Pirates,5,4,1,Johnny Cueto,Mitch Keller
+2019-09-10,Los Angeles Angels,Cleveland Indians,0,8,0,José Suarez,Zach Plesac
+2019-09-10,San Diego Padres,Chicago Cubs,9,8,1,Ronald Bolaños,Jose Quintana
+2019-09-10,Seattle Mariners,Cincinnati Reds,4,3,1,Justus Sheffield,Trevor Bauer
+2019-09-11,Baltimore Orioles,Los Angeles Dodgers,7,3,1,John Means,Ross Stripling
+2019-09-11,Philadelphia Phillies,Atlanta Braves,1,3,0,Zach Eflin,Dallas Keuchel
+2019-09-11,Toronto Blue Jays,Boston Red Sox,8,0,1,Wilmer Font,Bobby Poyner
+2019-09-11,New York Mets,Arizona Diamondbacks,9,0,1,Steven Matz,Robbie Ray
+2019-09-11,Miami Marlins,Milwaukee Brewers,5,7,0,Pablo López,Zach Davies
+2019-09-11,Minnesota Twins,Washington Nationals,2,6,0,Martín Pérez,Stephen Strasburg
+2019-09-11,Texas Rangers,Tampa Bay Rays,10,9,1,Ariel Jurado,Andrew Kittredge
+2019-09-11,Los Angeles Angels,Cleveland Indians,3,4,0,Dillon Peters,Adam Plutko
+2019-09-11,Houston Astros,Oakland Athletics,3,5,0,José Urquidy,Brett Anderson
+2019-09-11,Chicago White Sox,Kansas City Royals,6,8,0,Reynaldo López,Glenn Sparkman
+2019-09-11,Colorado Rockies,St. Louis Cardinals,2,1,1,Antonio Senzatela,Dakota Hudson
+2019-09-11,San Francisco Giants,Pittsburgh Pirates,3,6,0,Logan Webb,Dario Agrazal
+2019-09-11,San Diego Padres,Chicago Cubs,4,0,1,Chris Paddack,Cole Hamels
+2019-09-11,Seattle Mariners,Cincinnati Reds,5,3,1,Marco Gonzales,Sonny Gray
+2019-09-12,New York Mets,Arizona Diamondbacks,11,1,1,Marcus Stroman,Alex Young
+2019-09-12,Detroit Tigers,New York Yankees,4,10,0,Matthew Boyd,J.A. Happ
+2019-09-12,Detroit Tigers,New York Yankees,4,6,0,Spencer Turnbull,CC Sabathia
+2019-09-12,Miami Marlins,Milwaukee Brewers,2,3,0,Caleb Smith,Gio Gonzalez
+2019-09-12,Chicago White Sox,Kansas City Royals,3,6,0,Lucas Giolito,Jorge López
+2019-09-12,Colorado Rockies,St. Louis Cardinals,3,10,0,Tim Melville,Miles Mikolas
+2019-09-12,San Diego Padres,Chicago Cubs,1,4,0,Dinelson Lamet,Yu Darvish
+2019-09-12,San Francisco Giants,Pittsburgh Pirates,2,4,0,Jeff Samardzija,Joe Musgrove
+2019-09-12,Toronto Blue Jays,Boston Red Sox,4,7,0,Clay Buchholz,Jhoulys Chacín
+2019-09-12,Baltimore Orioles,Los Angeles Dodgers,2,4,0,Dylan Bundy,Rich Hill
+2019-09-12,Philadelphia Phillies,Atlanta Braves,9,5,1,Drew Smyly,Julio Teheran
+2019-09-12,Minnesota Twins,Washington Nationals,6,12,0,Kyle Gibson,Patrick Corbin
+2019-09-12,Texas Rangers,Tampa Bay Rays,6,4,1,Kolby Allard,Brendan McKay
+2019-09-12,Houston Astros,Oakland Athletics,2,3,0,Justin Verlander,Homer Bailey
+2019-09-12,Seattle Mariners,Cincinnati Reds,5,11,0,Justin Dunn,Tyler Mahle
+2019-09-13,Chicago Cubs,Pittsburgh Pirates,17,8,1,Jon Lester,Steven Brault
+2019-09-13,Washington Nationals,Atlanta Braves,0,5,0,Max Scherzer,Michael Soroka
+2019-09-13,Toronto Blue Jays,New York Yankees,6,5,1,Anthony Kay,Masahiro Tanaka
+2019-09-13,Detroit Tigers,Baltimore Orioles,2,6,0,Jordan Zimmermann,Aaron Brooks
+2019-09-13,New York Mets,Los Angeles Dodgers,2,9,0,Noah Syndergaard,Clayton Kershaw
+2019-09-13,Texas Rangers,Oakland Athletics,9,14,0,Brock Burke,Chris Bassitt
+2019-09-13,Kansas City Royals,Houston Astros,1,4,0,Danny Duffy,Gerrit Cole
+2019-09-13,St. Louis Cardinals,Milwaukee Brewers,10,0,1,Adam Wainwright,Adrian Houser
+2019-09-13,Colorado Rockies,San Diego Padres,10,8,1,Jeff Hoffman,Joey Lucchesi
+2019-09-13,Arizona Diamondbacks,Cincinnati Reds,3,4,0,Mike Leake,Luis Castillo
+2019-09-13,Los Angeles Angels,Tampa Bay Rays,4,11,0,Andrew Heaney,Charlie Morton
+2019-09-13,Seattle Mariners,Chicago White Sox,7,9,0,Yusei Kikuchi,Dylan Covey
+2019-09-13,San Francisco Giants,Miami Marlins,1,0,1,Tyler Beede,Sandy Alcantara
+2019-09-14,Cleveland Indians,Minnesota Twins,0,2,0,Mike Clevinger,Devin Smeltzer
+2019-09-14,Cleveland Indians,Minnesota Twins,5,9,0,Tyler Clippard,
+2019-09-14,Chicago Cubs,Pittsburgh Pirates,14,1,1,Kyle Hendricks,James Marvel
+2019-09-14,Toronto Blue Jays,New York Yankees,3,13,0,Jacob Waguespack,James Paxton
+2019-09-14,Washington Nationals,Atlanta Braves,1,10,0,Austin Voth,Mike Foltynewicz
+2019-09-14,Detroit Tigers,Baltimore Orioles,8,4,1,Daniel Norris,Gabriel Ynoa
+2019-09-14,Philadelphia Phillies,Boston Red Sox,1,2,0,Aaron Nola,Eduardo Rodriguez
+2019-09-14,New York Mets,Los Angeles Dodgers,3,0,1,Jacob deGrom,Hyun Jin Ryu
+2019-09-14,Kansas City Royals,Houston Astros,1,6,0,Mike Montgomery,Zack Greinke
+2019-09-14,St. Louis Cardinals,Milwaukee Brewers,2,5,0,Jack Flaherty,Jordan Lyles
+2019-09-14,Texas Rangers,Oakland Athletics,6,8,0,Mike Minor,Mike Fiers
+2019-09-14,Arizona Diamondbacks,Cincinnati Reds,1,0,1,Merrill Kelly,Anthony DeSclafani
+2019-09-14,Colorado Rockies,San Diego Padres,11,10,1,Peter Lambert,Eric Lauer
+2019-09-14,San Francisco Giants,Miami Marlins,2,4,0,Madison Bumgarner,Robert Dugger
+2019-09-14,Los Angeles Angels,Tampa Bay Rays,1,3,0,Jaime Barria,Tyler Glasnow
+2019-09-14,Seattle Mariners,Chicago White Sox,2,1,1,Félix Hernández,Dylan Cease
+2019-09-15,Philadelphia Phillies,Boston Red Sox,3,6,0,Jason Vargas,Rick Porcello
+2019-09-15,Toronto Blue Jays,New York Yankees,6,4,1,Wilmer Font,Chad Green
+2019-09-15,Detroit Tigers,Baltimore Orioles,2,8,0,Edwin Jackson,Asher Wojciechowski
+2019-09-15,Cleveland Indians,Minnesota Twins,7,5,1,Shane Bieber,Randy Dobnak
+2019-09-15,Washington Nationals,Atlanta Braves,7,0,1,Aníbal Sánchez,Max Fried
+2019-09-15,Kansas City Royals,Houston Astros,3,12,0,Jakob Junis,Wade Miley
+2019-09-15,St. Louis Cardinals,Milwaukee Brewers,6,7,0,Michael Wacha,Chase Anderson
+2019-09-15,Chicago Cubs,Pittsburgh Pirates,16,6,1,Jose Quintana,Trevor Williams
+2019-09-15,Texas Rangers,Oakland Athletics,1,6,0,Jonathan Hernández,Sean Manaea
+2019-09-15,Colorado Rockies,San Diego Padres,10,5,1,Chi Chi González,Cal Quantrill
+2019-09-15,San Francisco Giants,Miami Marlins,2,1,1,Johnny Cueto,Elieser Hernández
+2019-09-15,Los Angeles Angels,Tampa Bay Rays,6,4,1,Patrick Sandoval,Ryan Yarbrough
+2019-09-15,Arizona Diamondbacks,Cincinnati Reds,1,3,0,Zac Gallen,Trevor Bauer
+2019-09-15,Seattle Mariners,Chicago White Sox,11,10,1,Justus Sheffield,Iván Nova
+2019-09-15,New York Mets,Los Angeles Dodgers,2,3,0,Zack Wheeler,Walker Buehler
+2019-09-16,Detroit Tigers,Baltimore Orioles,5,2,1,Tyler Alexander,John Means
+2019-09-16,Minnesota Twins,Chicago White Sox,5,3,1,José Berríos,Reynaldo López
+2019-09-16,Milwaukee Brewers,San Diego Padres,5,1,1,Zach Davies,Garrett Richards
+2019-09-16,St. Louis Cardinals,Washington Nationals,4,2,1,Dakota Hudson,Stephen Strasburg
+2019-09-16,Chicago Cubs,Cincinnati Reds,8,2,1,Cole Hamels,Kevin Gausman
+2019-09-16,Colorado Rockies,New York Mets,9,4,1,Antonio Senzatela,Steven Matz
+2019-09-16,Arizona Diamondbacks,Miami Marlins,7,5,1,Robbie Ray,Pablo López
+2019-09-16,Oakland Athletics,Kansas City Royals,5,6,0,Tanner Roark,Glenn Sparkman
+2019-09-17,New York Yankees,Los Angeles Angels,8,0,1,Luis Severino,Noé Ramirez
+2019-09-17,Pittsburgh Pirates,Seattle Mariners,0,6,0,Mitch Keller,Marco Gonzales
+2019-09-17,Baltimore Orioles,Toronto Blue Jays,5,8,0,Chandler Shepherd,Ryan Tepera
+2019-09-17,Cleveland Indians,Detroit Tigers,7,2,1,Adam Plutko,Zac Reininger
+2019-09-17,Boston Red Sox,San Francisco Giants,6,7,0,Nathan Eovaldi,Logan Webb
+2019-09-17,Atlanta Braves,Philadelphia Phillies,4,5,0,Dallas Keuchel,Vince Velasquez
+2019-09-17,Minnesota Twins,Chicago White Sox,9,8,1,Martín Pérez,Ross Detwiler
+2019-09-17,Milwaukee Brewers,San Diego Padres,3,1,1,Brandon Woodruff,Chris Paddack
+2019-09-17,St. Louis Cardinals,Washington Nationals,2,6,0,Miles Mikolas,Patrick Corbin
+2019-09-17,Chicago Cubs,Cincinnati Reds,2,4,0,Yu Darvish,Sonny Gray
+2019-09-17,Houston Astros,Texas Rangers,4,1,1,Justin Verlander,Lance Lynn
+2019-09-17,Colorado Rockies,New York Mets,1,6,0,Tim Melville,Marcus Stroman
+2019-09-17,Arizona Diamondbacks,Miami Marlins,6,12,0,Alex Young,Caleb Smith
+2019-09-17,Oakland Athletics,Kansas City Royals,2,1,1,Brett Anderson,Jorge López
+2019-09-17,Los Angeles Dodgers,Tampa Bay Rays,7,5,1,Caleb Ferguson,Blake Snell
+2019-09-18,St. Louis Cardinals,Washington Nationals,5,1,1,Adam Wainwright,Max Scherzer
+2019-09-18,Colorado Rockies,New York Mets,4,7,0,Jeff Hoffman,Noah Syndergaard
+2019-09-18,Oakland Athletics,Kansas City Royals,1,0,1,Homer Bailey,Danny Duffy
+2019-09-18,Arizona Diamondbacks,Miami Marlins,5,4,1,Mike Leake,Sandy Alcantara
+2019-09-18,New York Yankees,Los Angeles Angels,2,3,0,CC Sabathia,Dillon Peters
+2019-09-18,Pittsburgh Pirates,Seattle Mariners,1,4,0,Dario Agrazal,Justin Dunn
+2019-09-18,Baltimore Orioles,Toronto Blue Jays,10,11,0,Dylan Bundy,Clay Buchholz
+2019-09-18,Cleveland Indians,Detroit Tigers,2,1,1,Aaron Civale,Spencer Turnbull
+2019-09-18,Boston Red Sox,San Francisco Giants,3,11,0,Jhoulys Chacín,Jeff Samardzija
+2019-09-18,Atlanta Braves,Philadelphia Phillies,1,4,0,Julio Teheran,Zach Eflin
+2019-09-18,Minnesota Twins,Chicago White Sox,1,3,0,Jake Odorizzi,Iván Nova
+2019-09-18,Milwaukee Brewers,San Diego Padres,1,2,0,Adrian Houser,Dinelson Lamet
+2019-09-18,Chicago Cubs,Cincinnati Reds,2,3,0,Jon Lester,Tyler Mahle
+2019-09-18,Los Angeles Dodgers,Tampa Bay Rays,7,8,0,Casey Sadler,Brendan McKay
+2019-09-18,Houston Astros,Texas Rangers,3,2,1,Gerrit Cole,Kolby Allard
+2019-09-19,Atlanta Braves,Philadelphia Phillies,5,4,1,Michael Soroka,Aaron Nola
+2019-09-19,Pittsburgh Pirates,Seattle Mariners,5,6,0,Joe Musgrove,Yusei Kikuchi
+2019-09-19,Boston Red Sox,San Francisco Giants,5,4,1,Eduardo Rodriguez,Madison Bumgarner
+2019-09-19,Milwaukee Brewers,San Diego Padres,5,1,1,Jordan Lyles,Joey Lucchesi
+2019-09-19,New York Yankees,Los Angeles Angels,9,1,1,Masahiro Tanaka,Andrew Heaney
+2019-09-19,Baltimore Orioles,Toronto Blue Jays,4,8,0,Gabriel Ynoa,Wilmer Font
+2019-09-19,Cleveland Indians,Detroit Tigers,7,0,1,Mike Clevinger,Daniel Norris
+2019-09-19,Chicago Cubs,St. Louis Cardinals,4,5,0,Kyle Hendricks,Jack Flaherty
+2019-09-19,Minnesota Twins,Kansas City Royals,8,5,1,Kyle Gibson,Mike Montgomery
+2019-09-20,Chicago Cubs,St. Louis Cardinals,1,2,0,Alec Mills,Michael Wacha
+2019-09-20,Baltimore Orioles,Seattle Mariners,5,3,1,Richard Bleier,Félix Hernández
+2019-09-20,New York Yankees,Toronto Blue Jays,3,4,0,J.A. Happ,Jacob Waguespack
+2019-09-20,Cincinnati Reds,New York Mets,1,8,0,Luis Castillo,Jacob deGrom
+2019-09-20,Tampa Bay Rays,Boston Red Sox,5,4,1,Charlie Morton,Rick Porcello
+2019-09-20,Cleveland Indians,Philadelphia Phillies,5,2,1,Shane Bieber,Drew Smyly
+2019-09-20,Detroit Tigers,Chicago White Sox,1,10,0,Jordan Zimmermann,Dylan Cease
+2019-09-20,Miami Marlins,Washington Nationals,4,6,0,Robert Dugger,Aníbal Sánchez
+2019-09-20,Atlanta Braves,San Francisco Giants,6,0,1,Mike Foltynewicz,Tyler Beede
+2019-09-20,Houston Astros,Los Angeles Angels,6,4,1,Zack Greinke,Jaime Barria
+2019-09-20,Minnesota Twins,Kansas City Royals,4,3,1,Randy Dobnak,Eric Skoglund
+2019-09-20,Milwaukee Brewers,Pittsburgh Pirates,10,1,1,Chase Anderson,Steven Brault
+2019-09-20,Oakland Athletics,Texas Rangers,8,0,1,Mike Fiers,Mike Minor
+2019-09-20,Los Angeles Dodgers,Colorado Rockies,12,5,1,Clayton Kershaw,Peter Lambert
+2019-09-20,San Diego Padres,Arizona Diamondbacks,0,9,0,Eric Lauer,Merrill Kelly
+2019-09-21,New York Yankees,Toronto Blue Jays,7,2,1,James Paxton,T.J. Zeuch
+2019-09-21,Chicago Cubs,St. Louis Cardinals,8,9,0,Jose Quintana,Dakota Hudson
+2019-09-21,Cincinnati Reds,New York Mets,3,2,1,Anthony DeSclafani,Zack Wheeler
+2019-09-21,Tampa Bay Rays,Boston Red Sox,5,4,1,Tyler Glasnow,Travis Lakins
+2019-09-21,Detroit Tigers,Chicago White Sox,3,5,0,Tyler Alexander,Iván Nova
+2019-09-21,Miami Marlins,Washington Nationals,4,10,0,Jordan Yamamoto,Stephen Strasburg
+2019-09-21,Baltimore Orioles,Seattle Mariners,6,7,0,Asher Wojciechowski,Justus Sheffield
+2019-09-21,Houston Astros,Los Angeles Angels,4,8,0,Wade Miley,Patrick Sandoval
+2019-09-21,Minnesota Twins,Kansas City Royals,5,12,0,José Berríos,Glenn Sparkman
+2019-09-21,Cleveland Indians,Philadelphia Phillies,4,9,0,Zach Plesac,Jason Vargas
+2019-09-21,Milwaukee Brewers,Pittsburgh Pirates,10,1,1,Zach Davies,James Marvel
+2019-09-21,Atlanta Braves,San Francisco Giants,8,1,1,Max Fried,Johnny Cueto
+2019-09-21,San Diego Padres,Arizona Diamondbacks,2,4,0,Cal Quantrill,Luke Weaver
+2019-09-21,Oakland Athletics,Texas Rangers,12,3,1,Sean Manaea,Brock Burke
+2019-09-21,Los Angeles Dodgers,Colorado Rockies,2,4,0,Walker Buehler,Kyle Freeland
+2019-09-22,Baltimore Orioles,Seattle Mariners,2,1,1,John Means,Marco Gonzales
+2019-09-22,New York Yankees,Toronto Blue Jays,8,3,1,Luis Severino,Trent Thornton
+2019-09-22,Cincinnati Reds,New York Mets,3,6,0,Trevor Bauer,Marcus Stroman
+2019-09-22,Tampa Bay Rays,Boston Red Sox,4,7,0,Ryan Yarbrough,Nathan Eovaldi
+2019-09-22,Detroit Tigers,Chicago White Sox,6,3,1,Matthew Boyd,Reynaldo López
+2019-09-22,Miami Marlins,Washington Nationals,5,3,1,Pablo López,Austin Voth
+2019-09-22,Atlanta Braves,San Francisco Giants,1,4,0,Dallas Keuchel,Logan Webb
+2019-09-22,Houston Astros,Los Angeles Angels,13,5,1,Justin Verlander,José Rodríguez
+2019-09-22,Minnesota Twins,Kansas City Royals,12,8,1,Martín Pérez,Jorge López
+2019-09-22,Milwaukee Brewers,Pittsburgh Pirates,4,3,1,Brandon Woodruff,Trevor Williams
+2019-09-22,Chicago Cubs,St. Louis Cardinals,2,3,0,Yu Darvish,Miles Mikolas
+2019-09-22,Oakland Athletics,Texas Rangers,3,8,0,Tanner Roark,Lance Lynn
+2019-09-22,Los Angeles Dodgers,Colorado Rockies,7,4,1,Hyun Jin Ryu,Antonio Senzatela
+2019-09-22,San Diego Padres,Arizona Diamondbacks,6,4,1,Garrett Richards,Robbie Ray
+2019-09-22,Cleveland Indians,Philadelphia Phillies,10,1,1,Adam Plutko,Vince Velasquez
+2019-09-23,Washington Nationals,Philadelphia Phillies,7,2,1,Patrick Corbin,Zach Eflin
+2019-09-23,Toronto Blue Jays,Baltimore Orioles,11,10,1,Clay Buchholz,Chandler Shepherd
+2019-09-23,Tampa Bay Rays,Boston Red Sox,7,4,1,Blake Snell,Jhoulys Chacín
+2019-09-23,New York Mets,Miami Marlins,4,8,0,Steven Matz,Caleb Smith
+2019-09-23,Arizona Diamondbacks,St. Louis Cardinals,7,9,0,Alex Young,Adam Wainwright
+2019-09-24,Washington Nationals,Philadelphia Phillies,4,1,1,Joe Ross,Blake Parker
+2019-09-24,Washington Nationals,Philadelphia Phillies,6,5,1,Max Scherzer,Aaron Nola
+2019-09-24,Detroit Tigers,Minnesota Twins,2,4,0,Spencer Turnbull,Jake Odorizzi
+2019-09-24,Cincinnati Reds,Milwaukee Brewers,2,4,0,Sonny Gray,Adrian Houser
+2019-09-24,Pittsburgh Pirates,Chicago Cubs,9,2,1,Mitch Keller,Kyle Hendricks
+2019-09-24,Toronto Blue Jays,Baltimore Orioles,4,11,0,Thomas Pannone,Dylan Bundy
+2019-09-24,New York Mets,Miami Marlins,5,4,1,Noah Syndergaard,Sandy Alcantara
+2019-09-24,Tampa Bay Rays,New York Yankees,2,1,1,Yonny Chirinos,Jordan Montgomery
+2019-09-24,Texas Rangers,Boston Red Sox,10,12,0,Edinson Volquez,Eduardo Rodriguez
+2019-09-24,Chicago White Sox,Cleveland Indians,0,11,0,Carson Fulmer,Mike Clevinger
+2019-09-24,Kansas City Royals,Atlanta Braves,9,6,1,Danny Duffy,Julio Teheran
+2019-09-24,Arizona Diamondbacks,St. Louis Cardinals,3,2,1,Mike Leake,Jack Flaherty
+2019-09-24,San Francisco Giants,Colorado Rockies,5,8,0,Madison Bumgarner,Jeff Hoffman
+2019-09-24,Los Angeles Angels,Oakland Athletics,3,2,1,Dillon Peters,Homer Bailey
+2019-09-24,San Diego Padres,Los Angeles Dodgers,3,6,0,Ronald Bolaños,Rich Hill
+2019-09-24,Seattle Mariners,Houston Astros,0,3,0,Justin Dunn,Gerrit Cole
+2019-09-25,Arizona Diamondbacks,St. Louis Cardinals,9,7,1,Merrill Kelly,Michael Wacha
+2019-09-25,Detroit Tigers,Minnesota Twins,1,5,0,Daniel Norris,Randy Dobnak
+2019-09-25,Cincinnati Reds,Milwaukee Brewers,2,9,0,Tyler Mahle,Jordan Lyles
+2019-09-25,Pittsburgh Pirates,Chicago Cubs,4,2,1,Dario Agrazal,Jon Lester
+2019-09-25,Washington Nationals,Philadelphia Phillies,5,2,1,Aníbal Sánchez,Drew Smyly
+2019-09-25,Toronto Blue Jays,Baltimore Orioles,3,2,1,Jacob Waguespack,Gabriel Ynoa
+2019-09-25,New York Mets,Miami Marlins,10,3,1,Jacob deGrom,Robert Dugger
+2019-09-25,Tampa Bay Rays,New York Yankees,4,0,1,Charlie Morton,Jonathan Loáisiga
+2019-09-25,Texas Rangers,Boston Red Sox,3,10,0,Kolby Allard,Rick Porcello
+2019-09-25,Chicago White Sox,Cleveland Indians,8,3,1,Ross Detwiler,Shane Bieber
+2019-09-25,Kansas City Royals,Atlanta Braves,2,10,0,Mike Montgomery,Josh Tomlin
+2019-09-25,San Francisco Giants,Colorado Rockies,2,1,1,Jeff Samardzija,Tim Melville
+2019-09-25,Los Angeles Angels,Oakland Athletics,2,3,0,Andrew Heaney,Frankie Montas
+2019-09-25,San Diego Padres,Los Angeles Dodgers,4,6,0,Dinelson Lamet,Ross Stripling
+2019-09-25,Seattle Mariners,Houston Astros,0,3,0,Yusei Kikuchi,Zack Greinke
+2019-09-26,Cincinnati Reds,Milwaukee Brewers,3,5,0,Luis Castillo,Chase Anderson
+2019-09-26,Detroit Tigers,Minnesota Twins,4,10,0,Jordan Zimmermann,Devin Smeltzer
+2019-09-26,Texas Rangers,Boston Red Sox,7,5,1,Mike Minor,Travis Lakins
+2019-09-26,San Diego Padres,Los Angeles Dodgers,0,1,0,Joey Lucchesi,Clayton Kershaw
+2019-09-26,San Francisco Giants,Colorado Rockies,8,3,1,Tyler Beede,Kyle Freeland
+2019-09-26,Washington Nationals,Philadelphia Phillies,6,3,1,Stephen Strasburg,Jason Vargas
+2019-09-26,Pittsburgh Pirates,Chicago Cubs,9,5,1,Joe Musgrove,Jose Quintana
+2019-09-26,New York Mets,Miami Marlins,2,4,0,Zack Wheeler,Jordan Yamamoto
+2019-09-26,Chicago White Sox,Cleveland Indians,8,0,1,Dylan Cease,Aaron Civale
+2019-09-26,Los Angeles Angels,Houston Astros,4,3,1,Jaime Barria,Wade Miley
+2019-09-26,Seattle Mariners,Oakland Athletics,1,3,0,Félix Hernández,Sean Manaea
+2019-09-27,Washington Nationals,Cleveland Indians,8,2,1,Austin Voth,Zach Plesac
+2019-09-27,Pittsburgh Pirates,Cincinnati Reds,6,5,1,Steven Brault,Anthony DeSclafani
+2019-09-27,Philadelphia Phillies,Miami Marlins,5,4,1,Vince Velasquez,Pablo López
+2019-09-27,Toronto Blue Jays,Tampa Bay Rays,2,6,0,T.J. Zeuch,Tyler Glasnow
+2019-09-27,Boston Red Sox,Baltimore Orioles,1,4,0,Nathan Eovaldi,Asher Wojciechowski
+2019-09-27,New York Mets,Atlanta Braves,4,2,1,Marcus Stroman,Dallas Keuchel
+2019-09-27,Texas Rangers,New York Yankees,7,14,0,Joe Palumbo,James Paxton
+2019-09-27,Colorado Rockies,Milwaukee Brewers,11,7,1,Antonio Senzatela,Zach Davies
+2019-09-27,St. Louis Cardinals,Chicago Cubs,2,8,0,Dakota Hudson,Alec Mills
+2019-09-27,Arizona Diamondbacks,San Diego Padres,6,3,1,Taylor Clarke,Eric Lauer
+2019-09-27,Los Angeles Angels,Houston Astros,0,4,0,Patrick Sandoval,José Urquidy
+2019-09-27,Seattle Mariners,Oakland Athletics,4,3,1,Justus Sheffield,Mike Fiers
+2019-09-27,San Francisco Giants,Los Angeles Dodgers,2,9,0,Johnny Cueto,Walker Buehler
+2019-09-28,Boston Red Sox,Baltimore Orioles,4,9,0,Jhoulys Chacín,John Means
+2019-09-28,Kansas City Royals,Minnesota Twins,3,4,0,Glenn Sparkman,Cody Stashak
+2019-09-28,Toronto Blue Jays,Tampa Bay Rays,4,1,1,Trent Thornton,Ryan Yarbrough
+2019-09-28,Chicago White Sox,Detroit Tigers,7,1,1,Reynaldo López,Matthew Boyd
+2019-09-28,Chicago White Sox,Detroit Tigers,3,4,0,Iván Nova,Tyler Alexander
+2019-09-28,Washington Nationals,Cleveland Indians,10,7,1,Patrick Corbin,Adam Plutko
+2019-09-28,San Francisco Giants,Los Angeles Dodgers,0,2,0,Logan Webb,Hyun Jin Ryu
+2019-09-28,Philadelphia Phillies,Miami Marlins,9,3,1,Zach Eflin,Caleb Smith
+2019-09-28,Pittsburgh Pirates,Cincinnati Reds,2,4,0,James Marvel,Lucas Sims
+2019-09-28,St. Louis Cardinals,Chicago Cubs,6,8,0,Adam Wainwright,Cole Hamels
+2019-09-28,New York Mets,Atlanta Braves,3,0,1,Steven Matz,Mike Foltynewicz
+2019-09-28,Texas Rangers,New York Yankees,9,4,1,Luke Farrell,Luis Severino
+2019-09-28,Arizona Diamondbacks,San Diego Padres,6,5,1,Robbie Ray,Garrett Richards
+2019-09-28,Colorado Rockies,Milwaukee Brewers,3,2,1,Chi Chi González,Gio Gonzalez
+2019-09-28,Los Angeles Angels,Houston Astros,3,6,0,José Suarez,Justin Verlander
+2019-09-28,Seattle Mariners,Oakland Athletics,0,1,0,Marco Gonzales,Brett Anderson
+2019-09-29,Boston Red Sox,Baltimore Orioles,5,4,1,Eduardo Rodriguez,Chandler Shepherd
+2019-09-29,Washington Nationals,Cleveland Indians,8,2,1,Joe Ross,Mike Clevinger
+2019-09-29,Pittsburgh Pirates,Cincinnati Reds,1,3,0,Trevor Williams,Tyler Mahle
+2019-09-29,San Francisco Giants,Los Angeles Dodgers,0,9,0,Dereck Rodríguez,Rich Hill
+2019-09-29,Philadelphia Phillies,Miami Marlins,3,4,0,Blake Parker,Sandy Alcantara
+2019-09-29,Texas Rangers,New York Yankees,6,1,1,Lance Lynn,Chad Green
+2019-09-29,Los Angeles Angels,Houston Astros,5,8,0,Dillon Peters,Gerrit Cole
+2019-09-29,Toronto Blue Jays,Tampa Bay Rays,8,3,1,Clay Buchholz,Blake Snell
+2019-09-29,Arizona Diamondbacks,San Diego Padres,1,0,1,Taijuan Walker,Michel Baez
+2019-09-29,Seattle Mariners,Oakland Athletics,3,1,1,Justin Dunn,Tanner Roark
+2019-09-29,New York Mets,Atlanta Braves,7,6,1,Noah Syndergaard,Michael Soroka
+2019-09-29,Chicago White Sox,Detroit Tigers,5,3,1,Ross Detwiler,Spencer Turnbull
+2019-09-29,Colorado Rockies,Milwaukee Brewers,4,3,1,Jeff Hoffman,Adrian Houser
+2019-09-29,St. Louis Cardinals,Chicago Cubs,9,0,1,Jack Flaherty,Derek Holland
+2019-09-29,Kansas City Royals,Minnesota Twins,5,4,1,Jorge López,Martín Pérez
