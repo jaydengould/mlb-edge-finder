@@ -29,6 +29,7 @@ XGB_MAX_DEPTH: int = 4
 EV_THRESHOLD: float = 0.50  # Sharpe-optimal from threshold sweep 2026-05-24
 MIN_AMERICAN_ODDS: int = -300
 MIN_PROB_EDGE: float = 0.30  # Sharpe-optimal from threshold sweep 2026-05-24
+RETRAIN_THRESHOLD: int = 15  # retrain after this many new games since last model date
 
 
 def setup_logging(level: int = logging.INFO) -> None:
