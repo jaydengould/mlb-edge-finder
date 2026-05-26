@@ -31,6 +31,9 @@ MIN_AMERICAN_ODDS: int = -300
 MIN_PROB_EDGE: float = 0.30  # Sharpe-optimal from threshold sweep 2026-05-24
 RETRAIN_THRESHOLD: int = 15  # retrain after this many new games since last model date
 
+# --- Pitcher thresholds ---
+MIN_PITCHER_IP: int = 30  # exclude pitchers below this threshold from all joins
+
 
 def setup_logging(level: int = logging.INFO) -> None:
     """Configure root logger with a console handler and a file handler at logs/run.log."""

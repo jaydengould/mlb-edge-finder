@@ -24,3 +24,8 @@ def test_setup_logging_runs():
     config.setup_logging(level=logging.DEBUG)
     logger = logging.getLogger("test")
     logger.debug("config smoke test")
+
+
+def test_min_pitcher_ip_constant():
+    from mlb_edge_finder import config
+    assert config.MIN_PITCHER_IP == 30
