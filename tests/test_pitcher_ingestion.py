@@ -120,6 +120,40 @@ def test_fetch_pitcher_stats_raises_on_empty_response(tmp_path):
             pitcher_ingestion.fetch_pitcher_stats(date(2025, 9, 28), force=True)
 
 
+def test_fetch_pitcher_stats_excludes_low_ip_pitchers(tmp_path):
+    """Pitchers with ip < MIN_PITCHER_IP are excluded from fetch_pitcher_stats output."""
+    from mlb_edge_finder import pitcher_ingestion, config
+    response = {
+        "stats": [{
+            "splits": [
+                {
+                    "player": {"id": 1, "fullName": "Low IP Pitcher"},
+                    "stat": {
+                        "inningsPitched": str(config.MIN_PITCHER_IP - 1),
+                        "era": "2.50", "whip": "1.10",
+                        "strikeoutsPer9Inn": "9.0", "walksPer9Inn": "2.0",
+                        "homeRuns": 1, "baseOnBalls": 5, "strikeOuts": 25,
+                    },
+                },
+                {
+                    "player": {"id": 2, "fullName": "Qualified Pitcher"},
+                    "stat": {
+                        "inningsPitched": str(config.MIN_PITCHER_IP),
+                        "era": "3.50", "whip": "1.20",
+                        "strikeoutsPer9Inn": "9.0", "walksPer9Inn": "3.0",
+                        "homeRuns": 3, "baseOnBalls": 10, "strikeOuts": 50,
+                    },
+                },
+            ]
+        }]
+    }
+    with patch("mlb_edge_finder.pitcher_ingestion.statsapi.get", return_value=response), \
+         patch("mlb_edge_finder.pitcher_ingestion.config.DATA_RAW_DIR", tmp_path):
+        df = pitcher_ingestion.fetch_pitcher_stats(date(2026, 5, 26), force=True)
+    assert len(df) == 1
+    assert df.iloc[0]["pitcher_name"] == "Qualified Pitcher"
+
+
 # --- fetch_probable_starters tests ---
 
 def _make_schedule(home_name="New York Yankees", away_name="Boston Red Sox",

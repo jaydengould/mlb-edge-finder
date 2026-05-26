@@ -83,6 +83,7 @@ def fetch_pitcher_stats(game_date: date, force: bool = False) -> pd.DataFrame:
 
     rows = _parse_pitcher_splits(splits)
     df = pd.DataFrame(rows)
+    df = df[df["ip"] >= config.MIN_PITCHER_IP].reset_index(drop=True)
     config.DATA_RAW_DIR.mkdir(parents=True, exist_ok=True)
     df.to_csv(cache_path, index=False)
     logger.info("Wrote %d pitchers to %s", len(df), cache_path)
