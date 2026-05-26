@@ -40,3 +40,56 @@ def games_since_last_train(historical_df: pd.DataFrame, last_train_date: date) -
     """
     game_dates = pd.to_datetime(historical_df["game_date"]).dt.date
     return int((game_dates > last_train_date).sum())
+
+
+def run_feedback_loop(season: int) -> dict:
+    """Refresh historical data for the season and retrain if enough new games exist.
+
+    Always refreshes historical_YYYY.csv from the MLB Stats API. Checks how many
+    games have been played since the most recent saved model. If the count reaches
+    config.RETRAIN_THRESHOLD (or no model exists), rebuilds the training set for
+    all seasons and retrains + calibrates + saves a new model.
+
+    Args:
+        season: The current season year (e.g. 2026).
+
+    Returns:
+        Dict with keys: season (int), games_in_season (int), new_games (int),
+        retrained (bool).
+    """
+    historical_df = refresh_historical(season)
+
+    pkls = sorted(config.MODELS_DIR.glob("xgb_*.pkl"))
+    if pkls:
+        last_train_date = date.fromisoformat(pkls[-1].stem[4:])  # strip "xgb_"
+        new_games = games_since_last_train(historical_df, last_train_date)
+        do_retrain = new_games >= config.RETRAIN_THRESHOLD
+    else:
+        last_train_date = None
+        new_games = len(historical_df)
+        do_retrain = True
+
+    retrained = False
+    if do_retrain:
+        logger.info(
+            "Retraining model: %d new games since %s (threshold: %d)",
+            new_games, last_train_date, config.RETRAIN_THRESHOLD,
+        )
+        training_df = build_training_set(_TRAINING_SEASONS, force=True)
+        clf, X_val, X_test, y_val, y_test = model.train(training_df)
+        clf = model.calibrate(clf, X_val, y_val)
+        metrics = model.evaluate(clf, X_test, y_test)
+        model.save_model(clf, metrics, date.today())
+        retrained = True
+    else:
+        logger.info(
+            "Skipping retrain: %d new games since %s (threshold: %d)",
+            new_games, last_train_date, config.RETRAIN_THRESHOLD,
+        )
+
+    return {
+        "season": season,
+        "games_in_season": len(historical_df),
+        "new_games": new_games,
+        "retrained": retrained,
+    }
