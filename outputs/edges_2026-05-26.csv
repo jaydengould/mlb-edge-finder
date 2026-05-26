@@ -1,0 +1,5 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,prob_flag
+82e37a8a126f9724f8872ec1669446da,San Diego Padres,Philadelphia Phillies,home,-109,0.9156028,0.75560537500119,0.4118049293756485,True
+3612f76561632387afb3c6779ef370b1,Baltimore Orioles,Tampa Bay Rays,away,-108,0.8549584,0.6465865770975748,0.3491567516326904,True
+99d8354792f828bd962e089d4ab8c5bf,Milwaukee Brewers,St. Louis Cardinals,away,161,0.688434,0.7968127524852753,0.2474573765482221,False
+a688baa4f466d96e091e81af30a03a59,Athletics,Seattle Mariners,away,-102,0.8148074,0.6136382140365301,0.31295548915863036,True
