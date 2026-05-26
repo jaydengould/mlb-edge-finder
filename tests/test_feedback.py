@@ -49,3 +49,11 @@ def test_games_since_last_train_zero_when_all_before():
     cutoff = date(2026, 5, 1)
     df = _make_historical_df(["2026-04-01", "2026-04-02", "2026-04-03"])
     assert feedback.games_since_last_train(df, cutoff) == 0
+
+
+def test_games_since_last_train_excludes_exact_cutoff_date():
+    from mlb_edge_finder import feedback
+    cutoff = date(2026, 4, 10)
+    # game on exactly the cutoff date should NOT count
+    df = _make_historical_df(["2026-04-10", "2026-04-11"])
+    assert feedback.games_since_last_train(df, cutoff) == 1
