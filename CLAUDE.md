@@ -6,7 +6,7 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 
 ## Current Phase
 
-**Historical ingestion resilience complete.** Phases 1–3, 4a–4c, 5, 6, 7, and 8 done. `compute_kelly()`, `__main__.py` CLI, probability calibration, `prob_flag`, GitHub Actions daily workflow, historical backtest, threshold sweep, and `fetch_historical` resilience done.
+**Current season feedback loop complete.** Phases 1–3, 4a–4c, 5, 6, 7, and 8 done. `compute_kelly()`, `__main__.py` CLI, probability calibration, `prob_flag`, GitHub Actions daily workflow, historical backtest, threshold sweep, `fetch_historical` resilience, and feedback loop done.
 
 - `odds_ingestion.fetch_odds()` and `load_cached_odds()` — cache-first, date filtering, live game exclusion, best line across bookmakers.
 - `stats_ingestion.fetch_stats()` and `load_cached_stats()` — FanGraphs primary (pybaseball, 3-attempt retry with 2s/4s/8s backoff), MLB Stats API fallback (statsapi package). Output schema varies by source — see stats schema section below.
@@ -26,6 +26,7 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 - **Historical backtest complete:** `backtest.py` — `simulate_market_odds(home_market_prob, vig)` generates synthetic American odds (default -110/-110, 50/50 market, 4.76% vig). `run_backtest(clf, training_df, ...)` replicates the exact 80/20 test split from `model._three_way_split()` (no leakage), runs EV/Kelly filters against synthetic odds, returns per-bet DataFrame with `game_date`, `home_name`, `away_name`, `bet_side`, `american_odds`, `model_prob`, `ev`, `kelly_fraction`, `actual_home_win`, `won`, `pnl`, `cumulative_pnl`. `compute_summary(backtest_df, unit)` returns `n_bets`, `n_wins`, `win_rate`, `total_pnl`, `roi_pct`, `avg_ev`, `max_drawdown`, `sharpe_ratio`. `notebooks/02_backtest.ipynb` is the portfolio artifact — loads saved model + training data, runs backtest, prints summary, plots two-panel cumulative P&L + bet distribution chart. Results on held-out 20% (3,010 games, ~2,370 bets): 60.3% win rate, +15.1% ROI vs synthetic -110/-110 market. High bet rate (~79%) is expected given the naive 50/50 market baseline. 18 new tests (158 total passing).
 - **Threshold sweep & market-edge filter complete:** `market_implied_prob(american_odds)` added to `edge_finder.py` — converts bookmaker odds to raw implied probability (vig-included). `find_edges()` gains `min_prob_edge: float | None = None` parameter; filters bets where `model_prob − market_implied_prob ≤ min_prob_edge` (defaults to `config.MIN_PROB_EDGE`). `run_backtest()` gains `ev_threshold` and `min_prob_edge` parameters (both default to config values). `sweep_thresholds(clf, training_df, ...)` in `backtest.py` — 70-combination `(ev_threshold, min_prob_edge)` grid search over synthetic backtest, returns Sharpe-sorted DataFrame. Optimal: `EV_THRESHOLD=0.50`, `MIN_PROB_EDGE=0.30` (Sharpe=0.735, ~1.3 bets/day, 81.2% win rate on held-out 20%). Notebook `02_backtest.ipynb` updated with Sharpe heatmap and optimal-threshold P&L chart. 15 new tests (173 total passing).
 - **Historical ingestion resilience complete:** `fetch_historical()` now retries `statsapi.schedule` up to 3 times with exponential backoff (`_RETRY_DELAYS = [2, 4, 8]`). If all retries fail and a stale local cache (`historical_YYYY.csv`) exists, it logs a warning and returns the cached data instead of raising — prevents the GitHub Actions workflow from failing on transient MLB Stats API outages (e.g. 503 timeouts). Raises `RuntimeError` only when no cache is available. 2 new tests (175 total passing).
+- **Current season feedback loop complete:** `feedback.py` — `refresh_historical(season)` force-fetches `historical_YYYY.csv`, `games_since_last_train(historical_df, last_train_date)` counts new games, `run_feedback_loop(season)` orchestrates: refresh → check count → retrain if `new_games >= RETRAIN_THRESHOLD`. Retrains with `_TRAINING_SEASONS = [2019, 2021, 2022, 2023, 2024, 2025, 2026]` using `build_training_set(force=True)`. `config.RETRAIN_THRESHOLD = 15`. `.gitignore` updated: `data/raw/*` + `!data/raw/historical_*.csv` so historical CSVs are committed. Daily workflow gains a `Run feedback loop` step (`continue-on-error: true`) and commits `historical_2026.csv` + new model files alongside edges. 8 new tests (183 total passing).
 
 **Always update this file at the end of each working session** to reflect completed phases, new conventions, and any changes to the roadmap.
 
@@ -257,7 +258,7 @@ FanGraphs-specific stat columns (`w_oba`, `bat_wrc_plus`, `fip`) appear in the f
 pytest tests/ -v
 ```
 
-173 smoke + integration tests. All pass.
+183 smoke + integration tests. All pass.
 
 ## Roadmap
 
@@ -280,6 +281,7 @@ pytest tests/ -v
 - [x] Historical backtest — `backtest.py` with `simulate_market_odds`, `run_backtest`, `compute_summary`. `notebooks/02_backtest.ipynb` with cumulative P&L curve. Results: 60.3% win rate, +15.1% ROI on held-out 20% test split vs -110/-110 synthetic market.
 - [x] Threshold sweep & market-edge filter — `market_implied_prob()`, `MIN_PROB_EDGE`, `sweep_thresholds()`. Sharpe-optimal `(EV_THRESHOLD=0.50, MIN_PROB_EDGE=0.30)` from 70-combination grid search. ~1.3 bets/day, 81.2% win rate on synthetic backtest.
 - [x] Historical ingestion resilience — `fetch_historical()` retries `statsapi.schedule` 3× (2s/4s/8s backoff). On total failure, falls back to stale cache if present; raises only when no cache exists. Prevents GitHub Actions pipeline failures on transient MLB Stats API outages.
+- [x] Current season feedback loop — `feedback.py` with `refresh_historical()`, `games_since_last_train()`, `run_feedback_loop()`. Retrains every 15 new games. Daily workflow commits `historical_2026.csv` and new model files. `RETRAIN_THRESHOLD=15` in config.
 
 ## Future Work (priority order)
 

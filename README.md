@@ -208,7 +208,7 @@ kelly_fraction = (EV / payout) / 2   # half of full Kelly, clamped to [0.0, 1.0]
 pytest tests/ -v
 ```
 
-175 smoke + integration tests. All pass.
+183 smoke + integration tests. All pass.
 
 ## Roadmap
 
@@ -231,3 +231,4 @@ pytest tests/ -v
 - [x] Historical backtest — `backtest.py` + `notebooks/02_backtest.ipynb`; 60.3% win rate, +15.1% ROI on held-out test split vs synthetic −110/−110 market
 - [x] Threshold sweep & market-edge filter — `market_implied_prob()`, `MIN_PROB_EDGE=0.30`, `EV_THRESHOLD=0.50` from 70-combination Sharpe-optimal grid search; ~1.3 bets/day, 81.2% win rate on held-out test split
 - [x] Historical ingestion resilience — `fetch_historical()` retries the MLB Stats API 3× (2s/4s/8s backoff) before failing; if all retries fail and a stale cache exists, returns cached data with a warning instead of crashing the pipeline
+- [x] Current season feedback loop — `feedback.py` refreshes `historical_2026.csv` daily and retrains the model every 15 new games; workflow commits historical data and new model files alongside edges
