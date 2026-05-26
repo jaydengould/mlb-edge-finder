@@ -125,6 +125,7 @@ def _build_season(season: int) -> pd.DataFrame:
     )
 
     # Determine pitcher stat columns from any available snapshot.
+    # Assumes all snapshots share the same column schema.
     any_snap_df = next(iter(pitcher_snapshots.values()), pd.DataFrame())
     sp_cols = [c for c in any_snap_df.columns if c not in ("pitcher_name", "pitcher_id")]
     home_sp_cols = [f"home_sp_{c}" for c in sp_cols]
@@ -162,7 +163,12 @@ def _build_season(season: int) -> pd.DataFrame:
         grp = grp.merge(away_pitcher[away_cols], on="away_starter_name", how="left")
         groups.append(grp)
 
-    df = pd.concat(groups, ignore_index=True).drop(columns=["_snap"])
+    if not groups:
+        for col in all_pitcher_cols:
+            df[col] = float("nan")
+        df = df.drop(columns=["_snap"])
+    else:
+        df = pd.concat(groups, ignore_index=True).drop(columns=["_snap"])
 
     logger.debug(
         "Season %d: pitcher join — %d/%d home starters matched, %d/%d away starters matched",
