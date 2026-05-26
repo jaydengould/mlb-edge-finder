@@ -385,6 +385,7 @@ def test_build_season_pitcher_nan_for_pre_snapshot_game(tmp_path):
     # No snapshot files in tmp_path — April 1 precedes all snapshots.
     with patch("mlb_edge_finder.training_data.load_cached_historical", return_value=hist), \
          patch("mlb_edge_finder.training_data.fetch_stats", return_value=_make_stats()), \
+         patch("mlb_edge_finder.training_data.fetch_pitcher_stats", return_value=_make_pitcher_stats()), \
          patch("mlb_edge_finder.training_data.config.DATA_RAW_DIR", tmp_path), \
          patch("mlb_edge_finder.training_data.config.DATA_PROCESSED_DIR", tmp_path):
         df = training_data.build_training_set([2024], force=True)
