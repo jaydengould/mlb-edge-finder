@@ -35,6 +35,18 @@ jobs:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python -m mlb_edge_finder
 
+      - name: Run feedback loop
+        continue-on-error: true
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: |
+          python -c "
+          from mlb_edge_finder.feedback import run_feedback_loop
+          import json
+          result = run_feedback_loop(2026)
+          print(json.dumps(result, default=str))
+          "
+
       - name: Promote edges file to outputs/
         run: |
           DATE=$(date -u +%Y-%m-%d)
@@ -59,15 +71,17 @@ jobs:
             echo "No edges found today." >> $GITHUB_STEP_SUMMARY
           fi
 
-      - name: Commit and push edges file
+      - name: Commit and push artifacts
         run: |
           DATE=$(date -u +%Y-%m-%d)
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add "outputs/edges_${DATE}.csv"
+          git add "data/raw/historical_2026.csv" 2>/dev/null || true
+          git add "models/" 2>/dev/null || true
           if git diff --staged --quiet; then
-            echo "Edges file unchanged — nothing to commit."
+            echo "Nothing to commit."
           else
-            git commit -m "chore: edges ${DATE}"
+            git commit -m "chore: daily update ${DATE}"
             git push origin HEAD:${{ github.ref_name }}
           fi
