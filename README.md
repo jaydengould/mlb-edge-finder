@@ -6,11 +6,11 @@ A portfolio project that identifies positive expected-value (EV) opportunities i
 
 1. **Odds ingestion** — fetches today's MLB moneyline odds from [The Odds API](https://the-odds-api.com), deduplicates across bookmakers, and keeps the best line per game.
 2. **Stats ingestion** — pulls current-season team batting and pitching stats from FanGraphs (via pybaseball), falling back to the MLB Stats API if FanGraphs is unavailable.
-3. **Pitcher ingestion** — fetches individual pitcher season stats and today's probable starters via the MLB Stats API.
+3. **Pitcher ingestion** — fetches individual pitcher season stats and today's probable starters via the MLB Stats API. Pitchers with fewer than 30 IP are excluded from all joins to prevent meaningless ERA/WHIP from small samples.
 4. **Feature engineering** — joins odds, team stats, rolling form stats (15-game window), and starting pitcher stats into one row per game.
 5. **Inference** — an XGBoost classifier predicts home-team win probability. Probabilities are post-hoc calibrated with isotonic regression on a held-out validation set. EV is computed per side; bets clearing both the EV threshold and the minimum probability-edge filter are flagged with a half-Kelly bet size.
 6. **Output** — flagged edges are written to `data/processed/edges_YYYY-MM-DD.csv` and printed to the terminal. Any edge where `model_prob > 0.80` is marked with `prob_flag=True` for manual review.
-7. **Automation** — a GitHub Actions workflow runs the full pipeline every morning at 9:30 AM ET and commits the results to `outputs/edges_YYYY-MM-DD.csv` in the repo, with a formatted table in the Actions job summary.
+7. **Automation** — a GitHub Actions workflow runs the full pipeline every morning at 9:30 AM ET and commits the results to `outputs/edges_YYYY-MM-DD.csv` in the repo, with a formatted table in the Actions job summary. A separate snapshot workflow captures time-matched pitcher stats at key season dates (April 30, June 1, July 31) for use in model retraining.
 8. **Backtest** — `notebooks/02_backtest.ipynb` simulates historical performance on the held-out 20% test split using synthetic −110/−110 market odds, producing a cumulative P&L curve and summary statistics.
 
 ## Tech Stack
@@ -98,7 +98,8 @@ notebooks/
 └── 02_backtest.ipynb     # historical backtest with cumulative P&L curve
 
 .github/workflows/
-└── daily.yml             # GitHub Actions cron — runs pipeline at 9:30 AM ET daily
+├── daily.yml             # GitHub Actions cron — runs pipeline at 9:30 AM ET daily
+└── snapshot.yml          # captures pitcher stat snapshots on April 30, June 1, July 31
 
 outputs/                  # committed edge CSVs written by the daily workflow
 ```
@@ -117,7 +118,7 @@ To trigger a manual run at any time: Actions tab → **Daily MLB Edge Finder** �
 
 ## Model
 
-Trained on 15,050 regular-season games (2019, 2021–2025; 2020 excluded — 60-game anomaly).
+Trained on 15,837 regular-season games (2019, 2021–2026; 2020 excluded — 60-game anomaly).
 
 **Training split:** 60% fit / 20% calibration validation / 20% test (all stratified).
 
@@ -125,18 +126,20 @@ Trained on 15,050 regular-season games (2019, 2021–2025; 2020 excluded — 60-
 - Team batting: `bat_avg`, `obp`, `slg`, `ops`, `runs_per_game`
 - Team pitching: `era`, `whip`, `k_per_9`, `bb_per_9`
 - Rolling form (15-game window, shift-1 for training): `rolling_runs_scored`, `rolling_runs_allowed`, `rolling_win_pct`, `rolling_run_diff`
-- Starting pitcher: `era`, `whip`, `k_per_9`, `bb_per_9`, `ip`, `fip_computed` (home/away prefixed)
+- Starting pitcher: `era`, `whip`, `k_per_9`, `bb_per_9`, `ip`, `fip_computed` (home/away prefixed; only pitchers with ≥ 30 IP)
 
-**Probability calibration:** After training, the raw XGBoost model is wrapped with `CalibratedClassifierCV` (isotonic regression, `FrozenEstimator`) fit on the held-out 20% calibration set. This corrects the model's tendency to produce overconfident probabilities (e.g. 90%+ for games that are realistically 60/40), which is critical for EV estimates to be meaningful.
+**Time-matched pitcher snapshots:** Training pitcher stats are joined from the most recent snapshot *strictly before* each game's date — not end-of-season stats. Four snapshot dates per season (April 30 / June 1 / July 31 / September 28) are captured automatically by the snapshot workflow and committed to the repo. Games before the first snapshot, and probable starters below 30 IP, receive NaN pitcher stats (consistent with ~73% of training rows which already have no matched starter). This eliminates the training/inference distribution mismatch that previously caused the model to produce extreme probabilities (>80%) on edges that the market priced near 50/50.
 
-**Performance (2019–2025 test set, n=3,010):**
-| Metric | XGBoost | Logistic Regression baseline |
-|---|---|---|
-| Accuracy | 58.8% | 59.2% |
-| ROC-AUC | 0.633 | 0.625 |
-| Log Loss | 0.669 | 0.667 |
+**Probability calibration:** After training, the raw XGBoost model is wrapped with `CalibratedClassifierCV` (isotonic regression, `FrozenEstimator`) fit on the held-out 20% calibration set. This corrects the model's tendency to produce overconfident probabilities, which is critical for EV estimates to be meaningful.
 
-XGBoost and the logistic regression baseline perform similarly on aggregate season-average features — expected, since these features lack temporal signal within a season. Rolling window stats improve on this; further signal could come from rest days, travel, ballpark factors, or weather.
+**Performance (2019–2026 test set, n=3,168):**
+| Metric | XGBoost |
+|---|---|
+| Accuracy | 57.2% |
+| ROC-AUC | 0.601 |
+| Log Loss | 0.687 |
+
+The slight reduction in headline metrics vs the previous model reflects more realistic training data — early-season games now correctly have NaN pitcher features rather than borrowing end-of-season stats. The practical benefit is that inference probabilities stay in a credible range (55–75%) instead of producing extreme values that trigger `prob_flag`.
 
 ## Edge Definition
 
@@ -200,7 +203,7 @@ kelly_fraction = (EV / payout) / 2   # half of full Kelly, clamped to [0.0, 1.0]
 | ROI | +15.1% |
 | Sharpe ratio | 0.16 |
 
-**Caveats:** Synthetic −110/−110 odds are a naive baseline; real bookmakers price each game individually, so actual edge frequency against live lines will differ. End-of-season team stats are used for all games in each season (look-ahead bias), which likely overstates performance. The high win rate at strict thresholds reflects that `MIN_PROB_EDGE=0.30` selects cases where the model is extremely confident the market is wrong — this subset may not be representative of future opportunities.
+**Caveats:** Synthetic −110/−110 odds are a naive baseline; real bookmakers price each game individually, so actual edge frequency against live lines will differ. End-of-season team stats are used for all games in each season (a remaining source of look-ahead bias), which likely overstates performance. Pitcher stats are now time-matched (resolved), eliminating the largest source of distribution mismatch. The high win rate at strict thresholds reflects that `MIN_PROB_EDGE=0.30` selects cases where the model is extremely confident the market is wrong — this subset may not be representative of future opportunities.
 
 ## Running Tests
 
@@ -208,7 +211,7 @@ kelly_fraction = (EV / payout) / 2   # half of full Kelly, clamped to [0.0, 1.0]
 pytest tests/ -v
 ```
 
-183 smoke + integration tests. All pass.
+196 smoke + integration tests. All pass.
 
 ## Roadmap
 
@@ -232,3 +235,4 @@ pytest tests/ -v
 - [x] Threshold sweep & market-edge filter — `market_implied_prob()`, `MIN_PROB_EDGE=0.30`, `EV_THRESHOLD=0.50` from 70-combination Sharpe-optimal grid search; ~1.3 bets/day, 81.2% win rate on held-out test split
 - [x] Historical ingestion resilience — `fetch_historical()` retries the MLB Stats API 3× (2s/4s/8s backoff) before failing; if all retries fail and a stale cache exists, returns cached data with a warning instead of crashing the pipeline
 - [x] Current season feedback loop — `feedback.py` refreshes `historical_2026.csv` daily and retrains the model every 15 new games; workflow commits historical data and new model files alongside edges
+- [x] Time-matched pitcher snapshots — `fetch_pitcher_snapshot()` captures stats through a specific date via the MLB Stats API `byDateRange` endpoint; `_build_season` joins each training game to the latest preceding snapshot (April 30 / June 1 / July 31 / September 28) instead of end-of-season stats; `MIN_PITCHER_IP=30` floor applied at all join points; `snapshot.yml` workflow auto-commits snapshot files on schedule

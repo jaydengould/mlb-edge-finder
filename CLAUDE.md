@@ -6,7 +6,7 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 
 ## Current Phase
 
-**Current season feedback loop complete.** Phases 1–3, 4a–4c, 5, 6, 7, and 8 done. `compute_kelly()`, `__main__.py` CLI, probability calibration, `prob_flag`, GitHub Actions daily workflow, historical backtest, threshold sweep, `fetch_historical` resilience, and feedback loop done.
+**Time-matched pitcher snapshots complete.** Phases 1–3, 4a–4c, 5, 6, 7, and 8 done. `compute_kelly()`, `__main__.py` CLI, probability calibration, `prob_flag`, GitHub Actions daily workflow, historical backtest, threshold sweep, `fetch_historical` resilience, feedback loop, and time-matched pitcher snapshots done.
 
 - `odds_ingestion.fetch_odds()` and `load_cached_odds()` — cache-first, date filtering, live game exclusion, best line across bookmakers.
 - `stats_ingestion.fetch_stats()` and `load_cached_stats()` — FanGraphs primary (pybaseball, 3-attempt retry with 2s/4s/8s backoff), MLB Stats API fallback (statsapi package). Output schema varies by source — see stats schema section below.
@@ -27,6 +27,7 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 - **Threshold sweep & market-edge filter complete:** `market_implied_prob(american_odds)` added to `edge_finder.py` — converts bookmaker odds to raw implied probability (vig-included). `find_edges()` gains `min_prob_edge: float | None = None` parameter; filters bets where `model_prob − market_implied_prob ≤ min_prob_edge` (defaults to `config.MIN_PROB_EDGE`). `run_backtest()` gains `ev_threshold` and `min_prob_edge` parameters (both default to config values). `sweep_thresholds(clf, training_df, ...)` in `backtest.py` — 70-combination `(ev_threshold, min_prob_edge)` grid search over synthetic backtest, returns Sharpe-sorted DataFrame. Optimal: `EV_THRESHOLD=0.50`, `MIN_PROB_EDGE=0.30` (Sharpe=0.735, ~1.3 bets/day, 81.2% win rate on held-out 20%). Notebook `02_backtest.ipynb` updated with Sharpe heatmap and optimal-threshold P&L chart. 15 new tests (173 total passing).
 - **Historical ingestion resilience complete:** `fetch_historical()` now retries `statsapi.schedule` up to 3 times with exponential backoff (`_RETRY_DELAYS = [2, 4, 8]`). If all retries fail and a stale local cache (`historical_YYYY.csv`) exists, it logs a warning and returns the cached data instead of raising — prevents the GitHub Actions workflow from failing on transient MLB Stats API outages (e.g. 503 timeouts). Raises `RuntimeError` only when no cache is available. 2 new tests (175 total passing).
 - **Current season feedback loop complete:** `feedback.py` — `refresh_historical(season)` force-fetches `historical_YYYY.csv`, `games_since_last_train(historical_df, last_train_date)` counts new games, `run_feedback_loop(season)` orchestrates: refresh → check count → retrain if `new_games >= RETRAIN_THRESHOLD`. Retrains with `_TRAINING_SEASONS = [2019, 2021, 2022, 2023, 2024, 2025, 2026]` using `build_training_set(force=True)`. `config.RETRAIN_THRESHOLD = 15`. `.gitignore` updated: `data/raw/*` + `!data/raw/historical_*.csv` so historical CSVs are committed. Daily workflow gains a `Run feedback loop` step (`continue-on-error: true`) and commits `historical_2026.csv` + new model files alongside edges. 8 new tests (183 total passing).
+- **Time-matched pitcher snapshots complete:** `config.MIN_PITCHER_IP = 30` — pitchers below this threshold are excluded from all joins (training and inference). `pitcher_ingestion.fetch_pitcher_snapshot(snapshot_date, force)` — uses the MLB Stats API `byDateRange` stat type to fetch stats through a specific date; falls back to full-season stats for historical seasons where the API no longer supports date-range queries; writes to `data/raw/pitcher_snapshot_YYYY-MM-DD.csv` (distinct from ephemeral `pitcher_stats_*.csv`). `_parse_pitcher_splits` extracted as a shared helper. `fetch_pitcher_stats` gains the 30-IP floor. `training_data._build_season()` replaces the single `fetch_pitcher_stats(date(season, 9, 28))` call with a group join across all available snapshots: loads `pitcher_snapshot_YYYY-MM-DD.csv` files for the four snapshot dates per season, assigns each game to the latest preceding snapshot via `_select_snapshot_date`, and fills NaN for pre-snapshot games. September 28 falls back to `fetch_pitcher_stats` if no snapshot file exists (backward compatibility for seasons predating the workflow). `.gitignore` gains `!data/raw/pitcher_snapshot_*.csv`. `.github/workflows/snapshot.yml` — cron on April 30 / June 1 / July 31 at 14:30 UTC, plus `workflow_dispatch` with optional `snapshot_date` input for backfilling. 25 snapshot files committed for 2019, 2021–2026. Model retrained: accuracy 57.2%, ROC-AUC 0.601 on 3,168 test samples (15,837 training rows). 13 new tests (196 total passing).
 
 **Always update this file at the end of each working session** to reflect completed phases, new conventions, and any changes to the roadmap.
 
@@ -67,9 +68,9 @@ Each stage persists its output as a dated CSV or artifact so stages can be run i
 | `odds_ingestion.py` | Fetch/cache moneyline odds (The Odds API) | `data/raw/odds_YYYY-MM-DD.csv` |
 | `stats_ingestion.py` | Fetch/cache team batting + pitching stats | `data/raw/stats_YYYY-MM-DD.csv` |
 | `historical_ingestion.py` | Fetch/cache historical game results per season (incl. probable starters) | `data/raw/historical_YYYY.csv` |
-| `pitcher_ingestion.py` | Fetch/cache individual pitcher season stats; fetch probable starters for a date | `data/raw/pitcher_stats_YYYY-MM-DD.csv` |
+| `pitcher_ingestion.py` | Fetch/cache individual pitcher season stats; fetch time-matched snapshots; fetch probable starters for a date | `data/raw/pitcher_stats_YYYY-MM-DD.csv`, `data/raw/pitcher_snapshot_YYYY-MM-DD.csv` |
 | `rolling_stats.py` | Compute rolling per-team stats from historical game results; owns `HISTORICAL_NAME_TO_ABBR` | — |
-| `training_data.py` | Join end-of-season stats + rolling stats to game results for model training | `data/processed/training_YYYY-YYYY.csv` |
+| `training_data.py` | Join end-of-season stats + rolling stats + time-matched pitcher snapshots to game results for model training | `data/processed/training_YYYY-YYYY.csv` |
 | `features.py` | Merge odds + stats + rolling stats, engineer features | `data/processed/features_YYYY-MM-DD.csv` |
 | `model.py` | Train, evaluate, persist XGBoost model | `models/xgb_YYYY-MM-DD.pkl` + `models/metrics_YYYY-MM-DD.json` |
 | `edge_finder.py` | Compute EV, filter odds, flag edges | `data/processed/edges_YYYY-MM-DD.csv` |
@@ -133,8 +134,11 @@ MODELS_DIR          # <root>/models/
 LOGS_DIR            # <root>/logs/
 XGB_N_ESTIMATORS    # 100
 XGB_MAX_DEPTH       # 4
-EV_THRESHOLD        # 0.05  (flag EV > 5%)
+EV_THRESHOLD        # 0.50  (Sharpe-optimal from threshold sweep 2026-05-24)
 MIN_AMERICAN_ODDS   # -300  (skip heavy favorites)
+MIN_PROB_EDGE       # 0.30  (Sharpe-optimal from threshold sweep 2026-05-24)
+RETRAIN_THRESHOLD   # 15   (retrain after this many new games since last model date)
+MIN_PITCHER_IP      # 30   (exclude pitchers below this IP from all joins)
 ```
 
 ## Key Conventions
@@ -185,16 +189,19 @@ pybaseball   ──► fetch_stats() ──► stats_YYYY-MM-DD.csv ──┘   
 
 ```
 .env              # secrets
-data/raw/         # cached API responses
+data/raw/         # cached API responses (pitcher_stats_*.csv, stats_*.csv, odds_*.csv)
 data/processed/   # engineered features + edge outputs
 logs/             # run.log
 ```
 
-`models/` is NOT gitignored — commit model artifacts for portfolio visibility.
+Committed to the repo (not gitignored):
+- `models/` — model artifacts (`.pkl` + `.json`) for portfolio visibility
+- `data/raw/historical_*.csv` — game results per season, needed by feedback loop
+- `data/raw/pitcher_snapshot_*.csv` — time-matched pitcher snapshots, training artifacts committed by `snapshot.yml`
 
 ## Training Data Module
 
-`build_training_set(seasons, force=False)` owns its own data loading — it calls `load_cached_historical`, `fetch_stats(date(season, 9, 28))`, and `fetch_pitcher_stats(date(season, 9, 28))` internally. Raises `RuntimeError` if historical data is missing (with "run fetch_historical(season) first"), and lets `fetch_stats` / `fetch_pitcher_stats` RuntimeErrors propagate if the API fails.
+`build_training_set(seasons, force=False)` owns its own data loading — it calls `load_cached_historical`, `fetch_stats(date(season, 9, 28))`, and reads pitcher snapshot CSV files from `DATA_RAW_DIR` directly. Raises `RuntimeError` if historical data is missing (with "run fetch_historical(season) first"), and lets `fetch_stats` RuntimeErrors propagate if the API fails.
 
 The join flow (per season):
 1. Load `historical_YYYY.csv` via `load_cached_historical(season)`
@@ -206,8 +213,9 @@ The join flow (per season):
 7. Tag each row with `season` column
 8. Join rolling stats (shift-1) with `home_`/`away_` prefix
 9. Ensure `home_starter_name`/`away_starter_name` columns exist (NaN if absent from historical CSV)
-10. Fetch pitcher stats via `fetch_pitcher_stats(date(season, 9, 28))` — cache-first
-11. Join pitcher stats twice with `home_sp_*`/`away_sp_*` prefix (left join, NaN if no starter)
+10. Load all available `pitcher_snapshot_YYYY-MM-DD.csv` files for `_PITCHER_SNAPSHOT_MONTH_DAYS = [(4,30),(6,1),(7,31),(9,28)]`. For Sept 28, falls back to `fetch_pitcher_stats(date(season, 9, 28))` if no file exists.
+11. Assign each game to its snapshot via `_select_snapshot_date` (latest snapshot strictly before `game_date`). Pre-snapshot games get NaN pitcher stats.
+12. Join pitcher stats per snapshot group with `home_sp_*`/`away_sp_*` prefix (left join on pitcher name, NaN if no starter or below 30 IP)
 12. Concatenate all seasons, write to `data/processed/training_{min}-{max}.csv`
 
 `HISTORICAL_NAME_TO_ABBR` always uses **current** franchise abbreviations (e.g. "Oakland Athletics" → "ATH", not "OAK") for consistency with inference-time features. Covers current names (2022+) and legacy names (Cleveland Indians, Florida Marlins, Tampa Bay Devil Rays, Montreal Expos).
@@ -258,7 +266,7 @@ FanGraphs-specific stat columns (`w_oba`, `bat_wrc_plus`, `fip`) appear in the f
 pytest tests/ -v
 ```
 
-183 smoke + integration tests. All pass.
+196 smoke + integration tests. All pass.
 
 ## Roadmap
 
@@ -282,15 +290,16 @@ pytest tests/ -v
 - [x] Threshold sweep & market-edge filter — `market_implied_prob()`, `MIN_PROB_EDGE`, `sweep_thresholds()`. Sharpe-optimal `(EV_THRESHOLD=0.50, MIN_PROB_EDGE=0.30)` from 70-combination grid search. ~1.3 bets/day, 81.2% win rate on synthetic backtest.
 - [x] Historical ingestion resilience — `fetch_historical()` retries `statsapi.schedule` 3× (2s/4s/8s backoff). On total failure, falls back to stale cache if present; raises only when no cache exists. Prevents GitHub Actions pipeline failures on transient MLB Stats API outages.
 - [x] Current season feedback loop — `feedback.py` with `refresh_historical()`, `games_since_last_train()`, `run_feedback_loop()`. Retrains every 15 new games. Daily workflow commits `historical_2026.csv` and new model files. `RETRAIN_THRESHOLD=15` in config.
+- [x] Time-matched pitcher snapshots — `MIN_PITCHER_IP=30` in config; `fetch_pitcher_snapshot(snapshot_date, force)` with `byDateRange` API and full-season fallback; `_parse_pitcher_splits` extracted as shared helper; `_build_season` multi-snapshot group join with `_select_snapshot_date`; `snapshot.yml` workflow cron on April 30 / June 1 / July 31; 25 snapshot files backfilled for 2019, 2021–2026. Model retrained: accuracy 57.2%, ROC-AUC 0.601 (15,837 training rows, 196 tests passing).
 
 ## Future Work (priority order)
 
-1. **Current season feedback loop** ⬅ next session — fetch yesterday's game results daily (via `statsapi`), append to `historical_2025.csv`, and retrain the model when N new games have accumulated since the last retrain. Hook into the existing GitHub Actions workflow: after running the pipeline, fetch yesterday's result, append, and conditionally retrain. Makes the model adaptive rather than static mid-season. Critical for portfolio credibility — without this, the model never learns from 2025 games.
+1. **Dashboard / web UI** — a simple GitHub Pages static site generated by the daily workflow alongside the CSV commit. Renders `outputs/edges_YYYY-MM-DD.csv` as a formatted table with a running P&L chart. Makes the project demonstrable in 30 seconds without cloning — important for portfolio visibility.
 
-2. **Dashboard / web UI** — a simple GitHub Pages static site generated by the daily workflow alongside the CSV commit. Renders `outputs/edges_YYYY-MM-DD.csv` as a formatted table with a running P&L chart. Makes the project demonstrable in 30 seconds without cloning — important for portfolio visibility.
+2. **Real-odds backtest** — replace synthetic −110/−110 market odds with actual historical bookmaker lines from The Odds API historical endpoint (`GET /v4/sports/baseball_mlb/odds-history?date=...`). Requires a paid Odds API plan (free tier returns 401). Produces a far more credible P&L curve. Cache fetched odds locally like all other raw data.
 
-3. **Real-odds backtest** — replace synthetic −110/−110 market odds with actual historical bookmaker lines from The Odds API historical endpoint (`GET /v4/sports/baseball_mlb/odds-history?date=...`). Requires a paid Odds API plan (free tier returns 401). Produces a far more credible P&L curve. Cache fetched odds locally like all other raw data.
+3. **Out-of-time model evaluation** — retrain the model excluding 2025 entirely, then evaluate on 2025 as a true temporal holdout. Avoids the random-split leakage concern in the current backtest and better simulates forward performance.
 
-4. **Out-of-time model evaluation** — retrain the model excluding 2025 entirely, then evaluate on 2025 as a true temporal holdout. Avoids the random-split leakage concern in the current backtest and better simulates forward performance.
+4. **Time-matched team stats** — apply the same snapshot approach to team batting/pitching stats (`stats_ingestion`). Currently all training games for a season use September 28 end-of-season team stats (look-ahead bias). The fix mirrors the pitcher snapshot pattern: capture team stats at the same four dates per season and join each game to its nearest preceding snapshot.
 
 5. **Additional features** — rest days (days since last game), travel distance, ballpark factors (park-adjusted run environment), weather (temperature, wind, dome vs outdoor). Each likely adds a small but real signal that compounds with existing features.
