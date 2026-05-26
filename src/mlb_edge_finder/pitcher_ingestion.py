@@ -12,6 +12,33 @@ logger = logging.getLogger(__name__)
 _FIP_CONSTANT: float = 3.15
 
 
+def _parse_pitcher_splits(splits: list) -> list[dict]:
+    """Parse raw statsapi splits into pitcher row dicts. Skips pitchers with ip == 0."""
+    rows = []
+    for s in splits:
+        player = s.get("player", {})
+        st = s.get("stat", {})
+        ip_str = st.get("inningsPitched", "0") or "0"
+        ip = float(ip_str)
+        if ip == 0:
+            continue
+        hr = int(st.get("homeRuns", 0) or 0)
+        bb = int(st.get("baseOnBalls", 0) or 0)
+        k_out = int(st.get("strikeOuts", 0) or 0)
+        fip = (13 * hr + 3 * bb - 2 * k_out) / ip + _FIP_CONSTANT
+        rows.append({
+            "pitcher_id": player.get("id"),
+            "pitcher_name": player.get("fullName"),
+            "era": float(st.get("era", 0) or 0),
+            "whip": float(st.get("whip", 0) or 0),
+            "k_per_9": float(st.get("strikeoutsPer9Inn", 0) or 0),
+            "bb_per_9": float(st.get("walksPer9Inn", 0) or 0),
+            "ip": ip,
+            "fip_computed": fip,
+        })
+    return rows
+
+
 def fetch_pitcher_stats(game_date: date, force: bool = False) -> pd.DataFrame:
     """Fetch season-to-date pitching stats for all pitchers via the MLB Stats API.
 
@@ -54,29 +81,7 @@ def fetch_pitcher_stats(game_date: date, force: bool = False) -> pd.DataFrame:
     if not splits:
         raise RuntimeError(f"statsapi returned no pitcher stats for season {season}")
 
-    rows = []
-    for s in splits:
-        player = s.get("player", {})
-        st = s.get("stat", {})
-        ip_str = st.get("inningsPitched", "0") or "0"
-        ip = float(ip_str)
-        if ip == 0:
-            continue
-        hr = int(st.get("homeRuns", 0) or 0)
-        bb = int(st.get("baseOnBalls", 0) or 0)
-        k_out = int(st.get("strikeOuts", 0) or 0)
-        fip = (13 * hr + 3 * bb - 2 * k_out) / ip + _FIP_CONSTANT
-        rows.append({
-            "pitcher_id": player.get("id"),
-            "pitcher_name": player.get("fullName"),
-            "era": float(st.get("era", 0) or 0),
-            "whip": float(st.get("whip", 0) or 0),
-            "k_per_9": float(st.get("strikeoutsPer9Inn", 0) or 0),
-            "bb_per_9": float(st.get("walksPer9Inn", 0) or 0),
-            "ip": ip,
-            "fip_computed": fip,
-        })
-
+    rows = _parse_pitcher_splits(splits)
     df = pd.DataFrame(rows)
     config.DATA_RAW_DIR.mkdir(parents=True, exist_ok=True)
     df.to_csv(cache_path, index=False)
