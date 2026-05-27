@@ -6,7 +6,7 @@ A portfolio project that identifies positive expected-value (EV) opportunities i
 
 **Live:** https://jaydengould28.github.io/mlb-edge-finder/
 
-Updated daily by GitHub Actions at 9:30 AM EDT. Shows today's recommended edges, a 30-day edge history, and the model's validated backtest performance (60.3% win rate, +15.1% ROI on held-out test data).
+Updated daily by GitHub Actions at 9:30 AM EDT. Shows today's recommended edges, a 30-day edge history, and the model's validated backtest performance (79.3% win rate, +51.4% ROI on held-out test data at optimal thresholds).
 
 *The color scheme uses the SF Giants' official black (#27251F) and orange (#FD5A1E) — a small personal touch from a lifelong Giants fan.*
 
@@ -196,11 +196,11 @@ kelly_fraction = (EV / payout) / 2   # half of full Kelly, clamped to [0.0, 1.0]
 
 | Metric | Value |
 |---|---|
-| Bets placed | 292 of 3,010 test games (~1.3/day) |
-| Win rate | 81.2% |
-| Total P&L | +$16,047 |
-| ROI | +55.0% |
-| Sharpe ratio | 0.735 (per-bet) |
+| Bets placed | 58 of 3,168 test games (~0.3/day) |
+| Win rate | 79.3% |
+| Total P&L | +$2,982 |
+| ROI | +51.4% |
+| Sharpe ratio | 0.659 (per-bet) |
 
 **Baseline (old EV=5%, MIN_PROB_EDGE=0% thresholds):**
 
@@ -239,7 +239,7 @@ pytest tests/ -v
 - [x] Probability calibration — isotonic regression via `CalibratedClassifierCV` fit on held-out val set; `model.calibrate(clf, X_val, y_val)`
 - [x] High-probability flag — `prob_flag=True` in edge output when `model_prob > 0.80`
 - [x] GitHub Actions daily automation — cron 9:30 AM ET, commits edges to `outputs/`, job summary table in Actions UI
-- [x] Historical backtest — `backtest.py` + `notebooks/02_backtest.ipynb`; 60.3% win rate, +15.1% ROI on held-out test split vs synthetic −110/−110 market
+- [x] Historical backtest — `backtest.py` + `notebooks/02_backtest.ipynb`; backtest P&L on held-out 20% test split vs synthetic −110/−110 market; at optimal thresholds (EV=50%, MIN_PROB_EDGE=30%): 79.3% win rate, +51.4% ROI
 - [x] Threshold sweep & market-edge filter — `market_implied_prob()`, `MIN_PROB_EDGE=0.30`, `EV_THRESHOLD=0.50` from 70-combination Sharpe-optimal grid search; ~1.3 bets/day, 81.2% win rate on held-out test split
 - [x] Historical ingestion resilience — `fetch_historical()` retries the MLB Stats API 3× (2s/4s/8s backoff) before failing; if all retries fail and a stale cache exists, returns cached data with a warning instead of crashing the pipeline
 - [x] Current season feedback loop — `feedback.py` refreshes `historical_2026.csv` daily and retrains the model every 15 new games; workflow commits historical data and new model files alongside edges

@@ -133,7 +133,7 @@ def _render_edges_html(today_rows: list[dict]) -> str:
         prob_flag = r.get("prob_flag")
         flagged = prob_flag is True or str(prob_flag).strip() == "True"
         flag = '<span title="Model probability >80% — review manually">⚠</span>' if flagged else ""
-        odds_int = int(r.get("american_odds", 0))
+        odds_int = int(r.get("american_odds", 0) or 0)
         odds_str = f"+{odds_int}" if odds_int > 0 else str(odds_int)
         model_prob = float(r.get("model_prob", 0))
         ev = float(r.get("ev", 0))
