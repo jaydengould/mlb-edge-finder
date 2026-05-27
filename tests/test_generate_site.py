@@ -99,3 +99,82 @@ def test_load_pnl_returns_dict(tmp_path):
 def test_load_pnl_missing_returns_none():
     from mlb_edge_finder.generate_site import _load_pnl
     assert _load_pnl(None) is None
+
+
+# --- generate() integration ---
+
+def test_generate_creates_index_html(tmp_path):
+    from mlb_edge_finder.generate_site import generate
+    today = date.today().isoformat()
+    outputs_dir = tmp_path / "outputs"
+    outputs_dir.mkdir()
+    _write_edges_csv(outputs_dir / f"edges_{today}.csv", [
+        {"game_id": "abc", "home_team": "Giants", "away_team": "Dodgers",
+         "bet_side": "home", "american_odds": -110, "model_prob": 0.7,
+         "ev": 0.55, "kelly_fraction": 0.25, "prob_flag": False},
+    ])
+    out = tmp_path / "docs" / "index.html"
+    generate(outputs_dir=outputs_dir, metrics_path=None, pnl_path=None, out_path=out)
+    assert out.exists()
+    html = out.read_text()
+    assert "Giants" in html
+    assert "Dodgers" in html
+    assert "MLB Edge Finder" in html
+
+
+def test_generate_empty_state_when_no_edges_today(tmp_path):
+    from mlb_edge_finder.generate_site import generate
+    outputs_dir = tmp_path / "outputs"
+    outputs_dir.mkdir()
+    today = date.today().isoformat()
+    _write_header_only_csv(outputs_dir / f"edges_{today}.csv")
+    out = tmp_path / "docs" / "index.html"
+    generate(outputs_dir=outputs_dir, metrics_path=None, pnl_path=None, out_path=out)
+    html = out.read_text()
+    assert "No edges found today" in html
+
+
+def test_generate_includes_stats_when_metrics_present(tmp_path):
+    from mlb_edge_finder.generate_site import generate
+    outputs_dir = tmp_path / "outputs"
+    outputs_dir.mkdir()
+    metrics_path = tmp_path / "metrics.json"
+    metrics_path.write_text(json.dumps({"roc_auc": 0.601, "n_test_samples": 3168}))
+    pnl_path = tmp_path / "pnl.json"
+    pnl_path.write_text(json.dumps({
+        "cumulative_pnl": [0.0, 100.0, 200.0],
+        "summary": {"n_bets": 10, "win_rate": 0.6, "roi_pct": 15.1, "sharpe_ratio": 0.74},
+    }))
+    out = tmp_path / "docs" / "index.html"
+    generate(outputs_dir=outputs_dir, metrics_path=metrics_path, pnl_path=pnl_path, out_path=out)
+    html = out.read_text()
+    assert "60.0%" in html   # win rate
+    assert "15.1%" in html   # roi
+    assert "0.601" in html   # roc_auc
+
+
+def test_generate_still_works_when_pnl_missing(tmp_path):
+    from mlb_edge_finder.generate_site import generate
+    outputs_dir = tmp_path / "outputs"
+    outputs_dir.mkdir()
+    out = tmp_path / "docs" / "index.html"
+    generate(outputs_dir=outputs_dir, metrics_path=None, pnl_path=None, out_path=out)
+    assert out.exists()
+    html = out.read_text()
+    assert "<!DOCTYPE html>" in html
+
+
+def test_generate_prob_flag_shows_warning_badge(tmp_path):
+    from mlb_edge_finder.generate_site import generate
+    today = date.today().isoformat()
+    outputs_dir = tmp_path / "outputs"
+    outputs_dir.mkdir()
+    _write_edges_csv(outputs_dir / f"edges_{today}.csv", [
+        {"game_id": "x", "home_team": "A", "away_team": "B",
+         "bet_side": "away", "american_odds": 150, "model_prob": 0.85,
+         "ev": 0.6, "kelly_fraction": 0.3, "prob_flag": True},
+    ])
+    out = tmp_path / "docs" / "index.html"
+    generate(outputs_dir=outputs_dir, metrics_path=None, pnl_path=None, out_path=out)
+    html = out.read_text()
+    assert "⚠" in html

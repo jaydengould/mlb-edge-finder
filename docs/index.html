@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MLB Edge Finder — Daily Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#1a1713;color:#d6cfc4;font-family:-apple-system,'Segoe UI',sans-serif;min-height:100vh}
+    a{color:#FD5A1E}
+    .page{max-width:1100px;margin:0 auto;padding:24px 20px}
+    .header{border-bottom:1px solid #3d3930;padding-bottom:16px;margin-bottom:24px;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:8px}
+    .header-title{font-size:22px;font-weight:800;letter-spacing:-0.02em;color:#fff}
+    .header-sub{font-size:13px;color:#8a8070;margin-top:4px}
+    .badge{font-size:11px;font-weight:700;background:#FD5A1E22;color:#FD5A1E;border:1px solid #FD5A1E44;padding:3px 10px;border-radius:12px;white-space:nowrap;margin-top:4px}
+    .main-layout{display:flex;gap:24px;align-items:flex-start}
+    .col-main{flex:1;min-width:0}
+    .col-sidebar{width:240px;flex-shrink:0;display:flex;flex-direction:column;gap:16px}
+    .section{margin-bottom:28px}
+    .section-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#8a8070;margin-bottom:12px}
+    .table-wrap{overflow-x:auto;border-radius:8px;border:1px solid #3d3930}
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    thead tr{background:#27251F}
+    th{padding:10px 12px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:#8a8070;white-space:nowrap}
+    td{padding:10px 12px;border-bottom:1px solid #2e2b25;color:#d6cfc4;white-space:nowrap}
+    tbody tr:last-child td{border-bottom:none}
+    tbody tr:hover td{background:#27251F55}
+    .ev-val{color:#FD5A1E;font-weight:700}
+    .side-badge{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:2px 7px;border-radius:4px}
+    .side-home{background:#FD5A1E22;color:#FD5A1E;border:1px solid #FD5A1E44}
+    .side-away{background:#ffffff11;color:#8a8070;border:1px solid #3d3930}
+    .empty-state{text-align:center;padding:32px;color:#8a8070;font-size:14px;line-height:1.6}
+    .card{background:#27251F;border:1px solid #3d3930;border-radius:8px;padding:16px}
+    .card-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#8a8070;margin-bottom:12px}
+    .stat-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+    .stat-row:last-child{margin-bottom:0}
+    .stat-label{font-size:12px;color:#8a8070}
+    .stat-value{font-size:14px;font-weight:700;color:#FD5A1E}
+    .stat-value.green{color:#4ade80}
+    .stat-value.neutral{color:#d6cfc4}
+    .chart-wrap{position:relative;height:120px}
+    .chart-wrap-sm{position:relative;height:100px}
+    .updated{font-size:11px;color:#8a8070;text-align:right}
+    @media(max-width:700px){.main-layout{flex-direction:column}.col-sidebar{width:100%}}
+  </style>
+</head>
+<body>
+<div class="page">
+  <div class="header">
+    <div>
+      <div class="header-title">&#9918; MLB Edge Finder</div>
+      <div class="header-sub">XGBoost model identifying positive expected-value MLB moneyline bets</div>
+    </div>
+    <span class="badge">Updated May 26, 2026</span>
+  </div>
+  <div class="main-layout">
+    <div class="col-main">
+      <div class="section">
+        <div class="section-title">Today&#39;s Edges</div>
+        <div class="table-wrap" id="edges-table"><table><thead><tr><th>Matchup</th><th>Side</th><th>Odds</th><th>Model Prob</th><th>EV</th><th>Kelly</th><th>Flag</th></tr></thead><tbody><tr><td>San Diego Padres vs Philadelphia Phillies</td><td><span class="side-badge side-home">home</span></td><td>-109</td><td>91.6%</td><td class="ev-val">+75.6%</td><td>41.2%</td><td><span title="Model probability >80% — review manually">⚠</span></td></tr><tr><td>Baltimore Orioles vs Tampa Bay Rays</td><td><span class="side-badge side-away">away</span></td><td>-108</td><td>85.5%</td><td class="ev-val">+64.7%</td><td>34.9%</td><td><span title="Model probability >80% — review manually">⚠</span></td></tr><tr><td>Milwaukee Brewers vs St. Louis Cardinals</td><td><span class="side-badge side-away">away</span></td><td>+161</td><td>68.8%</td><td class="ev-val">+79.7%</td><td>24.7%</td><td></td></tr><tr><td>Athletics vs Seattle Mariners</td><td><span class="side-badge side-away">away</span></td><td>-102</td><td>81.5%</td><td class="ev-val">+61.4%</td><td>31.3%</td><td><span title="Model probability >80% — review manually">⚠</span></td></tr></tbody></table></div>
+      </div>
+      <div class="section">
+        <div class="section-title">Edge History &mdash; Last 30 Days</div>
+        <div class="chart-wrap"><canvas id="history-chart"></canvas></div>
+      </div>
+    </div>
+    <div class="col-sidebar">
+      <div class="updated">Updated May 26, 2026</div>
+      <div class="card"><div class="card-title">Backtest Performance</div><div class="stat-row"><span class="stat-label">Win Rate</span><span class="stat-value">79.3%</span></div><div class="stat-row"><span class="stat-label">Backtest ROI</span><span class="stat-value green">+51.4%</span></div><div class="stat-row"><span class="stat-label">Sharpe</span><span class="stat-value">0.659</span></div><div class="stat-row"><span class="stat-label">ROC-AUC</span><span class="stat-value neutral">0.601</span></div><div class="stat-row"><span class="stat-label">Test games</span><span class="stat-value neutral">3,168</span></div></div>
+      <div class="card"><div class="card-title">Backtest P&amp;L Curve</div><div class="chart-wrap-sm"><canvas id="pnl-chart"></canvas></div></div>
+    </div>
+  </div>
+</div>
+<script>
+const HISTORY=[{"date": "2026-05-19", "count": 4}, {"date": "2026-05-21", "count": 6}, {"date": "2026-05-22", "count": 13}, {"date": "2026-05-23", "count": 14}, {"date": "2026-05-24", "count": 16}, {"date": "2026-05-26", "count": 4}];
+const PNL={"cumulative_pnl": [90.91, 181.82, 272.73, 363.64, 454.55, 545.45, 636.36, 536.36, 627.27, 718.18, 809.09, 900.0, 990.91, 1081.82, 1172.73, 1072.73, 1163.64, 1254.55, 1345.45, 1245.45, 1336.36, 1427.27, 1518.18, 1609.09, 1700.0, 1790.91, 1690.91, 1590.91, 1681.82, 1772.73, 1672.73, 1763.64, 1854.55, 1945.45, 2036.36, 2127.27, 2027.27, 2118.18, 2209.09, 2300.0, 2390.91, 2481.82, 2572.73, 2663.64, 2754.55, 2845.45, 2745.45, 2645.45, 2736.36, 2827.27, 2727.27, 2818.18, 2718.18, 2809.09, 2900.0, 2990.91, 3081.82, 2981.82], "summary": {"n_bets": 58, "n_wins": 46, "win_rate": 0.7931, "total_pnl": 2981.82, "roi_pct": 51.41, "avg_ev": 0.6366, "max_drawdown": 200.0, "sharpe_ratio": 0.659}};
+const METRICS={"accuracy": 0.5722853535353535, "roc_auc": 0.6008120938131668, "log_loss": 0.6866863758112188, "brier_score": 0.2415940495245146, "n_test_samples": 3168, "xgb_n_estimators": null, "xgb_max_depth": null};
+</script>
+<script>
+(function(){
+  if(!HISTORY||HISTORY.length===0)return;
+  var ctx=document.getElementById('history-chart').getContext('2d');
+  new Chart(ctx,{type:'bar',data:{labels:HISTORY.map(function(d){return d.date.slice(5)}),datasets:[{data:HISTORY.map(function(d){return d.count}),backgroundColor:'#FD5A1E99',borderColor:'#FD5A1E',borderWidth:1,borderRadius:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{title:function(t){return HISTORY[t[0].dataIndex].date},label:function(t){return t.raw+' edge'+(t.raw!==1?'s':'')}}}},scales:{x:{grid:{color:'#3d393044'},ticks:{color:'#8a8070',font:{size:10}}},y:{grid:{color:'#3d393044'},ticks:{color:'#8a8070',font:{size:10},stepSize:1},beginAtZero:true}}}}});
+})();
+(function(){
+  var el=document.getElementById('pnl-chart');
+  if(!el||!PNL)return;
+  var ctx=el.getContext('2d');
+  new Chart(ctx,{type:'line',data:{labels:PNL.cumulative_pnl.map(function(_,i){return i}),datasets:[{data:PNL.cumulative_pnl,borderColor:'#FD5A1E',borderWidth:2,pointRadius:0,tension:0.1,fill:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(t){return'$'+t.raw.toFixed(0)}}}},scales:{x:{display:false},y:{grid:{color:'#3d393044'},ticks:{color:'#8a8070',font:{size:10},callback:function(v){return'$'+v}}}}}}});
+})();
+</script>
+</body>
+</html>
