@@ -296,7 +296,9 @@ pytest tests/ -v
 
 ## Future Work (priority order)
 
-1. **Real-odds backtest** — replace synthetic −110/−110 market odds with actual historical bookmaker lines from The Odds API historical endpoint (`GET /v4/sports/baseball_mlb/odds-history?date=...`). Requires a paid Odds API plan (free tier returns 401). Produces a far more credible P&L curve. Cache fetched odds locally like all other raw data.
+1. **Fix dashboard charts** — the live GitHub Pages site (`docs/index.html`) renders no edge history bars and no backtest P&L line. Both Chart.js canvases are present but empty. Likely cause: inline JSON data (`HISTORY`, `PNL`) is malformed or the canvas IDs don't match what the JS expects. Debug by opening browser devtools on the live site and checking console errors, or by inspecting the generated HTML locally with `python3 -m mlb_edge_finder.generate_site` and viewing `docs/index.html` in a browser.
+
+2. **Real-odds backtest** — replace synthetic −110/−110 market odds with actual historical bookmaker lines from The Odds API historical endpoint (`GET /v4/sports/baseball_mlb/odds-history?date=...`). Requires a paid Odds API plan (free tier returns 401). Produces a far more credible P&L curve. Cache fetched odds locally like all other raw data.
 
 2. **Out-of-time model evaluation** — retrain the model excluding 2025 entirely, then evaluate on 2025 as a true temporal holdout. Avoids the random-split leakage concern in the current backtest and better simulates forward performance.
 
