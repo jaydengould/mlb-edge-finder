@@ -2,6 +2,7 @@
 import json
 import logging
 from datetime import date
+from html import escape
 from pathlib import Path
 
 import pandas as pd
@@ -69,9 +70,12 @@ def _render_stats_html(metrics: dict | None, pnl_data: dict | None) -> str:
             f'<span class="stat-value">{summary["win_rate"] * 100:.1f}%</span></div>'
         )
     if "roi_pct" in summary:
+        roi = summary["roi_pct"]
+        roi_prefix = "+" if roi >= 0 else ""
+        roi_class = "stat-value green" if roi >= 0 else "stat-value"
         rows.append(
             f'<div class="stat-row"><span class="stat-label">Backtest ROI</span>'
-            f'<span class="stat-value green">+{summary["roi_pct"]:.1f}%</span></div>'
+            f'<span class="{roi_class}">{roi_prefix}{roi:.1f}%</span></div>'
         )
     if "sharpe_ratio" in summary:
         rows.append(
@@ -118,23 +122,26 @@ def _render_edges_html(today_rows: list[dict]) -> str:
         )
     rows_html = ""
     for r in today_rows:
+        home = escape(str(r.get("home_team", "")))
+        away = escape(str(r.get("away_team", "")))
+        side = escape(str(r.get("bet_side", "")))
         sc = "side-home" if r.get("bet_side") == "home" else "side-away"
         prob_flag = r.get("prob_flag")
         flagged = prob_flag is True or str(prob_flag).strip() == "True"
         flag = '<span title="Model probability >80% — review manually">⚠</span>' if flagged else ""
-        odds_val = r.get("american_odds", 0)
-        odds_str = f"+{odds_val}" if int(odds_val) > 0 else str(odds_val)
+        odds_int = int(r.get("american_odds", 0))
+        odds_str = f"+{odds_int}" if odds_int > 0 else str(odds_int)
         model_prob = float(r.get("model_prob", 0))
         ev = float(r.get("ev", 0))
+        ev_str = f"+{ev * 100:.1f}%" if ev >= 0 else f"{ev * 100:.1f}%"
         kelly = float(r.get("kelly_fraction", 0))
-        bet_side = r.get("bet_side", "")
         rows_html += (
             f"<tr>"
-            f"<td>{r.get('home_team', '')} vs {r.get('away_team', '')}</td>"
-            f'<td><span class="side-badge {sc}">{bet_side}</span></td>'
+            f"<td>{home} vs {away}</td>"
+            f'<td><span class="side-badge {sc}">{side}</span></td>'
             f"<td>{odds_str}</td>"
             f"<td>{model_prob * 100:.1f}%</td>"
-            f'<td class="ev-val">+{ev * 100:.1f}%</td>'
+            f'<td class="ev-val">{ev_str}</td>'
             f"<td>{kelly * 100:.1f}%</td>"
             f"<td>{flag}</td>"
             f"</tr>"
