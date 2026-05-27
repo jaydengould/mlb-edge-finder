@@ -81,13 +81,13 @@ const METRICS={"accuracy": 0.5722853535353535, "roc_auc": 0.6008120938131668, "l
 (function(){
   if(!HISTORY||HISTORY.length===0)return;
   var ctx=document.getElementById('history-chart').getContext('2d');
-  new Chart(ctx,{type:'bar',data:{labels:HISTORY.map(function(d){return d.date.slice(5)}),datasets:[{data:HISTORY.map(function(d){return d.count}),backgroundColor:'#FD5A1E99',borderColor:'#FD5A1E',borderWidth:1,borderRadius:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{title:function(t){return HISTORY[t[0].dataIndex].date},label:function(t){return t.raw+' edge'+(t.raw!==1?'s':'')}}}},scales:{x:{grid:{color:'#3d393044'},ticks:{color:'#8a8070',font:{size:10}}},y:{grid:{color:'#3d393044'},ticks:{color:'#8a8070',font:{size:10},stepSize:1},beginAtZero:true}}}}});
+  new Chart(ctx,{type:'bar',data:{labels:HISTORY.map(function(d){return d.date.slice(5)}),datasets:[{data:HISTORY.map(function(d){return d.count}),backgroundColor:'#FD5A1E99',borderColor:'#FD5A1E',borderWidth:1,borderRadius:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{title:function(t){return HISTORY[t[0].dataIndex].date},label:function(t){return t.raw+' edge'+(t.raw!==1?'s':'')}}}},scales:{x:{grid:{color:'#3d393044'},ticks:{color:'#8a8070',font:{size:10}}},y:{grid:{color:'#3d393044'},ticks:{color:'#8a8070',font:{size:10},stepSize:1},beginAtZero:true}}}});
 })();
 (function(){
   var el=document.getElementById('pnl-chart');
   if(!el||!PNL)return;
   var ctx=el.getContext('2d');
-  new Chart(ctx,{type:'line',data:{labels:PNL.cumulative_pnl.map(function(_,i){return i}),datasets:[{data:PNL.cumulative_pnl,borderColor:'#FD5A1E',borderWidth:2,pointRadius:0,tension:0.1,fill:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(t){return'$'+t.raw.toFixed(0)}}}},scales:{x:{display:false},y:{grid:{color:'#3d393044'},ticks:{color:'#8a8070',font:{size:10},callback:function(v){return'$'+v}}}}}}});
+  new Chart(ctx,{type:'line',data:{labels:PNL.cumulative_pnl.map(function(_,i){return i}),datasets:[{data:PNL.cumulative_pnl,borderColor:'#FD5A1E',borderWidth:2,pointRadius:0,tension:0.1,fill:false}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(t){return'$'+t.raw.toFixed(0)}}}},scales:{x:{display:false},y:{grid:{color:'#3d393044'},ticks:{color:'#8a8070',font:{size:10},callback:function(v){return'$'+v}}}}}});
 })();
 </script>
 </body>
