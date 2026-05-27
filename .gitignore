@@ -10,3 +10,4 @@ __pycache__/
 logs/
 .worktrees/
 .claude/settings.local.json
+.superpowers/
