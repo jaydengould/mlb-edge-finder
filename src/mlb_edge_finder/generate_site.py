@@ -32,7 +32,11 @@ def _load_edges_data(outputs_dir: Path) -> tuple[list[dict], list[dict]]:
 
     for csv_path in csv_files:
         file_date = csv_path.stem[len("edges_"):]
-        df = pd.read_csv(csv_path)
+        try:
+            df = pd.read_csv(csv_path)
+        except Exception:
+            logger.warning("Skipping malformed CSV: %s", csv_path)
+            continue
         history.append({"date": file_date, "count": len(df)})
         if file_date == today:
             today_rows = df.to_dict(orient="records")
@@ -285,7 +289,7 @@ def generate(
     metrics = _load_metrics(metrics_path)
     pnl_data = _load_pnl(pnl_path)
 
-    updated = date.today().strftime("%B %-d, %Y")
+    updated = date.today().strftime("%B %d, %Y").replace(" 0", " ")
     html = _render_html(today_rows, history, metrics, pnl_data, updated)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
