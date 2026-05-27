@@ -1,3 +1,5 @@
+import json
+
 import numpy as np
 import pandas as pd
 import pytest
@@ -302,9 +304,7 @@ def test_sweep_thresholds_best_row_logged(caplog):
     with caplog.at_level(logging.INFO, logger="mlb_edge_finder.backtest"):
         sweep_thresholds(clf, df, ev_low=0.05, ev_high=0.10, ev_step=0.05,
                          prob_edge_low=0.0, prob_edge_high=0.05, prob_edge_step=0.05)
-
-
-import json
+    assert any("Optimal" in r.message for r in caplog.records)
 
 
 def test_export_pnl_json_writes_expected_structure(tmp_path):

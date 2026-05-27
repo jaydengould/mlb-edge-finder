@@ -1,5 +1,7 @@
 """Backtest the edge-finder against held-out test data using synthetic market odds."""
+import json
 import logging
+from pathlib import Path
 from typing import Any
 
 import pandas as pd
@@ -322,7 +324,7 @@ def sweep_thresholds(
     return result
 
 
-def export_pnl_json(backtest_df: pd.DataFrame, summary: dict, path: "Path") -> None:
+def export_pnl_json(backtest_df: pd.DataFrame, summary: dict, path: Path) -> None:
     """Export cumulative P&L curve and summary stats to a JSON file.
 
     Args:
@@ -330,13 +332,10 @@ def export_pnl_json(backtest_df: pd.DataFrame, summary: dict, path: "Path") -> N
         summary: Output of compute_summary().
         path: Destination path for the JSON file. Parent dirs created if needed.
     """
-    import json
-    from pathlib import Path as _Path
-
     data = {
         "cumulative_pnl": [round(v, 2) for v in backtest_df["cumulative_pnl"].tolist()],
         "summary": summary,
     }
-    _Path(path).parent.mkdir(parents=True, exist_ok=True)
-    _Path(path).write_text(json.dumps(data, indent=2))
+    Path(path).parent.mkdir(parents=True, exist_ok=True)
+    Path(path).write_text(json.dumps(data, indent=2))
     logger.info("Exported P&L JSON to %s (%d bets)", path, len(backtest_df))
