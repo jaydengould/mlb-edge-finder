@@ -320,3 +320,23 @@ def sweep_thresholds(
         best["avg_bets_per_day"],
     )
     return result
+
+
+def export_pnl_json(backtest_df: pd.DataFrame, summary: dict, path: "Path") -> None:
+    """Export cumulative P&L curve and summary stats to a JSON file.
+
+    Args:
+        backtest_df: Output of run_backtest(). Must have cumulative_pnl column.
+        summary: Output of compute_summary().
+        path: Destination path for the JSON file. Parent dirs created if needed.
+    """
+    import json
+    from pathlib import Path as _Path
+
+    data = {
+        "cumulative_pnl": [round(v, 2) for v in backtest_df["cumulative_pnl"].tolist()],
+        "summary": summary,
+    }
+    _Path(path).parent.mkdir(parents=True, exist_ok=True)
+    _Path(path).write_text(json.dumps(data, indent=2))
+    logger.info("Exported P&L JSON to %s (%d bets)", path, len(backtest_df))

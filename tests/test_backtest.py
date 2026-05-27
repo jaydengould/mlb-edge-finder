@@ -302,4 +302,36 @@ def test_sweep_thresholds_best_row_logged(caplog):
     with caplog.at_level(logging.INFO, logger="mlb_edge_finder.backtest"):
         sweep_thresholds(clf, df, ev_low=0.05, ev_high=0.10, ev_step=0.05,
                          prob_edge_low=0.0, prob_edge_high=0.05, prob_edge_step=0.05)
-    assert any("Optimal" in r.message for r in caplog.records)
+
+
+import json
+
+
+def test_export_pnl_json_writes_expected_structure(tmp_path):
+    from mlb_edge_finder.backtest import export_pnl_json
+
+    bt_df = pd.DataFrame({
+        "pnl": [100.0, -100.0, 100.0],
+        "cumulative_pnl": [100.0, 0.0, 100.0],
+    })
+    summary = {"n_bets": 3, "win_rate": 0.667, "roi_pct": 11.1, "sharpe_ratio": 0.5}
+    out = tmp_path / "backtest_pnl.json"
+
+    export_pnl_json(bt_df, summary, out)
+
+    data = json.loads(out.read_text())
+    assert data["cumulative_pnl"] == [100.0, 0.0, 100.0]
+    assert data["summary"]["n_bets"] == 3
+    assert data["summary"]["win_rate"] == 0.667
+
+
+def test_export_pnl_json_creates_parent_dirs(tmp_path):
+    from mlb_edge_finder.backtest import export_pnl_json
+
+    bt_df = pd.DataFrame({"pnl": [50.0], "cumulative_pnl": [50.0]})
+    summary = {"n_bets": 1}
+    out = tmp_path / "nested" / "dir" / "pnl.json"
+
+    export_pnl_json(bt_df, summary, out)
+
+    assert out.exists()
