@@ -8,7 +8,7 @@ import pytest
 
 def _write_edges_csv(path: Path, rows: list[dict]) -> None:
     cols = ["game_id", "home_team", "away_team", "bet_side",
-            "american_odds", "model_prob", "ev", "kelly_fraction", "prob_flag"]
+            "american_odds", "model_prob", "ev", "kelly_fraction", "high_confidence"]
     with open(path, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=cols)
         w.writeheader()
@@ -17,7 +17,7 @@ def _write_edges_csv(path: Path, rows: list[dict]) -> None:
 
 def _write_header_only_csv(path: Path) -> None:
     path.write_text(
-        "game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,prob_flag\n"
+        "game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence\n"
     )
 
 
@@ -29,7 +29,7 @@ def test_load_edges_data_today_rows(tmp_path):
     _write_edges_csv(tmp_path / f"edges_{today}.csv", [
         {"game_id": "abc", "home_team": "Giants", "away_team": "Dodgers",
          "bet_side": "home", "american_odds": -110, "model_prob": 0.7,
-         "ev": 0.55, "kelly_fraction": 0.25, "prob_flag": False},
+         "ev": 0.55, "kelly_fraction": 0.25, "high_confidence": False},
     ])
     today_rows, history = _load_edges_data(tmp_path)
     assert len(today_rows) == 1
@@ -40,9 +40,9 @@ def test_load_edges_data_history_count(tmp_path):
     from mlb_edge_finder.generate_site import _load_edges_data
     _write_edges_csv(tmp_path / "edges_2026-05-20.csv", [
         {"game_id": "a", "home_team": "X", "away_team": "Y", "bet_side": "home",
-         "american_odds": -110, "model_prob": 0.6, "ev": 0.5, "kelly_fraction": 0.2, "prob_flag": False},
+         "american_odds": -110, "model_prob": 0.6, "ev": 0.5, "kelly_fraction": 0.2, "high_confidence": False},
         {"game_id": "b", "home_team": "X", "away_team": "Z", "bet_side": "away",
-         "american_odds": 120, "model_prob": 0.6, "ev": 0.5, "kelly_fraction": 0.2, "prob_flag": False},
+         "american_odds": 120, "model_prob": 0.6, "ev": 0.5, "kelly_fraction": 0.2, "high_confidence": False},
     ])
     _write_header_only_csv(tmp_path / "edges_2026-05-21.csv")
     _, history = _load_edges_data(tmp_path)
@@ -111,7 +111,7 @@ def test_generate_creates_index_html(tmp_path):
     _write_edges_csv(outputs_dir / f"edges_{today}.csv", [
         {"game_id": "abc", "home_team": "Giants", "away_team": "Dodgers",
          "bet_side": "home", "american_odds": -110, "model_prob": 0.7,
-         "ev": 0.55, "kelly_fraction": 0.25, "prob_flag": False},
+         "ev": 0.55, "kelly_fraction": 0.25, "high_confidence": False},
     ])
     out = tmp_path / "docs" / "index.html"
     generate(outputs_dir=outputs_dir, metrics_path=None, pnl_path=None, out_path=out)
@@ -164,17 +164,18 @@ def test_generate_still_works_when_pnl_missing(tmp_path):
     assert "<!DOCTYPE html>" in html
 
 
-def test_generate_prob_flag_shows_warning_badge(tmp_path):
+def test_generate_high_confidence_shows_star_badge(tmp_path):
     from mlb_edge_finder.generate_site import generate
     today = date.today().isoformat()
     outputs_dir = tmp_path / "outputs"
     outputs_dir.mkdir()
     _write_edges_csv(outputs_dir / f"edges_{today}.csv", [
         {"game_id": "x", "home_team": "A", "away_team": "B",
-         "bet_side": "away", "american_odds": 150, "model_prob": 0.85,
-         "ev": 0.6, "kelly_fraction": 0.3, "prob_flag": True},
+         "bet_side": "away", "american_odds": 150, "model_prob": 0.75,
+         "ev": 0.6, "kelly_fraction": 0.3, "high_confidence": True},
     ])
     out = tmp_path / "docs" / "index.html"
     generate(outputs_dir=outputs_dir, metrics_path=None, pnl_path=None, out_path=out)
     html = out.read_text()
-    assert "⚠" in html
+    assert "★" in html
+    assert "⚠" not in html

@@ -130,9 +130,9 @@ def _render_edges_html(today_rows: list[dict]) -> str:
         away = escape(str(r.get("away_team", "")))
         side = escape(str(r.get("bet_side", "")))
         sc = "side-home" if r.get("bet_side") == "home" else "side-away"
-        prob_flag = r.get("prob_flag")
-        flagged = prob_flag is True or str(prob_flag).strip() == "True"
-        flag = '<span title="Model probability >80% — review manually">⚠</span>' if flagged else ""
+        high_conf = r.get("high_confidence")
+        is_high_conf = high_conf is True or str(high_conf).strip() == "True"
+        badge = "★ " if is_high_conf else ""
         odds_int = int(r.get("american_odds", 0) or 0)
         odds_str = f"+{odds_int}" if odds_int > 0 else str(odds_int)
         model_prob = float(r.get("model_prob", 0))
@@ -142,18 +142,17 @@ def _render_edges_html(today_rows: list[dict]) -> str:
         rows_html += (
             f"<tr>"
             f"<td>{home} vs {away}</td>"
-            f'<td><span class="side-badge {sc}">{side}</span></td>'
+            f'<td><span class="side-badge {sc}">{badge}{side}</span></td>'
             f"<td>{odds_str}</td>"
             f"<td>{model_prob * 100:.1f}%</td>"
             f'<td class="ev-val">{ev_str}</td>'
             f"<td>{kelly * 100:.1f}%</td>"
-            f"<td>{flag}</td>"
             f"</tr>"
         )
     return (
         "<table><thead><tr>"
         "<th>Matchup</th><th>Side</th><th>Odds</th>"
-        "<th>Model Prob</th><th>EV</th><th>Kelly</th><th>Flag</th>"
+        "<th>Model Prob</th><th>EV</th><th>Kelly</th>"
         f"</tr></thead><tbody>{rows_html}</tbody></table>"
     )
 
