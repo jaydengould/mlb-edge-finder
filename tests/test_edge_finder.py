@@ -112,8 +112,7 @@ def test_find_edges_returns_home_edge(tmp_path):
 
     with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
          patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_PROB_EDGE", 0.0):
+         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300):
         result = find_edges(features_df, clf, GAME_DATE)
 
     assert len(result) == 1
@@ -123,7 +122,7 @@ def test_find_edges_returns_home_edge(tmp_path):
     assert result.iloc[0]["ev"] > 0.05
     assert set(result.columns) == {
         "game_id", "home_team", "away_team", "bet_side",
-        "american_odds", "model_prob", "ev", "kelly_fraction", "prob_flag",
+        "american_odds", "model_prob", "ev", "kelly_fraction", "high_confidence",
     }
 
 
@@ -143,7 +142,7 @@ def test_find_edges_filters_min_odds(tmp_path):
     assert result.empty
     assert set(result.columns) == {
         "game_id", "home_team", "away_team", "bet_side",
-        "american_odds", "model_prob", "ev", "kelly_fraction", "prob_flag",
+        "american_odds", "model_prob", "ev", "kelly_fraction", "high_confidence",
     }
 
 
@@ -162,7 +161,7 @@ def test_find_edges_empty_when_no_edges(tmp_path):
     assert result.empty
     assert set(result.columns) == {
         "game_id", "home_team", "away_team", "bet_side",
-        "american_odds", "model_prob", "ev", "kelly_fraction", "prob_flag",
+        "american_odds", "model_prob", "ev", "kelly_fraction", "high_confidence",
     }
 
 
@@ -176,8 +175,7 @@ def test_find_edges_both_sides(tmp_path):
 
     with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
          patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_PROB_EDGE", 0.0):
+         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300):
         result = find_edges(features_df, clf, GAME_DATE)
 
     assert len(result) == 2
@@ -242,8 +240,7 @@ def test_find_edges_includes_kelly_fraction(tmp_path):
 
     with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
          patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_PROB_EDGE", 0.0):
+         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300):
         result = find_edges(features_df, clf, GAME_DATE)
 
     assert "kelly_fraction" in result.columns
@@ -265,52 +262,46 @@ def test_find_edges_empty_features_df_returns_empty(tmp_path):
     assert "kelly_fraction" in result.columns
 
 
-def test_find_edges_prob_flag_true_when_model_prob_above_0_80(tmp_path):
-    """Edges where model_prob > 0.80 have prob_flag=True."""
+def test_find_edges_high_confidence_true_when_both_thresholds_met(tmp_path):
+    """high_confidence=True when EV > HIGH_CONFIDENCE_EV and prob_gap > HIGH_CONFIDENCE_PROB_EDGE."""
     from mlb_edge_finder.edge_finder import find_edges
-    # home_prob=0.85, home_odds=+110 → EV > 0 ✓, prob_flag=True
-    features_df = _make_features(home_odds=110, away_odds=-140)
-    clf = _make_clf(home_proba=0.85)
-
-    with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
-         patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300):
-        result = find_edges(features_df, clf, GAME_DATE)
-
-    assert len(result) == 1
-    assert result.iloc[0]["prob_flag"]
-
-
-def test_find_edges_prob_flag_false_when_model_prob_at_or_below_0_80(tmp_path):
-    """Edges where model_prob <= 0.80 have prob_flag=False."""
-    from mlb_edge_finder.edge_finder import find_edges
-    # home_prob=0.75, home_odds=+110 → EV > 0 ✓, prob_flag=False
+    # home_prob=0.75, home_odds=+110
+    # EV = 0.75*1.10 - 0.25 = 0.575 > 0.40 ✓
+    # market_implied(+110) = 100/210 ≈ 0.476
+    # prob_gap = 0.75 - 0.476 = 0.274 > 0.15 ✓
     features_df = _make_features(home_odds=110, away_odds=-140)
     clf = _make_clf(home_proba=0.75)
 
     with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
          patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
          patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_PROB_EDGE", 0.0):
+         patch("mlb_edge_finder.edge_finder.config.HIGH_CONFIDENCE_EV", 0.40), \
+         patch("mlb_edge_finder.edge_finder.config.HIGH_CONFIDENCE_PROB_EDGE", 0.15):
         result = find_edges(features_df, clf, GAME_DATE)
 
     assert len(result) == 1
-    assert not result.iloc[0]["prob_flag"]
+    assert result.iloc[0]["high_confidence"] == True
 
 
-def test_find_edges_prob_flag_boundary_exactly_0_80(tmp_path):
-    """Edges where model_prob == 0.80 exactly have prob_flag=False (threshold is strict >)."""
+def test_find_edges_high_confidence_false_when_ev_below_badge_threshold(tmp_path):
+    """high_confidence=False when EV does not exceed HIGH_CONFIDENCE_EV."""
     from mlb_edge_finder.edge_finder import find_edges
+    # home_prob=0.55, home_odds=+110
+    # EV = 0.55*1.10 - 0.45 = 0.155 — passes EV_THRESHOLD=0.05 but < HIGH_CONFIDENCE_EV=0.40
+    # market_implied(+110) = 100/210 ≈ 0.476
+    # prob_gap = 0.55 - 0.476 = 0.074 < 0.15 ✗
     features_df = _make_features(home_odds=110, away_odds=-140)
-    clf = _make_clf(home_proba=0.80)
+    clf = _make_clf(home_proba=0.55)
 
     with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
          patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300):
+         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300), \
+         patch("mlb_edge_finder.edge_finder.config.HIGH_CONFIDENCE_EV", 0.40), \
+         patch("mlb_edge_finder.edge_finder.config.HIGH_CONFIDENCE_PROB_EDGE", 0.15):
         result = find_edges(features_df, clf, GAME_DATE)
 
     assert len(result) == 1
-    assert not result.iloc[0]["prob_flag"]
+    assert result.iloc[0]["high_confidence"] == False
 
 
 def test_find_edges_min_prob_edge_filters_weak_disagreement(tmp_path):
