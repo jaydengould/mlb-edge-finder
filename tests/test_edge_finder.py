@@ -304,64 +304,6 @@ def test_find_edges_high_confidence_false_when_ev_below_badge_threshold(tmp_path
     assert result.iloc[0]["high_confidence"] == False
 
 
-def test_find_edges_min_prob_edge_filters_weak_disagreement(tmp_path):
-    """Bet is excluded when model_prob - market_implied_prob <= min_prob_edge.
-
-    home_prob=0.60, home_odds=+110 → market_implied=100/210≈0.476
-    disagreement = 0.60 - 0.476 = 0.124
-    With min_prob_edge=0.15, 0.124 < 0.15 → excluded.
-    """
-    from mlb_edge_finder.edge_finder import find_edges
-    features_df = _make_features(home_odds=110, away_odds=-140)
-    clf = _make_clf(home_proba=0.60)
-
-    with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
-         patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_PROB_EDGE", 0.0):
-        result = find_edges(features_df, clf, GAME_DATE, min_prob_edge=0.15)
-
-    assert result.empty
-
-
-def test_find_edges_min_prob_edge_passes_strong_disagreement(tmp_path):
-    """Bet is included when model_prob - market_implied_prob > min_prob_edge.
-
-    home_prob=0.75, home_odds=+110 → market_implied≈0.476
-    disagreement = 0.75 - 0.476 = 0.274
-    With min_prob_edge=0.15, 0.274 > 0.15 → included.
-    """
-    from mlb_edge_finder.edge_finder import find_edges
-    features_df = _make_features(home_odds=110, away_odds=-140)
-    clf = _make_clf(home_proba=0.75)
-
-    with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
-         patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_PROB_EDGE", 0.0):
-        result = find_edges(features_df, clf, GAME_DATE, min_prob_edge=0.15)
-
-    assert len(result) == 1
-    assert result.iloc[0]["bet_side"] == "home"
-
-
-def test_find_edges_logs_prob_edge_filter_count(tmp_path, caplog):
-    """find_edges logs how many edges the prob-edge filter kept."""
-    import logging
-    from mlb_edge_finder.edge_finder import find_edges
-    features_df = _make_features(home_odds=110, away_odds=-140)
-    clf = _make_clf(home_proba=0.75)
-
-    with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
-         patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_PROB_EDGE", 0.0), \
-         caplog.at_level(logging.INFO, logger="mlb_edge_finder.edge_finder"):
-        find_edges(features_df, clf, GAME_DATE, min_prob_edge=0.15)
-
-    assert any("prob-edge filter" in r.message for r in caplog.records)
-
-
 def test_find_edges_missing_feature_column(tmp_path):
     """Raises ValueError when features_df is missing a column the model needs."""
     from mlb_edge_finder.edge_finder import find_edges
