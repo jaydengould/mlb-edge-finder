@@ -1,1 +1,3 @@
-game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,prob_flag
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+10c998a5c2995335fd238b7e7e037c62,Pittsburgh Pirates,Chicago Cubs,away,149,0.5348837077617645,0.33186043232679363,0.1113625611834878,False
+f83cd7ff929aebf58050093ee52c8a86,Baltimore Orioles,Toronto Blue Jays,away,114,0.6020408272743225,0.28836737036705007,0.12647691682765355,False
