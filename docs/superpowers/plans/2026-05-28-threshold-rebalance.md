@@ -697,3 +697,34 @@ In `CLAUDE.md`, update the config constants table and the threshold sweep entry.
 git add CLAUDE.md
 git commit -m "docs: update CLAUDE.md to reflect threshold rebalance"
 ```
+
+---
+
+## Task 7: Update README.md
+
+**Files:**
+- Modify: `README.md`
+
+- [ ] **Step 1: Read the current README**
+
+```bash
+cat /Users/jaydengould/Documents/projects/mlb-edge-finder/README.md
+```
+
+- [ ] **Step 2: Update threshold-related sections**
+
+Find and update every mention of the old thresholds. Key areas to update:
+
+1. Any mention of `EV_THRESHOLD=0.50` → `EV_THRESHOLD=0.20`
+2. Any mention of `MIN_PROB_EDGE=0.30` or `MIN_PROB_EDGE` → remove the constant, explain that the EV threshold implicitly handles this for normal MLB lines
+3. Any mention of `prob_flag` → replace with `high_confidence`. Change framing from "warning flag for suspicious model probabilities" to "positive badge on the strongest edges (EV > 0.40 and model prob gap > 15pp over market)"
+4. Any mention of the Sharpe heatmap or 2D threshold sweep → update to describe the 1D sweep over `ev_threshold` only
+5. The edge output schema table or column list: `prob_flag (bool)` → `high_confidence (bool)`
+6. The config constants table if present: remove `MIN_PROB_EDGE`, add `HIGH_CONFIDENCE_EV` and `HIGH_CONFIDENCE_PROB_EDGE`
+
+- [ ] **Step 3: Commit**
+
+```bash
+git add README.md
+git commit -m "docs: update README for threshold rebalance and high_confidence badge"
+```
