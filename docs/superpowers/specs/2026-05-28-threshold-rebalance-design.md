@@ -33,11 +33,13 @@ Four changes:
 | Constant | Old | New | Reason |
 |---|---|---|---|
 | `EV_THRESHOLD` | `0.50` | `0.20` | Filters noise but fires regularly |
-| `MIN_PROB_EDGE` | `0.30` | `0.05` | Was calibrated on synthetic odds; 5pp just ensures model has directional edge over market |
+| `MIN_PROB_EDGE` | `0.30` | *(removed)* | Redundant with EV threshold — clearing EV > 0.20 on a normal MLB line already implies an 8–13pp prob gap. The concept moves to the badge logic only. |
 | `HIGH_CONFIDENCE_EV` | *(new)* | `0.40` | EV bar for positive badge |
 | `HIGH_CONFIDENCE_PROB_EDGE` | *(new)* | `0.15` | Prob-gap bar for positive badge |
 
-`HIGH_CONFIDENCE_EV` and `HIGH_CONFIDENCE_PROB_EDGE` are defined in `config.py` alongside the existing thresholds. They are never used as filters — they only determine whether an edge that already passed the permissive thresholds earns the badge.
+`HIGH_CONFIDENCE_EV` and `HIGH_CONFIDENCE_PROB_EDGE` are defined in `config.py` alongside the existing thresholds. They are never used as filters — they only determine whether an edge that already passed the permissive threshold earns the badge.
+
+`MIN_PROB_EDGE` is deleted from `config.py` and all call sites. `find_edges()` loses its `min_prob_edge` parameter entirely.
 
 ### 2. `edge_finder.py`
 
@@ -97,6 +99,7 @@ Update the notebook output column references to match.
 - Model, training data, pipeline orchestration
 - Output CSV schema (same columns, `prob_flag` renamed to `high_confidence`)
 - `MIN_AMERICAN_ODDS = -300` — still filters extreme favorites
+- `market_implied_prob()` is still called inside `find_edges()` — it's needed for the `high_confidence` badge computation, just no longer used as a filter gate
 
 ---
 
