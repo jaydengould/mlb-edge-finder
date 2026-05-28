@@ -46,7 +46,6 @@ def run_backtest(
     vig: float = 0.0476,
     unit: float = 100.0,
     ev_threshold: float | None = None,
-    min_prob_edge: float | None = None,
 ) -> pd.DataFrame:
     """Simulate edge-finder performance on the held-out 20% test split.
 
@@ -67,8 +66,6 @@ def run_backtest(
         vig: Bookmaker overround. Default 0.0476 (approx -110/-110 standard line).
         unit: Dollar bet size for P&L calculation. Default $100.
         ev_threshold: Minimum EV to flag a bet. Defaults to config.EV_THRESHOLD.
-        min_prob_edge: Minimum gap between model_prob and market_implied_prob.
-            Defaults to config.MIN_PROB_EDGE.
 
     Returns:
         DataFrame sorted by game_date with columns: game_date, home_name, away_name,
@@ -83,7 +80,6 @@ def run_backtest(
     from mlb_edge_finder.model import NON_FEATURE_COLS, TARGET_COL
 
     _ev_threshold = ev_threshold if ev_threshold is not None else _config.EV_THRESHOLD
-    _min_prob_edge = min_prob_edge if min_prob_edge is not None else _config.MIN_PROB_EDGE
 
     output_cols = [
         "game_date", "home_name", "away_name", "bet_side",
@@ -120,10 +116,8 @@ def run_backtest(
         row_meta = meta.loc[idx]
 
         home_ev = compute_ev(float(prob), home_odds_i)
-        home_edge = float(prob) - home_market_implied
         if (home_ev > _ev_threshold
-                and home_odds_i >= _config.MIN_AMERICAN_ODDS
-                and home_edge > _min_prob_edge):
+                and home_odds_i >= _config.MIN_AMERICAN_ODDS):
             won = int(actual) == 1
             records.append({
                 "game_date": row_meta["game_date"],
@@ -141,10 +135,8 @@ def run_backtest(
 
         away_prob = 1.0 - float(prob)
         away_ev = compute_ev(away_prob, away_odds_i)
-        away_edge = away_prob - away_market_implied
         if (away_ev > _ev_threshold
-                and away_odds_i >= _config.MIN_AMERICAN_ODDS
-                and away_edge > _min_prob_edge):
+                and away_odds_i >= _config.MIN_AMERICAN_ODDS):
             won = int(actual) == 0
             records.append({
                 "game_date": row_meta["game_date"],
@@ -161,15 +153,14 @@ def run_backtest(
             })
 
     if not records:
-        logger.warning("No edges found in backtest at EV=%.0f%% edge=%.0f%%",
-                       _ev_threshold * 100, _min_prob_edge * 100)
+        logger.warning("No edges found in backtest at EV=%.0f%%", _ev_threshold * 100)
         return pd.DataFrame(columns=output_cols)
 
     result = pd.DataFrame(records).sort_values("game_date").reset_index(drop=True)
     result["cumulative_pnl"] = result["pnl"].cumsum()
     logger.info(
-        "Backtest complete: %d bets across %d test games (EV=%.0f%% edge=%.0f%%)",
-        len(result), len(X_test), _ev_threshold * 100, _min_prob_edge * 100,
+        "Backtest complete: %d bets across %d test games (EV=%.0f%%)",
+        len(result), len(X_test), _ev_threshold * 100,
     )
     return result
 
@@ -234,14 +225,11 @@ def sweep_thresholds(
     ev_low: float = 0.05,
     ev_high: float = 0.50,
     ev_step: float = 0.05,
-    prob_edge_low: float = 0.00,
-    prob_edge_high: float = 0.30,
-    prob_edge_step: float = 0.05,
     unit: float = 100.0,
 ) -> pd.DataFrame:
-    """Sweep (ev_threshold, min_prob_edge) combinations and rank by Sharpe ratio.
+    """Sweep ev_threshold values and rank by Sharpe ratio.
 
-    Runs run_backtest() at each combination using the synthetic -110/-110 market.
+    Runs run_backtest() at each ev_threshold using the synthetic -110/-110 market.
     Combinations that produce 0 bets are excluded from results.
 
     Args:
@@ -250,43 +238,28 @@ def sweep_thresholds(
         ev_low: Minimum EV threshold to sweep (inclusive). Default 0.05.
         ev_high: Maximum EV threshold to sweep (inclusive). Default 0.50.
         ev_step: Step size for EV threshold sweep. Default 0.05.
-        prob_edge_low: Minimum prob-edge to sweep (inclusive). Default 0.00.
-        prob_edge_high: Maximum prob-edge to sweep (inclusive). Default 0.30.
-        prob_edge_step: Step size for prob-edge sweep. Default 0.05.
         unit: Dollar bet size passed to run_backtest(). Default $100.
 
     Returns:
         DataFrame sorted by sharpe_ratio descending with columns:
-        ev_threshold, min_prob_edge, n_bets, win_rate, roi_pct,
-        sharpe_ratio, avg_bets_per_day.
+        ev_threshold, n_bets, win_rate, roi_pct, sharpe_ratio, avg_bets_per_day.
 
     Raises:
         RuntimeError: If every combination produces 0 bets (model is broken).
     """
-    import numpy as np
-
     n_ev = round((ev_high - ev_low) / ev_step) + 1
-    n_edge = round((prob_edge_high - prob_edge_low) / prob_edge_step) + 1
     ev_values = [round(ev_low + i * ev_step, 4) for i in range(n_ev)]
-    edge_values = [round(prob_edge_low + i * prob_edge_step, 4) for i in range(n_edge)]
 
-    total = len(ev_values) * len(edge_values)
-    logger.info("Starting threshold sweep: %d combinations", total)
+    logger.info("Starting threshold sweep: %d EV values", len(ev_values))
 
     rows = []
-    for i, (ev_t, edge_t) in enumerate(
-        (ev, edge) for ev in ev_values for edge in edge_values
-    ):
-        if i > 0 and i % 10 == 0:
-            logger.info("Threshold sweep: %d/%d complete", i, total)
+    for i, ev_t in enumerate(ev_values):
+        if i > 0 and i % 5 == 0:
+            logger.info("Threshold sweep: %d/%d complete", i, len(ev_values))
 
-        bt = run_backtest(clf, training_df, ev_threshold=ev_t,
-                          min_prob_edge=edge_t, unit=unit)
+        bt = run_backtest(clf, training_df, ev_threshold=ev_t, unit=unit)
         if bt.empty:
-            logger.debug(
-                "Skipping EV=%.0f%% edge=%.0f%% — no bets at this threshold",
-                ev_t * 100, edge_t * 100,
-            )
+            logger.debug("Skipping EV=%.0f%% — no bets at this threshold", ev_t * 100)
             continue
 
         summary = compute_summary(bt, unit=unit)
@@ -299,7 +272,6 @@ def sweep_thresholds(
         )
         rows.append({
             "ev_threshold": ev_t,
-            "min_prob_edge": edge_t,
             "n_bets": summary["n_bets"],
             "win_rate": summary["win_rate"],
             "roi_pct": summary["roi_pct"],
@@ -311,12 +283,10 @@ def sweep_thresholds(
         raise RuntimeError("Threshold sweep produced no valid combinations — model may be broken")
 
     result = pd.DataFrame(rows).sort_values("sharpe_ratio", ascending=False).reset_index(drop=True)
-
     best = result.iloc[0]
     logger.info(
-        "Optimal: EV=%.0f%% MIN_PROB_EDGE=%.0f%% Sharpe=%.3f (%d bets, %.1f/day)",
+        "Optimal: EV=%.0f%% Sharpe=%.3f (%d bets, %.1f/day)",
         best["ev_threshold"] * 100,
-        best["min_prob_edge"] * 100,
         best["sharpe_ratio"],
         best["n_bets"],
         best["avg_bets_per_day"],

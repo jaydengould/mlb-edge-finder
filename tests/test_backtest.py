@@ -114,7 +114,7 @@ def test_run_backtest_no_edges_returns_empty_with_correct_columns():
 def test_run_backtest_high_prob_finds_home_edges():
     df = _make_training_df(200)
     clf = _make_mock_clf(home_win_prob=0.65)
-    result = run_backtest(clf, df, ev_threshold=0.05, min_prob_edge=0.0)
+    result = run_backtest(clf, df, ev_threshold=0.05)
     assert not result.empty
     assert (result["bet_side"] == "home").any()
 
@@ -150,18 +150,9 @@ def test_run_backtest_explicit_ev_threshold_filters_bets():
     """A very high explicit ev_threshold produces fewer bets than a low one."""
     df = _make_training_df(200)
     clf = _make_mock_clf(home_win_prob=0.65)
-    result_low = run_backtest(clf, df, ev_threshold=0.05, min_prob_edge=0.0)
-    result_high = run_backtest(clf, df, ev_threshold=0.50, min_prob_edge=0.0)
+    result_low = run_backtest(clf, df, ev_threshold=0.05)
+    result_high = run_backtest(clf, df, ev_threshold=0.50)
     assert len(result_high) <= len(result_low)
-
-
-def test_run_backtest_explicit_min_prob_edge_filters_bets():
-    """A high min_prob_edge filters out bets where model barely disagrees with market."""
-    df = _make_training_df(200)
-    clf = _make_mock_clf(home_win_prob=0.65)
-    result_no_filter = run_backtest(clf, df, ev_threshold=0.05, min_prob_edge=0.0)
-    result_filtered = run_backtest(clf, df, ev_threshold=0.05, min_prob_edge=0.30)
-    assert len(result_filtered) <= len(result_no_filter)
 
 
 def test_run_backtest_defaults_unchanged():
@@ -256,8 +247,7 @@ def test_sweep_thresholds_returns_dataframe():
     from mlb_edge_finder.backtest import sweep_thresholds
     df = _make_training_df(200)
     clf = _make_mock_clf(home_win_prob=0.65)
-    result = sweep_thresholds(clf, df, ev_low=0.05, ev_high=0.15, ev_step=0.05,
-                               prob_edge_low=0.0, prob_edge_high=0.10, prob_edge_step=0.05)
+    result = sweep_thresholds(clf, df, ev_low=0.05, ev_high=0.15, ev_step=0.05)
     assert isinstance(result, pd.DataFrame)
 
 
@@ -265,19 +255,33 @@ def test_sweep_thresholds_output_columns():
     from mlb_edge_finder.backtest import sweep_thresholds
     df = _make_training_df(200)
     clf = _make_mock_clf(home_win_prob=0.65)
-    result = sweep_thresholds(clf, df, ev_low=0.05, ev_high=0.15, ev_step=0.05,
-                               prob_edge_low=0.0, prob_edge_high=0.10, prob_edge_step=0.05)
-    expected = {"ev_threshold", "min_prob_edge", "n_bets", "win_rate",
+    result = sweep_thresholds(clf, df, ev_low=0.05, ev_high=0.15, ev_step=0.05)
+    expected = {"ev_threshold", "n_bets", "win_rate",
                 "roi_pct", "sharpe_ratio", "avg_bets_per_day"}
     assert expected.issubset(set(result.columns))
+    assert "min_prob_edge" not in result.columns
+
+
+def test_sweep_thresholds_returns_sorted_dataframe():
+    """sweep_thresholds returns a DataFrame sorted by sharpe_ratio with expected columns."""
+    from mlb_edge_finder.backtest import sweep_thresholds
+    df = _make_training_df(300)
+    clf = _make_mock_clf(home_win_prob=0.65)
+    result = sweep_thresholds(clf, df, ev_low=0.05, ev_high=0.15, ev_step=0.05)
+    assert isinstance(result, pd.DataFrame)
+    assert not result.empty
+    expected = {"ev_threshold", "n_bets", "win_rate",
+                "roi_pct", "sharpe_ratio", "avg_bets_per_day"}
+    assert expected.issubset(set(result.columns))
+    assert "min_prob_edge" not in result.columns
+    assert result["sharpe_ratio"].is_monotonic_decreasing or len(result) == 1
 
 
 def test_sweep_thresholds_sorted_by_sharpe_descending():
     from mlb_edge_finder.backtest import sweep_thresholds
     df = _make_training_df(200)
     clf = _make_mock_clf(home_win_prob=0.65)
-    result = sweep_thresholds(clf, df, ev_low=0.05, ev_high=0.15, ev_step=0.05,
-                               prob_edge_low=0.0, prob_edge_high=0.10, prob_edge_step=0.05)
+    result = sweep_thresholds(clf, df, ev_low=0.05, ev_high=0.15, ev_step=0.05)
     if len(result) > 1:
         assert result["sharpe_ratio"].iloc[0] >= result["sharpe_ratio"].iloc[1]
 
@@ -288,8 +292,7 @@ def test_sweep_thresholds_excludes_zero_bet_combinations():
     df = _make_training_df(200)
     clf = _make_mock_clf(home_win_prob=0.65)
     try:
-        result = sweep_thresholds(clf, df, ev_low=0.95, ev_high=0.99, ev_step=0.05,
-                                   prob_edge_low=0.0, prob_edge_high=0.0, prob_edge_step=0.05)
+        result = sweep_thresholds(clf, df, ev_low=0.95, ev_high=0.99, ev_step=0.05)
         assert (result["n_bets"] > 0).all()
     except RuntimeError:
         pass  # All combinations produced 0 bets — that's valid behavior
@@ -302,8 +305,7 @@ def test_sweep_thresholds_best_row_logged(caplog):
     df = _make_training_df(200)
     clf = _make_mock_clf(home_win_prob=0.65)
     with caplog.at_level(logging.INFO, logger="mlb_edge_finder.backtest"):
-        sweep_thresholds(clf, df, ev_low=0.05, ev_high=0.10, ev_step=0.05,
-                         prob_edge_low=0.0, prob_edge_high=0.05, prob_edge_step=0.05)
+        sweep_thresholds(clf, df, ev_low=0.05, ev_high=0.10, ev_step=0.05)
     assert any("Optimal" in r.message for r in caplog.records)
 
 
