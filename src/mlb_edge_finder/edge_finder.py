@@ -80,7 +80,6 @@ def find_edges(
     features_df: pd.DataFrame,
     clf: XGBClassifier,
     game_date: date,
-    min_prob_edge: float | None = None,
 ) -> pd.DataFrame:
     """Run inference and return games with positive expected value.
 
@@ -88,7 +87,6 @@ def find_edges(
     trained on, then runs two passes (home, away) to find bets where:
       - EV > config.EV_THRESHOLD
       - The relevant team's American odds >= config.MIN_AMERICAN_ODDS
-      - model_prob - market_implied_prob(odds) > min_prob_edge
 
     Logs a warning and returns an empty DataFrame (with correct columns) if no
     edges are found. Writes results to DATA_PROCESSED_DIR/edges_YYYY-MM-DD.csv.
@@ -99,23 +97,19 @@ def find_edges(
             game_id, home_team, away_team, home_odds_american, away_odds_american.
         clf: Fitted XGBClassifier from model.load_model() or train().
         game_date: Used to name the output CSV.
-        min_prob_edge: Minimum required gap between model_prob and
-            market_implied_prob. Defaults to config.MIN_PROB_EDGE.
 
     Returns:
         DataFrame with columns: game_id, home_team, away_team,
-        bet_side, american_odds, model_prob, ev, kelly_fraction, prob_flag —
-        one row per flagged edge. prob_flag=True when model_prob > 0.80.
+        bet_side, american_odds, model_prob, ev, kelly_fraction, high_confidence —
+        one row per flagged edge. high_confidence=True when both EV > config.HIGH_CONFIDENCE_EV
+        and (model_prob - market_implied_prob) > config.HIGH_CONFIDENCE_PROB_EDGE.
 
     Raises:
         ValueError: If features_df is missing any column in clf.feature_names_in_.
     """
-    if min_prob_edge is None:
-        min_prob_edge = config.MIN_PROB_EDGE
-
     output_cols = [
         "game_id", "home_team", "away_team", "bet_side",
-        "american_odds", "model_prob", "ev", "kelly_fraction", "prob_flag",
+        "american_odds", "model_prob", "ev", "kelly_fraction", "high_confidence",
     ]
 
     if features_df.empty:
@@ -142,7 +136,6 @@ def find_edges(
     home_mask = (
         (home_ev > config.EV_THRESHOLD)
         & (df["home_odds_american"] >= config.MIN_AMERICAN_ODDS)
-        & ((home_prob - home_implied) > min_prob_edge)
     )
     home_edges = df.loc[home_mask, ["game_id", "home_team", "away_team"]].copy()
     home_edges["bet_side"] = "home"
@@ -153,7 +146,10 @@ def find_edges(
         compute_kelly(float(p), int(o))
         for p, o in zip(home_prob[home_mask.values], df.loc[home_mask, "home_odds_american"].values)
     ]
-    home_edges["prob_flag"] = home_prob[home_mask.values] > 0.80
+    home_edges["high_confidence"] = (
+        (home_ev[home_mask].values > config.HIGH_CONFIDENCE_EV)
+        & ((home_prob[home_mask.values] - home_implied[home_mask.values]) > config.HIGH_CONFIDENCE_PROB_EDGE)
+    )
 
     # Away pass
     away_ev = pd.Series(
@@ -165,7 +161,6 @@ def find_edges(
     away_mask = (
         (away_ev > config.EV_THRESHOLD)
         & (df["away_odds_american"] >= config.MIN_AMERICAN_ODDS)
-        & ((away_prob - away_implied) > min_prob_edge)
     )
     away_edges = df.loc[away_mask, ["game_id", "home_team", "away_team"]].copy()
     away_edges["bet_side"] = "away"
@@ -176,15 +171,18 @@ def find_edges(
         compute_kelly(float(p), int(o))
         for p, o in zip(away_prob[away_mask.values], df.loc[away_mask, "away_odds_american"].values)
     ]
-    away_edges["prob_flag"] = away_prob[away_mask.values] > 0.80
+    away_edges["high_confidence"] = (
+        (away_ev[away_mask].values > config.HIGH_CONFIDENCE_EV)
+        & ((away_prob[away_mask.values] - away_implied[away_mask.values]) > config.HIGH_CONFIDENCE_PROB_EDGE)
+    )
 
     edges = pd.concat([home_edges[output_cols], away_edges[output_cols]], ignore_index=True)
 
     logger.info(
-        "prob-edge filter (%.0f%%): %d edges kept after all filters for %s",
-        min_prob_edge * 100,
+        "%d edge(s) found for %s (EV_THRESHOLD=%.2f)",
         len(edges),
         game_date,
+        config.EV_THRESHOLD,
     )
 
     if edges.empty:
