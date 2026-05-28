@@ -201,7 +201,7 @@ kelly_fraction = (EV / payout) / 2   # half of full Kelly, clamped to [0.0, 1.0]
 pytest tests/ -v
 ```
 
-212 smoke + integration tests. All pass.
+208 smoke + integration tests. All pass.
 
 ## Roadmap
 
