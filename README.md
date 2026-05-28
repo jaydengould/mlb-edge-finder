@@ -6,7 +6,7 @@ A portfolio project that identifies positive expected-value (EV) opportunities i
 
 **Live:** https://jaydengould28.github.io/mlb-edge-finder/
 
-Updated daily by GitHub Actions at 9:30 AM EDT. Shows today's recommended edges, a 30-day edge history, and the model's validated backtest performance (79.3% win rate, +51.4% ROI on held-out test data at optimal thresholds).
+Updated daily by GitHub Actions at 9:30 AM EDT. Shows today's recommended edges (★ marks high-confidence picks), a 30-day edge history, and the model's validated backtest performance on held-out test data.
 
 *The color scheme uses the SF Giants' official black (#27251F) and orange (#FD5A1E) — a small personal touch from a lifelong Giants fan.*
 
@@ -16,8 +16,8 @@ Updated daily by GitHub Actions at 9:30 AM EDT. Shows today's recommended edges,
 2. **Stats ingestion** — pulls current-season team batting and pitching stats from FanGraphs (via pybaseball), falling back to the MLB Stats API if FanGraphs is unavailable.
 3. **Pitcher ingestion** — fetches individual pitcher season stats and today's probable starters via the MLB Stats API. Pitchers with fewer than 30 IP are excluded from all joins to prevent meaningless ERA/WHIP from small samples.
 4. **Feature engineering** — joins odds, team stats, rolling form stats (15-game window), and starting pitcher stats into one row per game.
-5. **Inference** — an XGBoost classifier predicts home-team win probability. Probabilities are post-hoc calibrated with isotonic regression on a held-out validation set. EV is computed per side; bets clearing both the EV threshold and the minimum probability-edge filter are flagged with a half-Kelly bet size.
-6. **Output** — flagged edges are written to `data/processed/edges_YYYY-MM-DD.csv` and printed to the terminal. Any edge where `model_prob > 0.80` is marked with `prob_flag=True` for manual review.
+5. **Inference** — an XGBoost classifier predicts home-team win probability. Probabilities are post-hoc calibrated with isotonic regression on a held-out validation set. EV is computed per side; bets clearing the EV threshold are flagged with a half-Kelly bet size.
+6. **Output** — flagged edges are written to `data/processed/edges_YYYY-MM-DD.csv` and printed to the terminal. Edges with EV > 0.40 and a model probability gap over the market of more than 15 percentage points are marked `high_confidence=True` and shown with a ★ on the dashboard.
 7. **Automation** — a GitHub Actions workflow runs the full pipeline every morning at 9:30 AM ET and commits the results to `outputs/edges_YYYY-MM-DD.csv` in the repo, with a formatted table in the Actions job summary. A separate snapshot workflow captures time-matched pitcher stats at key season dates (April 30, June 1, July 31) for use in model retraining.
 8. **Backtest** — `notebooks/02_backtest.ipynb` simulates historical performance on the held-out 20% test split using synthetic −110/−110 market odds, producing a cumulative P&L curve and summary statistics.
 
@@ -76,12 +76,12 @@ python -m mlb_edge_finder --date 2026-05-12 --force
 ```
 Found 2 edge(s) for 2026-05-12:
 
-  home_team         away_team        bet_side  american_odds  model_prob    ev  kelly_fraction  prob_flag
-  New York Yankees  Boston Red Sox   home            +130       0.682   0.107           0.041      False
-  Houston Astros    Texas Rangers    away            +115       0.621   0.064           0.028      False
+  home_team         away_team        bet_side  american_odds  model_prob    ev  kelly_fraction  high_confidence
+  New York Yankees  Boston Red Sox   home            +130       0.682   0.107           0.041        False
+  Houston Astros    Texas Rangers    away            +115       0.621   0.064           0.028        False
 ```
 
-`prob_flag=True` marks rows where `model_prob > 0.80` — review these manually before acting, as extreme probabilities can indicate a feature outlier rather than a genuine edge.
+`high_confidence=True` marks the strongest edges (EV > 0.40 and model probability gap over market > 15pp). These appear with a ★ prefix on the dashboard.
 
 ## Project Structure
 
@@ -147,19 +147,20 @@ Trained on 15,837 regular-season games (2019, 2021–2026; 2020 excluded — 60-
 | ROC-AUC | 0.601 |
 | Log Loss | 0.687 |
 
-The slight reduction in headline metrics vs the previous model reflects more realistic training data — early-season games now correctly have NaN pitcher features rather than borrowing end-of-season stats. The practical benefit is that inference probabilities stay in a credible range (55–75%) instead of producing extreme values that trigger `prob_flag`.
+The slight reduction in headline metrics vs the previous model reflects more realistic training data — early-season games now correctly have NaN pitcher features rather than borrowing end-of-season stats. The practical benefit is that inference probabilities stay in a credible range (55–75%), keeping EV estimates meaningful.
 
 ## Edge Definition
 
-A bet is flagged when all three conditions hold:
+A bet is flagged when both conditions hold:
 
 ```
-EV > EV_THRESHOLD                                    # default 50% — configurable in config.py
-american_odds >= MIN_AMERICAN_ODDS                   # default -300 — skips heavy favorites
-model_prob - market_implied_prob > MIN_PROB_EDGE     # default 30% — requires genuine model vs market disagreement
+EV > EV_THRESHOLD          # default 20% — configurable in config.py
+american_odds >= MIN_AMERICAN_ODDS   # default -300 — skips heavy favorites
 ```
 
-`EV_THRESHOLD` and `MIN_PROB_EDGE` were set by a 70-combination Sharpe-optimal grid search over the held-out test split (see Backtest section).
+`EV_THRESHOLD` was set by a Sharpe-optimal 1D sweep over the held-out test split (see Backtest section). At standard MLB moneyline odds, a meaningful EV gap already implies the model disagrees significantly with the market — an explicit `MIN_PROB_EDGE` filter is not required.
+
+**High-confidence badge:** edges with EV > `HIGH_CONFIDENCE_EV` (0.40) *and* `model_prob − market_implied_prob > HIGH_CONFIDENCE_PROB_EDGE` (0.15) receive `high_confidence=True` and are shown with ★ on the dashboard. These are the strongest signals, not a separate bet filter.
 
 **EV formula:**
 ```python
@@ -170,7 +171,7 @@ EV = prob * (100 / abs(odds)) - (1 - prob)
 EV = prob * (odds / 100) - (1 - prob)
 ```
 
-**Market-implied probability** (used to compute `MIN_PROB_EDGE`):
+**Market-implied probability** (used for high-confidence badge and display):
 ```python
 # Negative odds (favourite): -110 → 110/210 = 52.4%
 market_implied_prob = abs(odds) / (abs(odds) + 100)
@@ -186,32 +187,13 @@ kelly_fraction = (EV / payout) / 2   # half of full Kelly, clamped to [0.0, 1.0]
 
 ## Backtest
 
-`notebooks/02_backtest.ipynb` validates the model against the held-out 20% test split (3,010 games never seen during training or calibration). It includes a threshold sweep to find the Sharpe-optimal filter combination.
+`notebooks/02_backtest.ipynb` validates the model against the held-out 20% test split (3,010 games never seen during training or calibration). It includes a 1D threshold sweep over `EV_THRESHOLD` to find the Sharpe-optimal value.
 
-**Method:** synthetic market odds of −110/−110 (50/50 even market, 4.76% vig). EV and `market_implied_prob` are computed against these synthetic lines for each game in the test set. Bets are flagged only when both `EV > EV_THRESHOLD` and `model_prob - market_implied_prob > MIN_PROB_EDGE`.
+**Method:** synthetic market odds of −110/−110 (50/50 even market, 4.76% vig). EV is computed against these synthetic lines for each game in the test set. Bets are flagged when `EV > EV_THRESHOLD`.
 
-**Threshold sweep:** a 70-combination grid (`EV_THRESHOLD` 5%–50% × `MIN_PROB_EDGE` 0%–30%) was evaluated; the combination with the highest Sharpe ratio was selected. `MIN_PROB_EDGE=0.30` dominates — it is the binding constraint that filters the held-out set to high-conviction picks regardless of EV threshold.
+**Threshold sweep:** `sweep_thresholds()` evaluates `EV_THRESHOLD` across a range of values and returns a DataFrame with columns `ev_threshold`, `n_bets`, `win_rate`, `roi_pct`, `sharpe_ratio`, `avg_bets_per_day`, sorted by Sharpe ratio. The Sharpe-optimal value sets the default `EV_THRESHOLD=0.20` in `config.py`.
 
-**Results at optimal thresholds — EV=50%, MIN_PROB_EDGE=30% ($100 flat bet per edge):**
-
-| Metric | Value |
-|---|---|
-| Bets placed | 58 of 3,168 test games (~0.3/day) |
-| Win rate | 79.3% |
-| Total P&L | +$2,982 |
-| ROI | +51.4% |
-| Sharpe ratio | 0.659 (per-bet) |
-
-**Baseline (old EV=5%, MIN_PROB_EDGE=0% thresholds):**
-
-| Metric | Value |
-|---|---|
-| Bets placed | 2,370 (~79% of games) |
-| Win rate | 60.3% |
-| ROI | +15.1% |
-| Sharpe ratio | 0.16 |
-
-**Caveats:** Synthetic −110/−110 odds are a naive baseline; real bookmakers price each game individually, so actual edge frequency against live lines will differ. End-of-season team stats are used for all games in each season (a remaining source of look-ahead bias), which likely overstates performance. Pitcher stats are now time-matched (resolved), eliminating the largest source of distribution mismatch. The high win rate at strict thresholds reflects that `MIN_PROB_EDGE=0.30` selects cases where the model is extremely confident the market is wrong — this subset may not be representative of future opportunities.
+**Caveats:** Synthetic −110/−110 odds are a naive baseline; real bookmakers price each game individually, so actual edge frequency against live lines will differ. End-of-season team stats are used for all games in each season (a remaining source of look-ahead bias), which likely overstates performance. Pitcher stats are now time-matched (resolved), eliminating the largest source of distribution mismatch.
 
 ## Running Tests
 
@@ -237,12 +219,12 @@ pytest tests/ -v
 - [x] Kelly criterion bet sizing — half-Kelly `kelly_fraction` column in edge output
 - [x] CLI — `python -m mlb_edge_finder [--date YYYY-MM-DD] [--force]`
 - [x] Probability calibration — isotonic regression via `CalibratedClassifierCV` fit on held-out val set; `model.calibrate(clf, X_val, y_val)`
-- [x] High-probability flag — `prob_flag=True` in edge output when `model_prob > 0.80`
+- [x] High-confidence badge — `high_confidence=True` in edge output when EV > 0.40 and model prob gap over market > 15pp; shown as ★ on the dashboard
 - [x] GitHub Actions daily automation — cron 9:30 AM ET, commits edges to `outputs/`, job summary table in Actions UI
-- [x] Historical backtest — `backtest.py` + `notebooks/02_backtest.ipynb`; backtest P&L on held-out 20% test split vs synthetic −110/−110 market; at optimal thresholds (EV=50%, MIN_PROB_EDGE=30%): 79.3% win rate, +51.4% ROI
-- [x] Threshold sweep & market-edge filter — `market_implied_prob()`, `MIN_PROB_EDGE=0.30`, `EV_THRESHOLD=0.50` from 70-combination Sharpe-optimal grid search; ~1.3 bets/day, 81.2% win rate on held-out test split
+- [x] Historical backtest — `backtest.py` + `notebooks/02_backtest.ipynb`; backtest P&L on held-out 20% test split vs synthetic −110/−110 market
+- [x] Threshold sweep — `sweep_thresholds()` 1D sweep over `ev_threshold`; Sharpe-optimal value sets `EV_THRESHOLD=0.20` in config; returns `ev_threshold, n_bets, win_rate, roi_pct, sharpe_ratio, avg_bets_per_day`
 - [x] Historical ingestion resilience — `fetch_historical()` retries the MLB Stats API 3× (2s/4s/8s backoff) before failing; if all retries fail and a stale cache exists, returns cached data with a warning instead of crashing the pipeline
 - [x] Current season feedback loop — `feedback.py` refreshes `historical_2026.csv` daily and retrains the model every 15 new games; workflow commits historical data and new model files alongside edges
 - [x] Time-matched pitcher snapshots — `fetch_pitcher_snapshot()` captures stats through a specific date via the MLB Stats API `byDateRange` endpoint; `_build_season` joins each training game to the latest preceding snapshot (April 30 / June 1 / July 31 / September 28) instead of end-of-season stats; `MIN_PITCHER_IP=30` floor applied at all join points; `snapshot.yml` workflow auto-commits snapshot files on schedule
-- [x] Dashboard — self-contained `docs/index.html` generated by `generate_site.py`; served via GitHub Pages; updated daily by the Actions workflow alongside the edges CSV; shows today's edges, 30-day history bar chart, and backtest P&L line chart with SF Giants color scheme
+- [x] Dashboard — self-contained `docs/index.html` generated by `generate_site.py`; served via GitHub Pages; updated daily by the Actions workflow alongside the edges CSV; shows today's edges (★ on high-confidence rows), 30-day history bar chart, and backtest P&L line chart with SF Giants color scheme
 - [x] Dashboard chart fix — repaired unbalanced `}}` pairs in the Chart.js f-string template that produced a silent JS syntax error, preventing both canvases from rendering
