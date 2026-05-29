@@ -807,7 +807,7 @@ game_date,home_name,away_name,home_score,away_score,home_win,home_starter_name,a
 2026-05-26,Cleveland Guardians,Washington Nationals,3,6,0,Joey Cantillo,Cade Cavalli
 2026-05-26,Baltimore Orioles,Tampa Bay Rays,6,1,1,Shane Baz,Griffin Jax
 2026-05-26,Detroit Tigers,Los Angeles Angels,6,10,0,Keider Montero,Jack Kochanowicz
-2026-05-26,Pittsburgh Pirates,Chicago Cubs,12,1,1,Braxton Ashcraft,Jordan Wicks
+2026-05-26,Pittsburgh Pirates,Chicago Cubs,12,1,1,Mitch Keller,Jordan Wicks
 2026-05-26,Boston Red Sox,Atlanta Braves,6,7,0,Ranger Suarez,Spencer Strider
 2026-05-26,Toronto Blue Jays,Miami Marlins,8,1,1,Braydon Fisher,Sandy Alcantara
 2026-05-26,New York Mets,Cincinnati Reds,2,7,0,David Peterson,Chase Burns
@@ -827,7 +827,7 @@ game_date,home_name,away_name,home_score,away_score,home_win,home_starter_name,a
 2026-05-27,San Diego Padres,Philadelphia Phillies,0,3,0,Walker Buehler,Cristopher Sánchez
 2026-05-27,Baltimore Orioles,Tampa Bay Rays,11,2,1,Trey Gibson,Steven Matz
 2026-05-27,Detroit Tigers,Los Angeles Angels,4,0,1,Casey Mize,José Soriano
-2026-05-27,Pittsburgh Pirates,Chicago Cubs,4,10,0,Bubba Chandler,Jameson Taillon
+2026-05-27,Pittsburgh Pirates,Chicago Cubs,4,10,0,Braxton Ashcraft,Jameson Taillon
 2026-05-27,Boston Red Sox,Atlanta Braves,8,0,1,Connelly Early,Bryce Elder
 2026-05-27,New York Mets,Cincinnati Reds,4,2,1,Huascar Brazobán,Andrew Abbott
 2026-05-27,Chicago White Sox,Minnesota Twins,15,2,1,David Sandlin,Connor Prielipp
@@ -836,3 +836,7 @@ game_date,home_name,away_name,home_score,away_score,home_win,home_starter_name,a
 2026-05-27,Los Angeles Dodgers,Colorado Rockies,4,1,1,Shohei Ohtani,Tomoyuki Sugano
 2026-05-28,Detroit Tigers,Los Angeles Angels,1,7,0,Jack Flaherty,Grayson Rodriguez
 2026-05-28,Chicago White Sox,Minnesota Twins,6,2,1,Davis Martin,Simeon Woods Richardson
+2026-05-28,Boston Red Sox,Atlanta Braves,2,10,0,Payton Tolle,Chris Sale
+2026-05-28,Baltimore Orioles,Toronto Blue Jays,1,2,0,Chris Bassitt,Patrick Corbin
+2026-05-28,Pittsburgh Pirates,Chicago Cubs,2,7,0,Paul Skenes,Colin Rea
+2026-05-28,Texas Rangers,Houston Astros,1,5,0,Nathan Eovaldi,Spencer Arrighetti
