@@ -52,13 +52,13 @@
       <div class="header-title">&#9918; MLB Edge Finder</div>
       <div class="header-sub">XGBoost model identifying positive expected-value MLB moneyline bets</div>
     </div>
-    <span class="badge">Updated May 29, 2026</span>
+    <span class="badge">Updated May 30, 2026</span>
   </div>
   <div class="main-layout">
     <div class="col-main">
       <div class="section">
         <div class="section-title">Today&#39;s Edges</div>
-        <div class="table-wrap" id="edges-table"><table><thead><tr><th>Matchup</th><th>Side</th><th>Odds</th><th>Model Prob</th><th>EV</th><th>Kelly</th></tr></thead><tbody><tr><td>Los Angeles Dodgers vs Philadelphia Phillies</td><td><span class="side-badge side-home">★ home</span></td><td>-113</td><td>85.1%</td><td class="ev-val">+60.4%</td><td>34.1%</td></tr><tr><td>Colorado Rockies vs San Francisco Giants</td><td><span class="side-badge side-home">home</span></td><td>+138</td><td>51.2%</td><td class="ev-val">+21.9%</td><td>7.9%</td></tr><tr><td>New York Mets vs Miami Marlins</td><td><span class="side-badge side-away">away</span></td><td>+102</td><td>66.1%</td><td class="ev-val">+33.6%</td><td>16.5%</td></tr><tr><td>Tampa Bay Rays vs Los Angeles Angels</td><td><span class="side-badge side-away">★ away</span></td><td>+150</td><td>67.4%</td><td class="ev-val">+68.6%</td><td>22.9%</td></tr><tr><td>Baltimore Orioles vs Toronto Blue Jays</td><td><span class="side-badge side-away">away</span></td><td>+103</td><td>60.2%</td><td class="ev-val">+22.2%</td><td>10.8%</td></tr></tbody></table></div>
+        <div class="table-wrap" id="edges-table"><table><thead><tr><th>Matchup</th><th>Side</th><th>Odds</th><th>Model Prob</th><th>EV</th><th>Kelly</th></tr></thead><tbody><tr><td>St. Louis Cardinals vs Chicago Cubs</td><td><span class="side-badge side-home">home</span></td><td>+115</td><td>56.0%</td><td class="ev-val">+20.5%</td><td>8.9%</td></tr><tr><td>Los Angeles Dodgers vs Philadelphia Phillies</td><td><span class="side-badge side-home">★ home</span></td><td>-120</td><td>100.0%</td><td class="ev-val">+83.3%</td><td>50.0%</td></tr><tr><td>Houston Astros vs Milwaukee Brewers</td><td><span class="side-badge side-away">★ away</span></td><td>-108</td><td>76.9%</td><td class="ev-val">+48.1%</td><td>26.0%</td></tr></tbody></table></div>
       </div>
       <div class="section">
         <div class="section-title">Edge History &mdash; Last 30 Days</div>
@@ -66,14 +66,14 @@
       </div>
     </div>
     <div class="col-sidebar">
-      <div class="updated">Updated May 29, 2026</div>
+      <div class="updated">Updated May 30, 2026</div>
       <div class="card"><div class="card-title">Backtest Performance</div><div class="stat-row"><span class="stat-label">Win Rate</span><span class="stat-value">79.3%</span></div><div class="stat-row"><span class="stat-label">Backtest ROI</span><span class="stat-value green">+51.4%</span></div><div class="stat-row"><span class="stat-label">Sharpe</span><span class="stat-value">0.659</span></div><div class="stat-row"><span class="stat-label">ROC-AUC</span><span class="stat-value neutral">0.601</span></div><div class="stat-row"><span class="stat-label">Test games</span><span class="stat-value neutral">3,168</span></div></div>
       <div class="card"><div class="card-title">Backtest P&amp;L Curve</div><div class="chart-wrap-sm"><canvas id="pnl-chart"></canvas></div></div>
     </div>
   </div>
 </div>
 <script>
-const HISTORY=[{"date": "2026-05-19", "count": 4}, {"date": "2026-05-21", "count": 6}, {"date": "2026-05-22", "count": 13}, {"date": "2026-05-23", "count": 14}, {"date": "2026-05-24", "count": 16}, {"date": "2026-05-26", "count": 4}, {"date": "2026-05-27", "count": 0}, {"date": "2026-05-28", "count": 2}, {"date": "2026-05-29", "count": 5}];
+const HISTORY=[{"date": "2026-05-19", "count": 4}, {"date": "2026-05-21", "count": 6}, {"date": "2026-05-22", "count": 13}, {"date": "2026-05-23", "count": 14}, {"date": "2026-05-24", "count": 16}, {"date": "2026-05-26", "count": 4}, {"date": "2026-05-27", "count": 0}, {"date": "2026-05-28", "count": 2}, {"date": "2026-05-29", "count": 5}, {"date": "2026-05-30", "count": 3}];
 const PNL={"cumulative_pnl": [90.91, 181.82, 272.73, 363.64, 454.55, 545.45, 636.36, 536.36, 627.27, 718.18, 809.09, 900.0, 990.91, 1081.82, 1172.73, 1072.73, 1163.64, 1254.55, 1345.45, 1245.45, 1336.36, 1427.27, 1518.18, 1609.09, 1700.0, 1790.91, 1690.91, 1590.91, 1681.82, 1772.73, 1672.73, 1763.64, 1854.55, 1945.45, 2036.36, 2127.27, 2027.27, 2118.18, 2209.09, 2300.0, 2390.91, 2481.82, 2572.73, 2663.64, 2754.55, 2845.45, 2745.45, 2645.45, 2736.36, 2827.27, 2727.27, 2818.18, 2718.18, 2809.09, 2900.0, 2990.91, 3081.82, 2981.82], "summary": {"n_bets": 58, "n_wins": 46, "win_rate": 0.7931, "total_pnl": 2981.82, "roi_pct": 51.41, "avg_ev": 0.6366, "max_drawdown": 200.0, "sharpe_ratio": 0.659}};
 const METRICS={"accuracy": 0.5722853535353535, "roc_auc": 0.6008120938131668, "log_loss": 0.6866863758112188, "brier_score": 0.2415940495245146, "n_test_samples": 3168, "xgb_n_estimators": null, "xgb_max_depth": null};
 </script>

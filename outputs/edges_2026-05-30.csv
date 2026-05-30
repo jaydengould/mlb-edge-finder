@@ -1,0 +1,4 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+2611e27228d544fecc9bd38fe032e568,St. Louis Cardinals,Chicago Cubs,home,115,0.5602836608886719,0.20460987091064453,0.08896081343941067,False
+af2ba278de4989977f4bea35a317ab65,Los Angeles Dodgers,Philadelphia Phillies,home,-120,1.0,0.8333333333333334,0.5,True
+312c8ae0a68b17cfe087b0cb699c91d6,Houston Astros,Milwaukee Brewers,away,-108,0.7692307680845261,0.48148147927390206,0.2599999988079071,True
