@@ -1,0 +1,2 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+c81dc56167111218eb7d369db230ad62,Los Angeles Angels,Colorado Rockies,away,170,0.48771268129348755,0.31682423949241634,0.09318359985071069,False
