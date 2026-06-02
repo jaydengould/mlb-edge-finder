@@ -1,0 +1,5 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+8e66855f2231ccc68e5ba0ad7f2091a5,Los Angeles Angels,Colorado Rockies,home,-156,0.7354838848114014,0.2069479135366587,0.16141937255859376,False
+d151ae8d551dafc26e657e34d0b4cff3,Atlanta Braves,Toronto Blue Jays,home,-117,0.7118644118309021,0.32029553305389535,0.18737288683652878,False
+e73fadc7fb7502608603de6dfce34fac,Houston Astros,Pittsburgh Pirates,home,-110,0.6490384340286255,0.23907337405464868,0.13149035573005677,False
+286c7b1ca015708320800e8f2a9bf4de,New York Yankees,Cleveland Guardians,away,212,0.5348837077617645,0.6688371682167054,0.15774461514544938,True
