@@ -7,839 +7,125 @@
     2023,
     2024
   ],
-  "n_train": 12606,
+  "n_train": 12599,
   "n_test": 2444,
-  "accuracy": 0.5471,
-  "roc_auc": 0.5552,
-  "log_loss": 0.69,
-  "brier_score": 0.2482,
-  "n_bets": 205,
-  "win_rate": 0.6195,
-  "roi_pct": 18.27,
-  "sharpe_ratio": 0.1966,
-  "total_pnl": 3745.45,
-  "avg_ev": 0.3236,
-  "max_drawdown": 618.18,
-  "pnl_series": [
+  "accuracy": 0.5589,
+  "roc_auc": 0.5626,
+  "log_loss": 0.6836,
+  "brier_score": 0.2453,
+  "n_bets": 178,
+  "win_rate": 0.6404,
+  "roi_pct": 22.27,
+  "sharpe_ratio": 0.2424,
+  "total_pnl": 3963.64,
+  "avg_ev": 0.2768,
+  "max_drawdown": 500.0,
+  "break_even_alpha": 0.4284,
+  "market_efficiency_sweep": [
     {
-      "date": "2025-03-27",
-      "cumulative_pnl": 90.91
+      "alpha": 0.0,
+      "roi_pct": 22.27,
+      "n_bets": 178
     },
     {
-      "date": "2025-03-27",
-      "cumulative_pnl": 181.82
+      "alpha": 0.05,
+      "roi_pct": 22.78,
+      "n_bets": 150
     },
     {
-      "date": "2025-03-28",
-      "cumulative_pnl": 272.73
+      "alpha": 0.1,
+      "roi_pct": 23.04,
+      "n_bets": 144
     },
     {
-      "date": "2025-03-28",
-      "cumulative_pnl": 363.64
+      "alpha": 0.15,
+      "roi_pct": 27.06,
+      "n_bets": 48
     },
     {
-      "date": "2025-03-28",
-      "cumulative_pnl": 454.55
+      "alpha": 0.2,
+      "roi_pct": 24.33,
+      "n_bets": 48
     },
     {
-      "date": "2025-03-28",
-      "cumulative_pnl": 354.55
+      "alpha": 0.25,
+      "roi_pct": 18.87,
+      "n_bets": 27
     },
     {
-      "date": "2025-03-29",
-      "cumulative_pnl": 254.55
+      "alpha": 0.3,
+      "roi_pct": 18.73,
+      "n_bets": 25
     },
     {
-      "date": "2025-03-29",
-      "cumulative_pnl": 345.45
+      "alpha": 0.35,
+      "roi_pct": 16.03,
+      "n_bets": 25
     },
     {
-      "date": "2025-03-29",
-      "cumulative_pnl": 245.45
+      "alpha": 0.4,
+      "roi_pct": 13.58,
+      "n_bets": 25
     },
     {
-      "date": "2025-03-30",
-      "cumulative_pnl": 145.45
+      "alpha": 0.45,
+      "roi_pct": -10.3,
+      "n_bets": 5
     },
     {
-      "date": "2025-03-30",
-      "cumulative_pnl": 45.45
+      "alpha": 0.5,
+      "roi_pct": -12.35,
+      "n_bets": 5
     },
     {
-      "date": "2025-03-31",
-      "cumulative_pnl": -54.55
+      "alpha": 0.55,
+      "roi_pct": 0.0,
+      "n_bets": 0
     },
     {
-      "date": "2025-03-31",
-      "cumulative_pnl": 36.36
+      "alpha": 0.6,
+      "roi_pct": 0.0,
+      "n_bets": 0
     },
     {
-      "date": "2025-03-31",
-      "cumulative_pnl": -63.64
+      "alpha": 0.65,
+      "roi_pct": 0.0,
+      "n_bets": 0
     },
     {
-      "date": "2025-03-31",
-      "cumulative_pnl": -163.64
+      "alpha": 0.7,
+      "roi_pct": 0.0,
+      "n_bets": 0
     },
     {
-      "date": "2025-03-31",
-      "cumulative_pnl": -72.73
+      "alpha": 0.75,
+      "roi_pct": 0.0,
+      "n_bets": 0
     },
     {
-      "date": "2025-04-01",
-      "cumulative_pnl": 18.18
+      "alpha": 0.8,
+      "roi_pct": 0.0,
+      "n_bets": 0
     },
     {
-      "date": "2025-04-01",
-      "cumulative_pnl": 109.09
+      "alpha": 0.85,
+      "roi_pct": 0.0,
+      "n_bets": 0
     },
     {
-      "date": "2025-04-01",
-      "cumulative_pnl": 9.09
+      "alpha": 0.9,
+      "roi_pct": 0.0,
+      "n_bets": 0
     },
     {
-      "date": "2025-04-01",
-      "cumulative_pnl": -90.91
+      "alpha": 0.95,
+      "roi_pct": 0.0,
+      "n_bets": 0
     },
     {
-      "date": "2025-04-02",
-      "cumulative_pnl": -0.0
-    },
-    {
-      "date": "2025-04-02",
-      "cumulative_pnl": -100.0
-    },
-    {
-      "date": "2025-04-03",
-      "cumulative_pnl": -9.09
-    },
-    {
-      "date": "2025-04-04",
-      "cumulative_pnl": 81.82
-    },
-    {
-      "date": "2025-04-04",
-      "cumulative_pnl": 172.73
-    },
-    {
-      "date": "2025-04-05",
-      "cumulative_pnl": 72.73
-    },
-    {
-      "date": "2025-04-08",
-      "cumulative_pnl": -27.27
-    },
-    {
-      "date": "2025-04-09",
-      "cumulative_pnl": 63.64
-    },
-    {
-      "date": "2025-04-10",
-      "cumulative_pnl": -36.36
-    },
-    {
-      "date": "2025-04-11",
-      "cumulative_pnl": 54.55
-    },
-    {
-      "date": "2025-04-12",
-      "cumulative_pnl": -45.45
-    },
-    {
-      "date": "2025-04-13",
-      "cumulative_pnl": 45.45
-    },
-    {
-      "date": "2025-04-14",
-      "cumulative_pnl": -54.55
-    },
-    {
-      "date": "2025-04-15",
-      "cumulative_pnl": -154.55
-    },
-    {
-      "date": "2025-04-15",
-      "cumulative_pnl": -63.64
-    },
-    {
-      "date": "2025-04-15",
-      "cumulative_pnl": 27.27
-    },
-    {
-      "date": "2025-04-17",
-      "cumulative_pnl": 118.18
-    },
-    {
-      "date": "2025-04-21",
-      "cumulative_pnl": 209.09
-    },
-    {
-      "date": "2025-04-26",
-      "cumulative_pnl": 300.0
-    },
-    {
-      "date": "2025-04-26",
-      "cumulative_pnl": 390.91
-    },
-    {
-      "date": "2025-04-26",
-      "cumulative_pnl": 481.82
-    },
-    {
-      "date": "2025-04-26",
-      "cumulative_pnl": 572.73
-    },
-    {
-      "date": "2025-04-27",
-      "cumulative_pnl": 663.64
-    },
-    {
-      "date": "2025-04-29",
-      "cumulative_pnl": 754.55
-    },
-    {
-      "date": "2025-04-30",
-      "cumulative_pnl": 845.45
-    },
-    {
-      "date": "2025-05-01",
-      "cumulative_pnl": 745.45
-    },
-    {
-      "date": "2025-05-01",
-      "cumulative_pnl": 645.45
-    },
-    {
-      "date": "2025-05-06",
-      "cumulative_pnl": 736.36
-    },
-    {
-      "date": "2025-05-07",
-      "cumulative_pnl": 827.27
-    },
-    {
-      "date": "2025-05-07",
-      "cumulative_pnl": 918.18
-    },
-    {
-      "date": "2025-05-08",
-      "cumulative_pnl": 1009.09
-    },
-    {
-      "date": "2025-05-08",
-      "cumulative_pnl": 1100.0
-    },
-    {
-      "date": "2025-05-12",
-      "cumulative_pnl": 1000.0
-    },
-    {
-      "date": "2025-05-12",
-      "cumulative_pnl": 1090.91
-    },
-    {
-      "date": "2025-05-12",
-      "cumulative_pnl": 990.91
-    },
-    {
-      "date": "2025-05-13",
-      "cumulative_pnl": 1081.82
-    },
-    {
-      "date": "2025-05-13",
-      "cumulative_pnl": 1172.73
-    },
-    {
-      "date": "2025-05-14",
-      "cumulative_pnl": 1263.64
-    },
-    {
-      "date": "2025-05-14",
-      "cumulative_pnl": 1163.64
-    },
-    {
-      "date": "2025-05-14",
-      "cumulative_pnl": 1063.64
-    },
-    {
-      "date": "2025-05-14",
-      "cumulative_pnl": 963.64
-    },
-    {
-      "date": "2025-05-14",
-      "cumulative_pnl": 1054.55
-    },
-    {
-      "date": "2025-05-14",
-      "cumulative_pnl": 1145.45
-    },
-    {
-      "date": "2025-05-14",
-      "cumulative_pnl": 1236.36
-    },
-    {
-      "date": "2025-05-14",
-      "cumulative_pnl": 1327.27
-    },
-    {
-      "date": "2025-05-14",
-      "cumulative_pnl": 1227.27
-    },
-    {
-      "date": "2025-05-18",
-      "cumulative_pnl": 1127.27
-    },
-    {
-      "date": "2025-05-19",
-      "cumulative_pnl": 1218.18
-    },
-    {
-      "date": "2025-05-19",
-      "cumulative_pnl": 1309.09
-    },
-    {
-      "date": "2025-05-20",
-      "cumulative_pnl": 1400.0
-    },
-    {
-      "date": "2025-05-23",
-      "cumulative_pnl": 1300.0
-    },
-    {
-      "date": "2025-05-23",
-      "cumulative_pnl": 1200.0
-    },
-    {
-      "date": "2025-05-24",
-      "cumulative_pnl": 1100.0
-    },
-    {
-      "date": "2025-05-24",
-      "cumulative_pnl": 1190.91
-    },
-    {
-      "date": "2025-05-25",
-      "cumulative_pnl": 1281.82
-    },
-    {
-      "date": "2025-05-25",
-      "cumulative_pnl": 1372.73
-    },
-    {
-      "date": "2025-05-26",
-      "cumulative_pnl": 1463.64
-    },
-    {
-      "date": "2025-05-27",
-      "cumulative_pnl": 1554.55
-    },
-    {
-      "date": "2025-05-27",
-      "cumulative_pnl": 1645.45
-    },
-    {
-      "date": "2025-05-29",
-      "cumulative_pnl": 1736.36
-    },
-    {
-      "date": "2025-05-29",
-      "cumulative_pnl": 1827.27
-    },
-    {
-      "date": "2025-05-29",
-      "cumulative_pnl": 1918.18
-    },
-    {
-      "date": "2025-05-29",
-      "cumulative_pnl": 2009.09
-    },
-    {
-      "date": "2025-05-29",
-      "cumulative_pnl": 1909.09
-    },
-    {
-      "date": "2025-05-29",
-      "cumulative_pnl": 1809.09
-    },
-    {
-      "date": "2025-05-29",
-      "cumulative_pnl": 1709.09
-    },
-    {
-      "date": "2025-05-29",
-      "cumulative_pnl": 1609.09
-    },
-    {
-      "date": "2025-05-30",
-      "cumulative_pnl": 1700.0
-    },
-    {
-      "date": "2025-05-30",
-      "cumulative_pnl": 1790.91
-    },
-    {
-      "date": "2025-05-30",
-      "cumulative_pnl": 1690.91
-    },
-    {
-      "date": "2025-05-31",
-      "cumulative_pnl": 1781.82
-    },
-    {
-      "date": "2025-06-01",
-      "cumulative_pnl": 1872.73
-    },
-    {
-      "date": "2025-06-01",
-      "cumulative_pnl": 1963.64
-    },
-    {
-      "date": "2025-06-02",
-      "cumulative_pnl": 1863.64
-    },
-    {
-      "date": "2025-06-02",
-      "cumulative_pnl": 1763.64
-    },
-    {
-      "date": "2025-06-03",
-      "cumulative_pnl": 1854.55
-    },
-    {
-      "date": "2025-06-03",
-      "cumulative_pnl": 1754.55
-    },
-    {
-      "date": "2025-06-03",
-      "cumulative_pnl": 1654.55
-    },
-    {
-      "date": "2025-06-04",
-      "cumulative_pnl": 1745.45
-    },
-    {
-      "date": "2025-06-04",
-      "cumulative_pnl": 1645.45
-    },
-    {
-      "date": "2025-06-05",
-      "cumulative_pnl": 1736.36
-    },
-    {
-      "date": "2025-06-05",
-      "cumulative_pnl": 1636.36
-    },
-    {
-      "date": "2025-06-05",
-      "cumulative_pnl": 1727.27
-    },
-    {
-      "date": "2025-06-06",
-      "cumulative_pnl": 1627.27
-    },
-    {
-      "date": "2025-06-06",
-      "cumulative_pnl": 1527.27
-    },
-    {
-      "date": "2025-06-07",
-      "cumulative_pnl": 1618.18
-    },
-    {
-      "date": "2025-06-08",
-      "cumulative_pnl": 1709.09
-    },
-    {
-      "date": "2025-06-08",
-      "cumulative_pnl": 1609.09
-    },
-    {
-      "date": "2025-06-08",
-      "cumulative_pnl": 1700.0
-    },
-    {
-      "date": "2025-06-09",
-      "cumulative_pnl": 1600.0
-    },
-    {
-      "date": "2025-06-10",
-      "cumulative_pnl": 1690.91
-    },
-    {
-      "date": "2025-06-10",
-      "cumulative_pnl": 1781.82
-    },
-    {
-      "date": "2025-06-11",
-      "cumulative_pnl": 1681.82
-    },
-    {
-      "date": "2025-06-12",
-      "cumulative_pnl": 1772.73
-    },
-    {
-      "date": "2025-06-16",
-      "cumulative_pnl": 1672.73
-    },
-    {
-      "date": "2025-06-17",
-      "cumulative_pnl": 1572.73
-    },
-    {
-      "date": "2025-06-18",
-      "cumulative_pnl": 1472.73
-    },
-    {
-      "date": "2025-06-18",
-      "cumulative_pnl": 1563.64
-    },
-    {
-      "date": "2025-06-19",
-      "cumulative_pnl": 1654.55
-    },
-    {
-      "date": "2025-06-20",
-      "cumulative_pnl": 1745.45
-    },
-    {
-      "date": "2025-06-21",
-      "cumulative_pnl": 1645.45
-    },
-    {
-      "date": "2025-06-22",
-      "cumulative_pnl": 1736.36
-    },
-    {
-      "date": "2025-06-23",
-      "cumulative_pnl": 1636.36
-    },
-    {
-      "date": "2025-06-24",
-      "cumulative_pnl": 1536.36
-    },
-    {
-      "date": "2025-06-25",
-      "cumulative_pnl": 1436.36
-    },
-    {
-      "date": "2025-06-25",
-      "cumulative_pnl": 1527.27
-    },
-    {
-      "date": "2025-06-27",
-      "cumulative_pnl": 1427.27
-    },
-    {
-      "date": "2025-06-28",
-      "cumulative_pnl": 1518.18
-    },
-    {
-      "date": "2025-06-29",
-      "cumulative_pnl": 1609.09
-    },
-    {
-      "date": "2025-07-01",
-      "cumulative_pnl": 1509.09
-    },
-    {
-      "date": "2025-07-01",
-      "cumulative_pnl": 1600.0
-    },
-    {
-      "date": "2025-07-02",
-      "cumulative_pnl": 1690.91
-    },
-    {
-      "date": "2025-07-02",
-      "cumulative_pnl": 1781.82
-    },
-    {
-      "date": "2025-07-03",
-      "cumulative_pnl": 1681.82
-    },
-    {
-      "date": "2025-07-03",
-      "cumulative_pnl": 1772.73
-    },
-    {
-      "date": "2025-07-08",
-      "cumulative_pnl": 1863.64
-    },
-    {
-      "date": "2025-07-11",
-      "cumulative_pnl": 1763.64
-    },
-    {
-      "date": "2025-07-11",
-      "cumulative_pnl": 1854.55
-    },
-    {
-      "date": "2025-07-12",
-      "cumulative_pnl": 1945.45
-    },
-    {
-      "date": "2025-07-13",
-      "cumulative_pnl": 2036.36
-    },
-    {
-      "date": "2025-07-13",
-      "cumulative_pnl": 2127.27
-    },
-    {
-      "date": "2025-07-18",
-      "cumulative_pnl": 2027.27
-    },
-    {
-      "date": "2025-07-19",
-      "cumulative_pnl": 2118.18
-    },
-    {
-      "date": "2025-07-20",
-      "cumulative_pnl": 2018.18
-    },
-    {
-      "date": "2025-07-21",
-      "cumulative_pnl": 2109.09
-    },
-    {
-      "date": "2025-08-05",
-      "cumulative_pnl": 2200.0
-    },
-    {
-      "date": "2025-08-06",
-      "cumulative_pnl": 2290.91
-    },
-    {
-      "date": "2025-08-08",
-      "cumulative_pnl": 2381.82
-    },
-    {
-      "date": "2025-08-09",
-      "cumulative_pnl": 2281.82
-    },
-    {
-      "date": "2025-08-10",
-      "cumulative_pnl": 2372.73
-    },
-    {
-      "date": "2025-08-11",
-      "cumulative_pnl": 2463.64
-    },
-    {
-      "date": "2025-08-11",
-      "cumulative_pnl": 2554.55
-    },
-    {
-      "date": "2025-08-12",
-      "cumulative_pnl": 2454.55
-    },
-    {
-      "date": "2025-08-12",
-      "cumulative_pnl": 2545.45
-    },
-    {
-      "date": "2025-08-12",
-      "cumulative_pnl": 2636.36
-    },
-    {
-      "date": "2025-08-12",
-      "cumulative_pnl": 2536.36
-    },
-    {
-      "date": "2025-08-13",
-      "cumulative_pnl": 2436.36
-    },
-    {
-      "date": "2025-08-14",
-      "cumulative_pnl": 2336.36
-    },
-    {
-      "date": "2025-08-15",
-      "cumulative_pnl": 2236.36
-    },
-    {
-      "date": "2025-08-16",
-      "cumulative_pnl": 2327.27
-    },
-    {
-      "date": "2025-08-18",
-      "cumulative_pnl": 2227.27
-    },
-    {
-      "date": "2025-08-18",
-      "cumulative_pnl": 2127.27
-    },
-    {
-      "date": "2025-08-19",
-      "cumulative_pnl": 2218.18
-    },
-    {
-      "date": "2025-08-19",
-      "cumulative_pnl": 2309.09
-    },
-    {
-      "date": "2025-08-19",
-      "cumulative_pnl": 2400.0
-    },
-    {
-      "date": "2025-08-20",
-      "cumulative_pnl": 2300.0
-    },
-    {
-      "date": "2025-08-22",
-      "cumulative_pnl": 2200.0
-    },
-    {
-      "date": "2025-08-22",
-      "cumulative_pnl": 2290.91
-    },
-    {
-      "date": "2025-08-23",
-      "cumulative_pnl": 2381.82
-    },
-    {
-      "date": "2025-08-24",
-      "cumulative_pnl": 2472.73
-    },
-    {
-      "date": "2025-08-25",
-      "cumulative_pnl": 2563.64
-    },
-    {
-      "date": "2025-08-25",
-      "cumulative_pnl": 2463.64
-    },
-    {
-      "date": "2025-08-26",
-      "cumulative_pnl": 2554.55
-    },
-    {
-      "date": "2025-08-27",
-      "cumulative_pnl": 2645.45
-    },
-    {
-      "date": "2025-08-27",
-      "cumulative_pnl": 2736.36
-    },
-    {
-      "date": "2025-08-28",
-      "cumulative_pnl": 2827.27
-    },
-    {
-      "date": "2025-08-29",
-      "cumulative_pnl": 2918.18
-    },
-    {
-      "date": "2025-08-30",
-      "cumulative_pnl": 3009.09
-    },
-    {
-      "date": "2025-08-30",
-      "cumulative_pnl": 2909.09
-    },
-    {
-      "date": "2025-08-30",
-      "cumulative_pnl": 2809.09
-    },
-    {
-      "date": "2025-08-31",
-      "cumulative_pnl": 2709.09
-    },
-    {
-      "date": "2025-08-31",
-      "cumulative_pnl": 2609.09
-    },
-    {
-      "date": "2025-08-31",
-      "cumulative_pnl": 2700.0
-    },
-    {
-      "date": "2025-09-01",
-      "cumulative_pnl": 2790.91
-    },
-    {
-      "date": "2025-09-02",
-      "cumulative_pnl": 2690.91
-    },
-    {
-      "date": "2025-09-04",
-      "cumulative_pnl": 2781.82
-    },
-    {
-      "date": "2025-09-05",
-      "cumulative_pnl": 2681.82
-    },
-    {
-      "date": "2025-09-06",
-      "cumulative_pnl": 2772.73
-    },
-    {
-      "date": "2025-09-07",
-      "cumulative_pnl": 2672.73
-    },
-    {
-      "date": "2025-09-09",
-      "cumulative_pnl": 2763.64
-    },
-    {
-      "date": "2025-09-10",
-      "cumulative_pnl": 2854.55
-    },
-    {
-      "date": "2025-09-13",
-      "cumulative_pnl": 2945.45
-    },
-    {
-      "date": "2025-09-14",
-      "cumulative_pnl": 3036.36
-    },
-    {
-      "date": "2025-09-15",
-      "cumulative_pnl": 3127.27
-    },
-    {
-      "date": "2025-09-16",
-      "cumulative_pnl": 3218.18
-    },
-    {
-      "date": "2025-09-17",
-      "cumulative_pnl": 3309.09
-    },
-    {
-      "date": "2025-09-20",
-      "cumulative_pnl": 3209.09
-    },
-    {
-      "date": "2025-09-22",
-      "cumulative_pnl": 3300.0
-    },
-    {
-      "date": "2025-09-24",
-      "cumulative_pnl": 3390.91
-    },
-    {
-      "date": "2025-09-24",
-      "cumulative_pnl": 3481.82
-    },
-    {
-      "date": "2025-09-25",
-      "cumulative_pnl": 3572.73
-    },
-    {
-      "date": "2025-09-25",
-      "cumulative_pnl": 3663.64
-    },
-    {
-      "date": "2025-09-27",
-      "cumulative_pnl": 3754.55
-    },
-    {
-      "date": "2025-09-28",
-      "cumulative_pnl": 3845.45
-    },
-    {
-      "date": "2025-09-28",
-      "cumulative_pnl": 3745.45
+      "alpha": 1.0,
+      "roi_pct": 0.0,
+      "n_bets": 0
     }
   ]
 }
