@@ -384,3 +384,53 @@ def test_simulate_bets_high_prob_finds_edges():
     clf, X_test, y_test, meta = _make_aligned_split()
     result = simulate_bets(clf, X_test, y_test, meta, ev_threshold=0.05)
     assert not result.empty
+
+
+# --- sweep_market_efficiency ---
+
+def test_sweep_returns_expected_columns():
+    from mlb_edge_finder.backtest import sweep_market_efficiency
+    clf, X_test, y_test, meta = _make_aligned_split()
+    result = sweep_market_efficiency(clf, X_test, y_test, meta, ev_threshold=0.05)
+    assert set(["alpha", "roi_pct", "n_bets", "win_rate"]).issubset(result.columns)
+
+
+def test_sweep_one_row_per_grid_point():
+    from mlb_edge_finder.backtest import sweep_market_efficiency
+    clf, X_test, y_test, meta = _make_aligned_split()
+    grid = [0.0, 0.25, 0.5, 0.75, 1.0]
+    result = sweep_market_efficiency(clf, X_test, y_test, meta, alpha_grid=grid, ev_threshold=0.05)
+    assert len(result) == len(grid)
+    assert list(result["alpha"]) == grid
+
+
+def test_sweep_n_bets_decreases_with_efficiency():
+    # As the market becomes more informed (alpha up), the favorite's odds move
+    # toward fair, EV falls, and fewer bets clear the threshold. This is a
+    # property of bet selection — it holds regardless of actual outcomes.
+    from mlb_edge_finder.backtest import sweep_market_efficiency
+    clf, X_test, y_test, meta = _make_aligned_split()
+    result = sweep_market_efficiency(clf, X_test, y_test, meta, ev_threshold=0.05)
+    n_at_0 = result.loc[result["alpha"] == 0.0, "n_bets"].iloc[0]
+    n_at_1 = result.loc[result["alpha"] == 1.0, "n_bets"].iloc[0]
+    assert n_at_0 >= n_at_1
+
+
+def test_sweep_alpha_one_has_no_positive_edge():
+    # At alpha=1 the market equals the model's own prob (+vig), so EV<=0 and no
+    # bets clear the threshold -> 0 bets, roi 0.
+    from mlb_edge_finder.backtest import sweep_market_efficiency
+    clf, X_test, y_test, meta = _make_aligned_split()
+    result = sweep_market_efficiency(clf, X_test, y_test, meta, ev_threshold=0.05)
+    roi_at_1 = result.loc[result["alpha"] == 1.0, "roi_pct"].iloc[0]
+    assert roi_at_1 <= 0.0
+
+
+def test_sweep_handles_no_bets():
+    # A 0.50 model never clears EV>0.20 against any vigged line.
+    from mlb_edge_finder.backtest import sweep_market_efficiency
+    clf, X_test, y_test, meta = _make_aligned_split()
+    flat_clf = _make_mock_clf(home_win_prob=0.50)
+    result = sweep_market_efficiency(flat_clf, X_test, y_test, meta, ev_threshold=0.20)
+    assert (result["n_bets"] == 0).all()
+    assert (result["roi_pct"] == 0.0).all()

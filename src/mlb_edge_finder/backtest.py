@@ -171,6 +171,67 @@ def simulate_bets(
     return result
 
 
+def sweep_market_efficiency(
+    clf: Any,
+    X_test: pd.DataFrame,
+    y_test: pd.Series,
+    meta_df: pd.DataFrame,
+    alpha_grid: list[float] | None = None,
+    vig: float = 0.0476,
+    ev_threshold: float | None = None,
+    unit: float = 100.0,
+) -> pd.DataFrame:
+    """Sweep market efficiency from naive (alpha=0) to model-sharp (alpha=1).
+
+    At each alpha, each game's market-implied home probability is set to
+    0.5*(1-alpha) + model_prob*alpha, the vig is added, the result is converted
+    to per-game American odds, and the bet loop is run against it.
+
+    alpha=0 reproduces the naive 50/50 market (today's headline ROI). alpha=1
+    sets the market equal to the model's own prediction, leaving no informational
+    edge (ROI collapses to roughly -vig).
+
+    Args:
+        clf: Fitted calibrated classifier with feature_names_in_ and predict_proba.
+        X_test: Feature matrix for the test games.
+        y_test: True binary labels (1 = home win).
+        meta_df: DataFrame with game_date, home_name, away_name; same index as X_test.
+        alpha_grid: Efficiency points to evaluate. Default: 0.0..1.0 step 0.05.
+        vig: Bookmaker overround applied at every alpha. Default 0.0476.
+        ev_threshold: Minimum EV to flag a bet. Defaults to config.EV_THRESHOLD.
+        unit: Dollar bet size. Default $100.
+
+    Returns:
+        DataFrame (one row per alpha, ascending) with columns:
+        alpha, roi_pct, n_bets, win_rate.
+    """
+    if alpha_grid is None:
+        alpha_grid = [round(float(a), 4) for a in np.arange(0.0, 1.0001, 0.05)]
+
+    feature_names = list(clf.feature_names_in_)
+    X_aligned = X_test.reindex(columns=feature_names)
+    home_probs = clf.predict_proba(X_aligned)[:, 1]
+
+    rows = []
+    for alpha in alpha_grid:
+        market_home = 0.5 * (1.0 - alpha) + home_probs * alpha
+        home_imp = np.clip(market_home + vig / 2, 1e-6, 1 - 1e-6)
+        away_imp = np.clip((1.0 - market_home) + vig / 2, 1e-6, 1 - 1e-6)
+        home_odds = pd.Series([round(_prob_to_american(p)) for p in home_imp], index=X_test.index)
+        away_odds = pd.Series([round(_prob_to_american(p)) for p in away_imp], index=X_test.index)
+
+        bt = _run_bet_loop(clf, X_test, y_test, meta_df, home_odds, away_odds, unit, ev_threshold)
+        summary = compute_summary(bt, unit=unit)
+        rows.append({
+            "alpha": alpha,
+            "roi_pct": summary["roi_pct"],
+            "n_bets": summary["n_bets"],
+            "win_rate": summary["win_rate"],
+        })
+
+    return pd.DataFrame(rows)
+
+
 def run_backtest(
     clf: Any,
     training_df: pd.DataFrame,
