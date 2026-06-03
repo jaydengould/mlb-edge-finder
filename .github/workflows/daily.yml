@@ -57,7 +57,7 @@ jobs:
           else
             # Pipeline ran successfully but found no edges — write header-only file
             # so there is still a commit recording that the workflow ran.
-            echo "game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,prob_flag" > "$EDGES_DST"
+            echo "game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence" > "$EDGES_DST"
           fi
 
       - name: Generate dashboard

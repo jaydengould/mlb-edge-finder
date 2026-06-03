@@ -6,7 +6,7 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 
 ## Current Phase
 
-**Dashboard complete.** Phases 1–3, 4a–4c, 5, 6, 7, and 8 done. `compute_kelly()`, `__main__.py` CLI, probability calibration, `high_confidence` badge (replaces `prob_flag`), GitHub Actions daily workflow, historical backtest, threshold rebalance (EV_THRESHOLD=0.20, MIN_PROB_EDGE removed), `fetch_historical` resilience, feedback loop, time-matched pitcher snapshots, and dashboard done.
+**Temporal evaluation complete.** Phases 1–3, 4a–4c, 5, 6, 7, and 8 done. `compute_kelly()`, `__main__.py` CLI, probability calibration, `high_confidence` badge (replaces `prob_flag`), GitHub Actions daily workflow, historical backtest, threshold rebalance (EV_THRESHOLD=0.20, MIN_PROB_EDGE removed), `fetch_historical` resilience, feedback loop, time-matched pitcher snapshots, dashboard, and temporal out-of-time evaluation done.
 
 - `odds_ingestion.fetch_odds()` and `load_cached_odds()` — cache-first, date filtering, live game exclusion, best line across bookmakers.
 - `stats_ingestion.fetch_stats()` and `load_cached_stats()` — FanGraphs primary (pybaseball, 3-attempt retry with 2s/4s/8s backoff), MLB Stats API fallback (statsapi package). Output schema varies by source — see stats schema section below.
@@ -30,6 +30,7 @@ Portfolio project that finds positive expected-value (EV) opportunities in MLB m
 - **Time-matched pitcher snapshots complete:** `config.MIN_PITCHER_IP = 30` — pitchers below this threshold are excluded from all joins (training and inference). `pitcher_ingestion.fetch_pitcher_snapshot(snapshot_date, force)` — uses the MLB Stats API `byDateRange` stat type to fetch stats through a specific date; falls back to full-season stats for historical seasons where the API no longer supports date-range queries; writes to `data/raw/pitcher_snapshot_YYYY-MM-DD.csv` (distinct from ephemeral `pitcher_stats_*.csv`). `_parse_pitcher_splits` extracted as a shared helper. `fetch_pitcher_stats` gains the 30-IP floor. `training_data._build_season()` replaces the single `fetch_pitcher_stats(date(season, 9, 28))` call with a group join across all available snapshots: loads `pitcher_snapshot_YYYY-MM-DD.csv` files for the four snapshot dates per season, assigns each game to the latest preceding snapshot via `_select_snapshot_date`, and fills NaN for pre-snapshot games. September 28 falls back to `fetch_pitcher_stats` if no snapshot file exists (backward compatibility for seasons predating the workflow). `.gitignore` gains `!data/raw/pitcher_snapshot_*.csv`. `.github/workflows/snapshot.yml` — cron on April 30 / June 1 / July 31 at 14:30 UTC, plus `workflow_dispatch` with optional `snapshot_date` input for backfilling. 25 snapshot files committed for 2019, 2021–2026. Model retrained: accuracy 57.2%, ROC-AUC 0.601 on 3,168 test samples (15,837 training rows). 13 new tests (196 total passing).
 - **Dashboard complete:** `generate_site.py` — `generate(outputs_dir, metrics_path, pnl_path, out_path)` reads all `outputs/edges_*.csv` + latest `models/metrics_*.json` + `data/backtest_pnl.json`, writes self-contained `docs/index.html` with Chart.js (CDN). SF Giants color scheme (#27251F/#FD5A1E) — personal touch. GitHub Pages serves from `docs/` on `main`. Daily workflow gains "Generate dashboard" step (`continue-on-error: true`) that commits `docs/index.html` alongside the edges CSV. `backtest.export_pnl_json(backtest_df, summary, path)` writes the static P&L artifact. 16 new tests (212 total passing).
 - **Dashboard chart bug fixed:** Both Chart.js IIFEs in `_render_html()` had one extra `}}` pair in the Python f-string, producing an unbalanced `}` in the rendered JavaScript. This caused a silent syntax error that prevented both the edge history bar chart and the backtest P&L line chart from executing. Fixed by removing one `}}` pair from the closing sequence of each `new Chart(...)` call (IIFE1: 10→8 `}` chars; IIFE2: 14→12 `}` chars). Charts confirmed working locally and on the live GitHub Pages site.
+- **Temporal out-of-time evaluation complete:** `temporal_eval.py` — `_temporal_split(training_df, holdout_season)` splits by `season` column (train: `season < holdout`, test: `season == holdout`). `_load_training_csv()` globs for most data-rich `training_*.csv` (largest file by size). `run(holdout_season=2025, force=False)` trains a fresh XGBClassifier on 2019–2024 (75/25 fit/val split for calibration), calibrates with isotonic regression, evaluates on 2025 holdout, runs `simulate_bets()` on holdout, writes `models/temporal_eval_{holdout_season}.json` with model metrics + backtest summary + per-bet P&L series. `backtest.simulate_bets(clf, X_test, y_test, meta_df, ...)` extracted from `run_backtest()` so the bet loop is callable on pre-split data. `generate_site.py` updated: `_load_metrics` / `_load_pnl` replaced by `_load_temporal_eval(models_dir)` (globs `temporal_eval_*.json`); `generate()` signature changed to `(outputs_dir, models_dir, out_path)`; `_render_stats_html` and JS P&L chart read from temporal eval JSON; stats card subtitle shows "Trained XXXX–XXXX · YYYY holdout". Dashboard now shows a single credible evaluation story: temporal holdout rather than random-split. Results on 2025 holdout: 12,606 train rows (2019, 2021–2024), 2,444 test rows, ROC-AUC 0.555, 205 bets, 62.0% win rate, +18.3% ROI, Sharpe 0.197. Run via `python -m mlb_edge_finder.temporal_eval [--holdout-season 2025] [--force]`. `.github/workflows/daily.yml` `prob_flag` bug fixed (header-only CSV now uses `high_confidence`). 8 new tests (220 total passing).
 
 **Always update this file at the end of each working session** to reflect completed phases, new conventions, and any changes to the roadmap.
 
@@ -78,6 +79,7 @@ Each stage persists its output as a dated CSV or artifact so stages can be run i
 | `edge_finder.py` | Compute EV, filter odds, flag edges | `data/processed/edges_YYYY-MM-DD.csv` |
 | `pipeline.py` | Orchestrate all stages end-to-end | — |
 | `backtest.py` | Simulate historical performance on held-out test split with synthetic odds | — |
+| `temporal_eval.py` | Train on prior seasons, evaluate on holdout season, write JSON artifact | `models/temporal_eval_YYYY.json` |
 
 ## Stats Ingestion — Source and Schema
 
@@ -269,7 +271,7 @@ FanGraphs-specific stat columns (`w_oba`, `bat_wrc_plus`, `fip`) appear in the f
 pytest tests/ -v
 ```
 
-208 smoke + integration tests. All pass.
+220 smoke + integration tests. All pass.
 
 ## Roadmap
 
