@@ -10,7 +10,7 @@ A portfolio project that identifies positive expected-value (EV) opportunities i
 
 **Live:** https://jaydengould.github.io/mlb-edge-finder/
 
-Updated daily by GitHub Actions at 9:30 AM EDT. Shows today's recommended edges (★ marks high-confidence picks), a 30-day edge history, and the model's validated backtest performance on a **true temporal holdout** (trained on 2019–2024, tested blind on the full 2025 season).
+Updated daily by GitHub Actions at 9:30 AM EDT. Shows today's recommended edges (★ marks high-confidence picks), a 30-day edge history, and an honest evaluation of the model on a **true temporal holdout** (trained on 2019–2024, tested blind on the full 2025 season). The headline chart is a **market-efficiency stress test**: it shows how quickly the model's apparent betting edge disappears as the synthetic market is made more informed — because an edge against a naive market is not a real-world edge. See [Limitations](#limitations--what-id-do-next).
 
 *The color scheme uses the SF Giants' official black (#27251F) and orange (#FD5A1E) — a small personal touch from a lifelong Giants fan.*
 
@@ -23,7 +23,7 @@ Updated daily by GitHub Actions at 9:30 AM EDT. Shows today's recommended edges 
 5. **Inference** — an XGBoost classifier predicts home-team win probability. Probabilities are post-hoc calibrated with isotonic regression on a held-out validation set. EV is computed per side; bets clearing the EV threshold are flagged with a half-Kelly bet size.
 6. **Output** — flagged edges are written to `data/processed/edges_YYYY-MM-DD.csv` and printed to the terminal. Edges with EV > 0.40 and a model probability gap over the market of more than 15 percentage points are marked `high_confidence=True` and shown with a ★ on the dashboard.
 7. **Automation** — a GitHub Actions workflow runs the full pipeline every morning at 9:30 AM ET and commits the results to `outputs/edges_YYYY-MM-DD.csv` in the repo, with a formatted table in the Actions job summary. A separate snapshot workflow captures time-matched pitcher stats at key season dates (April 30, June 1, July 31) for use in model retraining.
-8. **Temporal evaluation** — `temporal_eval.py` trains a fresh model on 2019–2024 and evaluates it blind on the full 2025 season — a true out-of-time holdout. Results (ROC-AUC, win rate, ROI, P&L curve) are written to `models/temporal_eval_2025.json` and shown on the dashboard. `notebooks/02_backtest.ipynb` contains the original random-split backtest for comparison.
+8. **Temporal evaluation** — `temporal_eval.py` trains a fresh model on 2019–2024 and evaluates it blind on the full 2025 season — a true out-of-time holdout. Holdout metrics plus a **market-efficiency sweep** (`sweep_market_efficiency`) are written to `models/temporal_eval_2025.json` and shown on the dashboard. `notebooks/02_backtest.ipynb` contains the original random-split backtest for comparison.
 
 ## Tech Stack
 
@@ -157,12 +157,13 @@ Trained on 15,837 regular-season games (2019, 2021–2026; 2020 excluded — 60-
 **Temporal holdout performance (trained 2019–2024, tested on full 2025 season, n=2,444):**
 | Metric | Value |
 |---|---|
-| ROC-AUC | 0.555 |
-| Win Rate | 62.0% |
-| ROI vs −110/−110 | +18.3% |
-| Bets flagged | 205 |
+| ROC-AUC | 0.563 |
+| Accuracy | 55.9% |
+| Brier score | 0.245 |
+| Win rate — vs naive synthetic market (illustrative) | 64.0% |
+| ROI — vs naive synthetic market (illustrative) | +22.3% |
 
-The temporal holdout is the more credible evaluation — the model never saw 2025 data during training. The lower ROC-AUC (0.555 vs 0.601) is expected: less training data and no look-ahead from the random split. The positive betting metrics on a true out-of-time holdout are the dashboard's headline numbers.
+The temporal holdout is the credible evaluation — the model never saw 2025 during training. **The ROC-AUC of 0.563 is the honest headline: a weak-but-positive ranking signal, not a profitable system.** The win rate and ROI are computed against a *naive synthetic 50/50 market* and are illustrative only — a real sportsbook prices the favorite, which erases most of that apparent edge. The market-efficiency sweep on the dashboard quantifies how fragile it is: the edge breaks even once the synthetic market is only **α ≈ 0.43** of the way to being as informed as the model itself — and a real book is *more* informed than this weak model, so in practice the edge is gone. See [Limitations](#limitations--what-id-do-next).
 
 ## Edge Definition
 
@@ -210,7 +211,18 @@ kelly_fraction = (EV / payout) / 2   # half of full Kelly, clamped to [0.0, 1.0]
 
 **Caveats:** Synthetic −110/−110 odds are a naive baseline; real bookmakers price each game individually, so actual edge frequency against live lines will differ. End-of-season team stats are used for all games in each season (a remaining source of look-ahead bias). Pitcher stats are time-matched (resolved), eliminating the largest source of distribution mismatch.
 
-The dashboard shows the **temporal holdout** results (trained 2019–2024, tested on 2025) rather than the random-split backtest. The notebook retains the random-split results for comparison.
+The dashboard shows the **temporal holdout** results (trained 2019–2024, tested on 2025) and a **market-efficiency sweep** rather than a raw P&L curve. The sweep interpolates each game's synthetic market probability from naive (50/50) toward the model's own prediction and plots betting ROI at each step; the break-even point is the headline. The notebook retains the original random-split P&L results for comparison.
+
+## Limitations & What I'd Do Next
+
+This is a portfolio project on a genuinely hard problem; the value is the end-to-end system and a rigorous, self-critical evaluation — not a claim of beating the market. Known limitations:
+
+- **Synthetic odds, not real lines.** The backtest prices every game against a synthetic market, not real historical bookmaker odds (which require a paid Odds API plan). A real book moves the line toward the favorite, so the naive-market ROI overstates any real edge.
+- **The market-efficiency sweep uses the model as its own "sharp market."** Interpolating toward the model's own prediction is a principled proxy for an informed market, not a claim of equivalence to live lines — a real market could be sharper or duller. (A real book is almost certainly *sharper* than this weak model, so the true break-even is below the α ≈ 0.43 measured here.)
+- **Weak signal.** ROC-AUC 0.563 is barely above chance. The model also slightly underperforms its own predictions on the bets it makes (predicts ~66%, realizes ~64%), a sign of calibration drift under the 2024→2025 temporal shift.
+- **Look-ahead in team stats.** Pitcher stats are time-matched to each game; team batting/pitching stats still use end-of-season values (a remaining, smaller source of leakage).
+
+**What I'd do next:** a real-odds backtest against historical closing lines; time-matched team-stat snapshots (mirroring the pitcher-snapshot approach); and richer features (rest days, travel, ballpark factors, weather).
 
 ## Running Tests
 
@@ -218,7 +230,7 @@ The dashboard shows the **temporal holdout** results (trained 2019–2024, teste
 pytest tests/ -v
 ```
 
-220 smoke + integration tests. All pass.
+230 smoke + integration tests. All pass.
 
 ## Roadmap
 
