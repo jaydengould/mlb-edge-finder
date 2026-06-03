@@ -38,19 +38,24 @@ def _temporal_split(
 
 
 def _load_training_csv(data_processed_dir: Any) -> pd.DataFrame:
-    """Load the largest training CSV from data_processed_dir.
+    """Load the most comprehensive training CSV from data_processed_dir.
 
-    Selects by file size (largest = most seasons) to avoid picking a
-    narrower training set when multiple CSVs exist.
+    Filenames follow the pattern training_{min}-{max}.csv. Picks the file
+    with the earliest start season; breaks ties by latest end season.
     """
     from pathlib import Path
+
+    def _season_key(p: Path) -> tuple[int, int]:
+        parts = p.stem.split("_")[1].split("-")
+        return (int(parts[0]), int(parts[1]))
+
     csvs = list(Path(data_processed_dir).glob("training_*.csv"))
     if not csvs:
         raise RuntimeError(
             "No training set found — run build_training_set() first"
         )
-    # Pick the file with the most data (largest size = widest season coverage)
-    return pd.read_csv(max(csvs, key=lambda p: p.stat().st_size))
+    best = min(csvs, key=lambda p: (_season_key(p)[0], -_season_key(p)[1]))
+    return pd.read_csv(best)
 
 
 def run(holdout_season: int = 2025, force: bool = False) -> dict:
