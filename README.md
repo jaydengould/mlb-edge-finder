@@ -1,5 +1,9 @@
 # MLB Edge Finder
 
+[![CI](https://github.com/jaydengould/mlb-edge-finder/actions/workflows/ci.yml/badge.svg)](https://github.com/jaydengould/mlb-edge-finder/actions/workflows/ci.yml)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
 A portfolio project that identifies positive expected-value (EV) opportunities in MLB moneyline betting markets. Compares XGBoost-predicted win probabilities against bookmaker-implied probabilities and flags bets where the model's edge exceeds a configurable threshold.
 
 ## Dashboard
@@ -39,8 +43,10 @@ Python 3.10+ required.
 ## Setup
 
 ```bash
-# 1. Clone and install in editable mode
+# 1. Clone and install in editable mode (pulls all runtime dependencies)
 pip install -e .
+# For the notebooks + test suite, install the dev extras instead:
+# pip install -e ".[dev]"
 
 # 2. Configure secrets
 cp .env.template .env
