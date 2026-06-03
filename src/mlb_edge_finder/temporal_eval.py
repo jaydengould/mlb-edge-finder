@@ -7,7 +7,7 @@ import pandas as pd
 from xgboost import XGBClassifier
 
 from mlb_edge_finder import config
-from mlb_edge_finder.backtest import compute_summary, simulate_bets
+from mlb_edge_finder.backtest import compute_summary, simulate_bets, sweep_market_efficiency
 from mlb_edge_finder.model import NON_FEATURE_COLS, TARGET_COL, calibrate, evaluate
 
 logger = logging.getLogger(__name__)
@@ -56,6 +56,23 @@ def _load_training_csv(data_processed_dir: Any) -> pd.DataFrame:
         )
     best = min(csvs, key=lambda p: (_season_key(p)[0], -_season_key(p)[1]))
     return pd.read_csv(best)
+
+
+def _break_even_alpha(sweep_df: pd.DataFrame) -> float | None:
+    """Interpolate the alpha where ROI first crosses from >= 0 to < 0.
+
+    Returns None if ROI stays non-negative across the whole grid.
+    """
+    rows = sweep_df.sort_values("alpha").reset_index(drop=True)
+    for i in range(1, len(rows)):
+        r0 = rows.loc[i - 1, "roi_pct"]
+        r1 = rows.loc[i, "roi_pct"]
+        if r0 >= 0 and r1 < 0:
+            a0 = rows.loc[i - 1, "alpha"]
+            a1 = rows.loc[i, "alpha"]
+            alpha_star = a0 + (a1 - a0) * (r0 / (r0 - r1))
+            return round(float(alpha_star), 4)
+    return None
 
 
 def run(holdout_season: int = 2025, force: bool = False) -> dict:
@@ -125,13 +142,19 @@ def run(holdout_season: int = 2025, force: bool = False) -> dict:
     backtest_df = simulate_bets(cal_clf, X_test, y_test, meta_df)
     summary = compute_summary(backtest_df)
 
-    pnl_series = (
-        [
-            {"date": str(r["game_date"]), "cumulative_pnl": round(r["cumulative_pnl"], 2)}
-            for _, r in backtest_df.iterrows()
-        ]
-        if not backtest_df.empty
-        else []
+    sweep_df = sweep_market_efficiency(cal_clf, X_test, y_test, meta_df)
+    break_even = _break_even_alpha(sweep_df)
+    market_efficiency_sweep = [
+        {
+            "alpha": round(float(r["alpha"]), 4),
+            "roi_pct": float(r["roi_pct"]),
+            "n_bets": int(r["n_bets"]),
+        }
+        for _, r in sweep_df.iterrows()
+    ]
+    logger.info(
+        "Market-efficiency sweep: break-even alpha=%s",
+        f"{break_even:.3f}" if break_even is not None else "none",
     )
 
     result = {
@@ -150,7 +173,8 @@ def run(holdout_season: int = 2025, force: bool = False) -> dict:
         "total_pnl": summary["total_pnl"],
         "avg_ev": summary["avg_ev"],
         "max_drawdown": summary["max_drawdown"],
-        "pnl_series": pnl_series,
+        "break_even_alpha": break_even,
+        "market_efficiency_sweep": market_efficiency_sweep,
     }
 
     config.MODELS_DIR.mkdir(parents=True, exist_ok=True)
@@ -184,4 +208,6 @@ if __name__ == "__main__":
     print(f"  Win Rate      : {r['win_rate'] * 100:.1f}%")
     print(f"  ROI           : {r['roi_pct']:+.1f}%")
     print(f"  Sharpe        : {r['sharpe_ratio']:.3f}")
+    be = r["break_even_alpha"]
+    print(f"  Break-even α  : {be:.3f}" if be is not None else "  Break-even α  : none (ROI stays positive)")
     print(f"\nArtifact: models/temporal_eval_{r['holdout_season']}.json")

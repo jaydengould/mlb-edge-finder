@@ -74,17 +74,19 @@ def test_temporal_split_raises_if_no_test():
 # --- run() ---
 
 def _run_with_mocks(tmp_path: Path, training_df: pd.DataFrame, force: bool = False) -> dict:
-    """Call temporal_eval.run() with all expensive operations mocked.
-
-    Patches are on mlb_edge_finder.temporal_eval.* because calibrate, evaluate,
-    simulate_bets, compute_summary, and config are all module-level imports there.
-    """
+    """Call temporal_eval.run() with all expensive operations mocked."""
     import mlb_edge_finder.temporal_eval as te
     mock_clf = _make_mock_clf()
     empty_backtest = pd.DataFrame(columns=[
         "game_date", "home_name", "away_name", "bet_side", "american_odds",
         "model_prob", "ev", "kelly_fraction", "actual_home_win", "won", "pnl", "cumulative_pnl",
     ])
+    fake_sweep = pd.DataFrame({
+        "alpha": [0.0, 0.5, 1.0],
+        "roi_pct": [18.0, 4.0, -4.0],
+        "n_bets": [200, 90, 8],
+        "win_rate": [0.61, 0.55, 0.50],
+    })
 
     with patch.object(te, "_load_training_csv", return_value=training_df), \
          patch("mlb_edge_finder.temporal_eval.XGBClassifier") as MockXGB, \
@@ -94,6 +96,7 @@ def _run_with_mocks(tmp_path: Path, training_df: pd.DataFrame, force: bool = Fal
              "n_test_samples": 60,
          }), \
          patch("mlb_edge_finder.temporal_eval.simulate_bets", return_value=empty_backtest), \
+         patch("mlb_edge_finder.temporal_eval.sweep_market_efficiency", return_value=fake_sweep), \
          patch("mlb_edge_finder.temporal_eval.compute_summary", return_value={
              "n_bets": 0, "n_wins": 0, "win_rate": 0.0, "total_pnl": 0.0,
              "roi_pct": 0.0, "avg_ev": 0.0, "max_drawdown": 0.0, "sharpe_ratio": 0.0,
@@ -123,19 +126,37 @@ def test_run_json_has_required_keys(tmp_path):
         "holdout_season", "train_seasons", "n_train", "n_test",
         "accuracy", "roc_auc", "log_loss", "brier_score",
         "n_bets", "win_rate", "roi_pct", "sharpe_ratio",
-        "total_pnl", "avg_ev", "max_drawdown", "pnl_series",
+        "total_pnl", "avg_ev", "max_drawdown",
+        "market_efficiency_sweep", "break_even_alpha",
     }
     assert required.issubset(set(result.keys()))
+    assert "pnl_series" not in result
 
 
-def test_run_pnl_series_is_list(tmp_path):
+def test_run_market_efficiency_sweep_is_list(tmp_path):
     df = _make_training_df()
     result = _run_with_mocks(tmp_path, df)
-    assert isinstance(result["pnl_series"], list)
+    sweep = result["market_efficiency_sweep"]
+    assert isinstance(sweep, list)
+    assert sweep and set(sweep[0].keys()) == {"alpha", "roi_pct", "n_bets"}
+
+
+def test_run_break_even_alpha_interpolated(tmp_path):
+    # fake_sweep crosses 0 between alpha=0.5 (roi 4.0) and alpha=1.0 (roi -4.0)
+    # crossing at 0.5 + 0.5 * (4.0 / (4.0 - -4.0)) = 0.75
+    df = _make_training_df()
+    result = _run_with_mocks(tmp_path, df)
+    assert result["break_even_alpha"] == 0.75
+
+
+def test_break_even_alpha_returns_none_when_never_negative():
+    from mlb_edge_finder.temporal_eval import _break_even_alpha
+    sweep = pd.DataFrame({"alpha": [0.0, 0.5, 1.0], "roi_pct": [10.0, 5.0, 1.0]})
+    assert _break_even_alpha(sweep) is None
 
 
 def test_run_skips_if_exists(tmp_path):
-    existing = {"holdout_season": 2025, "roc_auc": 0.999, "pnl_series": []}
+    existing = {"holdout_season": 2025, "roc_auc": 0.999, "market_efficiency_sweep": []}
     (tmp_path / "temporal_eval_2025.json").write_text(json.dumps(existing))
     import mlb_edge_finder.temporal_eval as te
     with patch("mlb_edge_finder.temporal_eval.config") as mock_config:
@@ -145,7 +166,7 @@ def test_run_skips_if_exists(tmp_path):
 
 
 def test_run_force_overwrites(tmp_path):
-    existing = {"holdout_season": 2025, "roc_auc": 0.999, "pnl_series": []}
+    existing = {"holdout_season": 2025, "roc_auc": 0.999, "market_efficiency_sweep": []}
     (tmp_path / "temporal_eval_2025.json").write_text(json.dumps(existing))
     df = _make_training_df()
     result = _run_with_mocks(tmp_path, df, force=True)
