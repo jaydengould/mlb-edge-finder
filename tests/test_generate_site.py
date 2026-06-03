@@ -1,5 +1,5 @@
-import csv
 import json
+import csv
 from datetime import date
 from pathlib import Path
 
@@ -19,6 +19,33 @@ def _write_header_only_csv(path: Path) -> None:
     path.write_text(
         "game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence\n"
     )
+
+
+def _write_temporal_eval_json(path: Path, **overrides) -> dict:
+    data = {
+        "holdout_season": 2025,
+        "train_seasons": [2019, 2021, 2022, 2023, 2024],
+        "n_train": 12000,
+        "n_test": 2400,
+        "accuracy": 0.572,
+        "roc_auc": 0.601,
+        "log_loss": 0.681,
+        "brier_score": 0.243,
+        "n_bets": 1800,
+        "win_rate": 0.603,
+        "roi_pct": 15.1,
+        "sharpe_ratio": 0.42,
+        "total_pnl": 1800.0,
+        "avg_ev": 0.28,
+        "max_drawdown": 420.0,
+        "pnl_series": [
+            {"date": "2025-04-01", "cumulative_pnl": 95.45},
+            {"date": "2025-04-02", "cumulative_pnl": 185.90},
+        ],
+    }
+    data.update(overrides)
+    path.write_text(json.dumps(data))
+    return data
 
 
 # --- _load_edges_data ---
@@ -66,39 +93,31 @@ def test_load_edges_data_caps_at_30_days(tmp_path):
     assert len(history) <= 30
 
 
-# --- _load_metrics ---
+# --- _load_temporal_eval ---
 
-def test_load_metrics_returns_dict(tmp_path):
-    from mlb_edge_finder.generate_site import _load_metrics
-    p = tmp_path / "metrics_2026-05-26.json"
-    p.write_text(json.dumps({"roc_auc": 0.601, "n_test_samples": 3168}))
-    result = _load_metrics(p)
+def test_load_temporal_eval_returns_dict(tmp_path):
+    from mlb_edge_finder.generate_site import _load_temporal_eval
+    models_dir = tmp_path / "models"
+    models_dir.mkdir()
+    _write_temporal_eval_json(models_dir / "temporal_eval_2025.json")
+    result = _load_temporal_eval(models_dir)
+    assert result is not None
     assert result["roc_auc"] == 0.601
 
 
-def test_load_metrics_missing_path_returns_none():
-    from mlb_edge_finder.generate_site import _load_metrics
-    assert _load_metrics(None) is None
+def test_load_temporal_eval_returns_none_when_missing(tmp_path):
+    from mlb_edge_finder.generate_site import _load_temporal_eval
+    assert _load_temporal_eval(tmp_path) is None
 
 
-def test_load_metrics_nonexistent_file_returns_none(tmp_path):
-    from mlb_edge_finder.generate_site import _load_metrics
-    assert _load_metrics(tmp_path / "missing.json") is None
-
-
-# --- _load_pnl ---
-
-def test_load_pnl_returns_dict(tmp_path):
-    from mlb_edge_finder.generate_site import _load_pnl
-    p = tmp_path / "backtest_pnl.json"
-    p.write_text(json.dumps({"cumulative_pnl": [0.0, 1.0], "summary": {"win_rate": 0.6}}))
-    result = _load_pnl(p)
-    assert result["summary"]["win_rate"] == 0.6
-
-
-def test_load_pnl_missing_returns_none():
-    from mlb_edge_finder.generate_site import _load_pnl
-    assert _load_pnl(None) is None
+def test_load_temporal_eval_picks_most_recent(tmp_path):
+    from mlb_edge_finder.generate_site import _load_temporal_eval
+    models_dir = tmp_path / "models"
+    models_dir.mkdir()
+    _write_temporal_eval_json(models_dir / "temporal_eval_2024.json", roc_auc=0.55)
+    _write_temporal_eval_json(models_dir / "temporal_eval_2025.json", roc_auc=0.601)
+    result = _load_temporal_eval(models_dir)
+    assert result["roc_auc"] == 0.601
 
 
 # --- generate() integration ---
@@ -108,17 +127,18 @@ def test_generate_creates_index_html(tmp_path):
     today = date.today().isoformat()
     outputs_dir = tmp_path / "outputs"
     outputs_dir.mkdir()
+    models_dir = tmp_path / "models"
+    models_dir.mkdir()
     _write_edges_csv(outputs_dir / f"edges_{today}.csv", [
         {"game_id": "abc", "home_team": "Giants", "away_team": "Dodgers",
          "bet_side": "home", "american_odds": -110, "model_prob": 0.7,
          "ev": 0.55, "kelly_fraction": 0.25, "high_confidence": False},
     ])
     out = tmp_path / "docs" / "index.html"
-    generate(outputs_dir=outputs_dir, metrics_path=None, pnl_path=None, out_path=out)
+    generate(outputs_dir=outputs_dir, models_dir=models_dir, out_path=out)
     assert out.exists()
     html = out.read_text()
     assert "Giants" in html
-    assert "Dodgers" in html
     assert "MLB Edge Finder" in html
 
 
@@ -129,36 +149,33 @@ def test_generate_empty_state_when_no_edges_today(tmp_path):
     today = date.today().isoformat()
     _write_header_only_csv(outputs_dir / f"edges_{today}.csv")
     out = tmp_path / "docs" / "index.html"
-    generate(outputs_dir=outputs_dir, metrics_path=None, pnl_path=None, out_path=out)
+    generate(outputs_dir=outputs_dir, models_dir=tmp_path, out_path=out)
     html = out.read_text()
     assert "No edges found today" in html
 
 
-def test_generate_includes_stats_when_metrics_present(tmp_path):
+def test_generate_includes_stats_when_temporal_eval_present(tmp_path):
     from mlb_edge_finder.generate_site import generate
     outputs_dir = tmp_path / "outputs"
     outputs_dir.mkdir()
-    metrics_path = tmp_path / "metrics.json"
-    metrics_path.write_text(json.dumps({"roc_auc": 0.601, "n_test_samples": 3168}))
-    pnl_path = tmp_path / "pnl.json"
-    pnl_path.write_text(json.dumps({
-        "cumulative_pnl": [0.0, 100.0, 200.0],
-        "summary": {"n_bets": 10, "win_rate": 0.6, "roi_pct": 15.1, "sharpe_ratio": 0.74},
-    }))
+    models_dir = tmp_path / "models"
+    models_dir.mkdir()
+    _write_temporal_eval_json(models_dir / "temporal_eval_2025.json")
     out = tmp_path / "docs" / "index.html"
-    generate(outputs_dir=outputs_dir, metrics_path=metrics_path, pnl_path=pnl_path, out_path=out)
+    generate(outputs_dir=outputs_dir, models_dir=models_dir, out_path=out)
     html = out.read_text()
-    assert "60.0%" in html   # win rate
-    assert "15.1%" in html   # roi
-    assert "0.601" in html   # roc_auc
+    assert "60.3%" in html    # win_rate
+    assert "15.1%" in html    # roi_pct
+    assert "0.601" in html    # roc_auc
+    assert "2025 holdout" in html
 
 
-def test_generate_still_works_when_pnl_missing(tmp_path):
+def test_generate_still_works_when_temporal_eval_missing(tmp_path):
     from mlb_edge_finder.generate_site import generate
     outputs_dir = tmp_path / "outputs"
     outputs_dir.mkdir()
     out = tmp_path / "docs" / "index.html"
-    generate(outputs_dir=outputs_dir, metrics_path=None, pnl_path=None, out_path=out)
+    generate(outputs_dir=outputs_dir, models_dir=tmp_path, out_path=out)
     assert out.exists()
     html = out.read_text()
     assert "<!DOCTYPE html>" in html
@@ -175,7 +192,7 @@ def test_generate_high_confidence_shows_star_badge(tmp_path):
          "ev": 0.6, "kelly_fraction": 0.3, "high_confidence": True},
     ])
     out = tmp_path / "docs" / "index.html"
-    generate(outputs_dir=outputs_dir, metrics_path=None, pnl_path=None, out_path=out)
+    generate(outputs_dir=outputs_dir, models_dir=tmp_path, out_path=out)
     html = out.read_text()
     assert "★" in html
     assert "⚠" not in html

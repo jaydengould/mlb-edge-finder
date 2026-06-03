@@ -16,10 +16,10 @@ def _team_abbr(full_name: str) -> str:
     """Return the 3-letter abbreviation for a full Odds API team name."""
     return ODDS_NAME_TO_ABBR.get(full_name, full_name)
 
+
 _ROOT = Path(__file__).resolve().parents[2]
 OUTPUTS_DIR: Path = _ROOT / "outputs"
 DOCS_DIR: Path = _ROOT / "docs"
-PNL_PATH: Path = _ROOT / "data" / "backtest_pnl.json"
 
 
 def _load_edges_data(outputs_dir: Path) -> tuple[list[dict], list[dict]]:
@@ -51,70 +51,68 @@ def _load_edges_data(outputs_dir: Path) -> tuple[list[dict], list[dict]]:
     return today_rows, history
 
 
-def _load_metrics(metrics_path: Path | None) -> dict | None:
-    """Return parsed metrics JSON or None if path is missing."""
-    if metrics_path is None:
+def _load_temporal_eval(models_dir: Path) -> dict | None:
+    """Load the most recent temporal_eval_*.json from models_dir, or None."""
+    files = sorted(Path(models_dir).glob("temporal_eval_*.json"))
+    if not files:
         return None
-    p = Path(metrics_path)
-    if not p.exists():
-        return None
-    return json.loads(p.read_text())
+    return json.loads(files[-1].read_text())
 
 
-def _load_pnl(pnl_path: Path | None) -> dict | None:
-    """Return parsed backtest P&L JSON or None if path is missing."""
-    if pnl_path is None:
-        return None
-    p = Path(pnl_path)
-    if not p.exists():
-        return None
-    return json.loads(p.read_text())
-
-
-def _render_stats_html(metrics: dict | None, pnl_data: dict | None) -> str:
-    """Render the backtest performance stats card HTML, or '' if no data."""
-    summary = (pnl_data or {}).get("summary", {})
+def _render_stats_html(te_data: dict | None) -> str:
+    """Render the backtest performance stats card, or '' if no data."""
+    if not te_data:
+        return ""
     rows = []
-    if "win_rate" in summary:
+    if "win_rate" in te_data:
         rows.append(
             f'<div class="stat-row"><span class="stat-label">Win Rate</span>'
-            f'<span class="stat-value">{summary["win_rate"] * 100:.1f}%</span></div>'
+            f'<span class="stat-value">{te_data["win_rate"] * 100:.1f}%</span></div>'
         )
-    if "roi_pct" in summary:
-        roi = summary["roi_pct"]
+    if "roi_pct" in te_data:
+        roi = te_data["roi_pct"]
         roi_prefix = "+" if roi >= 0 else ""
         roi_class = "stat-value green" if roi >= 0 else "stat-value"
         rows.append(
             f'<div class="stat-row"><span class="stat-label">Backtest ROI</span>'
             f'<span class="{roi_class}">{roi_prefix}{roi:.1f}%</span></div>'
         )
-    if "sharpe_ratio" in summary:
+    if "sharpe_ratio" in te_data:
         rows.append(
             f'<div class="stat-row"><span class="stat-label">Sharpe</span>'
-            f'<span class="stat-value">{summary["sharpe_ratio"]:.3f}</span></div>'
+            f'<span class="stat-value">{te_data["sharpe_ratio"]:.3f}</span></div>'
         )
-    if metrics and "roc_auc" in metrics:
+    if "roc_auc" in te_data:
         rows.append(
             f'<div class="stat-row"><span class="stat-label">ROC-AUC</span>'
-            f'<span class="stat-value neutral">{metrics["roc_auc"]:.3f}</span></div>'
+            f'<span class="stat-value neutral">{te_data["roc_auc"]:.3f}</span></div>'
         )
-    if metrics and "n_test_samples" in metrics:
+    if "n_test" in te_data:
         rows.append(
-            f'<div class="stat-row"><span class="stat-label">Test games</span>'
-            f'<span class="stat-value neutral">{metrics["n_test_samples"]:,}</span></div>'
+            f'<div class="stat-row"><span class="stat-label">Holdout games</span>'
+            f'<span class="stat-value neutral">{te_data["n_test"]:,}</span></div>'
         )
     if not rows:
         return ""
+    train_seasons = te_data.get("train_seasons", [])
+    holdout = te_data.get("holdout_season", "")
+    subtitle = ""
+    if train_seasons and holdout:
+        subtitle = (
+            f'<div class="card-subtitle">Trained {train_seasons[0]}&ndash;'
+            f'{train_seasons[-1]} &middot; {holdout} holdout</div>'
+        )
     return (
         '<div class="card"><div class="card-title">Backtest Performance</div>'
+        + subtitle
         + "".join(rows)
         + "</div>"
     )
 
 
-def _render_pnl_html(pnl_data: dict | None) -> str:
-    """Render the P&L chart card HTML, or '' if no data."""
-    if pnl_data is None:
+def _render_pnl_html(te_data: dict | None) -> str:
+    """Render the P&L chart card, or '' if no data."""
+    if te_data is None:
         return ""
     return (
         '<div class="card">'
@@ -170,17 +168,15 @@ def _render_edges_html(today_rows: list[dict]) -> str:
 def _render_html(
     today_rows: list[dict],
     history: list[dict],
-    metrics: dict | None,
-    pnl_data: dict | None,
+    te_data: dict | None,
     updated: str,
 ) -> str:
     """Return the complete HTML page as a string."""
     edges_table_html = _render_edges_html(today_rows)
     history_json = json.dumps(history)
-    pnl_json = json.dumps(pnl_data) if pnl_data else "null"
-    metrics_json = json.dumps(metrics) if metrics else "null"
-    stats_html = _render_stats_html(metrics, pnl_data)
-    pnl_chart_html = _render_pnl_html(pnl_data)
+    te_json = json.dumps(te_data) if te_data else "null"
+    stats_html = _render_stats_html(te_data)
+    pnl_chart_html = _render_pnl_html(te_data)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -216,7 +212,8 @@ def _render_html(
     .side-away{{background:#ffffff11;color:#8a8070;border:1px solid #3d3930}}
     .empty-state{{text-align:center;padding:32px;color:#8a8070;font-size:14px;line-height:1.6}}
     .card{{background:#27251F;border:1px solid #3d3930;border-radius:8px;padding:16px}}
-    .card-title{{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#8a8070;margin-bottom:12px}}
+    .card-title{{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#8a8070;margin-bottom:4px}}
+    .card-subtitle{{font-size:10px;color:#8a8070;margin-bottom:10px;opacity:0.75}}
     .stat-row{{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}}
     .stat-row:last-child{{margin-bottom:0}}
     .stat-label{{font-size:12px;color:#8a8070}}
@@ -258,8 +255,7 @@ def _render_html(
 </div>
 <script>
 const HISTORY={history_json};
-const PNL={pnl_json};
-const METRICS={metrics_json};
+const TE={te_json};
 </script>
 <script>
 (function(){{
@@ -269,9 +265,9 @@ const METRICS={metrics_json};
 }})();
 (function(){{
   var el=document.getElementById('pnl-chart');
-  if(!el||!PNL)return;
+  if(!el||!TE||!TE.pnl_series||TE.pnl_series.length===0)return;
   var ctx=el.getContext('2d');
-  new Chart(ctx,{{type:'line',data:{{labels:PNL.cumulative_pnl.map(function(_,i){{return i}}),datasets:[{{data:PNL.cumulative_pnl,borderColor:'#FD5A1E',borderWidth:2,pointRadius:0,tension:0.1,fill:false}}]}},options:{{responsive:true,maintainAspectRatio:false,plugins:{{legend:{{display:false}},tooltip:{{callbacks:{{label:function(t){{return'$'+t.raw.toFixed(0)}}}}}}}},scales:{{x:{{display:false}},y:{{grid:{{color:'#3d393044'}},ticks:{{color:'#8a8070',font:{{size:10}},callback:function(v){{return'$'+v}}}}}}}}}}}});
+  new Chart(ctx,{{type:'line',data:{{labels:TE.pnl_series.map(function(d){{return d.date.slice(5)}}),datasets:[{{data:TE.pnl_series.map(function(d){{return d.cumulative_pnl}}),borderColor:'#FD5A1E',borderWidth:2,pointRadius:0,tension:0.1,fill:false}}]}},options:{{responsive:true,maintainAspectRatio:false,plugins:{{legend:{{display:false}},tooltip:{{callbacks:{{label:function(t){{return'$'+t.raw.toFixed(0)}},title:function(t){{return TE.pnl_series[t[0].dataIndex].date}}}}}}}},scales:{{x:{{display:false}},y:{{grid:{{color:'#3d393044'}},ticks:{{color:'#8a8070',font:{{size:10}},callback:function(v){{return'$'+v}}}}}}}}}}}});
 }})();
 </script>
 </body>
@@ -280,26 +276,23 @@ const METRICS={metrics_json};
 
 def generate(
     outputs_dir: Path,
-    metrics_path: Path | None,
-    pnl_path: Path | None,
+    models_dir: Path,
     out_path: Path,
 ) -> None:
-    """Generate docs/index.html from outputs CSVs and model artifacts.
+    """Generate docs/index.html from outputs CSVs and temporal eval artifact.
 
-    Never raises — degrades gracefully if metrics or PnL files are missing.
+    Never raises — degrades gracefully if the temporal eval file is missing.
 
     Args:
         outputs_dir: Directory containing edges_YYYY-MM-DD.csv files.
-        metrics_path: Path to a metrics_YYYY-MM-DD.json file, or None.
-        pnl_path: Path to data/backtest_pnl.json, or None.
+        models_dir: Directory containing temporal_eval_*.json files.
         out_path: Destination for the generated index.html.
     """
     today_rows, history = _load_edges_data(outputs_dir)
-    metrics = _load_metrics(metrics_path)
-    pnl_data = _load_pnl(pnl_path)
+    te_data = _load_temporal_eval(models_dir)
 
     updated = date.today().strftime("%B %d, %Y").replace(" 0", " ")
-    html = _render_html(today_rows, history, metrics, pnl_data, updated)
+    html = _render_html(today_rows, history, te_data, updated)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(html, encoding="utf-8")
@@ -310,15 +303,10 @@ def generate(
 
 
 if __name__ == "__main__":
-    import glob as _glob
     from mlb_edge_finder import config as _config
-
-    _metrics_files = sorted(_glob.glob(str(_config.MODELS_DIR / "metrics_*.json")))
-    _metrics_path = Path(_metrics_files[-1]) if _metrics_files else None
 
     generate(
         outputs_dir=_ROOT / "outputs",
-        metrics_path=_metrics_path,
-        pnl_path=PNL_PATH,
+        models_dir=_config.MODELS_DIR,
         out_path=DOCS_DIR / "index.html",
     )
