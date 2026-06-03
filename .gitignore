@@ -13,3 +13,4 @@ logs/
 .worktrees/
 .claude/settings.local.json
 .superpowers/
+memory/
