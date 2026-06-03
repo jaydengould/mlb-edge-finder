@@ -6,7 +6,7 @@ A portfolio project that identifies positive expected-value (EV) opportunities i
 
 **Live:** https://jaydengould.github.io/mlb-edge-finder/
 
-Updated daily by GitHub Actions at 9:30 AM EDT. Shows today's recommended edges (★ marks high-confidence picks), a 30-day edge history, and the model's validated backtest performance on held-out test data.
+Updated daily by GitHub Actions at 9:30 AM EDT. Shows today's recommended edges (★ marks high-confidence picks), a 30-day edge history, and the model's validated backtest performance on a **true temporal holdout** (trained on 2019–2024, tested blind on the full 2025 season).
 
 *The color scheme uses the SF Giants' official black (#27251F) and orange (#FD5A1E) — a small personal touch from a lifelong Giants fan.*
 
@@ -19,7 +19,7 @@ Updated daily by GitHub Actions at 9:30 AM EDT. Shows today's recommended edges 
 5. **Inference** — an XGBoost classifier predicts home-team win probability. Probabilities are post-hoc calibrated with isotonic regression on a held-out validation set. EV is computed per side; bets clearing the EV threshold are flagged with a half-Kelly bet size.
 6. **Output** — flagged edges are written to `data/processed/edges_YYYY-MM-DD.csv` and printed to the terminal. Edges with EV > 0.40 and a model probability gap over the market of more than 15 percentage points are marked `high_confidence=True` and shown with a ★ on the dashboard.
 7. **Automation** — a GitHub Actions workflow runs the full pipeline every morning at 9:30 AM ET and commits the results to `outputs/edges_YYYY-MM-DD.csv` in the repo, with a formatted table in the Actions job summary. A separate snapshot workflow captures time-matched pitcher stats at key season dates (April 30, June 1, July 31) for use in model retraining.
-8. **Backtest** — `notebooks/02_backtest.ipynb` simulates historical performance on the held-out 20% test split using synthetic −110/−110 market odds, producing a cumulative P&L curve and summary statistics.
+8. **Temporal evaluation** — `temporal_eval.py` trains a fresh model on 2019–2024 and evaluates it blind on the full 2025 season — a true out-of-time holdout. Results (ROC-AUC, win rate, ROI, P&L curve) are written to `models/temporal_eval_2025.json` and shown on the dashboard. `notebooks/02_backtest.ipynb` contains the original random-split backtest for comparison.
 
 ## Tech Stack
 
@@ -99,7 +99,8 @@ src/mlb_edge_finder/
 ├── model.py              # train, calibrate, evaluate, persist XGBoost model
 ├── edge_finder.py        # compute EV + Kelly fraction, flag positive-EV bets
 ├── pipeline.py           # end-to-end orchestration
-└── backtest.py           # simulate historical performance on held-out test split
+├── backtest.py           # simulate historical performance on held-out test split
+└── temporal_eval.py      # out-of-time evaluation: train 2019-2024, test on 2025
 
 notebooks/
 ├── 01_exploration.ipynb  # interactive pipeline exploration and model training
@@ -140,14 +141,22 @@ Trained on 15,837 regular-season games (2019, 2021–2026; 2020 excluded — 60-
 
 **Probability calibration:** After training, the raw XGBoost model is wrapped with `CalibratedClassifierCV` (isotonic regression, `FrozenEstimator`) fit on the held-out 20% calibration set. This corrects the model's tendency to produce overconfident probabilities, which is critical for EV estimates to be meaningful.
 
-**Performance (2019–2026 test set, n=3,168):**
+**Production model performance (2019–2026 test set, random 20% split, n=3,168):**
 | Metric | XGBoost |
 |---|---|
 | Accuracy | 57.2% |
 | ROC-AUC | 0.601 |
 | Log Loss | 0.687 |
 
-The slight reduction in headline metrics vs the previous model reflects more realistic training data — early-season games now correctly have NaN pitcher features rather than borrowing end-of-season stats. The practical benefit is that inference probabilities stay in a credible range (55–75%), keeping EV estimates meaningful.
+**Temporal holdout performance (trained 2019–2024, tested on full 2025 season, n=2,444):**
+| Metric | Value |
+|---|---|
+| ROC-AUC | 0.555 |
+| Win Rate | 62.0% |
+| ROI vs −110/−110 | +18.3% |
+| Bets flagged | 205 |
+
+The temporal holdout is the more credible evaluation — the model never saw 2025 data during training. The lower ROC-AUC (0.555 vs 0.601) is expected: less training data and no look-ahead from the random split. The positive betting metrics on a true out-of-time holdout are the dashboard's headline numbers.
 
 ## Edge Definition
 
@@ -193,7 +202,9 @@ kelly_fraction = (EV / payout) / 2   # half of full Kelly, clamped to [0.0, 1.0]
 
 **Threshold sweep:** `sweep_thresholds()` evaluates `EV_THRESHOLD` across a range of values and returns a DataFrame with columns `ev_threshold`, `n_bets`, `win_rate`, `roi_pct`, `sharpe_ratio`, `avg_bets_per_day`, sorted by Sharpe ratio. The Sharpe-optimal value sets the default `EV_THRESHOLD=0.20` in `config.py`.
 
-**Caveats:** Synthetic −110/−110 odds are a naive baseline; real bookmakers price each game individually, so actual edge frequency against live lines will differ. End-of-season team stats are used for all games in each season (a remaining source of look-ahead bias), which likely overstates performance. Pitcher stats are now time-matched (resolved), eliminating the largest source of distribution mismatch.
+**Caveats:** Synthetic −110/−110 odds are a naive baseline; real bookmakers price each game individually, so actual edge frequency against live lines will differ. End-of-season team stats are used for all games in each season (a remaining source of look-ahead bias). Pitcher stats are time-matched (resolved), eliminating the largest source of distribution mismatch.
+
+The dashboard shows the **temporal holdout** results (trained 2019–2024, tested on 2025) rather than the random-split backtest. The notebook retains the random-split results for comparison.
 
 ## Running Tests
 
@@ -201,7 +212,7 @@ kelly_fraction = (EV / payout) / 2   # half of full Kelly, clamped to [0.0, 1.0]
 pytest tests/ -v
 ```
 
-208 smoke + integration tests. All pass.
+220 smoke + integration tests. All pass.
 
 ## Roadmap
 
@@ -228,3 +239,4 @@ pytest tests/ -v
 - [x] Time-matched pitcher snapshots — `fetch_pitcher_snapshot()` captures stats through a specific date via the MLB Stats API `byDateRange` endpoint; `_build_season` joins each training game to the latest preceding snapshot (April 30 / June 1 / July 31 / September 28) instead of end-of-season stats; `MIN_PITCHER_IP=30` floor applied at all join points; `snapshot.yml` workflow auto-commits snapshot files on schedule
 - [x] Dashboard — self-contained `docs/index.html` generated by `generate_site.py`; served via GitHub Pages; updated daily by the Actions workflow alongside the edges CSV; shows today's edges (★ on high-confidence rows), 30-day history bar chart, and backtest P&L line chart with SF Giants color scheme
 - [x] Dashboard chart fix — repaired unbalanced `}}` pairs in the Chart.js f-string template that produced a silent JS syntax error, preventing both canvases from rendering
+- [x] Temporal out-of-time evaluation — `temporal_eval.py` trains on 2019–2024 and tests blind on the full 2025 season; writes `models/temporal_eval_2025.json` with model metrics + backtest P&L series; dashboard updated to show temporal holdout results (ROC-AUC 0.555, 62% win rate, +18.3% ROI) as its single evaluation story; `simulate_bets()` extracted from `run_backtest()` to support pre-split evaluation
