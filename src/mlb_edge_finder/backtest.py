@@ -4,9 +4,17 @@ import logging
 from pathlib import Path
 from typing import Any
 
+import numpy as np
 import pandas as pd
 
 logger = logging.getLogger(__name__)
+
+
+def _prob_to_american(p: float) -> float:
+    """Convert an implied probability to American odds."""
+    if p >= 0.5:
+        return -(p / (1.0 - p)) * 100.0
+    return ((1.0 - p) / p) * 100.0
 
 
 def simulate_market_odds(
@@ -30,51 +38,28 @@ def simulate_market_odds(
     """
     home_implied = home_market_prob + vig / 2
     away_implied = (1.0 - home_market_prob) + vig / 2
-
-    def _to_american(p: float) -> float:
-        if p >= 0.5:
-            return -(p / (1.0 - p)) * 100.0
-        return ((1.0 - p) / p) * 100.0
-
-    return _to_american(home_implied), _to_american(away_implied)
+    return _prob_to_american(home_implied), _prob_to_american(away_implied)
 
 
-def simulate_bets(
+def _run_bet_loop(
     clf: Any,
     X_test: pd.DataFrame,
     y_test: pd.Series,
     meta_df: pd.DataFrame,
-    home_market_prob: float = 0.5,
-    vig: float = 0.0476,
+    home_odds: pd.Series,
+    away_odds: pd.Series,
     unit: float = 100.0,
     ev_threshold: float | None = None,
 ) -> pd.DataFrame:
-    """Simulate edge-finder bets on a pre-split test set.
+    """Run the EV + Kelly bet-selection loop with per-game American odds.
 
-    Runs the EV + Kelly bet-selection loop over every row in X_test/y_test.
-    meta_df must be indexed identically to X_test and contain game_date,
-    home_name, away_name.
-
-    Args:
-        clf: Fitted calibrated classifier. Must have feature_names_in_ and
-            predict_proba() attributes.
-        X_test: Feature matrix for the test games.
-        y_test: True binary labels (1 = home win) for the test games.
-        meta_df: DataFrame with game_date, home_name, away_name columns,
-            same index as X_test.
-        home_market_prob: Market-implied home win probability. Default 0.5.
-        vig: Bookmaker overround. Default 0.0476.
-        unit: Dollar bet size for P&L. Default $100.
-        ev_threshold: Minimum EV to flag a bet. Defaults to config.EV_THRESHOLD.
-
-    Returns:
-        DataFrame sorted by game_date with columns: game_date, home_name,
-        away_name, bet_side, american_odds, model_prob, ev, kelly_fraction,
-        actual_home_win, won, pnl, cumulative_pnl. Returns empty DataFrame
-        (with those columns) when no bets clear the thresholds.
+    home_odds / away_odds are integer American odds Series indexed identically
+    to X_test. meta_df must share that index and contain game_date, home_name,
+    away_name. Returns the per-bet DataFrame (empty with correct columns if no
+    bets clear the thresholds). Does not log — callers decide.
     """
     from mlb_edge_finder import config as _config
-    from mlb_edge_finder.edge_finder import compute_ev, compute_kelly, market_implied_prob
+    from mlb_edge_finder.edge_finder import compute_ev, compute_kelly
 
     _ev_threshold = ev_threshold if ev_threshold is not None else _config.EV_THRESHOLD
 
@@ -88,57 +73,101 @@ def simulate_bets(
     X_test_aligned = X_test.reindex(columns=feature_names)
     home_probs = clf.predict_proba(X_test_aligned)[:, 1]
 
-    home_odds_f, away_odds_f = simulate_market_odds(home_market_prob, vig)
-    home_odds_i = round(home_odds_f)
-    away_odds_i = round(away_odds_f)
-    home_payout = home_odds_i / 100 if home_odds_i > 0 else 100 / abs(home_odds_i)
-    away_payout = away_odds_i / 100 if away_odds_i > 0 else 100 / abs(away_odds_i)
-
     records = []
     for (idx, prob), actual in zip(zip(X_test.index, home_probs), y_test.values):
         row_meta = meta_df.loc[idx]
+        h_odds = int(home_odds.loc[idx])
+        a_odds = int(away_odds.loc[idx])
+        h_payout = h_odds / 100 if h_odds > 0 else 100 / abs(h_odds)
+        a_payout = a_odds / 100 if a_odds > 0 else 100 / abs(a_odds)
 
-        home_ev = compute_ev(float(prob), home_odds_i)
-        if home_ev > _ev_threshold and home_odds_i >= _config.MIN_AMERICAN_ODDS:
+        home_ev = compute_ev(float(prob), h_odds)
+        if home_ev > _ev_threshold and h_odds >= _config.MIN_AMERICAN_ODDS:
             won = int(actual) == 1
             records.append({
                 "game_date": row_meta["game_date"],
                 "home_name": row_meta["home_name"],
                 "away_name": row_meta["away_name"],
                 "bet_side": "home",
-                "american_odds": home_odds_i,
+                "american_odds": h_odds,
                 "model_prob": round(float(prob), 4),
                 "ev": round(home_ev, 4),
-                "kelly_fraction": round(compute_kelly(float(prob), home_odds_i), 4),
+                "kelly_fraction": round(compute_kelly(float(prob), h_odds), 4),
                 "actual_home_win": int(actual),
                 "won": won,
-                "pnl": home_payout * unit if won else -unit,
+                "pnl": h_payout * unit if won else -unit,
             })
 
         away_prob = 1.0 - float(prob)
-        away_ev = compute_ev(away_prob, away_odds_i)
-        if away_ev > _ev_threshold and away_odds_i >= _config.MIN_AMERICAN_ODDS:
+        away_ev = compute_ev(away_prob, a_odds)
+        if away_ev > _ev_threshold and a_odds >= _config.MIN_AMERICAN_ODDS:
             won = int(actual) == 0
             records.append({
                 "game_date": row_meta["game_date"],
                 "home_name": row_meta["home_name"],
                 "away_name": row_meta["away_name"],
                 "bet_side": "away",
-                "american_odds": away_odds_i,
+                "american_odds": a_odds,
                 "model_prob": round(away_prob, 4),
                 "ev": round(away_ev, 4),
-                "kelly_fraction": round(compute_kelly(away_prob, away_odds_i), 4),
+                "kelly_fraction": round(compute_kelly(away_prob, a_odds), 4),
                 "actual_home_win": int(actual),
                 "won": won,
-                "pnl": away_payout * unit if won else -unit,
+                "pnl": a_payout * unit if won else -unit,
             })
 
     if not records:
-        logger.warning("No edges found in backtest at EV=%.0f%%", _ev_threshold * 100)
         return pd.DataFrame(columns=output_cols)
 
     result = pd.DataFrame(records).sort_values("game_date").reset_index(drop=True)
     result["cumulative_pnl"] = result["pnl"].cumsum()
+    return result
+
+
+def simulate_bets(
+    clf: Any,
+    X_test: pd.DataFrame,
+    y_test: pd.Series,
+    meta_df: pd.DataFrame,
+    home_market_prob: float = 0.5,
+    vig: float = 0.0476,
+    unit: float = 100.0,
+    ev_threshold: float | None = None,
+) -> pd.DataFrame:
+    """Simulate edge-finder bets on a pre-split test set using a flat market.
+
+    Generates one synthetic odds pair via simulate_market_odds(home_market_prob,
+    vig), applies it to every game, and delegates the bet loop to _run_bet_loop.
+    meta_df must be indexed identically to X_test and contain game_date,
+    home_name, away_name.
+
+    Args:
+        clf: Fitted calibrated classifier with feature_names_in_ and predict_proba.
+        X_test: Feature matrix for the test games.
+        y_test: True binary labels (1 = home win) for the test games.
+        meta_df: DataFrame with game_date, home_name, away_name; same index as X_test.
+        home_market_prob: Market-implied home win probability. Default 0.5.
+        vig: Bookmaker overround. Default 0.0476.
+        unit: Dollar bet size for P&L. Default $100.
+        ev_threshold: Minimum EV to flag a bet. Defaults to config.EV_THRESHOLD.
+
+    Returns:
+        DataFrame sorted by game_date with columns: game_date, home_name,
+        away_name, bet_side, american_odds, model_prob, ev, kelly_fraction,
+        actual_home_win, won, pnl, cumulative_pnl. Empty (with those columns)
+        when no bets clear the thresholds.
+    """
+    from mlb_edge_finder import config as _config
+
+    _ev_threshold = ev_threshold if ev_threshold is not None else _config.EV_THRESHOLD
+
+    home_odds_f, away_odds_f = simulate_market_odds(home_market_prob, vig)
+    home_odds = pd.Series(round(home_odds_f), index=X_test.index)
+    away_odds = pd.Series(round(away_odds_f), index=X_test.index)
+
+    result = _run_bet_loop(clf, X_test, y_test, meta_df, home_odds, away_odds, unit, _ev_threshold)
+    if result.empty:
+        logger.warning("No edges found in backtest at EV=%.0f%%", _ev_threshold * 100)
     return result
 
 
