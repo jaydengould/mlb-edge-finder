@@ -36,11 +36,13 @@ def _write_temporal_eval_json(path: Path, **overrides) -> dict:
         "roi_pct": 15.1,
         "sharpe_ratio": 0.42,
         "total_pnl": 1800.0,
-        "avg_ev": 0.28,
         "max_drawdown": 420.0,
-        "pnl_series": [
-            {"date": "2025-04-01", "cumulative_pnl": 95.45},
-            {"date": "2025-04-02", "cumulative_pnl": 185.90},
+        "avg_ev": 0.28,
+        "break_even_alpha": 0.1,
+        "market_efficiency_sweep": [
+            {"alpha": 0.0, "roi_pct": 15.1, "n_bets": 1800},
+            {"alpha": 0.5, "roi_pct": 4.0, "n_bets": 700},
+            {"alpha": 1.0, "roi_pct": -4.8, "n_bets": 40},
         ],
     }
     data.update(overrides)
@@ -196,3 +198,55 @@ def test_generate_high_confidence_shows_star_badge(tmp_path):
     html = out.read_text()
     assert "★" in html
     assert "⚠" not in html
+
+
+def test_generate_renders_efficiency_chart(tmp_path):
+    from mlb_edge_finder.generate_site import generate
+    outputs_dir = tmp_path / "outputs"
+    outputs_dir.mkdir()
+    (outputs_dir / "edges_2025-01-01.csv").write_text(
+        "game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence\n"
+    )
+    models_dir = tmp_path / "models"
+    models_dir.mkdir()
+    _write_temporal_eval_json(models_dir / "temporal_eval_2025.json")
+    out = tmp_path / "index.html"
+    generate(outputs_dir=outputs_dir, models_dir=models_dir, out_path=out)
+    html = out.read_text()
+    assert "efficiency-chart" in html
+    assert "market_efficiency_sweep" in html
+
+
+def test_generate_no_pnl_chart(tmp_path):
+    from mlb_edge_finder.generate_site import generate
+    outputs_dir = tmp_path / "outputs"
+    outputs_dir.mkdir()
+    (outputs_dir / "edges_2025-01-01.csv").write_text(
+        "game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence\n"
+    )
+    models_dir = tmp_path / "models"
+    models_dir.mkdir()
+    _write_temporal_eval_json(models_dir / "temporal_eval_2025.json")
+    out = tmp_path / "index.html"
+    generate(outputs_dir=outputs_dir, models_dir=models_dir, out_path=out)
+    html = out.read_text()
+    assert "pnl-chart" not in html
+    assert "pnl_series" not in html
+
+
+def test_generate_stats_card_shows_roc_and_break_even(tmp_path):
+    from mlb_edge_finder.generate_site import generate
+    outputs_dir = tmp_path / "outputs"
+    outputs_dir.mkdir()
+    (outputs_dir / "edges_2025-01-01.csv").write_text(
+        "game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence\n"
+    )
+    models_dir = tmp_path / "models"
+    models_dir.mkdir()
+    _write_temporal_eval_json(models_dir / "temporal_eval_2025.json")
+    out = tmp_path / "index.html"
+    generate(outputs_dir=outputs_dir, models_dir=models_dir, out_path=out)
+    html = out.read_text()
+    assert "0.601" in html
+    assert "ROC-AUC" in html
+    assert "naive market" in html.lower()

@@ -60,13 +60,38 @@ def _load_temporal_eval(models_dir: Path) -> dict | None:
 
 
 def _render_stats_html(te_data: dict | None) -> str:
-    """Render the backtest performance stats card, or '' if no data."""
+    """Render the holdout-evaluation stats card, or '' if no data."""
     if not te_data:
         return ""
     rows = []
+    if "roc_auc" in te_data:
+        rows.append(
+            f'<div class="stat-row"><span class="stat-label">ROC-AUC</span>'
+            f'<span class="stat-value neutral">{te_data["roc_auc"]:.3f}</span></div>'
+        )
+    if te_data.get("break_even_alpha") is not None:
+        rows.append(
+            f'<div class="stat-row"><span class="stat-label">Break-even efficiency</span>'
+            f'<span class="stat-value">&alpha; &approx; {te_data["break_even_alpha"]:.2f}</span></div>'
+        )
+    elif "break_even_alpha" in te_data:
+        rows.append(
+            '<div class="stat-row"><span class="stat-label">Break-even efficiency</span>'
+            '<span class="stat-value neutral">none in range</span></div>'
+        )
+    if "accuracy" in te_data:
+        rows.append(
+            f'<div class="stat-row"><span class="stat-label">Accuracy</span>'
+            f'<span class="stat-value neutral">{te_data["accuracy"] * 100:.1f}%</span></div>'
+        )
+    if "n_test" in te_data:
+        rows.append(
+            f'<div class="stat-row"><span class="stat-label">Holdout games</span>'
+            f'<span class="stat-value neutral">{te_data["n_test"]:,}</span></div>'
+        )
     if "win_rate" in te_data:
         rows.append(
-            f'<div class="stat-row"><span class="stat-label">Win Rate</span>'
+            f'<div class="stat-row"><span class="stat-label">Win Rate (naive market)</span>'
             f'<span class="stat-value">{te_data["win_rate"] * 100:.1f}%</span></div>'
         )
     if "roi_pct" in te_data:
@@ -74,23 +99,8 @@ def _render_stats_html(te_data: dict | None) -> str:
         roi_prefix = "+" if roi >= 0 else ""
         roi_class = "stat-value green" if roi >= 0 else "stat-value"
         rows.append(
-            f'<div class="stat-row"><span class="stat-label">Backtest ROI</span>'
+            f'<div class="stat-row"><span class="stat-label">ROI (naive market)</span>'
             f'<span class="{roi_class}">{roi_prefix}{roi:.1f}%</span></div>'
-        )
-    if "sharpe_ratio" in te_data:
-        rows.append(
-            f'<div class="stat-row"><span class="stat-label">Sharpe</span>'
-            f'<span class="stat-value">{te_data["sharpe_ratio"]:.3f}</span></div>'
-        )
-    if "roc_auc" in te_data:
-        rows.append(
-            f'<div class="stat-row"><span class="stat-label">ROC-AUC</span>'
-            f'<span class="stat-value neutral">{te_data["roc_auc"]:.3f}</span></div>'
-        )
-    if "n_test" in te_data:
-        rows.append(
-            f'<div class="stat-row"><span class="stat-label">Holdout games</span>'
-            f'<span class="stat-value neutral">{te_data["n_test"]:,}</span></div>'
         )
     if not rows:
         return ""
@@ -100,24 +110,26 @@ def _render_stats_html(te_data: dict | None) -> str:
     if train_seasons and holdout:
         subtitle = (
             f'<div class="card-subtitle">Trained {train_seasons[0]}&ndash;'
-            f'{train_seasons[-1]} &middot; {holdout} holdout</div>'
+            f'{train_seasons[-1]} &middot; {holdout} holdout &middot; synthetic-market stress test</div>'
         )
     return (
-        '<div class="card"><div class="card-title">Backtest Performance</div>'
+        '<div class="card"><div class="card-title">Holdout Evaluation</div>'
         + subtitle
         + "".join(rows)
         + "</div>"
     )
 
 
-def _render_pnl_html(te_data: dict | None) -> str:
-    """Render the P&L chart card, or '' if no data."""
-    if te_data is None:
+def _render_efficiency_html(te_data: dict | None) -> str:
+    """Render the market-efficiency sensitivity chart card, or '' if no data."""
+    if te_data is None or not te_data.get("market_efficiency_sweep"):
         return ""
     return (
         '<div class="card">'
-        '<div class="card-title">Backtest P&amp;L Curve</div>'
-        '<div class="chart-wrap-sm"><canvas id="pnl-chart"></canvas></div>'
+        '<div class="card-title">Edge vs Market Efficiency</div>'
+        '<div class="chart-wrap-sm"><canvas id="efficiency-chart"></canvas></div>'
+        '<div class="card-caption">Synthetic-market stress test &mdash; betting ROI as the '
+        "market becomes as informed as the model (0 = ignores matchup, 1 = as sharp as the model).</div>"
         "</div>"
     )
 
@@ -176,7 +188,7 @@ def _render_html(
     history_json = json.dumps(history)
     te_json = json.dumps(te_data) if te_data else "null"
     stats_html = _render_stats_html(te_data)
-    pnl_chart_html = _render_pnl_html(te_data)
+    efficiency_chart_html = _render_efficiency_html(te_data)
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -214,6 +226,7 @@ def _render_html(
     .card{{background:#27251F;border:1px solid #3d3930;border-radius:8px;padding:16px}}
     .card-title{{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#8a8070;margin-bottom:4px}}
     .card-subtitle{{font-size:10px;color:#8a8070;margin-bottom:10px;opacity:0.75}}
+    .card-caption{{font-size:10px;color:#8a8070;margin-top:8px;line-height:1.4;opacity:0.8}}
     .stat-row{{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}}
     .stat-row:last-child{{margin-bottom:0}}
     .stat-label{{font-size:12px;color:#8a8070}}
@@ -249,7 +262,7 @@ def _render_html(
     <div class="col-sidebar">
       <div class="updated">Updated {updated}</div>
       {stats_html}
-      {pnl_chart_html}
+      {efficiency_chart_html}
     </div>
   </div>
 </div>
@@ -264,10 +277,11 @@ const TE={te_json};
   new Chart(ctx,{{type:'bar',data:{{labels:HISTORY.map(function(d){{return d.date.slice(5)}}),datasets:[{{data:HISTORY.map(function(d){{return d.count}}),backgroundColor:'#FD5A1E99',borderColor:'#FD5A1E',borderWidth:1,borderRadius:2}}]}},options:{{responsive:true,maintainAspectRatio:false,plugins:{{legend:{{display:false}},tooltip:{{callbacks:{{title:function(t){{return HISTORY[t[0].dataIndex].date}},label:function(t){{return t.raw+' edge'+(t.raw!==1?'s':'')}}}}}}}},scales:{{x:{{grid:{{color:'#3d393044'}},ticks:{{color:'#8a8070',font:{{size:10}}}}}},y:{{grid:{{color:'#3d393044'}},ticks:{{color:'#8a8070',font:{{size:10}},stepSize:1}},beginAtZero:true}}}}}}}});
 }})();
 (function(){{
-  var el=document.getElementById('pnl-chart');
-  if(!el||!TE||!TE.pnl_series||TE.pnl_series.length===0)return;
+  var el=document.getElementById('efficiency-chart');
+  if(!el||!TE||!TE.market_efficiency_sweep||TE.market_efficiency_sweep.length===0)return;
+  var S=TE.market_efficiency_sweep;
   var ctx=el.getContext('2d');
-  new Chart(ctx,{{type:'line',data:{{labels:TE.pnl_series.map(function(d){{return d.date.slice(5)}}),datasets:[{{data:TE.pnl_series.map(function(d){{return d.cumulative_pnl}}),borderColor:'#FD5A1E',borderWidth:2,pointRadius:0,tension:0.1,fill:false}}]}},options:{{responsive:true,maintainAspectRatio:false,plugins:{{legend:{{display:false}},tooltip:{{callbacks:{{label:function(t){{return'$'+t.raw.toFixed(0)}},title:function(t){{return TE.pnl_series[t[0].dataIndex].date}}}}}}}},scales:{{x:{{display:false}},y:{{grid:{{color:'#3d393044'}},ticks:{{color:'#8a8070',font:{{size:10}},callback:function(v){{return'$'+v}}}}}}}}}}}});
+  new Chart(ctx,{{type:'line',data:{{labels:S.map(function(d){{return d.alpha}}),datasets:[{{data:S.map(function(d){{return d.roi_pct}}),borderColor:'#FD5A1E',borderWidth:2,pointRadius:0,tension:0.1,fill:false}}]}},options:{{responsive:true,maintainAspectRatio:false,plugins:{{legend:{{display:false}},tooltip:{{callbacks:{{title:function(t){{return'α = '+S[t[0].dataIndex].alpha}},label:function(t){{return'ROI '+t.raw.toFixed(1)+'%'}}}}}}}},scales:{{x:{{grid:{{color:'#3d393044'}},ticks:{{color:'#8a8070',font:{{size:9}}}}}},y:{{grid:{{color:'#3d393044'}},ticks:{{color:'#8a8070',font:{{size:10}},callback:function(v){{return v+'%'}}}}}}}}}}}});
 }})();
 </script>
 </body>
