@@ -235,7 +235,6 @@ def _render_html(
     .stat-value.neutral{{color:#d6cfc4}}
     .chart-wrap{{position:relative;height:120px}}
     .chart-wrap-sm{{position:relative;height:100px}}
-    .updated{{font-size:11px;color:#8a8070;text-align:right}}
     @media(max-width:700px){{.main-layout{{flex-direction:column}}.col-sidebar{{width:100%}}}}
   </style>
 </head>
@@ -260,7 +259,6 @@ def _render_html(
       </div>
     </div>
     <div class="col-sidebar">
-      <div class="updated">Updated {updated}</div>
       {stats_html}
       {efficiency_chart_html}
     </div>
