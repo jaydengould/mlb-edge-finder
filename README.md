@@ -4,7 +4,7 @@ A portfolio project that identifies positive expected-value (EV) opportunities i
 
 ## Dashboard
 
-**Live:** https://jaydengould28.github.io/mlb-edge-finder/
+**Live:** https://jaydengould.github.io/mlb-edge-finder/
 
 Updated daily by GitHub Actions at 9:30 AM EDT. Shows today's recommended edges (★ marks high-confidence picks), a 30-day edge history, and the model's validated backtest performance on held-out test data.
 

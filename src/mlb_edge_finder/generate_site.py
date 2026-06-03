@@ -7,7 +7,14 @@ from pathlib import Path
 
 import pandas as pd
 
+from mlb_edge_finder.stats_ingestion import ODDS_NAME_TO_ABBR
+
 logger = logging.getLogger(__name__)
+
+
+def _team_abbr(full_name: str) -> str:
+    """Return the 3-letter abbreviation for a full Odds API team name."""
+    return ODDS_NAME_TO_ABBR.get(full_name, full_name)
 
 _ROOT = Path(__file__).resolve().parents[2]
 OUTPUTS_DIR: Path = _ROOT / "outputs"
@@ -130,9 +137,12 @@ def _render_edges_html(today_rows: list[dict]) -> str:
         away = escape(str(r.get("away_team", "")))
         side = escape(str(r.get("bet_side", "")))
         sc = "side-home" if r.get("bet_side") == "home" else "side-away"
+        raw_home = str(r.get("home_team", ""))
+        raw_away = str(r.get("away_team", ""))
+        bet_team = escape(_team_abbr(raw_home if r.get("bet_side") == "home" else raw_away))
         high_conf = r.get("high_confidence")
         is_high_conf = high_conf is True or str(high_conf).strip() == "True"
-        badge = "★ " if is_high_conf else ""
+        star = "★ " if is_high_conf else ""
         odds_int = int(r.get("american_odds", 0) or 0)
         odds_str = f"+{odds_int}" if odds_int > 0 else str(odds_int)
         model_prob = float(r.get("model_prob", 0))
@@ -142,7 +152,7 @@ def _render_edges_html(today_rows: list[dict]) -> str:
         rows_html += (
             f"<tr>"
             f"<td>{home} vs {away}</td>"
-            f'<td><span class="side-badge {sc}">{badge}{side}</span></td>'
+            f'<td><span class="side-badge {sc}">{star}{bet_team}</span></td>'
             f"<td>{odds_str}</td>"
             f"<td>{model_prob * 100:.1f}%</td>"
             f'<td class="ev-val">{ev_str}</td>'
@@ -151,7 +161,7 @@ def _render_edges_html(today_rows: list[dict]) -> str:
         )
     return (
         "<table><thead><tr>"
-        "<th>Matchup</th><th>Side</th><th>Odds</th>"
+        "<th>Matchup</th><th>Bet On</th><th>Odds</th>"
         "<th>Model Prob</th><th>EV</th><th>Kelly</th>"
         f"</tr></thead><tbody>{rows_html}</tbody></table>"
     )
@@ -201,7 +211,7 @@ def _render_html(
     tbody tr:last-child td{{border-bottom:none}}
     tbody tr:hover td{{background:#27251F55}}
     .ev-val{{color:#FD5A1E;font-weight:700}}
-    .side-badge{{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;padding:2px 7px;border-radius:4px}}
+    .side-badge{{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:4px;white-space:nowrap}}
     .side-home{{background:#FD5A1E22;color:#FD5A1E;border:1px solid #FD5A1E44}}
     .side-away{{background:#ffffff11;color:#8a8070;border:1px solid #3d3930}}
     .empty-state{{text-align:center;padding:32px;color:#8a8070;font-size:14px;line-height:1.6}}
