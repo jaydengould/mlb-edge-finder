@@ -337,3 +337,50 @@ def test_export_pnl_json_creates_parent_dirs(tmp_path):
     export_pnl_json(bt_df, summary, out)
 
     assert out.exists()
+
+
+from mlb_edge_finder.backtest import simulate_bets
+
+
+def _make_aligned_split(n: int = 200, seed: int = 0):
+    """Return (clf, X_test, y_test, meta_df) ready for simulate_bets."""
+    from sklearn.model_selection import train_test_split
+    df = _make_training_df(n, seed)
+    from mlb_edge_finder.model import NON_FEATURE_COLS, TARGET_COL
+    non_feature = [c for c in NON_FEATURE_COLS if c in df.columns]
+    X = df.drop(columns=non_feature)
+    y = df[TARGET_COL]
+    _, X_test, _, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+    meta = df.loc[X_test.index, ["game_date", "home_name", "away_name"]]
+    clf = _make_mock_clf(home_win_prob=0.65)
+    return clf, X_test, y_test, meta
+
+
+def test_simulate_bets_returns_dataframe():
+    clf, X_test, y_test, meta = _make_aligned_split()
+    result = simulate_bets(clf, X_test, y_test, meta)
+    assert isinstance(result, pd.DataFrame)
+
+
+def test_simulate_bets_output_columns():
+    clf, X_test, y_test, meta = _make_aligned_split()
+    result = simulate_bets(clf, X_test, y_test, meta, ev_threshold=0.05)
+    expected = {
+        "game_date", "home_name", "away_name", "bet_side",
+        "american_odds", "model_prob", "ev", "kelly_fraction",
+        "actual_home_win", "won", "pnl", "cumulative_pnl",
+    }
+    assert expected.issubset(set(result.columns))
+
+
+def test_simulate_bets_no_edges_returns_empty():
+    clf, X_test, y_test, meta = _make_aligned_split()
+    clf = _make_mock_clf(home_win_prob=0.50)
+    result = simulate_bets(clf, X_test, y_test, meta)
+    assert result.empty
+
+
+def test_simulate_bets_high_prob_finds_edges():
+    clf, X_test, y_test, meta = _make_aligned_split()
+    result = simulate_bets(clf, X_test, y_test, meta, ev_threshold=0.05)
+    assert not result.empty

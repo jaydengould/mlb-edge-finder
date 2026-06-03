@@ -39,6 +39,109 @@ def simulate_market_odds(
     return _to_american(home_implied), _to_american(away_implied)
 
 
+def simulate_bets(
+    clf: Any,
+    X_test: pd.DataFrame,
+    y_test: pd.Series,
+    meta_df: pd.DataFrame,
+    home_market_prob: float = 0.5,
+    vig: float = 0.0476,
+    unit: float = 100.0,
+    ev_threshold: float | None = None,
+) -> pd.DataFrame:
+    """Simulate edge-finder bets on a pre-split test set.
+
+    Runs the EV + Kelly bet-selection loop over every row in X_test/y_test.
+    meta_df must be indexed identically to X_test and contain game_date,
+    home_name, away_name.
+
+    Args:
+        clf: Fitted calibrated classifier. Must have feature_names_in_ and
+            predict_proba() attributes.
+        X_test: Feature matrix for the test games.
+        y_test: True binary labels (1 = home win) for the test games.
+        meta_df: DataFrame with game_date, home_name, away_name columns,
+            same index as X_test.
+        home_market_prob: Market-implied home win probability. Default 0.5.
+        vig: Bookmaker overround. Default 0.0476.
+        unit: Dollar bet size for P&L. Default $100.
+        ev_threshold: Minimum EV to flag a bet. Defaults to config.EV_THRESHOLD.
+
+    Returns:
+        DataFrame sorted by game_date with columns: game_date, home_name,
+        away_name, bet_side, american_odds, model_prob, ev, kelly_fraction,
+        actual_home_win, won, pnl, cumulative_pnl. Returns empty DataFrame
+        (with those columns) when no bets clear the thresholds.
+    """
+    from mlb_edge_finder import config as _config
+    from mlb_edge_finder.edge_finder import compute_ev, compute_kelly, market_implied_prob
+
+    _ev_threshold = ev_threshold if ev_threshold is not None else _config.EV_THRESHOLD
+
+    output_cols = [
+        "game_date", "home_name", "away_name", "bet_side",
+        "american_odds", "model_prob", "ev", "kelly_fraction",
+        "actual_home_win", "won", "pnl", "cumulative_pnl",
+    ]
+
+    feature_names = list(clf.feature_names_in_)
+    X_test_aligned = X_test.reindex(columns=feature_names)
+    home_probs = clf.predict_proba(X_test_aligned)[:, 1]
+
+    home_odds_f, away_odds_f = simulate_market_odds(home_market_prob, vig)
+    home_odds_i = round(home_odds_f)
+    away_odds_i = round(away_odds_f)
+    home_payout = home_odds_i / 100 if home_odds_i > 0 else 100 / abs(home_odds_i)
+    away_payout = away_odds_i / 100 if away_odds_i > 0 else 100 / abs(away_odds_i)
+
+    records = []
+    for (idx, prob), actual in zip(zip(X_test.index, home_probs), y_test.values):
+        row_meta = meta_df.loc[idx]
+
+        home_ev = compute_ev(float(prob), home_odds_i)
+        if home_ev > _ev_threshold and home_odds_i >= _config.MIN_AMERICAN_ODDS:
+            won = int(actual) == 1
+            records.append({
+                "game_date": row_meta["game_date"],
+                "home_name": row_meta["home_name"],
+                "away_name": row_meta["away_name"],
+                "bet_side": "home",
+                "american_odds": home_odds_i,
+                "model_prob": round(float(prob), 4),
+                "ev": round(home_ev, 4),
+                "kelly_fraction": round(compute_kelly(float(prob), home_odds_i), 4),
+                "actual_home_win": int(actual),
+                "won": won,
+                "pnl": home_payout * unit if won else -unit,
+            })
+
+        away_prob = 1.0 - float(prob)
+        away_ev = compute_ev(away_prob, away_odds_i)
+        if away_ev > _ev_threshold and away_odds_i >= _config.MIN_AMERICAN_ODDS:
+            won = int(actual) == 0
+            records.append({
+                "game_date": row_meta["game_date"],
+                "home_name": row_meta["home_name"],
+                "away_name": row_meta["away_name"],
+                "bet_side": "away",
+                "american_odds": away_odds_i,
+                "model_prob": round(away_prob, 4),
+                "ev": round(away_ev, 4),
+                "kelly_fraction": round(compute_kelly(away_prob, away_odds_i), 4),
+                "actual_home_win": int(actual),
+                "won": won,
+                "pnl": away_payout * unit if won else -unit,
+            })
+
+    if not records:
+        logger.warning("No edges found in backtest at EV=%.0f%%", _ev_threshold * 100)
+        return pd.DataFrame(columns=output_cols)
+
+    result = pd.DataFrame(records).sort_values("game_date").reset_index(drop=True)
+    result["cumulative_pnl"] = result["pnl"].cumsum()
+    return result
+
+
 def run_backtest(
     clf: Any,
     training_df: pd.DataFrame,
@@ -75,17 +178,7 @@ def run_backtest(
     """
     from sklearn.model_selection import train_test_split
 
-    from mlb_edge_finder import config as _config
-    from mlb_edge_finder.edge_finder import compute_ev, compute_kelly, market_implied_prob
     from mlb_edge_finder.model import NON_FEATURE_COLS, TARGET_COL
-
-    _ev_threshold = ev_threshold if ev_threshold is not None else _config.EV_THRESHOLD
-
-    output_cols = [
-        "game_date", "home_name", "away_name", "bet_side",
-        "american_odds", "model_prob", "ev", "kelly_fraction",
-        "actual_home_win", "won", "pnl", "cumulative_pnl",
-    ]
 
     non_feature = [c for c in NON_FEATURE_COLS if c in training_df.columns]
     X = training_df.drop(columns=non_feature)
@@ -94,74 +187,14 @@ def run_backtest(
     _, X_test, _, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42, stratify=y
     )
-
-    feature_names = list(clf.feature_names_in_)
-    X_test_aligned = X_test.reindex(columns=feature_names)
-
-    home_probs = clf.predict_proba(X_test_aligned)[:, 1]
-
-    home_odds_f, away_odds_f = simulate_market_odds(home_market_prob, vig)
-    home_odds_i = round(home_odds_f)
-    away_odds_i = round(away_odds_f)
-    home_payout = home_odds_i / 100 if home_odds_i > 0 else 100 / abs(home_odds_i)
-    away_payout = away_odds_i / 100 if away_odds_i > 0 else 100 / abs(away_odds_i)
-
-    home_market_implied = market_implied_prob(home_odds_i)
-    away_market_implied = market_implied_prob(away_odds_i)
-
     meta = training_df.loc[X_test.index, ["game_date", "home_name", "away_name"]]
 
-    records = []
-    for (idx, prob), actual in zip(zip(X_test.index, home_probs), y_test.values):
-        row_meta = meta.loc[idx]
-
-        home_ev = compute_ev(float(prob), home_odds_i)
-        if (home_ev > _ev_threshold
-                and home_odds_i >= _config.MIN_AMERICAN_ODDS):
-            won = int(actual) == 1
-            records.append({
-                "game_date": row_meta["game_date"],
-                "home_name": row_meta["home_name"],
-                "away_name": row_meta["away_name"],
-                "bet_side": "home",
-                "american_odds": home_odds_i,
-                "model_prob": round(float(prob), 4),
-                "ev": round(home_ev, 4),
-                "kelly_fraction": round(compute_kelly(float(prob), home_odds_i), 4),
-                "actual_home_win": int(actual),
-                "won": won,
-                "pnl": home_payout * unit if won else -unit,
-            })
-
-        away_prob = 1.0 - float(prob)
-        away_ev = compute_ev(away_prob, away_odds_i)
-        if (away_ev > _ev_threshold
-                and away_odds_i >= _config.MIN_AMERICAN_ODDS):
-            won = int(actual) == 0
-            records.append({
-                "game_date": row_meta["game_date"],
-                "home_name": row_meta["home_name"],
-                "away_name": row_meta["away_name"],
-                "bet_side": "away",
-                "american_odds": away_odds_i,
-                "model_prob": round(away_prob, 4),
-                "ev": round(away_ev, 4),
-                "kelly_fraction": round(compute_kelly(away_prob, away_odds_i), 4),
-                "actual_home_win": int(actual),
-                "won": won,
-                "pnl": away_payout * unit if won else -unit,
-            })
-
-    if not records:
-        logger.warning("No edges found in backtest at EV=%.0f%%", _ev_threshold * 100)
-        return pd.DataFrame(columns=output_cols)
-
-    result = pd.DataFrame(records).sort_values("game_date").reset_index(drop=True)
-    result["cumulative_pnl"] = result["pnl"].cumsum()
-    logger.info(
-        "Backtest complete: %d bets across %d test games (EV=%.0f%%)",
-        len(result), len(X_test), _ev_threshold * 100,
-    )
+    result = simulate_bets(clf, X_test, y_test, meta, home_market_prob, vig, unit, ev_threshold)
+    if not result.empty:
+        logger.info(
+            "Backtest complete: %d bets across %d test games (EV=%.0f%%)",
+            len(result), len(X_test), (ev_threshold or 0.20) * 100,
+        )
     return result
 
 
