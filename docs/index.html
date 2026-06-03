@@ -43,7 +43,6 @@
     .stat-value.neutral{color:#d6cfc4}
     .chart-wrap{position:relative;height:120px}
     .chart-wrap-sm{position:relative;height:100px}
-    .updated{font-size:11px;color:#8a8070;text-align:right}
     @media(max-width:700px){.main-layout{flex-direction:column}.col-sidebar{width:100%}}
   </style>
 </head>
@@ -54,13 +53,13 @@
       <div class="header-title">&#9918; MLB Edge Finder</div>
       <div class="header-sub">XGBoost model identifying positive expected-value MLB moneyline bets</div>
     </div>
-    <span class="badge">Updated June 2, 2026</span>
+    <span class="badge">Updated June 3, 2026</span>
   </div>
   <div class="main-layout">
     <div class="col-main">
       <div class="section">
         <div class="section-title">Today&#39;s Edges</div>
-        <div class="table-wrap" id="edges-table"><table><thead><tr><th>Matchup</th><th>Bet On</th><th>Odds</th><th>Model Prob</th><th>EV</th><th>Kelly</th></tr></thead><tbody><tr><td>Los Angeles Angels vs Colorado Rockies</td><td><span class="side-badge side-home">LAA</span></td><td>-156</td><td>73.5%</td><td class="ev-val">+20.7%</td><td>16.1%</td></tr><tr><td>Atlanta Braves vs Toronto Blue Jays</td><td><span class="side-badge side-home">ATL</span></td><td>-117</td><td>71.2%</td><td class="ev-val">+32.0%</td><td>18.7%</td></tr><tr><td>Houston Astros vs Pittsburgh Pirates</td><td><span class="side-badge side-home">HOU</span></td><td>-110</td><td>64.9%</td><td class="ev-val">+23.9%</td><td>13.1%</td></tr><tr><td>New York Yankees vs Cleveland Guardians</td><td><span class="side-badge side-away">★ CLE</span></td><td>+212</td><td>53.5%</td><td class="ev-val">+66.9%</td><td>15.8%</td></tr></tbody></table></div>
+        <div class="table-wrap" id="edges-table"><div class="empty-state">No edges found today &mdash; model found no +EV opportunities meeting the current thresholds.</div></div>
       </div>
       <div class="section">
         <div class="section-title">Edge History &mdash; Last 30 Days</div>
@@ -68,7 +67,6 @@
       </div>
     </div>
     <div class="col-sidebar">
-      <div class="updated">Updated June 2, 2026</div>
       <div class="card"><div class="card-title">Holdout Evaluation</div><div class="card-subtitle">Trained 2019&ndash;2024 &middot; 2025 holdout &middot; synthetic-market stress test</div><div class="stat-row"><span class="stat-label">ROC-AUC</span><span class="stat-value neutral">0.563</span></div><div class="stat-row"><span class="stat-label">Break-even efficiency</span><span class="stat-value">&alpha; &approx; 0.43</span></div><div class="stat-row"><span class="stat-label">Accuracy</span><span class="stat-value neutral">55.9%</span></div><div class="stat-row"><span class="stat-label">Holdout games</span><span class="stat-value neutral">2,444</span></div><div class="stat-row"><span class="stat-label">Win Rate (naive market)</span><span class="stat-value">64.0%</span></div><div class="stat-row"><span class="stat-label">ROI (naive market)</span><span class="stat-value green">+22.3%</span></div></div>
       <div class="card"><div class="card-title">Edge vs Market Efficiency</div><div class="chart-wrap-sm"><canvas id="efficiency-chart"></canvas></div><div class="card-caption">Synthetic-market stress test &mdash; betting ROI as the market becomes as informed as the model (0 = ignores matchup, 1 = as sharp as the model).</div></div>
     </div>
