@@ -105,9 +105,10 @@ def train(
 def calibrate(clf: Any, X_val: pd.DataFrame, y_val: pd.Series) -> Any:
     """Wrap a fitted classifier with isotonic probability calibration.
 
-    Uses sklearn's CalibratedClassifierCV with cv='prefit' so the underlying
-    model is not retrained — only the calibration layer is fit on X_val/y_val.
-    X_val must be held out from the data used to train clf.
+    Wraps clf in a FrozenEstimator (sklearn 1.6+) so the underlying model is
+    not retrained — only the isotonic calibration layer is fit on X_val/y_val
+    via CalibratedClassifierCV. X_val must be held out from the data used to
+    train clf.
 
     Args:
         clf: A fitted classifier with predict_proba() (e.g. from train()).
