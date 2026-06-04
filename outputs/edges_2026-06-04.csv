@@ -1,0 +1,4 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+21eff9bb5b8451ea2abb9e638ed600e3,Milwaukee Brewers,San Francisco Giants,away,172,0.5348837077617645,0.4548836851119995,0.1322336293930231,True
+8ba83a5fb0f9d2b93807e073204a5850,Boston Red Sox,Baltimore Orioles,away,106,0.5942029058933258,0.2240579861402512,0.10568772931143923,False
+8f76a0f8197d7420bf1e1eb9f5d94159,Philadelphia Phillies,San Diego Padres,away,192,0.4397163391113281,0.28397171020507805,0.07395096619923908,False
