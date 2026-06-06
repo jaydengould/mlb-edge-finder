@@ -14,6 +14,8 @@ Updated daily by GitHub Actions at 9:30 AM EDT. Shows today's recommended edges 
 
 *The color scheme uses the SF Giants' official black (#27251F) and orange (#FD5A1E) — a small personal touch from a lifelong Giants fan.*
 
+![MLB Edge Finder dashboard showing today's edges table, 30-day edge history chart, holdout evaluation stats, and market-efficiency sweep](docs/assets/dashboard-screenshot.png)
+
 ## How It Works
 
 1. **Odds ingestion** — fetches today's MLB moneyline odds from [The Odds API](https://the-odds-api.com), deduplicates across bookmakers, and keeps the best line per game.
