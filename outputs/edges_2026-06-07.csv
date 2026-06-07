@@ -1,0 +1,5 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+3d2680b101156644bd740ee00cddcd46,Toronto Blue Jays,Baltimore Orioles,home,-130,0.7118644118309021,0.25945242093159604,0.1686440736055374,False
+83ffce787c60a2fcb9c044c111a88c98,Colorado Rockies,Milwaukee Brewers,home,162,0.6490384340286255,0.7004806971549988,0.21619774603549347,True
+9e3c4b483a958d796d22ec1a44585e9d,Chicago Cubs,San Francisco Giants,home,-122,0.7354838848114014,0.33833952809943524,0.2063871121406555,False
+8f9a46bf21cc1c96a58597c21485a1b2,Texas Rangers,Cleveland Guardians,away,128,0.5348837077617645,0.21953485369682313,0.08575580222532153,False
