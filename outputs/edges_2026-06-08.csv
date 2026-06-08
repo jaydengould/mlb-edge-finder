@@ -1,0 +1,4 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+1c106a5918ccf59c350e476c157af1fe,Athletics,Milwaukee Brewers,home,130,0.5436508059501648,0.250396853685379,0.09630648218668424,False
+2db8cf8a50192fbf63e1f9018a3c1ec9,Los Angeles Angels,Houston Astros,home,116,0.7354838848114014,0.5886451911926269,0.25372637551406335,True
+fe4a6df006bf19b0c063b0188fa7361b,Toronto Blue Jays,Philadelphia Phillies,home,155,0.5122873187065125,0.30633266270160675,0.09881698796826024,False
