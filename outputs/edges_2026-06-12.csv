@@ -1,0 +1,5 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+58c428c5386f2b32f686e9edcd8a59c1,Washington Nationals,Seattle Mariners,home,129,0.6296296119689941,0.44185181140899665,0.17126039201899096,True
+93fc5b52fd02b67ae146d8a43e98b1ae,Chicago White Sox,Los Angeles Dodgers,home,145,0.5122873187065125,0.2551039308309555,0.08796687270032949,False
+01293f413b449db8f908c6d51539ea15,Milwaukee Brewers,Philadelphia Phillies,away,215,0.4397163391113281,0.3851064682006835,0.08955964376760082,False
+95ee6055d18281317e28c6c18e624606,Toronto Blue Jays,New York Yankees,away,100,0.6742857098579407,0.34857141971588135,0.17428570985794067,False
