@@ -1,0 +1,5 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+4abb993b47a532760ffc38de1dabfac4,Washington Nationals,Seattle Mariners,home,-114,0.7062485814094543,0.32576488089143185,0.18568598210811615,False
+b577f758aaccd486b96b1a218e4f830d,Cleveland Guardians,Detroit Tigers,home,122,0.5436508059501648,0.20690478920936584,0.08479704475793683,False
+7519b768b6e0980dc68e40e2b2b49089,Milwaukee Brewers,Philadelphia Phillies,away,149,0.5348837077617645,0.33186043232679363,0.1113625611834878,False
+c74f3242dd3557ee537e505c3e092143,New York Mets,Atlanta Braves,away,104,0.5942029058933258,0.21217392802238466,0.102006696164608,False
