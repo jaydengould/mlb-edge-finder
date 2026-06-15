@@ -1,0 +1,4 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+d5349ae869ae1b1c6c38042687a3e57b,Houston Astros,Detroit Tigers,home,-117,0.6490384340286255,0.20377213832659602,0.11920670092105867,False
+9c2784938a40031b48e75139185e2491,Chicago Cubs,Colorado Rockies,away,181,0.5942029058933258,0.6697101655602455,0.1850028081658137,True
+da125dfa2d7fe97d5836e50dd394db59,Los Angeles Dodgers,Tampa Bay Rays,away,160,0.48771268129348755,0.2680529713630677,0.08376655355095866,False
