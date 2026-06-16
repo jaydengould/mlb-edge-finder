@@ -1,0 +1,3 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+1d3a926b2cba97faaba2228f43c77a47,New York Yankees,Chicago White Sox,away,125,0.6742857098579407,0.5171428471803665,0.2068571388721466,True
+97d8a9970a14f21507c77048dcce6ae9,Chicago Cubs,Colorado Rockies,away,170,0.48771268129348755,0.31682423949241634,0.09318359985071069,False
