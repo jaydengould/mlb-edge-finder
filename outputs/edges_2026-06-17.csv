@@ -1,0 +1,5 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+ab9ae62c321b17a5d765118cc9bb3fbf,Athletics,Pittsburgh Pirates,home,111,0.6025640964508057,0.2714102435112,0.12225686644648649,False
+3c667b5e84c7e18c7697c0f83852679a,Chicago Cubs,Colorado Rockies,away,164,0.46268653869628906,0.22149246215820306,0.06752818968237899,False
+70301ecea46dd4e6c12d0c003013a4ee,Philadelphia Phillies,Miami Marlins,away,104,0.6020408272743225,0.2281632876396179,0.10969388828827784,False
+a75cee44d2cbdcedb356612df99cd692,Los Angeles Dodgers,Tampa Bay Rays,away,145,0.6742857098579407,0.6519999891519547,0.22482758246619128,True
