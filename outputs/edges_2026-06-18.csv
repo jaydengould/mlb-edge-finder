@@ -1,0 +1,3 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+cad6df1fc1aadca9fdbb359d7d43e40f,Seattle Mariners,Baltimore Orioles,home,-138,0.7354838848114014,0.26844322163125744,0.18522582292556763,False
+4d7345756b0575f6a757888c78a290f2,Athletics,Los Angeles Angels,away,141,0.5348837077617645,0.2890697357058525,0.10250699847725266,False
