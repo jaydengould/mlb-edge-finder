@@ -1,0 +1,4 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+af71fc71bb598645a13d40236b310307,Texas Rangers,San Diego Padres,home,-152,0.7354838848114014,0.21935486166100754,0.16670969486236573,False
+6c9cb91ce383f581ac4ff00dd0d3248d,Kansas City Royals,St. Louis Cardinals,away,-121,0.6742857098579407,0.23154662709590823,0.14008570939302448,False
+ec4cae25ad07349a66d527ea9274b717,Houston Astros,Cleveland Guardians,away,120,0.5942029058933258,0.30724639296531675,0.12801933040221533,False
