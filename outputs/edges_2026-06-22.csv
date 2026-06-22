@@ -1,0 +1,5 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+06b34739941eb6ab0d54c4cee040b202,Toronto Blue Jays,Houston Astros,home,-121,1.0,0.8264462809917356,0.5,True
+541d3f8c1e87131917cbf8386a2563f6,Los Angeles Angels,Baltimore Orioles,home,140,0.6490384340286255,0.5576922416687011,0.1991758005959647,True
+5a8ab9f3ed0791629f4f9e10da52043a,Miami Marlins,Texas Rangers,away,115,0.5942029356956482,0.2775363117456435,0.12066796162854067,False
+7eeb2a9fecc4a8958efb172e75c65224,Detroit Tigers,New York Yankees,away,-125,0.6742857098579407,0.2137142777442932,0.13357142359018323,False
