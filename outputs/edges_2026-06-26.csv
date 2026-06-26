@@ -1,0 +1,3 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+a46f3826966d75bbba418ffa315da7a1,Detroit Tigers,Houston Astros,home,-111,0.6490384340286255,0.23375774396432414,0.1297355479001999,False
+c2d68e4640b7927c37fc5cda2352ee1f,Los Angeles Angels,Athletics,home,114,0.6025640964508057,0.28948716640472405,0.12696805544066844,False
