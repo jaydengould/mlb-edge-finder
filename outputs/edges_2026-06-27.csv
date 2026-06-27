@@ -1,0 +1,3 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+633ba8b54e6ae0fd4d6d63836e3f08e5,Chicago White Sox,Kansas City Royals,home,-121,0.7354838252067566,0.3433216972784563,0.20770962685346606,False
+cad93485b644bd4b3adfacfc58e6cb0c,Milwaukee Brewers,Chicago Cubs,away,138,0.5348837077617645,0.27302322447299954,0.09892145814239114,False
