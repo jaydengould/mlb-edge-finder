@@ -1,0 +1,3 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+d394e34530919df3f80263c0e0176924,Toronto Blue Jays,New York Mets,home,-113,0.6490384340286255,0.22340872962917901,0.12622593224048614,False
+f62667265f8ded9cddabcc82eecfb2a4,Philadelphia Phillies,Pittsburgh Pirates,away,188,0.48771268129348755,0.4046125221252441,0.10760971333118195,False
