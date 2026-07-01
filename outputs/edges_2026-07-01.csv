@@ -1,0 +1,4 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+155102fc6ca2d46399a620f515ffe2b3,Milwaukee Brewers,Cincinnati Reds,home,-152,0.8510638475418091,0.41097427355615723,0.31234044790267945,True
+5961513fee89b7b96eae78376ec2fe3f,Philadelphia Phillies,Pittsburgh Pirates,away,123,0.7692307531833649,0.7153845795989037,0.2908067396743511,True
+cf32c9650e5e4179dbc82552ff735228,Kansas City Royals,Tampa Bay Rays,away,-125,0.6742857098579407,0.2137142777442932,0.13357142359018323,False
