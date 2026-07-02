@@ -1,0 +1,2 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+e01b5de283d3047c0c1bc73082a2d67a,Kansas City Royals,Tampa Bay Rays,away,-120,0.6742857098579407,0.23619046807289124,0.14171428084373475,False
