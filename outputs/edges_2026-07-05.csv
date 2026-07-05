@@ -1,0 +1,6 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+2991d31eedcff470d7105f7237e66e03,Los Angeles Dodgers,San Diego Padres,home,-190,0.8510638475418091,0.2989921883532875,0.2840425789356231,False
+2cf5f7fa6ed79ae90ee9f6aa70ceb1e2,Seattle Mariners,Toronto Blue Jays,home,-123,0.7354838848114014,0.3334382627068496,0.20506453156471252,False
+6f0fa1db67e69c8f534003061fdedee9,Atlanta Braves,New York Mets,home,-112,0.6490384340286255,0.22853703583989826,0.12798074007034302,False
+a2dde9d9ca56dc238d564ace87b244f0,Colorado Rockies,San Francisco Giants,home,105,0.6025640964508057,0.23525639772415163,0.11202685605911981,False
+8ea201bdda2a6a63bd3a6bc19250e4a0,Cleveland Guardians,Chicago White Sox,away,126,0.6020408272743225,0.36061226963996884,0.14310010699998763,False
