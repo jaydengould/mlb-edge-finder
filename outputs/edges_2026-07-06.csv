@@ -1,0 +1,4 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+92bad434cf32ec6dd5e2b856708a6596,San Francisco Giants,Toronto Blue Jays,home,-101,0.7354838848114014,0.4636857509613037,0.2341613042354584,True
+ce47831dfdb0f68ba311fd79cc19d68a,Los Angeles Dodgers,Colorado Rockies,home,-220,0.8510638475418091,0.23791105096990411,0.2617021560668945,False
+ceda0420b6aec99d07f85f99472f8c68,Atlanta Braves,New York Mets,home,-123,0.8144391775131226,0.4765848502880189,0.2930996829271316,True
