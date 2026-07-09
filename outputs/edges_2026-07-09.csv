@@ -1,0 +1,2 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+9f1eb41cd2972a08e88069d6c5b4bb6c,Baltimore Orioles,Chicago Cubs,away,114,0.6020408272743225,0.28836737036705007,0.12647691682765355,False
