@@ -1,0 +1,5 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+8ec769ee362e5e0e25ac93ee886cdfd4,Chicago White Sox,Athletics,home,-106,0.6296296119689941,0.22361981193974334,0.11851850032806396,False
+93986de15fc102a4875daaf7e6250f9e,Washington Nationals,New York Yankees,home,170,0.5122873187065125,0.3831757605075836,0.11269875309046577,False
+b552ecd25e0e2e615532c65ff294144f,Miami Marlins,Cleveland Guardians,home,-146,0.7354838848114014,0.2392399702986625,0.17464517831802365,False
+ff676cfabd491a806f9fad9a93924adb,New York Mets,Boston Red Sox,away,138,0.5348836779594421,0.2730231535434723,0.09892143244328706,False
