@@ -1,0 +1,5 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+e047c3dd3d688fead07d77b8b32852af,Los Angeles Angels,Detroit Tigers,home,103,0.6296296119689941,0.27814811229705816,0.13502335548400882,False
+e0989f5a2163779f2b0c456d7f844ce9,Athletics,Washington Nationals,home,-102,0.7354838848114014,0.45654651697944193,0.23283872365951538,True
+f20d3f5cf3efbb324f11686e68db809c,New York Yankees,Los Angeles Dodgers,home,-104,0.7354838848114014,0.44267992789928734,0.2301935625076294,True
+11dadeb57de8089d2a80fb4a82fbff1d,Milwaukee Brewers,Miami Marlins,away,132,0.5348837375640869,0.2409302711486817,0.09126146634419761,False
