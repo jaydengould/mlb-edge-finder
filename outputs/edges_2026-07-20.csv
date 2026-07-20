@@ -1,0 +1,4 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+66d5a2a0202c6946683c1a8247be9ed4,Chicago Cubs,Detroit Tigers,home,-108,0.7354838848114014,0.4164874818589952,0.2249032402038574,True
+b6936af60f2ffed1b270c119f7127ae7,Milwaukee Brewers,New York Mets,home,-205,0.8333333134651184,0.23983736881395662,0.24583330303430553,False
+f237d860c80df8632a4717d53fee1c25,Toronto Blue Jays,Tampa Bay Rays,away,143,0.7692307680845261,0.8692307664453982,0.3039268414144749,True
