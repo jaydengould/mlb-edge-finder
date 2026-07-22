@@ -1,0 +1,6 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+573a8d20a4ce1b6795f2e3ac8d30cae0,Atlanta Braves,San Diego Padres,home,-108,0.7354838848114014,0.4164874818589952,0.2249032402038574,True
+9121395092ebe73ce8eaba439dc5be34,Los Angeles Angels,St. Louis Cardinals,home,-127,0.7354838848114014,0.3146050539542371,0.19977420926094056,False
+a319064ad34e8e60220140acb9035af3,Kansas City Royals,San Francisco Giants,home,118,0.6296296119689941,0.3725925540924072,0.15787820088661322,False
+10ee5044193bffe8f24adf381ebde5ad,Boston Red Sox,Baltimore Orioles,away,139,0.5348837375640869,0.27837213277816764,0.1001338607115711,False
+b6df72e0280eb235fcca22cc3d3fc1ab,Toronto Blue Jays,Tampa Bay Rays,away,-102,0.6742857098579407,0.3353501312872943,0.1710285669565201,False
