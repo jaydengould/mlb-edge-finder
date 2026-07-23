@@ -1,0 +1,3 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+38d3052ec454022a14314b324e0ff5f3,Detroit Tigers,Kansas City Royals,away,189,0.7692307531833649,1.2230768766999245,0.32356531129627636,True
+5c7e77b42c0db49ce882d3c9473d74c1,Cleveland Guardians,Minnesota Twins,away,127,0.5942029356956482,0.3488406640291214,0.1373388441059533,False
