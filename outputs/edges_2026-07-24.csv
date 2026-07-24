@@ -1,0 +1,2 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+e25ed72c9f5c072ef60c242c29ccf1a3,Chicago White Sox,Houston Astros,home,-129,0.7354838848114014,0.30562643117682886,0.1971290481090546,False
