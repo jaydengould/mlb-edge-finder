@@ -1,0 +1,4 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+9064f61fe767dfa3c4a613a4f02250d3,St. Louis Cardinals,Cincinnati Reds,home,-129,0.7354838848114014,0.30562643117682886,0.1971290481090546,False
+b61e67dbd760d186d865cc2ff013a7c0,Chicago White Sox,Houston Astros,home,-106,0.6296296119689941,0.22361981193974334,0.11851850032806396,False
+210e6566d3641ee245e8a099a1679244,Philadelphia Phillies,New York Yankees,away,167,0.5348837077617645,0.4281394997239113,0.1281854789592549,True
