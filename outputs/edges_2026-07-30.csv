@@ -1,0 +1,5 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+443672ce29e54ba67b3d8d50d63c33f8,Los Angeles Dodgers,Seattle Mariners,home,-150,0.8510638475418091,0.41843974590301514,0.31382980942726135,True
+459ad5aa37b0d7865d087c8acb7d9d4d,St. Louis Cardinals,Chicago Cubs,away,100,0.6742857396602631,0.3485714793205261,0.17428573966026306,False
+690922fd97ed105a96d9b06ae8cf9a56,Cincinnati Reds,Pittsburgh Pirates,away,-111,0.7692307680845261,0.46223146005256754,0.256538460329175,True
+e29b6d58950d18ba7eccacc0e05ce5c6,Athletics,Boston Red Sox,away,-174,0.7692307680845261,0.21131741640896629,0.18384615227580067,False
