@@ -1,0 +1,4 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+1a1c1a4c350d1fb71d29920db55c19f5,Chicago Cubs,New York Yankees,home,-103,0.7354838848114014,0.44954590890014057,0.23151614308357238,True
+07b62357ba8988490469a685727ecf38,Atlanta Braves,Washington Nationals,away,158,0.5942029058933258,0.5330434972047806,0.16868465101417107,True
+2984d38103bf67fc68bc0fb23e98ad8e,Tampa Bay Rays,Chicago White Sox,away,148,0.5348837077617645,0.32651159524917606,0.11030797136796489,False
