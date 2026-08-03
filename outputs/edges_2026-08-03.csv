@@ -1,0 +1,3 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+dce673f29a2a1bdfc8ad0e51de72a21d,Houston Astros,Toronto Blue Jays,home,-124,0.7354838848114014,0.3286160499818863,0.20374195098876952,False
+ec933bb866229ec8d1ed9b978c363175,Colorado Rockies,Tampa Bay Rays,home,148,0.5602836608886719,0.38950347900390625,0.13158901317699537,False
