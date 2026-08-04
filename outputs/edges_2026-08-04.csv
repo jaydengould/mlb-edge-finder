@@ -1,0 +1,5 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+5137c54e299ea7c31dbd7cf26b6bf6e2,Colorado Rockies,Tampa Bay Rays,home,147,0.5602836608886719,0.38390064239501953,0.13057844979422434,False
+9c77a3a4edfe3bf897bbe0330b1edbb7,Kansas City Royals,Minnesota Twins,home,130,0.5602836608886719,0.2886524200439453,0.11102016155536358,False
+2279edd120dc52c88defa2a54e0e107d,New York Yankees,St. Louis Cardinals,away,175,0.4563491940498352,0.2549602836370468,0.07284579532487052,False
+b78e7c3194121b22ad94556a6db3048c,Atlanta Braves,Miami Marlins,away,130,0.5348837375640869,0.2302325963973999,0.08855099861438458,False
