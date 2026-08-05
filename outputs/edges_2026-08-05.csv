@@ -1,0 +1,4 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+fbdb4a62358d122e0acbb41bc889d778,Kansas City Royals,Minnesota Twins,home,-114,0.6490384340286255,0.21837039370285838,0.12447112441062928,False
+3cf7e6e67663cb95cf7840aeb10f3020,Cincinnati Reds,Athletics,away,137,0.5348837077617645,0.26767438739538196,0.0976913822610883,False
+62d92e8ecf4bb3be97f03a09925eaec3,Houston Astros,Toronto Blue Jays,away,202,0.48771268129348755,0.47289229750633244,0.11705254888770605,True
