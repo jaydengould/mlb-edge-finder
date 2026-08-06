@@ -434,3 +434,58 @@ def test_sweep_handles_no_bets():
     result = sweep_market_efficiency(flat_clf, X_test, y_test, meta, ev_threshold=0.20)
     assert (result["n_bets"] == 0).all()
     assert (result["roi_pct"] == 0.0).all()
+
+
+from mlb_edge_finder.backtest import grade_live_edges
+
+
+def _write_live_fixtures(tmp_path, monkeypatch):
+    """One graded bet, one doubleheader (dropped), one unplayed game (dropped)."""
+    outputs = tmp_path / "outputs"
+    outputs.mkdir()
+    pd.DataFrame([
+        {"game_id": "a", "home_team": "New York Mets", "away_team": "Miami Marlins",
+         "bet_side": "home", "american_odds": 110, "model_prob": 0.65, "ev": 0.36,
+         "kelly_fraction": 0.16, "high_confidence": False},
+        {"game_id": "b", "home_team": "Chicago Cubs", "away_team": "St. Louis Cardinals",
+         "bet_side": "away", "american_odds": -150, "model_prob": 0.4, "ev": 0.2,
+         "kelly_fraction": 0.1, "high_confidence": True},
+        {"game_id": "c", "home_team": "Boston Red Sox", "away_team": "New York Yankees",
+         "bet_side": "home", "american_odds": 120, "model_prob": 0.6, "ev": 0.3,
+         "kelly_fraction": 0.1, "high_confidence": False},
+    ]).to_csv(outputs / "edges_2026-05-19.csv", index=False)
+
+    hist = pd.DataFrame([
+        {"game_date": "2026-05-19", "home_name": "New York Mets",
+         "away_name": "Miami Marlins", "home_win": 1},
+        # doubleheader — ambiguous, both rows dropped
+        {"game_date": "2026-05-19", "home_name": "Chicago Cubs",
+         "away_name": "St. Louis Cardinals", "home_win": 1},
+        {"game_date": "2026-05-19", "home_name": "Chicago Cubs",
+         "away_name": "St. Louis Cardinals", "home_win": 0},
+    ])
+    monkeypatch.setattr(
+        "mlb_edge_finder.backtest.load_cached_historical", lambda season: hist
+    )
+    return outputs
+
+
+def test_grade_live_edges_grades_real_results(tmp_path, monkeypatch):
+    outputs = _write_live_fixtures(tmp_path, monkeypatch)
+    df = grade_live_edges(outputs)
+
+    assert len(df) == 1  # doubleheader and unplayed game dropped
+    row = df.iloc[0]
+    assert row["home_name"] == "New York Mets"
+    assert bool(row["won"]) is True
+    assert row["pnl"] == pytest.approx(110.0)
+    assert row["cumulative_pnl"] == pytest.approx(110.0)
+    assert compute_summary(df)["roi_pct"] == pytest.approx(110.0)
+
+
+def test_grade_live_edges_empty_dir_returns_empty(tmp_path):
+    empty = tmp_path / "outputs"
+    empty.mkdir()
+    df = grade_live_edges(empty)
+    assert df.empty
+    assert "cumulative_pnl" in df.columns

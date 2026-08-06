@@ -7,7 +7,17 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
+from mlb_edge_finder.historical_ingestion import load_cached_historical
+
 logger = logging.getLogger(__name__)
+
+OUTPUTS_DIR: Path = Path(__file__).resolve().parents[2] / "outputs"
+
+_BET_COLS = [
+    "game_date", "home_name", "away_name", "bet_side",
+    "american_odds", "model_prob", "ev", "kelly_fraction",
+    "actual_home_win", "won", "pnl", "cumulative_pnl",
+]
 
 
 def _prob_to_american(p: float) -> float:
@@ -63,11 +73,7 @@ def _run_bet_loop(
 
     _ev_threshold = ev_threshold if ev_threshold is not None else _config.EV_THRESHOLD
 
-    output_cols = [
-        "game_date", "home_name", "away_name", "bet_side",
-        "american_odds", "model_prob", "ev", "kelly_fraction",
-        "actual_home_win", "won", "pnl", "cumulative_pnl",
-    ]
+    output_cols = _BET_COLS
 
     feature_names = list(clf.feature_names_in_)
     X_test_aligned = X_test.reindex(columns=feature_names)
@@ -415,6 +421,77 @@ def sweep_thresholds(
         best["avg_bets_per_day"],
     )
     return result
+
+
+def grade_live_edges(
+    outputs_dir: Path = OUTPUTS_DIR,
+    unit: float = 100.0,
+) -> pd.DataFrame:
+    """Grade the edges actually published in outputs/ against real game results.
+
+    Unlike run_backtest(), this uses the real bookmaker odds the pipeline saw on
+    the day and the real final scores — no synthetic market, no model re-scoring.
+
+    Args:
+        outputs_dir: Directory containing edges_YYYY-MM-DD.csv files.
+        unit: Dollar bet size for P&L. Default $100.
+
+    Returns:
+        Per-bet DataFrame sorted by game_date with the same columns as
+        run_backtest() output, plus high_confidence. Ungraded bets (no final
+        result yet, or an ambiguous doubleheader) are dropped.
+    """
+    files = sorted(Path(outputs_dir).glob("edges_*.csv"))
+    frames = [
+        df.assign(game_date=f.stem.removeprefix("edges_"))
+        for f in files
+        if not (df := pd.read_csv(f)).empty
+    ]
+    if not frames:
+        logger.warning("No published edges found in %s", outputs_dir)
+        return pd.DataFrame(columns=_BET_COLS + ["high_confidence"])
+
+    edges = pd.concat(frames, ignore_index=True)
+    # Early CSVs predate the high_confidence column (they had prob_flag).
+    if "high_confidence" not in edges.columns:
+        edges["high_confidence"] = False
+    edges["high_confidence"] = edges["high_confidence"] == True  # noqa: E712 — NaN → False
+    seasons = sorted({int(d[:4]) for d in edges["game_date"]})
+    results = pd.concat(
+        [load_cached_historical(s) for s in seasons], ignore_index=True
+    )
+    results["game_date"] = results["game_date"].astype(str)
+
+    # ponytail: doubleheaders share (date, home, away) and the edge CSV has no
+    # game number, so we can't tell which game it was for — drop both.
+    key = ["game_date", "home_name", "away_name"]
+    results = results.drop_duplicates(subset=key, keep=False)
+
+    graded = edges.merge(
+        results[key + ["home_win"]],
+        left_on=["game_date", "home_team", "away_team"],
+        right_on=key,
+        how="inner",
+    ).drop(columns=["home_name", "away_name"])
+    logger.info(
+        "Graded %d of %d published bets (%d unresolved or doubleheaders)",
+        len(graded), len(edges), len(edges) - len(graded),
+    )
+    if graded.empty:
+        return pd.DataFrame(columns=_BET_COLS + ["high_confidence"])
+
+    odds = graded["american_odds"]
+    payout = np.where(odds > 0, odds / 100, 100 / odds.abs())
+    graded["won"] = (graded["bet_side"] == "home") == (graded["home_win"] == 1)
+    graded["pnl"] = np.where(graded["won"], payout * unit, -unit)
+
+    graded = graded.sort_values(["game_date", "home_team"]).reset_index(drop=True)
+    graded["cumulative_pnl"] = graded["pnl"].cumsum()
+    graded = graded.rename(
+        columns={"home_team": "home_name", "away_team": "away_name",
+                 "home_win": "actual_home_win"}
+    )
+    return graded[_BET_COLS + ["high_confidence"]]
 
 
 def export_pnl_json(backtest_df: pd.DataFrame, summary: dict, path: Path) -> None:

@@ -1,0 +1,132 @@
+{
+  "holdout_season": 2026,
+  "train_seasons": [
+    2019,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "n_train": 15043,
+  "n_test": 794,
+  "accuracy": 0.5277,
+  "roc_auc": 0.5259,
+  "log_loss": 0.7066,
+  "brier_score": 0.2557,
+  "n_bets": 122,
+  "win_rate": 0.5492,
+  "roi_pct": 4.84,
+  "sharpe_ratio": 0.0508,
+  "total_pnl": 590.91,
+  "avg_ev": 0.3796,
+  "max_drawdown": 1027.27,
+  "break_even_alpha": 0.115,
+  "market_efficiency_sweep": [
+    {
+      "alpha": 0.0,
+      "roi_pct": 4.84,
+      "n_bets": 122
+    },
+    {
+      "alpha": 0.05,
+      "roi_pct": 2.71,
+      "n_bets": 122
+    },
+    {
+      "alpha": 0.1,
+      "roi_pct": 0.61,
+      "n_bets": 122
+    },
+    {
+      "alpha": 0.15,
+      "roi_pct": -1.43,
+      "n_bets": 122
+    },
+    {
+      "alpha": 0.2,
+      "roi_pct": -0.71,
+      "n_bets": 90
+    },
+    {
+      "alpha": 0.25,
+      "roi_pct": -2.83,
+      "n_bets": 90
+    },
+    {
+      "alpha": 0.3,
+      "roi_pct": -6.48,
+      "n_bets": 77
+    },
+    {
+      "alpha": 0.35,
+      "roi_pct": -18.94,
+      "n_bets": 48
+    },
+    {
+      "alpha": 0.4,
+      "roi_pct": -44.39,
+      "n_bets": 25
+    },
+    {
+      "alpha": 0.45,
+      "roi_pct": -38.95,
+      "n_bets": 12
+    },
+    {
+      "alpha": 0.5,
+      "roi_pct": 0.0,
+      "n_bets": 0
+    },
+    {
+      "alpha": 0.55,
+      "roi_pct": 0.0,
+      "n_bets": 0
+    },
+    {
+      "alpha": 0.6,
+      "roi_pct": 0.0,
+      "n_bets": 0
+    },
+    {
+      "alpha": 0.65,
+      "roi_pct": 0.0,
+      "n_bets": 0
+    },
+    {
+      "alpha": 0.7,
+      "roi_pct": 0.0,
+      "n_bets": 0
+    },
+    {
+      "alpha": 0.75,
+      "roi_pct": 0.0,
+      "n_bets": 0
+    },
+    {
+      "alpha": 0.8,
+      "roi_pct": 0.0,
+      "n_bets": 0
+    },
+    {
+      "alpha": 0.85,
+      "roi_pct": 0.0,
+      "n_bets": 0
+    },
+    {
+      "alpha": 0.9,
+      "roi_pct": 0.0,
+      "n_bets": 0
+    },
+    {
+      "alpha": 0.95,
+      "roi_pct": 0.0,
+      "n_bets": 0
+    },
+    {
+      "alpha": 1.0,
+      "roi_pct": 0.0,
+      "n_bets": 0
+    }
+  ]
+}
