@@ -1,0 +1,4 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+254ca63a4cce98af560e2a7fa7b64551,Washington Nationals,Cincinnati Reds,home,131,0.5602836608886719,0.29425525665283203,0.11231116666138627,False
+33be2f3b18fff5a3f250b48a5980305d,Chicago White Sox,Cleveland Guardians,home,117,0.6296296119689941,0.36629625797271725,0.1565368623815031,False
+3ba899e2de8498870462a2bf41364384,San Francisco Giants,Detroit Tigers,home,105,0.6490384340286255,0.3305287897586823,0.1573946617898487,False
