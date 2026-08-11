@@ -1,0 +1,5 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+76aa8ee5b6dc041221d46b2517b118e4,San Diego Padres,Milwaukee Brewers,home,126,0.5602836608886719,0.26624107360839844,0.10565121968587239,False
+d428d967c67e52c95494a607b868366d,San Francisco Giants,Houston Astros,home,170,0.5122873187065125,0.3831757605075836,0.11269875309046577,False
+fc1d0b97ed35a31e5f1f60df77f6b377,St. Louis Cardinals,Philadelphia Phillies,home,152,0.6490384340286255,0.6355768537521362,0.20907133347109744,True
+9032dbaaa6088fc03938418d3939db3c,Washington Nationals,Chicago Cubs,away,-159,0.7692307680845261,0.2530237039867437,0.20115384466946123,False
