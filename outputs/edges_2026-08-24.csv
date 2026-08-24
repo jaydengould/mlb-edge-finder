@@ -1,0 +1,5 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+2ab56418bedb6fb0868a59b06da5a155,San Diego Padres,Pittsburgh Pirates,home,-102,0.8510638475418091,0.6854401686612297,0.3495744860172272,True
+b5df91df571dbd961d2781f345abe770,Detroit Tigers,Tampa Bay Rays,home,123,0.7118644118309021,0.5874576383829117,0.238803918041834,True
+b8eb14e08e109af0db5e66685ac4a2ff,San Francisco Giants,Cincinnati Reds,home,143,0.5122873187065125,0.24485818445682528,0.08561474981007877,False
+edcd5c7c7dde7d1aa67403952e1dd586,Los Angeles Angels,Cleveland Guardians,home,147,0.7354838848114014,0.8166451954841614,0.2777704746544767,True
