@@ -1,0 +1,4 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+3e1c279359817c97e285db96732ef225,New York Yankees,Seattle Mariners,home,-137,0.7354838848114014,0.2723334357686287,0.18654840350151064,False
+41d927261a15c8d84075af83997d53c1,Washington Nationals,Chicago Cubs,home,136,0.5122873187065125,0.20899807214736943,0.07683752652476816,False
+32dd5e1c6b71a610636cc0fb2087b9a4,Detroit Tigers,Cleveland Guardians,away,-114,0.6742857098579407,0.2657644027157834,0.15148570954799653,False

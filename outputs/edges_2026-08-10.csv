@@ -1,0 +1,5 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+9ce232af92e1165ab3648c66fd2700e3,San Francisco Giants,Houston Astros,home,137,0.5122873187065125,0.2141209453344346,0.07814633041402722,False
+d84c052615fe26488fde71d793be8173,Los Angeles Angels,Texas Rangers,home,104,0.6025640964508057,0.22923075675964355,0.11020709459598248,False
+73ef1f850670696ba58e162fd6a974c5,Los Angeles Dodgers,Kansas City Royals,away,245,0.4397163391113281,0.5170213699340822,0.10551456529266984,False
+c255384aa44923f4efbe8a468688481e,St. Louis Cardinals,Philadelphia Phillies,away,-114,0.6742857098579407,0.2657644027157834,0.15148570954799653,False

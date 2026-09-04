@@ -1,0 +1,4 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+1fb92c4b21dd10a8a1075a624ab98438,Minnesota Twins,Philadelphia Phillies,home,101,0.6025640964508057,0.2111538338661194,0.1045316009238215,False
+3da21002f25375898c7d03328e5a64b2,Pittsburgh Pirates,Boston Red Sox,home,106,0.6025640964508057,0.24128203868865972,0.11381228240031119,False
+2c36a75025232680270055f9dc17e6a1,Tampa Bay Rays,Baltimore Orioles,away,131,0.5348837077617645,0.23558136492967607,0.08991655149987636,False

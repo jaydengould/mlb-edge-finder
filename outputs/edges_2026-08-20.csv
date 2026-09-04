@@ -1,0 +1,3 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+f71617a2d08c1daac109bf9f87e7ddae,Milwaukee Brewers,Seattle Mariners,home,-124,0.7118644118309021,0.2859486149203393,0.17728814125061038,False
+2c82819af0ca03e16d0c12dddcaaf31f,Kansas City Royals,Athletics,away,126,0.5348837375640869,0.2088372468948364,0.08287192337096683,False

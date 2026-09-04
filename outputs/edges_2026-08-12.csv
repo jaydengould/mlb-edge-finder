@@ -1,0 +1,4 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+f29dc80a9001791b4c29705a39d2237f,San Francisco Giants,Houston Astros,home,132,0.5436508059501648,0.2612698698043824,0.09896585977438727,False
+382fb88aee61d73f9cc4f47fabd2c7e7,Minnesota Twins,Baltimore Orioles,away,-101,0.6742857098579407,0.341895323578674,0.17265713840723038,False
+746e8bca45aba61663687aab5e41ca8f,Los Angeles Angels,Texas Rangers,away,-127,0.6742857098579407,0.20521933966734285,0.1303142806887627,False

@@ -1,0 +1,5 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+62de22eed3e75e821935c107e38ad8a7,Cincinnati Reds,St. Louis Cardinals,home,107,0.6490384340286255,0.3435095584392548,0.16051848525198822,False
+8d5f120fc3ea67377d7def8efef256ea,Tampa Bay Rays,Toronto Blue Jays,home,-126,0.7354838252067566,0.3192011467994206,0.20109672248363497,False
+52dec86968ebff8e1b8bf35717696527,Houston Astros,Los Angeles Angels,away,151,0.5348836779594421,0.34255803167819976,0.11342981181397344,False
+a573344b838cf527e969e7065ee6a4e7,Philadelphia Phillies,Miami Marlins,away,205,0.4563491940498352,0.39186504185199733,0.09557683947609692,False

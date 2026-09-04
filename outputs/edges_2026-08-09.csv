@@ -1,0 +1,5 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+9787ffdc39d62ec33a07c7d40b78adee,Chicago White Sox,Cleveland Guardians,home,111,0.6490384340286255,0.36947109580039983,0.1664284215317116,False
+d9bb4855e4ed5d8ae038db62356ed74f,Kansas City Royals,Chicago Cubs,home,144,0.5122873187065125,0.24998105764389034,0.08679897834857303,False
+fd748664266c10ada741bfb6caf0caaa,Washington Nationals,Cincinnati Reds,home,-104,0.7354838848114014,0.44267992789928734,0.2301935625076294,True
+6b6ba5b15bfaaa7ec8e1e6d5c8666468,St. Louis Cardinals,Colorado Rockies,away,150,0.6742857098579407,0.6857142746448517,0.22857142488161722,True
