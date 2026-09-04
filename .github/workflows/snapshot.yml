@@ -52,7 +52,7 @@ jobs:
           python3 << 'PYEOF'
           import os
           from datetime import date
-          from mlb_edge_finder.pitcher_ingestion import fetch_pitcher_snapshot
+          from mlb_win_probability.pitcher_ingestion import fetch_pitcher_snapshot
           snap = date.fromisoformat(os.environ["SNAP_DATE"])
           df = fetch_pitcher_snapshot(snap, force=True)
           print(f"Snapshot written: {len(df)} qualified pitchers for {snap}")

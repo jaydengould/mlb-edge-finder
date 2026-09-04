@@ -6,9 +6,9 @@ from typing import Any
 import pandas as pd
 from xgboost import XGBClassifier
 
-from mlb_edge_finder import config
-from mlb_edge_finder.backtest import compute_summary, simulate_bets, sweep_market_efficiency
-from mlb_edge_finder.model import NON_FEATURE_COLS, TARGET_COL, calibrate, evaluate
+from mlb_win_probability import config
+from mlb_win_probability.backtest import compute_summary, simulate_bets, sweep_market_efficiency
+from mlb_win_probability.model import NON_FEATURE_COLS, TARGET_COL, calibrate, evaluate
 
 logger = logging.getLogger(__name__)
 
@@ -189,7 +189,7 @@ def run(holdout_season: int = 2025, force: bool = False) -> dict:
 if __name__ == "__main__":
     import argparse
 
-    from mlb_edge_finder.config import setup_logging
+    from mlb_win_probability.config import setup_logging
 
     setup_logging()
     parser = argparse.ArgumentParser(description="Run temporal out-of-time evaluation")

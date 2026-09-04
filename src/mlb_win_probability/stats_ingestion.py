@@ -14,7 +14,7 @@ import pandas as pd
 import statsapi
 from pybaseball import team_batting, team_pitching
 
-from mlb_edge_finder import config
+from mlb_win_probability import config
 
 logger = logging.getLogger(__name__)
 

@@ -5,7 +5,7 @@ from datetime import date
 import pandas as pd
 import statsapi
 
-from mlb_edge_finder import config
+from mlb_win_probability import config
 
 logger = logging.getLogger(__name__)
 
@@ -225,7 +225,7 @@ def fetch_probable_starters(game_date: date) -> pd.DataFrame:
     Raises:
         RuntimeError: If the statsapi.schedule call fails.
     """
-    from mlb_edge_finder.rolling_stats import HISTORICAL_NAME_TO_ABBR
+    from mlb_win_probability.rolling_stats import HISTORICAL_NAME_TO_ABBR
 
     try:
         games = statsapi.schedule(

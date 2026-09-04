@@ -1,4 +1,4 @@
-"""Compute expected value and identify positive-EV betting edges."""
+"""Compare model win probabilities against the posted moneyline and flag divergences."""
 import logging
 from datetime import date
 
@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 from xgboost import XGBClassifier
 
-from mlb_edge_finder import config
+from mlb_win_probability import config
 
 logger = logging.getLogger(__name__)
 
@@ -23,7 +23,9 @@ def compute_ev(prob: float, american_odds: int) -> float:
         american_odds: Bookmaker's American moneyline for the same team.
 
     Returns:
-        Expected value per unit wagered. Positive = profitable edge.
+        Expected value per unit wagered under the model's probability. This is
+        the model's disagreement with the posted line expressed in payout units;
+        it is not a measured return. See README for the graded live record.
     """
     if american_odds < 0:
         payout = 100 / abs(american_odds)
@@ -76,20 +78,25 @@ def compute_kelly(prob: float, american_odds: int) -> float:
     return min(ev / b / 2, 1.0)
 
 
-def find_edges(
+def select_flagged_games(
     features_df: pd.DataFrame,
     clf: XGBClassifier,
     game_date: date,
 ) -> pd.DataFrame:
-    """Run inference and return games with positive expected value.
+    """Flag games where the model's probability diverges from the posted line.
 
     Uses clf.feature_names_in_ to select exactly the columns the model was
-    trained on, then runs two passes (home, away) to find bets where:
-      - EV > config.EV_THRESHOLD
+    trained on, then runs two passes (home, away), keeping sides where:
+      - EV > config.EV_THRESHOLD  (size of the model/market divergence)
       - The relevant team's American odds >= config.MIN_AMERICAN_ODDS
 
-    Logs a warning and returns an empty DataFrame (with correct columns) if no
-    edges are found. Writes results to DATA_PROCESSED_DIR/edges_YYYY-MM-DD.csv.
+    A flag is a divergence, not a prediction of profit — on the graded live
+    record these selections are badly overconfident (models/live_grading.json).
+
+    Logs a warning and returns an empty DataFrame (with correct columns) if
+    nothing is flagged. Writes results to DATA_PROCESSED_DIR/edges_YYYY-MM-DD.csv.
+    The edges_ filename and the ev/kelly_fraction/high_confidence column names
+    are retained for continuity with the committed history in outputs/.
 
     Args:
         features_df: Output of features.load_features() or build_features().
@@ -101,7 +108,7 @@ def find_edges(
     Returns:
         DataFrame with columns: game_id, home_team, away_team,
         bet_side, american_odds, model_prob, ev, kelly_fraction, high_confidence —
-        one row per flagged edge. high_confidence=True when both EV > config.HIGH_CONFIDENCE_EV
+        one row per flagged game side. high_confidence=True when both EV > config.HIGH_CONFIDENCE_EV
         and (model_prob - market_implied_prob) > config.HIGH_CONFIDENCE_PROB_EDGE.
 
     Raises:
@@ -113,7 +120,7 @@ def find_edges(
     ]
 
     if features_df.empty:
-        logger.warning("No features available for %s — returning empty edges", game_date)
+        logger.warning("No features available for %s — flagging nothing", game_date)
         return pd.DataFrame(columns=output_cols)
 
     feature_cols = list(clf.feature_names_in_)
@@ -179,19 +186,19 @@ def find_edges(
     edges = pd.concat([home_edges[output_cols], away_edges[output_cols]], ignore_index=True)
 
     logger.info(
-        "%d edge(s) found for %s (EV_THRESHOLD=%.2f)",
+        "%d game side(s) flagged for %s (EV_THRESHOLD=%.2f)",
         len(edges),
         game_date,
         config.EV_THRESHOLD,
     )
 
     if edges.empty:
-        logger.warning("No edges found for %s", game_date)
+        logger.warning("No games flagged for %s", game_date)
         return pd.DataFrame(columns=output_cols)
 
     config.DATA_PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
     out_path = config.DATA_PROCESSED_DIR / f"edges_{game_date}.csv"
     edges.to_csv(out_path, index=False)
-    logger.info("Found %d edge(s) for %s → %s", len(edges), game_date, out_path)
+    logger.info("Flagged %d game side(s) for %s → %s", len(edges), game_date, out_path)
 
     return edges

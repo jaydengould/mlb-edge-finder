@@ -44,7 +44,7 @@ def _make_df(n=20):
 
 
 def test_split_shapes():
-    from mlb_edge_finder.model import _split
+    from mlb_win_probability.model import _split
     df = _make_df(20)
     X_train, X_test, y_train, y_test = _split(df)
     assert len(X_train) == 16
@@ -54,7 +54,7 @@ def test_split_shapes():
 
 
 def test_split_no_metadata_columns():
-    from mlb_edge_finder.model import _split, NON_FEATURE_COLS
+    from mlb_win_probability.model import _split, NON_FEATURE_COLS
     df = _make_df(20)
     X_train, X_test, y_train, y_test = _split(df)
     for col in NON_FEATURE_COLS:
@@ -63,21 +63,21 @@ def test_split_no_metadata_columns():
 
 
 def test_split_missing_target_raises():
-    from mlb_edge_finder.model import _split
+    from mlb_win_probability.model import _split
     df = _make_df(20).drop(columns=["home_win"])
     with pytest.raises(ValueError, match="home_win"):
         _split(df)
 
 
 def test_split_empty_df_raises():
-    from mlb_edge_finder.model import _split
+    from mlb_win_probability.model import _split
     df = _make_df(20).iloc[0:0]
     with pytest.raises(FileNotFoundError):
         _split(df)
 
 
 def test_train_returns_classifier_and_val_and_test_splits():
-    from mlb_edge_finder.model import train
+    from mlb_win_probability.model import train
     from xgboost import XGBClassifier
     df = _make_df(20)
     clf, X_val, X_test, y_val, y_test = train(df)
@@ -89,14 +89,14 @@ def test_train_returns_classifier_and_val_and_test_splits():
 
 
 def test_train_val_and_test_splits_have_no_overlapping_indices():
-    from mlb_edge_finder.model import train
+    from mlb_win_probability.model import train
     df = _make_df(20)
     _, X_val, X_test, _, _ = train(df)
     assert len(set(X_val.index) & set(X_test.index)) == 0
 
 
 def test_train_clf_can_predict_proba():
-    from mlb_edge_finder.model import train
+    from mlb_win_probability.model import train
     df = _make_df(20)
     clf, X_val, X_test, y_val, y_test = train(df)
     proba = clf.predict_proba(X_test)
@@ -105,21 +105,21 @@ def test_train_clf_can_predict_proba():
 
 
 def test_train_raises_on_missing_target():
-    from mlb_edge_finder.model import train
+    from mlb_win_probability.model import train
     df = _make_df(20).drop(columns=["home_win"])
     with pytest.raises(ValueError):
         train(df)
 
 
 def test_train_raises_on_empty_df():
-    from mlb_edge_finder.model import train
+    from mlb_win_probability.model import train
     df = _make_df(20).iloc[0:0]
     with pytest.raises(FileNotFoundError):
         train(df)
 
 
 def test_train_baseline_returns_logistic_regression_and_test_split():
-    from mlb_edge_finder.model import train_baseline
+    from mlb_win_probability.model import train_baseline
     from sklearn.pipeline import Pipeline
     df = _make_df(20)
     clf, X_test, y_test = train_baseline(df)
@@ -129,7 +129,7 @@ def test_train_baseline_returns_logistic_regression_and_test_split():
 
 
 def test_train_baseline_can_predict_proba():
-    from mlb_edge_finder.model import train_baseline
+    from mlb_win_probability.model import train_baseline
     df = _make_df(20)
     clf, X_test, y_test = train_baseline(df)
     proba = clf.predict_proba(X_test)
@@ -143,7 +143,7 @@ EXPECTED_METRIC_KEYS = {
 
 
 def test_evaluate_xgb_returns_all_keys():
-    from mlb_edge_finder.model import train, evaluate
+    from mlb_win_probability.model import train, evaluate
     df = _make_df(20)
     clf, X_val, X_test, y_val, y_test = train(df)
     metrics = evaluate(clf, X_test, y_test)
@@ -151,7 +151,7 @@ def test_evaluate_xgb_returns_all_keys():
 
 
 def test_evaluate_xgb_metric_ranges():
-    from mlb_edge_finder.model import train, evaluate
+    from mlb_win_probability.model import train, evaluate
     df = _make_df(20)
     clf, X_val, X_test, y_val, y_test = train(df)
     metrics = evaluate(clf, X_test, y_test)
@@ -163,8 +163,8 @@ def test_evaluate_xgb_metric_ranges():
 
 
 def test_evaluate_xgb_hyperparams_populated():
-    from mlb_edge_finder.model import train, evaluate
-    from mlb_edge_finder import config
+    from mlb_win_probability.model import train, evaluate
+    from mlb_win_probability import config
     df = _make_df(20)
     clf, X_val, X_test, y_val, y_test = train(df)
     metrics = evaluate(clf, X_test, y_test)
@@ -173,7 +173,7 @@ def test_evaluate_xgb_hyperparams_populated():
 
 
 def test_evaluate_baseline_hyperparam_keys_are_none():
-    from mlb_edge_finder.model import train_baseline, evaluate
+    from mlb_win_probability.model import train_baseline, evaluate
     df = _make_df(20)
     clf, X_test, y_test = train_baseline(df)
     metrics = evaluate(clf, X_test, y_test)
@@ -183,8 +183,8 @@ def test_evaluate_baseline_hyperparam_keys_are_none():
 
 
 def test_save_and_load_model_roundtrip(tmp_path, monkeypatch):
-    from mlb_edge_finder import config
-    from mlb_edge_finder.model import evaluate, load_model, save_model, train
+    from mlb_win_probability import config
+    from mlb_win_probability.model import evaluate, load_model, save_model, train
     monkeypatch.setattr(config, "MODELS_DIR", tmp_path)
     df = _make_df(20)
     clf, X_val, X_test, y_val, y_test = train(df)
@@ -199,8 +199,8 @@ def test_save_and_load_model_roundtrip(tmp_path, monkeypatch):
 
 
 def test_save_model_writes_both_files(tmp_path, monkeypatch):
-    from mlb_edge_finder import config
-    from mlb_edge_finder.model import evaluate, save_model, train
+    from mlb_win_probability import config
+    from mlb_win_probability.model import evaluate, save_model, train
     monkeypatch.setattr(config, "MODELS_DIR", tmp_path)
     df = _make_df(20)
     clf, X_val, X_test, y_val, y_test = train(df)
@@ -212,22 +212,22 @@ def test_save_model_writes_both_files(tmp_path, monkeypatch):
 
 
 def test_load_model_raises_when_missing(tmp_path, monkeypatch):
-    from mlb_edge_finder import config
-    from mlb_edge_finder.model import load_model
+    from mlb_win_probability import config
+    from mlb_win_probability.model import load_model
     monkeypatch.setattr(config, "MODELS_DIR", tmp_path)
     with pytest.raises(FileNotFoundError, match="2024-04-01"):
         load_model(date(2024, 4, 1))
 
 
 def test_train_signature():
-    from mlb_edge_finder import model
+    from mlb_win_probability import model
     assert callable(model.train)
     sig = inspect.signature(model.train)
     assert "features_df" in sig.parameters
 
 
 def test_evaluate_signature():
-    from mlb_edge_finder import model
+    from mlb_win_probability import model
     assert callable(model.evaluate)
     sig = inspect.signature(model.evaluate)
     assert "clf" in sig.parameters
@@ -236,7 +236,7 @@ def test_evaluate_signature():
 
 
 def test_save_model_signature():
-    from mlb_edge_finder import model
+    from mlb_win_probability import model
     assert callable(model.save_model)
     sig = inspect.signature(model.save_model)
     assert "clf" in sig.parameters
@@ -245,14 +245,14 @@ def test_save_model_signature():
 
 
 def test_load_model_signature():
-    from mlb_edge_finder import model
+    from mlb_win_probability import model
     assert callable(model.load_model)
     sig = inspect.signature(model.load_model)
     assert "game_date" in sig.parameters
 
 
 def test_calibrate_signature():
-    from mlb_edge_finder import model
+    from mlb_win_probability import model
     import inspect
     assert callable(model.calibrate)
     sig = inspect.signature(model.calibrate)
@@ -262,7 +262,7 @@ def test_calibrate_signature():
 
 
 def test_calibrate_returns_calibrated_classifier_cv():
-    from mlb_edge_finder.model import train, calibrate
+    from mlb_win_probability.model import train, calibrate
     from sklearn.calibration import CalibratedClassifierCV
     df = _make_df(100)
     clf, X_val, X_test, y_val, y_test = train(df)
@@ -271,7 +271,7 @@ def test_calibrate_returns_calibrated_classifier_cv():
 
 
 def test_calibrate_predict_proba_in_valid_range():
-    from mlb_edge_finder.model import train, calibrate
+    from mlb_win_probability.model import train, calibrate
     df = _make_df(100)
     clf, X_val, X_test, y_val, y_test = train(df)
     cal_clf = calibrate(clf, X_val, y_val)
@@ -281,7 +281,7 @@ def test_calibrate_predict_proba_in_valid_range():
 
 
 def test_calibrate_uses_isotonic_method():
-    from mlb_edge_finder.model import train, calibrate
+    from mlb_win_probability.model import train, calibrate
     df = _make_df(100)
     clf, X_val, X_test, y_val, y_test = train(df)
     cal_clf = calibrate(clf, X_val, y_val)
@@ -289,7 +289,7 @@ def test_calibrate_uses_isotonic_method():
 
 
 def test_calibrate_fitted_estimator_is_frozen():
-    from mlb_edge_finder.model import train, calibrate
+    from mlb_win_probability.model import train, calibrate
     from sklearn.frozen import FrozenEstimator
     df = _make_df(100)
     clf, X_val, X_test, y_val, y_test = train(df)
@@ -298,7 +298,7 @@ def test_calibrate_fitted_estimator_is_frozen():
 
 
 def test_non_feature_cols_excludes_pitcher_metadata():
-    from mlb_edge_finder.model import NON_FEATURE_COLS
+    from mlb_win_probability.model import NON_FEATURE_COLS
     for col in ("home_starter_name", "away_starter_name",
                 "home_pitcher_id", "away_pitcher_id"):
         assert col in NON_FEATURE_COLS, f"{col} missing from NON_FEATURE_COLS"

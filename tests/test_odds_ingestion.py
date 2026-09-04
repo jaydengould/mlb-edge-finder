@@ -5,8 +5,8 @@ import inspect
 import pandas as pd
 import pytest
 
-from mlb_edge_finder import config, odds_ingestion
-from mlb_edge_finder.odds_ingestion import _parse_response
+from mlb_win_probability import config, odds_ingestion
+from mlb_win_probability.odds_ingestion import _parse_response
 
 
 def test_fetch_odds_signature():
@@ -165,7 +165,7 @@ def test_fetch_odds_returns_cache_when_exists(tmp_path, monkeypatch):
     monkeypatch.setattr(config, "ODDS_API_KEY", "test-key")
     game_date = datetime.date(2026, 4, 21)
     _write_cache(tmp_path, game_date)
-    with patch("mlb_edge_finder.odds_ingestion.requests.get") as mock_get:
+    with patch("mlb_win_probability.odds_ingestion.requests.get") as mock_get:
         df = odds_ingestion.fetch_odds(game_date)
         mock_get.assert_not_called()
     assert df.iloc[0]["game_id"] == "cached-game"
@@ -179,7 +179,7 @@ def test_fetch_odds_force_bypasses_cache(tmp_path, monkeypatch):
     mock_response = MagicMock()
     mock_response.status_code = 200
     mock_response.json.return_value = []
-    with patch("mlb_edge_finder.odds_ingestion.requests.get", return_value=mock_response):
+    with patch("mlb_win_probability.odds_ingestion.requests.get", return_value=mock_response):
         df = odds_ingestion.fetch_odds(game_date, force=True)
     assert len(df) == 0  # empty because API returned []
 
@@ -212,7 +212,7 @@ def test_fetch_odds_writes_csv_on_api_call(tmp_path, monkeypatch):
             ],
         }
     ]
-    with patch("mlb_edge_finder.odds_ingestion.requests.get", return_value=mock_response):
+    with patch("mlb_win_probability.odds_ingestion.requests.get", return_value=mock_response):
         df = odds_ingestion.fetch_odds(game_date)
     cache_path = tmp_path / f"odds_{game_date}.csv"
     assert cache_path.exists()
@@ -237,6 +237,6 @@ def test_fetch_odds_raises_on_non_200(tmp_path, monkeypatch):
     mock_response = MagicMock()
     mock_response.status_code = 401
     mock_response.text = "Unauthorized"
-    with patch("mlb_edge_finder.odds_ingestion.requests.get", return_value=mock_response):
+    with patch("mlb_win_probability.odds_ingestion.requests.get", return_value=mock_response):
         with pytest.raises(RuntimeError, match="Odds API returned 401"):
             odds_ingestion.fetch_odds(datetime.date(2026, 4, 21))

@@ -4,9 +4,9 @@ from datetime import date
 
 import pandas as pd
 
-from mlb_edge_finder import config, model
-from mlb_edge_finder.historical_ingestion import fetch_historical
-from mlb_edge_finder.training_data import build_training_set
+from mlb_win_probability import config, model
+from mlb_win_probability.historical_ingestion import fetch_historical
+from mlb_win_probability.training_data import build_training_set
 
 logger = logging.getLogger(__name__)
 

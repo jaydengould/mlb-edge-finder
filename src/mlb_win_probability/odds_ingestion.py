@@ -6,7 +6,7 @@ from zoneinfo import ZoneInfo
 import pandas as pd
 import requests
 
-from mlb_edge_finder import config
+from mlb_win_probability import config
 
 logger = logging.getLogger(__name__)
 

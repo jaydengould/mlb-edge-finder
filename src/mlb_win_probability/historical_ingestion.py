@@ -6,7 +6,7 @@ from datetime import date
 import pandas as pd
 import statsapi
 
-from mlb_edge_finder import config
+from mlb_win_probability import config
 
 logger = logging.getLogger(__name__)
 

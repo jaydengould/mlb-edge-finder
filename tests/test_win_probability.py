@@ -1,4 +1,4 @@
-"""Smoke tests: edge_finder exposes expected public API and EV math is correct."""
+"""Smoke tests: win_probability exposes expected public API and EV math is correct."""
 import inspect
 from datetime import date
 from unittest.mock import MagicMock, patch
@@ -9,16 +9,16 @@ import pytest
 
 
 def test_compute_ev_signature():
-    from mlb_edge_finder import edge_finder
-    assert callable(edge_finder.compute_ev)
-    sig = inspect.signature(edge_finder.compute_ev)
+    from mlb_win_probability import win_probability
+    assert callable(win_probability.compute_ev)
+    sig = inspect.signature(win_probability.compute_ev)
     assert "prob" in sig.parameters
     assert "american_odds" in sig.parameters
 
 
 def test_compute_ev_favorite():
     """Negative American odds: EV = prob * (100 / abs(odds)) - (1 - prob)."""
-    from mlb_edge_finder.edge_finder import compute_ev
+    from mlb_win_probability.win_probability import compute_ev
     # 60% model prob, -150 line → EV = 0.60*(100/150) - 0.40 = 0.40 - 0.40 = 0.00
     ev = compute_ev(prob=0.60, american_odds=-150)
     assert abs(ev) < 1e-9
@@ -26,7 +26,7 @@ def test_compute_ev_favorite():
 
 def test_compute_ev_underdog():
     """Positive American odds: EV = prob * (odds / 100) - (1 - prob)."""
-    from mlb_edge_finder.edge_finder import compute_ev
+    from mlb_win_probability.win_probability import compute_ev
     # 40% model prob, +150 line → EV = 0.40*(150/100) - 0.60 = 0.60 - 0.60 = 0.00
     ev = compute_ev(prob=0.40, american_odds=150)
     assert abs(ev) < 1e-9
@@ -34,36 +34,36 @@ def test_compute_ev_underdog():
 
 def test_market_implied_prob_favourite():
     """Negative odds -110: implied = 110/210 ≈ 0.5238."""
-    from mlb_edge_finder.edge_finder import market_implied_prob
+    from mlb_win_probability.win_probability import market_implied_prob
     result = market_implied_prob(-110)
     assert abs(result - 110 / 210) < 1e-6
 
 
 def test_market_implied_prob_underdog():
     """Positive odds +130: implied = 100/230 ≈ 0.4348."""
-    from mlb_edge_finder.edge_finder import market_implied_prob
+    from mlb_win_probability.win_probability import market_implied_prob
     result = market_implied_prob(130)
     assert abs(result - 100 / 230) < 1e-6
 
 
 def test_market_implied_prob_even_money():
     """+100 odds: implied = 100/200 = 0.50."""
-    from mlb_edge_finder.edge_finder import market_implied_prob
+    from mlb_win_probability.win_probability import market_implied_prob
     result = market_implied_prob(100)
     assert abs(result - 0.50) < 1e-6
 
 
 def test_market_implied_prob_zero_odds_returns_half():
     """Degenerate input odds=0 → 0.5 with a warning (don't crash)."""
-    from mlb_edge_finder.edge_finder import market_implied_prob
+    from mlb_win_probability.win_probability import market_implied_prob
     result = market_implied_prob(0)
     assert result == 0.5
 
 
-def test_find_edges_signature():
-    from mlb_edge_finder import edge_finder
-    assert callable(edge_finder.find_edges)
-    sig = inspect.signature(edge_finder.find_edges)
+def test_select_flagged_games_signature():
+    from mlb_win_probability import win_probability
+    assert callable(win_probability.select_flagged_games)
+    sig = inspect.signature(win_probability.select_flagged_games)
     assert "features_df" in sig.parameters
     assert "clf" in sig.parameters
 
@@ -102,18 +102,18 @@ GAME_DATE = date(2025, 7, 1)
 
 # ---------- behavioural tests ----------
 
-def test_find_edges_returns_home_edge(tmp_path):
+def test_select_flagged_games_returns_home_edge(tmp_path):
     """Home side with EV > threshold and odds >= MIN_AMERICAN_ODDS is flagged."""
-    from mlb_edge_finder.edge_finder import find_edges
+    from mlb_win_probability.win_probability import select_flagged_games
     # home_prob=0.75, home_odds=+110 → EV = 0.75*1.10 - 0.25 = 0.575 > 0.05 ✓
     # away_prob=0.25, away_odds=-140 → EV = 0.25*(100/140) - 0.75 = -0.571 < 0.05 ✗
     features_df = _make_features(home_odds=110, away_odds=-140)
     clf = _make_clf(home_proba=0.75)
 
-    with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
-         patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300):
-        result = find_edges(features_df, clf, GAME_DATE)
+    with patch("mlb_win_probability.win_probability.config.DATA_PROCESSED_DIR", tmp_path), \
+         patch("mlb_win_probability.win_probability.config.EV_THRESHOLD", 0.05), \
+         patch("mlb_win_probability.win_probability.config.MIN_AMERICAN_ODDS", -300):
+        result = select_flagged_games(features_df, clf, GAME_DATE)
 
     assert len(result) == 1
     assert result.iloc[0]["bet_side"] == "home"
@@ -126,18 +126,18 @@ def test_find_edges_returns_home_edge(tmp_path):
     }
 
 
-def test_find_edges_filters_min_odds(tmp_path):
+def test_select_flagged_games_filters_min_odds(tmp_path):
     """Game where EV > threshold but odds below MIN_AMERICAN_ODDS is excluded."""
-    from mlb_edge_finder.edge_finder import find_edges
+    from mlb_win_probability.win_probability import select_flagged_games
     # home_prob=0.90, home_odds=-400 → EV = 0.90*(100/400) - 0.10 = 0.125 > 0.05 ✓
     # BUT -400 < -300 (MIN_AMERICAN_ODDS) → excluded
     features_df = _make_features(home_odds=-400, away_odds=310)
     clf = _make_clf(home_proba=0.90)
 
-    with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
-         patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300):
-        result = find_edges(features_df, clf, GAME_DATE)
+    with patch("mlb_win_probability.win_probability.config.DATA_PROCESSED_DIR", tmp_path), \
+         patch("mlb_win_probability.win_probability.config.EV_THRESHOLD", 0.05), \
+         patch("mlb_win_probability.win_probability.config.MIN_AMERICAN_ODDS", -300):
+        result = select_flagged_games(features_df, clf, GAME_DATE)
 
     assert result.empty
     assert set(result.columns) == {
@@ -146,17 +146,17 @@ def test_find_edges_filters_min_odds(tmp_path):
     }
 
 
-def test_find_edges_empty_when_no_edges(tmp_path):
+def test_select_flagged_games_empty_when_no_edges(tmp_path):
     """Returns empty DataFrame with correct columns when no games pass filters."""
-    from mlb_edge_finder.edge_finder import find_edges
+    from mlb_win_probability.win_probability import select_flagged_games
     # home_prob=0.50, home_odds=-110 → EV = 0.50*(100/110) - 0.50 = -0.045 < 0.05 ✗
     features_df = _make_features(home_odds=-110, away_odds=-110)
     clf = _make_clf(home_proba=0.50)
 
-    with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
-         patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300):
-        result = find_edges(features_df, clf, GAME_DATE)
+    with patch("mlb_win_probability.win_probability.config.DATA_PROCESSED_DIR", tmp_path), \
+         patch("mlb_win_probability.win_probability.config.EV_THRESHOLD", 0.05), \
+         patch("mlb_win_probability.win_probability.config.MIN_AMERICAN_ODDS", -300):
+        result = select_flagged_games(features_df, clf, GAME_DATE)
 
     assert result.empty
     assert set(result.columns) == {
@@ -165,18 +165,18 @@ def test_find_edges_empty_when_no_edges(tmp_path):
     }
 
 
-def test_find_edges_both_sides(tmp_path):
+def test_select_flagged_games_both_sides(tmp_path):
     """Both home and away edges are returned when both sides pass filters."""
-    from mlb_edge_finder.edge_finder import find_edges
+    from mlb_win_probability.win_probability import select_flagged_games
     # home_prob=0.60, home_odds=+130 → EV = 0.60*1.30 - 0.40 = 0.38 > 0.05 ✓
     # away_prob=0.40, away_odds=+200 → EV = 0.40*2.00 - 0.60 = 0.20 > 0.05 ✓
     features_df = _make_features(home_odds=130, away_odds=200)
     clf = _make_clf(home_proba=0.60)
 
-    with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
-         patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300):
-        result = find_edges(features_df, clf, GAME_DATE)
+    with patch("mlb_win_probability.win_probability.config.DATA_PROCESSED_DIR", tmp_path), \
+         patch("mlb_win_probability.win_probability.config.EV_THRESHOLD", 0.05), \
+         patch("mlb_win_probability.win_probability.config.MIN_AMERICAN_ODDS", -300):
+        result = select_flagged_games(features_df, clf, GAME_DATE)
 
     assert len(result) == 2
     assert set(result["bet_side"]) == {"home", "away"}
@@ -185,9 +185,9 @@ def test_find_edges_both_sides(tmp_path):
 # ---- compute_kelly tests ----
 
 def test_compute_kelly_signature():
-    from mlb_edge_finder import edge_finder
-    assert callable(edge_finder.compute_kelly)
-    sig = inspect.signature(edge_finder.compute_kelly)
+    from mlb_win_probability import win_probability
+    assert callable(win_probability.compute_kelly)
+    sig = inspect.signature(win_probability.compute_kelly)
     assert "prob" in sig.parameters
     assert "american_odds" in sig.parameters
 
@@ -197,7 +197,7 @@ def test_compute_kelly_zero_ev_returns_zero():
 
     prob=0.60, -150: b=100/150=0.6667, ev=0.60*0.6667-0.40=0.0 → kelly=0.0
     """
-    from mlb_edge_finder.edge_finder import compute_kelly
+    from mlb_win_probability.win_probability import compute_kelly
     result = compute_kelly(prob=0.60, american_odds=-150)
     assert abs(result) < 1e-9
 
@@ -208,7 +208,7 @@ def test_compute_kelly_positive_ev_underdog():
     prob=0.55, +110: b=1.10, ev=0.55*1.10-0.45=0.155
     full_kelly=0.155/1.10=0.14091, half_kelly=0.07045
     """
-    from mlb_edge_finder.edge_finder import compute_kelly
+    from mlb_win_probability.win_probability import compute_kelly
     result = compute_kelly(prob=0.55, american_odds=110)
     assert abs(result - 0.0705) < 1e-3
 
@@ -218,53 +218,53 @@ def test_compute_kelly_negative_ev_returns_zero():
 
     prob=0.40, -150: b=0.6667, ev=0.40*0.6667-0.60=-0.333 → kelly=0.0
     """
-    from mlb_edge_finder.edge_finder import compute_kelly
+    from mlb_win_probability.win_probability import compute_kelly
     result = compute_kelly(prob=0.40, american_odds=-150)
     assert result == 0.0
 
 
 def test_compute_kelly_result_in_valid_range():
     """Result is always in [0.0, 1.0] for valid inputs."""
-    from mlb_edge_finder.edge_finder import compute_kelly
+    from mlb_win_probability.win_probability import compute_kelly
     for prob, odds in [(0.99, 100), (0.55, 200), (0.60, -120), (0.45, -110)]:
         result = compute_kelly(prob=prob, american_odds=odds)
         assert 0.0 <= result <= 1.0, f"Out of range for prob={prob}, odds={odds}: {result}"
 
 
-def test_find_edges_includes_kelly_fraction(tmp_path):
-    """find_edges output contains kelly_fraction column with a positive value."""
-    from mlb_edge_finder.edge_finder import find_edges
+def test_select_flagged_games_includes_kelly_fraction(tmp_path):
+    """select_flagged_games output contains kelly_fraction column with a positive value."""
+    from mlb_win_probability.win_probability import select_flagged_games
     # home_prob=0.75, home_odds=+110 → positive EV → positive Kelly fraction
     features_df = _make_features(home_odds=110, away_odds=-140)
     clf = _make_clf(home_proba=0.75)
 
-    with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
-         patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300):
-        result = find_edges(features_df, clf, GAME_DATE)
+    with patch("mlb_win_probability.win_probability.config.DATA_PROCESSED_DIR", tmp_path), \
+         patch("mlb_win_probability.win_probability.config.EV_THRESHOLD", 0.05), \
+         patch("mlb_win_probability.win_probability.config.MIN_AMERICAN_ODDS", -300):
+        result = select_flagged_games(features_df, clf, GAME_DATE)
 
     assert "kelly_fraction" in result.columns
     assert result.iloc[0]["kelly_fraction"] > 0.0
 
 
-def test_find_edges_empty_features_df_returns_empty(tmp_path):
+def test_select_flagged_games_empty_features_df_returns_empty(tmp_path):
     """Empty features_df (e.g. no games today) returns empty DataFrame without raising."""
-    from mlb_edge_finder.edge_finder import find_edges
+    from mlb_win_probability.win_probability import select_flagged_games
     empty_df = _make_features(home_odds=110, away_odds=-130).iloc[0:0]  # 0 rows, correct schema
     clf = _make_clf(home_proba=0.60)
 
-    with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
-         patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300):
-        result = find_edges(empty_df, clf, GAME_DATE)
+    with patch("mlb_win_probability.win_probability.config.DATA_PROCESSED_DIR", tmp_path), \
+         patch("mlb_win_probability.win_probability.config.EV_THRESHOLD", 0.05), \
+         patch("mlb_win_probability.win_probability.config.MIN_AMERICAN_ODDS", -300):
+        result = select_flagged_games(empty_df, clf, GAME_DATE)
 
     assert result.empty
     assert "kelly_fraction" in result.columns
 
 
-def test_find_edges_high_confidence_true_when_both_thresholds_met(tmp_path):
+def test_select_flagged_games_high_confidence_true_when_both_thresholds_met(tmp_path):
     """high_confidence=True when EV > HIGH_CONFIDENCE_EV and prob_gap > HIGH_CONFIDENCE_PROB_EDGE."""
-    from mlb_edge_finder.edge_finder import find_edges
+    from mlb_win_probability.win_probability import select_flagged_games
     # home_prob=0.75, home_odds=+110
     # EV = 0.75*1.10 - 0.25 = 0.575 > 0.40 ✓
     # market_implied(+110) = 100/210 ≈ 0.476
@@ -272,20 +272,20 @@ def test_find_edges_high_confidence_true_when_both_thresholds_met(tmp_path):
     features_df = _make_features(home_odds=110, away_odds=-140)
     clf = _make_clf(home_proba=0.75)
 
-    with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
-         patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300), \
-         patch("mlb_edge_finder.edge_finder.config.HIGH_CONFIDENCE_EV", 0.40), \
-         patch("mlb_edge_finder.edge_finder.config.HIGH_CONFIDENCE_PROB_EDGE", 0.15):
-        result = find_edges(features_df, clf, GAME_DATE)
+    with patch("mlb_win_probability.win_probability.config.DATA_PROCESSED_DIR", tmp_path), \
+         patch("mlb_win_probability.win_probability.config.EV_THRESHOLD", 0.05), \
+         patch("mlb_win_probability.win_probability.config.MIN_AMERICAN_ODDS", -300), \
+         patch("mlb_win_probability.win_probability.config.HIGH_CONFIDENCE_EV", 0.40), \
+         patch("mlb_win_probability.win_probability.config.HIGH_CONFIDENCE_PROB_EDGE", 0.15):
+        result = select_flagged_games(features_df, clf, GAME_DATE)
 
     assert len(result) == 1
     assert result.iloc[0]["high_confidence"] == True
 
 
-def test_find_edges_high_confidence_false_when_ev_below_badge_threshold(tmp_path):
+def test_select_flagged_games_high_confidence_false_when_ev_below_badge_threshold(tmp_path):
     """high_confidence=False when EV does not exceed HIGH_CONFIDENCE_EV."""
-    from mlb_edge_finder.edge_finder import find_edges
+    from mlb_win_probability.win_probability import select_flagged_games
     # home_prob=0.55, home_odds=+110
     # EV = 0.55*1.10 - 0.45 = 0.155 — passes EV_THRESHOLD=0.05 but < HIGH_CONFIDENCE_EV=0.40
     # market_implied(+110) = 100/210 ≈ 0.476
@@ -293,20 +293,20 @@ def test_find_edges_high_confidence_false_when_ev_below_badge_threshold(tmp_path
     features_df = _make_features(home_odds=110, away_odds=-140)
     clf = _make_clf(home_proba=0.55)
 
-    with patch("mlb_edge_finder.edge_finder.config.DATA_PROCESSED_DIR", tmp_path), \
-         patch("mlb_edge_finder.edge_finder.config.EV_THRESHOLD", 0.05), \
-         patch("mlb_edge_finder.edge_finder.config.MIN_AMERICAN_ODDS", -300), \
-         patch("mlb_edge_finder.edge_finder.config.HIGH_CONFIDENCE_EV", 0.40), \
-         patch("mlb_edge_finder.edge_finder.config.HIGH_CONFIDENCE_PROB_EDGE", 0.15):
-        result = find_edges(features_df, clf, GAME_DATE)
+    with patch("mlb_win_probability.win_probability.config.DATA_PROCESSED_DIR", tmp_path), \
+         patch("mlb_win_probability.win_probability.config.EV_THRESHOLD", 0.05), \
+         patch("mlb_win_probability.win_probability.config.MIN_AMERICAN_ODDS", -300), \
+         patch("mlb_win_probability.win_probability.config.HIGH_CONFIDENCE_EV", 0.40), \
+         patch("mlb_win_probability.win_probability.config.HIGH_CONFIDENCE_PROB_EDGE", 0.15):
+        result = select_flagged_games(features_df, clf, GAME_DATE)
 
     assert len(result) == 1
     assert result.iloc[0]["high_confidence"] == False
 
 
-def test_find_edges_missing_feature_column(tmp_path):
+def test_select_flagged_games_missing_feature_column(tmp_path):
     """Raises ValueError when features_df is missing a column the model needs."""
-    from mlb_edge_finder.edge_finder import find_edges
+    from mlb_win_probability.win_probability import select_flagged_games
     features_df = pd.DataFrame([{
         "game_id": "game_1",
         "home_team": "New York Yankees",
@@ -318,4 +318,4 @@ def test_find_edges_missing_feature_column(tmp_path):
     clf = _make_clf(home_proba=0.60)
 
     with pytest.raises(ValueError, match="missing columns"):
-        find_edges(features_df, clf, GAME_DATE)
+        select_flagged_games(features_df, clf, GAME_DATE)

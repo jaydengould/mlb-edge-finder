@@ -4,11 +4,11 @@ from datetime import date
 
 import pandas as pd
 
-from mlb_edge_finder import config
-from mlb_edge_finder.historical_ingestion import load_cached_historical
-from mlb_edge_finder.rolling_stats import HISTORICAL_NAME_TO_ABBR, compute_rolling_stats
-from mlb_edge_finder.pitcher_ingestion import fetch_pitcher_stats
-from mlb_edge_finder.stats_ingestion import fetch_stats
+from mlb_win_probability import config
+from mlb_win_probability.historical_ingestion import load_cached_historical
+from mlb_win_probability.rolling_stats import HISTORICAL_NAME_TO_ABBR, compute_rolling_stats
+from mlb_win_probability.pitcher_ingestion import fetch_pitcher_stats
+from mlb_win_probability.stats_ingestion import fetch_stats
 
 logger = logging.getLogger(__name__)
 

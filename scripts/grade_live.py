@@ -12,8 +12,8 @@ from datetime import date
 
 import pandas as pd
 
-from mlb_edge_finder import config
-from mlb_edge_finder.backtest import compute_summary, grade_live_edges
+from mlb_win_probability import config
+from mlb_win_probability.backtest import compute_summary, grade_live_edges
 
 OUT_PATH = config.MODELS_DIR / "live_grading.json"
 

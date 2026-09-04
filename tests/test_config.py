@@ -3,7 +3,7 @@ import logging
 
 
 def test_config_imports():
-    from mlb_edge_finder import config
+    from mlb_win_probability import config
     assert hasattr(config, "ODDS_API_KEY")
     assert hasattr(config, "DATA_RAW_DIR")
     assert hasattr(config, "DATA_PROCESSED_DIR")
@@ -15,17 +15,17 @@ def test_config_imports():
 
 
 def test_setup_logging_is_callable():
-    from mlb_edge_finder import config
+    from mlb_win_probability import config
     assert callable(config.setup_logging)
 
 
 def test_setup_logging_runs():
-    from mlb_edge_finder import config
+    from mlb_win_probability import config
     config.setup_logging(level=logging.DEBUG)
     logger = logging.getLogger("test")
     logger.debug("config smoke test")
 
 
 def test_min_pitcher_ip_constant():
-    from mlb_edge_finder import config
+    from mlb_win_probability import config
     assert config.MIN_PITCHER_IP == 30

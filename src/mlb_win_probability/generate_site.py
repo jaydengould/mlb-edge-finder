@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from mlb_edge_finder.stats_ingestion import ODDS_NAME_TO_ABBR
+from mlb_win_probability.stats_ingestion import ODDS_NAME_TO_ABBR
 
 logger = logging.getLogger(__name__)
 
@@ -23,7 +23,7 @@ DOCS_DIR: Path = _ROOT / "docs"
 
 
 def _load_edges_data(outputs_dir: Path) -> tuple[list[dict], list[dict]]:
-    """Load today's edges and per-day edge counts from outputs/ CSVs.
+    """Load today's flagged games and per-day flagged counts from outputs/ CSVs.
 
     Returns:
         (today_rows, history) where history is a list of {date, count} dicts
@@ -91,7 +91,7 @@ def _render_stats_html(te_data: dict | None) -> str:
         )
     if "win_rate" in te_data:
         rows.append(
-            f'<div class="stat-row"><span class="stat-label">Win Rate (naive market)</span>'
+            f'<div class="stat-row"><span class="stat-label">Win rate (synthetic counterparty)</span>'
             f'<span class="stat-value">{te_data["win_rate"] * 100:.1f}%</span></div>'
         )
     if "roi_pct" in te_data:
@@ -99,7 +99,7 @@ def _render_stats_html(te_data: dict | None) -> str:
         roi_prefix = "+" if roi >= 0 else ""
         roi_class = "stat-value green" if roi >= 0 else "stat-value"
         rows.append(
-            f'<div class="stat-row"><span class="stat-label">ROI (naive market)</span>'
+            f'<div class="stat-row"><span class="stat-label">Return (synthetic counterparty)</span>'
             f'<span class="{roi_class}">{roi_prefix}{roi:.1f}%</span></div>'
         )
     if not rows:
@@ -110,7 +110,7 @@ def _render_stats_html(te_data: dict | None) -> str:
     if train_seasons and holdout:
         subtitle = (
             f'<div class="card-subtitle">Trained {train_seasons[0]}&ndash;'
-            f'{train_seasons[-1]} &middot; {holdout} holdout &middot; synthetic-market stress test</div>'
+            f'{train_seasons[-1]} &middot; {holdout} holdout &middot; team stats carry look-ahead</div>'
         )
     return (
         '<div class="card"><div class="card-title">Holdout Evaluation</div>'
@@ -126,20 +126,21 @@ def _render_efficiency_html(te_data: dict | None) -> str:
         return ""
     return (
         '<div class="card">'
-        '<div class="card-title">Edge vs Market Efficiency</div>'
+        '<div class="card-title">Simulated Return vs Counterparty Information</div>'
         '<div class="chart-wrap-sm"><canvas id="efficiency-chart"></canvas></div>'
-        '<div class="card-caption">Synthetic-market stress test &mdash; betting ROI as the '
-        "market becomes as informed as the model (0 = ignores matchup, 1 = as sharp as the model).</div>"
+        '<div class="card-caption">Synthetic counterparty only &mdash; simulated return as the '
+        "counterparty goes from ignoring the matchup (0) to matching the model (1). Not a real "
+        "market and not a profitability estimate.</div>"
         "</div>"
     )
 
 
 def _render_edges_html(today_rows: list[dict]) -> str:
-    """Render the today's edges table as static HTML."""
+    """Render the flagged-games table as static HTML."""
     if not today_rows:
         return (
-            '<div class="empty-state">No edges found today &mdash; model found no '
-            "+EV opportunities meeting the current thresholds.</div>"
+            '<div class="empty-state">No games flagged today &mdash; the model diverged from '
+            "no posted line by more than the current threshold.</div>"
         )
     rows_html = ""
     for r in today_rows:
@@ -195,7 +196,7 @@ def _render_html(
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MLB Edge Finder — Daily Dashboard</title>
+  <title>MLB Win Probability — Daily Dashboard</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
     *{{margin:0;padding:0;box-sizing:border-box}}
@@ -242,19 +243,19 @@ def _render_html(
 <div class="page">
   <div class="header">
     <div>
-      <div class="header-title">&#9918; MLB Edge Finder</div>
-      <div class="header-sub">XGBoost model identifying positive expected-value MLB moneyline bets</div>
+      <div class="header-title">&#9918; MLB Win Probability</div>
+      <div class="header-sub">Calibrated XGBoost win probabilities, scored daily against the posted moneyline</div>
     </div>
     <span class="badge">Updated {updated}</span>
   </div>
   <div class="main-layout">
     <div class="col-main">
       <div class="section">
-        <div class="section-title">Today&#39;s Edges</div>
+        <div class="section-title">Today&#39;s Flagged Games</div>
         <div class="table-wrap" id="edges-table">{edges_table_html}</div>
       </div>
       <div class="section">
-        <div class="section-title">Edge History &mdash; Last 30 Days</div>
+        <div class="section-title">Games Flagged &mdash; Last 30 Days</div>
         <div class="chart-wrap"><canvas id="history-chart"></canvas></div>
       </div>
     </div>
@@ -272,7 +273,7 @@ const TE={te_json};
 (function(){{
   if(!HISTORY||HISTORY.length===0)return;
   var ctx=document.getElementById('history-chart').getContext('2d');
-  new Chart(ctx,{{type:'bar',data:{{labels:HISTORY.map(function(d){{return d.date.slice(5)}}),datasets:[{{data:HISTORY.map(function(d){{return d.count}}),backgroundColor:'#FD5A1E99',borderColor:'#FD5A1E',borderWidth:1,borderRadius:2}}]}},options:{{responsive:true,maintainAspectRatio:false,plugins:{{legend:{{display:false}},tooltip:{{callbacks:{{title:function(t){{return HISTORY[t[0].dataIndex].date}},label:function(t){{return t.raw+' edge'+(t.raw!==1?'s':'')}}}}}}}},scales:{{x:{{grid:{{color:'#3d393044'}},ticks:{{color:'#8a8070',font:{{size:10}}}}}},y:{{grid:{{color:'#3d393044'}},ticks:{{color:'#8a8070',font:{{size:10}},stepSize:1}},beginAtZero:true}}}}}}}});
+  new Chart(ctx,{{type:'bar',data:{{labels:HISTORY.map(function(d){{return d.date.slice(5)}}),datasets:[{{data:HISTORY.map(function(d){{return d.count}}),backgroundColor:'#FD5A1E99',borderColor:'#FD5A1E',borderWidth:1,borderRadius:2}}]}},options:{{responsive:true,maintainAspectRatio:false,plugins:{{legend:{{display:false}},tooltip:{{callbacks:{{title:function(t){{return HISTORY[t[0].dataIndex].date}},label:function(t){{return t.raw+' flagged'}}}}}}}},scales:{{x:{{grid:{{color:'#3d393044'}},ticks:{{color:'#8a8070',font:{{size:10}}}}}},y:{{grid:{{color:'#3d393044'}},ticks:{{color:'#8a8070',font:{{size:10}},stepSize:1}},beginAtZero:true}}}}}}}});
 }})();
 (function(){{
   var el=document.getElementById('efficiency-chart');
@@ -309,13 +310,13 @@ def generate(
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(html, encoding="utf-8")
     logger.info(
-        "Dashboard written to %s (%d edges today, %d history days)",
+        "Dashboard written to %s (%d games flagged today, %d history days)",
         out_path, len(today_rows), len(history),
     )
 
 
 if __name__ == "__main__":
-    from mlb_edge_finder import config as _config
+    from mlb_win_probability import config as _config
 
     generate(
         outputs_dir=_ROOT / "outputs",

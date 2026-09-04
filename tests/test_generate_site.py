@@ -53,7 +53,7 @@ def _write_temporal_eval_json(path: Path, **overrides) -> dict:
 # --- _load_edges_data ---
 
 def test_load_edges_data_today_rows(tmp_path):
-    from mlb_edge_finder.generate_site import _load_edges_data
+    from mlb_win_probability.generate_site import _load_edges_data
     today = date.today().isoformat()
     _write_edges_csv(tmp_path / f"edges_{today}.csv", [
         {"game_id": "abc", "home_team": "Giants", "away_team": "Dodgers",
@@ -66,7 +66,7 @@ def test_load_edges_data_today_rows(tmp_path):
 
 
 def test_load_edges_data_history_count(tmp_path):
-    from mlb_edge_finder.generate_site import _load_edges_data
+    from mlb_win_probability.generate_site import _load_edges_data
     _write_edges_csv(tmp_path / "edges_2026-05-20.csv", [
         {"game_id": "a", "home_team": "X", "away_team": "Y", "bet_side": "home",
          "american_odds": -110, "model_prob": 0.6, "ev": 0.5, "kelly_fraction": 0.2, "high_confidence": False},
@@ -81,14 +81,14 @@ def test_load_edges_data_history_count(tmp_path):
 
 
 def test_load_edges_data_empty_outputs_dir(tmp_path):
-    from mlb_edge_finder.generate_site import _load_edges_data
+    from mlb_win_probability.generate_site import _load_edges_data
     today_rows, history = _load_edges_data(tmp_path)
     assert today_rows == []
     assert history == []
 
 
 def test_load_edges_data_caps_at_30_days(tmp_path):
-    from mlb_edge_finder.generate_site import _load_edges_data
+    from mlb_win_probability.generate_site import _load_edges_data
     for i in range(35):
         _write_header_only_csv(tmp_path / f"edges_2026-04-{i+1:02d}.csv")
     _, history = _load_edges_data(tmp_path)
@@ -98,7 +98,7 @@ def test_load_edges_data_caps_at_30_days(tmp_path):
 # --- _load_temporal_eval ---
 
 def test_load_temporal_eval_returns_dict(tmp_path):
-    from mlb_edge_finder.generate_site import _load_temporal_eval
+    from mlb_win_probability.generate_site import _load_temporal_eval
     models_dir = tmp_path / "models"
     models_dir.mkdir()
     _write_temporal_eval_json(models_dir / "temporal_eval_2025.json")
@@ -108,12 +108,12 @@ def test_load_temporal_eval_returns_dict(tmp_path):
 
 
 def test_load_temporal_eval_returns_none_when_missing(tmp_path):
-    from mlb_edge_finder.generate_site import _load_temporal_eval
+    from mlb_win_probability.generate_site import _load_temporal_eval
     assert _load_temporal_eval(tmp_path) is None
 
 
 def test_load_temporal_eval_picks_most_recent(tmp_path):
-    from mlb_edge_finder.generate_site import _load_temporal_eval
+    from mlb_win_probability.generate_site import _load_temporal_eval
     models_dir = tmp_path / "models"
     models_dir.mkdir()
     _write_temporal_eval_json(models_dir / "temporal_eval_2024.json", roc_auc=0.55)
@@ -125,7 +125,7 @@ def test_load_temporal_eval_picks_most_recent(tmp_path):
 # --- generate() integration ---
 
 def test_generate_creates_index_html(tmp_path):
-    from mlb_edge_finder.generate_site import generate
+    from mlb_win_probability.generate_site import generate
     today = date.today().isoformat()
     outputs_dir = tmp_path / "outputs"
     outputs_dir.mkdir()
@@ -141,11 +141,11 @@ def test_generate_creates_index_html(tmp_path):
     assert out.exists()
     html = out.read_text()
     assert "Giants" in html
-    assert "MLB Edge Finder" in html
+    assert "MLB Win Probability" in html
 
 
 def test_generate_empty_state_when_no_edges_today(tmp_path):
-    from mlb_edge_finder.generate_site import generate
+    from mlb_win_probability.generate_site import generate
     outputs_dir = tmp_path / "outputs"
     outputs_dir.mkdir()
     today = date.today().isoformat()
@@ -153,11 +153,11 @@ def test_generate_empty_state_when_no_edges_today(tmp_path):
     out = tmp_path / "docs" / "index.html"
     generate(outputs_dir=outputs_dir, models_dir=tmp_path, out_path=out)
     html = out.read_text()
-    assert "No edges found today" in html
+    assert "No games flagged today" in html
 
 
 def test_generate_includes_stats_when_temporal_eval_present(tmp_path):
-    from mlb_edge_finder.generate_site import generate
+    from mlb_win_probability.generate_site import generate
     outputs_dir = tmp_path / "outputs"
     outputs_dir.mkdir()
     models_dir = tmp_path / "models"
@@ -173,7 +173,7 @@ def test_generate_includes_stats_when_temporal_eval_present(tmp_path):
 
 
 def test_generate_still_works_when_temporal_eval_missing(tmp_path):
-    from mlb_edge_finder.generate_site import generate
+    from mlb_win_probability.generate_site import generate
     outputs_dir = tmp_path / "outputs"
     outputs_dir.mkdir()
     out = tmp_path / "docs" / "index.html"
@@ -184,7 +184,7 @@ def test_generate_still_works_when_temporal_eval_missing(tmp_path):
 
 
 def test_generate_high_confidence_shows_star_badge(tmp_path):
-    from mlb_edge_finder.generate_site import generate
+    from mlb_win_probability.generate_site import generate
     today = date.today().isoformat()
     outputs_dir = tmp_path / "outputs"
     outputs_dir.mkdir()
@@ -201,7 +201,7 @@ def test_generate_high_confidence_shows_star_badge(tmp_path):
 
 
 def test_generate_renders_efficiency_chart(tmp_path):
-    from mlb_edge_finder.generate_site import generate
+    from mlb_win_probability.generate_site import generate
     outputs_dir = tmp_path / "outputs"
     outputs_dir.mkdir()
     (outputs_dir / "edges_2025-01-01.csv").write_text(
@@ -218,7 +218,7 @@ def test_generate_renders_efficiency_chart(tmp_path):
 
 
 def test_generate_no_pnl_chart(tmp_path):
-    from mlb_edge_finder.generate_site import generate
+    from mlb_win_probability.generate_site import generate
     outputs_dir = tmp_path / "outputs"
     outputs_dir.mkdir()
     (outputs_dir / "edges_2025-01-01.csv").write_text(
@@ -235,7 +235,7 @@ def test_generate_no_pnl_chart(tmp_path):
 
 
 def test_generate_stats_card_shows_roc_and_break_even(tmp_path):
-    from mlb_edge_finder.generate_site import generate
+    from mlb_win_probability.generate_site import generate
     outputs_dir = tmp_path / "outputs"
     outputs_dir.mkdir()
     (outputs_dir / "edges_2025-01-01.csv").write_text(
@@ -249,4 +249,4 @@ def test_generate_stats_card_shows_roc_and_break_even(tmp_path):
     html = out.read_text()
     assert "0.601" in html
     assert "ROC-AUC" in html
-    assert "naive market" in html.lower()
+    assert "synthetic counterparty" in html.lower()

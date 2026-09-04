@@ -8,7 +8,7 @@ from typing import Any
 import pandas as pd
 from xgboost import XGBClassifier
 
-from mlb_edge_finder import config
+from mlb_win_probability import config
 
 logger = logging.getLogger(__name__)
 

@@ -36,7 +36,7 @@ def _make_game(home, away, home_score, away_score, game_type="R", status="Final"
 
 
 def test_fetch_historical_signature():
-    from mlb_edge_finder import historical_ingestion
+    from mlb_win_probability import historical_ingestion
     assert callable(historical_ingestion.fetch_historical)
     sig = inspect.signature(historical_ingestion.fetch_historical)
     assert "season" in sig.parameters
@@ -44,22 +44,22 @@ def test_fetch_historical_signature():
 
 
 def test_load_cached_historical_signature():
-    from mlb_edge_finder import historical_ingestion
+    from mlb_win_probability import historical_ingestion
     assert callable(historical_ingestion.load_cached_historical)
     sig = inspect.signature(historical_ingestion.load_cached_historical)
     assert "season" in sig.parameters
 
 
 def test_fetch_all_historical_signature():
-    from mlb_edge_finder import historical_ingestion
+    from mlb_win_probability import historical_ingestion
     assert callable(historical_ingestion.fetch_all_historical)
     sig = inspect.signature(historical_ingestion.fetch_all_historical)
     assert "force" in sig.parameters
 
 
 def test_load_cached_historical_raises_when_missing(tmp_path):
-    from mlb_edge_finder import historical_ingestion
-    with patch("mlb_edge_finder.historical_ingestion.config.DATA_RAW_DIR", tmp_path):
+    from mlb_win_probability import historical_ingestion
+    with patch("mlb_win_probability.historical_ingestion.config.DATA_RAW_DIR", tmp_path):
         with pytest.raises(FileNotFoundError):
             historical_ingestion.load_cached_historical(2024)
 
@@ -71,8 +71,8 @@ def test_fetch_historical_filters_and_derives_home_win(tmp_path):
         _make_game("Dodgers", "Giants", 2, 2, status="Postponed"),  # excluded
         _make_game("Mets", "Phillies", 3, 1, game_type="S"),        # excluded spring
     ]
-    with patch("mlb_edge_finder.historical_ingestion.statsapi.schedule", return_value=games), \
-         patch("mlb_edge_finder.historical_ingestion.config.DATA_RAW_DIR", tmp_path):
+    with patch("mlb_win_probability.historical_ingestion.statsapi.schedule", return_value=games), \
+         patch("mlb_win_probability.historical_ingestion.config.DATA_RAW_DIR", tmp_path):
         df = historical_ingestion_module().fetch_historical(2024, force=True)
 
     assert len(df) == 2
@@ -87,8 +87,8 @@ def test_fetch_historical_filters_and_derives_home_win(tmp_path):
 
 def test_fetch_historical_starter_names_are_none_when_empty(tmp_path):
     games = [_make_game("Yankees", "Red Sox", 5, 3)]
-    with patch("mlb_edge_finder.historical_ingestion.statsapi.schedule", return_value=games), \
-         patch("mlb_edge_finder.historical_ingestion.config.DATA_RAW_DIR", tmp_path):
+    with patch("mlb_win_probability.historical_ingestion.statsapi.schedule", return_value=games), \
+         patch("mlb_win_probability.historical_ingestion.config.DATA_RAW_DIR", tmp_path):
         df = historical_ingestion_module().fetch_historical(2024, force=True)
     # _make_game sets home_probable_pitcher="" — should become NaN
     assert pd.isna(df.iloc[0]["home_starter_name"])
@@ -97,7 +97,7 @@ def test_fetch_historical_starter_names_are_none_when_empty(tmp_path):
 
 def test_fetch_historical_uses_cache(tmp_path):
     import pandas as pd
-    from mlb_edge_finder import historical_ingestion
+    from mlb_win_probability import historical_ingestion
     cached = pd.DataFrame([{
         "game_date": "2024-04-01", "home_name": "Yankees", "away_name": "Red Sox",
         "home_score": 5, "away_score": 3, "home_win": 1,
@@ -105,8 +105,8 @@ def test_fetch_historical_uses_cache(tmp_path):
     cache_file = tmp_path / "historical_2024.csv"
     cached.to_csv(cache_file, index=False)
 
-    with patch("mlb_edge_finder.historical_ingestion.config.DATA_RAW_DIR", tmp_path), \
-         patch("mlb_edge_finder.historical_ingestion.statsapi.schedule") as mock_api:
+    with patch("mlb_win_probability.historical_ingestion.config.DATA_RAW_DIR", tmp_path), \
+         patch("mlb_win_probability.historical_ingestion.statsapi.schedule") as mock_api:
         df = historical_ingestion.fetch_historical(2024)
         mock_api.assert_not_called()
 
@@ -114,19 +114,19 @@ def test_fetch_historical_uses_cache(tmp_path):
 
 
 def test_fetch_historical_raises_on_api_failure(tmp_path):
-    from mlb_edge_finder import historical_ingestion
-    with patch("mlb_edge_finder.historical_ingestion.statsapi.schedule", side_effect=Exception("timeout")), \
-         patch("mlb_edge_finder.historical_ingestion.config.DATA_RAW_DIR", tmp_path), \
-         patch("mlb_edge_finder.historical_ingestion.time.sleep"):
+    from mlb_win_probability import historical_ingestion
+    with patch("mlb_win_probability.historical_ingestion.statsapi.schedule", side_effect=Exception("timeout")), \
+         patch("mlb_win_probability.historical_ingestion.config.DATA_RAW_DIR", tmp_path), \
+         patch("mlb_win_probability.historical_ingestion.time.sleep"):
         with pytest.raises(RuntimeError, match="statsapi.schedule failed"):
             historical_ingestion.fetch_historical(2024, force=True)
 
 
 def test_fetch_all_historical_concatenates(tmp_path):
-    from mlb_edge_finder import historical_ingestion
+    from mlb_win_probability import historical_ingestion
     one_game = [_make_game("Yankees", "Red Sox", 5, 3)]
-    with patch("mlb_edge_finder.historical_ingestion.statsapi.schedule", return_value=one_game), \
-         patch("mlb_edge_finder.historical_ingestion.config.DATA_RAW_DIR", tmp_path):
+    with patch("mlb_win_probability.historical_ingestion.statsapi.schedule", return_value=one_game), \
+         patch("mlb_win_probability.historical_ingestion.config.DATA_RAW_DIR", tmp_path):
         df = historical_ingestion.fetch_all_historical(force=True)
     # 6 seasons × 1 game each
     assert len(df) == 6
@@ -136,7 +136,7 @@ def test_fetch_all_historical_concatenates(tmp_path):
 
 def test_fetch_historical_falls_back_to_cache_when_api_fails(tmp_path):
     """All retries fail but cache exists — should return cached data with a warning."""
-    from mlb_edge_finder import historical_ingestion
+    from mlb_win_probability import historical_ingestion
 
     cached = pd.DataFrame([{
         "game_date": "2026-04-01", "home_name": "Yankees", "away_name": "Red Sox",
@@ -146,9 +146,9 @@ def test_fetch_historical_falls_back_to_cache_when_api_fails(tmp_path):
     cache_file = tmp_path / "historical_2026.csv"
     cached.to_csv(cache_file, index=False)
 
-    with patch("mlb_edge_finder.historical_ingestion.statsapi.schedule", side_effect=Exception("503")), \
-         patch("mlb_edge_finder.historical_ingestion.config.DATA_RAW_DIR", tmp_path), \
-         patch("mlb_edge_finder.historical_ingestion.time.sleep"):
+    with patch("mlb_win_probability.historical_ingestion.statsapi.schedule", side_effect=Exception("503")), \
+         patch("mlb_win_probability.historical_ingestion.config.DATA_RAW_DIR", tmp_path), \
+         patch("mlb_win_probability.historical_ingestion.time.sleep"):
         df = historical_ingestion.fetch_historical(2026, force=True)
 
     assert len(df) == 1
@@ -157,16 +157,16 @@ def test_fetch_historical_falls_back_to_cache_when_api_fails(tmp_path):
 
 def test_fetch_historical_raises_when_api_fails_and_no_cache(tmp_path):
     """All retries fail and no cache exists — should raise RuntimeError."""
-    from mlb_edge_finder import historical_ingestion
+    from mlb_win_probability import historical_ingestion
 
-    with patch("mlb_edge_finder.historical_ingestion.statsapi.schedule", side_effect=Exception("503")), \
-         patch("mlb_edge_finder.historical_ingestion.config.DATA_RAW_DIR", tmp_path), \
-         patch("mlb_edge_finder.historical_ingestion.time.sleep"):
+    with patch("mlb_win_probability.historical_ingestion.statsapi.schedule", side_effect=Exception("503")), \
+         patch("mlb_win_probability.historical_ingestion.config.DATA_RAW_DIR", tmp_path), \
+         patch("mlb_win_probability.historical_ingestion.time.sleep"):
         with pytest.raises(RuntimeError, match="statsapi.schedule failed"):
             historical_ingestion.fetch_historical(2026, force=True)
 
 
 # helper used in test_fetch_historical_filters_and_derives_home_win
 def historical_ingestion_module():
-    from mlb_edge_finder import historical_ingestion
+    from mlb_win_probability import historical_ingestion
     return historical_ingestion

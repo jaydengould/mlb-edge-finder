@@ -9,7 +9,7 @@ def _make_hist(games: list[dict]) -> pd.DataFrame:
 
 def test_compute_rolling_stats_shift():
     """First game of season has NaN rolling stats; game 3 reflects only games 1-2."""
-    from mlb_edge_finder.rolling_stats import compute_rolling_stats
+    from mlb_win_probability.rolling_stats import compute_rolling_stats
 
     hist = _make_hist([
         {"game_date": "2024-04-01", "home_name": "New York Yankees",
@@ -31,7 +31,7 @@ def test_compute_rolling_stats_shift():
 
 def test_compute_rolling_stats_window():
     """Window of 15 limits rolling average to last 15 prior games."""
-    from mlb_edge_finder.rolling_stats import compute_rolling_stats
+    from mlb_win_probability.rolling_stats import compute_rolling_stats
 
     # 17 games for NYY (always home, away_score=0), runs scored = game number
     games = [
@@ -50,7 +50,7 @@ def test_compute_rolling_stats_window():
 
 def test_compute_rolling_stats_min_periods():
     """min_periods=1 allows rolling with fewer than window games without error."""
-    from mlb_edge_finder.rolling_stats import compute_rolling_stats
+    from mlb_win_probability.rolling_stats import compute_rolling_stats
 
     hist = _make_hist([
         {"game_date": "2024-04-01", "home_name": "New York Yankees",
@@ -70,7 +70,7 @@ def test_compute_rolling_stats_min_periods():
 
 def test_latest_rolling_stats_one_row_per_team():
     """Returns exactly one row per team with no duplicate team_abbr."""
-    from mlb_edge_finder.rolling_stats import latest_rolling_stats
+    from mlb_win_probability.rolling_stats import latest_rolling_stats
 
     hist = _make_hist([
         {"game_date": "2024-04-01", "home_name": "New York Yankees",
@@ -87,7 +87,7 @@ def test_latest_rolling_stats_one_row_per_team():
 
 def test_latest_rolling_stats_includes_last_game():
     """Latest stats include the most recent completed game (no shift applied)."""
-    from mlb_edge_finder.rolling_stats import latest_rolling_stats
+    from mlb_win_probability.rolling_stats import latest_rolling_stats
 
     hist = _make_hist([
         {"game_date": "2024-04-01", "home_name": "New York Yankees",

@@ -22,8 +22,8 @@ def _write_pkl(path: Path, clf) -> None:
 
 
 def test_run_returns_edges(tmp_path):
-    """pipeline.run() returns the edges DataFrame produced by find_edges."""
-    from mlb_edge_finder import pipeline
+    """pipeline.run() returns the edges DataFrame produced by select_flagged_games."""
+    from mlb_win_probability import pipeline
 
     # Create a dummy pkl file so the glob finds it (load_model is patched below)
     model_date = date(2025, 9, 28)
@@ -46,13 +46,13 @@ def test_run_returns_edges(tmp_path):
         "american_odds": 130, "model_prob": 0.6, "ev": 0.38,
     }])
 
-    with patch("mlb_edge_finder.pipeline.odds_ingestion.fetch_odds", return_value=pd.DataFrame()), \
-         patch("mlb_edge_finder.pipeline.stats_ingestion.fetch_stats", return_value=pd.DataFrame()), \
-         patch("mlb_edge_finder.pipeline.pitcher_ingestion.fetch_pitcher_stats", return_value=pd.DataFrame()), \
-         patch("mlb_edge_finder.pipeline.features.build_features", return_value=features_df), \
-         patch("mlb_edge_finder.pipeline.config.MODELS_DIR", tmp_path), \
-         patch("mlb_edge_finder.pipeline.model.load_model", return_value=clf), \
-         patch("mlb_edge_finder.pipeline.edge_finder.find_edges", return_value=expected_edges) as mock_edges:
+    with patch("mlb_win_probability.pipeline.odds_ingestion.fetch_odds", return_value=pd.DataFrame()), \
+         patch("mlb_win_probability.pipeline.stats_ingestion.fetch_stats", return_value=pd.DataFrame()), \
+         patch("mlb_win_probability.pipeline.pitcher_ingestion.fetch_pitcher_stats", return_value=pd.DataFrame()), \
+         patch("mlb_win_probability.pipeline.features.build_features", return_value=features_df), \
+         patch("mlb_win_probability.pipeline.config.MODELS_DIR", tmp_path), \
+         patch("mlb_win_probability.pipeline.model.load_model", return_value=clf), \
+         patch("mlb_win_probability.pipeline.win_probability.select_flagged_games", return_value=expected_edges) as mock_edges:
         result = pipeline.run(date(2025, 7, 1))
 
     mock_edges.assert_called_once()
@@ -61,7 +61,7 @@ def test_run_returns_edges(tmp_path):
 
 def test_run_defaults_to_today():
     """pipeline.run() defaults game_date to date.today() when not provided."""
-    from mlb_edge_finder import pipeline
+    from mlb_win_probability import pipeline
     from datetime import date as date_cls
 
     captured = {}
@@ -70,12 +70,12 @@ def test_run_defaults_to_today():
         captured["game_date"] = game_date
         return pd.DataFrame()
 
-    with patch("mlb_edge_finder.pipeline.odds_ingestion.fetch_odds", side_effect=fake_fetch_odds), \
-         patch("mlb_edge_finder.pipeline.stats_ingestion.fetch_stats", return_value=pd.DataFrame()), \
-         patch("mlb_edge_finder.pipeline.pitcher_ingestion.fetch_pitcher_stats", return_value=pd.DataFrame()), \
-         patch("mlb_edge_finder.pipeline.features.build_features", return_value=pd.DataFrame()), \
-         patch("mlb_edge_finder.pipeline.config.MODELS_DIR") as mock_dir, \
-         patch("mlb_edge_finder.pipeline.edge_finder.find_edges", return_value=pd.DataFrame()):
+    with patch("mlb_win_probability.pipeline.odds_ingestion.fetch_odds", side_effect=fake_fetch_odds), \
+         patch("mlb_win_probability.pipeline.stats_ingestion.fetch_stats", return_value=pd.DataFrame()), \
+         patch("mlb_win_probability.pipeline.pitcher_ingestion.fetch_pitcher_stats", return_value=pd.DataFrame()), \
+         patch("mlb_win_probability.pipeline.features.build_features", return_value=pd.DataFrame()), \
+         patch("mlb_win_probability.pipeline.config.MODELS_DIR") as mock_dir, \
+         patch("mlb_win_probability.pipeline.win_probability.select_flagged_games", return_value=pd.DataFrame()):
         mock_dir.glob.return_value = []
         with pytest.raises(FileNotFoundError):
             pipeline.run()
@@ -85,33 +85,33 @@ def test_run_defaults_to_today():
 
 def test_run_raises_when_no_models(tmp_path):
     """pipeline.run() raises FileNotFoundError when MODELS_DIR has no pkl files."""
-    from mlb_edge_finder import pipeline
+    from mlb_win_probability import pipeline
 
-    with patch("mlb_edge_finder.pipeline.odds_ingestion.fetch_odds", return_value=pd.DataFrame()), \
-         patch("mlb_edge_finder.pipeline.stats_ingestion.fetch_stats", return_value=pd.DataFrame()), \
-         patch("mlb_edge_finder.pipeline.pitcher_ingestion.fetch_pitcher_stats",
+    with patch("mlb_win_probability.pipeline.odds_ingestion.fetch_odds", return_value=pd.DataFrame()), \
+         patch("mlb_win_probability.pipeline.stats_ingestion.fetch_stats", return_value=pd.DataFrame()), \
+         patch("mlb_win_probability.pipeline.pitcher_ingestion.fetch_pitcher_stats",
                return_value=pd.DataFrame()), \
-         patch("mlb_edge_finder.pipeline.features.build_features", return_value=pd.DataFrame()), \
-         patch("mlb_edge_finder.pipeline.config.MODELS_DIR", tmp_path):
+         patch("mlb_win_probability.pipeline.features.build_features", return_value=pd.DataFrame()), \
+         patch("mlb_win_probability.pipeline.config.MODELS_DIR", tmp_path):
         with pytest.raises(FileNotFoundError, match="No trained models"):
             pipeline.run(date(2025, 7, 1))
 
 
 def test_pipeline_calls_fetch_pitcher_stats_before_build_features():
-    from mlb_edge_finder import pipeline
+    from mlb_win_probability import pipeline
     from unittest.mock import call
 
     mock_clf = MagicMock()
     mock_clf.feature_names_in_ = []
     mock_edges = pd.DataFrame()
 
-    with patch("mlb_edge_finder.pipeline.odds_ingestion.fetch_odds"), \
-         patch("mlb_edge_finder.pipeline.stats_ingestion.fetch_stats"), \
-         patch("mlb_edge_finder.pipeline.pitcher_ingestion.fetch_pitcher_stats") as mock_pitcher, \
-         patch("mlb_edge_finder.pipeline.features.build_features", return_value=pd.DataFrame()), \
-         patch("mlb_edge_finder.pipeline.model.load_model", return_value=mock_clf), \
-         patch("mlb_edge_finder.pipeline.edge_finder.find_edges", return_value=mock_edges), \
-         patch("mlb_edge_finder.pipeline.config.MODELS_DIR") as mock_models_dir:
+    with patch("mlb_win_probability.pipeline.odds_ingestion.fetch_odds"), \
+         patch("mlb_win_probability.pipeline.stats_ingestion.fetch_stats"), \
+         patch("mlb_win_probability.pipeline.pitcher_ingestion.fetch_pitcher_stats") as mock_pitcher, \
+         patch("mlb_win_probability.pipeline.features.build_features", return_value=pd.DataFrame()), \
+         patch("mlb_win_probability.pipeline.model.load_model", return_value=mock_clf), \
+         patch("mlb_win_probability.pipeline.win_probability.select_flagged_games", return_value=mock_edges), \
+         patch("mlb_win_probability.pipeline.config.MODELS_DIR") as mock_models_dir:
         mock_models_dir.glob.return_value = [
             Path("models/xgb_2025-01-01.pkl")
         ]
@@ -123,7 +123,7 @@ def test_pipeline_calls_fetch_pitcher_stats_before_build_features():
 def test_pipeline_run_accepts_force_param():
     """pipeline.run() signature has a force parameter defaulting to False."""
     import inspect
-    from mlb_edge_finder import pipeline
+    from mlb_win_probability import pipeline
     sig = inspect.signature(pipeline.run)
     assert "force" in sig.parameters
     assert sig.parameters["force"].default is False
@@ -131,18 +131,18 @@ def test_pipeline_run_accepts_force_param():
 
 def test_pipeline_run_passes_force_to_stages(tmp_path):
     """force=True is forwarded to fetch_odds, fetch_stats, fetch_pitcher_stats."""
-    from mlb_edge_finder import pipeline
+    from mlb_win_probability import pipeline
     (tmp_path / "xgb_2025-09-28.pkl").touch()
     clf = MagicMock()
     clf.feature_names_in_ = np.array([])
 
-    with patch("mlb_edge_finder.pipeline.odds_ingestion.fetch_odds") as mock_odds, \
-         patch("mlb_edge_finder.pipeline.stats_ingestion.fetch_stats") as mock_stats, \
-         patch("mlb_edge_finder.pipeline.pitcher_ingestion.fetch_pitcher_stats") as mock_pitcher, \
-         patch("mlb_edge_finder.pipeline.features.build_features", return_value=pd.DataFrame()), \
-         patch("mlb_edge_finder.pipeline.model.load_model", return_value=clf), \
-         patch("mlb_edge_finder.pipeline.edge_finder.find_edges", return_value=pd.DataFrame()), \
-         patch("mlb_edge_finder.pipeline.config.MODELS_DIR", tmp_path):
+    with patch("mlb_win_probability.pipeline.odds_ingestion.fetch_odds") as mock_odds, \
+         patch("mlb_win_probability.pipeline.stats_ingestion.fetch_stats") as mock_stats, \
+         patch("mlb_win_probability.pipeline.pitcher_ingestion.fetch_pitcher_stats") as mock_pitcher, \
+         patch("mlb_win_probability.pipeline.features.build_features", return_value=pd.DataFrame()), \
+         patch("mlb_win_probability.pipeline.model.load_model", return_value=clf), \
+         patch("mlb_win_probability.pipeline.win_probability.select_flagged_games", return_value=pd.DataFrame()), \
+         patch("mlb_win_probability.pipeline.config.MODELS_DIR", tmp_path):
         pipeline.run(date(2025, 7, 1), force=True)
 
     mock_odds.assert_called_once_with(date(2025, 7, 1), force=True)

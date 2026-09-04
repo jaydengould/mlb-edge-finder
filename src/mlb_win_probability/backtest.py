@@ -1,4 +1,12 @@
-"""Backtest the edge-finder against held-out test data using synthetic market odds."""
+"""Simulate the flagging rule against held-out data, and grade the published record.
+
+Two different things live here. simulate_bets()/run_backtest()/sweep_thresholds()
+price every game against a *synthetic* counterparty (simulate_market_odds:
+-110/-110, no matchup information), so their returns are a sanity check only and
+say nothing about real-world profitability. grade_live_edges() is the real one:
+it grades the predictions actually published in outputs/ against real bookmaker
+odds and real final scores.
+"""
 import json
 import logging
 from pathlib import Path
@@ -7,7 +15,7 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
-from mlb_edge_finder.historical_ingestion import load_cached_historical
+from mlb_win_probability.historical_ingestion import load_cached_historical
 
 logger = logging.getLogger(__name__)
 
@@ -68,8 +76,8 @@ def _run_bet_loop(
     away_name. Returns the per-bet DataFrame (empty with correct columns if no
     bets clear the thresholds). Does not log — callers decide.
     """
-    from mlb_edge_finder import config as _config
-    from mlb_edge_finder.edge_finder import compute_ev, compute_kelly
+    from mlb_win_probability import config as _config
+    from mlb_win_probability.win_probability import compute_ev, compute_kelly
 
     _ev_threshold = ev_threshold if ev_threshold is not None else _config.EV_THRESHOLD
 
@@ -140,7 +148,10 @@ def simulate_bets(
     unit: float = 100.0,
     ev_threshold: float | None = None,
 ) -> pd.DataFrame:
-    """Simulate edge-finder bets on a pre-split test set using a flat market.
+    """Simulate the flagging rule on a pre-split test set against a flat market.
+
+    The market here is uninformed by construction — every game priced the same.
+    Returns from this are not evidence of real-world profitability.
 
     Generates one synthetic odds pair via simulate_market_odds(home_market_prob,
     vig), applies it to every game, and delegates the bet loop to _run_bet_loop.
@@ -163,7 +174,7 @@ def simulate_bets(
         actual_home_win, won, pnl, cumulative_pnl. Empty (with those columns)
         when no bets clear the thresholds.
     """
-    from mlb_edge_finder import config as _config
+    from mlb_win_probability import config as _config
 
     _ev_threshold = ev_threshold if ev_threshold is not None else _config.EV_THRESHOLD
 
@@ -173,7 +184,7 @@ def simulate_bets(
 
     result = _run_bet_loop(clf, X_test, y_test, meta_df, home_odds, away_odds, unit, _ev_threshold)
     if result.empty:
-        logger.warning("No edges found in backtest at EV=%.0f%%", _ev_threshold * 100)
+        logger.warning("Nothing flagged in backtest at EV=%.0f%%", _ev_threshold * 100)
     return result
 
 
@@ -193,9 +204,10 @@ def sweep_market_efficiency(
     0.5*(1-alpha) + model_prob*alpha, the vig is added, the result is converted
     to per-game American odds, and the bet loop is run against it.
 
-    alpha=0 reproduces the naive 50/50 market (today's headline ROI). alpha=1
-    sets the market equal to the model's own prediction, leaving no informational
-    edge (ROI collapses to roughly -vig).
+    alpha=0 reproduces the naive 50/50 market. alpha=1 sets the market equal to
+    the model's own prediction, leaving no divergence to flag (ROI collapses to
+    roughly -vig). This measures the simulation's sensitivity to how informed the
+    counterparty is; it is not a measurement of any real market.
 
     Args:
         clf: Fitted calibrated classifier with feature_names_in_ and predict_proba.
@@ -246,7 +258,7 @@ def run_backtest(
     unit: float = 100.0,
     ev_threshold: float | None = None,
 ) -> pd.DataFrame:
-    """Simulate edge-finder performance on the held-out 20% test split.
+    """Simulate the flagging rule on the held-out 20% test split.
 
     Replicates the same 80/20 stratified split used in model._three_way_split()
     (test_size=0.2, random_state=42) so the evaluated games are identical to
@@ -274,7 +286,7 @@ def run_backtest(
     """
     from sklearn.model_selection import train_test_split
 
-    from mlb_edge_finder.model import NON_FEATURE_COLS, TARGET_COL
+    from mlb_win_probability.model import NON_FEATURE_COLS, TARGET_COL
 
     non_feature = [c for c in NON_FEATURE_COLS if c in training_df.columns]
     X = training_df.drop(columns=non_feature)
@@ -427,7 +439,7 @@ def grade_live_edges(
     outputs_dir: Path = OUTPUTS_DIR,
     unit: float = 100.0,
 ) -> pd.DataFrame:
-    """Grade the edges actually published in outputs/ against real game results.
+    """Grade the predictions actually published in outputs/ against real results.
 
     Unlike run_backtest(), this uses the real bookmaker odds the pipeline saw on
     the day and the real final scores — no synthetic market, no model re-scoring.
@@ -448,7 +460,7 @@ def grade_live_edges(
         if not (df := pd.read_csv(f)).empty
     ]
     if not frames:
-        logger.warning("No published edges found in %s", outputs_dir)
+        logger.warning("No published predictions found in %s", outputs_dir)
         return pd.DataFrame(columns=_BET_COLS + ["high_confidence"])
 
     edges = pd.concat(frames, ignore_index=True)

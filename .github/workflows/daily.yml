@@ -1,4 +1,4 @@
-name: Daily MLB Edge Finder
+name: Daily MLB Win Probability
 
 on:
   schedule:
@@ -33,7 +33,7 @@ jobs:
       - name: Run pipeline
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
-        run: python -m mlb_edge_finder
+        run: python -m mlb_win_probability
 
       - name: Run feedback loop
         continue-on-error: true
@@ -41,7 +41,7 @@ jobs:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: |
           python -c "
-          from mlb_edge_finder.feedback import run_feedback_loop
+          from mlb_win_probability.feedback import run_feedback_loop
           import json
           result = run_feedback_loop(2026)
           print(json.dumps(result, default=str))
@@ -55,24 +55,24 @@ jobs:
           if [ -f "$EDGES_SRC" ]; then
             cp "$EDGES_SRC" "$EDGES_DST"
           else
-            # Pipeline ran successfully but found no edges — write header-only file
+            # Pipeline ran successfully but flagged nothing — write header-only file
             # so there is still a commit recording that the workflow ran.
             echo "game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence" > "$EDGES_DST"
           fi
 
       - name: Generate dashboard
         continue-on-error: true
-        run: python -m mlb_edge_finder.generate_site
+        run: python -m mlb_win_probability.generate_site
 
       - name: Write job summary
         run: |
           DATE=$(date -u +%Y-%m-%d)
           FILE="outputs/edges_${DATE}.csv"
-          echo "## MLB Edges — ${DATE}" >> $GITHUB_STEP_SUMMARY
+          echo "## MLB Win Probability — flagged games ${DATE}" >> $GITHUB_STEP_SUMMARY
           if [ $(wc -l < "$FILE") -gt 1 ]; then
             python3 -c "import csv; rows=list(csv.reader(open('$FILE'))); print('| '+' | '.join(rows[0])+' |'); print('| '+' | '.join(['---']*len(rows[0]))+' |'); [print('| '+' | '.join(r)+' |') for r in rows[1:]]" >> $GITHUB_STEP_SUMMARY
           else
-            echo "No edges found today." >> $GITHUB_STEP_SUMMARY
+            echo "No games flagged today." >> $GITHUB_STEP_SUMMARY
           fi
 
       - name: Commit and push artifacts

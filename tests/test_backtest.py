@@ -3,9 +3,9 @@ import json
 import numpy as np
 import pandas as pd
 import pytest
-from mlb_edge_finder.backtest import simulate_market_odds
-from mlb_edge_finder.backtest import run_backtest
-from mlb_edge_finder.backtest import compute_summary
+from mlb_win_probability.backtest import simulate_market_odds
+from mlb_win_probability.backtest import run_backtest
+from mlb_win_probability.backtest import compute_summary
 
 
 def test_simulate_market_odds_default_is_110_110():
@@ -244,7 +244,7 @@ def test_compute_summary_empty_df_returns_zeros():
 
 
 def test_sweep_thresholds_returns_dataframe():
-    from mlb_edge_finder.backtest import sweep_thresholds
+    from mlb_win_probability.backtest import sweep_thresholds
     df = _make_training_df(200)
     clf = _make_mock_clf(home_win_prob=0.65)
     result = sweep_thresholds(clf, df, ev_low=0.05, ev_high=0.15, ev_step=0.05)
@@ -252,7 +252,7 @@ def test_sweep_thresholds_returns_dataframe():
 
 
 def test_sweep_thresholds_output_columns():
-    from mlb_edge_finder.backtest import sweep_thresholds
+    from mlb_win_probability.backtest import sweep_thresholds
     df = _make_training_df(200)
     clf = _make_mock_clf(home_win_prob=0.65)
     result = sweep_thresholds(clf, df, ev_low=0.05, ev_high=0.15, ev_step=0.05)
@@ -264,7 +264,7 @@ def test_sweep_thresholds_output_columns():
 
 def test_sweep_thresholds_returns_sorted_dataframe():
     """sweep_thresholds returns a DataFrame sorted by sharpe_ratio with expected columns."""
-    from mlb_edge_finder.backtest import sweep_thresholds
+    from mlb_win_probability.backtest import sweep_thresholds
     df = _make_training_df(300)
     clf = _make_mock_clf(home_win_prob=0.65)
     result = sweep_thresholds(clf, df, ev_low=0.05, ev_high=0.15, ev_step=0.05)
@@ -278,7 +278,7 @@ def test_sweep_thresholds_returns_sorted_dataframe():
 
 
 def test_sweep_thresholds_sorted_by_sharpe_descending():
-    from mlb_edge_finder.backtest import sweep_thresholds
+    from mlb_win_probability.backtest import sweep_thresholds
     df = _make_training_df(200)
     clf = _make_mock_clf(home_win_prob=0.65)
     result = sweep_thresholds(clf, df, ev_low=0.05, ev_high=0.15, ev_step=0.05)
@@ -288,7 +288,7 @@ def test_sweep_thresholds_sorted_by_sharpe_descending():
 
 def test_sweep_thresholds_excludes_zero_bet_combinations():
     """Threshold combinations that produce 0 bets should not appear in output."""
-    from mlb_edge_finder.backtest import sweep_thresholds
+    from mlb_win_probability.backtest import sweep_thresholds
     df = _make_training_df(200)
     clf = _make_mock_clf(home_win_prob=0.65)
     try:
@@ -301,16 +301,16 @@ def test_sweep_thresholds_excludes_zero_bet_combinations():
 def test_sweep_thresholds_best_row_logged(caplog):
     """sweep_thresholds logs the optimal threshold combination."""
     import logging
-    from mlb_edge_finder.backtest import sweep_thresholds
+    from mlb_win_probability.backtest import sweep_thresholds
     df = _make_training_df(200)
     clf = _make_mock_clf(home_win_prob=0.65)
-    with caplog.at_level(logging.INFO, logger="mlb_edge_finder.backtest"):
+    with caplog.at_level(logging.INFO, logger="mlb_win_probability.backtest"):
         sweep_thresholds(clf, df, ev_low=0.05, ev_high=0.10, ev_step=0.05)
     assert any("Optimal" in r.message for r in caplog.records)
 
 
 def test_export_pnl_json_writes_expected_structure(tmp_path):
-    from mlb_edge_finder.backtest import export_pnl_json
+    from mlb_win_probability.backtest import export_pnl_json
 
     bt_df = pd.DataFrame({
         "pnl": [100.0, -100.0, 100.0],
@@ -328,7 +328,7 @@ def test_export_pnl_json_writes_expected_structure(tmp_path):
 
 
 def test_export_pnl_json_creates_parent_dirs(tmp_path):
-    from mlb_edge_finder.backtest import export_pnl_json
+    from mlb_win_probability.backtest import export_pnl_json
 
     bt_df = pd.DataFrame({"pnl": [50.0], "cumulative_pnl": [50.0]})
     summary = {"n_bets": 1}
@@ -339,14 +339,14 @@ def test_export_pnl_json_creates_parent_dirs(tmp_path):
     assert out.exists()
 
 
-from mlb_edge_finder.backtest import simulate_bets
+from mlb_win_probability.backtest import simulate_bets
 
 
 def _make_aligned_split(n: int = 200, seed: int = 0):
     """Return (clf, X_test, y_test, meta_df) ready for simulate_bets."""
     from sklearn.model_selection import train_test_split
     df = _make_training_df(n, seed)
-    from mlb_edge_finder.model import NON_FEATURE_COLS, TARGET_COL
+    from mlb_win_probability.model import NON_FEATURE_COLS, TARGET_COL
     non_feature = [c for c in NON_FEATURE_COLS if c in df.columns]
     X = df.drop(columns=non_feature)
     y = df[TARGET_COL]
@@ -389,14 +389,14 @@ def test_simulate_bets_high_prob_finds_edges():
 # --- sweep_market_efficiency ---
 
 def test_sweep_returns_expected_columns():
-    from mlb_edge_finder.backtest import sweep_market_efficiency
+    from mlb_win_probability.backtest import sweep_market_efficiency
     clf, X_test, y_test, meta = _make_aligned_split()
     result = sweep_market_efficiency(clf, X_test, y_test, meta, ev_threshold=0.05)
     assert set(["alpha", "roi_pct", "n_bets", "win_rate"]).issubset(result.columns)
 
 
 def test_sweep_one_row_per_grid_point():
-    from mlb_edge_finder.backtest import sweep_market_efficiency
+    from mlb_win_probability.backtest import sweep_market_efficiency
     clf, X_test, y_test, meta = _make_aligned_split()
     grid = [0.0, 0.25, 0.5, 0.75, 1.0]
     result = sweep_market_efficiency(clf, X_test, y_test, meta, alpha_grid=grid, ev_threshold=0.05)
@@ -408,7 +408,7 @@ def test_sweep_n_bets_decreases_with_efficiency():
     # As the market becomes more informed (alpha up), the favorite's odds move
     # toward fair, EV falls, and fewer bets clear the threshold. This is a
     # property of bet selection — it holds regardless of actual outcomes.
-    from mlb_edge_finder.backtest import sweep_market_efficiency
+    from mlb_win_probability.backtest import sweep_market_efficiency
     clf, X_test, y_test, meta = _make_aligned_split()
     result = sweep_market_efficiency(clf, X_test, y_test, meta, ev_threshold=0.05)
     n_at_0 = result.loc[result["alpha"] == 0.0, "n_bets"].iloc[0]
@@ -419,7 +419,7 @@ def test_sweep_n_bets_decreases_with_efficiency():
 def test_sweep_alpha_one_has_no_positive_edge():
     # At alpha=1 the market equals the model's own prob (+vig), so EV<=0 and no
     # bets clear the threshold -> 0 bets, roi 0.
-    from mlb_edge_finder.backtest import sweep_market_efficiency
+    from mlb_win_probability.backtest import sweep_market_efficiency
     clf, X_test, y_test, meta = _make_aligned_split()
     result = sweep_market_efficiency(clf, X_test, y_test, meta, ev_threshold=0.05)
     roi_at_1 = result.loc[result["alpha"] == 1.0, "roi_pct"].iloc[0]
@@ -428,7 +428,7 @@ def test_sweep_alpha_one_has_no_positive_edge():
 
 def test_sweep_handles_no_bets():
     # A 0.50 model never clears EV>0.20 against any vigged line.
-    from mlb_edge_finder.backtest import sweep_market_efficiency
+    from mlb_win_probability.backtest import sweep_market_efficiency
     clf, X_test, y_test, meta = _make_aligned_split()
     flat_clf = _make_mock_clf(home_win_prob=0.50)
     result = sweep_market_efficiency(flat_clf, X_test, y_test, meta, ev_threshold=0.20)
@@ -436,7 +436,7 @@ def test_sweep_handles_no_bets():
     assert (result["roi_pct"] == 0.0).all()
 
 
-from mlb_edge_finder.backtest import grade_live_edges
+from mlb_win_probability.backtest import grade_live_edges
 
 
 def _write_live_fixtures(tmp_path, monkeypatch):
@@ -465,7 +465,7 @@ def _write_live_fixtures(tmp_path, monkeypatch):
          "away_name": "St. Louis Cardinals", "home_win": 0},
     ])
     monkeypatch.setattr(
-        "mlb_edge_finder.backtest.load_cached_historical", lambda season: hist
+        "mlb_win_probability.backtest.load_cached_historical", lambda season: hist
     )
     return outputs
 

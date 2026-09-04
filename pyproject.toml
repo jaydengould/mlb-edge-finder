@@ -3,14 +3,14 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "mlb-edge-finder"
+name = "mlb-win-probability"
 version = "0.1.0"
-description = "Find positive expected-value opportunities in MLB moneyline betting markets by comparing XGBoost win probabilities against bookmaker-implied odds."
+description = "Calibrated MLB game-level win probability model with a daily automated pipeline and a published prediction history."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [{ name = "Jayden Gould", email = "jaydengould28@gmail.com" }]
-keywords = ["mlb", "baseball", "betting", "expected-value", "xgboost", "sports-analytics"]
+keywords = ["mlb", "baseball", "win-probability", "calibration", "xgboost", "sports-analytics"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -35,8 +35,8 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/jaydengould/mlb-edge-finder"
-Dashboard = "https://jaydengould.github.io/mlb-edge-finder/"
+Homepage = "https://github.com/jaydengould/mlb-win-probability"
+Dashboard = "https://jaydengould.github.io/mlb-win-probability/"
 
 [tool.setuptools.packages.find]
 where = ["src"]

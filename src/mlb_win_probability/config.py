@@ -25,7 +25,7 @@ LOGS_DIR: Path = _ROOT / "logs"
 XGB_N_ESTIMATORS: int = 100
 XGB_MAX_DEPTH: int = 4
 
-# --- Edge-finding thresholds ---
+# --- Flagging thresholds: how far the model must diverge from the posted line ---
 EV_THRESHOLD: float = 0.20
 MIN_AMERICAN_ODDS: int = -300
 HIGH_CONFIDENCE_EV: float = 0.40
