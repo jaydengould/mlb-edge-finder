@@ -10,13 +10,13 @@ pipeline and a published prediction history.
 The model is an XGBoost classifier over team, rolling-form, and starting-pitcher
 features, post-hoc calibrated with isotonic regression. A GitHub Actions
 workflow retrains, scores each morning's slate, and commits the predictions to
-`outputs/` — 77 dated CSVs covering 2026-05-19 through 2026-08-05 at the time of
-writing, of which the graded record below ends 2026-08-04 (the results cache
+`outputs/` — 106 dated CSVs covering 2026-05-19 through 2026-09-04 at the time of
+writing, of which the graded record below ends 2026-09-02 (the results cache
 `data/raw/historical_2026.csv`, refreshed by the same workflow, currently ends
-2026-08-04, so the three predictions published for 2026-08-05 have no final
-scores to grade against yet). Every prediction in that directory was published
-before the games were played, which is what makes the live record gradeable at
-all.
+2026-09-02, so the predictions published for 2026-09-03 and 2026-09-04 have no
+final scores to grade against yet). Every prediction in that directory was
+published before the games were played, which is what makes the live record
+gradeable at all.
 
 Evaluation is a temporal holdout: train on 2019–2024, score the full 2025 season
 blind. Section [Evaluation](#evaluation) reports what that showed, including the
@@ -108,32 +108,32 @@ real final scores, using the real bookmaker odds the pipeline saw that morning.
 No re-scoring, no synthetic market. Results are written to
 `models/live_grading.json`.
 
-From `models/live_grading.json` (290 graded bets, 2026-05-19 through
-2026-08-04; 23 of 313 published bets dropped as unresolved or ambiguous
+From `models/live_grading.json` (420 graded bets, 2026-05-19 through
+2026-09-02; 32 of 452 published bets dropped as unresolved or ambiguous
 doubleheaders):
 
 | | All flagged | `high_confidence` subset |
 |---|---|---|
-| n bets | 290 | 63 |
-| Mean model probability | 0.6547 | 0.7044 |
-| Realized win rate | 0.4414 | 0.3651 |
-| ROI | −8.67% | −19.70% |
-| Sharpe (per bet) | −0.0824 | −0.1809 |
-| Max drawdown | $3,111.26 | $2,792.44 |
+| n bets | 420 | 109 |
+| Mean model probability | 0.6589 | 0.7223 |
+| Realized win rate | 0.4476 | 0.3761 |
+| ROI | −7.24% | −18.60% |
+| Sharpe (per bet) | −0.0685 | −0.1726 |
+| Max drawdown | $3,413.89 | $3,173.82 |
 
-**The ROI is not statistically distinguishable from zero.** At n=290 the
-standard error on the mean per-bet return is about 6.2 percentage points, so
-−8.67% is roughly 1.4 standard errors from zero. This sample cannot tell a
+**The ROI is not statistically distinguishable from zero.** At n=420 the
+standard error on the mean per-bet return is about 5.2 percentage points, so
+−7.24% is roughly 1.4 standard errors from zero. This sample cannot tell a
 losing strategy from a break-even one.
 
 **The calibration failure is decisive.** Mean model probability on flagged bets
-is 0.6547 against a realized 0.4414. At n=290 the standard error on a proportion
-is about 2.9 points, making the 21.3-point gap roughly **7.3 standard errors**.
+is 0.6589 against a realized 0.4476. At n=420 the standard error on a proportion
+is about 2.4 points, making the 21.1-point gap roughly **8.7 standard errors**.
 The model is badly overconfident on exactly the games it selects.
 
-That z uses the raw count of 290. The bets are not fully independent — they are
-drawn from 30 teams over 78 days, and the same teams recur, so the effective
-sample is smaller than 290 and the true z is below 7.3. The gap is large enough
+That z uses the raw count of 420. The bets are not fully independent — they are
+drawn from 29 teams over 107 days, and the same teams recur, so the effective
+sample is smaller than 420 and the true z is below 8.7. The gap is large enough
 that no plausible correction for that dependence brings it near a conventional
 significance threshold.
 
@@ -158,7 +158,8 @@ rates are noisier and more extreme than settled end-of-season rates, so the mode
 reads ordinary teams as unusually good or bad and overstates its confidence. This
 predicts overconfidence, and predicts it worsening where the inputs are most
 extreme — consistent with the `high_confidence` slice being the worse one
-(0.7044 predicted against 0.3651 realized).
+(0.7223 predicted against 0.3761 realized, a 34.6-point gap against the
+21.1-point gap on the full flagged set).
 
 Separating (a) from (b) requires retraining on as-of-date team stats and
 re-grading. Until that happens, the calibration failure is established and its
@@ -322,8 +323,8 @@ transient 503 should not orphan a day's output.
 ## Prediction history
 
 `outputs/` holds every published prediction, committed by the workflow before
-the games were played: 77 files, `edges_2026-05-19.csv` through
-`edges_2026-08-05.csv`, 313 flagged bets total. GitHub renders them as tables.
+the games were played: 106 files, `edges_2026-05-19.csv` through
+`edges_2026-09-04.csv`, 452 flagged bets total. GitHub renders them as tables.
 This is what `scripts/grade_live.py` grades, and the reason the live record is a
 record rather than a re-simulation.
 
@@ -390,7 +391,7 @@ to a baseline that does not exist in the real world.
 
 `high_confidence=True` marks games with `EV > 0.40` and a model/market
 probability gap above 0.15. On the live record this flag selects a *worse*
-subset (36.5% realized vs 44.1% overall).
+subset (37.6% realized vs 44.8% overall).
 
 ## Project Structure
 

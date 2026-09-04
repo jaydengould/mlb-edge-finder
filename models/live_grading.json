@@ -2,29 +2,29 @@
   "generated_on": "2026-09-04",
   "source": "outputs/edges_*.csv graded against final scores from data/raw/historical_*.csv",
   "all": {
-    "n_bets": 290,
+    "n_bets": 420,
     "date_range": [
       "2026-05-19",
-      "2026-08-04"
+      "2026-09-02"
     ],
-    "win_rate": 0.4414,
-    "roi": -8.67,
-    "sharpe": -0.0824,
-    "max_drawdown": 3111.26,
-    "mean_model_prob_on_flagged_bets": 0.6547,
-    "realized_win_rate": 0.4414
+    "win_rate": 0.4476,
+    "roi": -7.24,
+    "sharpe": -0.0685,
+    "max_drawdown": 3413.89,
+    "mean_model_prob_on_flagged_bets": 0.6589,
+    "realized_win_rate": 0.4476
   },
   "high_confidence": {
-    "n_bets": 63,
+    "n_bets": 109,
     "date_range": [
       "2026-05-29",
-      "2026-08-02"
+      "2026-09-02"
     ],
-    "win_rate": 0.3651,
-    "roi": -19.7,
-    "sharpe": -0.1809,
-    "max_drawdown": 2792.44,
-    "mean_model_prob_on_flagged_bets": 0.7044,
-    "realized_win_rate": 0.3651
+    "win_rate": 0.3761,
+    "roi": -18.6,
+    "sharpe": -0.1726,
+    "max_drawdown": 3173.82,
+    "mean_model_prob_on_flagged_bets": 0.7223,
+    "realized_win_rate": 0.3761
   }
 }
