@@ -1,0 +1,4 @@
+game_id,home_team,away_team,bet_side,american_odds,model_prob,ev,kelly_fraction,high_confidence
+27dbceeb05fa78d858bc4c8e0fce75ba,Baltimore Orioles,Boston Red Sox,home,120,0.6025640964508057,0.32564101219177244,0.13568375507990518,False
+855005fb1370a5252daf5699bd5fce84,Chicago White Sox,Minnesota Twins,home,-143,0.7118643522262573,0.2096715915453184,0.14991518795490266,False
+efbec01e9ddadbf59d572981c0ab0b39,Colorado Rockies,St. Louis Cardinals,home,125,0.5436508059501648,0.2232143133878708,0.08928572535514831,False
